@@ -129,6 +129,13 @@ beforeEach(function() {
   /**
    * @return {Boolean}
    */
+  function toBeEmptyString() {
+    return this.actual === '';
+  }
+
+  /**
+   * @return {Boolean}
+   */
   function toBeNonEmptyString() {
     return toBeString.call(this) && this.actual.length > 0;
   }
@@ -265,6 +272,7 @@ beforeEach(function() {
     toBeHtmlCommentNode: toBeHtmlCommentNode,
     toBeHtmlNode: toBeHtmlNode,
     toBeHtmlTextNode: toBeHtmlTextNode,
+    toBeEmptyString: toBeEmptyString,
     toBeNonEmptyString: toBeNonEmptyString,
     toBeString: toBeString,
     toBeHtmlString: toBeHtmlString,
