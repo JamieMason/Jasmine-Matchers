@@ -134,6 +134,14 @@ beforeEach(function() {
   }
 
   /**
+   * Assert subject is string containing HTML Markup
+   * @return {Boolean}
+   */
+  function toBeHtmlString() {
+    return toBeString.call(this) && this.actual.search(/<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)/) !== -1;
+  }
+
+  /**
    * Assert subject is a String containing nothing but whitespace
    * @return {Boolean}
    */
@@ -259,6 +267,7 @@ beforeEach(function() {
     toBeHtmlTextNode: toBeHtmlTextNode,
     toBeNonEmptyString: toBeNonEmptyString,
     toBeString: toBeString,
+    toBeHtmlString: toBeHtmlString,
     toBeWhitespace: toBeWhitespace,
     toBeNumber: toBeNumber,
     toBeCalculable: toBeCalculable,

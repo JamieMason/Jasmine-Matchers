@@ -40,8 +40,8 @@ All [Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) does is a
 
 ## Errors
 
-    expect(x).toThrowError();
-    expect(x).toThrowErrorOfType('TypeError');
+    expect(fn).toThrowError();
+    expect(fn).toThrowErrorOfType('TypeError');
 
 ## Numbers
 
@@ -60,6 +60,7 @@ All [Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) does is a
 
     expect(x).toBeNonEmptyString();
     expect(x).toBeString();
+    expect(x).toBeHtmlString();
     expect(x).toBeWhitespace();
 
 ## Usage
