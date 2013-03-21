@@ -42,7 +42,7 @@ beforeEach(function() {
    * @return {Boolean}
    */
   function toBeArrayOfSize(size) {
-    return toBeArray.call(this.actual) && this.actual.length === size;
+    return toBeArray.call(this) && this.actual.length === size;
   }
 
   /* Booleans
