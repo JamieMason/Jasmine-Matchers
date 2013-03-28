@@ -261,6 +261,17 @@ beforeEach(function() {
     return threwErrorOfType;
   }
 
+  /* Other
+    * ==================================================== */
+
+  /**
+   * Assert subject is a Date
+   * @return {Boolean}
+   */
+  function toBeDate() {
+    return this.actual instanceof Date;
+  }
+
   this.addMatchers({
     toBeArray: toBeArray,
     toBeArrayOfSize: toBeArrayOfSize,
@@ -285,6 +296,7 @@ beforeEach(function() {
     toBeObject: toBeObject,
     toImplement: toImplement,
     toThrowError: toThrowError,
-    toThrowErrorOfType: toThrowErrorOfType
+    toThrowErrorOfType: toThrowErrorOfType,
+    toBeDate: toBeDate
   });
 });

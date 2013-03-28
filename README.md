@@ -63,6 +63,10 @@ All [Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) does is a
     expect(x).toBeHtmlString();
     expect(x).toBeWhitespace();
 
+## Other
+
+    expect(x).toBeDate();
+
 ## Usage
 
 Just include a reference to the script after your reference to Jasmine.
