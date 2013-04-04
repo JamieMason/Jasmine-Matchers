@@ -23,6 +23,7 @@ All [Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) does is a
 
     expect(x).toBeArray();
     expect(x).toBeArrayOfSize(number);
+    expect(x).toBeNonEmptyArray();
 
 ## Booleans
 

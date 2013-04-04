@@ -45,6 +45,14 @@ beforeEach(function() {
     return toBeArray.call(this) && this.actual.length === size;
   }
 
+  /**
+   * Assert subject is an Array with at least one member
+   * @return {Boolean}
+   */
+  function toBeNonEmptyArray() {
+    return toBeArray.call(this) && this.actual.length > 0;
+  }
+
   /* Booleans
     * ==================================================== */
 
@@ -275,6 +283,7 @@ beforeEach(function() {
   this.addMatchers({
     toBeArray: toBeArray,
     toBeArrayOfSize: toBeArrayOfSize,
+    toBeNonEmptyArray: toBeNonEmptyArray,
     toBeTrue: toBeTrue,
     toBeFalse: toBeFalse,
     toBeBoolean: toBeBoolean,
