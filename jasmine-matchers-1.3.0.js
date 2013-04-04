@@ -22,7 +22,7 @@ beforeEach(function() {
    * @return {Boolean}
    */
   function isHtmlElementOfType(subject, type) {
-    return subject && this.actual.nodeType === 3;
+    return subject && subject.nodeType === type;
   }
 
   /* Arrays
@@ -221,8 +221,8 @@ beforeEach(function() {
     if(!this.actual || !api) {
       return false;
     }
-    for(var sKey in this.actual) {
-      if(api[sKey] !== this.actual[sKey]) {
+    for(var required in api) {
+      if((required in this.actual) === false) {
         return false;
       }
     }
