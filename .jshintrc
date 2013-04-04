@@ -18,18 +18,25 @@
   "unused": false,
   "wsh": true,
 
-  "predef": [
-    "afterEach",
-    "beforeEach",
-    "define",
-    "describe",
-    "expect",
-    "exports",
-    "it",
-    "jasmine",
-    "require",
-    "runs",
-    "spyOn",
-    "waitsFor"
-  ]
+  "predef": {
+    "afterEach": false,
+    "beforeEach": false,
+    "define": false,
+    "describe": false,
+    "expect": false,
+    "exports": false,
+    "it": false,
+    "jasmine": false,
+    "require": false,
+    "runs": false,
+    "spyOn": false,
+    "waitsFor": false,
+    "files": true,
+    "exclude": true,
+    "autoWatch": true,
+    "reporters": true,
+    "port": true,
+    "JASMINE": true,
+    "JASMINE_ADAPTER": true
+  }
 }
