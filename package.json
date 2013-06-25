@@ -1,0 +1,26 @@
+{
+  "name": "Jasmine-Matchers",
+  "version": "1.5.0",
+  "description": "Additional matchers for the Jasmine BDD testing library",
+  "main": "jasmine-matchers-1.5.0.js",
+  "author": "Jamie Mason (https://github.com/JamieMason)",
+  "license": "MIT",
+  "gitHead": "76aba51fb924e3f3c9b172174a7ee7296a0d950b",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "karma": "~0.8"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/JamieMason/Jasmine-Matchers.git"
+  },
+  "keywords": [
+      "jasmine", "BDD", "TDD", "testing"
+  ],
+  "bugs": {
+    "url": "https://github.com/JamieMason/Jasmine-Matchers/issues"
+  }
+}
