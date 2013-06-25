@@ -46,6 +46,14 @@ beforeEach(function() {
   }
 
   /**
+   * Assert subject is an Array, but with no members
+   * @return {Boolean}
+   */
+  function toBeEmptyArray() {
+    return toBeArrayOfSize.call(this, 0);
+  }
+
+  /**
    * Assert subject is an Array with at least one member
    * @return {Boolean}
    */
@@ -54,7 +62,7 @@ beforeEach(function() {
   }
 
   /* Booleans
-    * ==================================================== */
+   * ==================================================== */
 
   /**
    * Assert subject is not only truthy or falsy, but an actual Boolean
@@ -81,7 +89,7 @@ beforeEach(function() {
   }
 
   /* Browser
-    * ==================================================== */
+   * ==================================================== */
 
   /**
    * Assert subject is the window global
@@ -124,7 +132,7 @@ beforeEach(function() {
   }
 
   /* Strings
-    * ==================================================== */
+   * ==================================================== */
 
   /**
    * Assert subject is a String
@@ -164,8 +172,17 @@ beforeEach(function() {
     return is(this.actual, 'String') && this.actual.search(/\S/) === -1;
   }
 
+  /**
+   * Assert subject is a String which matches the supplied RegExp
+   * @param {RegExp} regex
+   * @return {Boolean}
+   */
+  function toMatchRegExp(regex) {
+    return is(this.actual, 'String') && this.actual.search(regex) !== -1;
+  }
+
   /* Numbers
-    * ==================================================== */
+   * ==================================================== */
 
   /**
    * Assert subject is not only calculable, but an actual Number
@@ -202,7 +219,7 @@ beforeEach(function() {
   }
 
   /* Objects
-    * ==================================================== */
+   * ==================================================== */
 
   /**
    * Assert subject is an Object, and not null
@@ -218,11 +235,11 @@ beforeEach(function() {
    * @return {Boolean}
    */
   function toImplement(api) {
-    if(!this.actual || !api) {
+    if (!this.actual || !api) {
       return false;
     }
-    for(var required in api) {
-      if((required in this.actual) === false) {
+    for (var required in api) {
+      if ((required in this.actual) === false) {
         return false;
       }
     }
@@ -238,7 +255,7 @@ beforeEach(function() {
   }
 
   /* Errors
-    * ==================================================== */
+   * ==================================================== */
 
   /**
    * Asserts subject throws an Error of any type
@@ -248,7 +265,7 @@ beforeEach(function() {
     var threwError = false;
     try {
       this.actual();
-    } catch(e) {
+    } catch (e) {
       threwError = true;
     }
     return threwError;
@@ -263,14 +280,14 @@ beforeEach(function() {
     var threwErrorOfType = false;
     try {
       this.actual();
-    } catch(e) {
+    } catch (e) {
       threwErrorOfType = (e.name === type);
     }
     return threwErrorOfType;
   }
 
   /* Other
-    * ==================================================== */
+   * ==================================================== */
 
   /**
    * Assert subject is a Date
@@ -283,6 +300,7 @@ beforeEach(function() {
   this.addMatchers({
     toBeArray: toBeArray,
     toBeArrayOfSize: toBeArrayOfSize,
+    toBeEmptyArray: toBeEmptyArray,
     toBeNonEmptyArray: toBeNonEmptyArray,
     toBeTrue: toBeTrue,
     toBeFalse: toBeFalse,
@@ -297,6 +315,7 @@ beforeEach(function() {
     toBeString: toBeString,
     toBeHtmlString: toBeHtmlString,
     toBeWhitespace: toBeWhitespace,
+    toMatchRegExp: toMatchRegExp,
     toBeNumber: toBeNumber,
     toBeCalculable: toBeCalculable,
     toBeEvenNumber: toBeEvenNumber,

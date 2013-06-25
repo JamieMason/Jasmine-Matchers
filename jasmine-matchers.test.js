@@ -31,6 +31,17 @@ describe('Jasmine-Matchers', function () {
     });
   });
 
+  describe('toBeEmptyArray', function () {
+    it('asserts value is a true Array with no members', function () {
+      expect([]).toBeEmptyArray();
+      expect([null]).not.toBeEmptyArray();
+      expect(['']).not.toBeEmptyArray();
+      expect([1]).not.toBeEmptyArray();
+      expect([true]).not.toBeEmptyArray();
+      expect([false]).not.toBeEmptyArray();
+    });
+  });
+
   describe('toBeNonEmptyArray', function () {
     it('asserts value is a true Array with at least one member', function () {
       expect([null]).toBeNonEmptyArray();
@@ -141,6 +152,15 @@ describe('Jasmine-Matchers', function () {
       expect('has-no-whitespace').not.toBeWhitespace();
       expect('has whitespace').not.toBeWhitespace();
       expect(null).not.toBeWhitespace();
+    });
+  });
+
+  describe('toMatchRegExp', function () {
+    it('asserts value is a string matching the supplied RegExp', function () {
+      expect('abc').toMatchRegExp(/abc/);
+      expect('abc').not.toMatchRegExp(/ABC/);
+      expect('abc').toMatchRegExp(/ABC/i);
+      expect(123).not.toMatchRegExp(/123/);
     });
   });
 
