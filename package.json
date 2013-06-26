@@ -8,7 +8,9 @@
   "gitHead": "76aba51fb924e3f3c9b172174a7ee7296a0d950b",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "karma": "~0.8"
+    "karma": "~0.8",
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0"
   },
   "scripts": {
     "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
@@ -18,7 +20,10 @@
     "url": "git://github.com/JamieMason/Jasmine-Matchers.git"
   },
   "keywords": [
-      "jasmine", "BDD", "TDD", "testing"
+    "jasmine",
+    "BDD",
+    "TDD",
+    "testing"
   ],
   "bugs": {
     "url": "https://github.com/JamieMason/Jasmine-Matchers/issues"
