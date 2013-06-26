@@ -36,12 +36,18 @@ describe('Arrays', function() {
   });
 
   describe('toBeArrayOfObjects', function () {
-    it('asserts value is an Array which is either empty or contains only Objects', function () {
-      expect([]).toBeArrayOfObjects();
-      expect([{}]).toBeArrayOfObjects();
-      expect([{}, {}]).toBeArrayOfObjects();
-      expect([null]).not.toBeArrayOfObjects();
-      expect([null, {}]).not.toBeArrayOfObjects();
+    describe('when Array is empty', function() {
+      it('returns true since an empty array of Objects is valid', function() {
+        expect([]).toBeArrayOfObjects();
+      });
+    });
+    describe('when Array has items', function() {
+      it('asserts all items are Objects', function () {
+        expect([{}]).toBeArrayOfObjects();
+        expect([{}, {}]).toBeArrayOfObjects();
+        expect([null]).not.toBeArrayOfObjects();
+        expect([null, {}]).not.toBeArrayOfObjects();
+      });
     });
   });
 
