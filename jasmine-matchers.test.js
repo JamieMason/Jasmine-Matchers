@@ -49,6 +49,16 @@ describe('Jasmine-Matchers', function () {
     });
   });
 
+  describe('toBeArrayOfObjects', function () {
+    it('asserts value is an Array which is either empty or contains only Objects', function () {
+      expect([]).toBeArrayOfObjects();
+      expect([{}]).toBeArrayOfObjects();
+      expect([{}, {}]).toBeArrayOfObjects();
+      expect([null]).not.toBeArrayOfObjects();
+      expect([null, {}]).not.toBeArrayOfObjects();
+    });
+  });
+
   describe('toBeTrue', function () {
     it('asserts value is not only truthy, but a boolean true', function () {
       expect(true).toBeTrue();

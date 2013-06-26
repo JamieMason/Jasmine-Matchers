@@ -1,11 +1,40 @@
 /*
- * Copyright © 2012 Jamie Mason, @GotNoSugarBaby, https://github.com/JamieMason
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * Copyright © 2013 Jamie Mason, @GotNoSugarBaby,
+ * https://github.com/JamieMason
+ *
+ * Permission is hereby granted, free of charge, to any person
+ * obtaining a copy of this software and associated documentation files
+ * (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge,
+ * publish, distribute, sublicense, and/or sell copies of the Software,
+ * and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+ * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
  */
 
 beforeEach(function() {
+
+  function all(array, fn) {
+    var i;
+    var len = array.length;
+    for (i = 0; i < len; i++) {
+      if (fn.call(this, array[i], i, array) === false) {
+        return false;
+      }
+    }
+    return true;
+  }
 
   /**
    * Assert subject is of type
@@ -59,6 +88,18 @@ beforeEach(function() {
    */
   function toBeNonEmptyArray() {
     return toBeArray.call(this) && this.actual.length > 0;
+  }
+
+  /**
+   * Assert subject is an Array which is either empty or contains only Objects
+   * @return {Boolean}
+   */
+  function toBeArrayOfObjects() {
+    return toBeArray.call(this) && all.call(this, this.actual, function(member) {
+      return toBeObject.call({
+        actual: member
+      });
+    });
   }
 
   /* Booleans
@@ -302,29 +343,37 @@ beforeEach(function() {
     toBeArrayOfSize: toBeArrayOfSize,
     toBeEmptyArray: toBeEmptyArray,
     toBeNonEmptyArray: toBeNonEmptyArray,
+    toBeArrayOfObjects: toBeArrayOfObjects,
+
     toBeTrue: toBeTrue,
     toBeFalse: toBeFalse,
     toBeBoolean: toBeBoolean,
+
     toBeWindow: toBeWindow,
     toBeDocument: toBeDocument,
     toBeHtmlCommentNode: toBeHtmlCommentNode,
     toBeHtmlNode: toBeHtmlNode,
     toBeHtmlTextNode: toBeHtmlTextNode,
+
     toBeEmptyString: toBeEmptyString,
     toBeNonEmptyString: toBeNonEmptyString,
     toBeString: toBeString,
     toBeHtmlString: toBeHtmlString,
     toBeWhitespace: toBeWhitespace,
     toMatchRegExp: toMatchRegExp,
+
     toBeNumber: toBeNumber,
     toBeCalculable: toBeCalculable,
     toBeEvenNumber: toBeEvenNumber,
     toBeOddNumber: toBeOddNumber,
+
     toBeFunction: toBeFunction,
     toBeObject: toBeObject,
     toImplement: toImplement,
+
     toThrowError: toThrowError,
     toThrowErrorOfType: toThrowErrorOfType,
+
     toBeDate: toBeDate
   });
 });
