@@ -1,7 +1,7 @@
 files = [
   JASMINE,
   JASMINE_ADAPTER,
-  'dist/jasmine-matchers-1.*.0.js',
+  'dist/jasmine-matchers.js',
   'test/*.test.js'
 ];
 

@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   'use strict';
 
   var version = require('./package.json').version;
-  var output = 'dist/jasmine-matchers-' + version + '.js';
+  var output = 'dist/jasmine-matchers.js';
 
   grunt.initConfig({
 
