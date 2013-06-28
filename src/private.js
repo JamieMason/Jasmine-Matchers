@@ -9,6 +9,17 @@
     return true;
   };
 
+  priv.some = function(array, fn) {
+    var i;
+    var len = array.length;
+    for (i = 0; i < len; i++) {
+      if (fn.call(this, array[i], i, array) === true) {
+        return true;
+      }
+    }
+    return false;
+  };
+
   priv.expectAllMembers = function(assertion) {
     return priv.all.call(this, this.actual, function(item) {
       return matchers[assertion].call({

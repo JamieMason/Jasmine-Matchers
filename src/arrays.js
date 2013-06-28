@@ -1,6 +1,12 @@
   // Arrays
   // ---------------------------------------------------------------------------
 
+  priv.createToBeArrayOfXsMatcher = function (toBeX) {
+    return function () {
+      return matchers.toBeArray.call(this) && priv.expectAllMembers.call(this, toBeX);
+    }
+  };
+
   /**
    * Assert subject is an Array (from this document, eg Arrays from iframes
    * or popups won't match)
@@ -39,6 +45,33 @@
    * Assert subject is an Array which is either empty or contains only Objects
    * @return {Boolean}
    */
-  matchers.toBeArrayOfObjects = function () {
-    return matchers.toBeArray.call(this) && priv.expectAllMembers.call(this, 'toBeObject');
+  matchers.toBeArrayOfObjects = priv.createToBeArrayOfXsMatcher('toBeObject');
+
+  /**
+   * Assert subject is an Array which is either empty or contains only Strings
+   * @return {Boolean}
+   */
+  matchers.toBeArrayOfStrings = priv.createToBeArrayOfXsMatcher('toBeString');
+
+  /**
+   * Assert subject is an Array which is either empty or contains only Numbers
+   * @return {Boolean}
+   */
+  matchers.toBeArrayOfNumbers = priv.createToBeArrayOfXsMatcher('toBeNumber');
+
+  /**
+   * Assert subject is an Array which is either empty or contains only Booleans
+   * @return {Boolean}
+   */
+  matchers.toBeArrayOfBooleans = priv.createToBeArrayOfXsMatcher('toBeBoolean');
+
+  /**
+   * Assert subject is an Array which contains the expected member
+   * @param  {Mixed} expectedMember
+   * @return {Boolean}
+   */
+  matchers.toContain = function (expectedMember) {
+    return matchers.toBeArray.call(this) && priv.some(this.actual, function (member) {
+      return member === expectedMember;
+    });
   };

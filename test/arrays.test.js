@@ -51,4 +51,91 @@ describe('Arrays', function() {
     });
   });
 
+  describe('toBeArrayOfStrings', function () {
+    describe('when Array is empty', function() {
+      it('returns true since an empty array of Strings is valid', function() {
+        expect([]).toBeArrayOfStrings();
+      });
+    });
+    describe('when Array has items', function() {
+      it('asserts all items are Strings', function () {
+        expect(['truthy']).toBeArrayOfStrings();
+        expect([new String('truthy')]).toBeArrayOfStrings();
+        expect([new String('')]).toBeArrayOfStrings();
+        expect(['', 'truthy']).toBeArrayOfStrings();
+        expect([null]).not.toBeArrayOfStrings();
+        expect([null, '']).not.toBeArrayOfStrings();
+      });
+    });
+  });
+
+  describe('toBeArrayOfNumbers', function () {
+    describe('when Array is empty', function() {
+      it('returns true since an empty array of Numbers is valid', function() {
+        expect([]).toBeArrayOfNumbers();
+      });
+    });
+    describe('when Array has items', function() {
+      it('asserts all items are Numbers', function () {
+        expect([1]).toBeArrayOfNumbers();
+        expect([new Number(1)]).toBeArrayOfNumbers();
+        expect([new Number(0)]).toBeArrayOfNumbers();
+        expect([0, 1]).toBeArrayOfNumbers();
+        expect([null]).not.toBeArrayOfNumbers();
+        expect([null, 0]).not.toBeArrayOfNumbers();
+      });
+    });
+  });
+
+  describe('toBeArrayOfBooleans', function () {
+    describe('when Array is empty', function() {
+      it('returns true since an empty array of Booleans is valid', function() {
+        expect([]).toBeArrayOfBooleans();
+      });
+    });
+    describe('when Array has items', function() {
+      it('asserts all items are Booleans', function () {
+        expect([true]).toBeArrayOfBooleans();
+        expect([new Boolean(true)]).toBeArrayOfBooleans();
+        expect([new Boolean(false)]).toBeArrayOfBooleans();
+        expect([false, true]).toBeArrayOfBooleans();
+        expect([null]).not.toBeArrayOfBooleans();
+        expect([null, false]).not.toBeArrayOfBooleans();
+      });
+    });
+  });
+
+  describe('toContain', function () {
+    describe('when Array is empty', function() {
+      it('returns false since no members can be present', function() {
+        expect([]).toBeArrayOfBooleans();
+      });
+    });
+    describe('when Array contains primitives', function() {
+      it('asserts the supplied item is a member of the Array', function () {
+        expect([true]).toContain(true);
+        expect([false]).toContain(false);
+        expect([true]).not.toContain(false);
+        expect([false, true]).toContain(true);
+        expect([true, false]).toContain(false);
+        expect(['']).toContain('');
+        expect([0]).toContain(0);
+      });
+    });
+    describe('when Array contains Objects', function() {
+      it('asserts the supplied instance is a member of the Array', function () {
+        var a = {};
+        var b = {};
+        expect([a]).toContain(a);
+        expect([b]).toContain(b);
+        expect([a]).not.toContain(b);
+        expect([b]).not.toContain(a);
+        expect([{}]).not.toContain(b);
+        expect([{}]).not.toContain(a);
+        expect([1]).not.toContain(b);
+        expect([1]).not.toContain(a);
+      });
+    });
+  });
+
 });

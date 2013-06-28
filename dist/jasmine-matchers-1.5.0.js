@@ -39,6 +39,17 @@ beforeEach(function() {
     return true;
   };
 
+  priv.some = function(array, fn) {
+    var i;
+    var len = array.length;
+    for (i = 0; i < len; i++) {
+      if (fn.call(this, array[i], i, array) === true) {
+        return true;
+      }
+    }
+    return false;
+  };
+
   priv.expectAllMembers = function(assertion) {
     return priv.all.call(this, this.actual, function(item) {
       return matchers[assertion].call({
@@ -67,6 +78,12 @@ beforeEach(function() {
 
   // Arrays
   // ---------------------------------------------------------------------------
+
+  priv.createToBeArrayOfXsMatcher = function (toBeX) {
+    return function () {
+      return matchers.toBeArray.call(this) && priv.expectAllMembers.call(this, toBeX);
+    }
+  };
 
   /**
    * Assert subject is an Array (from this document, eg Arrays from iframes
@@ -106,8 +123,35 @@ beforeEach(function() {
    * Assert subject is an Array which is either empty or contains only Objects
    * @return {Boolean}
    */
-  matchers.toBeArrayOfObjects = function () {
-    return matchers.toBeArray.call(this) && priv.expectAllMembers.call(this, 'toBeObject');
+  matchers.toBeArrayOfObjects = priv.createToBeArrayOfXsMatcher('toBeObject');
+
+  /**
+   * Assert subject is an Array which is either empty or contains only Strings
+   * @return {Boolean}
+   */
+  matchers.toBeArrayOfStrings = priv.createToBeArrayOfXsMatcher('toBeString');
+
+  /**
+   * Assert subject is an Array which is either empty or contains only Numbers
+   * @return {Boolean}
+   */
+  matchers.toBeArrayOfNumbers = priv.createToBeArrayOfXsMatcher('toBeNumber');
+
+  /**
+   * Assert subject is an Array which is either empty or contains only Booleans
+   * @return {Boolean}
+   */
+  matchers.toBeArrayOfBooleans = priv.createToBeArrayOfXsMatcher('toBeBoolean');
+
+  /**
+   * Assert subject is an Array which contains the expected member
+   * @param  {Mixed} expectedMember
+   * @return {Boolean}
+   */
+  matchers.toContain = function (expectedMember) {
+    return matchers.toBeArray.call(this) && priv.some(this.actual, function (member) {
+      return member === expectedMember;
+    });
   };
 
   // Booleans
@@ -126,7 +170,7 @@ beforeEach(function() {
    * @return {Boolean}
    */
   matchers.toBeTrue = function() {
-    return this.actual === true;
+    return this.actual === true || this.actual instanceof Boolean && this.actual.valueOf() === true;
   };
 
   /**
@@ -134,7 +178,7 @@ beforeEach(function() {
    * @return {Boolean}
    */
   matchers.toBeFalse = function() {
-    return this.actual === false;
+    return this.actual === false || this.actual instanceof Boolean && this.actual.valueOf() === false;
   };
 
   // Browser
