@@ -50,4 +50,39 @@ describe('Strings', function() {
     });
   });
 
+  describe('toStartWith', function() {
+    describe('when subject is empty', function() {
+      it('correctly handles undefined or empty strings', function() {
+        expect('').not.toStartWith('');
+        expect(void(0)).not.toStartWith('');
+        expect(void(0)).not.toStartWith('undefined');
+        expect('undefined').not.toStartWith(void(0));
+      });
+    });
+    describe('when subject is not empty', function() {
+      it('asserts the leading characters of the subject match the expected string', function() {
+        expect('jamie').toStartWith('jam');
+        expect(' jamie').not.toStartWith('jam');
+        expect('Jamie').not.toStartWith('jam');
+      });
+    });
+  });
+
+  describe('toEndWith', function() {
+    describe('when subject is empty', function() {
+      it('correctly handles undefined or empty strings', function() {
+        expect('').not.toEndWith('');
+        expect(void(0)).not.toEndWith('');
+        expect(void(0)).not.toEndWith('undefined');
+        expect('undefined').not.toEndWith(void(0));
+      });
+    });
+    describe('when subject is not empty', function() {
+      it('asserts the leading characters of the subject match the expected string', function() {
+        expect('jamie').toEndWith('mie');
+        expect('jamie ').not.toEndWith('mie');
+        expect('jamiE').not.toEndWith('mie');
+      });
+    });
+  });
 });

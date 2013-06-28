@@ -47,3 +47,27 @@
   matchers.toMatchRegExp = function(regex) {
     return priv.is(this.actual, 'String') && this.actual.search(regex) !== -1;
   };
+
+  /**
+   * Assert subject is a String whose first characters match our expected string
+   * @param  {String} expected
+   * @return {Boolean}
+   */
+  matchers.toStartWith = function (expected) {
+    if (!matchers.toBeNonEmptyString.call(this) || !matchers.toBeNonEmptyString.call({ actual: expected })) {
+      return false;
+    }
+    return this.actual.slice(0, expected.length) === expected;
+  };
+
+  /**
+   * Assert subject is a String whose last characters match our expected string
+   * @param  {String} expected
+   * @return {Boolean}
+   */
+  matchers.toEndWith = function (expected) {
+    if (!matchers.toBeNonEmptyString.call(this) || !matchers.toBeNonEmptyString.call({ actual: expected })) {
+      return false;
+    }
+    return this.actual.slice(this.actual.length - expected.length, this.actual.length) === expected;
+  };
