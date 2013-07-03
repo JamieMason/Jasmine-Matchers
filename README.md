@@ -4,18 +4,19 @@
 
 The [Jasmine testing framework](http://pivotal.github.com/jasmine/) from [Pivotal Labs](http://pivotallabs.com/) comes with this [default set of matchers](https://github.com/pivotal/jasmine/wiki/Matchers);
 
-    expect(function(){fn();}).toThrow(e);
-    expect(x).toBe(y);
-    expect(x).toBeDefined();
-    expect(x).toBeFalsy();
-    expect(x).toBeGreaterThan(y);
-    expect(x).toBeLessThan(y);
-    expect(x).toBeNull();
-    expect(x).toBeTruthy();
-    expect(x).toBeUndefined();
-    expect(x).toContain(y);
-    expect(x).toEqual(y);
-    expect(x).toMatch(pattern);
+    expect(fn).toThrow(e);
+    expect(instance).toBe(instance);
+    expect(mixed).toBeDefined();
+    expect(mixed).toBeFalsy();
+    expect(number).toBeGreaterThan(number);
+    expect(number).toBeLessThan(number);
+    expect(mixed).toBeNull();
+    expect(mixed).toBeTruthy();
+    expect(mixed).toBeUndefined();
+    expect(array).toContain(member);
+    expect(string).toContain(substring);
+    expect(mixed).toEqual(mixed);
+    expect(mixed).toMatch(pattern);
 
 All [Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) does is add a few more;
 
@@ -29,7 +30,6 @@ All [Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) does is a
     expect(array).toBeArrayOfStrings()
     expect(array).toBeArrayOfNumbers()
     expect(array).toBeArrayOfBooleans()
-    expect(array).toContain(mixed)
 
 ## Booleans
 
@@ -66,12 +66,10 @@ All [Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) does is a
 ## Strings
 
     expect(string).toBeString()
-    expect(string).toContain(substring)
     expect(string).toBeEmptyString()
     expect(string).toBeNonEmptyString()
     expect(string).toBeHtmlString()
     expect(string).toBeWhitespace()
-    expect(string).toMatchRegExp(/regx/)
     expect(string).toStartWith(substring)
     expect(string).toEndWith(substring)
     expect(string).toBeLongerThan(string)
