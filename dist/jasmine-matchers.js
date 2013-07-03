@@ -368,7 +368,7 @@ beforeEach(function() {
    * @return {Boolean}
    */
   matchers.toBeHtmlString = function() {
-    return matchers.toBeString.call(this) && this.actual.search(/<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)/) !== -1;
+    return matchers.toMatchRegExp.call(this, /<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)/);
   };
 
   /**
@@ -376,7 +376,7 @@ beforeEach(function() {
    * @return {Boolean}
    */
   matchers.toBeWhitespace = function() {
-    return priv.is(this.actual, 'String') && this.actual.search(/\S/) === -1;
+    return matchers.toBeString.call(this) && this.actual.search(/\S/) === -1;
   };
 
   /**
@@ -385,7 +385,7 @@ beforeEach(function() {
    * @return {Boolean}
    */
   matchers.toMatchRegExp = function(regex) {
-    return priv.is(this.actual, 'String') && this.actual.search(regex) !== -1;
+    return matchers.toBeString.call(this) && this.actual.search(regex) !== -1;
   };
 
   /**
@@ -411,6 +411,40 @@ beforeEach(function() {
     }
     return this.actual.slice(this.actual.length - expected.length, this.actual.length) === expected;
   };
+
+  /**
+   * Assert subject is a String whose length is greater than our other string
+   * @param  {String} other
+   * @return {Boolean}
+   */
+  matchers.toBeLongerThan = function (other) {
+    return matchers.toBeString.call(this) && matchers.toBeString.call({
+      actual: other
+    }) && this.actual.length > other.length;
+  };
+
+  /**
+   * Assert subject is a String whose length is less than our other string
+   * @param  {String} other
+   * @return {Boolean}
+   */
+  matchers.toBeShorterThan = function (other) {
+    return matchers.toBeString.call(this) && matchers.toBeString.call({
+      actual: other
+    }) && this.actual.length < other.length;
+  };
+
+  /**
+   * Assert subject is a String whose length is equal to our other string
+   * @param  {String} other
+   * @return {Boolean}
+   */
+  matchers.toBeSameLengthAs = function (other) {
+    return matchers.toBeString.call(this) && matchers.toBeString.call({
+      actual: other
+    }) && this.actual.length === other.length;
+  };
+
 
   this.addMatchers(matchers);
 

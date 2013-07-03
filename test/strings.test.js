@@ -85,4 +85,62 @@ describe('Strings', function() {
       });
     });
   });
+
+  describe('toBeLongerThan', function() {
+    describe('when the subject or comparison are not strings', function() {
+      it('reports a failure since we are asserting the relative lengths of two strings', function() {
+        expect('truthy').not.toBeLongerThan(void(0));
+        expect(void(0)).not.toBeLongerThan('truthy');
+        expect('').not.toBeLongerThan(void(0));
+        expect(void(0)).not.toBeLongerThan('');
+      });
+    });
+    describe('when the subject or comparison are both strings', function() {
+      it('asserts the subject is longer than the comparision string', function() {
+        expect('ab').not.toBeLongerThan('abc');
+        expect('abc').toBeLongerThan('ab');
+        expect('a').toBeLongerThan('');
+        expect('').not.toBeLongerThan('a');
+      });
+    });
+  });
+
+  describe('toBeShorterThan', function() {
+    describe('when the subject or comparison are not strings', function() {
+      it('reports a failure since we are asserting the relative lengths of two strings', function() {
+        expect('truthy').not.toBeShorterThan(void(0));
+        expect(void(0)).not.toBeShorterThan('truthy');
+        expect('').not.toBeShorterThan(void(0));
+        expect(void(0)).not.toBeShorterThan('');
+      });
+    });
+    describe('when the subject or comparison are both strings', function() {
+      it('asserts the subject is shorter than the comparision string', function() {
+        expect('ab').toBeShorterThan('abc');
+        expect('abc').not.toBeShorterThan('ab');
+        expect('a').not.toBeShorterThan('');
+        expect('').toBeShorterThan('a');
+      });
+    });
+  });
+
+  describe('toBeSameLengthAs', function() {
+    describe('when the subject or comparison are not strings', function() {
+      it('reports a failure since we are asserting the relative lengths of two strings', function() {
+        expect('truthy').not.toBeSameLengthAs(void(0));
+        expect(void(0)).not.toBeSameLengthAs('truthy');
+        expect('').not.toBeSameLengthAs(void(0));
+        expect(void(0)).not.toBeSameLengthAs('');
+      });
+    });
+    describe('when the subject or comparison are both strings', function() {
+      it('asserts the subject is the same length as the comparision string', function() {
+        expect('ab').toBeSameLengthAs('ab');
+        expect('abc').not.toBeSameLengthAs('ab');
+        expect('a').not.toBeSameLengthAs('');
+        expect('').not.toBeSameLengthAs('a');
+      });
+    });
+  });
+
 });
