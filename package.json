@@ -1,7 +1,7 @@
 {
   "name": "Jasmine-Matchers",
-  "version": "1.16.1",
-  "description": "Additional matchers for the Jasmine BDD testing library",
+  "version": "1.16.3",
+  "description": "35+ additional matchers for the Jasmine BDD JavaScript test library",
   "main": "jasmine-matchers.js",
   "author": "Jamie Mason (https://github.com/JamieMason)",
   "license": "MIT",
