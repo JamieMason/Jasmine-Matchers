@@ -143,17 +143,6 @@ beforeEach(function() {
    */
   matchers.toBeArrayOfBooleans = priv.createToBeArrayOfXsMatcher('toBeBoolean');
 
-  /**
-   * Assert subject is an Array which contains the expected member
-   * @param  {Mixed} expectedMember
-   * @return {Boolean}
-   */
-  matchers.toContain = function (expectedMember) {
-    return matchers.toBeArray.call(this) && priv.some(this.actual, function (member) {
-      return member === expectedMember;
-    });
-  };
-
   // Booleans
   // ---------------------------------------------------------------------------
 

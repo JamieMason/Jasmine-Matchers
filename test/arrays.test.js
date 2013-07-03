@@ -105,37 +105,4 @@ describe('Arrays', function() {
     });
   });
 
-  describe('toContain', function () {
-    describe('when Array is empty', function() {
-      it('returns false since no members can be present', function() {
-        expect([]).toBeArrayOfBooleans();
-      });
-    });
-    describe('when Array contains primitives', function() {
-      it('asserts the supplied item is a member of the Array', function () {
-        expect([true]).toContain(true);
-        expect([false]).toContain(false);
-        expect([true]).not.toContain(false);
-        expect([false, true]).toContain(true);
-        expect([true, false]).toContain(false);
-        expect(['']).toContain('');
-        expect([0]).toContain(0);
-      });
-    });
-    describe('when Array contains Objects', function() {
-      it('asserts the supplied instance is a member of the Array', function () {
-        var a = {};
-        var b = {};
-        expect([a]).toContain(a);
-        expect([b]).toContain(b);
-        expect([a]).not.toContain(b);
-        expect([b]).not.toContain(a);
-        expect([{}]).not.toContain(b);
-        expect([{}]).not.toContain(a);
-        expect([1]).not.toContain(b);
-        expect([1]).not.toContain(a);
-      });
-    });
-  });
-
 });
