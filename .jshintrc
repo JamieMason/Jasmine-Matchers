@@ -37,6 +37,8 @@
     "reporters": true,
     "port": true,
     "JASMINE": true,
-    "JASMINE_ADAPTER": true
+    "JASMINE_ADAPTER": true,
+    "matchers": true,
+    "priv": true
   }
 }

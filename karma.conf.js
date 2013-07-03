@@ -1,8 +1,8 @@
 files = [
   JASMINE,
   JASMINE_ADAPTER,
-  'jasmine-matchers-1.*.0.js',
-  'jasmine-matchers.test.js'
+  'dist/jasmine-matchers.js',
+  'test/*.test.js'
 ];
 
 exclude = [
