@@ -28,7 +28,7 @@
    * @return {Boolean}
    */
   matchers.toBeHtmlString = function() {
-    return matchers.toMatchRegExp.call(this, /<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)/);
+    return matchers.toMatch.call(this, /<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)/);
   };
 
   /**
@@ -37,15 +37,6 @@
    */
   matchers.toBeWhitespace = function() {
     return matchers.toBeString.call(this) && this.actual.search(/\S/) === -1;
-  };
-
-  /**
-   * Assert subject is a String which matches the supplied RegExp
-   * @param {RegExp} regex
-   * @return {Boolean}
-   */
-  matchers.toMatchRegExp = function(regex) {
-    return matchers.toBeString.call(this) && this.actual.search(regex) !== -1;
   };
 
   /**

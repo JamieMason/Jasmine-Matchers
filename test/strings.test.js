@@ -41,15 +41,6 @@ describe('Strings', function() {
     });
   });
 
-  describe('toMatchRegExp', function () {
-    it('asserts value is a string matching the supplied RegExp', function () {
-      expect('abc').toMatchRegExp(/abc/);
-      expect('abc').not.toMatchRegExp(/ABC/);
-      expect('abc').toMatchRegExp(/ABC/i);
-      expect(123).not.toMatchRegExp(/123/);
-    });
-  });
-
   describe('toStartWith', function() {
     describe('when subject is empty', function() {
       it('correctly handles undefined or empty strings', function() {
