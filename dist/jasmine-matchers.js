@@ -357,7 +357,7 @@ beforeEach(function() {
    * @return {Boolean}
    */
   matchers.toBeHtmlString = function() {
-    return matchers.toMatch.call(this, /<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)/);
+    return matchers.toBeString.call(this) && this.actual.search(/<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)/) !== -1;
   };
 
   /**
