@@ -1,5 +1,5 @@
 {
-  "name": "Jasmine-Matchers",
+  "name": "jasmine-matchers",
   "version": "1.16.3",
   "description": "35+ additional matchers for the Jasmine BDD JavaScript test library",
   "main": "jasmine-matchers.js",
