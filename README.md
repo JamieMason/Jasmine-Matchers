@@ -21,52 +21,66 @@ All [Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) does is a
 
 ## Arrays
 
-    expect(x).toBeArray();
-    expect(x).toBeArrayOfSize(number);
-    expect(x).toBeNonEmptyArray();
+    expect(array).toBeArray()
+    expect(array).toBeArrayOfSize(int)
+    expect(array).toBeEmptyArray()
+    expect(array).toBeNonEmptyArray()
+    expect(array).toBeArrayOfObjects()
+    expect(array).toBeArrayOfStrings()
+    expect(array).toBeArrayOfNumbers()
+    expect(array).toBeArrayOfBooleans()
+    expect(array).toContain(mixed)
 
 ## Booleans
 
-    expect(x).toBeTrue();
-    expect(x).toBeFalse();
-    expect(x).toBeBoolean();
+    expect(boolean).toBeBoolean()
+    expect(boolean).toBeTrue()
+    expect(boolean).toBeFalse()
 
 ## Browser
 
-    expect(x).toBeWindow();
-    expect(x).toBeDocument();
-    expect(x).toBeHtmlCommentNode();
-    expect(x).toBeHtmlNode();
-    expect(x).toBeHtmlTextNode();
+    expect(object).toBeWindow()
+    expect(object).toBeDocument()
+    expect(object).toBeHtmlNode()
+    expect(object).toBeHtmlTextNode()
+    expect(object).toBeHtmlCommentNode()
 
-## Errors
+## Exceptions
 
-    expect(fn).toThrowError();
-    expect(fn).toThrowErrorOfType('TypeError');
+    expect(fn).toThrowError()
+    expect(fn).toThrowErrorOfType('TypeError')
 
 ## Numbers
 
-    expect(x).toBeNumber();
-    expect(x).toBeCalculable();
-    expect(x).toBeEvenNumber();
-    expect(x).toBeOddNumber();
+    expect(number).toBeNumber()
+    expect(number).toBeEvenNumber()
+    expect(number).toBeOddNumber()
+    expect(mixed).toBeCalculable()
 
 ## Objects
 
-    expect(x).toBeFunction();
-    expect(x).toBeObject();
-    expect(object).toImplement(api);
+    expect(object).toBeObject()
+    expect(object).toImplement()
+    expect(function).toBeFunction()
 
 ## Strings
 
-    expect(x).toBeNonEmptyString();
-    expect(x).toBeString();
-    expect(x).toBeHtmlString();
-    expect(x).toBeWhitespace();
+    expect(string).toBeString()
+    expect(string).toContain(substring)
+    expect(string).toBeEmptyString()
+    expect(string).toBeNonEmptyString()
+    expect(string).toBeHtmlString()
+    expect(string).toBeWhitespace()
+    expect(string).toMatchRegExp(/regx/)
+    expect(string).toStartWith(substring)
+    expect(string).toEndWith(substring)
+    expect(string).toBeLongerThan(string)
+    expect(string).toBeShorterThan(string)
+    expect(string).toBeSameLengthAs(string)
 
-## Other
+## Dates
 
-    expect(x).toBeDate();
+    expect(date).toBeDate()
 
 ## Usage
 
@@ -74,10 +88,25 @@ Just include a reference to the script after your reference to Jasmine.
 
 ## License
 
-> Copyright © 2012 Jamie Mason, @GotNoSugarBaby, https://github.com/JamieMason
->
-> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
->
-> The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
->
-> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+> Copyright © 2013 Jamie Mason, @GotNoSugarBaby,
+> https://github.com/JamieMason
+
+> Permission is hereby granted, free of charge, to any person
+> obtaining a copy of this software and associated documentation files
+> (the "Software"), to deal in the Software without restriction,
+> including without limitation the rights to use, copy, modify, merge,
+> publish, distribute, sublicense, and/or sell copies of the Software,
+> and to permit persons to whom the Software is furnished to do so,
+> subject to the following conditions:
+
+> The above copyright notice and this permission notice shall be
+> included in all copies or substantial portions of the Software.
+
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+> EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+> MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+> NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+> BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+> ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+> CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+> SOFTWARE.
