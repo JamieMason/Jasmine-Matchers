@@ -1,6 +1,6 @@
 {
   "name": "jasmine-expect",
-  "version": "1.16.4",
+  "version": "1.17.0",
   "description": "35+ additional matchers for the Jasmine BDD JavaScript test library",
   "main": "jasmine-matchers.js",
   "author": "Jamie Mason (https://github.com/JamieMason)",
