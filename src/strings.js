@@ -32,6 +32,21 @@
   };
 
   /**
+   * Assert subject is string containing parseable JSON
+   * @return {Boolean}
+   */
+  matchers.toBeJsonString = function() {
+    var isParseable;
+    var json;
+    try {
+      json = JSON.parse(this.actual);
+    } catch (e) {
+      isParseable = false;
+    }
+    return isParseable !== false && json !== null;
+  };
+
+  /**
    * Assert subject is a String containing nothing but whitespace
    * @return {Boolean}
    */

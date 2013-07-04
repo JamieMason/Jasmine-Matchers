@@ -71,6 +71,7 @@ All [Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) does is a
     expect(string).toBeEmptyString()
     expect(string).toBeNonEmptyString()
     expect(string).toBeHtmlString()
+    expect(string).toBeJsonString()
     expect(string).toBeWhitespace()
     expect(string).toStartWith(substring)
     expect(string).toEndWith(substring)

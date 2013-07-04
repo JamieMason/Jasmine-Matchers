@@ -31,6 +31,19 @@ describe('Strings', function() {
     });
   });
 
+  describe('toBeJsonString', function () {
+    it('asserts value is a string of parseable JSON', function () {
+      expect('{}').toBeJsonString();
+      expect('[]').toBeJsonString();
+      expect('[1]').toBeJsonString();
+      expect('[1,]').not.toBeJsonString();
+      expect('<>').not.toBeJsonString();
+      expect(null).not.toBeJsonString();
+      expect('').not.toBeJsonString();
+      expect(void(0)).not.toBeJsonString();
+    });
+  });
+
   describe('toBeWhitespace', function () {
     it('asserts value is a string containing only tabs, spaces, returns etc', function () {
       expect(' ').toBeWhitespace();
