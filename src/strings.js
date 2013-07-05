@@ -28,7 +28,22 @@
    * @return {Boolean}
    */
   matchers.toBeHtmlString = function() {
-    return matchers.toMatch.call(this, /<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)/);
+    return matchers.toBeString.call(this) && this.actual.search(/<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)/) !== -1;
+  };
+
+  /**
+   * Assert subject is string containing parseable JSON
+   * @return {Boolean}
+   */
+  matchers.toBeJsonString = function() {
+    var isParseable;
+    var json;
+    try {
+      json = JSON.parse(this.actual);
+    } catch (e) {
+      isParseable = false;
+    }
+    return isParseable !== false && json !== null;
   };
 
   /**
