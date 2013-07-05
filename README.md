@@ -1,5 +1,7 @@
 # Jasmine-Matchers
 
+    npm install jasmine-expect --save-dev
+
 > If you have some useful matchers of your own, please add them via [Pull Request](https://github.com/JamieMason/Jasmine-Matchers/pull/new/master).
 
 The [Jasmine testing framework](http://pivotal.github.com/jasmine/) from [Pivotal Labs](http://pivotallabs.com/) comes with this [default set of matchers](https://github.com/pivotal/jasmine/wiki/Matchers);
@@ -69,6 +71,7 @@ All [Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) does is a
     expect(string).toBeEmptyString()
     expect(string).toBeNonEmptyString()
     expect(string).toBeHtmlString()
+    expect(string).toBeJsonString()
     expect(string).toBeWhitespace()
     expect(string).toStartWith(substring)
     expect(string).toEndWith(substring)
