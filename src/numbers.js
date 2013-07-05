@@ -34,3 +34,21 @@
   matchers.toBeCalculable = function() {
     return !isNaN(this.actual * 2);
   };
+
+  /**
+   * Assert value is >= floor or <= ceiling
+   * @param {Number} floor
+   * @param {Number} ceiling
+   * @return {Boolean}
+   */
+  matchers.toBeWithinRange = function(floor, ceiling) {
+    return matchers.toBeNumber.call(this) && this.actual >= floor && this.actual <= ceiling;
+  };
+
+  /**
+   * Assert value is a number with no decimal places
+   * @return {Boolean}
+   */
+  matchers.toBeWholeNumber = function() {
+    return matchers.toBeNumber.call(this) && (this.actual === 0 || this.actual % 1 === 0);
+  };

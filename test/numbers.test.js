@@ -38,4 +38,28 @@ describe('Numbers', function() {
     });
   });
 
+  describe('toBeWithinRange', function () {
+    it('asserts value is a number >= floor or <= ceiling', function () {
+      expect(-3).not.toBeWithinRange(0, 2);
+      expect(-2).not.toBeWithinRange(0, 2);
+      expect(-1).not.toBeWithinRange(0, 2);
+      expect(0).toBeWithinRange(0, 2);
+      expect(1).toBeWithinRange(0, 2);
+      expect(2).toBeWithinRange(0, 2);
+      expect(3).not.toBeWithinRange(0, 2);
+      expect(NaN).not.toBeWithinRange(0, 2);
+    });
+  });
+
+  describe('toBeWholeNumber', function () {
+    it('asserts value is a number with no positive decimal places', function () {
+      expect(1).toBeWholeNumber();
+      expect(0).toBeWholeNumber();
+      expect(0.0).toBeWholeNumber();
+      expect(NaN).not.toBeWholeNumber();
+      expect(1.1).not.toBeWholeNumber();
+      expect(0.1).not.toBeWholeNumber();
+    });
+  });
+
 });
