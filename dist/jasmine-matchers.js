@@ -290,6 +290,24 @@ beforeEach(function() {
     return !isNaN(this.actual * 2);
   };
 
+  /**
+   * Assert value is >= floor or <= ceiling
+   * @param {Number} floor
+   * @param {Number} ceiling
+   * @return {Boolean}
+   */
+  matchers.toBeWithinRange = function(floor, ceiling) {
+    return matchers.toBeNumber.call(this) && this.actual >= floor && this.actual <= ceiling;
+  };
+
+  /**
+   * Assert value is a number with no decimal places
+   * @return {Boolean}
+   */
+  matchers.toBeWholeNumber = function() {
+    return matchers.toBeNumber.call(this) && (this.actual === 0 || this.actual % 1 === 0);
+  };
+
   // Objects
   // ---------------------------------------------------------------------------
 
@@ -357,7 +375,22 @@ beforeEach(function() {
    * @return {Boolean}
    */
   matchers.toBeHtmlString = function() {
-    return matchers.toMatch.call(this, /<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)/);
+    return matchers.toBeString.call(this) && this.actual.search(/<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)/) !== -1;
+  };
+
+  /**
+   * Assert subject is string containing parseable JSON
+   * @return {Boolean}
+   */
+  matchers.toBeJsonString = function() {
+    var isParseable;
+    var json;
+    try {
+      json = JSON.parse(this.actual);
+    } catch (e) {
+      isParseable = false;
+    }
+    return isParseable !== false && json !== null;
   };
 
   /**
