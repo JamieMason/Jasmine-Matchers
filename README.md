@@ -82,10 +82,13 @@ All [Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) does is a
 ## Dates
 
     expect(date).toBeDate()
+    expect(date).toBeBefore(date)
+    expect(date).toBeAfter(date)
+    expect(string).toBeIso8601()
 
 ## Usage
 
-Just include a reference to the script after your reference to Jasmine.
+Just include a reference to dist/jasmine-matchers.js after your reference to Jasmine.
 
 ## License
 
