@@ -24,71 +24,81 @@ All [Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) does is a
 
 ## Arrays
 
-    expect(array).toBeArray()
-    expect(array).toBeArrayOfSize(int)
-    expect(array).toBeEmptyArray()
-    expect(array).toBeNonEmptyArray()
-    expect(array).toBeArrayOfObjects()
-    expect(array).toBeArrayOfStrings()
-    expect(array).toBeArrayOfNumbers()
-    expect(array).toBeArrayOfBooleans()
+    expect(array).toBeArray();
+    expect(array).toBeArrayOfBooleans();
+    expect(array).toBeArrayOfNumbers();
+    expect(array).toBeArrayOfObjects();
+    expect(array).toBeArrayOfSize(size);
+    expect(array).toBeArrayOfStrings();
+    expect(array).toBeEmptyArray();
+    expect(array).toBeNonEmptyArray();
 
 ## Booleans
 
-    expect(boolean).toBeBoolean()
-    expect(boolean).toBeTrue()
-    expect(boolean).toBeFalse()
+    expect(boolean).toBeBoolean();
+    expect(boolean).toBeFalse();
+    expect(boolean).toBeTrue();
 
 ## Browser
 
-    expect(object).toBeWindow()
-    expect(object).toBeDocument()
-    expect(object).toBeHtmlNode()
-    expect(object).toBeHtmlTextNode()
-    expect(object).toBeHtmlCommentNode()
+    expect(element).toBeHtmlCommentNode();
+    expect(element).toBeHtmlNode();
+    expect(element).toBeHtmlTextNode();
+    expect(object).toBeDocument();
+    expect(object).toBeWindow();
 
 ## Exceptions
 
-    expect(fn).toThrowError()
-    expect(fn).toThrowErrorOfType('TypeError')
+    expect(fn).toThrowError();
+    expect(fn).toThrowErrorOfType(string);
 
 ## Numbers
 
-    expect(number).toBeNumber()
-    expect(number).toBeEvenNumber()
-    expect(number).toBeOddNumber()
-    expect(mixed).toBeCalculable()
+    expect(number).toBeEvenNumber();
+    expect(number).toBeNumber();
+    expect(number).toBeOddNumber();
+    expect(number).toBeWholeNumber();
+    expect(number).toBeWithinRange(floor, ceiling);
+    expect(numberOrString).toBeCalculable();
 
 ## Objects
 
-    expect(object).toBeObject()
-    expect(object).toImplement()
-    expect(function).toBeFunction()
+    expect(object).toBeFunction();
+    expect(object).toBeObject();
+    expect(object).toHaveArray(memberName);
+    expect(object).toHaveArrayOfBooleans(memberName);
+    expect(object).toHaveArrayOfNumbers(memberName);
+    expect(object).toHaveArrayOfObjects(memberName);
+    expect(object).toHaveArrayOfSize(memberName, size);
+    expect(object).toHaveArrayOfStrings(memberName);
+    expect(object).toHaveEmptyArray(memberName);
+    expect(object).toHaveNonEmptyArray(memberName);
+    expect(object).toImplement(api);
 
 ## Strings
 
-    expect(string).toBeString()
-    expect(string).toBeEmptyString()
-    expect(string).toBeNonEmptyString()
-    expect(string).toBeHtmlString()
-    expect(string).toBeJsonString()
-    expect(string).toBeWhitespace()
-    expect(string).toStartWith(substring)
-    expect(string).toEndWith(substring)
-    expect(string).toBeLongerThan(string)
-    expect(string).toBeShorterThan(string)
-    expect(string).toBeSameLengthAs(string)
+    expect(string).toBeEmptyString();
+    expect(string).toBeHtmlString();
+    expect(string).toBeJsonString();
+    expect(string).toBeLongerThan(other);
+    expect(string).toBeNonEmptyString();
+    expect(string).toBeSameLengthAs(other);
+    expect(string).toBeShorterThan(other);
+    expect(string).toBeString();
+    expect(string).toBeWhitespace();
+    expect(string).toEndWith(expected);
+    expect(string).toStartWith(expected);
 
 ## Dates
 
-    expect(date).toBeDate()
-    expect(date).toBeBefore(date)
-    expect(date).toBeAfter(date)
-    expect(string).toBeIso8601()
+    expect(date).toBeAfter(date);
+    expect(date).toBeBefore(date);
+    expect(date).toBeDate();
+    expect(string).toBeIso8601();
 
 ## Usage
 
-Just include a reference to dist/jasmine-matchers.js after your reference to Jasmine.
+Just include a reference to dist/jasmine-matchers.js after your reference to Jasmine, or use `require('jasmine-expect')`.
 
 ## License
 
