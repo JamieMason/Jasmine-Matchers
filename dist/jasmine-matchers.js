@@ -72,6 +72,7 @@ beforeEach(function() {
    * @param  {String} type
    * @return {Boolean}
    */
+
   priv.is = function(subject, type) {
     return Object.prototype.toString.call(subject) === '[object ' + type + ']';
   };
@@ -80,6 +81,7 @@ beforeEach(function() {
    * Assert subject is an HTML Element with the given node type
    * @return {Boolean}
    */
+
   priv.isHtmlElementOfType = function(subject, type) {
     return subject && subject.nodeType === type;
   };
@@ -89,6 +91,7 @@ beforeEach(function() {
    * @param  {Mixed[]} list
    * @return {Array}
    */
+
   priv.toArray = function (list) {
     return [].slice.call(list);
   };

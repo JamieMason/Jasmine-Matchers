@@ -1,16 +1,30 @@
-files = [
-  JASMINE,
-  JASMINE_ADAPTER,
-  'dist/jasmine-matchers.js',
-  'test/*.test.js'
-];
+/*global process:true */
 
-exclude = [
-  'karma.conf.js'
-];
+module.exports = function(config) {
 
-autoWatch = true;
+  'use strict';
 
-reporters = ['progress'];
+  config.set({
 
-port = 7357;
+    frameworks: ['jasmine'],
+
+    files: [
+      'dist/jasmine-matchers.js',
+      'test/*.test.js'
+    ],
+
+    preprocessors: {
+      '**/dist/*.js': ['coverage']
+    },
+
+    autoWatch: true,
+
+    reporters: ['progress', 'coverage'],
+
+    coverageReporter: {
+      type: 'html',
+      dir: 'build/coverage/'
+    }
+
+  });
+};
