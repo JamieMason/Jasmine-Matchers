@@ -5,6 +5,9 @@ describe('Members', function() {
       expect({ foo: [] }).toHaveArray('foo');
       expect({ foo: '' }).not.toHaveArray('foo');
       expect(null).not.toHaveArray('foo');
+      expect({ a: [] }).not.toHaveArray('b');
+      expect({ a: null }).not.toHaveArray('b');
+      expect({ a: {} }).not.toHaveArray('b');
     });
   });
 

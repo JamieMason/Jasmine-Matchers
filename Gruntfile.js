@@ -23,7 +23,15 @@ module.exports = function(grunt) {
           src: [
             'src/wrapper/head.txt',
             'src/private.js',
-            'src/*.js',
+            'src/arrays.js',
+            'src/booleans.js',
+            'src/browser.js',
+            'src/dates.js',
+            'src/errors.js',
+            'src/numbers.js',
+            'src/objects.js',
+            'src/strings.js',
+            'src/members.js',
             'src/wrapper/add-matchers-adapter.js',
             'src/wrapper/foot.txt'
           ],

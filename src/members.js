@@ -59,10 +59,10 @@
    */
 
   /**
+   * @inner
    * @param  {String} matcherName
    * @return {Function}
    */
-
   function assertMember(matcherName) {
     return function() {
       var args = priv.toArray(arguments);
@@ -73,15 +73,35 @@
     };
   }
 
-  priv.each([
-    'Array',
-    'ArrayOfSize',
-    'EmptyArray',
-    'NonEmptyArray',
-    'ArrayOfObjects',
-    'ArrayOfStrings',
-    'ArrayOfNumbers',
-    'ArrayOfBooleans'
-  ], function(matcherName) {
-    matchers['toHave' + matcherName] = assertMember('toBe' + matcherName);
+  var memberMatchers = [];
+
+  // Generate expect(object).toHave* matchers from existing .toBe* methods.
+  priv.each(matchers, function(el, ix) {
+    if (ix.search(/^toBe/) !== -1) {
+      memberMatchers.push({
+        name: ix.replace(/^toBe/, 'toHave'),
+        matcher: assertMember(ix)
+      });
+    }
   });
+
+  // Apply expect(object).toHave* matchers from existing .toBe* methods.
+  priv.each(memberMatchers, function(el) {
+    matchers[el.name] = el.matcher;
+  });
+
+  /**
+   * Assert subject is an Object containing a function at memberName.
+   * @param {Boolean} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveMethod = assertMember('toBeFunction');
+
+  /**
+   * Assert subject is an Object containing a member at memberName of any value.
+   * @param {Boolean} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveMember = function(memberName) {
+    return memberName && matchers.toBeObject.call(this) && memberName in this.actual;
+  };

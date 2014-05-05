@@ -1,10 +1,10 @@
   // Arrays
   // ---------------------------------------------------------------------------
 
-  priv.createToBeArrayOfXsMatcher = function (toBeX) {
-    return function () {
+  priv.createToBeArrayOfXsMatcher = function(toBeX) {
+    return function() {
       return matchers.toBeArray.call(this) && priv.expectAllMembers.call(this, toBeX);
-    }
+    };
   };
 
   /**
@@ -12,7 +12,7 @@
    * or popups won't match)
    * @return {Boolean}
    */
-  matchers.toBeArray = function () {
+  matchers.toBeArray = function() {
     return this.actual instanceof Array;
   };
 
@@ -21,7 +21,7 @@
    * @param  {Number} size
    * @return {Boolean}
    */
-  matchers.toBeArrayOfSize = function (size) {
+  matchers.toBeArrayOfSize = function(size) {
     return matchers.toBeArray.call(this) && this.actual.length === size;
   };
 
@@ -29,7 +29,7 @@
    * Assert subject is an Array, but with no members
    * @return {Boolean}
    */
-  matchers.toBeEmptyArray = function () {
+  matchers.toBeEmptyArray = function() {
     return matchers.toBeArrayOfSize.call(this, 0);
   };
 
@@ -37,7 +37,7 @@
    * Assert subject is an Array with at least one member
    * @return {Boolean}
    */
-  matchers.toBeNonEmptyArray = function () {
+  matchers.toBeNonEmptyArray = function() {
     return matchers.toBeArray.call(this) && this.actual.length > 0;
   };
 

@@ -114,10 +114,10 @@ beforeEach(function() {
   // Arrays
   // ---------------------------------------------------------------------------
 
-  priv.createToBeArrayOfXsMatcher = function (toBeX) {
-    return function () {
+  priv.createToBeArrayOfXsMatcher = function(toBeX) {
+    return function() {
       return matchers.toBeArray.call(this) && priv.expectAllMembers.call(this, toBeX);
-    }
+    };
   };
 
   /**
@@ -125,7 +125,7 @@ beforeEach(function() {
    * or popups won't match)
    * @return {Boolean}
    */
-  matchers.toBeArray = function () {
+  matchers.toBeArray = function() {
     return this.actual instanceof Array;
   };
 
@@ -134,7 +134,7 @@ beforeEach(function() {
    * @param  {Number} size
    * @return {Boolean}
    */
-  matchers.toBeArrayOfSize = function (size) {
+  matchers.toBeArrayOfSize = function(size) {
     return matchers.toBeArray.call(this) && this.actual.length === size;
   };
 
@@ -142,7 +142,7 @@ beforeEach(function() {
    * Assert subject is an Array, but with no members
    * @return {Boolean}
    */
-  matchers.toBeEmptyArray = function () {
+  matchers.toBeEmptyArray = function() {
     return matchers.toBeArrayOfSize.call(this, 0);
   };
 
@@ -150,7 +150,7 @@ beforeEach(function() {
    * Assert subject is an Array with at least one member
    * @return {Boolean}
    */
-  matchers.toBeNonEmptyArray = function () {
+  matchers.toBeNonEmptyArray = function() {
     return matchers.toBeArray.call(this) && this.actual.length > 0;
   };
 
@@ -316,94 +316,6 @@ beforeEach(function() {
     }
     return threwErrorOfType;
   };
-
-  // Members
-  // ---------------------------------------------------------------------------
-
-  /**
-   * Assert subject is an Object containing an Array at memberName
-   * @name toHaveArray
-   * @param {String} memberName
-   * @return {Boolean}
-   */
-
-  /**
-   * Assert subject is an Object containing an Array of size at memberName
-   * @name toHaveArrayOfSize
-   * @param {String} memberName
-   * @param {Number} size
-   * @return {Boolean}
-   */
-
-  /**
-   * Assert subject is an Object containing an Array at memberName with no members
-   * @name toHaveEmptyArray
-   * @param {String} memberName
-   * @return {Boolean}
-   */
-
-  /**
-   * Assert subject is an Object containing an Array at memberName with at least one member
-   * @name toHaveNonEmptyArray
-   * @param {String} memberName
-   * @return {Boolean}
-   */
-
-  /**
-   * Assert subject is an Object containing an Array at memberName where no member is not an Object
-   * @name toHaveArrayOfObjects
-   * @param {String} memberName
-   * @return {Boolean}
-   */
-
-  /**
-   * Assert subject is an Object containing an Array at memberName where no member is not a String
-   * @name toHaveArrayOfStrings
-   * @param {String} memberName
-   * @return {Boolean}
-   */
-
-  /**
-   * Assert subject is an Object containing an Array at memberName where no member is not a Number
-   * @name toHaveArrayOfNumbers
-   * @param {Number} memberName
-   * @return {Boolean}
-   */
-
-  /**
-   * Assert subject is an Object containing an Array at memberName where no member is not a Boolean
-   * @name toHaveArrayOfBooleans
-   * @param {Boolean} memberName
-   * @return {Boolean}
-   */
-
-  /**
-   * @param  {String} matcherName
-   * @return {Function}
-   */
-
-  function assertMember(matcherName) {
-    return function() {
-      var args = priv.toArray(arguments);
-      var memberName = args.shift();
-      return matchers.toBeObject.call(this) && matchers[matcherName].apply({
-        actual: this.actual[memberName]
-      }, args);
-    };
-  }
-
-  priv.each([
-    'Array',
-    'ArrayOfSize',
-    'EmptyArray',
-    'NonEmptyArray',
-    'ArrayOfObjects',
-    'ArrayOfStrings',
-    'ArrayOfNumbers',
-    'ArrayOfBooleans'
-  ], function(matcherName) {
-    matchers['toHave' + matcherName] = assertMember('toBe' + matcherName);
-  });
 
   // Numbers
   // ---------------------------------------------------------------------------
@@ -643,6 +555,114 @@ beforeEach(function() {
     return matchers.toBeString.call(this) && matchers.toBeString.call({
       actual: other
     }) && this.actual.length === other.length;
+  };
+
+  // Members
+  // ---------------------------------------------------------------------------
+
+  /**
+   * Assert subject is an Object containing an Array at memberName
+   * @name toHaveArray
+   * @param {String} memberName
+   * @return {Boolean}
+   */
+
+  /**
+   * Assert subject is an Object containing an Array of size at memberName
+   * @name toHaveArrayOfSize
+   * @param {String} memberName
+   * @param {Number} size
+   * @return {Boolean}
+   */
+
+  /**
+   * Assert subject is an Object containing an Array at memberName with no members
+   * @name toHaveEmptyArray
+   * @param {String} memberName
+   * @return {Boolean}
+   */
+
+  /**
+   * Assert subject is an Object containing an Array at memberName with at least one member
+   * @name toHaveNonEmptyArray
+   * @param {String} memberName
+   * @return {Boolean}
+   */
+
+  /**
+   * Assert subject is an Object containing an Array at memberName where no member is not an Object
+   * @name toHaveArrayOfObjects
+   * @param {String} memberName
+   * @return {Boolean}
+   */
+
+  /**
+   * Assert subject is an Object containing an Array at memberName where no member is not a String
+   * @name toHaveArrayOfStrings
+   * @param {String} memberName
+   * @return {Boolean}
+   */
+
+  /**
+   * Assert subject is an Object containing an Array at memberName where no member is not a Number
+   * @name toHaveArrayOfNumbers
+   * @param {Number} memberName
+   * @return {Boolean}
+   */
+
+  /**
+   * Assert subject is an Object containing an Array at memberName where no member is not a Boolean
+   * @name toHaveArrayOfBooleans
+   * @param {Boolean} memberName
+   * @return {Boolean}
+   */
+
+  /**
+   * @inner
+   * @param  {String} matcherName
+   * @return {Function}
+   */
+  function assertMember(matcherName) {
+    return function() {
+      var args = priv.toArray(arguments);
+      var memberName = args.shift();
+      return matchers.toBeObject.call(this) && matchers[matcherName].apply({
+        actual: this.actual[memberName]
+      }, args);
+    };
+  }
+
+  var memberMatchers = [];
+
+  // Generate expect(object).toHave* matchers from existing .toBe* methods.
+  priv.each(matchers, function(el, ix) {
+    if (ix.search(/^toBe/) !== -1) {
+      memberMatchers.push({
+        name: ix.replace(/^toBe/, 'toHave'),
+        matcher: assertMember(ix)
+      });
+    }
+  });
+
+  // Apply expect(object).toHave* matchers from existing .toBe* methods.
+  priv.each(memberMatchers, function(el) {
+    matchers[el.name] = el.matcher;
+  });
+
+  /**
+   * Assert subject is an Object containing a function at memberName.
+   * @param {Boolean} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveMethod = assertMember('toBeFunction');
+
+  /**
+   * Assert subject is an Object containing a member at memberName of any value.
+   * @param {Boolean} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveMember = function(memberName) {
+    return memberName && matchers.toBeObject.call(this) && memberName in this.actual;
   };
 
   // Create adapters for the original matchers so they can be compatible with Jasmine 2.0.
