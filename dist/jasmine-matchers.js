@@ -518,7 +518,11 @@ beforeEach(function() {
    * @return {Boolean}
    */
   matchers.toBeHtmlString = function() {
-    return matchers.toBeString.call(this) && this.actual.search(/<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)/) !== -1;
+    var container = document.createElement('div');
+    container.innerHTML = this.actual;
+    return matchers.toBeString.call(this) && priv.some(container.childNodes, function(node) {
+      return node.nodeType !== 3;
+    });
   };
 
   /**
@@ -549,8 +553,10 @@ beforeEach(function() {
    * @param  {String} expected
    * @return {Boolean}
    */
-  matchers.toStartWith = function (expected) {
-    if (!matchers.toBeNonEmptyString.call(this) || !matchers.toBeNonEmptyString.call({ actual: expected })) {
+  matchers.toStartWith = function(expected) {
+    if (!matchers.toBeNonEmptyString.call(this) || !matchers.toBeNonEmptyString.call({
+      actual: expected
+    })) {
       return false;
     }
     return this.actual.slice(0, expected.length) === expected;
@@ -561,8 +567,10 @@ beforeEach(function() {
    * @param  {String} expected
    * @return {Boolean}
    */
-  matchers.toEndWith = function (expected) {
-    if (!matchers.toBeNonEmptyString.call(this) || !matchers.toBeNonEmptyString.call({ actual: expected })) {
+  matchers.toEndWith = function(expected) {
+    if (!matchers.toBeNonEmptyString.call(this) || !matchers.toBeNonEmptyString.call({
+      actual: expected
+    })) {
       return false;
     }
     return this.actual.slice(this.actual.length - expected.length, this.actual.length) === expected;
@@ -573,7 +581,7 @@ beforeEach(function() {
    * @param  {String} other
    * @return {Boolean}
    */
-  matchers.toBeLongerThan = function (other) {
+  matchers.toBeLongerThan = function(other) {
     return matchers.toBeString.call(this) && matchers.toBeString.call({
       actual: other
     }) && this.actual.length > other.length;
@@ -584,7 +592,7 @@ beforeEach(function() {
    * @param  {String} other
    * @return {Boolean}
    */
-  matchers.toBeShorterThan = function (other) {
+  matchers.toBeShorterThan = function(other) {
     return matchers.toBeString.call(this) && matchers.toBeString.call({
       actual: other
     }) && this.actual.length < other.length;
@@ -595,14 +603,13 @@ beforeEach(function() {
    * @param  {String} other
    * @return {Boolean}
    */
-  matchers.toBeSameLengthAs = function (other) {
+  matchers.toBeSameLengthAs = function(other) {
     return matchers.toBeString.call(this) && matchers.toBeString.call({
       actual: other
     }) && this.actual.length === other.length;
   };
 
-
-  // Create adapters for the original matchers so they can be compatible with Jasmine 2.0.
+  this.addMatchers(matchers);
 
   var isJasmineV1 = typeof this.addMatchers === 'function';
   var isJasmineV2 = typeof jasmine.addMatchers === 'function';
