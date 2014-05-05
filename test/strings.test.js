@@ -26,6 +26,7 @@ describe('Strings', function() {
   describe('toBeHtmlString', function () {
     it('asserts value is a string of HTML markup', function () {
       expect('<element>text</element>').toBeHtmlString();
+      expect('<a data-ng-href="//foo.com" data-ng-click="bar($event)">baz</a>').toBeHtmlString();
       expect('div').not.toBeHtmlString();
       expect(null).not.toBeHtmlString();
     });
