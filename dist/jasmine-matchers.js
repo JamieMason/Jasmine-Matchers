@@ -609,7 +609,7 @@ beforeEach(function() {
     }) && this.actual.length === other.length;
   };
 
-  this.addMatchers(matchers);
+  // Create adapters for the original matchers so they can be compatible with Jasmine 2.0.
 
   var isJasmineV1 = typeof this.addMatchers === 'function';
   var isJasmineV2 = typeof jasmine.addMatchers === 'function';
