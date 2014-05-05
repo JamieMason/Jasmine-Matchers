@@ -1,104 +1,185 @@
 # Jasmine-Matchers
 
-    npm install jasmine-expect --save-dev
+Extends the [default set of matchers](https://github.com/pivotal/jasmine/wiki/Matchers) for the
+[Jasmine testing framework](http://pivotal.github.com/jasmine/) because we want tests which;
 
-> If you have some useful matchers of your own, please add them via [Pull Request](https://github.com/JamieMason/Jasmine-Matchers/pull/new/master).
+* Are easy to read.
+* Are explicit about what we're trying to do.
+* Are free of _how_ what we're trying to do is done.
+* Produce messages and errors which are clear and simple.
 
-The [Jasmine testing framework](http://pivotal.github.com/jasmine/) from [Pivotal Labs](http://pivotallabs.com/) comes with this [default set of matchers](https://github.com/pivotal/jasmine/wiki/Matchers);
+What this means in practice is that you can replace expectations like these;
 
-    expect(fn).toThrow(e);
-    expect(instance).toBe(instance);
-    expect(mixed).toBeDefined();
-    expect(mixed).toBeFalsy();
-    expect(number).toBeGreaterThan(number);
-    expect(number).toBeLessThan(number);
-    expect(mixed).toBeNull();
-    expect(mixed).toBeTruthy();
-    expect(mixed).toBeUndefined();
-    expect(array).toContain(member);
-    expect(string).toContain(substring);
-    expect(mixed).toEqual(mixed);
-    expect(mixed).toMatch(pattern);
+```javascript
+expect(typeof person.getName).toEqual('function');
+// >> Expected 'object' to equal 'function'.
+expect(person.name.length > 0).toEqual(true);
+// >> Expected false to equal true.
+expect(person.surname.length === brother.surname.length).toEqual(true);
+// >> Expected false to equal true.
+expect(person.age % 2 === 0).toEqual(true);
+// >> Expected false to equal true.
+```
 
-All [Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) does is add a few more;
+With expectations like these;
 
-## Arrays
+```javascript
+expect(person.getName).toBeFunction();
+// >> Expected null to be function.
+expect(person.name).toBeNonEmptyString();
+// >> Expected '' to be non empty string.
+expect(person.surname).toBeSameLengthAs(brother.surname);
+// >> Expected '' to be same length as 'x'.
+expect(person.age).toBeEvenNumber();
+// >> Expected 5 to be even number.
+```
 
-    expect(array).toBeArray();
-    expect(array).toBeArrayOfBooleans();
-    expect(array).toBeArrayOfNumbers();
-    expect(array).toBeArrayOfObjects();
-    expect(array).toBeArrayOfSize(size);
-    expect(array).toBeArrayOfStrings();
-    expect(array).toBeEmptyArray();
-    expect(array).toBeNonEmptyArray();
+## Contents
 
-## Booleans
+* [Installation](#installation)
+  * [NPM](#npm)
+  * [Bower](#bower)
+* [Usage](#usage)
+  * [Browser](#browser)
+  * [Node.js](#nodejs)
+  * [Karma](#karma)
+* [Available Matchers](#available-matchers)
+  * [Arrays](#arrays)
+  * [Booleans](#booleans)
+  * [Browser](#browser)
+  * [Exceptions](#exceptions)
+  * [Numbers](#numbers)
+  * [Objects](#objects)
+  * [Strings](#strings)
+  * [Dates](#dates)
+* [License](#license)
 
-    expect(boolean).toBeBoolean();
-    expect(boolean).toBeFalse();
-    expect(boolean).toBeTrue();
+## Installation
 
-## Browser
+### NPM
 
-    expect(element).toBeHtmlCommentNode();
-    expect(element).toBeHtmlNode();
-    expect(element).toBeHtmlTextNode();
-    expect(object).toBeDocument();
-    expect(object).toBeWindow();
+```bash
+npm install jasmine-expect --save-dev
+```
 
-## Exceptions
+### Bower
 
-    expect(fn).toThrowError();
-    expect(fn).toThrowErrorOfType(string);
-
-## Numbers
-
-    expect(number).toBeEvenNumber();
-    expect(number).toBeNumber();
-    expect(number).toBeOddNumber();
-    expect(number).toBeWholeNumber();
-    expect(number).toBeWithinRange(floor, ceiling);
-    expect(numberOrString).toBeCalculable();
-
-## Objects
-
-    expect(object).toBeFunction();
-    expect(object).toBeObject();
-    expect(object).toHaveArray(memberName);
-    expect(object).toHaveArrayOfBooleans(memberName);
-    expect(object).toHaveArrayOfNumbers(memberName);
-    expect(object).toHaveArrayOfObjects(memberName);
-    expect(object).toHaveArrayOfSize(memberName, size);
-    expect(object).toHaveArrayOfStrings(memberName);
-    expect(object).toHaveEmptyArray(memberName);
-    expect(object).toHaveNonEmptyArray(memberName);
-    expect(object).toImplement(api);
-
-## Strings
-
-    expect(string).toBeEmptyString();
-    expect(string).toBeHtmlString();
-    expect(string).toBeJsonString();
-    expect(string).toBeLongerThan(other);
-    expect(string).toBeNonEmptyString();
-    expect(string).toBeSameLengthAs(other);
-    expect(string).toBeShorterThan(other);
-    expect(string).toBeString();
-    expect(string).toBeWhitespace();
-    expect(string).toEndWith(expected);
-    expect(string).toStartWith(expected);
-
-## Dates
-
-    expect(date).toBeAfter(date);
-    expect(date).toBeBefore(date);
-    expect(date).toBeDate();
-    expect(string).toBeIso8601();
+```bash
+bower install jasmine-expect --save-dev
+```
 
 ## Usage
 
-Just include a reference to dist/jasmine-matchers.js after your reference to Jasmine, or use `require('jasmine-expect')`.
+### Browser
+
+Embed [dist/jasmine-matchers.js](https://github.com/JamieMason/Jasmine-Matchers/blob/master/dist/jasmine-matchers.js)
+after the Jasmine framework and before any of your tests.
+
+```html
+<script src="path/to/jasmine.js"></script>
+<script src="path/to/jasmine-matchers.js"></script>
+```
+
+### Node.js
+
+Call `require('jasmine-expect')` after the Jasmine framework and before any of your tests.
+
+### Karma
+
+Include `"path/to/jasmine-matchers.js"` as the first value in
+[Karma's `files` array configuration](http://karma-runner.github.io/0.10/config/files.html).
+
+## Available Matchers
+
+### Arrays
+
+```javascript
+expect(array).toBeArray();
+expect(array).toBeArrayOfBooleans();
+expect(array).toBeArrayOfNumbers();
+expect(array).toBeArrayOfObjects();
+expect(array).toBeArrayOfSize(size);
+expect(array).toBeArrayOfStrings();
+expect(array).toBeEmptyArray();
+expect(array).toBeNonEmptyArray();
+```
+
+### Booleans
+
+```javascript
+expect(boolean).toBeBoolean();
+expect(boolean).toBeFalse();
+expect(boolean).toBeTrue();
+```
+
+### Browser
+
+```javascript
+expect(element).toBeHtmlCommentNode();
+expect(element).toBeHtmlNode();
+expect(element).toBeHtmlTextNode();
+expect(object).toBeDocument();
+expect(object).toBeWindow();
+```
+
+### Exceptions
+
+```javascript
+expect(fn).toThrowError();
+expect(fn).toThrowErrorOfType(string);
+```
+
+### Numbers
+
+```javascript
+expect(number).toBeEvenNumber();
+expect(number).toBeNumber();
+expect(number).toBeOddNumber();
+expect(number).toBeWholeNumber();
+expect(number).toBeWithinRange(floor, ceiling);
+expect(numberOrString).toBeCalculable();
+```
+
+### Objects
+
+```javascript
+expect(object).toBeFunction();
+expect(object).toBeObject();
+expect(object).toHaveArray(memberName);
+expect(object).toHaveArrayOfBooleans(memberName);
+expect(object).toHaveArrayOfNumbers(memberName);
+expect(object).toHaveArrayOfObjects(memberName);
+expect(object).toHaveArrayOfSize(memberName, size);
+expect(object).toHaveArrayOfStrings(memberName);
+expect(object).toHaveEmptyArray(memberName);
+expect(object).toHaveNonEmptyArray(memberName);
+expect(object).toImplement(api);
+```
+
+### Strings
+
+```javascript
+expect(string).toBeEmptyString();
+expect(string).toBeHtmlString();
+expect(string).toBeJsonString();
+expect(string).toBeLongerThan(other);
+expect(string).toBeNonEmptyString();
+expect(string).toBeSameLengthAs(other);
+expect(string).toBeShorterThan(other);
+expect(string).toBeString();
+expect(string).toBeWhitespace();
+expect(string).toEndWith(expected);
+expect(string).toStartWith(expected);
+```
+
+### Dates
+
+```javascript
+expect(date).toBeAfter(date);
+expect(date).toBeBefore(date);
+expect(date).toBeDate();
+expect(string).toBeIso8601();
+```
 
 ## License
 
