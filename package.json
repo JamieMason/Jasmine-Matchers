@@ -14,10 +14,6 @@
     "TDD",
     "testing"
   ],
-  "peerDependencies": {
-    "karma": "~0.10.2",
-    "grunt": "~0.4.1"
-  },
   "devDependencies": {
     "karma-chrome-launcher": "~0.1.3",
     "karma-coverage": "~0.2.1",
@@ -26,10 +22,11 @@
     "karma-phantomjs-launcher": "~0.1.4",
     "karma-script-launcher": "~0.1.0",
     "grunt-contrib-concat": "~0.4.0",
-    "grunt-contrib-watch": "~0.6.1"
+    "grunt-contrib-watch": "~0.6.1",
+    "karma": "~0.12.14"
   },
   "scripts": {
-    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
+    "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS"
   },
   "repository": {
     "type": "git",
