@@ -7,9 +7,18 @@
       }
     } else {
       for (i in array) {
-        fn.call(this, array[i], i, array);
+        if (array.hasOwnProperty(i)) {
+          fn.call(this, array[i], i, array);
+        }
       }
     }
+  };
+
+  priv.reduce = function(array, fn, memo) {
+    priv.each.call(this, array, function(el, ix, list) {
+      memo = fn(memo, el, ix, list);
+    });
+    return memo;
   };
 
   priv.all = function(array, fn) {
@@ -68,6 +77,6 @@
    * @return {Array}
    */
 
-  priv.toArray = function (list) {
+  priv.toArray = function(list) {
     return [].slice.call(list);
   };

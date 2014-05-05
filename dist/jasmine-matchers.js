@@ -37,9 +37,18 @@ beforeEach(function() {
       }
     } else {
       for (i in array) {
-        fn.call(this, array[i], i, array);
+        if (array.hasOwnProperty(i)) {
+          fn.call(this, array[i], i, array);
+        }
       }
     }
+  };
+
+  priv.reduce = function(array, fn, memo) {
+    priv.each.call(this, array, function(el, ix, list) {
+      memo = fn(memo, el, ix, list);
+    });
+    return memo;
   };
 
   priv.all = function(array, fn) {
@@ -98,7 +107,7 @@ beforeEach(function() {
    * @return {Array}
    */
 
-  priv.toArray = function (list) {
+  priv.toArray = function(list) {
     return [].slice.call(list);
   };
 
@@ -460,6 +469,33 @@ beforeEach(function() {
    */
   matchers.toBeObject = function() {
     return this.actual instanceof Object;
+  };
+
+  /**
+   * Report how many instance members the given Object has.
+   * @param  {Object} object
+   * @return {Number}
+   */
+  priv.countMembers = function(object) {
+    return priv.reduce(object, function(memo, el, ix) {
+      return memo + 1;
+    }, 0);
+  };
+
+  /**
+   * Assert subject is an Object with no instance members.
+   * @return {Boolean}
+   */
+  matchers.toBeEmptyObject = function() {
+    return matchers.toBeObject.call(this) && priv.countMembers(this.actual) === 0;
+  };
+
+  /**
+   * Assert subject is an Object with at least one instance member.
+   * @return {Boolean}
+   */
+  matchers.toBeNonEmptyObject = function() {
+    return matchers.toBeObject.call(this) && priv.countMembers(this.actual) > 0;
   };
 
   /**

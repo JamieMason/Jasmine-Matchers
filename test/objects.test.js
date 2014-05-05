@@ -9,6 +9,28 @@ describe('Objects', function() {
     });
   });
 
+  describe('toBeEmptyObject', function () {
+    it('asserts value is an Object with no instance members', function () {
+      function Foo(){}
+      Foo.prototype = { b: 2 };
+      expect({ a: 1 }).not.toBeEmptyObject();
+      expect(new Foo()).toBeEmptyObject();
+      expect({}).toBeEmptyObject();
+      expect(null).not.toBeNonEmptyObject();
+    });
+  });
+
+  describe('toBeNonEmptyObject', function () {
+    it('asserts value is an Object with at least one instance member', function () {
+      function Foo(){}
+      Foo.prototype = { b: 2 };
+      expect({ a: 1 }).toBeNonEmptyObject();
+      expect(new Foo()).not.toBeNonEmptyObject();
+      expect({}).not.toBeNonEmptyObject();
+      expect(null).not.toBeNonEmptyObject();
+    });
+  });
+
   describe('toImplement', function () {
     it('asserts value is an Object containing all of the supplied members', function () {
       expect({ a: 1, b: 2 }).toImplement({ a: 1, b: 2 });
