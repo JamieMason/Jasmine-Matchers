@@ -1,8 +1,14 @@
   priv.each = function(array, fn) {
     var i;
     var len = array.length;
-    for (i = 0; i < len; i++) {
-      fn.call(this, array[i], i, array);
+    if ('length' in array) {
+      for (i = 0; i < len; i++) {
+        fn.call(this, array[i], i, array);
+      }
+    } else {
+      for (i in array) {
+        fn.call(this, array[i], i, array);
+      }
     }
   };
 
