@@ -6,7 +6,7 @@
    * @return {Boolean}
    */
   matchers.toBeObject = function() {
-    return this.actual instanceof Object;
+    return this.actual instanceof Object || (typeof this.actual === 'object');
   };
 
   /**
