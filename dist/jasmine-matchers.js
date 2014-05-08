@@ -646,6 +646,9 @@ beforeEach(function() {
 
   // Apply expect(object).toHave* matchers from existing .toBe* methods.
   priv.each(memberMatchers, function(el) {
+    if (el.name.search(/toHave(Before|After)/) !== -1) {
+      el.name = el.name.replace('toHave', 'toHaveDate');
+    }
     matchers[el.name] = el.matcher;
   });
 
