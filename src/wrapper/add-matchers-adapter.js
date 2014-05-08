@@ -7,18 +7,32 @@
   if (isJasmineV1) {
     this.addMatchers(matchers);
   } else if (isJasmineV2) {
-    priv.each(matchers, function(fn, name) {
-      v2Matchers[name] = function() {
+    priv.each(matchers, function(fn, matcherName) {
+      v2Matchers[matcherName] = function(util) {
         return {
-          compare: function(actual, expected) {
-            var args = priv.toArray(arguments);
-            var scope = {
+          compare: function(actual /*, expected, ...*/ ) {
+
+            var message;
+            var memberName;
+            var args = priv.toArray(arguments).slice(1);
+            var pass = matchers[matcherName].apply({
               actual: actual
-            };
-            args.shift();
+            }, args);
+
+            if (matcherName.search(/^toHave/) !== -1) {
+              memberName = args.shift();
+              message = util.buildFailureMessage.apply(null, [matcherName, pass, actual].concat(args));
+              message = message.replace('Expected', 'Expected member "' + memberName + '" of');
+              message = message.replace(' to have ', ' to be ');
+            } else {
+              message = util.buildFailureMessage.apply(null, [matcherName, pass, actual].concat(args));
+            }
+
             return {
-              pass: matchers[name].apply(scope, args)
+              pass: pass,
+              message: message
             };
+
           }
         };
       };

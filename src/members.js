@@ -76,11 +76,11 @@
   var memberMatchers = [];
 
   // Generate expect(object).toHave* matchers from existing .toBe* methods.
-  priv.each(matchers, function(el, ix) {
-    if (ix.search(/^toBe/) !== -1) {
+  priv.each(matchers, function(el, matcherName) {
+    if (matcherName.search(/^toBe/) !== -1) {
       memberMatchers.push({
-        name: ix.replace(/^toBe/, 'toHave'),
-        matcher: assertMember(ix)
+        name: matcherName.replace(/^toBe/, 'toHave'),
+        matcher: assertMember(matcherName)
       });
     }
   });
