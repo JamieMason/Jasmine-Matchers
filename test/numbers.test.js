@@ -62,4 +62,28 @@ describe('Numbers', function() {
     });
   });
 
+	describe('toBeGreaterOrEqualThan', function () {
+		it('asserts value is greater or equal than a given number', function () {
+			expect(2).toBeGreaterOrEqualThan(1);
+			expect(1).toBeGreaterOrEqualThan(-1);
+			expect(-1).toBeGreaterOrEqualThan(-2);
+			expect(-2).toBeGreaterOrEqualThan(-2);
+			expect(NaN).not.toBeGreaterOrEqualThan(0);
+			expect(1).not.toBeGreaterOrEqualThan(2);
+			expect(-1).not.toBeGreaterOrEqualThan(0);
+		});
+	});
+
+	describe('toBeLessOrEqualThan', function () {
+		it('asserts value is less or equal than a given number', function () {
+			expect(1).toBeLessOrEqualThan(2);
+			expect(-1).toBeLessOrEqualThan(1);
+			expect(-2).toBeLessOrEqualThan(-1);
+			expect(-2).toBeLessOrEqualThan(-2);
+			expect(NaN).not.toBeLessOrEqualThan(0);
+			expect(2).not.toBeLessOrEqualThan(1);
+			expect(0).not.toBeLessOrEqualThan(-1);
+		});
+	});
+
 });
