@@ -53,18 +53,18 @@
     return matchers.toBeNumber.call(this) && (this.actual === 0 || this.actual % 1 === 0);
   };
 
-	/**
-	 * Assert value is greater or equal than given number
-	 * @return {Boolean}
-	 * */
-	matchers.toBeGreaterOrEqualThan = function(number) {
-		return matchers.toBeNumber.call(this) && this.actual >= number;
-	};
+  /**
+   * Assert value is greater or equal than given number
+   * @return {Boolean}
+   * */
+  matchers.toBeGreaterOrEqualThan = function(number) {
+    return matchers.toBeNumber.call(this) && this.actual >= number;
+  };
 
-	/**
-	 * Assert value is less or equal than given number
-	 * @return {Boolean}
-	 * */
-	matchers.toBeLessOrEqualThan = function(number) {
-		return matchers.toBeNumber.call(this) && this.actual <= number;
-	};
+  /**
+   * Assert value is less or equal than given number
+   * @return {Boolean}
+   * */
+  matchers.toBeLessOrEqualThan = function(number) {
+    return matchers.toBeNumber.call(this) && this.actual <= number;
+  };
