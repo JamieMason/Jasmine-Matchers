@@ -1,15 +1,15 @@
 describe('Arrays', function() {
 
-  describe('toBeArray', function () {
-    it('asserts value is a true Array', function () {
+  describe('toBeArray', function() {
+    it('should assert value is a true Array', function() {
       expect([]).toBeArray();
       expect(new Array()).toBeArray();
       expect({}).not.toBeArray();
     });
   });
 
-  describe('toBeArrayOfSize', function () {
-    it('asserts value is a true Array with a required number of members', function () {
+  describe('toBeArrayOfSize', function() {
+    it('should assert value is a true Array with a required number of members', function() {
       expect([]).toBeArrayOfSize(0);
       expect([null]).toBeArrayOfSize(1);
       expect([]).not.toBeArrayOfSize(1);
@@ -17,8 +17,8 @@ describe('Arrays', function() {
     });
   });
 
-  describe('toBeEmptyArray', function () {
-    it('asserts value is a true Array with no members', function () {
+  describe('toBeEmptyArray', function() {
+    it('should assert value is a true Array with no members', function() {
       expect([]).toBeEmptyArray();
       expect([null]).not.toBeEmptyArray();
       expect(['']).not.toBeEmptyArray();
@@ -28,21 +28,21 @@ describe('Arrays', function() {
     });
   });
 
-  describe('toBeNonEmptyArray', function () {
-    it('asserts value is a true Array with at least one member', function () {
+  describe('toBeNonEmptyArray', function() {
+    it('should assert value is a true Array with at least one member', function() {
       expect([null]).toBeNonEmptyArray();
       expect([]).not.toBeNonEmptyArray();
     });
   });
 
-  describe('toBeArrayOfObjects', function () {
+  describe('toBeArrayOfObjects', function() {
     describe('when Array is empty', function() {
-      it('returns true since an empty array of Objects is valid', function() {
+      it('should return true since an empty array of Objects is valid', function() {
         expect([]).toBeArrayOfObjects();
       });
     });
     describe('when Array has items', function() {
-      it('asserts all items are Objects', function () {
+      it('should assert all items are Objects', function() {
         expect([{}]).toBeArrayOfObjects();
         expect([{}, {}]).toBeArrayOfObjects();
         expect([null]).not.toBeArrayOfObjects();
@@ -51,14 +51,14 @@ describe('Arrays', function() {
     });
   });
 
-  describe('toBeArrayOfStrings', function () {
+  describe('toBeArrayOfStrings', function() {
     describe('when Array is empty', function() {
-      it('returns true since an empty array of Strings is valid', function() {
+      it('should return true since an empty array of Strings is valid', function() {
         expect([]).toBeArrayOfStrings();
       });
     });
     describe('when Array has items', function() {
-      it('asserts all items are Strings', function () {
+      it('should assert all items are Strings', function() {
         expect(['truthy']).toBeArrayOfStrings();
         expect([new String('truthy')]).toBeArrayOfStrings();
         expect([new String('')]).toBeArrayOfStrings();
@@ -69,14 +69,14 @@ describe('Arrays', function() {
     });
   });
 
-  describe('toBeArrayOfNumbers', function () {
+  describe('toBeArrayOfNumbers', function() {
     describe('when Array is empty', function() {
-      it('returns true since an empty array of Numbers is valid', function() {
+      it('should return true since an empty array of Numbers is valid', function() {
         expect([]).toBeArrayOfNumbers();
       });
     });
     describe('when Array has items', function() {
-      it('asserts all items are Numbers', function () {
+      it('should assert all items are Numbers', function() {
         expect([1]).toBeArrayOfNumbers();
         expect([new Number(1)]).toBeArrayOfNumbers();
         expect([new Number(0)]).toBeArrayOfNumbers();
@@ -87,14 +87,14 @@ describe('Arrays', function() {
     });
   });
 
-  describe('toBeArrayOfBooleans', function () {
+  describe('toBeArrayOfBooleans', function() {
     describe('when Array is empty', function() {
-      it('returns true since an empty array of Booleans is valid', function() {
+      it('should return true since an empty array of Booleans is valid', function() {
         expect([]).toBeArrayOfBooleans();
       });
     });
     describe('when Array has items', function() {
-      it('asserts all items are Booleans', function () {
+      it('should assert all items are Booleans', function() {
         expect([true]).toBeArrayOfBooleans();
         expect([new Boolean(true)]).toBeArrayOfBooleans();
         expect([new Boolean(false)]).toBeArrayOfBooleans();
