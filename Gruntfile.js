@@ -38,12 +38,23 @@ module.exports = function(grunt) {
           dest: output
         }]
       }
+    },
+
+    jsdoc: {
+      dist: {
+        src: ['src/**/*.js'],
+        options: {
+          destination: 'doc'
+        }
+      }
     }
 
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-jsdoc');
+
   grunt.registerTask('build', ['concat']);
 
 };
