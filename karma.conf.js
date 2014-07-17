@@ -9,7 +9,7 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
 
     files: [
-      'node_modules/jasmine-matcher-wrapper/dist/jasmine-matcher-wrapper.js',
+      'dist/jasmine-matcher-wrapper.js',
       'dist/jasmine-matchers.js',
       'test/*.test.js'
     ],

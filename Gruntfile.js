@@ -29,12 +29,26 @@ module.exports = function(grunt) {
           dest: output
         }]
       }
+    },
+
+    copy: {
+      dist: {
+        files: [
+          {
+            expand: true,
+            cwd: "node_modules/jasmine-matcher-wrapper/dist/",
+            src: "jasmine-matcher-wrapper.js",
+            dest: "dist/"
+          }
+        ]
+      }
     }
 
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.registerTask('build', ['concat']);
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.registerTask('build', ['concat', 'copy']);
 
 };
