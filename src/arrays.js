@@ -126,3 +126,135 @@
    * @return {Boolean}
    */
   matchers.toBeArrayOfBooleans = priv.createToBeArrayOfXsMatcher('toBeBoolean');
+
+  // Array Members
+  // ---------------------------------------------------------------------------
+
+  /**
+   * @name toHaveArray
+   *
+   * @description
+   * .
+   *
+   * @example
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveArray = function(memberName) {
+    return priv.assertMember.call(this, 'toBeArray', memberName);
+  };
+
+  /**
+   * @name toHaveArrayOfBooleans
+   *
+   * @description
+   * .
+   *
+   * @example
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveArrayOfBooleans = function(memberName) {
+    return priv.assertMember.call(this, 'toBeArrayOfBooleans', memberName);
+  };
+
+  /**
+   * @name toHaveArrayOfNumbers
+   *
+   * @description
+   * .
+   *
+   * @example
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveArrayOfNumbers = function(memberName) {
+    return priv.assertMember.call(this, 'toBeArrayOfNumbers', memberName);
+  };
+
+  /**
+   * @name toHaveArrayOfObjects
+   *
+   * @description
+   * .
+   *
+   * @example
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveArrayOfObjects = function(memberName) {
+    return priv.assertMember.call(this, 'toBeArrayOfObjects', memberName);
+  };
+
+  /**
+   * @name toHaveArrayOfSize
+   *
+   * @description
+   * .
+   *
+   * @example
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @param  {Number} size
+   * @return {Boolean}
+   */
+  matchers.toHaveArrayOfSize = function(memberName, size) {
+    return priv.assertMember.call(this, 'toBeArrayOfSize', memberName, size);
+  };
+
+  /**
+   * @name toHaveNonEmptyArray
+   *
+   * @description
+   * .
+   *
+   * @example
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveNonEmptyArray = function(memberName) {
+    return priv.assertMember.call(this, 'toBeNonEmptyArray', memberName);
+  };
+
+  /**
+   * @name toHaveEmptyArray
+   *
+   * @description
+   * .
+   *
+   * @example
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveEmptyArray = function(memberName) {
+    return priv.assertMember.call(this, 'toBeEmptyArray', memberName);
+  };
+
+  /**
+   * @name toHaveArrayOfStrings
+   *
+   * @description
+   * .
+   *
+   * @example
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveArrayOfStrings = function(memberName) {
+    return priv.assertMember.call(this, 'toBeArrayOfStrings', memberName);
+  };
