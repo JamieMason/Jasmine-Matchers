@@ -8,10 +8,7 @@
    * Assert subject is not only truthy or falsy, but an actual Boolean.
    *
    * @example
-   * expect(true).toBeBoolean();
-   * expect(false).toBeBoolean();
-   * expect(1).not.toBeBoolean();
-   * expect(0).not.toBeBoolean();
+   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -26,8 +23,7 @@
    * Assert subject is not only truthy, but an actual Boolean true.
    *
    * @example
-   * expect(true).toBeTrue();
-   * expect(1).not.toBeTrue();
+   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -42,8 +38,7 @@
    * Assert subject is not only falsy, but an actual Boolean false.
    *
    * @example
-   * expect(false).toBeFalse();
-   * expect(0).not.toBeFalse();
+   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
    *
    * @return {Boolean}
    */

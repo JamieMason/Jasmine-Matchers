@@ -9,8 +9,7 @@
    * within iframes or other windows.
    *
    * @example
-   * expect(window).toBeWindow();
-   * expect({}).not.toBeWindow();
+   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -26,8 +25,7 @@
    * within iframes or other windows.
    *
    * @example
-   * expect(window.document).toBeDocument();
-   * expect({}).not.toBeDocument();
+   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -42,9 +40,7 @@
    * Assert subject is an HTML Element.
    *
    * @example
-   * expect(document.createElement('div')).toBeHtmlNode();
-   * expect('<div>a string of html</div>').not.toBeHtmlNode();
-   * expect(document.createTextNode('i am DOM text')).not.toBeHtmlNode();
+   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -59,10 +55,7 @@
    * Assert subject is an HTML Text Element.
    *
    * @example
-   * expect(document.createTextNode('i am DOM text')).toBeHtmlTextNode();
-   * expect(document.querySelector('title').firstChild).toBeHtmlTextNode();
-   * expect(document.createElement('div')).not.toBeHtmlTextNode();
-   * expect('<div>a string of html</div>').not.toBeHtmlTextNode();
+   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -77,9 +70,7 @@
    * Assert subject is an HTML Comment Element.
    *
    * @example
-   * expect(document.createComment('i am a comment')).toBeHtmlCommentNode();
-   * expect(document.createElement('div')).not.toBeHtmlCommentNode();
-   * expect('<--a string of html-->').not.toBeHtmlCommentNode();
+   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    *
    * @return {Boolean}
    */

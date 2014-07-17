@@ -21,7 +21,7 @@
    * from within iframes or other windows will not match.
    *
    * @example
-   * expect(["Foo", "Bar"]).toBeArray();
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -36,7 +36,7 @@
    * Assert subject is not only a true Array, but one with a specific number of members.
    *
    * @example
-   * expect(["Foo", "Bar"]).toBeArrayOfSize(2);
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param {Number} size
    * @return {Boolean}
@@ -52,7 +52,7 @@
    * Assert subject is not only a true Array, but one without any members.
    *
    * @example
-   * expect([]).toBeEmptyArray();
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -67,10 +67,7 @@
    * Assert subject is not only a true Array, but one with at least one member.
    *
    * @example
-   * expect(["Foo", "Bar"]).toBeNonEmptyArray();
-   *
-   * @example
-   * expect([]).not.toBeNonEmptyArray();
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -85,16 +82,7 @@
    * Assert subject is an Array which is either empty or contains only Objects.
    *
    * @example
-   * expect([{}, {}]).toBeArrayOfObjects();
-   *
-   * @example
-   * // An empty Array of Objects is still considered valid .
-   * expect([]).toBeArrayOfObjects();
-   *
-   * @example
-   * // Although this Array contains Objects, it also contains other data types so is not
-   * considered valid.
-   * expect([{}, 12, {}]).not.toBeArrayOfObjects();
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -107,16 +95,7 @@
    * Assert subject is an Array which is either empty or contains only Strings.
    *
    * @example
-   * expect(["foo", ""]).toBeArrayOfStrings();
-   *
-   * @example
-   * // An empty Array of Strings is still considered valid .
-   * expect([]).toBeArrayOfStrings();
-   *
-   * @example
-   * // Although this Array contains Strings, it also contains other data types so is not
-   * considered valid.
-   * expect(["Governor", 12, "Marley"]).not.toBeArrayOfStrings();
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -129,16 +108,7 @@
    * Assert subject is an Array which is either empty or contains only Numbers.
    *
    * @example
-   * expect([23, 98]).toBeArrayOfNumbers();
-   *
-   * @example
-   * // An empty Array of Numbers is still considered valid .
-   * expect([]).toBeArrayOfNumbers();
-   *
-   * @example
-   * // Although this Array contains Numbers, it also contains other data types so is not
-   * considered valid.
-   * expect([67, 38, {}]).not.toBeArrayOfNumbers();
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -151,16 +121,7 @@
    * Assert subject is an Array which is either empty or contains only Booleans.
    *
    * @example
-   * expect([true, false]).toBeArrayOfBooleans();
-   *
-   * @example
-   * // An empty Array of Booleans is still considered valid .
-   * expect([]).toBeArrayOfOBooleans);
-   *
-   * @example
-   * // Although this Array contains Booleans, it also contains other data types so is not
-   * considered valid.
-   * expect([true, false, null).not.toBeArrayOfBooleans();
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @return {Boolean}
    */
