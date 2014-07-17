@@ -115,14 +115,15 @@
   /**
    * @inner
    * @param  {String} matcherName
-   * @return {Function}
+   * @param  {String} memberName
+   * @param  (*) ...
+   * @return {Boolean}
    */
-  priv.assertMember = function(matcherName) {
-    return function() {
-      var args = priv.toArray(arguments);
-      var memberName = args.shift();
-      return matchers.toBeObject.call(this) && matchers[matcherName].apply({
-        actual: this.actual[memberName]
-      }, args);
-    };
+  priv.assertMember = function( /* matcherName, memberName, ... */ ) {
+    var args = priv.toArray(arguments);
+    var matcherName = args.shift();
+    var memberName = args.shift();
+    return matchers.toBeObject.call(this) && matchers[matcherName].apply({
+      actual: this.actual[memberName]
+    }, args);
   };
