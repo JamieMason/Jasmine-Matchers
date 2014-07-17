@@ -2,7 +2,14 @@
   // ---------------------------------------------------------------------------
 
   /**
-   * Asserts subject throws an Error of any type
+   * @name toThrowError
+   *
+   * @description
+   * Asserts subject throws an Error of any type.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-error-testing|Unit testing Errors with Jasmine}.
+   *
    * @return {Boolean}
    */
   matchers.toThrowError = function() {
@@ -16,7 +23,14 @@
   };
 
   /**
-   * Asserts subject throws an Error of a specific type, such as 'TypeError'
+   * @name toThrowErrorOfType
+   *
+   * @description
+   * Asserts subject throws an Error of a specific type, such as "TypeError".
+   *
+   * @example
+   * See {@link http://git.io/jasmine-error-testing|Unit testing Errors with Jasmine}.
+   *
    * @param  {String} type
    * @return {Boolean}
    */
