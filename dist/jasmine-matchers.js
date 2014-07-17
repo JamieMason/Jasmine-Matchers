@@ -596,6 +596,10 @@ beforeEach(function() {
   };
 
 
-  this.addMatchers(matchers);
+  if (typeof jasmine.addMatchers === 'function') {
+    jasmine.addMatchers(jasmine.matcherWrapper.wrap(matchers));
+  } else {
+    this.addMatchers(matchers);
+  }
 
 });
