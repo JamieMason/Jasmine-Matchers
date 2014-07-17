@@ -45,3 +45,54 @@
   matchers.toBeFalse = function() {
     return this.actual === false || this.actual instanceof Boolean && this.actual.valueOf() === false;
   };
+
+  // Boolean Members
+  // ---------------------------------------------------------------------------
+
+  /**
+   * @name toHaveBoolean
+   *
+   * @description
+   * .
+   *
+   * @example
+   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveBoolean = function(memberName) {
+    return priv.assertMember.call(this, 'toBeBoolean', memberName);
+  };
+
+  /**
+   * @name toHaveFalse
+   *
+   * @description
+   * .
+   *
+   * @example
+   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveFalse = function(memberName) {
+    return priv.assertMember.call(this, 'toBeFalse', memberName);
+  };
+
+  /**
+   * @name toHaveTrue
+   *
+   * @description
+   * .
+   *
+   * @example
+   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveTrue = function(memberName) {
+    return priv.assertMember.call(this, 'toBeTrue', memberName);
+  };
