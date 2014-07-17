@@ -2,23 +2,50 @@
   // ---------------------------------------------------------------------------
 
   /**
-   * Assert subject is the window global
+   * @name toBeWindow
+   *
+   * @description
+   * Assert subject is a browser Window global, whether that be the parent window or those created
+   * within iframes or other windows.
+   *
+   * @example
+   * expect(window).toBeWindow();
+   * expect({}).not.toBeWindow();
+   *
    * @return {Boolean}
    */
   matchers.toBeWindow = function() {
-    return typeof window !== 'undefined' && this.actual === window;
+    return this.actual && typeof this.actual === 'object' && this.actual.window === this.actual;
   };
 
   /**
-   * Assert subject is the document global
+   * @name toBeDocument
+   *
+   * @description
+   * Assert subject is a browser Window global, whether that be the parent window or those created
+   * within iframes or other windows.
+   *
+   * @example
+   * expect(window.document).toBeDocument();
+   * expect({}).not.toBeDocument();
+   *
    * @return {Boolean}
    */
   matchers.toBeDocument = function() {
-    return typeof document !== 'undefined' && this.actual === document;
+    return this.actual && typeof this.actual === 'object' && this.actual instanceof window.HTMLDocument;
   };
 
   /**
-   * Assert subject is an HTML Element
+   * @name toBeHtmlNode
+   *
+   * @description
+   * Assert subject is an HTML Element.
+   *
+   * @example
+   * expect(document.createElement('div')).toBeHtmlNode();
+   * expect('<div>a string of html</div>').not.toBeHtmlNode();
+   * expect(document.createTextNode('i am DOM text')).not.toBeHtmlNode();
+   *
    * @return {Boolean}
    */
   matchers.toBeHtmlNode = function() {
@@ -26,7 +53,17 @@
   };
 
   /**
-   * Assert subject is an HTML Text Element
+   * @name toBeHtmlTextNode
+   *
+   * @description
+   * Assert subject is an HTML Text Element.
+   *
+   * @example
+   * expect(document.createTextNode('i am DOM text')).toBeHtmlTextNode();
+   * expect(document.querySelector('title').firstChild).toBeHtmlTextNode();
+   * expect(document.createElement('div')).not.toBeHtmlTextNode();
+   * expect('<div>a string of html</div>').not.toBeHtmlTextNode();
+   *
    * @return {Boolean}
    */
   matchers.toBeHtmlTextNode = function() {
@@ -34,7 +71,16 @@
   };
 
   /**
-   * Assert subject is an HTML Text Element
+   * @name toBeHtmlCommentNode
+   *
+   * @description
+   * Assert subject is an HTML Comment Element.
+   *
+   * @example
+   * expect(document.createComment('i am a comment')).toBeHtmlCommentNode();
+   * expect(document.createElement('div')).not.toBeHtmlCommentNode();
+   * expect('<--a string of html-->').not.toBeHtmlCommentNode();
+   *
    * @return {Boolean}
    */
   matchers.toBeHtmlCommentNode = function() {
