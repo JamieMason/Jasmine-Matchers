@@ -45,7 +45,7 @@
    * @return {Boolean}
    */
   matchers.toBeEmptyObject = function() {
-    return matchers.toBeObject.call(this) && priv.countMembers(this.actual) === 0;
+    return priv.is(this.actual, 'Object') && priv.countMembers(this.actual) === 0;
   };
 
   /**
@@ -60,7 +60,7 @@
    * @return {Boolean}
    */
   matchers.toBeNonEmptyObject = function() {
-    return matchers.toBeObject.call(this) && priv.countMembers(this.actual) > 0;
+    return priv.is(this.actual, 'Object') && priv.countMembers(this.actual) > 0;
   };
 
   /**
@@ -188,5 +188,5 @@
    * @return {Boolean}
    */
   matchers.toHaveMember = function(memberName) {
-    return memberName && matchers.toBeObject.call(this) && memberName in this.actual;
+    return memberName && priv.is(this.actual, 'Object') && memberName in this.actual;
   };

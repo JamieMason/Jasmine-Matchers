@@ -153,7 +153,7 @@ beforeEach(function() {
     var args = priv.toArray(arguments);
     var matcherName = args.shift();
     var memberName = args.shift();
-    return matchers.toBeObject.call(this) && matchers[matcherName].apply({
+    return priv.is(this.actual, 'Object') && matchers[matcherName].apply({
       actual: this.actual[memberName]
     }, args);
   };
@@ -169,7 +169,7 @@ beforeEach(function() {
    */
   priv.createToBeArrayOfXsMatcher = function(toBeX) {
     return function() {
-      return matchers.toBeArray.call(this) && priv.expectAllMembers.call(this, toBeX);
+      return priv.is(this.actual, 'Array') && priv.expectAllMembers.call(this, toBeX);
     };
   };
 
@@ -202,7 +202,7 @@ beforeEach(function() {
    * @return {Boolean}
    */
   matchers.toBeArrayOfSize = function(size) {
-    return matchers.toBeArray.call(this) && this.actual.length === size;
+    return priv.is(this.actual, 'Array') && this.actual.length === size;
   };
 
   /**
@@ -232,7 +232,7 @@ beforeEach(function() {
    * @return {Boolean}
    */
   matchers.toBeNonEmptyArray = function() {
-    return matchers.toBeArray.call(this) && this.actual.length > 0;
+    return priv.is(this.actual, 'Array') && this.actual.length > 0;
   };
 
   /**
@@ -1052,7 +1052,7 @@ beforeEach(function() {
    * @return {Boolean}
    */
   matchers.toBeEmptyObject = function() {
-    return matchers.toBeObject.call(this) && priv.countMembers(this.actual) === 0;
+    return priv.is(this.actual, 'Object') && priv.countMembers(this.actual) === 0;
   };
 
   /**
@@ -1067,7 +1067,7 @@ beforeEach(function() {
    * @return {Boolean}
    */
   matchers.toBeNonEmptyObject = function() {
-    return matchers.toBeObject.call(this) && priv.countMembers(this.actual) > 0;
+    return priv.is(this.actual, 'Object') && priv.countMembers(this.actual) > 0;
   };
 
   /**
@@ -1195,7 +1195,7 @@ beforeEach(function() {
    * @return {Boolean}
    */
   matchers.toHaveMember = function(memberName) {
-    return memberName && matchers.toBeObject.call(this) && memberName in this.actual;
+    return memberName && priv.is(this.actual, 'Object') && memberName in this.actual;
   };
 
   // Strings

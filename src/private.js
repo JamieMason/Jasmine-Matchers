@@ -123,7 +123,7 @@
     var args = priv.toArray(arguments);
     var matcherName = args.shift();
     var memberName = args.shift();
-    return matchers.toBeObject.call(this) && matchers[matcherName].apply({
+    return priv.is(this.actual, 'Object') && matchers[matcherName].apply({
       actual: this.actual[memberName]
     }, args);
   };

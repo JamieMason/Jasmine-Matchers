@@ -9,7 +9,7 @@
    */
   priv.createToBeArrayOfXsMatcher = function(toBeX) {
     return function() {
-      return matchers.toBeArray.call(this) && priv.expectAllMembers.call(this, toBeX);
+      return priv.is(this.actual, 'Array') && priv.expectAllMembers.call(this, toBeX);
     };
   };
 
@@ -42,7 +42,7 @@
    * @return {Boolean}
    */
   matchers.toBeArrayOfSize = function(size) {
-    return matchers.toBeArray.call(this) && this.actual.length === size;
+    return priv.is(this.actual, 'Array') && this.actual.length === size;
   };
 
   /**
@@ -72,7 +72,7 @@
    * @return {Boolean}
    */
   matchers.toBeNonEmptyArray = function() {
-    return matchers.toBeArray.call(this) && this.actual.length > 0;
+    return priv.is(this.actual, 'Array') && this.actual.length > 0;
   };
 
   /**
