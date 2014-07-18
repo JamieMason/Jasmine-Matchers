@@ -31,7 +31,6 @@ module.exports = function(grunt) {
             'src/numbers.js',
             'src/objects.js',
             'src/strings.js',
-            'src/members.js',
             'src/wrapper/add-matchers-adapter.js',
             'src/wrapper/foot.txt'
           ],
