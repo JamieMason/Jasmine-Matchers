@@ -2,17 +2,14 @@
   // ---------------------------------------------------------------------------
 
   /**
-   * Assert subject is an Object, and not null
-   * @return {Boolean}
-   */
-  matchers.toBeObject = function() {
-    return this.actual instanceof Object;
-  };
-
-  /**
+   * @inner
+   *
+   * @description
    * Report how many instance members the given Object has.
+   *
    * @param  {Object} object
    * @return {Number}
+   * @memberOf priv
    */
   priv.countMembers = function(object) {
     return priv.reduce(object, function(memo, el, ix) {
@@ -21,7 +18,30 @@
   };
 
   /**
-   * Assert subject is an Object with no instance members.
+   * @name toBeObject
+   *
+   * @description
+   * Assert subject is a true Object, created in the parent document — those created and imported
+   * from within iframes or other windows will not match.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   *
+   * @return {Boolean}
+   */
+  matchers.toBeObject = function() {
+    return this.actual instanceof Object;
+  };
+
+  /**
+   * @name toBeEmptyObject
+   *
+   * @description
+   * Assert subject is a true Object with no instance members.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   *
    * @return {Boolean}
    */
   matchers.toBeEmptyObject = function() {
@@ -29,7 +49,14 @@
   };
 
   /**
-   * Assert subject is an Object with at least one instance member.
+   * @name toBeNonEmptyObject
+   *
+   * @description
+   * Assert subject is a true Object with at least one instance member.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   *
    * @return {Boolean}
    */
   matchers.toBeNonEmptyObject = function() {
@@ -37,27 +64,129 @@
   };
 
   /**
-   * Assert subject features the same public members as api.
-   * @param  {Object|Array} api
+   * @name toImplement
+   *
+   * @description
+   * Assert subject is a true Object which features at least the same keys as `other` (regardless of
+   * whether it also has other members).
+   *
+   * @example
+   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   *
+   * @param  {Object} other
    * @return {Boolean}
    */
-  matchers.toImplement = function(api) {
-    var required;
-    if (!this.actual || !api) {
+  matchers.toImplement = function(other) {
+    if (!priv.is(this.actual, 'Object') || !priv.is(other, 'Object')) {
       return false;
     }
-    for (required in api) {
-      if ((required in this.actual) === false) {
-        return false;
+    for (var key in other) {
+      if (key in this.actual) {
+        continue;
       }
+      return false;
     }
     return true;
   };
 
   /**
-   * Assert subject is a function
+   * @name toBeFunction
+   *
+   * @description
+   * Assert subject is a true Function, created in the parent document — those created and imported
+   * from within iframes or other windows will not match.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   *
    * @return {Boolean}
    */
   matchers.toBeFunction = function() {
     return this.actual instanceof Function;
+  };
+
+  // Object Members
+  // ---------------------------------------------------------------------------
+
+  /**
+   * @name toHaveMethod
+   *
+   * @description
+   * Assert subject is a true Object containing a property at memberName which is a Function.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   *
+   * @param {Boolean} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveMethod = function(memberName) {
+    return priv.assertMember.call(this, 'toBeFunction', memberName);
+  };
+
+  /**
+   * @name toHaveObject
+   *
+   * @description
+   * Assert subject is a true Object containing a property at memberName which is a true Object.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   *
+   * @param {Boolean} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveObject = function(memberName) {
+    return priv.assertMember.call(this, 'toBeObject', memberName);
+  };
+
+  /**
+   * @name toHaveEmptyObject
+   *
+   * @description
+   * Assert subject is a true Object containing a property at memberName which is a true Object with
+   * no instance members.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   *
+   * @param {Boolean} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveEmptyObject = function(memberName) {
+    return priv.assertMember.call(this, 'toBeEmptyObject', memberName);
+  };
+
+  /**
+   * @name toHaveNonEmptyObject
+   *
+   * @description
+   * Assert subject is a true Object containing a property at memberName which is a true Object with
+   * at least one instance member.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   *
+   * @param {Boolean} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveNonEmptyObject = function(memberName) {
+    return priv.assertMember.call(this, 'toBeNonEmptyObject', memberName);
+  };
+
+  /**
+   * @name toHaveMember
+   *
+   * @description
+   * Assert subject is a true Object containing a property at memberName which is of any value,
+   * including undefined.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   *
+   * @param {Boolean} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveMember = function(memberName) {
+    return memberName && matchers.toBeObject.call(this) && memberName in this.actual;
   };
