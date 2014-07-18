@@ -2,7 +2,14 @@
   // ---------------------------------------------------------------------------
 
   /**
-   * Assert subject is a String
+   * @name toBeString
+   *
+   * @description
+   * Assert subject is a String.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @return {Boolean}
    */
   matchers.toBeString = function() {
@@ -10,6 +17,14 @@
   };
 
   /**
+   * @name toBeEmptyString
+   *
+   * @description
+   * Assert subject is a String of length 0.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @return {Boolean}
    */
   matchers.toBeEmptyString = function() {
@@ -17,6 +32,14 @@
   };
 
   /**
+   * @name toBeNonEmptyString
+   *
+   * @description
+   * Assert subject is a String with at least 1 character.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @return {Boolean}
    */
   matchers.toBeNonEmptyString = function() {
@@ -24,7 +47,14 @@
   };
 
   /**
-   * Assert subject is string containing HTML Markup
+   * @name toBeHtmlString
+   *
+   * @description
+   * Assert subject is string containing HTML Markup.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @return {Boolean}
    */
   matchers.toBeHtmlString = function() {
@@ -36,7 +66,14 @@
   };
 
   /**
-   * Assert subject is string containing parseable JSON
+   * @name toBeJsonString
+   *
+   * @description
+   * Assert subject is string containing parseable JSON.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @return {Boolean}
    */
   matchers.toBeJsonString = function() {
@@ -51,7 +88,14 @@
   };
 
   /**
-   * Assert subject is a String containing nothing but whitespace
+   * @name toBeWhitespace
+   *
+   * @description
+   * Assert subject is a String containing nothing but whitespace.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @return {Boolean}
    */
   matchers.toBeWhitespace = function() {
@@ -59,7 +103,14 @@
   };
 
   /**
-   * Assert subject is a String whose first characters match our expected string
+   * @name toStartWith
+   *
+   * @description
+   * Assert subject is a String whose first characters match our expected string.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @param  {String} expected
    * @return {Boolean}
    */
@@ -73,7 +124,14 @@
   };
 
   /**
-   * Assert subject is a String whose last characters match our expected string
+   * @name toEndWith
+   *
+   * @description
+   * Assert subject is a String whose last characters match our expected string.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @param  {String} expected
    * @return {Boolean}
    */
@@ -87,7 +145,14 @@
   };
 
   /**
-   * Assert subject is a String whose length is greater than our other string
+   * @name toBeLongerThan
+   *
+   * @description
+   * Assert subject is a String whose length is greater than our other string.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @param  {String} other
    * @return {Boolean}
    */
@@ -98,7 +163,14 @@
   };
 
   /**
-   * Assert subject is a String whose length is less than our other string
+   * @name toBeShorterThan
+   *
+   * @description
+   * Assert subject is a String whose length is greater than our other string.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @param  {String} other
    * @return {Boolean}
    */
@@ -109,7 +181,14 @@
   };
 
   /**
-   * Assert subject is a String whose length is equal to our other string
+   * @name toBeSameLengthAs
+   *
+   * @description
+   * Assert subject is a String whose length is equal to our other string.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @param  {String} other
    * @return {Boolean}
    */
