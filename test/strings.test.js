@@ -27,8 +27,18 @@ describe('Strings', function() {
     it('should assert value is a string of HTML markup', function() {
       expect('<element>text</element>').toBeHtmlString();
       expect('<a data-ng-href="//foo.com" data-ng-click="bar($event)">baz</a>').toBeHtmlString();
+      expect('<div ng-if="foo > bar || bar < foo && baz == bar"></div>').toBeHtmlString();
+      expect('<li ng-if="foo > bar || bar < foo && baz == bar">').toBeHtmlString();
       expect('div').not.toBeHtmlString();
       expect(null).not.toBeHtmlString();
+      this.ngMultiLine = '';
+      this.ngMultiLine += '<a data-ng-href="//www.google.com" data-ng-click="launchApp($event)" target="_blank" class="ng-binding" href="//www.google.com">';
+      this.ngMultiLine += '\n';
+      this.ngMultiLine += '  Watch with Google TV';
+      this.ngMultiLine += '\n';
+      this.ngMultiLine += '</a>';
+      this.ngMultiLine += '\n';
+      expect(this.ngMultiLine).toBeHtmlString();
     });
   });
 
