@@ -2,12 +2,15 @@
   "name": "jasmine-expect",
   "version": "1.21.0",
   "description": "35+ additional matchers for the Jasmine BDD JavaScript test library",
+  "homepage": "https://github.com/JamieMason/Jasmine-Matchers",
+  "readmeFilename": "README.md",
   "main": "index.js",
   "license": "MIT",
-  "authors": [
-    "Jamie Mason <siunmaru@gmail.com>"
+  "author": "Jamie Mason (https://github.com/JamieMason)",
+  "contributors": [
+    "Jamie Mason (https://github.com/JamieMason)",
+    "David Tanner (https://github.com/DavidTanner)"
   ],
-  "homepage": "https://github.com/JamieMason/Jasmine-Matchers",
   "keywords": [
     "jasmine",
     "BDD",
@@ -15,15 +18,16 @@
     "testing"
   ],
   "devDependencies": {
-    "karma-chrome-launcher": "~0.1.3",
-    "karma-coverage": "~0.2.1",
-    "karma-firefox-launcher": "~0.1.3",
-    "karma-jasmine": "~0.2.2",
-    "karma-phantomjs-launcher": "~0.1.4",
-    "karma-script-launcher": "~0.1.0",
-    "grunt-contrib-concat": "~0.4.0",
-    "grunt-contrib-watch": "~0.6.1",
-    "karma": "~0.12.14"
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "karma": "^0.12.17",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-coverage": "^0.2.4",
+    "karma-firefox-launcher": "^0.1.3",
+    "karma-jasmine": "^0.1.5",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-script-launcher": "^0.1.0"
   },
   "scripts": {
     "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS"

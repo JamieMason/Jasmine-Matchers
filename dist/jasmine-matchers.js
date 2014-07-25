@@ -107,7 +107,7 @@ beforeEach(function() {
    * @return {Array}
    */
 
-  priv.toArray = function(list) {
+  priv.toArray = function (list) {
     return [].slice.call(list);
   };
 
@@ -117,7 +117,7 @@ beforeEach(function() {
   priv.createToBeArrayOfXsMatcher = function (toBeX) {
     return function () {
       return matchers.toBeArray.call(this) && priv.expectAllMembers.call(this, toBeX);
-    }
+    };
   };
 
   /**

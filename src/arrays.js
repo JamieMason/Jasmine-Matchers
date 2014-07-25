@@ -4,7 +4,7 @@
   priv.createToBeArrayOfXsMatcher = function (toBeX) {
     return function () {
       return matchers.toBeArray.call(this) && priv.expectAllMembers.call(this, toBeX);
-    }
+    };
   };
 
   /**

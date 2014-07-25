@@ -77,6 +77,6 @@
    * @return {Array}
    */
 
-  priv.toArray = function(list) {
+  priv.toArray = function (list) {
     return [].slice.call(list);
   };
