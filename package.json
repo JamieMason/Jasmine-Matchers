@@ -4,6 +4,10 @@
   "description": "35+ additional matchers for the Jasmine BDD JavaScript test library",
   "main": "index.js",
   "author": "Jamie Mason (https://github.com/JamieMason)",
+  "contributors": [
+    "Jamie Mason (https://github.com/JamieMason)",
+    "David Tanner (https://github.com/DavidTanner)"
+  ],
   "license": "MIT",
   "readmeFilename": "README.md",
   "devDependencies": {
