@@ -1,5 +1,5 @@
 /*
- * Copyright © 2013 Jamie Mason, @GotNoSugarBaby,
+ * Copyright © 2013 Jamie Mason, @fold_left,
  * https://github.com/JamieMason
  *
  * Permission is hereby granted, free of charge, to any person
@@ -31,8 +31,14 @@ beforeEach(function() {
   priv.each = function(array, fn) {
     var i;
     var len = array.length;
-    for (i = 0; i < len; i++) {
-      fn.call(this, array[i], i, array);
+    if ('length' in array) {
+      for (i = 0; i < len; i++) {
+        fn.call(this, array[i], i, array);
+      }
+    } else {
+      for (i in array) {
+        fn.call(this, array[i], i, array);
+      }
     }
   };
 
@@ -102,7 +108,7 @@ beforeEach(function() {
   priv.createToBeArrayOfXsMatcher = function (toBeX) {
     return function () {
       return matchers.toBeArray.call(this) && priv.expectAllMembers.call(this, toBeX);
-    }
+    };
   };
 
   /**
@@ -596,6 +602,32 @@ beforeEach(function() {
   };
 
 
-  this.addMatchers(matchers);
+  // Create adapters for the original matchers so they can be compatible with Jasmine 2.0.
+
+  var isJasmineV1 = typeof this.addMatchers === 'function';
+  var isJasmineV2 = typeof jasmine.addMatchers === 'function';
+  var v2Matchers = {};
+
+  if (isJasmineV1) {
+    this.addMatchers(matchers);
+  } else if (isJasmineV2) {
+    priv.each(matchers, function(fn, name) {
+      v2Matchers[name] = function() {
+        return {
+          compare: function(actual, expected) {
+            var args = priv.toArray(arguments);
+            var scope = {
+              actual: actual
+            };
+            args.shift();
+            return {
+              pass: matchers[name].apply(scope, args)
+            };
+          }
+        };
+      };
+    });
+    jasmine.addMatchers(v2Matchers);
+  }
 
 });

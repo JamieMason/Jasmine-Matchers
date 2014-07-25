@@ -24,6 +24,7 @@ module.exports = function(grunt) {
             'src/wrapper/head.txt',
             'src/private.js',
             'src/*.js',
+            'src/wrapper/add-matchers-adapter.js',
             'src/wrapper/foot.txt'
           ],
           dest: output
