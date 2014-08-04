@@ -1,31 +1,26 @@
 {
   "name": "jasmine-expect",
-  "version": "1.21.0",
-  "description": "35+ additional matchers for the Jasmine BDD JavaScript test library",
   "main": "dist/jasmine-matchers.js",
-  "license": "MIT",
+  "version": "1.22.0",
+  "homepage": "https://github.com/JamieMason/Jasmine-Matchers",
   "authors": [
     "Jamie Mason <siunmaru@gmail.com>"
   ],
-  "homepage": "https://github.com/JamieMason/Jasmine-Matchers",
+  "description": "Write Beautiful Specs with Jasmine Custom Matchers",
   "keywords": [
     "jasmine",
-    "BDD",
-    "TDD",
-    "testing"
+    "testing",
+    "unit",
+    "karma",
+    "tdd",
+    "bdd"
   ],
+  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "tests"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/JamieMason/Jasmine-Matchers.git"
-  },
-  "bugs": {
-    "url": "https://github.com/JamieMason/Jasmine-Matchers/issues"
-  }
+  ]
 }
