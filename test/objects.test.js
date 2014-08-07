@@ -1,7 +1,7 @@
 describe('Objects', function() {
 
-  describe('toBeObject', function () {
-    it('asserts value is an Object', function () {
+  describe('toBeObject', function() {
+    it('should assert value is an Object', function() {
       function Foo(){}
       expect(new Foo()).toBeObject();
       expect({}).toBeObject();
@@ -9,8 +9,8 @@ describe('Objects', function() {
     });
   });
 
-  describe('toBeEmptyObject', function () {
-    it('asserts value is an Object with no instance members', function () {
+  describe('toBeEmptyObject', function() {
+    it('should assert value is an Object with no instance members', function() {
       function Foo(){}
       Foo.prototype = { b: 2 };
       expect({ a: 1 }).not.toBeEmptyObject();
@@ -20,8 +20,8 @@ describe('Objects', function() {
     });
   });
 
-  describe('toBeNonEmptyObject', function () {
-    it('asserts value is an Object with at least one instance member', function () {
+  describe('toBeNonEmptyObject', function() {
+    it('should assert value is an Object with at least one instance member', function() {
       function Foo(){}
       Foo.prototype = { b: 2 };
       expect({ a: 1 }).toBeNonEmptyObject();
@@ -31,8 +31,8 @@ describe('Objects', function() {
     });
   });
 
-  describe('toImplement', function () {
-    it('asserts value is an Object containing all of the supplied members', function () {
+  describe('toImplement', function() {
+    it('should assert value is an Object containing all of the supplied members', function() {
       expect({ a: 1, b: 2 }).toImplement({ a: 1, b: 2 });
       expect({ a: 1, b: 2 }).toImplement({ a: 1 });
       expect({ a: 1 }).not.toImplement({ c: 3 });
@@ -40,8 +40,8 @@ describe('Objects', function() {
     });
   });
 
-  describe('toBeFunction', function () {
-    it('asserts value is a function', function () {
+  describe('toBeFunction', function() {
+    it('should assert value is a function', function() {
       expect(function(){}).toBeFunction();
       expect(/regexp/).not.toBeFunction();
     });

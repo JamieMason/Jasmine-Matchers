@@ -3,9 +3,30 @@ module.exports = function(grunt) {
   'use strict';
 
   var version = require('./package.json').version;
-  var output = 'dist/jasmine-matchers.js';
 
   grunt.initConfig({
+
+    concat: {
+      dist: {
+        files: [{
+          src: [
+            'src/wrapper/head.txt',
+            'src/private.js',
+            'src/arrays.js',
+            'src/booleans.js',
+            'src/browser.js',
+            'src/dates.js',
+            'src/errors.js',
+            'src/numbers.js',
+            'src/objects.js',
+            'src/strings.js',
+            'src/wrapper/add-matchers-adapter.js',
+            'src/wrapper/foot.txt'
+          ],
+          dest: 'dist/jasmine-matchers.js'
+        }]
+      }
+    },
 
     watch: {
       scripts: {
@@ -17,18 +38,12 @@ module.exports = function(grunt) {
       }
     },
 
-    concat: {
+    jsdoc: {
       dist: {
-        files: [{
-          src: [
-            'src/wrapper/head.txt',
-            'src/private.js',
-            'src/*.js',
-            'src/wrapper/add-matchers-adapter.js',
-            'src/wrapper/foot.txt'
-          ],
-          dest: output
-        }]
+        src: ['src/**/*.js'],
+        options: {
+          destination: 'build/docs'
+        }
       }
     }
 
@@ -36,6 +51,8 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.registerTask('build', ['concat']);
+  grunt.loadNpmTasks('grunt-jsdoc');
+
+  grunt.registerTask('build', ['concat', 'jsdoc']);
 
 };

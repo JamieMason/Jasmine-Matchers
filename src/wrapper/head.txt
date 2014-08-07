@@ -1,5 +1,5 @@
 /*
- * Copyright © 2013 Jamie Mason, @fold_left,
+ * Copyright © Jamie Mason, @fold_left,
  * https://github.com/JamieMason
  *
  * Permission is hereby granted, free of charge, to any person
@@ -25,5 +25,12 @@
 
 beforeEach(function() {
 
+  var jasmineVersion = 0;
   var matchers = {};
   var priv = {};
+
+  if (typeof this.addMatchers === 'function') {
+    jasmineVersion = 1;
+  } else if (typeof jasmine.addMatchers === 'function') {
+    jasmineVersion = 2;
+  }

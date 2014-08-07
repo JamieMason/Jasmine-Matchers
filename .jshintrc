@@ -38,6 +38,7 @@
     "port": true,
     "JASMINE": true,
     "JASMINE_ADAPTER": true,
+    "jasmineVersion": true,
     "matchers": true,
     "priv": true
   }

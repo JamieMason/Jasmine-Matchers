@@ -2,7 +2,14 @@
   // ---------------------------------------------------------------------------
 
   /**
-   * Assert subject is a String
+   * @name toBeString
+   *
+   * @description
+   * Assert subject is a String.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @return {Boolean}
    */
   matchers.toBeString = function() {
@@ -10,6 +17,14 @@
   };
 
   /**
+   * @name toBeEmptyString
+   *
+   * @description
+   * Assert subject is a String of length 0.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @return {Boolean}
    */
   matchers.toBeEmptyString = function() {
@@ -17,6 +32,14 @@
   };
 
   /**
+   * @name toBeNonEmptyString
+   *
+   * @description
+   * Assert subject is a String with at least 1 character.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @return {Boolean}
    */
   matchers.toBeNonEmptyString = function() {
@@ -24,19 +47,39 @@
   };
 
   /**
-   * Assert subject is string containing HTML Markup
+   * @name toBeHtmlString
+   *
+   * @description
+   * Assert subject is string containing HTML Markup.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @return {Boolean}
    */
   matchers.toBeHtmlString = function() {
-    var container = document.createElement('div');
-    container.innerHTML = this.actual;
-    return matchers.toBeString.call(this) && priv.some(container.childNodes, function(node) {
-      return node.nodeType !== 3;
-    });
+    // <           start with opening tag "<"
+    //  (          start group 1
+    //    "[^"]*"  allow string in "double quotes"
+    //    |        OR
+    //    '[^']*'  allow string in "single quotes"
+    //    |        OR
+    //    [^'">]   cant contains one single quotes, double quotes and ">"
+    //  )          end group 1
+    //  *          0 or more
+    // >           end with closing tag ">"
+    return matchers.toBeString.call(this) && this.actual.search(/<("[^"]*"|'[^']*'|[^'">])*>/) !== -1;
   };
 
   /**
-   * Assert subject is string containing parseable JSON
+   * @name toBeJsonString
+   *
+   * @description
+   * Assert subject is string containing parseable JSON.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @return {Boolean}
    */
   matchers.toBeJsonString = function() {
@@ -51,7 +94,14 @@
   };
 
   /**
-   * Assert subject is a String containing nothing but whitespace
+   * @name toBeWhitespace
+   *
+   * @description
+   * Assert subject is a String containing nothing but whitespace.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @return {Boolean}
    */
   matchers.toBeWhitespace = function() {
@@ -59,7 +109,14 @@
   };
 
   /**
-   * Assert subject is a String whose first characters match our expected string
+   * @name toStartWith
+   *
+   * @description
+   * Assert subject is a String whose first characters match our expected string.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @param  {String} expected
    * @return {Boolean}
    */
@@ -73,7 +130,14 @@
   };
 
   /**
-   * Assert subject is a String whose last characters match our expected string
+   * @name toEndWith
+   *
+   * @description
+   * Assert subject is a String whose last characters match our expected string.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @param  {String} expected
    * @return {Boolean}
    */
@@ -87,7 +151,14 @@
   };
 
   /**
-   * Assert subject is a String whose length is greater than our other string
+   * @name toBeLongerThan
+   *
+   * @description
+   * Assert subject is a String whose length is greater than our other string.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @param  {String} other
    * @return {Boolean}
    */
@@ -98,7 +169,14 @@
   };
 
   /**
-   * Assert subject is a String whose length is less than our other string
+   * @name toBeShorterThan
+   *
+   * @description
+   * Assert subject is a String whose length is greater than our other string.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @param  {String} other
    * @return {Boolean}
    */
@@ -109,7 +187,14 @@
   };
 
   /**
-   * Assert subject is a String whose length is equal to our other string
+   * @name toBeSameLengthAs
+   *
+   * @description
+   * Assert subject is a String whose length is equal to our other string.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
    * @param  {String} other
    * @return {Boolean}
    */
@@ -117,4 +202,154 @@
     return matchers.toBeString.call(this) && matchers.toBeString.call({
       actual: other
     }) && this.actual.length === other.length;
+  };
+
+  // String Members
+  // ---------------------------------------------------------------------------
+
+  /**
+   * @name toHaveEmptyString
+   *
+   * @description
+   * .
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveEmptyString = function(memberName) {
+    return priv.assertMember.call(this, 'toBeEmptyString', memberName);
+  };
+
+  /**
+   * @name toHaveHtmlString
+   *
+   * @description
+   * .
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveHtmlString = function(memberName) {
+    return priv.assertMember.call(this, 'toBeHtmlString', memberName);
+  };
+
+  /**
+   * @name toHaveJsonString
+   *
+   * @description
+   * .
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveJsonString = function(memberName) {
+    return priv.assertMember.call(this, 'toBeJsonString', memberName);
+  };
+
+  /**
+   * @name toHaveNonEmptyString
+   *
+   * @description
+   * .
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveNonEmptyString = function(memberName) {
+    return priv.assertMember.call(this, 'toBeNonEmptyString', memberName);
+  };
+
+  /**
+   * @name toHaveString
+   *
+   * @description
+   * .
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveString = function(memberName) {
+    return priv.assertMember.call(this, 'toBeString', memberName);
+  };
+
+  /**
+   * @name toHaveStringLongerThan
+   *
+   * @description
+   * .
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @param  {String} other
+   * @return {Boolean}
+   */
+  matchers.toHaveStringLongerThan = function(memberName, other) {
+    return priv.assertMember.call(this, 'toBeLongerThan', memberName, other);
+  };
+
+  /**
+   * @name toHaveStringSameLengthAs
+   *
+   * @description
+   * .
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @param  {String} other
+   * @return {Boolean}
+   */
+  matchers.toHaveStringSameLengthAs = function(memberName, other) {
+    return priv.assertMember.call(this, 'toBeSameLengthAs', memberName, other);
+  };
+
+  /**
+   * @name toHaveStringShorterThan
+   *
+   * @description
+   * .
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @param  {String} other
+   * @return {Boolean}
+   */
+  matchers.toHaveStringShorterThan = function(memberName, other) {
+    return priv.assertMember.call(this, 'toBeShorterThan', memberName, other);
+  };
+
+  /**
+   * @name toHaveWhitespaceString
+   *
+   * @description
+   * .
+   *
+   * @example
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveWhitespaceString = function(memberName) {
+    return priv.assertMember.call(this, 'toBeWhitespace', memberName);
   };

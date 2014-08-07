@@ -2,23 +2,46 @@
   // ---------------------------------------------------------------------------
 
   /**
-   * Assert subject is the window global
+   * @name toBeWindow
+   *
+   * @description
+   * Assert subject is a browser Window global, whether that be the parent window or those created
+   * within iframes or other windows.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   *
    * @return {Boolean}
    */
   matchers.toBeWindow = function() {
-    return typeof window !== 'undefined' && this.actual === window;
+    return this.actual && typeof this.actual === 'object' && this.actual.window === this.actual;
   };
 
   /**
-   * Assert subject is the document global
+   * @name toBeDocument
+   *
+   * @description
+   * Assert subject is a browser Window global, whether that be the parent window or those created
+   * within iframes or other windows.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   *
    * @return {Boolean}
    */
   matchers.toBeDocument = function() {
-    return typeof document !== 'undefined' && this.actual === document;
+    return this.actual && typeof this.actual === 'object' && this.actual instanceof window.HTMLDocument;
   };
 
   /**
-   * Assert subject is an HTML Element
+   * @name toBeHtmlNode
+   *
+   * @description
+   * Assert subject is an HTML Element.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   *
    * @return {Boolean}
    */
   matchers.toBeHtmlNode = function() {
@@ -26,7 +49,14 @@
   };
 
   /**
-   * Assert subject is an HTML Text Element
+   * @name toBeHtmlTextNode
+   *
+   * @description
+   * Assert subject is an HTML Text Element.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   *
    * @return {Boolean}
    */
   matchers.toBeHtmlTextNode = function() {
@@ -34,9 +64,35 @@
   };
 
   /**
-   * Assert subject is an HTML Text Element
+   * @name toBeHtmlCommentNode
+   *
+   * @description
+   * Assert subject is an HTML Comment Element.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   *
    * @return {Boolean}
    */
   matchers.toBeHtmlCommentNode = function() {
     return priv.isHtmlElementOfType(this.actual, 8);
+  };
+
+  // Browser Members
+  // ---------------------------------------------------------------------------
+
+  /**
+   * @name toBeHtmlNode
+   *
+   * @description
+   * Assert subject is a true Object containing a property at memberName which is an HTML Element.
+   *
+   * @example
+   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   *
+   * @param {Boolean} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveHtmlNode = function(memberName) {
+    return priv.assertMember.call(this, 'toBeHtmlNode', memberName);
   };
