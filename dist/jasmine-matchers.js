@@ -1,5 +1,5 @@
 /*
- * Copyright © Jamie Mason, @fold_left,
+ * Copyright © 2013 Jamie Mason, @fold_left,
  * https://github.com/JamieMason
  *
  * Permission is hereby granted, free of charge, to any person
@@ -117,7 +117,7 @@ beforeEach(function() {
   priv.createToBeArrayOfXsMatcher = function (toBeX) {
     return function () {
       return matchers.toBeArray.call(this) && priv.expectAllMembers.call(this, toBeX);
-    }
+    };
   };
 
   /**
