@@ -1,17 +1,56 @@
 describe('Errors', function() {
 
   describe('toThrowError', function() {
-    it('should assert value is a function which will error when called a particular way', function() {
-      expect(function(){ throw new Error('wut?'); }).toThrowError();
-      expect(function(){ return badReference.someValue }).toThrowError();
-      expect(function(){}).not.toThrowError();
+    describe('when supplied a function', function() {
+      describe('when function errors when invoked', function() {
+        beforeEach(function() {
+          this.throwError = function() {
+            throw new Error('wut?');
+          };
+          this.badReference = function() {
+            return badReference.someValue
+          };
+        });
+        it('should confirm', function() {
+          expect(this.throwError).toThrowError();
+          expect(this.badReference).toThrowError();
+        });
+      });
+      describe('when function does NOT error when invoked', function() {
+        beforeEach(function() {
+          this.noErrors = function() {};
+        });
+        it('should deny', function() {
+          expect(this.noErrors).not.toThrowError();
+        });
+      });
     });
   });
 
   describe('toThrowErrorOfType', function() {
-    it('should assert value is a function which will throw a specific type of error when called a particular way', function() {
-      expect(function(){ throw new Error('wut?'); }).toThrowErrorOfType('Error');
-      expect(function(){ return badReference.someValue }).toThrowErrorOfType('ReferenceError');
+    describe('when supplied a function', function() {
+      describe('when function errors when invoked', function() {
+        beforeEach(function() {
+          this.throwError = function() {
+            throw new Error('wut?');
+          };
+          this.badReference = function() {
+            return badReference.someValue
+          };
+        });
+        describe('when the error is of the expected type', function() {
+          it('should confirm', function() {
+            expect(this.throwError).toThrowErrorOfType('Error');
+            expect(this.badReference).toThrowErrorOfType('ReferenceError');
+          });
+        });
+        describe('when the error is NOT of the expected type', function() {
+          it('should confirm', function() {
+            expect(this.throwError).not.toThrowErrorOfType('ReferenceError');
+            expect(this.badReference).not.toThrowErrorOfType('Error');
+          });
+        });
+      });
     });
   });
 
