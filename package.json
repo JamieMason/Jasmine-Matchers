@@ -29,6 +29,7 @@
     "karma-coverage": "^0.2.4",
     "karma-firefox-launcher": "^0.1.3",
     "karma-jasmine": "^0.2.2",
+    "karma-nested-reporter": "~0.1.3",
     "karma-phantomjs-launcher": "^0.1.4",
     "karma-script-launcher": "^0.1.0"
   },
