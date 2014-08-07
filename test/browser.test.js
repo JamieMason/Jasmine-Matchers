@@ -1,44 +1,76 @@
 describe('Browser', function() {
 
   describe('toBeWindow', function() {
-    it('should assert value is a host Window object', function() {
-      expect(window).toBeWindow();
-      expect({}).not.toBeWindow();
+    describe('when invoked', function() {
+      describe('when value is a host Window object', function() {
+        it('should confirm', function() {
+          expect(window).toBeWindow();
+        });
+      });
+      describe('when value is NOT a host Window object', function() {
+        it('should deny', function() {
+          expect({}).not.toBeWindow();
+        });
+      });
     });
   });
 
   describe('toBeDocument', function() {
-    it('should assert value is a host Document object', function() {
-      expect(window.document).toBeDocument();
-      expect(document).toBeDocument();
-      expect({}).not.toBeDocument();
+    describe('when invoked', function() {
+      describe('when value is a host Document object', function() {
+        it('should confirm', function() {
+          expect(window.document).toBeDocument();
+          expect(document).toBeDocument();
+        });
+      });
+      describe('when value is NOT a host Document object', function() {
+        it('should deny', function() {
+          expect({}).not.toBeDocument();
+        });
+      });
     });
   });
 
   describe('toBeHtmlCommentNode', function() {
-    it('should assert value is a DOM reference to an HTML comment', function() {
-      var div = document.createElement('div');
-      var comment;
-      div.innerHTML = '<!-- some comment -->';
-      comment = div.childNodes[0];
-      expect(comment).toBeHtmlCommentNode();
+    describe('when invoked', function() {
+      describe('when value is a DOM reference to an HTML comment', function() {
+        beforeEach(function() {
+          var div = document.createElement('div');
+          div.innerHTML = '<!-- some comment -->';
+          this.comment = div.childNodes[0];
+        });
+        it('should confirm', function() {
+          expect(this.comment).toBeHtmlCommentNode();
+        });
+      });
     });
   });
 
   describe('toBeHtmlNode', function() {
-    it('should assert value is a DOM reference to an HTML element', function() {
-      var div = document.createElement('div');
-      expect(div).toBeHtmlNode();
+    describe('when invoked', function() {
+      describe('when value is a DOM reference to an HTML element', function() {
+        beforeEach(function() {
+          this.div = document.createElement('div');
+        });
+        it('should confirm', function() {
+          expect(this.div).toBeHtmlNode();
+        });
+      });
     });
   });
 
   describe('toBeHtmlTextNode', function() {
-    it('should assert value is a DOM reference to an HTML text element', function() {
-      var div = document.createElement('div');
-      var text;
-      div.innerHTML = 'some text';
-      text = div.childNodes[0];
-      expect(text).toBeHtmlTextNode();
+    describe('when invoked', function() {
+      describe('when value is a DOM reference to an HTML text element', function() {
+        beforeEach(function() {
+          var div = document.createElement('div');
+          div.innerHTML = 'some text';
+          this.text = div.childNodes[0];
+        });
+        it('should confirm', function() {
+          expect(this.text).toBeHtmlTextNode();
+        });
+      });
     });
   });
 
