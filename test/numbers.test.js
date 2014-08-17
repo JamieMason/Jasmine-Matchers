@@ -1,64 +1,112 @@
 describe('Numbers', function() {
 
   describe('toBeNumber', function() {
-    it('should assert value is a number', function() {
-      expect(1).toBeNumber();
-      expect(1.11).toBeNumber();
-      expect(1e3).toBeNumber();
-      expect(0.11).toBeNumber();
-      expect(-11).toBeNumber();
-      expect('1').not.toBeNumber();
-      expect(NaN).not.toBeNumber();
+    describe('when invoked', function() {
+      describe('when subject IS a number', function() {
+        it('should confirm', function() {
+          expect(1).toBeNumber();
+          expect(1.11).toBeNumber();
+          expect(1e3).toBeNumber();
+          expect(0.11).toBeNumber();
+          expect(-11).toBeNumber();
+        });
+      });
+      describe('when subject is NOT a number', function() {
+        it('should deny', function() {
+          expect('1').not.toBeNumber();
+          expect(NaN).not.toBeNumber();
+        });
+      });
     });
   });
 
   describe('toBeCalculable', function() {
-    it('should assert value can be coerced by JavaScript to be used in mathematical operations', function() {
-      expect('1').toBeCalculable();
-      expect({}).not.toBeCalculable();
-      expect('').toBeCalculable();
-      expect(null).toBeCalculable();
-      expect(NaN).not.toBeCalculable();
+    describe('when invoked', function() {
+      describe('when subject CAN be coerced to be used in mathematical operations', function() {
+        it('should confirm', function() {
+          expect('1').toBeCalculable();
+          expect('').toBeCalculable();
+          expect(null).toBeCalculable();
+        });
+      });
+      describe('when subject can NOT be coerced by JavaScript to be used in mathematical operations', function() {
+        it('should deny', function() {
+          expect({}).not.toBeCalculable();
+          expect(NaN).not.toBeCalculable();
+        });
+      });
     });
   });
 
   describe('toBeEvenNumber', function() {
-    it('should assert value is an even number', function() {
-      expect(2).toBeEvenNumber();
-      expect(1).not.toBeEvenNumber();
-      expect(NaN).not.toBeEvenNumber();
+    describe('when invoked', function() {
+      describe('when subject IS an even number', function() {
+        it('should confirm', function() {
+          expect(2).toBeEvenNumber();
+        });
+      });
+      describe('when subject is NOT an even number', function() {
+        it('should deny', function() {
+          expect(1).not.toBeEvenNumber();
+          expect(NaN).not.toBeEvenNumber();
+        });
+      });
     });
   });
 
   describe('toBeOddNumber', function() {
-    it('should assert value is an even number', function() {
-      expect(1).toBeOddNumber();
-      expect(2).not.toBeOddNumber();
-      expect(NaN).not.toBeOddNumber();
+    describe('when invoked', function() {
+      describe('when subject IS an odd number', function() {
+        it('should confirm', function() {
+          expect(1).toBeOddNumber();
+        });
+      });
+      describe('when subject is NOT an odd number', function() {
+        it('should deny', function() {
+          expect(2).not.toBeOddNumber();
+          expect(NaN).not.toBeOddNumber();
+        });
+      });
     });
   });
 
   describe('toBeWithinRange', function() {
-    it('should assert value is a number >= floor or <= ceiling', function() {
-      expect(-3).not.toBeWithinRange(0, 2);
-      expect(-2).not.toBeWithinRange(0, 2);
-      expect(-1).not.toBeWithinRange(0, 2);
-      expect(0).toBeWithinRange(0, 2);
-      expect(1).toBeWithinRange(0, 2);
-      expect(2).toBeWithinRange(0, 2);
-      expect(3).not.toBeWithinRange(0, 2);
-      expect(NaN).not.toBeWithinRange(0, 2);
+    describe('when invoked', function() {
+      describe('when subject IS a number >= floor and <= ceiling', function() {
+        it('should confirm', function() {
+          expect(0).toBeWithinRange(0, 2);
+          expect(1).toBeWithinRange(0, 2);
+          expect(2).toBeWithinRange(0, 2);
+        });
+      });
+      describe('when subject is NOT a number >= floor and <= ceiling', function() {
+        it('should deny', function() {
+          expect(-3).not.toBeWithinRange(0, 2);
+          expect(-2).not.toBeWithinRange(0, 2);
+          expect(-1).not.toBeWithinRange(0, 2);
+          expect(3).not.toBeWithinRange(0, 2);
+          expect(NaN).not.toBeWithinRange(0, 2);
+        });
+      });
     });
   });
 
   describe('toBeWholeNumber', function() {
-    it('should assert value is a number with no positive decimal places', function() {
-      expect(1).toBeWholeNumber();
-      expect(0).toBeWholeNumber();
-      expect(0.0).toBeWholeNumber();
-      expect(NaN).not.toBeWholeNumber();
-      expect(1.1).not.toBeWholeNumber();
-      expect(0.1).not.toBeWholeNumber();
+    describe('when invoked', function() {
+      describe('when subject IS a number with no positive decimal places', function() {
+        it('should confirm', function() {
+          expect(1).toBeWholeNumber();
+          expect(0).toBeWholeNumber();
+          expect(0.0).toBeWholeNumber();
+        });
+      });
+      describe('when subject is NOT a number with no positive decimal places', function() {
+        it('should deny', function() {
+          expect(NaN).not.toBeWholeNumber();
+          expect(1.1).not.toBeWholeNumber();
+          expect(0.1).not.toBeWholeNumber();
+        });
+      });
     });
   });
 
