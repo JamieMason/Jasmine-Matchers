@@ -2,7 +2,7 @@
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toBeBoolean
+   * @alias toBeBoolean
    *
    * @description
    * Assert subject is not only truthy or falsy, but an actual Boolean.
@@ -17,7 +17,7 @@
   };
 
   /**
-   * @name toBeTrue
+   * @alias toBeTrue
    *
    * @description
    * Assert subject is not only truthy, but an actual Boolean true.
@@ -32,7 +32,7 @@
   };
 
   /**
-   * @name toBeFalse
+   * @alias toBeFalse
    *
    * @description
    * Assert subject is not only falsy, but an actual Boolean false.
@@ -50,7 +50,7 @@
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toHaveBoolean
+   * @alias toHaveBoolean
    *
    * @description
    * .
@@ -66,7 +66,7 @@
   };
 
   /**
-   * @name toHaveFalse
+   * @alias toHaveFalse
    *
    * @description
    * .
@@ -82,7 +82,7 @@
   };
 
   /**
-   * @name toHaveTrue
+   * @alias toHaveTrue
    *
    * @description
    * .

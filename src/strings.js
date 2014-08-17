@@ -2,7 +2,7 @@
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toBeString
+   * @alias toBeString
    *
    * @description
    * Assert subject is a String.
@@ -17,7 +17,7 @@
   };
 
   /**
-   * @name toBeEmptyString
+   * @alias toBeEmptyString
    *
    * @description
    * Assert subject is a String of length 0.
@@ -32,7 +32,7 @@
   };
 
   /**
-   * @name toBeNonEmptyString
+   * @alias toBeNonEmptyString
    *
    * @description
    * Assert subject is a String with at least 1 character.
@@ -47,7 +47,7 @@
   };
 
   /**
-   * @name toBeHtmlString
+   * @alias toBeHtmlString
    *
    * @description
    * Assert subject is string containing HTML Markup.
@@ -72,7 +72,7 @@
   };
 
   /**
-   * @name toBeJsonString
+   * @alias toBeJsonString
    *
    * @description
    * Assert subject is string containing parseable JSON.
@@ -94,7 +94,7 @@
   };
 
   /**
-   * @name toBeWhitespace
+   * @alias toBeWhitespace
    *
    * @description
    * Assert subject is a String containing nothing but whitespace.
@@ -109,7 +109,7 @@
   };
 
   /**
-   * @name toStartWith
+   * @alias toStartWith
    *
    * @description
    * Assert subject is a String whose first characters match our expected string.
@@ -130,7 +130,7 @@
   };
 
   /**
-   * @name toEndWith
+   * @alias toEndWith
    *
    * @description
    * Assert subject is a String whose last characters match our expected string.
@@ -151,7 +151,7 @@
   };
 
   /**
-   * @name toBeLongerThan
+   * @alias toBeLongerThan
    *
    * @description
    * Assert subject is a String whose length is greater than our other string.
@@ -169,7 +169,7 @@
   };
 
   /**
-   * @name toBeShorterThan
+   * @alias toBeShorterThan
    *
    * @description
    * Assert subject is a String whose length is greater than our other string.
@@ -187,7 +187,7 @@
   };
 
   /**
-   * @name toBeSameLengthAs
+   * @alias toBeSameLengthAs
    *
    * @description
    * Assert subject is a String whose length is equal to our other string.
@@ -208,7 +208,7 @@
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toHaveEmptyString
+   * @alias toHaveEmptyString
    *
    * @description
    * .
@@ -224,7 +224,7 @@
   };
 
   /**
-   * @name toHaveHtmlString
+   * @alias toHaveHtmlString
    *
    * @description
    * .
@@ -240,7 +240,7 @@
   };
 
   /**
-   * @name toHaveJsonString
+   * @alias toHaveJsonString
    *
    * @description
    * .
@@ -256,7 +256,7 @@
   };
 
   /**
-   * @name toHaveNonEmptyString
+   * @alias toHaveNonEmptyString
    *
    * @description
    * .
@@ -272,7 +272,7 @@
   };
 
   /**
-   * @name toHaveString
+   * @alias toHaveString
    *
    * @description
    * .
@@ -288,7 +288,7 @@
   };
 
   /**
-   * @name toHaveStringLongerThan
+   * @alias toHaveStringLongerThan
    *
    * @description
    * .
@@ -305,7 +305,7 @@
   };
 
   /**
-   * @name toHaveStringSameLengthAs
+   * @alias toHaveStringSameLengthAs
    *
    * @description
    * .
@@ -322,7 +322,7 @@
   };
 
   /**
-   * @name toHaveStringShorterThan
+   * @alias toHaveStringShorterThan
    *
    * @description
    * .
@@ -339,7 +339,7 @@
   };
 
   /**
-   * @name toHaveWhitespaceString
+   * @alias toHaveWhitespaceString
    *
    * @description
    * .

@@ -231,7 +231,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeArray
+   * @alias toBeArray
    *
    * @description
    * Assert subject is a true Array, created in the parent document — those created and imported
@@ -247,7 +247,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeArrayOfSize
+   * @alias toBeArrayOfSize
    *
    * @description
    * Assert subject is not only a true Array, but one with a specific number of members.
@@ -263,7 +263,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeEmptyArray
+   * @alias toBeEmptyArray
    *
    * @description
    * Assert subject is not only a true Array, but one without any members.
@@ -278,7 +278,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeNonEmptyArray
+   * @alias toBeNonEmptyArray
    *
    * @description
    * Assert subject is not only a true Array, but one with at least one member.
@@ -293,7 +293,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeArrayOfObjects
+   * @alias toBeArrayOfObjects
    *
    * @description
    * Assert subject is an Array which is either empty or contains only Objects.
@@ -306,7 +306,7 @@ beforeEach(function() {
   matchers.toBeArrayOfObjects = priv.createToBeArrayOfXsMatcher('toBeObject');
 
   /**
-   * @name toBeArrayOfStrings
+   * @alias toBeArrayOfStrings
    *
    * @description
    * Assert subject is an Array which is either empty or contains only Strings.
@@ -319,7 +319,7 @@ beforeEach(function() {
   matchers.toBeArrayOfStrings = priv.createToBeArrayOfXsMatcher('toBeString');
 
   /**
-   * @name toBeArrayOfNumbers
+   * @alias toBeArrayOfNumbers
    *
    * @description
    * Assert subject is an Array which is either empty or contains only Numbers.
@@ -332,7 +332,7 @@ beforeEach(function() {
   matchers.toBeArrayOfNumbers = priv.createToBeArrayOfXsMatcher('toBeNumber');
 
   /**
-   * @name toBeArrayOfBooleans
+   * @alias toBeArrayOfBooleans
    *
    * @description
    * Assert subject is an Array which is either empty or contains only Booleans.
@@ -348,7 +348,7 @@ beforeEach(function() {
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toHaveArray
+   * @alias toHaveArray
    *
    * @description
    * .
@@ -364,7 +364,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveArrayOfBooleans
+   * @alias toHaveArrayOfBooleans
    *
    * @description
    * .
@@ -380,7 +380,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveArrayOfNumbers
+   * @alias toHaveArrayOfNumbers
    *
    * @description
    * .
@@ -396,7 +396,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveArrayOfObjects
+   * @alias toHaveArrayOfObjects
    *
    * @description
    * .
@@ -412,7 +412,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveArrayOfSize
+   * @alias toHaveArrayOfSize
    *
    * @description
    * .
@@ -429,7 +429,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveNonEmptyArray
+   * @alias toHaveNonEmptyArray
    *
    * @description
    * .
@@ -445,7 +445,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveEmptyArray
+   * @alias toHaveEmptyArray
    *
    * @description
    * .
@@ -461,7 +461,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveArrayOfStrings
+   * @alias toHaveArrayOfStrings
    *
    * @description
    * .
@@ -480,7 +480,7 @@ beforeEach(function() {
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toBeBoolean
+   * @alias toBeBoolean
    *
    * @description
    * Assert subject is not only truthy or falsy, but an actual Boolean.
@@ -495,7 +495,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeTrue
+   * @alias toBeTrue
    *
    * @description
    * Assert subject is not only truthy, but an actual Boolean true.
@@ -510,7 +510,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeFalse
+   * @alias toBeFalse
    *
    * @description
    * Assert subject is not only falsy, but an actual Boolean false.
@@ -528,7 +528,7 @@ beforeEach(function() {
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toHaveBoolean
+   * @alias toHaveBoolean
    *
    * @description
    * .
@@ -544,7 +544,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveFalse
+   * @alias toHaveFalse
    *
    * @description
    * .
@@ -560,7 +560,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveTrue
+   * @alias toHaveTrue
    *
    * @description
    * .
@@ -579,7 +579,7 @@ beforeEach(function() {
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toBeWindow
+   * @alias toBeWindow
    *
    * @description
    * Assert subject is a browser Window global, whether that be the parent window or those created
@@ -595,7 +595,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeDocument
+   * @alias toBeDocument
    *
    * @description
    * Assert subject is a browser Window global, whether that be the parent window or those created
@@ -611,7 +611,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeHtmlNode
+   * @alias toBeHtmlNode
    *
    * @description
    * Assert subject is an HTML Element.
@@ -626,7 +626,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeHtmlTextNode
+   * @alias toBeHtmlTextNode
    *
    * @description
    * Assert subject is an HTML Text Element.
@@ -641,7 +641,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeHtmlCommentNode
+   * @alias toBeHtmlCommentNode
    *
    * @description
    * Assert subject is an HTML Comment Element.
@@ -659,7 +659,7 @@ beforeEach(function() {
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toBeHtmlNode
+   * @alias toBeHtmlNode
    *
    * @description
    * Assert subject is a true Object containing a property at memberName which is an HTML Element.
@@ -678,7 +678,7 @@ beforeEach(function() {
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toBeDate
+   * @alias toBeDate
    *
    * @description
    * Assert subject is a true Date, created in the parent document — those created and imported
@@ -694,7 +694,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeIso8601
+   * @alias toBeIso8601
    *
    * @description
    * Assert subject is a Date String conforming to the ISO 8601 standard.
@@ -712,7 +712,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeBefore
+   * @alias toBeBefore
    *
    * @description
    * Assert subject is a Date occurring before another Date.
@@ -728,7 +728,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeAfter
+   * @alias toBeAfter
    *
    * @description
    * Assert subject is a Date occurring after another Date.
@@ -747,7 +747,7 @@ beforeEach(function() {
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toHaveDate
+   * @alias toHaveDate
    *
    * @description
    * .
@@ -763,7 +763,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveDateAfter
+   * @alias toHaveDateAfter
    *
    * @description
    * .
@@ -780,7 +780,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveDateBefore
+   * @alias toHaveDateBefore
    *
    * @description
    * .
@@ -797,7 +797,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveIso8601
+   * @alias toHaveIso8601
    *
    * @description
    * .
@@ -816,7 +816,7 @@ beforeEach(function() {
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toThrowError
+   * @alias toThrowError
    *
    * @description
    * Asserts subject throws an Error of any type.
@@ -837,7 +837,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toThrowErrorOfType
+   * @alias toThrowErrorOfType
    *
    * @description
    * Asserts subject throws an Error of a specific type, such as "TypeError".
@@ -862,7 +862,7 @@ beforeEach(function() {
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toBeNumber
+   * @alias toBeNumber
    *
    * @description
    * Assert subject is not only calculable, but an actual Number
@@ -877,7 +877,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeEvenNumber
+   * @alias toBeEvenNumber
    *
    * @description
    * Assert subject is an even Number.
@@ -892,7 +892,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeOddNumber
+   * @alias toBeOddNumber
    *
    * @description
    * Assert subject is an odd Number.
@@ -907,7 +907,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeCalculable
+   * @alias toBeCalculable
    *
    * @description
    * Assert subject can be used in Mathemetic calculations, despite not being an actual Number.
@@ -930,7 +930,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeWithinRange
+   * @alias toBeWithinRange
    *
    * @description
    * Assert value falls on or between floor and ceiling.
@@ -947,7 +947,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeWholeNumber
+   * @alias toBeWholeNumber
    *
    * @description
    * Assert value is a number with no decimal places.
@@ -965,7 +965,7 @@ beforeEach(function() {
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toHaveNumber
+   * @alias toHaveNumber
    *
    * @description
    * .
@@ -981,7 +981,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveNumberWithinRange
+   * @alias toHaveNumberWithinRange
    *
    * @description
    * .
@@ -999,7 +999,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveCalculable
+   * @alias toHaveCalculable
    *
    * @description
    * .
@@ -1015,7 +1015,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveEvenNumber
+   * @alias toHaveEvenNumber
    *
    * @description
    * .
@@ -1031,7 +1031,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveOddNumber
+   * @alias toHaveOddNumber
    *
    * @description
    * .
@@ -1047,7 +1047,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveWholeNumber
+   * @alias toHaveWholeNumber
    *
    * @description
    * .
@@ -1082,7 +1082,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeObject
+   * @alias toBeObject
    *
    * @description
    * Assert subject is a true Object, created in the parent document — those created and imported
@@ -1098,7 +1098,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeEmptyObject
+   * @alias toBeEmptyObject
    *
    * @description
    * Assert subject is a true Object with no instance members.
@@ -1113,7 +1113,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeNonEmptyObject
+   * @alias toBeNonEmptyObject
    *
    * @description
    * Assert subject is a true Object with at least one instance member.
@@ -1128,7 +1128,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toImplement
+   * @alias toImplement
    *
    * @description
    * Assert subject is a true Object which features at least the same keys as `other` (regardless of
@@ -1154,7 +1154,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeFunction
+   * @alias toBeFunction
    *
    * @description
    * Assert subject is a true Function, created in the parent document — those created and imported
@@ -1173,7 +1173,7 @@ beforeEach(function() {
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toHaveMethod
+   * @alias toHaveMethod
    *
    * @description
    * Assert subject is a true Object containing a property at memberName which is a Function.
@@ -1189,7 +1189,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveObject
+   * @alias toHaveObject
    *
    * @description
    * Assert subject is a true Object containing a property at memberName which is a true Object.
@@ -1205,7 +1205,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveEmptyObject
+   * @alias toHaveEmptyObject
    *
    * @description
    * Assert subject is a true Object containing a property at memberName which is a true Object with
@@ -1222,7 +1222,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveNonEmptyObject
+   * @alias toHaveNonEmptyObject
    *
    * @description
    * Assert subject is a true Object containing a property at memberName which is a true Object with
@@ -1239,7 +1239,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveMember
+   * @alias toHaveMember
    *
    * @description
    * Assert subject is a true Object containing a property at memberName which is of any value,
@@ -1259,7 +1259,7 @@ beforeEach(function() {
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toBeString
+   * @alias toBeString
    *
    * @description
    * Assert subject is a String.
@@ -1274,7 +1274,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeEmptyString
+   * @alias toBeEmptyString
    *
    * @description
    * Assert subject is a String of length 0.
@@ -1289,7 +1289,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeNonEmptyString
+   * @alias toBeNonEmptyString
    *
    * @description
    * Assert subject is a String with at least 1 character.
@@ -1304,7 +1304,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeHtmlString
+   * @alias toBeHtmlString
    *
    * @description
    * Assert subject is string containing HTML Markup.
@@ -1329,7 +1329,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeJsonString
+   * @alias toBeJsonString
    *
    * @description
    * Assert subject is string containing parseable JSON.
@@ -1351,7 +1351,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeWhitespace
+   * @alias toBeWhitespace
    *
    * @description
    * Assert subject is a String containing nothing but whitespace.
@@ -1366,7 +1366,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toStartWith
+   * @alias toStartWith
    *
    * @description
    * Assert subject is a String whose first characters match our expected string.
@@ -1387,7 +1387,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toEndWith
+   * @alias toEndWith
    *
    * @description
    * Assert subject is a String whose last characters match our expected string.
@@ -1408,7 +1408,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeLongerThan
+   * @alias toBeLongerThan
    *
    * @description
    * Assert subject is a String whose length is greater than our other string.
@@ -1426,7 +1426,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeShorterThan
+   * @alias toBeShorterThan
    *
    * @description
    * Assert subject is a String whose length is greater than our other string.
@@ -1444,7 +1444,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toBeSameLengthAs
+   * @alias toBeSameLengthAs
    *
    * @description
    * Assert subject is a String whose length is equal to our other string.
@@ -1465,7 +1465,7 @@ beforeEach(function() {
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toHaveEmptyString
+   * @alias toHaveEmptyString
    *
    * @description
    * .
@@ -1481,7 +1481,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveHtmlString
+   * @alias toHaveHtmlString
    *
    * @description
    * .
@@ -1497,7 +1497,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveJsonString
+   * @alias toHaveJsonString
    *
    * @description
    * .
@@ -1513,7 +1513,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveNonEmptyString
+   * @alias toHaveNonEmptyString
    *
    * @description
    * .
@@ -1529,7 +1529,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveString
+   * @alias toHaveString
    *
    * @description
    * .
@@ -1545,7 +1545,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveStringLongerThan
+   * @alias toHaveStringLongerThan
    *
    * @description
    * .
@@ -1562,7 +1562,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveStringSameLengthAs
+   * @alias toHaveStringSameLengthAs
    *
    * @description
    * .
@@ -1579,7 +1579,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveStringShorterThan
+   * @alias toHaveStringShorterThan
    *
    * @description
    * .
@@ -1596,7 +1596,7 @@ beforeEach(function() {
   };
 
   /**
-   * @name toHaveWhitespaceString
+   * @alias toHaveWhitespaceString
    *
    * @description
    * .

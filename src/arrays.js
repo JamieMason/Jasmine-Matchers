@@ -14,7 +14,7 @@
   };
 
   /**
-   * @name toBeArray
+   * @alias toBeArray
    *
    * @description
    * Assert subject is a true Array, created in the parent document — those created and imported
@@ -30,7 +30,7 @@
   };
 
   /**
-   * @name toBeArrayOfSize
+   * @alias toBeArrayOfSize
    *
    * @description
    * Assert subject is not only a true Array, but one with a specific number of members.
@@ -46,7 +46,7 @@
   };
 
   /**
-   * @name toBeEmptyArray
+   * @alias toBeEmptyArray
    *
    * @description
    * Assert subject is not only a true Array, but one without any members.
@@ -61,7 +61,7 @@
   };
 
   /**
-   * @name toBeNonEmptyArray
+   * @alias toBeNonEmptyArray
    *
    * @description
    * Assert subject is not only a true Array, but one with at least one member.
@@ -76,7 +76,7 @@
   };
 
   /**
-   * @name toBeArrayOfObjects
+   * @alias toBeArrayOfObjects
    *
    * @description
    * Assert subject is an Array which is either empty or contains only Objects.
@@ -89,7 +89,7 @@
   matchers.toBeArrayOfObjects = priv.createToBeArrayOfXsMatcher('toBeObject');
 
   /**
-   * @name toBeArrayOfStrings
+   * @alias toBeArrayOfStrings
    *
    * @description
    * Assert subject is an Array which is either empty or contains only Strings.
@@ -102,7 +102,7 @@
   matchers.toBeArrayOfStrings = priv.createToBeArrayOfXsMatcher('toBeString');
 
   /**
-   * @name toBeArrayOfNumbers
+   * @alias toBeArrayOfNumbers
    *
    * @description
    * Assert subject is an Array which is either empty or contains only Numbers.
@@ -115,7 +115,7 @@
   matchers.toBeArrayOfNumbers = priv.createToBeArrayOfXsMatcher('toBeNumber');
 
   /**
-   * @name toBeArrayOfBooleans
+   * @alias toBeArrayOfBooleans
    *
    * @description
    * Assert subject is an Array which is either empty or contains only Booleans.
@@ -131,7 +131,7 @@
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toHaveArray
+   * @alias toHaveArray
    *
    * @description
    * .
@@ -147,7 +147,7 @@
   };
 
   /**
-   * @name toHaveArrayOfBooleans
+   * @alias toHaveArrayOfBooleans
    *
    * @description
    * .
@@ -163,7 +163,7 @@
   };
 
   /**
-   * @name toHaveArrayOfNumbers
+   * @alias toHaveArrayOfNumbers
    *
    * @description
    * .
@@ -179,7 +179,7 @@
   };
 
   /**
-   * @name toHaveArrayOfObjects
+   * @alias toHaveArrayOfObjects
    *
    * @description
    * .
@@ -195,7 +195,7 @@
   };
 
   /**
-   * @name toHaveArrayOfSize
+   * @alias toHaveArrayOfSize
    *
    * @description
    * .
@@ -212,7 +212,7 @@
   };
 
   /**
-   * @name toHaveNonEmptyArray
+   * @alias toHaveNonEmptyArray
    *
    * @description
    * .
@@ -228,7 +228,7 @@
   };
 
   /**
-   * @name toHaveEmptyArray
+   * @alias toHaveEmptyArray
    *
    * @description
    * .
@@ -244,7 +244,7 @@
   };
 
   /**
-   * @name toHaveArrayOfStrings
+   * @alias toHaveArrayOfStrings
    *
    * @description
    * .

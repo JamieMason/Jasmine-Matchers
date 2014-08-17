@@ -18,7 +18,7 @@
   };
 
   /**
-   * @name toBeObject
+   * @alias toBeObject
    *
    * @description
    * Assert subject is a true Object, created in the parent document — those created and imported
@@ -34,7 +34,7 @@
   };
 
   /**
-   * @name toBeEmptyObject
+   * @alias toBeEmptyObject
    *
    * @description
    * Assert subject is a true Object with no instance members.
@@ -49,7 +49,7 @@
   };
 
   /**
-   * @name toBeNonEmptyObject
+   * @alias toBeNonEmptyObject
    *
    * @description
    * Assert subject is a true Object with at least one instance member.
@@ -64,7 +64,7 @@
   };
 
   /**
-   * @name toImplement
+   * @alias toImplement
    *
    * @description
    * Assert subject is a true Object which features at least the same keys as `other` (regardless of
@@ -90,7 +90,7 @@
   };
 
   /**
-   * @name toBeFunction
+   * @alias toBeFunction
    *
    * @description
    * Assert subject is a true Function, created in the parent document — those created and imported
@@ -109,7 +109,7 @@
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toHaveMethod
+   * @alias toHaveMethod
    *
    * @description
    * Assert subject is a true Object containing a property at memberName which is a Function.
@@ -125,7 +125,7 @@
   };
 
   /**
-   * @name toHaveObject
+   * @alias toHaveObject
    *
    * @description
    * Assert subject is a true Object containing a property at memberName which is a true Object.
@@ -141,7 +141,7 @@
   };
 
   /**
-   * @name toHaveEmptyObject
+   * @alias toHaveEmptyObject
    *
    * @description
    * Assert subject is a true Object containing a property at memberName which is a true Object with
@@ -158,7 +158,7 @@
   };
 
   /**
-   * @name toHaveNonEmptyObject
+   * @alias toHaveNonEmptyObject
    *
    * @description
    * Assert subject is a true Object containing a property at memberName which is a true Object with
@@ -175,7 +175,7 @@
   };
 
   /**
-   * @name toHaveMember
+   * @alias toHaveMember
    *
    * @description
    * Assert subject is a true Object containing a property at memberName which is of any value,

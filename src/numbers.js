@@ -2,7 +2,7 @@
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toBeNumber
+   * @alias toBeNumber
    *
    * @description
    * Assert subject is not only calculable, but an actual Number
@@ -17,7 +17,7 @@
   };
 
   /**
-   * @name toBeEvenNumber
+   * @alias toBeEvenNumber
    *
    * @description
    * Assert subject is an even Number.
@@ -32,7 +32,7 @@
   };
 
   /**
-   * @name toBeOddNumber
+   * @alias toBeOddNumber
    *
    * @description
    * Assert subject is an odd Number.
@@ -47,7 +47,7 @@
   };
 
   /**
-   * @name toBeCalculable
+   * @alias toBeCalculable
    *
    * @description
    * Assert subject can be used in Mathemetic calculations, despite not being an actual Number.
@@ -70,7 +70,7 @@
   };
 
   /**
-   * @name toBeWithinRange
+   * @alias toBeWithinRange
    *
    * @description
    * Assert value falls on or between floor and ceiling.
@@ -87,7 +87,7 @@
   };
 
   /**
-   * @name toBeWholeNumber
+   * @alias toBeWholeNumber
    *
    * @description
    * Assert value is a number with no decimal places.
@@ -105,7 +105,7 @@
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toHaveNumber
+   * @alias toHaveNumber
    *
    * @description
    * .
@@ -121,7 +121,7 @@
   };
 
   /**
-   * @name toHaveNumberWithinRange
+   * @alias toHaveNumberWithinRange
    *
    * @description
    * .
@@ -139,7 +139,7 @@
   };
 
   /**
-   * @name toHaveCalculable
+   * @alias toHaveCalculable
    *
    * @description
    * .
@@ -155,7 +155,7 @@
   };
 
   /**
-   * @name toHaveEvenNumber
+   * @alias toHaveEvenNumber
    *
    * @description
    * .
@@ -171,7 +171,7 @@
   };
 
   /**
-   * @name toHaveOddNumber
+   * @alias toHaveOddNumber
    *
    * @description
    * .
@@ -187,7 +187,7 @@
   };
 
   /**
-   * @name toHaveWholeNumber
+   * @alias toHaveWholeNumber
    *
    * @description
    * .

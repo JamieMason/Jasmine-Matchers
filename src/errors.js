@@ -2,7 +2,7 @@
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toThrowError
+   * @alias toThrowError
    *
    * @description
    * Asserts subject throws an Error of any type.
@@ -23,7 +23,7 @@
   };
 
   /**
-   * @name toThrowErrorOfType
+   * @alias toThrowErrorOfType
    *
    * @description
    * Asserts subject throws an Error of a specific type, such as "TypeError".

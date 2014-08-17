@@ -2,7 +2,7 @@
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toBeDate
+   * @alias toBeDate
    *
    * @description
    * Assert subject is a true Date, created in the parent document — those created and imported
@@ -18,7 +18,7 @@
   };
 
   /**
-   * @name toBeIso8601
+   * @alias toBeIso8601
    *
    * @description
    * Assert subject is a Date String conforming to the ISO 8601 standard.
@@ -36,7 +36,7 @@
   };
 
   /**
-   * @name toBeBefore
+   * @alias toBeBefore
    *
    * @description
    * Assert subject is a Date occurring before another Date.
@@ -52,7 +52,7 @@
   };
 
   /**
-   * @name toBeAfter
+   * @alias toBeAfter
    *
    * @description
    * Assert subject is a Date occurring after another Date.
@@ -71,7 +71,7 @@
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toHaveDate
+   * @alias toHaveDate
    *
    * @description
    * .
@@ -87,7 +87,7 @@
   };
 
   /**
-   * @name toHaveDateAfter
+   * @alias toHaveDateAfter
    *
    * @description
    * .
@@ -104,7 +104,7 @@
   };
 
   /**
-   * @name toHaveDateBefore
+   * @alias toHaveDateBefore
    *
    * @description
    * .
@@ -121,7 +121,7 @@
   };
 
   /**
-   * @name toHaveIso8601
+   * @alias toHaveIso8601
    *
    * @description
    * .

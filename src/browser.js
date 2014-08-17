@@ -2,7 +2,7 @@
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toBeWindow
+   * @alias toBeWindow
    *
    * @description
    * Assert subject is a browser Window global, whether that be the parent window or those created
@@ -18,7 +18,7 @@
   };
 
   /**
-   * @name toBeDocument
+   * @alias toBeDocument
    *
    * @description
    * Assert subject is a browser Window global, whether that be the parent window or those created
@@ -34,7 +34,7 @@
   };
 
   /**
-   * @name toBeHtmlNode
+   * @alias toBeHtmlNode
    *
    * @description
    * Assert subject is an HTML Element.
@@ -49,7 +49,7 @@
   };
 
   /**
-   * @name toBeHtmlTextNode
+   * @alias toBeHtmlTextNode
    *
    * @description
    * Assert subject is an HTML Text Element.
@@ -64,7 +64,7 @@
   };
 
   /**
-   * @name toBeHtmlCommentNode
+   * @alias toBeHtmlCommentNode
    *
    * @description
    * Assert subject is an HTML Comment Element.
@@ -82,7 +82,7 @@
   // ---------------------------------------------------------------------------
 
   /**
-   * @name toBeHtmlNode
+   * @alias toBeHtmlNode
    *
    * @description
    * Assert subject is a true Object containing a property at memberName which is an HTML Element.
