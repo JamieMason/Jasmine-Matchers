@@ -23,7 +23,7 @@
  * SOFTWARE.
  */
 
-beforeEach(function() {
+(function() {
 
   var jasmineVersion = 0;
   var matchers = {};

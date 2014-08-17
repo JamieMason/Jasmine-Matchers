@@ -23,7 +23,7 @@
  * SOFTWARE.
  */
 
-beforeEach(function() {
+(function() {
 
   var jasmineVersion = 0;
   var matchers = {};
@@ -1615,11 +1615,15 @@ beforeEach(function() {
 
   switch (jasmineVersion) {
     case 1:
-      this.addMatchers(matchers);
+      beforeEach(function() {
+        this.addMatchers(matchers);
+      });
       break;
     case 2:
-      jasmine.addMatchers(priv.adaptMatchers(matchers));
+      beforeEach(function() {
+        jasmine.addMatchers(priv.adaptMatchers(matchers));
+      });
       break;
   }
 
-});
+}());
