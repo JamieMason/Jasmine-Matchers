@@ -29,12 +29,6 @@
   var matchers = {};
   var priv = {};
 
-  if (typeof this.addMatchers === 'function') {
-    jasmineVersion = 1;
-  } else if (typeof jasmine.addMatchers === 'function') {
-    jasmineVersion = 2;
-  }
-
   /**
    * @inner
    * @param  {Object} object
@@ -1522,18 +1516,14 @@
   };
 
   // Create adapters for the original matchers so they can be compatible with Jasmine 2.0.
+  var matchersV2 = priv.adaptMatchers(matchers);
 
-  switch (jasmineVersion) {
-    case 1:
-      beforeEach(function() {
-        this.addMatchers(matchers);
-      });
-      break;
-    case 2:
-      beforeEach(function() {
-        jasmine.addMatchers(priv.adaptMatchers(matchers));
-      });
-      break;
-  }
+  beforeEach(function() {
+    if (typeof this.addMatchers === 'function') {
+      this.addMatchers(matchers);
+    } else if (typeof jasmine.addMatchers === 'function') {
+      jasmine.addMatchers(matchersV2);
+    }
+  });
 
 }());
