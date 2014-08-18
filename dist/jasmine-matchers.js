@@ -313,131 +313,6 @@
   matchers.toBeArrayOfBooleans = priv.createToBeArrayOfXsMatcher('toBeBoolean');
 
   /**
-   * @module ArrayMembers
-   */
-
-  /**
-   * @alias
-   * module:ArrayMembers.toHaveArray
-   *
-   * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveArray = function(memberName) {
-    return priv.assertMember.call(this, 'toBeArray', memberName);
-  };
-
-  /**
-   * @alias
-   * module:ArrayMembers.toHaveArrayOfBooleans
-   *
-   * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveArrayOfBooleans = function(memberName) {
-    return priv.assertMember.call(this, 'toBeArrayOfBooleans', memberName);
-  };
-
-  /**
-   * @alias
-   * module:ArrayMembers.toHaveArrayOfNumbers
-   *
-   * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveArrayOfNumbers = function(memberName) {
-    return priv.assertMember.call(this, 'toBeArrayOfNumbers', memberName);
-  };
-
-  /**
-   * @alias
-   * module:ArrayMembers.toHaveArrayOfObjects
-   *
-   * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveArrayOfObjects = function(memberName) {
-    return priv.assertMember.call(this, 'toBeArrayOfObjects', memberName);
-  };
-
-  /**
-   * @alias
-   * module:ArrayMembers.toHaveArrayOfSize
-   *
-   * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @param  {Number} size
-   * @return {Boolean}
-   */
-  matchers.toHaveArrayOfSize = function(memberName, size) {
-    return priv.assertMember.call(this, 'toBeArrayOfSize', memberName, size);
-  };
-
-  /**
-   * @alias
-   * module:ArrayMembers.toHaveNonEmptyArray
-   *
-   * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveNonEmptyArray = function(memberName) {
-    return priv.assertMember.call(this, 'toBeNonEmptyArray', memberName);
-  };
-
-  /**
-   * @alias
-   * module:ArrayMembers.toHaveEmptyArray
-   *
-   * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveEmptyArray = function(memberName) {
-    return priv.assertMember.call(this, 'toBeEmptyArray', memberName);
-  };
-
-  /**
-   * @alias
-   * module:ArrayMembers.toHaveArrayOfStrings
-   *
-   * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveArrayOfStrings = function(memberName) {
-    return priv.assertMember.call(this, 'toBeArrayOfStrings', memberName);
-  };
-
-  /**
    * @module Booleans
    */
 
@@ -484,52 +359,22 @@
   };
 
   /**
-   * @module BooleanMembers
+   * @module BrowserMembers
    */
 
   /**
    * @alias
-   * module:BooleanMembers.toHaveBoolean
+   * module:BrowserMembers.toBeHtmlNode
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   * <p>Assert subject is a true Object containing a property at memberName which is an HTML Element.
+   * <p>See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    *
-   * @param  {String} memberName
+   * @param {Boolean} memberName
    * @return {Boolean}
    */
-  matchers.toHaveBoolean = function(memberName) {
-    return priv.assertMember.call(this, 'toBeBoolean', memberName);
-  };
-
-  /**
-   * @alias
-   * module:BooleanMembers.toHaveFalse
-   *
-   * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveFalse = function(memberName) {
-    return priv.assertMember.call(this, 'toBeFalse', memberName);
-  };
-
-  /**
-   * @alias
-   * module:BooleanMembers.toHaveTrue
-   *
-   * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveTrue = function(memberName) {
-    return priv.assertMember.call(this, 'toBeTrue', memberName);
+  matchers.toHaveHtmlNode = function(memberName) {
+    return priv.assertMember.call(this, 'toBeHtmlNode', memberName);
   };
 
   /**
@@ -609,25 +454,6 @@
   };
 
   /**
-   * @module BrowserMembers
-   */
-
-  /**
-   * @alias
-   * module:BrowserMembers.toBeHtmlNode
-   *
-   * @description
-   * <p>Assert subject is a true Object containing a property at memberName which is an HTML Element.
-   * <p>See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
-   *
-   * @param {Boolean} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveHtmlNode = function(memberName) {
-    return priv.assertMember.call(this, 'toBeHtmlNode', memberName);
-  };
-
-  /**
    * @module Dates
    */
 
@@ -691,72 +517,6 @@
    */
   matchers.toBeAfter = function(date) {
     return matchers.toBeBefore.call({ actual: date }, this.actual);
-  };
-
-  /**
-   * @module DateMembers
-   */
-
-  /**
-   * @alias
-   * module:DateMembers.toHaveDate
-   *
-   * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveDate = function(memberName) {
-    return priv.assertMember.call(this, 'toBeDate', memberName);
-  };
-
-  /**
-   * @alias
-   * module:DateMembers.toHaveDateAfter
-   *
-   * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-bdate-testing|Unit testing Dates with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @param  {Date} date
-   * @return {Boolean}
-   */
-  matchers.toHaveDateAfter = function(memberName, date) {
-    return priv.assertMember.call(this, 'toBeDateAfter', memberName, date);
-  };
-
-  /**
-   * @alias
-   * module:DateMembers.toHaveDateBefore
-   *
-   * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-browser-date|Unit testing Browsers with Dates}.
-   *
-   * @param  {String} memberName
-   * @param  {Date} date
-   * @return {Boolean}
-   */
-  matchers.toHaveDateBefore = function(memberName, date) {
-    return priv.assertMember.call(this, 'toBeDateBefore', memberName, date);
-  };
-
-  /**
-   * @alias
-   * module:DateMembers.toHaveIso8601
-   *
-   * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveIso8601 = function(memberName) {
-    return priv.assertMember.call(this, 'toBeIso8601', memberName);
   };
 
   /**
@@ -903,102 +663,6 @@
   };
 
   /**
-   * @module NumberMembers
-   */
-
-  /**
-   * @alias
-   * module:NumberMembers.toHaveNumber
-   *
-   * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveNumber = function(memberName) {
-    return priv.assertMember.call(this, 'toBeNumber', memberName);
-  };
-
-  /**
-   * @alias
-   * module:NumberMembers.toHaveNumberWithinRange
-   *
-   * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @param  {Number} floor
-   * @param  {Number} ceiling
-   * @return {Boolean}
-   */
-  matchers.toHaveNumberWithinRange = function(memberName, floor, ceiling) {
-    return priv.assertMember.call(this, 'toBeWithinRange', memberName, floor, ceiling);
-  };
-
-  /**
-   * @alias
-   * module:NumberMembers.toHaveCalculable
-   *
-   * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveCalculable = function(memberName) {
-    return priv.assertMember.call(this, 'toBeCalculable', memberName);
-  };
-
-  /**
-   * @alias
-   * module:NumberMembers.toHaveEvenNumber
-   *
-   * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveEvenNumber = function(memberName) {
-    return priv.assertMember.call(this, 'toBeEvenNumber', memberName);
-  };
-
-  /**
-   * @alias
-   * module:NumberMembers.toHaveOddNumber
-   *
-   * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveOddNumber = function(memberName) {
-    return priv.assertMember.call(this, 'toBeOddNumber', memberName);
-  };
-
-  /**
-   * @alias
-   * module:NumberMembers.toHaveWholeNumber
-   *
-   * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveWholeNumber = function(memberName) {
-    return priv.assertMember.call(this, 'toBeWholeNumber', memberName);
-  };
-
-  /**
    * @module Objects
    */
 
@@ -1099,88 +763,6 @@
    */
   matchers.toBeFunction = function() {
     return this.actual instanceof Function;
-  };
-
-  /**
-   * @module ObjectMembers
-   */
-
-  /**
-   * @alias
-   * module:ObjectMembers.toHaveMethod
-   *
-   * @description
-   * <p>Assert subject is a true Object containing a property at memberName which is a Function.
-   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
-   *
-   * @param {Boolean} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveMethod = function(memberName) {
-    return priv.assertMember.call(this, 'toBeFunction', memberName);
-  };
-
-  /**
-   * @alias
-   * module:ObjectMembers.toHaveObject
-   *
-   * @description
-   * <p>Assert subject is a true Object containing a property at memberName which is a true Object.
-   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
-   *
-   * @param {Boolean} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveObject = function(memberName) {
-    return priv.assertMember.call(this, 'toBeObject', memberName);
-  };
-
-  /**
-   * @alias
-   * module:ObjectMembers.toHaveEmptyObject
-   *
-   * @description
-   * <p>Assert subject is a true Object containing a property at memberName which is a true Object with
-   * no instance members.
-   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
-   *
-   * @param {Boolean} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveEmptyObject = function(memberName) {
-    return priv.assertMember.call(this, 'toBeEmptyObject', memberName);
-  };
-
-  /**
-   * @alias
-   * module:ObjectMembers.toHaveNonEmptyObject
-   *
-   * @description
-   * <p>Assert subject is a true Object containing a property at memberName which is a true Object with
-   * at least one instance member.
-   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
-   *
-   * @param {Boolean} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveNonEmptyObject = function(memberName) {
-    return priv.assertMember.call(this, 'toBeNonEmptyObject', memberName);
-  };
-
-  /**
-   * @alias
-   * module:ObjectMembers.toHaveMember
-   *
-   * @description
-   * <p>Assert subject is a true Object containing a property at memberName which is of any value,
-   * including undefined.
-   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
-   *
-   * @param {Boolean} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveMember = function(memberName) {
-    return memberName && priv.is(this.actual, 'Object') && memberName in this.actual;
   };
 
   /**
@@ -1377,6 +959,443 @@
     return matchers.toBeString.call(this) && matchers.toBeString.call({
       actual: other
     }) && this.actual.length === other.length;
+  };
+
+  /**
+   * @module ArrayMembers
+   */
+
+  /**
+   * @alias
+   * module:ArrayMembers.toHaveArray
+   *
+   * @description
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveArray = function(memberName) {
+    return priv.assertMember.call(this, 'toBeArray', memberName);
+  };
+
+  /**
+   * @alias
+   * module:ArrayMembers.toHaveArrayOfBooleans
+   *
+   * @description
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveArrayOfBooleans = function(memberName) {
+    return priv.assertMember.call(this, 'toBeArrayOfBooleans', memberName);
+  };
+
+  /**
+   * @alias
+   * module:ArrayMembers.toHaveArrayOfNumbers
+   *
+   * @description
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveArrayOfNumbers = function(memberName) {
+    return priv.assertMember.call(this, 'toBeArrayOfNumbers', memberName);
+  };
+
+  /**
+   * @alias
+   * module:ArrayMembers.toHaveArrayOfObjects
+   *
+   * @description
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveArrayOfObjects = function(memberName) {
+    return priv.assertMember.call(this, 'toBeArrayOfObjects', memberName);
+  };
+
+  /**
+   * @alias
+   * module:ArrayMembers.toHaveArrayOfSize
+   *
+   * @description
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @param  {Number} size
+   * @return {Boolean}
+   */
+  matchers.toHaveArrayOfSize = function(memberName, size) {
+    return priv.assertMember.call(this, 'toBeArrayOfSize', memberName, size);
+  };
+
+  /**
+   * @alias
+   * module:ArrayMembers.toHaveNonEmptyArray
+   *
+   * @description
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveNonEmptyArray = function(memberName) {
+    return priv.assertMember.call(this, 'toBeNonEmptyArray', memberName);
+  };
+
+  /**
+   * @alias
+   * module:ArrayMembers.toHaveEmptyArray
+   *
+   * @description
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveEmptyArray = function(memberName) {
+    return priv.assertMember.call(this, 'toBeEmptyArray', memberName);
+  };
+
+  /**
+   * @alias
+   * module:ArrayMembers.toHaveArrayOfStrings
+   *
+   * @description
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveArrayOfStrings = function(memberName) {
+    return priv.assertMember.call(this, 'toBeArrayOfStrings', memberName);
+  };
+
+  /**
+   * @module BooleanMembers
+   */
+
+  /**
+   * @alias
+   * module:BooleanMembers.toHaveBoolean
+   *
+   * @description
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveBoolean = function(memberName) {
+    return priv.assertMember.call(this, 'toBeBoolean', memberName);
+  };
+
+  /**
+   * @alias
+   * module:BooleanMembers.toHaveFalse
+   *
+   * @description
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveFalse = function(memberName) {
+    return priv.assertMember.call(this, 'toBeFalse', memberName);
+  };
+
+  /**
+   * @alias
+   * module:BooleanMembers.toHaveTrue
+   *
+   * @description
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveTrue = function(memberName) {
+    return priv.assertMember.call(this, 'toBeTrue', memberName);
+  };
+
+  /**
+   * @module BrowserMembers
+   */
+
+  /**
+   * @alias
+   * module:BrowserMembers.toBeHtmlNode
+   *
+   * @description
+   * <p>Assert subject is a true Object containing a property at memberName which is an HTML Element.
+   * <p>See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   *
+   * @param {Boolean} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveHtmlNode = function(memberName) {
+    return priv.assertMember.call(this, 'toBeHtmlNode', memberName);
+  };
+
+  /**
+   * @module DateMembers
+   */
+
+  /**
+   * @alias
+   * module:DateMembers.toHaveDate
+   *
+   * @description
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveDate = function(memberName) {
+    return priv.assertMember.call(this, 'toBeDate', memberName);
+  };
+
+  /**
+   * @alias
+   * module:DateMembers.toHaveDateAfter
+   *
+   * @description
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-bdate-testing|Unit testing Dates with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @param  {Date} date
+   * @return {Boolean}
+   */
+  matchers.toHaveDateAfter = function(memberName, date) {
+    return priv.assertMember.call(this, 'toBeDateAfter', memberName, date);
+  };
+
+  /**
+   * @alias
+   * module:DateMembers.toHaveDateBefore
+   *
+   * @description
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-browser-date|Unit testing Browsers with Dates}.
+   *
+   * @param  {String} memberName
+   * @param  {Date} date
+   * @return {Boolean}
+   */
+  matchers.toHaveDateBefore = function(memberName, date) {
+    return priv.assertMember.call(this, 'toBeDateBefore', memberName, date);
+  };
+
+  /**
+   * @alias
+   * module:DateMembers.toHaveIso8601
+   *
+   * @description
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveIso8601 = function(memberName) {
+    return priv.assertMember.call(this, 'toBeIso8601', memberName);
+  };
+
+  /**
+   * @module NumberMembers
+   */
+
+  /**
+   * @alias
+   * module:NumberMembers.toHaveNumber
+   *
+   * @description
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveNumber = function(memberName) {
+    return priv.assertMember.call(this, 'toBeNumber', memberName);
+  };
+
+  /**
+   * @alias
+   * module:NumberMembers.toHaveNumberWithinRange
+   *
+   * @description
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @param  {Number} floor
+   * @param  {Number} ceiling
+   * @return {Boolean}
+   */
+  matchers.toHaveNumberWithinRange = function(memberName, floor, ceiling) {
+    return priv.assertMember.call(this, 'toBeWithinRange', memberName, floor, ceiling);
+  };
+
+  /**
+   * @alias
+   * module:NumberMembers.toHaveCalculable
+   *
+   * @description
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveCalculable = function(memberName) {
+    return priv.assertMember.call(this, 'toBeCalculable', memberName);
+  };
+
+  /**
+   * @alias
+   * module:NumberMembers.toHaveEvenNumber
+   *
+   * @description
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveEvenNumber = function(memberName) {
+    return priv.assertMember.call(this, 'toBeEvenNumber', memberName);
+  };
+
+  /**
+   * @alias
+   * module:NumberMembers.toHaveOddNumber
+   *
+   * @description
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveOddNumber = function(memberName) {
+    return priv.assertMember.call(this, 'toBeOddNumber', memberName);
+  };
+
+  /**
+   * @alias
+   * module:NumberMembers.toHaveWholeNumber
+   *
+   * @description
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   *
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveWholeNumber = function(memberName) {
+    return priv.assertMember.call(this, 'toBeWholeNumber', memberName);
+  };
+
+  /**
+   * @module ObjectMembers
+   */
+
+  /**
+   * @alias
+   * module:ObjectMembers.toHaveMethod
+   *
+   * @description
+   * <p>Assert subject is a true Object containing a property at memberName which is a Function.
+   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   *
+   * @param {Boolean} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveMethod = function(memberName) {
+    return priv.assertMember.call(this, 'toBeFunction', memberName);
+  };
+
+  /**
+   * @alias
+   * module:ObjectMembers.toHaveObject
+   *
+   * @description
+   * <p>Assert subject is a true Object containing a property at memberName which is a true Object.
+   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   *
+   * @param {Boolean} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveObject = function(memberName) {
+    return priv.assertMember.call(this, 'toBeObject', memberName);
+  };
+
+  /**
+   * @alias
+   * module:ObjectMembers.toHaveEmptyObject
+   *
+   * @description
+   * <p>Assert subject is a true Object containing a property at memberName which is a true Object with
+   * no instance members.
+   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   *
+   * @param {Boolean} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveEmptyObject = function(memberName) {
+    return priv.assertMember.call(this, 'toBeEmptyObject', memberName);
+  };
+
+  /**
+   * @alias
+   * module:ObjectMembers.toHaveNonEmptyObject
+   *
+   * @description
+   * <p>Assert subject is a true Object containing a property at memberName which is a true Object with
+   * at least one instance member.
+   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   *
+   * @param {Boolean} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveNonEmptyObject = function(memberName) {
+    return priv.assertMember.call(this, 'toBeNonEmptyObject', memberName);
+  };
+
+  /**
+   * @alias
+   * module:ObjectMembers.toHaveMember
+   *
+   * @description
+   * <p>Assert subject is a true Object containing a property at memberName which is of any value,
+   * including undefined.
+   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   *
+   * @param {Boolean} memberName
+   * @return {Boolean}
+   */
+  matchers.toHaveMember = function(memberName) {
+    return memberName && priv.is(this.actual, 'Object') && memberName in this.actual;
   };
 
   /**
