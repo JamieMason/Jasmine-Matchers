@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 
   'use strict';
 
-  var version = require('./package.json').version;
+  // var version = require('./package.json').version;
 
   grunt.initConfig({
 
@@ -24,8 +24,13 @@ module.exports = function(grunt) {
 
     watch: {
       scripts: {
-        files: ['src/**/*.js', 'test/**/*.js'],
-        tasks: ['build'],
+        files: [
+          'src/**/*.js',
+          'test/**/*.js'
+        ],
+        tasks: [
+          'build'
+        ],
         options: {
           nospawn: true
         }
@@ -34,7 +39,9 @@ module.exports = function(grunt) {
 
     jsdoc: {
       dist: {
-        src: ['src/**/*.js'],
+        src: [
+          'src/**/*.js'
+        ],
         options: {
           destination: 'build/docs'
         }
@@ -47,6 +54,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-jsdoc');
 
-  grunt.registerTask('build', ['concat', 'jsdoc']);
+  grunt.registerTask('build', [
+    'concat',
+    'jsdoc'
+  ]);
 
 };
