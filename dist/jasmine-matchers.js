@@ -37,34 +37,26 @@
 
   /**
    * @inner
-   * @param  {Array} array
+   * @param  {Object} object
    * @param  {Function} fn
    */
-  priv.each = function(array, fn) {
-    var i;
-    var len = array.length;
-    if ('length' in array) {
-      for (i = 0; i < len; i++) {
-        fn.call(this, array[i], i, array);
-      }
-    } else {
-      for (i in array) {
-        if (array.hasOwnProperty(i)) {
-          fn.call(this, array[i], i, array);
-        }
+  priv.each = function(object, fn) {
+    for (var key in object) {
+      if (object.hasOwnProperty(key)) {
+        fn.call(this, object[key], key, object);
       }
     }
   };
 
   /**
    * @inner
-   * @param  {Array} array
+   * @param  {Object} object
    * @param  {Function} fn
    * @param  {*} memo
    * @return {*} memo
    */
-  priv.reduce = function(array, fn, memo) {
-    priv.each.call(this, array, function(el, ix, list) {
+  priv.reduce = function(object, fn, memo) {
+    priv.each.call(this, object, function(el, ix, list) {
       memo = fn(memo, el, ix, list);
     });
     return memo;
@@ -85,23 +77,6 @@
       }
     }
     return true;
-  };
-
-  /**
-   * @inner
-   * @param  {Array} array
-   * @param  {Function} fn
-   * @return {Boolean}
-   */
-  priv.some = function(array, fn) {
-    var i;
-    var len = array.length;
-    for (i = 0; i < len; i++) {
-      if (fn.call(this, array[i], i, array) === true) {
-        return true;
-      }
-    }
-    return false;
   };
 
   /**
