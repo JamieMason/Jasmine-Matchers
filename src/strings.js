@@ -1,14 +1,14 @@
-  // Strings
-  // ---------------------------------------------------------------------------
+  /**
+   * @module Strings
+   */
 
   /**
-   * @alias toBeString
+   * @alias
+   * module:Strings.toBeString
    *
    * @description
-   * Assert subject is a String.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is a String.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -17,13 +17,12 @@
   };
 
   /**
-   * @alias toBeEmptyString
+   * @alias
+   * module:Strings.toBeEmptyString
    *
    * @description
-   * Assert subject is a String of length 0.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is a String of length 0.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -32,13 +31,12 @@
   };
 
   /**
-   * @alias toBeNonEmptyString
+   * @alias
+   * module:Strings.toBeNonEmptyString
    *
    * @description
-   * Assert subject is a String with at least 1 character.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is a String with at least 1 character.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -47,13 +45,12 @@
   };
 
   /**
-   * @alias toBeHtmlString
+   * @alias
+   * module:Strings.toBeHtmlString
    *
    * @description
-   * Assert subject is string containing HTML Markup.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is string containing HTML Markup.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -72,13 +69,12 @@
   };
 
   /**
-   * @alias toBeJsonString
+   * @alias
+   * module:Strings.toBeJsonString
    *
    * @description
-   * Assert subject is string containing parseable JSON.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is string containing parseable JSON.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -94,13 +90,12 @@
   };
 
   /**
-   * @alias toBeWhitespace
+   * @alias
+   * module:Strings.toBeWhitespace
    *
    * @description
-   * Assert subject is a String containing nothing but whitespace.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is a String containing nothing but whitespace.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -109,13 +104,12 @@
   };
 
   /**
-   * @alias toStartWith
+   * @alias
+   * module:Strings.toStartWith
    *
    * @description
-   * Assert subject is a String whose first characters match our expected string.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is a String whose first characters match our expected string.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} expected
    * @return {Boolean}
@@ -130,13 +124,12 @@
   };
 
   /**
-   * @alias toEndWith
+   * @alias
+   * module:Strings.toEndWith
    *
    * @description
-   * Assert subject is a String whose last characters match our expected string.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is a String whose last characters match our expected string.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} expected
    * @return {Boolean}
@@ -151,13 +144,12 @@
   };
 
   /**
-   * @alias toBeLongerThan
+   * @alias
+   * module:Strings.toBeLongerThan
    *
    * @description
-   * Assert subject is a String whose length is greater than our other string.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is a String whose length is greater than our other string.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} other
    * @return {Boolean}
@@ -169,13 +161,12 @@
   };
 
   /**
-   * @alias toBeShorterThan
+   * @alias
+   * module:Strings.toBeShorterThan
    *
    * @description
-   * Assert subject is a String whose length is greater than our other string.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is a String whose length is greater than our other string.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} other
    * @return {Boolean}
@@ -187,13 +178,12 @@
   };
 
   /**
-   * @alias toBeSameLengthAs
+   * @alias
+   * module:Strings.toBeSameLengthAs
    *
    * @description
-   * Assert subject is a String whose length is equal to our other string.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is a String whose length is equal to our other string.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} other
    * @return {Boolean}
@@ -204,17 +194,17 @@
     }) && this.actual.length === other.length;
   };
 
-  // String Members
-  // ---------------------------------------------------------------------------
+  /**
+   * @module StringMembers
+   */
 
   /**
-   * @alias toHaveEmptyString
+   * @alias
+   * module:StringMembers.toHaveEmptyString
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -224,13 +214,12 @@
   };
 
   /**
-   * @alias toHaveHtmlString
+   * @alias
+   * module:StringMembers.toHaveHtmlString
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -240,13 +229,12 @@
   };
 
   /**
-   * @alias toHaveJsonString
+   * @alias
+   * module:StringMembers.toHaveJsonString
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -256,13 +244,12 @@
   };
 
   /**
-   * @alias toHaveNonEmptyString
+   * @alias
+   * module:StringMembers.toHaveNonEmptyString
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -272,13 +259,12 @@
   };
 
   /**
-   * @alias toHaveString
+   * @alias
+   * module:StringMembers.toHaveString
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -288,13 +274,12 @@
   };
 
   /**
-   * @alias toHaveStringLongerThan
+   * @alias
+   * module:StringMembers.toHaveStringLongerThan
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @param  {String} other
@@ -305,13 +290,12 @@
   };
 
   /**
-   * @alias toHaveStringSameLengthAs
+   * @alias
+   * module:StringMembers.toHaveStringSameLengthAs
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @param  {String} other
@@ -322,13 +306,12 @@
   };
 
   /**
-   * @alias toHaveStringShorterThan
+   * @alias
+   * module:StringMembers.toHaveStringShorterThan
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @param  {String} other
@@ -339,13 +322,12 @@
   };
 
   /**
-   * @alias toHaveWhitespaceString
+   * @alias
+   * module:StringMembers.toHaveWhitespaceString
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}

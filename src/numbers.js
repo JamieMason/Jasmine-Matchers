@@ -1,14 +1,14 @@
-  // Numbers
-  // ---------------------------------------------------------------------------
+  /**
+   * @module Numbers
+   */
 
   /**
-   * @alias toBeNumber
+   * @alias
+   * module:Numbers.toBeNumber
    *
    * @description
-   * Assert subject is not only calculable, but an actual Number
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>Assert subject is not only calculable, but an actual Number
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -17,13 +17,12 @@
   };
 
   /**
-   * @alias toBeEvenNumber
+   * @alias
+   * module:Numbers.toBeEvenNumber
    *
    * @description
-   * Assert subject is an even Number.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>Assert subject is an even Number.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -32,13 +31,12 @@
   };
 
   /**
-   * @alias toBeOddNumber
+   * @alias
+   * module:Numbers.toBeOddNumber
    *
    * @description
-   * Assert subject is an odd Number.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>Assert subject is an odd Number.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -47,10 +45,11 @@
   };
 
   /**
-   * @alias toBeCalculable
+   * @alias
+   * module:Numbers.toBeCalculable
    *
    * @description
-   * Assert subject can be used in Mathemetic calculations, despite not being an actual Number.
+   * <p>Assert subject can be used in Mathemetic calculations, despite not being an actual Number.
    *
    * @example
    * // If all strings are numeric, JavaScript will cast them all as Numbers.
@@ -59,9 +58,7 @@
    * @example
    * // If any string is not numeric, JavaScript will cast them all as Strings.
    * "wut?" * 2 === NaN (fail)
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -70,13 +67,12 @@
   };
 
   /**
-   * @alias toBeWithinRange
+   * @alias
+   * module:Numbers.toBeWithinRange
    *
    * @description
-   * Assert value falls on or between floor and ceiling.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>Assert value falls on or between floor and ceiling.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @param {Number} floor
    * @param {Number} ceiling
@@ -87,13 +83,12 @@
   };
 
   /**
-   * @alias toBeWholeNumber
+   * @alias
+   * module:Numbers.toBeWholeNumber
    *
    * @description
-   * Assert value is a number with no decimal places.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>Assert value is a number with no decimal places.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -101,17 +96,17 @@
     return matchers.toBeNumber.call(this) && (this.actual === 0 || this.actual % 1 === 0);
   };
 
-  // Number Methods
-  // ---------------------------------------------------------------------------
+  /**
+   * @module NumberMembers
+   */
 
   /**
-   * @alias toHaveNumber
+   * @alias
+   * module:NumberMembers.toHaveNumber
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -121,13 +116,12 @@
   };
 
   /**
-   * @alias toHaveNumberWithinRange
+   * @alias
+   * module:NumberMembers.toHaveNumberWithinRange
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @param  {String} memberName
    * @param  {Number} floor
@@ -139,13 +133,12 @@
   };
 
   /**
-   * @alias toHaveCalculable
+   * @alias
+   * module:NumberMembers.toHaveCalculable
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -155,13 +148,12 @@
   };
 
   /**
-   * @alias toHaveEvenNumber
+   * @alias
+   * module:NumberMembers.toHaveEvenNumber
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -171,13 +163,12 @@
   };
 
   /**
-   * @alias toHaveOddNumber
+   * @alias
+   * module:NumberMembers.toHaveOddNumber
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -187,13 +178,12 @@
   };
 
   /**
-   * @alias toHaveWholeNumber
+   * @alias
+   * module:NumberMembers.toHaveWholeNumber
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}

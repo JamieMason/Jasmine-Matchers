@@ -167,7 +167,7 @@
 
   /**
    * @description
-   * Format the failure message for member matchers such as toHaveString('surname').
+   * <p>Format the failure message for member matchers such as toHaveString('surname').
    *
    * @inner
    * @param  {Object}  util   Provided by Jasmine.
@@ -189,7 +189,7 @@
 
   /**
    * @description
-   * Convert Jasmine 1.0 matchers into the format introduced in Jasmine 2.0.
+   * <p>Convert Jasmine 1.0 matchers into the format introduced in Jasmine 2.0.
    *
    * @inner
    * @param  {Object} v1Matchers
@@ -215,8 +215,9 @@
     }, {});
   };
 
-  // Arrays
-  // ---------------------------------------------------------------------------
+  /**
+   * @module Arrays
+   */
 
   /**
    * @inner
@@ -231,14 +232,13 @@
   };
 
   /**
-   * @alias toBeArray
+   * @alias
+   * module:Arrays.toBeArray
    *
    * @description
-   * Assert subject is a true Array, created in the parent document — those created and imported
+   * <p>Assert subject is a true Array, created in the parent document — those created and imported
    * from within iframes or other windows will not match.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -247,13 +247,12 @@
   };
 
   /**
-   * @alias toBeArrayOfSize
+   * @alias
+   * module:Arrays.toBeArrayOfSize
    *
    * @description
-   * Assert subject is not only a true Array, but one with a specific number of members.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>Assert subject is not only a true Array, but one with a specific number of members.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param {Number} size
    * @return {Boolean}
@@ -263,13 +262,12 @@
   };
 
   /**
-   * @alias toBeEmptyArray
+   * @alias
+   * module:Arrays.toBeEmptyArray
    *
    * @description
-   * Assert subject is not only a true Array, but one without any members.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>Assert subject is not only a true Array, but one without any members.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -278,13 +276,12 @@
   };
 
   /**
-   * @alias toBeNonEmptyArray
+   * @alias
+   * module:Arrays.toBeNonEmptyArray
    *
    * @description
-   * Assert subject is not only a true Array, but one with at least one member.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>Assert subject is not only a true Array, but one with at least one member.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -293,68 +290,64 @@
   };
 
   /**
-   * @alias toBeArrayOfObjects
+   * @alias
+   * module:Arrays.toBeArrayOfObjects
    *
    * @description
-   * Assert subject is an Array which is either empty or contains only Objects.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>Assert subject is an Array which is either empty or contains only Objects.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @return {Boolean}
    */
   matchers.toBeArrayOfObjects = priv.createToBeArrayOfXsMatcher('toBeObject');
 
   /**
-   * @alias toBeArrayOfStrings
+   * @alias
+   * module:Arrays.toBeArrayOfStrings
    *
    * @description
-   * Assert subject is an Array which is either empty or contains only Strings.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>Assert subject is an Array which is either empty or contains only Strings.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @return {Boolean}
    */
   matchers.toBeArrayOfStrings = priv.createToBeArrayOfXsMatcher('toBeString');
 
   /**
-   * @alias toBeArrayOfNumbers
+   * @alias
+   * module:Arrays.toBeArrayOfNumbers
    *
    * @description
-   * Assert subject is an Array which is either empty or contains only Numbers.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>Assert subject is an Array which is either empty or contains only Numbers.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @return {Boolean}
    */
   matchers.toBeArrayOfNumbers = priv.createToBeArrayOfXsMatcher('toBeNumber');
 
   /**
-   * @alias toBeArrayOfBooleans
+   * @alias
+   * module:Arrays.toBeArrayOfBooleans
    *
    * @description
-   * Assert subject is an Array which is either empty or contains only Booleans.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>Assert subject is an Array which is either empty or contains only Booleans.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @return {Boolean}
    */
   matchers.toBeArrayOfBooleans = priv.createToBeArrayOfXsMatcher('toBeBoolean');
 
-  // Array Members
-  // ---------------------------------------------------------------------------
+  /**
+   * @module ArrayMembers
+   */
 
   /**
-   * @alias toHaveArray
+   * @alias
+   * module:ArrayMembers.toHaveArray
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -364,13 +357,12 @@
   };
 
   /**
-   * @alias toHaveArrayOfBooleans
+   * @alias
+   * module:ArrayMembers.toHaveArrayOfBooleans
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -380,13 +372,12 @@
   };
 
   /**
-   * @alias toHaveArrayOfNumbers
+   * @alias
+   * module:ArrayMembers.toHaveArrayOfNumbers
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -396,13 +387,12 @@
   };
 
   /**
-   * @alias toHaveArrayOfObjects
+   * @alias
+   * module:ArrayMembers.toHaveArrayOfObjects
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -412,13 +402,12 @@
   };
 
   /**
-   * @alias toHaveArrayOfSize
+   * @alias
+   * module:ArrayMembers.toHaveArrayOfSize
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @param  {Number} size
@@ -429,13 +418,12 @@
   };
 
   /**
-   * @alias toHaveNonEmptyArray
+   * @alias
+   * module:ArrayMembers.toHaveNonEmptyArray
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -445,13 +433,12 @@
   };
 
   /**
-   * @alias toHaveEmptyArray
+   * @alias
+   * module:ArrayMembers.toHaveEmptyArray
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -461,13 +448,12 @@
   };
 
   /**
-   * @alias toHaveArrayOfStrings
+   * @alias
+   * module:ArrayMembers.toHaveArrayOfStrings
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -476,17 +462,17 @@
     return priv.assertMember.call(this, 'toBeArrayOfStrings', memberName);
   };
 
-  // Booleans
-  // ---------------------------------------------------------------------------
+  /**
+   * @module Booleans
+   */
 
   /**
-   * @alias toBeBoolean
+   * @alias
+   * module:Booleans.toBeBoolean
    *
    * @description
-   * Assert subject is not only truthy or falsy, but an actual Boolean.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   * <p>Assert subject is not only truthy or falsy, but an actual Boolean.
+   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -495,13 +481,12 @@
   };
 
   /**
-   * @alias toBeTrue
+   * @alias
+   * module:Booleans.toBeTrue
    *
    * @description
-   * Assert subject is not only truthy, but an actual Boolean true.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   * <p>Assert subject is not only truthy, but an actual Boolean true.
+   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -510,13 +495,12 @@
   };
 
   /**
-   * @alias toBeFalse
+   * @alias
+   * module:Booleans.toBeFalse
    *
    * @description
-   * Assert subject is not only falsy, but an actual Boolean false.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   * <p>Assert subject is not only falsy, but an actual Boolean false.
+   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -524,17 +508,17 @@
     return this.actual === false || this.actual instanceof Boolean && this.actual.valueOf() === false;
   };
 
-  // Boolean Members
-  // ---------------------------------------------------------------------------
+  /**
+   * @module BooleanMembers
+   */
 
   /**
-   * @alias toHaveBoolean
+   * @alias
+   * module:BooleanMembers.toHaveBoolean
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -544,13 +528,12 @@
   };
 
   /**
-   * @alias toHaveFalse
+   * @alias
+   * module:BooleanMembers.toHaveFalse
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -560,13 +543,12 @@
   };
 
   /**
-   * @alias toHaveTrue
+   * @alias
+   * module:BooleanMembers.toHaveTrue
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -575,18 +557,18 @@
     return priv.assertMember.call(this, 'toBeTrue', memberName);
   };
 
-  // Browser
-  // ---------------------------------------------------------------------------
+  /**
+   * @module Browser
+   */
 
   /**
-   * @alias toBeWindow
+   * @alias
+   * module:Browser.toBeWindow
    *
    * @description
-   * Assert subject is a browser Window global, whether that be the parent window or those created
-   * within iframes or other windows.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   * <p>Assert subject is a browser Window global, whether that be the parent window or those
+   * created within iframes or other windows.
+   * <p>See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -595,14 +577,13 @@
   };
 
   /**
-   * @alias toBeDocument
+   * @alias
+   * module:Browser.toBeDocument
    *
    * @description
-   * Assert subject is a browser Window global, whether that be the parent window or those created
-   * within iframes or other windows.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   * <p>Assert subject is a browser Window global, whether that be the parent window or those
+   * created within iframes or other windows.
+   * <p>See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -611,13 +592,12 @@
   };
 
   /**
-   * @alias toBeHtmlNode
+   * @alias
+   * module:Browser.toBeHtmlNode
    *
    * @description
-   * Assert subject is an HTML Element.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   * <p>Assert subject is an HTML Element.
+   * <p>See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -626,13 +606,12 @@
   };
 
   /**
-   * @alias toBeHtmlTextNode
+   * @alias
+   * module:Browser.toBeHtmlTextNode
    *
    * @description
-   * Assert subject is an HTML Text Element.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   * <p>Assert subject is an HTML Text Element.
+   * <p>See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -641,13 +620,12 @@
   };
 
   /**
-   * @alias toBeHtmlCommentNode
+   * @alias
+   * module:Browser.toBeHtmlCommentNode
    *
    * @description
-   * Assert subject is an HTML Comment Element.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   * <p>Assert subject is an HTML Comment Element.
+   * <p>See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -655,17 +633,17 @@
     return priv.isHtmlElementOfType(this.actual, 8);
   };
 
-  // Browser Members
-  // ---------------------------------------------------------------------------
+  /**
+   * @module BrowserMembers
+   */
 
   /**
-   * @alias toBeHtmlNode
+   * @alias
+   * module:BrowserMembers.toBeHtmlNode
    *
    * @description
-   * Assert subject is a true Object containing a property at memberName which is an HTML Element.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   * <p>Assert subject is a true Object containing a property at memberName which is an HTML Element.
+   * <p>See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    *
    * @param {Boolean} memberName
    * @return {Boolean}
@@ -674,18 +652,18 @@
     return priv.assertMember.call(this, 'toBeHtmlNode', memberName);
   };
 
-  // Dates
-  // ---------------------------------------------------------------------------
+  /**
+   * @module Dates
+   */
 
   /**
-   * @alias toBeDate
+   * @alias
+   * module:Dates.toBeDate
    *
    * @description
-   * Assert subject is a true Date, created in the parent document — those created and imported
+   * <p>Assert subject is a true Date, created in the parent document — those created and imported
    * from within iframes or other windows will not match.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
+   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -694,13 +672,12 @@
   };
 
   /**
-   * @alias toBeIso8601
+   * @alias
+   * module:Dates.toBeIso8601
    *
    * @description
-   * Assert subject is a Date String conforming to the ISO 8601 standard.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
+   * <p>Assert subject is a Date String conforming to the ISO 8601 standard.
+   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -712,13 +689,12 @@
   };
 
   /**
-   * @alias toBeBefore
+   * @alias
+   * module:Dates.toBeBefore
    *
    * @description
-   * Assert subject is a Date occurring before another Date.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
+   * <p>Assert subject is a Date occurring before another Date.
+   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
    *
    * @param {Date} date
    * @return {Boolean}
@@ -728,13 +704,12 @@
   };
 
   /**
-   * @alias toBeAfter
+   * @alias
+   * module:Dates.toBeAfter
    *
    * @description
-   * Assert subject is a Date occurring after another Date.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
+   * <p>Assert subject is a Date occurring after another Date.
+   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
    *
    * @param {Date} date
    * @return {Boolean}
@@ -743,17 +718,17 @@
     return matchers.toBeBefore.call({ actual: date }, this.actual);
   };
 
-  // Date Members
-  // ---------------------------------------------------------------------------
+  /**
+   * @module DateMembers
+   */
 
   /**
-   * @alias toHaveDate
+   * @alias
+   * module:DateMembers.toHaveDate
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -763,13 +738,12 @@
   };
 
   /**
-   * @alias toHaveDateAfter
+   * @alias
+   * module:DateMembers.toHaveDateAfter
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-bdate-testing|Unit testing Dates with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-bdate-testing|Unit testing Dates with Jasmine}.
    *
    * @param  {String} memberName
    * @param  {Date} date
@@ -780,13 +754,12 @@
   };
 
   /**
-   * @alias toHaveDateBefore
+   * @alias
+   * module:DateMembers.toHaveDateBefore
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-browser-date|Unit testing Browsers with Dates}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-browser-date|Unit testing Browsers with Dates}.
    *
    * @param  {String} memberName
    * @param  {Date} date
@@ -797,13 +770,12 @@
   };
 
   /**
-   * @alias toHaveIso8601
+   * @alias
+   * module:DateMembers.toHaveIso8601
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -812,17 +784,17 @@
     return priv.assertMember.call(this, 'toBeIso8601', memberName);
   };
 
-  // Errors
-  // ---------------------------------------------------------------------------
+  /**
+   * @module Errors
+   */
 
   /**
-   * @alias toThrowError
+   * @alias
+   * module:Errors.toThrowError
    *
    * @description
-   * Asserts subject throws an Error of any type.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-error-testing|Unit testing Errors with Jasmine}.
+   * <p>Asserts subject throws an Error of any type.
+   * <p>See {@link http://git.io/jasmine-error-testing|Unit testing Errors with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -837,13 +809,12 @@
   };
 
   /**
-   * @alias toThrowErrorOfType
+   * @alias
+   * module:Errors.toThrowErrorOfType
    *
    * @description
-   * Asserts subject throws an Error of a specific type, such as "TypeError".
-   *
-   * @example
-   * See {@link http://git.io/jasmine-error-testing|Unit testing Errors with Jasmine}.
+   * <p>Asserts subject throws an Error of a specific type, such as "TypeError".
+   * <p>See {@link http://git.io/jasmine-error-testing|Unit testing Errors with Jasmine}.
    *
    * @param  {String} type
    * @return {Boolean}
@@ -858,17 +829,17 @@
     return threwErrorOfType;
   };
 
-  // Numbers
-  // ---------------------------------------------------------------------------
+  /**
+   * @module Numbers
+   */
 
   /**
-   * @alias toBeNumber
+   * @alias
+   * module:Numbers.toBeNumber
    *
    * @description
-   * Assert subject is not only calculable, but an actual Number
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>Assert subject is not only calculable, but an actual Number
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -877,13 +848,12 @@
   };
 
   /**
-   * @alias toBeEvenNumber
+   * @alias
+   * module:Numbers.toBeEvenNumber
    *
    * @description
-   * Assert subject is an even Number.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>Assert subject is an even Number.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -892,13 +862,12 @@
   };
 
   /**
-   * @alias toBeOddNumber
+   * @alias
+   * module:Numbers.toBeOddNumber
    *
    * @description
-   * Assert subject is an odd Number.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>Assert subject is an odd Number.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -907,10 +876,11 @@
   };
 
   /**
-   * @alias toBeCalculable
+   * @alias
+   * module:Numbers.toBeCalculable
    *
    * @description
-   * Assert subject can be used in Mathemetic calculations, despite not being an actual Number.
+   * <p>Assert subject can be used in Mathemetic calculations, despite not being an actual Number.
    *
    * @example
    * // If all strings are numeric, JavaScript will cast them all as Numbers.
@@ -919,9 +889,7 @@
    * @example
    * // If any string is not numeric, JavaScript will cast them all as Strings.
    * "wut?" * 2 === NaN (fail)
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -930,13 +898,12 @@
   };
 
   /**
-   * @alias toBeWithinRange
+   * @alias
+   * module:Numbers.toBeWithinRange
    *
    * @description
-   * Assert value falls on or between floor and ceiling.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>Assert value falls on or between floor and ceiling.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @param {Number} floor
    * @param {Number} ceiling
@@ -947,13 +914,12 @@
   };
 
   /**
-   * @alias toBeWholeNumber
+   * @alias
+   * module:Numbers.toBeWholeNumber
    *
    * @description
-   * Assert value is a number with no decimal places.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>Assert value is a number with no decimal places.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -961,17 +927,17 @@
     return matchers.toBeNumber.call(this) && (this.actual === 0 || this.actual % 1 === 0);
   };
 
-  // Number Methods
-  // ---------------------------------------------------------------------------
+  /**
+   * @module NumberMembers
+   */
 
   /**
-   * @alias toHaveNumber
+   * @alias
+   * module:NumberMembers.toHaveNumber
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -981,13 +947,12 @@
   };
 
   /**
-   * @alias toHaveNumberWithinRange
+   * @alias
+   * module:NumberMembers.toHaveNumberWithinRange
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @param  {String} memberName
    * @param  {Number} floor
@@ -999,13 +964,12 @@
   };
 
   /**
-   * @alias toHaveCalculable
+   * @alias
+   * module:NumberMembers.toHaveCalculable
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -1015,13 +979,12 @@
   };
 
   /**
-   * @alias toHaveEvenNumber
+   * @alias
+   * module:NumberMembers.toHaveEvenNumber
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -1031,13 +994,12 @@
   };
 
   /**
-   * @alias toHaveOddNumber
+   * @alias
+   * module:NumberMembers.toHaveOddNumber
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -1047,13 +1009,12 @@
   };
 
   /**
-   * @alias toHaveWholeNumber
+   * @alias
+   * module:NumberMembers.toHaveWholeNumber
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -1062,14 +1023,15 @@
     return priv.assertMember.call(this, 'toBeWholeNumber', memberName);
   };
 
-  // Objects
-  // ---------------------------------------------------------------------------
+  /**
+   * @module Objects
+   */
 
   /**
    * @inner
    *
    * @description
-   * Report how many instance members the given Object has.
+   * <p>Report how many instance members the given Object has.
    *
    * @param  {Object} object
    * @return {Number}
@@ -1082,14 +1044,13 @@
   };
 
   /**
-   * @alias toBeObject
+   * @alias
+   * module:Objects.toBeObject
    *
    * @description
-   * Assert subject is a true Object, created in the parent document — those created and imported
+   * <p>Assert subject is a true Object, created in the parent document — those created and imported
    * from within iframes or other windows will not match.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -1098,13 +1059,12 @@
   };
 
   /**
-   * @alias toBeEmptyObject
+   * @alias
+   * module:Objects.toBeEmptyObject
    *
    * @description
-   * Assert subject is a true Object with no instance members.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   * <p>Assert subject is a true Object with no instance members.
+   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -1113,13 +1073,12 @@
   };
 
   /**
-   * @alias toBeNonEmptyObject
+   * @alias
+   * module:Objects.toBeNonEmptyObject
    *
    * @description
-   * Assert subject is a true Object with at least one instance member.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   * <p>Assert subject is a true Object with at least one instance member.
+   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -1128,14 +1087,13 @@
   };
 
   /**
-   * @alias toImplement
+   * @alias
+   * module:Objects.toImplement
    *
    * @description
-   * Assert subject is a true Object which features at least the same keys as `other` (regardless of
+   * <p>Assert subject is a true Object which features at least the same keys as `other` (regardless of
    * whether it also has other members).
-   *
-   * @example
-   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
    *
    * @param  {Object} other
    * @return {Boolean}
@@ -1154,14 +1112,13 @@
   };
 
   /**
-   * @alias toBeFunction
+   * @alias
+   * module:Objects.toBeFunction
    *
    * @description
-   * Assert subject is a true Function, created in the parent document — those created and imported
+   * <p>Assert subject is a true Function, created in the parent document — those created and imported
    * from within iframes or other windows will not match.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -1169,17 +1126,17 @@
     return this.actual instanceof Function;
   };
 
-  // Object Members
-  // ---------------------------------------------------------------------------
+  /**
+   * @module ObjectMembers
+   */
 
   /**
-   * @alias toHaveMethod
+   * @alias
+   * module:ObjectMembers.toHaveMethod
    *
    * @description
-   * Assert subject is a true Object containing a property at memberName which is a Function.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   * <p>Assert subject is a true Object containing a property at memberName which is a Function.
+   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
    *
    * @param {Boolean} memberName
    * @return {Boolean}
@@ -1189,13 +1146,12 @@
   };
 
   /**
-   * @alias toHaveObject
+   * @alias
+   * module:ObjectMembers.toHaveObject
    *
    * @description
-   * Assert subject is a true Object containing a property at memberName which is a true Object.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   * <p>Assert subject is a true Object containing a property at memberName which is a true Object.
+   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
    *
    * @param {Boolean} memberName
    * @return {Boolean}
@@ -1205,14 +1161,13 @@
   };
 
   /**
-   * @alias toHaveEmptyObject
+   * @alias
+   * module:ObjectMembers.toHaveEmptyObject
    *
    * @description
-   * Assert subject is a true Object containing a property at memberName which is a true Object with
+   * <p>Assert subject is a true Object containing a property at memberName which is a true Object with
    * no instance members.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
    *
    * @param {Boolean} memberName
    * @return {Boolean}
@@ -1222,14 +1177,13 @@
   };
 
   /**
-   * @alias toHaveNonEmptyObject
+   * @alias
+   * module:ObjectMembers.toHaveNonEmptyObject
    *
    * @description
-   * Assert subject is a true Object containing a property at memberName which is a true Object with
+   * <p>Assert subject is a true Object containing a property at memberName which is a true Object with
    * at least one instance member.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
    *
    * @param {Boolean} memberName
    * @return {Boolean}
@@ -1239,14 +1193,13 @@
   };
 
   /**
-   * @alias toHaveMember
+   * @alias
+   * module:ObjectMembers.toHaveMember
    *
    * @description
-   * Assert subject is a true Object containing a property at memberName which is of any value,
+   * <p>Assert subject is a true Object containing a property at memberName which is of any value,
    * including undefined.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
    *
    * @param {Boolean} memberName
    * @return {Boolean}
@@ -1255,17 +1208,17 @@
     return memberName && priv.is(this.actual, 'Object') && memberName in this.actual;
   };
 
-  // Strings
-  // ---------------------------------------------------------------------------
+  /**
+   * @module Strings
+   */
 
   /**
-   * @alias toBeString
+   * @alias
+   * module:Strings.toBeString
    *
    * @description
-   * Assert subject is a String.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is a String.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -1274,13 +1227,12 @@
   };
 
   /**
-   * @alias toBeEmptyString
+   * @alias
+   * module:Strings.toBeEmptyString
    *
    * @description
-   * Assert subject is a String of length 0.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is a String of length 0.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -1289,13 +1241,12 @@
   };
 
   /**
-   * @alias toBeNonEmptyString
+   * @alias
+   * module:Strings.toBeNonEmptyString
    *
    * @description
-   * Assert subject is a String with at least 1 character.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is a String with at least 1 character.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -1304,13 +1255,12 @@
   };
 
   /**
-   * @alias toBeHtmlString
+   * @alias
+   * module:Strings.toBeHtmlString
    *
    * @description
-   * Assert subject is string containing HTML Markup.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is string containing HTML Markup.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -1329,13 +1279,12 @@
   };
 
   /**
-   * @alias toBeJsonString
+   * @alias
+   * module:Strings.toBeJsonString
    *
    * @description
-   * Assert subject is string containing parseable JSON.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is string containing parseable JSON.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -1351,13 +1300,12 @@
   };
 
   /**
-   * @alias toBeWhitespace
+   * @alias
+   * module:Strings.toBeWhitespace
    *
    * @description
-   * Assert subject is a String containing nothing but whitespace.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is a String containing nothing but whitespace.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -1366,13 +1314,12 @@
   };
 
   /**
-   * @alias toStartWith
+   * @alias
+   * module:Strings.toStartWith
    *
    * @description
-   * Assert subject is a String whose first characters match our expected string.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is a String whose first characters match our expected string.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} expected
    * @return {Boolean}
@@ -1387,13 +1334,12 @@
   };
 
   /**
-   * @alias toEndWith
+   * @alias
+   * module:Strings.toEndWith
    *
    * @description
-   * Assert subject is a String whose last characters match our expected string.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is a String whose last characters match our expected string.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} expected
    * @return {Boolean}
@@ -1408,13 +1354,12 @@
   };
 
   /**
-   * @alias toBeLongerThan
+   * @alias
+   * module:Strings.toBeLongerThan
    *
    * @description
-   * Assert subject is a String whose length is greater than our other string.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is a String whose length is greater than our other string.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} other
    * @return {Boolean}
@@ -1426,13 +1371,12 @@
   };
 
   /**
-   * @alias toBeShorterThan
+   * @alias
+   * module:Strings.toBeShorterThan
    *
    * @description
-   * Assert subject is a String whose length is greater than our other string.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is a String whose length is greater than our other string.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} other
    * @return {Boolean}
@@ -1444,13 +1388,12 @@
   };
 
   /**
-   * @alias toBeSameLengthAs
+   * @alias
+   * module:Strings.toBeSameLengthAs
    *
    * @description
-   * Assert subject is a String whose length is equal to our other string.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>Assert subject is a String whose length is equal to our other string.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} other
    * @return {Boolean}
@@ -1461,17 +1404,17 @@
     }) && this.actual.length === other.length;
   };
 
-  // String Members
-  // ---------------------------------------------------------------------------
+  /**
+   * @module StringMembers
+   */
 
   /**
-   * @alias toHaveEmptyString
+   * @alias
+   * module:StringMembers.toHaveEmptyString
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -1481,13 +1424,12 @@
   };
 
   /**
-   * @alias toHaveHtmlString
+   * @alias
+   * module:StringMembers.toHaveHtmlString
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -1497,13 +1439,12 @@
   };
 
   /**
-   * @alias toHaveJsonString
+   * @alias
+   * module:StringMembers.toHaveJsonString
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -1513,13 +1454,12 @@
   };
 
   /**
-   * @alias toHaveNonEmptyString
+   * @alias
+   * module:StringMembers.toHaveNonEmptyString
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -1529,13 +1469,12 @@
   };
 
   /**
-   * @alias toHaveString
+   * @alias
+   * module:StringMembers.toHaveString
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -1545,13 +1484,12 @@
   };
 
   /**
-   * @alias toHaveStringLongerThan
+   * @alias
+   * module:StringMembers.toHaveStringLongerThan
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @param  {String} other
@@ -1562,13 +1500,12 @@
   };
 
   /**
-   * @alias toHaveStringSameLengthAs
+   * @alias
+   * module:StringMembers.toHaveStringSameLengthAs
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @param  {String} other
@@ -1579,13 +1516,12 @@
   };
 
   /**
-   * @alias toHaveStringShorterThan
+   * @alias
+   * module:StringMembers.toHaveStringShorterThan
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @param  {String} other
@@ -1596,13 +1532,12 @@
   };
 
   /**
-   * @alias toHaveWhitespaceString
+   * @alias
+   * module:StringMembers.toHaveWhitespaceString
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}

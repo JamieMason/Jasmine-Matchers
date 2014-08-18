@@ -1,14 +1,14 @@
-  // Booleans
-  // ---------------------------------------------------------------------------
+  /**
+   * @module Booleans
+   */
 
   /**
-   * @alias toBeBoolean
+   * @alias
+   * module:Booleans.toBeBoolean
    *
    * @description
-   * Assert subject is not only truthy or falsy, but an actual Boolean.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   * <p>Assert subject is not only truthy or falsy, but an actual Boolean.
+   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -17,13 +17,12 @@
   };
 
   /**
-   * @alias toBeTrue
+   * @alias
+   * module:Booleans.toBeTrue
    *
    * @description
-   * Assert subject is not only truthy, but an actual Boolean true.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   * <p>Assert subject is not only truthy, but an actual Boolean true.
+   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -32,13 +31,12 @@
   };
 
   /**
-   * @alias toBeFalse
+   * @alias
+   * module:Booleans.toBeFalse
    *
    * @description
-   * Assert subject is not only falsy, but an actual Boolean false.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   * <p>Assert subject is not only falsy, but an actual Boolean false.
+   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -46,17 +44,17 @@
     return this.actual === false || this.actual instanceof Boolean && this.actual.valueOf() === false;
   };
 
-  // Boolean Members
-  // ---------------------------------------------------------------------------
+  /**
+   * @module BooleanMembers
+   */
 
   /**
-   * @alias toHaveBoolean
+   * @alias
+   * module:BooleanMembers.toHaveBoolean
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -66,13 +64,12 @@
   };
 
   /**
-   * @alias toHaveFalse
+   * @alias
+   * module:BooleanMembers.toHaveFalse
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -82,13 +79,12 @@
   };
 
   /**
-   * @alias toHaveTrue
+   * @alias
+   * module:BooleanMembers.toHaveTrue
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}

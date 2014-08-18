@@ -1,15 +1,15 @@
-  // Browser
-  // ---------------------------------------------------------------------------
+  /**
+   * @module Browser
+   */
 
   /**
-   * @alias toBeWindow
+   * @alias
+   * module:Browser.toBeWindow
    *
    * @description
-   * Assert subject is a browser Window global, whether that be the parent window or those created
-   * within iframes or other windows.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   * <p>Assert subject is a browser Window global, whether that be the parent window or those
+   * created within iframes or other windows.
+   * <p>See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -18,14 +18,13 @@
   };
 
   /**
-   * @alias toBeDocument
+   * @alias
+   * module:Browser.toBeDocument
    *
    * @description
-   * Assert subject is a browser Window global, whether that be the parent window or those created
-   * within iframes or other windows.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   * <p>Assert subject is a browser Window global, whether that be the parent window or those
+   * created within iframes or other windows.
+   * <p>See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -34,13 +33,12 @@
   };
 
   /**
-   * @alias toBeHtmlNode
+   * @alias
+   * module:Browser.toBeHtmlNode
    *
    * @description
-   * Assert subject is an HTML Element.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   * <p>Assert subject is an HTML Element.
+   * <p>See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -49,13 +47,12 @@
   };
 
   /**
-   * @alias toBeHtmlTextNode
+   * @alias
+   * module:Browser.toBeHtmlTextNode
    *
    * @description
-   * Assert subject is an HTML Text Element.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   * <p>Assert subject is an HTML Text Element.
+   * <p>See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -64,13 +61,12 @@
   };
 
   /**
-   * @alias toBeHtmlCommentNode
+   * @alias
+   * module:Browser.toBeHtmlCommentNode
    *
    * @description
-   * Assert subject is an HTML Comment Element.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   * <p>Assert subject is an HTML Comment Element.
+   * <p>See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -78,17 +74,17 @@
     return priv.isHtmlElementOfType(this.actual, 8);
   };
 
-  // Browser Members
-  // ---------------------------------------------------------------------------
+  /**
+   * @module BrowserMembers
+   */
 
   /**
-   * @alias toBeHtmlNode
+   * @alias
+   * module:BrowserMembers.toBeHtmlNode
    *
    * @description
-   * Assert subject is a true Object containing a property at memberName which is an HTML Element.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   * <p>Assert subject is a true Object containing a property at memberName which is an HTML Element.
+   * <p>See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    *
    * @param {Boolean} memberName
    * @return {Boolean}

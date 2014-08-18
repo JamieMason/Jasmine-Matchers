@@ -1,5 +1,6 @@
-  // Arrays
-  // ---------------------------------------------------------------------------
+  /**
+   * @module Arrays
+   */
 
   /**
    * @inner
@@ -14,14 +15,13 @@
   };
 
   /**
-   * @alias toBeArray
+   * @alias
+   * module:Arrays.toBeArray
    *
    * @description
-   * Assert subject is a true Array, created in the parent document — those created and imported
+   * <p>Assert subject is a true Array, created in the parent document — those created and imported
    * from within iframes or other windows will not match.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -30,13 +30,12 @@
   };
 
   /**
-   * @alias toBeArrayOfSize
+   * @alias
+   * module:Arrays.toBeArrayOfSize
    *
    * @description
-   * Assert subject is not only a true Array, but one with a specific number of members.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>Assert subject is not only a true Array, but one with a specific number of members.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param {Number} size
    * @return {Boolean}
@@ -46,13 +45,12 @@
   };
 
   /**
-   * @alias toBeEmptyArray
+   * @alias
+   * module:Arrays.toBeEmptyArray
    *
    * @description
-   * Assert subject is not only a true Array, but one without any members.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>Assert subject is not only a true Array, but one without any members.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -61,13 +59,12 @@
   };
 
   /**
-   * @alias toBeNonEmptyArray
+   * @alias
+   * module:Arrays.toBeNonEmptyArray
    *
    * @description
-   * Assert subject is not only a true Array, but one with at least one member.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>Assert subject is not only a true Array, but one with at least one member.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -76,68 +73,64 @@
   };
 
   /**
-   * @alias toBeArrayOfObjects
+   * @alias
+   * module:Arrays.toBeArrayOfObjects
    *
    * @description
-   * Assert subject is an Array which is either empty or contains only Objects.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>Assert subject is an Array which is either empty or contains only Objects.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @return {Boolean}
    */
   matchers.toBeArrayOfObjects = priv.createToBeArrayOfXsMatcher('toBeObject');
 
   /**
-   * @alias toBeArrayOfStrings
+   * @alias
+   * module:Arrays.toBeArrayOfStrings
    *
    * @description
-   * Assert subject is an Array which is either empty or contains only Strings.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>Assert subject is an Array which is either empty or contains only Strings.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @return {Boolean}
    */
   matchers.toBeArrayOfStrings = priv.createToBeArrayOfXsMatcher('toBeString');
 
   /**
-   * @alias toBeArrayOfNumbers
+   * @alias
+   * module:Arrays.toBeArrayOfNumbers
    *
    * @description
-   * Assert subject is an Array which is either empty or contains only Numbers.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>Assert subject is an Array which is either empty or contains only Numbers.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @return {Boolean}
    */
   matchers.toBeArrayOfNumbers = priv.createToBeArrayOfXsMatcher('toBeNumber');
 
   /**
-   * @alias toBeArrayOfBooleans
+   * @alias
+   * module:Arrays.toBeArrayOfBooleans
    *
    * @description
-   * Assert subject is an Array which is either empty or contains only Booleans.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>Assert subject is an Array which is either empty or contains only Booleans.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @return {Boolean}
    */
   matchers.toBeArrayOfBooleans = priv.createToBeArrayOfXsMatcher('toBeBoolean');
 
-  // Array Members
-  // ---------------------------------------------------------------------------
+  /**
+   * @module ArrayMembers
+   */
 
   /**
-   * @alias toHaveArray
+   * @alias
+   * module:ArrayMembers.toHaveArray
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -147,13 +140,12 @@
   };
 
   /**
-   * @alias toHaveArrayOfBooleans
+   * @alias
+   * module:ArrayMembers.toHaveArrayOfBooleans
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -163,13 +155,12 @@
   };
 
   /**
-   * @alias toHaveArrayOfNumbers
+   * @alias
+   * module:ArrayMembers.toHaveArrayOfNumbers
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -179,13 +170,12 @@
   };
 
   /**
-   * @alias toHaveArrayOfObjects
+   * @alias
+   * module:ArrayMembers.toHaveArrayOfObjects
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -195,13 +185,12 @@
   };
 
   /**
-   * @alias toHaveArrayOfSize
+   * @alias
+   * module:ArrayMembers.toHaveArrayOfSize
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @param  {Number} size
@@ -212,13 +201,12 @@
   };
 
   /**
-   * @alias toHaveNonEmptyArray
+   * @alias
+   * module:ArrayMembers.toHaveNonEmptyArray
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -228,13 +216,12 @@
   };
 
   /**
-   * @alias toHaveEmptyArray
+   * @alias
+   * module:ArrayMembers.toHaveEmptyArray
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -244,13 +231,12 @@
   };
 
   /**
-   * @alias toHaveArrayOfStrings
+   * @alias
+   * module:ArrayMembers.toHaveArrayOfStrings
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}

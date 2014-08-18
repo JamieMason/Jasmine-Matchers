@@ -1,15 +1,15 @@
-  // Dates
-  // ---------------------------------------------------------------------------
+  /**
+   * @module Dates
+   */
 
   /**
-   * @alias toBeDate
+   * @alias
+   * module:Dates.toBeDate
    *
    * @description
-   * Assert subject is a true Date, created in the parent document — those created and imported
+   * <p>Assert subject is a true Date, created in the parent document — those created and imported
    * from within iframes or other windows will not match.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
+   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -18,13 +18,12 @@
   };
 
   /**
-   * @alias toBeIso8601
+   * @alias
+   * module:Dates.toBeIso8601
    *
    * @description
-   * Assert subject is a Date String conforming to the ISO 8601 standard.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
+   * <p>Assert subject is a Date String conforming to the ISO 8601 standard.
+   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -36,13 +35,12 @@
   };
 
   /**
-   * @alias toBeBefore
+   * @alias
+   * module:Dates.toBeBefore
    *
    * @description
-   * Assert subject is a Date occurring before another Date.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
+   * <p>Assert subject is a Date occurring before another Date.
+   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
    *
    * @param {Date} date
    * @return {Boolean}
@@ -52,13 +50,12 @@
   };
 
   /**
-   * @alias toBeAfter
+   * @alias
+   * module:Dates.toBeAfter
    *
    * @description
-   * Assert subject is a Date occurring after another Date.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
+   * <p>Assert subject is a Date occurring after another Date.
+   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
    *
    * @param {Date} date
    * @return {Boolean}
@@ -67,17 +64,17 @@
     return matchers.toBeBefore.call({ actual: date }, this.actual);
   };
 
-  // Date Members
-  // ---------------------------------------------------------------------------
+  /**
+   * @module DateMembers
+   */
 
   /**
-   * @alias toHaveDate
+   * @alias
+   * module:DateMembers.toHaveDate
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -87,13 +84,12 @@
   };
 
   /**
-   * @alias toHaveDateAfter
+   * @alias
+   * module:DateMembers.toHaveDateAfter
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-bdate-testing|Unit testing Dates with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-bdate-testing|Unit testing Dates with Jasmine}.
    *
    * @param  {String} memberName
    * @param  {Date} date
@@ -104,13 +100,12 @@
   };
 
   /**
-   * @alias toHaveDateBefore
+   * @alias
+   * module:DateMembers.toHaveDateBefore
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-browser-date|Unit testing Browsers with Dates}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-browser-date|Unit testing Browsers with Dates}.
    *
    * @param  {String} memberName
    * @param  {Date} date
@@ -121,13 +116,12 @@
   };
 
   /**
-   * @alias toHaveIso8601
+   * @alias
+   * module:DateMembers.toHaveIso8601
    *
    * @description
-   * .
-   *
-   * @example
-   * See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
+   * <p>.
+   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}

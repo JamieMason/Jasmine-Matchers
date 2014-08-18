@@ -1,14 +1,14 @@
-  // Errors
-  // ---------------------------------------------------------------------------
+  /**
+   * @module Errors
+   */
 
   /**
-   * @alias toThrowError
+   * @alias
+   * module:Errors.toThrowError
    *
    * @description
-   * Asserts subject throws an Error of any type.
-   *
-   * @example
-   * See {@link http://git.io/jasmine-error-testing|Unit testing Errors with Jasmine}.
+   * <p>Asserts subject throws an Error of any type.
+   * <p>See {@link http://git.io/jasmine-error-testing|Unit testing Errors with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -23,13 +23,12 @@
   };
 
   /**
-   * @alias toThrowErrorOfType
+   * @alias
+   * module:Errors.toThrowErrorOfType
    *
    * @description
-   * Asserts subject throws an Error of a specific type, such as "TypeError".
-   *
-   * @example
-   * See {@link http://git.io/jasmine-error-testing|Unit testing Errors with Jasmine}.
+   * <p>Asserts subject throws an Error of a specific type, such as "TypeError".
+   * <p>See {@link http://git.io/jasmine-error-testing|Unit testing Errors with Jasmine}.
    *
    * @param  {String} type
    * @return {Boolean}

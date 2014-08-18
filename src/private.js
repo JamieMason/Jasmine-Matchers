@@ -130,7 +130,7 @@
 
   /**
    * @description
-   * Format the failure message for member matchers such as toHaveString('surname').
+   * <p>Format the failure message for member matchers such as toHaveString('surname').
    *
    * @inner
    * @param  {Object}  util   Provided by Jasmine.
@@ -152,7 +152,7 @@
 
   /**
    * @description
-   * Convert Jasmine 1.0 matchers into the format introduced in Jasmine 2.0.
+   * <p>Convert Jasmine 1.0 matchers into the format introduced in Jasmine 2.0.
    *
    * @inner
    * @param  {Object} v1Matchers
