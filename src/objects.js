@@ -1,16 +1,18 @@
   /**
-   * @module Objects
+   * @file Objects
+   *
+   * @description
+   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
    */
 
   /**
    * @inner
    *
-   * @description
-   * <p>Report how many instance members the given Object has.
+   * @summary
+   * Report how many instance members the given Object has.
    *
    * @param  {Object} object
    * @return {Number}
-   * @memberOf priv
    */
   priv.countMembers = function(object) {
     return priv.reduce(object, function(memo, el, ix) {
@@ -20,12 +22,11 @@
 
   /**
    * @alias
-   * module:Objects.toBeObject
+   * expect(object):toBeObject
    *
-   * @description
-   * <p>Assert subject is a true Object, created in the parent document — those created and imported
+   * @summary
+   * Assert subject is a true Object, created in the parent document — those created and imported
    * from within iframes or other windows will not match.
-   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -35,11 +36,10 @@
 
   /**
    * @alias
-   * module:Objects.toBeEmptyObject
+   * expect(object):toBeEmptyObject
    *
-   * @description
-   * <p>Assert subject is a true Object with no instance members.
-   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   * @summary
+   * Assert subject is a true Object with no instance members.
    *
    * @return {Boolean}
    */
@@ -49,11 +49,10 @@
 
   /**
    * @alias
-   * module:Objects.toBeNonEmptyObject
+   * expect(object):toBeNonEmptyObject
    *
-   * @description
-   * <p>Assert subject is a true Object with at least one instance member.
-   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   * @summary
+   * Assert subject is a true Object with at least one instance member.
    *
    * @return {Boolean}
    */
@@ -63,12 +62,11 @@
 
   /**
    * @alias
-   * module:Objects.toImplement
+   * expect(object):toImplement
    *
-   * @description
-   * <p>Assert subject is a true Object which features at least the same keys as `other` (regardless of
+   * @summary
+   * Assert subject is a true Object which features at least the same keys as `other` (regardless of
    * whether it also has other members).
-   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
    *
    * @param  {Object} other
    * @return {Boolean}
@@ -88,12 +86,11 @@
 
   /**
    * @alias
-   * module:Objects.toBeFunction
+   * expect(function):toBeFunction
    *
-   * @description
-   * <p>Assert subject is a true Function, created in the parent document — those created and imported
+   * @summary
+   * Assert subject is a true Function, created in the parent document — those created and imported
    * from within iframes or other windows will not match.
-   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
    *
    * @return {Boolean}
    */

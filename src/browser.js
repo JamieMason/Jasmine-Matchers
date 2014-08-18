@@ -1,15 +1,17 @@
   /**
-   * @module Browser
+   * @file Browser
+   *
+   * @description
+   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    */
 
   /**
    * @alias
-   * module:Browser.toBeWindow
+   * expect(window):toBeWindow
    *
-   * @description
-   * <p>Assert subject is a browser Window global, whether that be the parent window or those
+   * @summary
+   * Assert subject is a browser Window global, whether that be the parent window or those
    * created within iframes or other windows.
-   * <p>See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -19,12 +21,11 @@
 
   /**
    * @alias
-   * module:Browser.toBeDocument
+   * expect(document):toBeDocument
    *
-   * @description
-   * <p>Assert subject is a browser Window global, whether that be the parent window or those
+   * @summary
+   * Assert subject is a browser Window global, whether that be the parent window or those
    * created within iframes or other windows.
-   * <p>See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -34,11 +35,10 @@
 
   /**
    * @alias
-   * module:Browser.toBeHtmlNode
+   * expect(htmlElement):toBeHtmlNode
    *
-   * @description
-   * <p>Assert subject is an HTML Element.
-   * <p>See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   * @summary
+   * Assert subject is an HTML Element.
    *
    * @return {Boolean}
    */
@@ -48,11 +48,10 @@
 
   /**
    * @alias
-   * module:Browser.toBeHtmlTextNode
+   * expect(htmlElement):toBeHtmlTextNode
    *
-   * @description
-   * <p>Assert subject is an HTML Text Element.
-   * <p>See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   * @summary
+   * Assert subject is an HTML Text Element.
    *
    * @return {Boolean}
    */
@@ -62,11 +61,10 @@
 
   /**
    * @alias
-   * module:Browser.toBeHtmlCommentNode
+   * expect(htmlElement):toBeHtmlCommentNode
    *
-   * @description
-   * <p>Assert subject is an HTML Comment Element.
-   * <p>See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   * @summary
+   * Assert subject is an HTML Comment Element.
    *
    * @return {Boolean}
    */

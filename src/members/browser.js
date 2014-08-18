@@ -1,14 +1,16 @@
   /**
-   * @module BrowserMembers
+   * BrowserMembers
    */
 
   /**
    * @alias
-   * module:BrowserMembers.toBeHtmlNode
+   * expect(object):toHaveHtmlNode
+   *
+   * @summary
+   * Assert subject is a true Object containing a property at memberName which is an HTML Element.
    *
    * @description
-   * <p>Assert subject is a true Object containing a property at memberName which is an HTML Element.
-   * <p>See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
+   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
    *
    * @param {Boolean} memberName
    * @return {Boolean}

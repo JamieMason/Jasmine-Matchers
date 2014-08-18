@@ -1,14 +1,16 @@
   /**
-   * @module StringMembers
+   * StringMembers
    */
 
   /**
    * @alias
-   * module:StringMembers.toHaveEmptyString
+   * expect(object):toHaveEmptyString
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -19,11 +21,13 @@
 
   /**
    * @alias
-   * module:StringMembers.toHaveHtmlString
+   * expect(object):toHaveHtmlString
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -34,11 +38,13 @@
 
   /**
    * @alias
-   * module:StringMembers.toHaveJsonString
+   * expect(object):toHaveJsonString
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -49,11 +55,13 @@
 
   /**
    * @alias
-   * module:StringMembers.toHaveNonEmptyString
+   * expect(object):toHaveNonEmptyString
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -64,11 +72,13 @@
 
   /**
    * @alias
-   * module:StringMembers.toHaveString
+   * expect(object):toHaveString
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -79,11 +89,13 @@
 
   /**
    * @alias
-   * module:StringMembers.toHaveStringLongerThan
+   * expect(object):toHaveStringLongerThan
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @param  {String} other
@@ -95,11 +107,13 @@
 
   /**
    * @alias
-   * module:StringMembers.toHaveStringSameLengthAs
+   * expect(object):toHaveStringSameLengthAs
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @param  {String} other
@@ -111,11 +125,13 @@
 
   /**
    * @alias
-   * module:StringMembers.toHaveStringShorterThan
+   * expect(object):toHaveStringShorterThan
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @param  {String} other
@@ -127,11 +143,13 @@
 
   /**
    * @alias
-   * module:StringMembers.toHaveWhitespaceString
+   * expect(object):toHaveWhitespaceString
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}

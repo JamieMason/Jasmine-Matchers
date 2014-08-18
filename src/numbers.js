@@ -1,14 +1,16 @@
   /**
-   * @module Numbers
+   * @file Numbers
+   *
+   * @description
+   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    */
 
   /**
    * @alias
-   * module:Numbers.toBeNumber
+   * expect(number):toBeNumber
    *
-   * @description
-   * <p>Assert subject is not only calculable, but an actual Number
-   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * @summary
+   * Assert subject is not only calculable, but an actual Number
    *
    * @return {Boolean}
    */
@@ -18,11 +20,10 @@
 
   /**
    * @alias
-   * module:Numbers.toBeEvenNumber
+   * expect(number):toBeEvenNumber
    *
-   * @description
-   * <p>Assert subject is an even Number.
-   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * @summary
+   * Assert subject is an even Number.
    *
    * @return {Boolean}
    */
@@ -32,11 +33,10 @@
 
   /**
    * @alias
-   * module:Numbers.toBeOddNumber
+   * expect(number):toBeOddNumber
    *
-   * @description
-   * <p>Assert subject is an odd Number.
-   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * @summary
+   * Assert subject is an odd Number.
    *
    * @return {Boolean}
    */
@@ -46,19 +46,18 @@
 
   /**
    * @alias
-   * module:Numbers.toBeCalculable
+   * expect(mixed):toBeCalculable
    *
-   * @description
-   * <p>Assert subject can be used in Mathemetic calculations, despite not being an actual Number.
+   * @summary
+   * Assert subject can be used in Mathemetic calculations, despite not being an actual Number.
    *
    * @example
-   * // If all strings are numeric, JavaScript will cast them all as Numbers.
+   * // If all strings are numeric, JavaScript will cast them all as expect(number):
    * "1" * "2" === 2 (pass)
    *
    * @example
    * // If any string is not numeric, JavaScript will cast them all as Strings.
    * "wut?" * 2 === NaN (fail)
-   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -68,11 +67,10 @@
 
   /**
    * @alias
-   * module:Numbers.toBeWithinRange
+   * expect(number):toBeWithinRange
    *
-   * @description
-   * <p>Assert value falls on or between floor and ceiling.
-   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * @summary
+   * Assert value falls on or between floor and ceiling.
    *
    * @param {Number} floor
    * @param {Number} ceiling
@@ -84,11 +82,10 @@
 
   /**
    * @alias
-   * module:Numbers.toBeWholeNumber
+   * expect(number):toBeWholeNumber
    *
-   * @description
-   * <p>Assert value is a number with no decimal places.
-   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * @summary
+   * Assert value is a number with no decimal places.
    *
    * @return {Boolean}
    */

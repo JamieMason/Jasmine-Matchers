@@ -1,14 +1,16 @@
   /**
-   * @module Strings
+   * @file Strings
+   *
+   * @description
+   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
    */
 
   /**
    * @alias
-   * module:Strings.toBeString
+   * expect(string):toBeString
    *
-   * @description
-   * <p>Assert subject is a String.
-   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * @summary
+   * Assert subject is a String.
    *
    * @return {Boolean}
    */
@@ -18,11 +20,10 @@
 
   /**
    * @alias
-   * module:Strings.toBeEmptyString
+   * expect(string):toBeEmptyString
    *
-   * @description
-   * <p>Assert subject is a String of length 0.
-   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * @summary
+   * Assert subject is a String of length 0.
    *
    * @return {Boolean}
    */
@@ -32,11 +33,10 @@
 
   /**
    * @alias
-   * module:Strings.toBeNonEmptyString
+   * expect(string):toBeNonEmptyString
    *
-   * @description
-   * <p>Assert subject is a String with at least 1 character.
-   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * @summary
+   * Assert subject is a String with at least 1 character.
    *
    * @return {Boolean}
    */
@@ -46,11 +46,10 @@
 
   /**
    * @alias
-   * module:Strings.toBeHtmlString
+   * expect(string):toBeHtmlString
    *
-   * @description
-   * <p>Assert subject is string containing HTML Markup.
-   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * @summary
+   * Assert subject is string containing HTML Markup.
    *
    * @return {Boolean}
    */
@@ -70,11 +69,10 @@
 
   /**
    * @alias
-   * module:Strings.toBeJsonString
+   * expect(string):toBeJsonString
    *
-   * @description
-   * <p>Assert subject is string containing parseable JSON.
-   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * @summary
+   * Assert subject is string containing parseable JSON.
    *
    * @return {Boolean}
    */
@@ -91,11 +89,10 @@
 
   /**
    * @alias
-   * module:Strings.toBeWhitespace
+   * expect(string):toBeWhitespace
    *
-   * @description
-   * <p>Assert subject is a String containing nothing but whitespace.
-   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * @summary
+   * Assert subject is a String containing nothing but whitespace.
    *
    * @return {Boolean}
    */
@@ -105,11 +102,10 @@
 
   /**
    * @alias
-   * module:Strings.toStartWith
+   * expect(string):toStartWith
    *
-   * @description
-   * <p>Assert subject is a String whose first characters match our expected string.
-   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * @summary
+   * Assert subject is a String whose first characters match our expected string.
    *
    * @param  {String} expected
    * @return {Boolean}
@@ -125,11 +121,10 @@
 
   /**
    * @alias
-   * module:Strings.toEndWith
+   * expect(string):toEndWith
    *
-   * @description
-   * <p>Assert subject is a String whose last characters match our expected string.
-   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * @summary
+   * Assert subject is a String whose last characters match our expected string.
    *
    * @param  {String} expected
    * @return {Boolean}
@@ -145,11 +140,10 @@
 
   /**
    * @alias
-   * module:Strings.toBeLongerThan
+   * expect(string):toBeLongerThan
    *
-   * @description
-   * <p>Assert subject is a String whose length is greater than our other string.
-   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * @summary
+   * Assert subject is a String whose length is greater than our other string.
    *
    * @param  {String} other
    * @return {Boolean}
@@ -162,11 +156,10 @@
 
   /**
    * @alias
-   * module:Strings.toBeShorterThan
+   * expect(string):toBeShorterThan
    *
-   * @description
-   * <p>Assert subject is a String whose length is greater than our other string.
-   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * @summary
+   * Assert subject is a String whose length is greater than our other string.
    *
    * @param  {String} other
    * @return {Boolean}
@@ -179,11 +172,10 @@
 
   /**
    * @alias
-   * module:Strings.toBeSameLengthAs
+   * expect(string):toBeSameLengthAs
    *
-   * @description
-   * <p>Assert subject is a String whose length is equal to our other string.
-   * <p>See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
+   * @summary
+   * Assert subject is a String whose length is equal to our other string.
    *
    * @param  {String} other
    * @return {Boolean}

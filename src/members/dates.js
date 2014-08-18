@@ -1,14 +1,16 @@
   /**
-   * @module DateMembers
+   * DateMembers
    */
 
   /**
    * @alias
-   * module:DateMembers.toHaveDate
+   * expect(object):toHaveDate
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
+   * See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -19,11 +21,13 @@
 
   /**
    * @alias
-   * module:DateMembers.toHaveDateAfter
+   * expect(object):toHaveDateAfter
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-bdate-testing|Unit testing Dates with Jasmine}.
+   * See {@link http://git.io/jasmine-bdate-testing|Unit testing Dates with Jasmine}.
    *
    * @param  {String} memberName
    * @param  {Date} date
@@ -35,11 +39,13 @@
 
   /**
    * @alias
-   * module:DateMembers.toHaveDateBefore
+   * expect(object):toHaveDateBefore
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-browser-date|Unit testing Browsers with Dates}.
+   * See {@link http://git.io/jasmine-browser-date|Unit testing Browsers with Dates}.
    *
    * @param  {String} memberName
    * @param  {Date} date
@@ -51,11 +57,13 @@
 
   /**
    * @alias
-   * module:DateMembers.toHaveIso8601
+   * expect(object):toHaveIso8601
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
+   * See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}

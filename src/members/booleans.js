@@ -1,14 +1,16 @@
   /**
-   * @module BooleanMembers
+   * BooleanMembers
    */
 
   /**
    * @alias
-   * module:BooleanMembers.toHaveBoolean
+   * expect(object):toHaveBoolean
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -19,11 +21,13 @@
 
   /**
    * @alias
-   * module:BooleanMembers.toHaveFalse
+   * expect(object):toHaveFalse
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -34,11 +38,13 @@
 
   /**
    * @alias
-   * module:BooleanMembers.toHaveTrue
+   * expect(object):toHaveTrue
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}

@@ -1,14 +1,16 @@
   /**
-   * @module NumberMembers
+   * NumberMembers
    */
 
   /**
    * @alias
-   * module:NumberMembers.toHaveNumber
+   * expect(object):toHaveNumber
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -19,11 +21,13 @@
 
   /**
    * @alias
-   * module:NumberMembers.toHaveNumberWithinRange
+   * expect(object):toHaveNumberWithinRange
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @param  {String} memberName
    * @param  {Number} floor
@@ -36,11 +40,13 @@
 
   /**
    * @alias
-   * module:NumberMembers.toHaveCalculable
+   * expect(object):toHaveCalculable
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -51,11 +57,13 @@
 
   /**
    * @alias
-   * module:NumberMembers.toHaveEvenNumber
+   * expect(object):toHaveEvenNumber
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -66,11 +74,13 @@
 
   /**
    * @alias
-   * module:NumberMembers.toHaveOddNumber
+   * expect(object):toHaveOddNumber
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -81,11 +91,13 @@
 
   /**
    * @alias
-   * module:NumberMembers.toHaveWholeNumber
+   * expect(object):toHaveWholeNumber
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
+   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}

@@ -1,14 +1,16 @@
   /**
-   * @module ObjectMembers
+   * ObjectMembers
    */
 
   /**
    * @alias
-   * module:ObjectMembers.toHaveMethod
+   * expect(object):toHaveMethod
+   *
+   * @summary
+   * Assert subject is a true Object containing a property at memberName which is a Function.
    *
    * @description
-   * <p>Assert subject is a true Object containing a property at memberName which is a Function.
-   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
    *
    * @param {Boolean} memberName
    * @return {Boolean}
@@ -19,11 +21,13 @@
 
   /**
    * @alias
-   * module:ObjectMembers.toHaveObject
+   * expect(object):toHaveObject
+   *
+   * @summary
+   * Assert subject is a true Object containing a property at memberName which is a true Object.
    *
    * @description
-   * <p>Assert subject is a true Object containing a property at memberName which is a true Object.
-   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
    *
    * @param {Boolean} memberName
    * @return {Boolean}
@@ -34,12 +38,14 @@
 
   /**
    * @alias
-   * module:ObjectMembers.toHaveEmptyObject
+   * expect(object):toHaveEmptyObject
+   *
+   * @summary
+   * Assert subject is a true Object containing a property at memberName which is a true Object with
+   * no instance members.
    *
    * @description
-   * <p>Assert subject is a true Object containing a property at memberName which is a true Object with
-   * no instance members.
-   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
    *
    * @param {Boolean} memberName
    * @return {Boolean}
@@ -50,12 +56,14 @@
 
   /**
    * @alias
-   * module:ObjectMembers.toHaveNonEmptyObject
+   * expect(object):toHaveNonEmptyObject
+   *
+   * @summary
+   * Assert subject is a true Object containing a property at memberName which is a true Object with
+   * at least one instance member.
    *
    * @description
-   * <p>Assert subject is a true Object containing a property at memberName which is a true Object with
-   * at least one instance member.
-   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
    *
    * @param {Boolean} memberName
    * @return {Boolean}
@@ -66,12 +74,14 @@
 
   /**
    * @alias
-   * module:ObjectMembers.toHaveMember
+   * expect(object):toHaveMember
+   *
+   * @summary
+   * Assert subject is a true Object containing a property at memberName which is of any value,
+   * including undefined.
    *
    * @description
-   * <p>Assert subject is a true Object containing a property at memberName which is of any value,
-   * including undefined.
-   * <p>See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
+   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
    *
    * @param {Boolean} memberName
    * @return {Boolean}

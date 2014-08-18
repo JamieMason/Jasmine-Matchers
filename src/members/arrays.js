@@ -1,14 +1,16 @@
   /**
-   * @module ArrayMembers
+   * ArrayMembers
    */
 
   /**
    * @alias
-   * module:ArrayMembers.toHaveArray
+   * expect(object):toHaveArray
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -19,11 +21,13 @@
 
   /**
    * @alias
-   * module:ArrayMembers.toHaveArrayOfBooleans
+   * expect(object):toHaveArrayOfBooleans
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -34,11 +38,13 @@
 
   /**
    * @alias
-   * module:ArrayMembers.toHaveArrayOfNumbers
+   * expect(object):toHaveArrayOfNumbers
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -49,11 +55,13 @@
 
   /**
    * @alias
-   * module:ArrayMembers.toHaveArrayOfObjects
+   * expect(object):toHaveArrayOfObjects
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -64,11 +72,13 @@
 
   /**
    * @alias
-   * module:ArrayMembers.toHaveArrayOfSize
+   * expect(object):toHaveArrayOfSize
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @param  {Number} size
@@ -80,11 +90,13 @@
 
   /**
    * @alias
-   * module:ArrayMembers.toHaveNonEmptyArray
+   * expect(object):toHaveNonEmptyArray
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -95,11 +107,13 @@
 
   /**
    * @alias
-   * module:ArrayMembers.toHaveEmptyArray
+   * expect(object):toHaveEmptyArray
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}
@@ -110,11 +124,13 @@
 
   /**
    * @alias
-   * module:ArrayMembers.toHaveArrayOfStrings
+   * expect(object):toHaveArrayOfStrings
+   *
+   * @summary
+   * .
    *
    * @description
-   * <p>.
-   * <p>See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
+   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
    *
    * @param  {String} memberName
    * @return {Boolean}

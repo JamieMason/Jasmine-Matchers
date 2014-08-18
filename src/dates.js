@@ -1,15 +1,17 @@
   /**
-   * @module Dates
+   * @file Dates
+   *
+   * @description
+   * See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
    */
 
   /**
    * @alias
-   * module:Dates.toBeDate
+   * expect(date):toBeDate
    *
-   * @description
-   * <p>Assert subject is a true Date, created in the parent document — those created and imported
+   * @summary
+   * Assert subject is a true Date, created in the parent document — those created and imported
    * from within iframes or other windows will not match.
-   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
    *
    * @return {Boolean}
    */
@@ -19,11 +21,10 @@
 
   /**
    * @alias
-   * module:Dates.toBeIso8601
+   * expect(string):toBeIso8601
    *
-   * @description
-   * <p>Assert subject is a Date String conforming to the ISO 8601 standard.
-   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
+   * @summary
+   * Assert subject is a Date String conforming to the ISO 8601 standard.
    *
    * @return {Boolean}
    */
@@ -36,11 +37,10 @@
 
   /**
    * @alias
-   * module:Dates.toBeBefore
+   * expect(date):toBeBefore
    *
-   * @description
-   * <p>Assert subject is a Date occurring before another Date.
-   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
+   * @summary
+   * Assert subject is a Date occurring before another Date.
    *
    * @param {Date} date
    * @return {Boolean}
@@ -51,11 +51,10 @@
 
   /**
    * @alias
-   * module:Dates.toBeAfter
+   * expect(date):toBeAfter
    *
-   * @description
-   * <p>Assert subject is a Date occurring after another Date.
-   * <p>See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
+   * @summary
+   * Assert subject is a Date occurring after another Date.
    *
    * @param {Date} date
    * @return {Boolean}

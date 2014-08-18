@@ -1,97 +1,51 @@
 # Jasmine-Matchers
 
-Extends the [default set of matchers](https://github.com/pivotal/jasmine/wiki/Matchers) for the
-[Jasmine testing framework](http://pivotal.github.com/jasmine/) because we want tests which;
-
-* Are easy to read.
-* Are explicit about what we're trying to do.
-* Are free of _how_ what we're trying to do is done.
-* Produce messages and errors which are clear and simple.
-
-What this means in practice is that you can replace expectations like these;
-
-```javascript
-expect(typeof person.getName).toEqual('function');
-// >> Expected 'object' to equal 'function'.
-expect(person.name.length > 0).toEqual(true);
-// >> Expected false to equal true.
-expect(person.surname.length === brother.surname.length).toEqual(true);
-// >> Expected false to equal true.
-expect(person.age % 2 === 0).toEqual(true);
-// >> Expected false to equal true.
-```
-
-With expectations like these;
-
-```javascript
-expect(person.getName).toBeFunction();
-// >> Expected null to be function.
-expect(person.name).toBeNonEmptyString();
-// >> Expected '' to be non empty string.
-expect(person.surname).toBeSameLengthAs(brother.surname);
-// >> Expected '' to be same length as 'x'.
-expect(person.age).toBeEvenNumber();
-// >> Expected 5 to be even number.
-```
-
-## Contents
-
-* [Installation](#installation)
-  * [NPM](#npm)
-  * [Bower](#bower)
-* [Usage](#usage)
-  * [Browser](#browser)
-  * [Node.js](#nodejs)
-  * [Karma](#karma)
-* [Available Matchers](#available-matchers)
-  * [Arrays](#arrays)
-  * [Booleans](#booleans)
-  * [Browser](#browser)
-  * [Exceptions](#exceptions)
-  * [Numbers](#numbers)
-  * [Objects](#objects)
-  * [Strings](#strings)
-  * [Dates](#dates)
-* [License](#license)
+Additional matchers for the Jasmine BDD JavaScript testing library.
 
 ## Installation
 
-### NPM
+### NPM Install
 
-```bash
-npm install jasmine-expect --save-dev
-```
+    npm install jasmine-expect --save-dev
 
-### Bower
+### Bower Install
 
-```bash
-bower install jasmine-expect --save-dev
-```
+    bower install jasmine-expect --save-dev
 
 ## Usage
+
+### Karma
+
+Integration is easy with the [karma-jasmine-matchers](https://github.com/JamieMason/karma-jasmine-matchers) plugin.
 
 ### Browser
 
 Embed [dist/jasmine-matchers.js](https://github.com/JamieMason/Jasmine-Matchers/blob/master/dist/jasmine-matchers.js)
 after the Jasmine framework and before any of your tests.
 
-```html
-<script src="path/to/jasmine.js"></script>
-<script src="path/to/jasmine-matchers.js"></script>
+## Description
+
+The [Jasmine testing framework](http://pivotal.github.com/jasmine/) from [Pivotal Labs](http://pivotallabs.com/) comes with a small set of [default matchers](https://github.com/pivotal/jasmine/wiki/Matchers);
+
+```javascript
+expect(fn).toThrow(e);
+expect(instance).toBe(instance);
+expect(mixed).toBeDefined();
+expect(mixed).toBeFalsy();
+expect(number).toBeGreaterThan(number);
+expect(number).toBeLessThan(number);
+expect(mixed).toBeNull();
+expect(mixed).toBeTruthy();
+expect(mixed).toBeUndefined();
+expect(array).toContain(member);
+expect(string).toContain(substring);
+expect(mixed).toEqual(mixed);
+expect(mixed).toMatch(pattern);
 ```
 
-### Node.js
+All [Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) does is add a few more;
 
-Call `require('jasmine-expect')` after the Jasmine framework and before any of your tests.
-
-### Karma
-
-Include `"path/to/jasmine-matchers.js"` as the first value in
-[Karma's `files` array configuration](http://karma-runner.github.io/0.10/config/files.html).
-
-## Available Matchers
-
-### Arrays
+## Arrays
 
 ```javascript
 expect(array).toBeArray();
@@ -102,49 +56,6 @@ expect(array).toBeArrayOfSize(size);
 expect(array).toBeArrayOfStrings();
 expect(array).toBeEmptyArray();
 expect(array).toBeNonEmptyArray();
-```
-
-### Booleans
-
-```javascript
-expect(boolean).toBeBoolean();
-expect(boolean).toBeFalse();
-expect(boolean).toBeTrue();
-```
-
-### Browser
-
-```javascript
-expect(element).toBeHtmlCommentNode();
-expect(element).toBeHtmlNode();
-expect(element).toBeHtmlTextNode();
-expect(object).toBeDocument();
-expect(object).toBeWindow();
-```
-
-### Exceptions
-
-```javascript
-expect(fn).toThrowError();
-expect(fn).toThrowErrorOfType(string);
-```
-
-### Numbers
-
-```javascript
-expect(number).toBeEvenNumber();
-expect(number).toBeNumber();
-expect(number).toBeOddNumber();
-expect(number).toBeWholeNumber();
-expect(number).toBeWithinRange(floor, ceiling);
-expect(numberOrString).toBeCalculable();
-```
-
-### Objects
-
-```javascript
-expect(object).toBeFunction();
-expect(object).toBeObject();
 expect(object).toHaveArray(memberName);
 expect(object).toHaveArrayOfBooleans(memberName);
 expect(object).toHaveArrayOfNumbers(memberName);
@@ -153,10 +64,83 @@ expect(object).toHaveArrayOfSize(memberName, size);
 expect(object).toHaveArrayOfStrings(memberName);
 expect(object).toHaveEmptyArray(memberName);
 expect(object).toHaveNonEmptyArray(memberName);
-expect(object).toImplement(api);
 ```
 
-### Strings
+## Booleans
+
+```javascript
+expect(boolean).toBeBoolean();
+expect(boolean).toBeFalse();
+expect(boolean).toBeTrue();
+expect(object).toHaveBoolean(memberName);
+expect(object).toHaveFalse(memberName);
+expect(object).toHaveTrue(memberName);
+```
+
+## Browser
+
+```javascript
+expect(document).toBeDocument();
+expect(htmlElement).toBeHtmlCommentNode();
+expect(htmlElement).toBeHtmlNode();
+expect(htmlElement).toBeHtmlTextNode();
+expect(object).toHaveHtmlNode(memberName);
+expect(window).toBeWindow();
+```
+
+## Dates
+
+```javascript
+expect(date).toBeAfter(date);
+expect(date).toBeBefore(date);
+expect(date).toBeDate();
+expect(string).toBeIso8601();
+expect(object).toHaveDate(memberName);
+expect(object).toHaveDateAfter(memberName, date);
+expect(object).toHaveDateBefore(memberName, date);
+expect(object).toHaveIso8601(memberName);
+```
+
+## Functions and Errors
+
+```javascript
+expect(function).toBeFunction();
+expect(function).toThrowError();
+expect(function).toThrowErrorOfType(type);
+expect(object).toHaveMethod(memberName);
+```
+
+## Numbers
+
+```javascript
+expect(mixed).toBeCalculable();
+expect(number).toBeEvenNumber();
+expect(number).toBeNumber();
+expect(number).toBeOddNumber();
+expect(number).toBeWholeNumber();
+expect(number).toBeWithinRange(floor, ceiling);
+expect(object).toHaveCalculable(memberName);
+expect(object).toHaveEvenNumber(memberName);
+expect(object).toHaveNumber(memberName);
+expect(object).toHaveNumberWithinRange(memberName, floor, ceiling);
+expect(object).toHaveOddNumber(memberName);
+expect(object).toHaveWholeNumber(memberName);
+```
+
+## Objects
+
+```javascript
+expect(object).toBeEmptyObject();
+expect(object).toBeNonEmptyObject();
+expect(object).toBeObject();
+expect(object).toHaveEmptyObject(memberName);
+expect(object).toHaveMember(memberName);
+expect(object).toHaveNonEmptyObject(memberName);
+expect(object).toHaveObject(memberName);
+expect(object).toImplement(other);
+```
+
+## Strings
 
 ```javascript
 expect(string).toBeEmptyString();
@@ -170,20 +154,24 @@ expect(string).toBeString();
 expect(string).toBeWhitespace();
 expect(string).toEndWith(expected);
 expect(string).toStartWith(expected);
+expect(object).toHaveEmptyString(memberName);
+expect(object).toHaveHtmlString(memberName);
+expect(object).toHaveJsonString(memberName);
+expect(object).toHaveNonEmptyString(memberName);
+expect(object).toHaveString(memberName);
+expect(object).toHaveStringLongerThan(memberName, other);
+expect(object).toHaveStringSameLengthAs(memberName, other);
+expect(object).toHaveStringShorterThan(memberName, other);
+expect(object).toHaveWhitespaceString(memberName);
 ```
 
-### Dates
+## Usage
 
-```javascript
-expect(date).toBeAfter(date);
-expect(date).toBeBefore(date);
-expect(date).toBeDate();
-expect(string).toBeIso8601();
-```
+Just include a reference to dist/jasmine-matchers.js after your reference to Jasmine, or use `require('jasmine-expect')`.
 
 ## License
 
-> Copyright © Jamie Mason, @fold_left,
+> Copyright © 2013 Jamie Mason, @GotNoSugarBaby,
 > https://github.com/JamieMason
 
 > Permission is hereby granted, free of charge, to any person

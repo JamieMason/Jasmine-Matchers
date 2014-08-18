@@ -1,14 +1,16 @@
   /**
-   * @module Booleans
+   * @file Booleans
+   *
+   * @description
+   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
    */
 
   /**
    * @alias
-   * module:Booleans.toBeBoolean
+   * expect(boolean):toBeBoolean
    *
-   * @description
-   * <p>Assert subject is not only truthy or falsy, but an actual Boolean.
-   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   * @summary
+   * Assert subject is not only truthy or falsy, but an actual Boolean.
    *
    * @return {Boolean}
    */
@@ -18,11 +20,10 @@
 
   /**
    * @alias
-   * module:Booleans.toBeTrue
+   * expect(boolean):toBeTrue
    *
-   * @description
-   * <p>Assert subject is not only truthy, but an actual Boolean true.
-   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   * @summary
+   * Assert subject is not only truthy, but an actual Boolean true.
    *
    * @return {Boolean}
    */
@@ -32,11 +33,10 @@
 
   /**
    * @alias
-   * module:Booleans.toBeFalse
+   * expect(boolean):toBeFalse
    *
-   * @description
-   * <p>Assert subject is not only falsy, but an actual Boolean false.
-   * <p>See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
+   * @summary
+   * Assert subject is not only falsy, but an actual Boolean false.
    *
    * @return {Boolean}
    */

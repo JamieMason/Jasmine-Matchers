@@ -104,8 +104,8 @@
   };
 
   /**
-   * @description
-   * <p>Format the failure message for member matchers such as toHaveString('surname').
+   * @summary
+   * Format the failure message for member matchers such as toHaveString('surname').
    *
    * @inner
    * @param  {Object}  util   Provided by Jasmine.
@@ -126,8 +126,8 @@
   };
 
   /**
-   * @description
-   * <p>Convert Jasmine 1.0 matchers into the format introduced in Jasmine 2.0.
+   * @summary
+   * Convert Jasmine 1.0 matchers into the format introduced in Jasmine 2.0.
    *
    * @inner
    * @param  {Object} v1Matchers

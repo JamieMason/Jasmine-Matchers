@@ -1,14 +1,16 @@
   /**
-   * @module Errors
+   * @file Errors
+   *
+   * @description
+   * See {@link http://git.io/jasmine-error-testing|Unit testing Errors with Jasmine}.
    */
 
   /**
    * @alias
-   * module:Errors.toThrowError
+   * expect(function):toThrowError
    *
-   * @description
-   * <p>Asserts subject throws an Error of any type.
-   * <p>See {@link http://git.io/jasmine-error-testing|Unit testing Errors with Jasmine}.
+   * @summary
+   * Asserts subject throws an Error of any type.
    *
    * @return {Boolean}
    */
@@ -24,11 +26,10 @@
 
   /**
    * @alias
-   * module:Errors.toThrowErrorOfType
+   * expect(function):toThrowErrorOfType
    *
-   * @description
-   * <p>Asserts subject throws an Error of a specific type, such as "TypeError".
-   * <p>See {@link http://git.io/jasmine-error-testing|Unit testing Errors with Jasmine}.
+   * @summary
+   * Asserts subject throws an Error of a specific type, such as "TypeError".
    *
    * @param  {String} type
    * @return {Boolean}
