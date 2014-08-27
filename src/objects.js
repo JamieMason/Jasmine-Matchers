@@ -15,7 +15,7 @@
    * @return {Number}
    */
   priv.countMembers = function(object) {
-    return priv.reduce(object, function(memo, el, ix) {
+    return priv.reduce(object, function(memo /*, el, ix*/ ) {
       return memo + 1;
     }, 0);
   };

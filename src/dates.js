@@ -29,10 +29,7 @@
    * @return {Boolean}
    */
   matchers.toBeIso8601 = function() {
-    return matchers.toBeString.call(this)
-      && this.actual.length >= 10
-      && new Date(this.actual).toString() !== 'Invalid Date'
-      && new Date(this.actual).toISOString().slice(0, this.actual.length) === this.actual;
+    return matchers.toBeString.call(this) && this.actual.length >= 10 && new Date(this.actual).toString() !== 'Invalid Date' && new Date(this.actual).toISOString().slice(0, this.actual.length) === this.actual;
   };
 
   /**
