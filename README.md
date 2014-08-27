@@ -5,18 +5,13 @@ Write simple, clear, helpful, easy to follow specs using the [Jasmine testing fr
 ```javascript
 expect(typeof record.save).toEqual('function');
 // ✘ Expected 'undefined' to equal 'function'.
-expect(record).toHaveMethod('getName');
+expect(record).toHaveMethod('save');
 // √ Expected member "save" of { sae : Function } to be function.
 
 expect(person.age % 2 === 0).toEqual(true);
 // ✘ Expected false to equal true.
 expect(person).toHaveEvenNumber('age');
 // √ Expected member "age" of { name : 'Guybrush', age : 25 } to be even number.
-
-expect(uniqueId.length).toBeGreaterThan(0);
-// ✘ Expected 0 to be greater than 0.
-expect(uniqueId).toBeNonEmptyString();
-// √ Expected "" to be non empty string.
 ```
 
 ## Project Status
