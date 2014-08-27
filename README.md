@@ -19,6 +19,19 @@ expect(uniqueId).toBeNonEmptyString();
 // √ Expected "" to be non empty string.
 ```
 
+## Project Status
+
+[![Build Status](https://travis-ci.org/JamieMason/Jasmine-Matchers.svg?branch=master)](https://travis-ci.org/JamieMason/Jasmine-Matchers)
+
+The latest stable version in Bower and NPM is `1.22.0`.
+
+This repository contains `1.52.0` which will be released once some of the newer matchers have better test coverage.
+
+    Statements: 89.17% (214 / 240)
+    Branches:   92.93% (92 / 99)
+    Functions:  75.25% (76 / 101)
+    Lines:      89.17% (214 / 240)
+
 ## Installation
 
 ### NPM Install
