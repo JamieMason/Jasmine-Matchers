@@ -1,6 +1,23 @@
 # Jasmine-Matchers
 
-Additional matchers for the Jasmine BDD JavaScript testing library.
+Write simple, clear, helpful, easy to follow specs using the [Jasmine testing framework](http://pivotal.github.com/jasmine/) from [Pivotal Labs](http://pivotallabs.com/).
+
+```javascript
+expect(typeof record.save).toEqual('function');
+// ✘ Expected 'undefined' to equal 'function'.
+expect(record).toHaveMethod('getName');
+// √ Expected member "save" of { sae : Function } to be function.
+
+expect(person.age % 2 === 0).toEqual(true);
+// ✘ Expected false to equal true.
+expect(person).toHaveEvenNumber('age');
+// √ Expected member "age" of { name : 'Guybrush', age : 25 } to be even number.
+
+expect(uniqueId.length).toBeGreaterThan(0);
+// ✘ Expected 0 to be greater than 0.
+expect(uniqueId).toBeNonEmptyString();
+// √ Expected "" to be non empty string.
+```
 
 ## Installation
 
@@ -20,30 +37,7 @@ Integration is easy with the [karma-jasmine-matchers](https://github.com/JamieMa
 
 ### Browser
 
-Embed [dist/jasmine-matchers.js](https://github.com/JamieMason/Jasmine-Matchers/blob/master/dist/jasmine-matchers.js)
-after the Jasmine framework and before any of your tests.
-
-## Description
-
-The [Jasmine testing framework](http://pivotal.github.com/jasmine/) from [Pivotal Labs](http://pivotallabs.com/) comes with a small set of [default matchers](https://github.com/pivotal/jasmine/wiki/Matchers);
-
-```javascript
-expect(fn).toThrow(e);
-expect(instance).toBe(instance);
-expect(mixed).toBeDefined();
-expect(mixed).toBeFalsy();
-expect(number).toBeGreaterThan(number);
-expect(number).toBeLessThan(number);
-expect(mixed).toBeNull();
-expect(mixed).toBeTruthy();
-expect(mixed).toBeUndefined();
-expect(array).toContain(member);
-expect(string).toContain(substring);
-expect(mixed).toEqual(mixed);
-expect(mixed).toMatch(pattern);
-```
-
-All [Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) does is add a few more;
+Include `<script src="jasmine-matchers.js"></script>` after Jasmine and before your specs.
 
 ## Arrays
 
@@ -165,14 +159,10 @@ expect(object).toHaveStringShorterThan(memberName, other);
 expect(object).toHaveWhitespaceString(memberName);
 ```
 
-## Usage
-
-Just include a reference to dist/jasmine-matchers.js after your reference to Jasmine, or use `require('jasmine-expect')`.
-
 ## License
 
-> Copyright © 2013 Jamie Mason, @GotNoSugarBaby,
-> https://github.com/JamieMason
+> Copyright © Jamie Mason, @fold_left,
+> https://jamiemason.github.io
 
 > Permission is hereby granted, free of charge, to any person
 > obtaining a copy of this software and associated documentation files
