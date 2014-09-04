@@ -5,7 +5,7 @@
    * Asserts subject throws an Error of any type
    * @return {Boolean}
    */
-  matchers.toThrowError = function() {
+  matchers.toThrowAnyError = function() {
     var threwError = false;
     try {
       this.actual();

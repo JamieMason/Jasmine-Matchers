@@ -49,7 +49,7 @@ All [Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) does is a
 
 ## Exceptions
 
-    expect(fn).toThrowError();
+    expect(fn).toThrowAnyError();
     expect(fn).toThrowErrorOfType(string);
 
 ## Numbers

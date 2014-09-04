@@ -1,10 +1,10 @@
 describe('Errors', function() {
 
-  describe('toThrowError', function () {
+  describe('toThrowAnyError', function () {
     it('asserts value is a function which will error when called a particular way', function () {
-      expect(function(){ throw new Error('wut?'); }).toThrowError();
-      expect(function(){ return badReference.someValue }).toThrowError();
-      expect(function(){}).not.toThrowError();
+      expect(function(){ throw new Error('wut?'); }).toThrowAnyError();
+      expect(function(){ return badReference.someValue }).toThrowAnyError();
+      expect(function(){}).not.toThrowAnyError();
     });
   });
 
