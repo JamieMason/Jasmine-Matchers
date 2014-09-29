@@ -6,7 +6,7 @@ Write simple, clear, helpful, easy to follow specs using the [Jasmine testing fr
 expect(typeof record.save).toEqual('function');
 // ✘ Expected 'undefined' to equal 'function'.
 expect(record).toHaveMethod('save');
-// √ Expected member "save" of { sae : Function } to be function.
+// √ Expected member "save" of { save : Function } to be function.
 
 expect(person.age % 2 === 0).toEqual(true);
 // ✘ Expected false to equal true.
