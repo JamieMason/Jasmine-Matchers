@@ -749,7 +749,7 @@
   };
 
   matchers.toBeOfType = function(type) {
-    return typeof this.actual === type;
+    return this.actual.constructor.name === type;
   };
 
   matchers.toBeOneOf = function(values) {
