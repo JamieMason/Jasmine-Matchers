@@ -458,10 +458,7 @@
    * @return {Boolean}
    */
   matchers.toBeIso8601 = function() {
-    return matchers.toBeString.call(this)
-      && this.actual.length >= 10
-      && new Date(this.actual).toString() !== 'Invalid Date'
-      && new Date(this.actual).toISOString().slice(0, this.actual.length) === this.actual;
+    return matchers.toBeString.call(this) && this.actual.length >= 10 && new Date(this.actual).toString() !== 'Invalid Date' && new Date(this.actual).toISOString().slice(0, this.actual.length) === this.actual;
   };
 
   /**
@@ -650,7 +647,7 @@
    * @return {Number}
    */
   priv.countMembers = function(object) {
-    return priv.reduce(object, function(memo, el, ix) {
+    return priv.reduce(object, function(memo /*, el, ix*/ ) {
       return memo + 1;
     }, 0);
   };
@@ -731,6 +728,32 @@
    */
   matchers.toBeFunction = function() {
     return this.actual instanceof Function;
+  };
+
+  matchers.toBeInstanceOf = function(Constructor) {
+    return this.actual instanceof Constructor;
+  };
+
+  matchers.toBeInRange = function(a, b) {
+    return this.actual <= b && this.actual >= a;
+  };
+
+  matchers.toBeNan = function() { // needs to be spelled 'Nan' due to jasmine conventions
+    var actual = this.actual;
+    // NaN is the only value that is not strictly equal to itself
+    return actual !== actual;
+  };
+
+  matchers.toBeNumber = function() {
+    return typeof this.actual === 'number';
+  };
+
+  matchers.toBeOfType = function(type) {
+    return this.actual.constructor.name === type;
+  };
+
+  matchers.toBeOneOf = function(values) {
+    return values.indexOf(this.actual) > -1;
   };
 
   /**
@@ -1174,7 +1197,7 @@
    * @return {Boolean}
    */
   matchers.toHaveDateAfter = function(memberName, date) {
-    return priv.assertMember.call(this, 'toBeDateAfter', memberName, date);
+    return priv.assertMember.call(this, 'toBeAfter', memberName, date);
   };
 
   /**
@@ -1192,7 +1215,7 @@
    * @return {Boolean}
    */
   matchers.toHaveDateBefore = function(memberName, date) {
-    return priv.assertMember.call(this, 'toBeDateBefore', memberName, date);
+    return priv.assertMember.call(this, 'toBeBefore', memberName, date);
   };
 
   /**
