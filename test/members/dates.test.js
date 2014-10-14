@@ -25,30 +25,30 @@ describe('Date Members', function() {
       describe('when subject has a member which IS a date', function() {
         describe('and the supplied date is a date', function () {
           it('should confirm if the member is before the date', function () {
-            expect({memberName: new Date('10-12-2000')}).toHaveDateBefore('memberName', new Date());
+            expect({memberName: new Date('2013-01-01T00:00:00.000Z')}).toHaveDateBefore('memberName', new Date());
           });
 
           it('should deny if the member is not before the date', function () {
-            expect({memberName: new Date('10-12-2100')}).not.toHaveDateBefore('memberName', new Date());
+            expect({memberName: new Date('2100-01-01T00:00:00.000Z')}).not.toHaveDateBefore('memberName', new Date());
           });
         });
 
         describe('and the supplied date is not a date', function () {
           it('should deny', function () {
-            expect({memberName: new Date('10-12-2000')}).not.toHaveDateBefore('memberName', null);
+            expect({memberName: new Date('2013-01-01T00:00:00.000Z')}).not.toHaveDateBefore('memberName', null);
           });
         });
       });
 
       describe('when subject has a member which IS NOT a date', function() {
         it('should deny', function () {
-          expect({memberName: '10-12-2000'}).not.toHaveDateBefore('memberName', new Date());
+          expect({memberName: '2013-01-01T00:00:00.000Z'}).not.toHaveDateBefore('memberName', new Date());
         });
       });
 
       describe('when subject does not have the supplied member', function() {
         it('should deny', function () {
-          expect({memberName: '10-12-2000'}).not.toHaveDateBefore('notMemberName', new Date());
+          expect({memberName: '2013-01-01T00:00:00.000Z'}).not.toHaveDateBefore('notMemberName', new Date());
         });
       });
     });
@@ -59,30 +59,30 @@ describe('Date Members', function() {
       describe('when subject has a member which IS a date', function() {
         describe('and the supplied date is a date', function () {
           it('should confirm if the member is after the date', function () {
-            expect({memberName: new Date('10-12-2100')}).toHaveDateAfter('memberName', new Date());
+            expect({memberName: new Date('2100-01-01T00:00:00.000Z')}).toHaveDateAfter('memberName', new Date());
           });
 
           it('should deny if the member is not after the date', function () {
-            expect({memberName: new Date('10-12-2000')}).not.toHaveDateAfter('memberName', new Date());
+            expect({memberName: new Date('2013-01-01T00:00:00.000Z')}).not.toHaveDateAfter('memberName', new Date());
           });
         });
 
         describe('and the supplied date is not a date', function () {
           it('should deny', function () {
-            expect({memberName: new Date('10-12-2000')}).not.toHaveDateAfter('memberName', null);
+            expect({memberName: new Date('2013-01-01T00:00:00.000Z')}).not.toHaveDateAfter('memberName', null);
           });
         });
       });
 
       describe('when subject has a member which IS NOT a date', function() {
         it('should deny', function () {
-          expect({memberName: '10-12-2000'}).not.toHaveDateAfter('memberName', new Date());
+          expect({memberName: '2013-01-01T00:00:00.000Z'}).not.toHaveDateAfter('memberName', new Date());
         });
       });
 
       describe('when subject does not have the supplied member', function() {
         it('should deny', function () {
-          expect({memberName: '10-12-2000'}).not.toHaveDateAfter('notMemberName', new Date());
+          expect({memberName: '2013-01-01T00:00:00.000Z'}).not.toHaveDateAfter('notMemberName', new Date());
         });
       });
     });
