@@ -1,6 +1,6 @@
 describe('Errors', function() {
 
-  describe('toThrowError', function() {
+  describe('toThrowAnyError', function() {
     describe('when supplied a function', function() {
       describe('when function errors when invoked', function() {
         beforeEach(function() {
@@ -8,12 +8,12 @@ describe('Errors', function() {
             throw new Error('wut?');
           };
           this.badReference = function() {
-            return badReference.someValue
+            return badReference.someValue;
           };
         });
         it('should confirm', function() {
-          expect(this.throwError).toThrowError();
-          expect(this.badReference).toThrowError();
+          expect(this.throwError).toThrowAnyError();
+          expect(this.badReference).toThrowAnyError();
         });
       });
       describe('when function does NOT error when invoked', function() {
@@ -21,7 +21,7 @@ describe('Errors', function() {
           this.noErrors = function() {};
         });
         it('should deny', function() {
-          expect(this.noErrors).not.toThrowError();
+          expect(this.noErrors).not.toThrowAnyError();
         });
       });
     });
@@ -35,7 +35,7 @@ describe('Errors', function() {
             throw new Error('wut?');
           };
           this.badReference = function() {
-            return badReference.someValue
+            return badReference.someValue;
           };
         });
         describe('when the error is of the expected type', function() {

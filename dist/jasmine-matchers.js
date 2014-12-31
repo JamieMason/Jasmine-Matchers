@@ -458,10 +458,7 @@
    * @return {Boolean}
    */
   matchers.toBeIso8601 = function() {
-    return matchers.toBeString.call(this)
-      && this.actual.length >= 10
-      && new Date(this.actual).toString() !== 'Invalid Date'
-      && new Date(this.actual).toISOString().slice(0, this.actual.length) === this.actual;
+    return matchers.toBeString.call(this) && this.actual.length >= 10 && new Date(this.actual).toString() !== 'Invalid Date' && new Date(this.actual).toISOString().slice(0, this.actual.length) === this.actual;
   };
 
   /**
@@ -508,7 +505,7 @@
    *
    * @return {Boolean}
    */
-  matchers.toThrowError = function() {
+  matchers.toThrowAnyError = function() {
     var threwError = false;
     try {
       this.actual();
@@ -650,7 +647,7 @@
    * @return {Number}
    */
   priv.countMembers = function(object) {
-    return priv.reduce(object, function(memo, el, ix) {
+    return priv.reduce(object, function(memo /*, el, ix*/ ) {
       return memo + 1;
     }, 0);
   };
