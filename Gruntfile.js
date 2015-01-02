@@ -22,6 +22,19 @@ module.exports = function(grunt) {
       }
     },
 
+    jsbeautifier: {
+      dist: {
+        options: {
+          js: {
+            indentSize: 2
+          }
+        },
+        src: [
+          'dist/jasmine-matchers.js'
+        ]
+      }
+    },
+
     watch: {
       scripts: {
         files: [
@@ -52,6 +65,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-jsbeautifier');
   grunt.loadNpmTasks('grunt-jsdoc');
 
   grunt.registerTask('build', [

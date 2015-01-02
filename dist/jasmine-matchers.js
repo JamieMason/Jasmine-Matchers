@@ -121,7 +121,6 @@
    * @inner
    * @param  {String} matcherName
    * @param  {String} memberName
-   * @param  (*) ...
    * @return {Boolean}
    */
   priv.assertMember = function( /* matcherName, memberName, ... */ ) {
@@ -458,7 +457,12 @@
    * @return {Boolean}
    */
   matchers.toBeIso8601 = function() {
-    return matchers.toBeString.call(this) && this.actual.length >= 10 && new Date(this.actual).toString() !== 'Invalid Date' && new Date(this.actual).toISOString().slice(0, this.actual.length) === this.actual;
+    return matchers.toBeString.call(this) &&
+      this.actual.length >= 10 &&
+      new Date(this.actual).toString() !== 'Invalid Date' &&
+      new Date(this.actual)
+      .toISOString()
+      .slice(0, this.actual.length) === this.actual;
   };
 
   /**
@@ -472,7 +476,9 @@
    * @return {Boolean}
    */
   matchers.toBeBefore = function(date) {
-    return matchers.toBeDate.call(this) && matchers.toBeDate.call({ actual: date }) && this.actual.getTime() < date.getTime();
+    return matchers.toBeDate.call(this) && matchers.toBeDate.call({
+      actual: date
+    }) && this.actual.getTime() < date.getTime();
   };
 
   /**
@@ -486,7 +492,9 @@
    * @return {Boolean}
    */
   matchers.toBeAfter = function(date) {
-    return matchers.toBeBefore.call({ actual: date }, this.actual);
+    return matchers.toBeBefore.call({
+      actual: date
+    }, this.actual);
   };
 
   /**
@@ -708,10 +716,12 @@
       return false;
     }
     for (var key in other) {
-      if (key in this.actual) {
-        continue;
+      if (other.hasOwnProperty(key)) {
+        if (key in this.actual) {
+          continue;
+        }
+        return false;
       }
-      return false;
     }
     return true;
   };
@@ -844,8 +854,8 @@
    */
   matchers.toStartWith = function(expected) {
     if (!matchers.toBeNonEmptyString.call(this) || !matchers.toBeNonEmptyString.call({
-      actual: expected
-    })) {
+        actual: expected
+      })) {
       return false;
     }
     return this.actual.slice(0, expected.length) === expected;
@@ -863,8 +873,8 @@
    */
   matchers.toEndWith = function(expected) {
     if (!matchers.toBeNonEmptyString.call(this) || !matchers.toBeNonEmptyString.call({
-      actual: expected
-    })) {
+        actual: expected
+      })) {
       return false;
     }
     return this.actual.slice(this.actual.length - expected.length, this.actual.length) === expected;
