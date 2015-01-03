@@ -153,3 +153,30 @@ priv.adaptMatchers = function(v1Matchers) {
     return v2Matchers;
   }, {});
 };
+
+/**
+ * @inner
+ * @param {String} toBeX
+ * @return {Function}
+ */
+priv.createToBeArrayOfXsMatcher = function(toBeX) {
+  return function() {
+    return priv.is(this.actual, 'Array') &&
+      priv.expectAllMembers.call(this, toBeX);
+  };
+};
+
+/**
+ * @inner
+ *
+ * @summary
+ * Report how many instance members the given Object has.
+ *
+ * @param  {Object} object
+ * @return {Number}
+ */
+priv.countMembers = function(object) {
+  return priv.reduce(object, function(memo /*, el, ix*/ ) {
+    return memo + 1;
+  }, 0);
+};

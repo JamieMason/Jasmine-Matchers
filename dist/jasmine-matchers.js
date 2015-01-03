@@ -185,6 +185,33 @@
   };
 
   /**
+   * @inner
+   * @param {String} toBeX
+   * @return {Function}
+   */
+  priv.createToBeArrayOfXsMatcher = function(toBeX) {
+    return function() {
+      return priv.is(this.actual, 'Array') &&
+        priv.expectAllMembers.call(this, toBeX);
+    };
+  };
+
+  /**
+   * @inner
+   *
+   * @summary
+   * Report how many instance members the given Object has.
+   *
+   * @param  {Object} object
+   * @return {Number}
+   */
+  priv.countMembers = function(object) {
+    return priv.reduce(object, function(memo /*, el, ix*/ ) {
+      return memo + 1;
+    }, 0);
+  };
+
+  /**
    * @file Arrays
    *
    * @description
@@ -243,17 +270,6 @@
    */
   matchers.toBeNonEmptyArray = function() {
     return priv.is(this.actual, 'Array') && this.actual.length > 0;
-  };
-
-  /**
-   * @inner
-   * @param {String} toBeX
-   * @return {Function}
-   */
-  priv.createToBeArrayOfXsMatcher = function(toBeX) {
-    return function() {
-      return priv.is(this.actual, 'Array') && priv.expectAllMembers.call(this, toBeX);
-    };
   };
 
   /**
@@ -646,21 +662,6 @@
    * @description
    * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
    */
-
-  /**
-   * @inner
-   *
-   * @summary
-   * Report how many instance members the given Object has.
-   *
-   * @param  {Object} object
-   * @return {Number}
-   */
-  priv.countMembers = function(object) {
-    return priv.reduce(object, function(memo /*, el, ix*/ ) {
-      return memo + 1;
-    }, 0);
-  };
 
   /**
    * @alias

@@ -60,17 +60,6 @@ matchers.toBeNonEmptyArray = function() {
 };
 
 /**
- * @inner
- * @param {String} toBeX
- * @return {Function}
- */
-priv.createToBeArrayOfXsMatcher = function(toBeX) {
-  return function() {
-    return priv.is(this.actual, 'Array') && priv.expectAllMembers.call(this, toBeX);
-  };
-};
-
-/**
  * @alias
  * expect(array):toBeArrayOfObjects
  *

@@ -6,21 +6,6 @@
  */
 
 /**
- * @inner
- *
- * @summary
- * Report how many instance members the given Object has.
- *
- * @param  {Object} object
- * @return {Number}
- */
-priv.countMembers = function(object) {
-  return priv.reduce(object, function(memo /*, el, ix*/ ) {
-    return memo + 1;
-  }, 0);
-};
-
-/**
  * @alias
  * expect(object):toBeObject
  *
