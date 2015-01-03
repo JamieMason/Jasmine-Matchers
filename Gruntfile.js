@@ -6,6 +6,18 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
+    config: {
+      output: 'dist/jasmine-matchers.js',
+      sources: {
+        src: 'src/**/*.js',
+        test: 'test/**/*.js',
+        all: [
+          '<%= config.sources.src %>',
+          '<%= config.sources.test %>'
+        ]
+      }
+    },
+
     concat: {
       dist: {
         files: [{
@@ -17,7 +29,7 @@ module.exports = function(grunt) {
             'src/wrapper/add-matchers-adapter.js',
             'src/wrapper/foot.txt'
           ],
-          dest: 'dist/jasmine-matchers.js'
+          dest: '<%= config.output %>'
         }]
       }
     },
@@ -29,18 +41,13 @@ module.exports = function(grunt) {
             indentSize: 2
           }
         },
-        src: [
-          'dist/jasmine-matchers.js'
-        ]
+        src: '<%= config.output %>'
       }
     },
 
     watch: {
       scripts: {
-        files: [
-          'src/**/*.js',
-          'test/**/*.js'
-        ],
+        files: '<%= config.sources.all %>',
         tasks: [
           'build'
         ],
@@ -50,27 +57,45 @@ module.exports = function(grunt) {
       }
     },
 
-    jsdoc: {
+    jscs: {
       dist: {
-        src: [
-          'src/**/*.js'
-        ],
-        options: {
-          destination: 'build/docs'
-        }
+        src: '<%= config.sources.src %>'
+      }
+    },
+
+    jshint: {
+      dist: {
+        src: '<%= config.sources.src %>'
+      }
+    },
+
+    karma: {
+      unit: {
+        configFile: 'karma.conf.js',
+        singleRun: true,
+        browsers: [
+          'PhantomJS'
+        ]
       }
     }
 
   });
 
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-jsbeautifier');
-  grunt.loadNpmTasks('grunt-jsdoc');
+  [
+    'grunt-contrib-concat',
+    'grunt-contrib-jshint',
+    'grunt-contrib-watch',
+    'grunt-jsbeautifier',
+    'grunt-jscs',
+    'grunt-karma'
+  ].forEach(grunt.loadNpmTasks);
 
   grunt.registerTask('build', [
+    'jshint',
+    'jscs',
+    'karma',
     'concat',
-    'jsdoc'
+    'jsbeautifier'
   ]);
 
 };
