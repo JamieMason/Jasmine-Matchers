@@ -1,72 +1,42 @@
 /**
- * @file Browser
- *
- * @description
- * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
- */
-
-/**
- * @alias
- * expect(window):toBeWindow
- *
- * @summary
- * Assert subject is a browser Window global, whether that be the parent window or those
- * created within iframes or other windows.
- *
- * @return {Boolean}
+ * @alias    toBeWindow
+ * @summary  <code>expect(window).toBeWindow();</code>
  */
 matchers.toBeWindow = function() {
-  return this.actual && typeof this.actual === 'object' && this.actual.window === this.actual;
+  return this.actual &&
+    typeof this.actual === 'object' &&
+    this.actual.window === this.actual;
 };
 
 /**
- * @alias
- * expect(document):toBeDocument
- *
- * @summary
- * Assert subject is a browser Window global, whether that be the parent window or those
- * created within iframes or other windows.
- *
- * @return {Boolean}
+ * @alias    toBeDocument
+ * @summary  <code>expect(document).toBeDocument();</code>
  */
 matchers.toBeDocument = function() {
-  return this.actual && typeof this.actual === 'object' && this.actual instanceof window.HTMLDocument;
+  return this.actual &&
+    typeof this.actual === 'object' &&
+    this.actual instanceof window.HTMLDocument;
 };
 
 /**
- * @alias
- * expect(htmlElement):toBeHtmlNode
- *
- * @summary
- * Assert subject is an HTML Element.
- *
- * @return {Boolean}
+ * @alias    toBeHtmlNode
+ * @summary  <code>expect(htmlElement).toBeHtmlNode();</code>
  */
 matchers.toBeHtmlNode = function() {
   return priv.isHtmlElementOfType(this.actual, 1);
 };
 
 /**
- * @alias
- * expect(htmlElement):toBeHtmlTextNode
- *
- * @summary
- * Assert subject is an HTML Text Element.
- *
- * @return {Boolean}
+ * @alias    toBeHtmlTextNode
+ * @summary  <code>expect(htmlElement).toBeHtmlTextNode();</code>
  */
 matchers.toBeHtmlTextNode = function() {
   return priv.isHtmlElementOfType(this.actual, 3);
 };
 
 /**
- * @alias
- * expect(htmlElement):toBeHtmlCommentNode
- *
- * @summary
- * Assert subject is an HTML Comment Element.
- *
- * @return {Boolean}
+ * @alias    toBeHtmlCommentNode
+ * @summary  <code>expect(htmlElement).toBeHtmlCommentNode();</code>
  */
 matchers.toBeHtmlCommentNode = function() {
   return priv.isHtmlElementOfType(this.actual, 8);

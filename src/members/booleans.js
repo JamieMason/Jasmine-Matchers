@@ -1,54 +1,23 @@
 /**
- * BooleanMembers
+ * @alias    toHaveBoolean
+ * @summary  <code>expect(object).toHaveBoolean(key:String);</code>
  */
-
-/**
- * @alias
- * expect(object):toHaveBoolean
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
- */
-matchers.toHaveBoolean = function(memberName) {
-  return priv.assertMember.call(this, 'toBeBoolean', memberName);
+matchers.toHaveBoolean = function(key) {
+  return priv.assertMember.call(this, 'toBeBoolean', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveFalse
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
+ * @alias    toHaveFalse
+ * @summary  <code>expect(object).toHaveFalse(key:String);</code>
  */
-matchers.toHaveFalse = function(memberName) {
-  return priv.assertMember.call(this, 'toBeFalse', memberName);
+matchers.toHaveFalse = function(key) {
+  return priv.assertMember.call(this, 'toBeFalse', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveTrue
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
+ * @alias    toHaveTrue
+ * @summary  <code>expect(object).toHaveTrue(key:String);</code>
  */
-matchers.toHaveTrue = function(memberName) {
-  return priv.assertMember.call(this, 'toBeTrue', memberName);
+matchers.toHaveTrue = function(key) {
+  return priv.assertMember.call(this, 'toBeTrue', key);
 };

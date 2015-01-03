@@ -1,159 +1,71 @@
 /**
- * StringMembers
+ * @alias    toHaveEmptyString
+ * @summary  <code>expect(object):toHaveEmptyString(key:String);</code>
  */
-
-/**
- * @alias
- * expect(object):toHaveEmptyString
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
- */
-matchers.toHaveEmptyString = function(memberName) {
-  return priv.assertMember.call(this, 'toBeEmptyString', memberName);
+matchers.toHaveEmptyString = function(key) {
+  return priv.assertMember.call(this, 'toBeEmptyString', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveHtmlString
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
+ * @alias    toHaveHtmlString
+ * @summary  <code>expect(object):toHaveHtmlString(key:String);</code>
  */
-matchers.toHaveHtmlString = function(memberName) {
-  return priv.assertMember.call(this, 'toBeHtmlString', memberName);
+matchers.toHaveHtmlString = function(key) {
+  return priv.assertMember.call(this, 'toBeHtmlString', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveJsonString
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
+ * @alias    toHaveJsonString
+ * @summary  <code>expect(object):toHaveJsonString(key:String);</code>
  */
-matchers.toHaveJsonString = function(memberName) {
-  return priv.assertMember.call(this, 'toBeJsonString', memberName);
+matchers.toHaveJsonString = function(key) {
+  return priv.assertMember.call(this, 'toBeJsonString', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveNonEmptyString
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
+ * @alias    toHaveNonEmptyString
+ * @summary  <code>expect(object):toHaveNonEmptyString(key:String);</code>
  */
-matchers.toHaveNonEmptyString = function(memberName) {
-  return priv.assertMember.call(this, 'toBeNonEmptyString', memberName);
+matchers.toHaveNonEmptyString = function(key) {
+  return priv.assertMember.call(this, 'toBeNonEmptyString', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveString
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
+ * @alias    toHaveString
+ * @summary  <code>expect(object):toHaveString(key:String);</code>
  */
-matchers.toHaveString = function(memberName) {
-  return priv.assertMember.call(this, 'toBeString', memberName);
+matchers.toHaveString = function(key) {
+  return priv.assertMember.call(this, 'toBeString', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveStringLongerThan
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
- *
- * @param  {String} memberName
- * @param  {String} other
- * @return {Boolean}
+ * @alias    toHaveStringLongerThan
+ * @summary  <code>expect(object):toHaveStringLongerThan(key:String, other:String);</code>
  */
-matchers.toHaveStringLongerThan = function(memberName, other) {
-  return priv.assertMember.call(this, 'toBeLongerThan', memberName, other);
+matchers.toHaveStringLongerThan = function(key, other) {
+  return priv.assertMember.call(this, 'toBeLongerThan', key, other);
 };
 
 /**
- * @alias
- * expect(object):toHaveStringSameLengthAs
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
- *
- * @param  {String} memberName
- * @param  {String} other
- * @return {Boolean}
+ * @alias    toHaveStringSameLengthAs
+ * @summary  <code>expect(object):toHaveStringSameLengthAs(key:String, other:String);</code>
  */
-matchers.toHaveStringSameLengthAs = function(memberName, other) {
-  return priv.assertMember.call(this, 'toBeSameLengthAs', memberName, other);
+matchers.toHaveStringSameLengthAs = function(key, other) {
+  return priv.assertMember.call(this, 'toBeSameLengthAs', key, other);
 };
 
 /**
- * @alias
- * expect(object):toHaveStringShorterThan
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
- *
- * @param  {String} memberName
- * @param  {String} other
- * @return {Boolean}
+ * @alias    toHaveStringShorterThan
+ * @summary  <code>expect(object):toHaveStringShorterThan(key:String, other:String);</code>
  */
-matchers.toHaveStringShorterThan = function(memberName, other) {
-  return priv.assertMember.call(this, 'toBeShorterThan', memberName, other);
+matchers.toHaveStringShorterThan = function(key, other) {
+  return priv.assertMember.call(this, 'toBeShorterThan', key, other);
 };
 
 /**
- * @alias
- * expect(object):toHaveWhitespaceString
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
+ * @alias    toHaveWhitespaceString
+ * @summary  <code>expect(object):toHaveWhitespaceString(key:String);</code>
  */
-matchers.toHaveWhitespaceString = function(memberName) {
-  return priv.assertMember.call(this, 'toBeWhitespace', memberName);
+matchers.toHaveWhitespaceString = function(key) {
+  return priv.assertMember.call(this, 'toBeWhitespace', key);
 };

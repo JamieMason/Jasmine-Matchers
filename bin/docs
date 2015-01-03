@@ -1,0 +1,88 @@
+#!/bin/bash
+
+DASH_DOCROOT="$PWD/build/Jasmine-Matchers.docset/Contents/Resources"
+# DOCS_DOCROOT="$PWD/docs"
+TMPL="$PWD/node_modules/jsdoc-dash-template"
+
+# Create Docs
+jsdoc --recurse --destination "$DASH_DOCROOT/Documents" --template "$TMPL" src
+# jsdoc --recurse --destination "$DOCS_DOCROOT" --template "$TMPL" src
+
+# Clean Database
+rm "$DASH_DOCROOT/docSet.dsidx"
+
+# Create Database
+sqlite3 "$DASH_DOCROOT/docSet.dsidx" "
+CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type TEXT, path TEXT);
+CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);
+
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeArray', 'Method', 'global.html#toBeArray');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeArrayOfBooleans', 'Method', 'global.html#toBeArrayOfBooleans');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeArrayOfNumbers', 'Method', 'global.html#toBeArrayOfNumbers');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeArrayOfObjects', 'Method', 'global.html#toBeArrayOfObjects');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeArrayOfSize', 'Method', 'global.html#toBeArrayOfSize');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeArrayOfStrings', 'Method', 'global.html#toBeArrayOfStrings');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeEmptyArray', 'Method', 'global.html#toBeEmptyArray');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeNonEmptyArray', 'Method', 'global.html#toBeNonEmptyArray');
+
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeAfter', 'Method', 'global.html#toBeAfter');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeBefore', 'Method', 'global.html#toBeBefore');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeDate', 'Method', 'global.html#toBeDate');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeIso8601', 'Method', 'global.html#toBeIso8601');
+
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeBoolean', 'Method', 'global.html#toBeBoolean');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeFalse', 'Method', 'global.html#toBeFalse');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeTrue', 'Method', 'global.html#toBeTrue');
+
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeEmptyObject', 'Method', 'global.html#toBeEmptyObject');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeNonEmptyObject', 'Method', 'global.html#toBeNonEmptyObject');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeObject', 'Method', 'global.html#toBeObject');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveArray', 'Method', 'global.html#toHaveArray');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveArrayOfBooleans', 'Method', 'global.html#toHaveArrayOfBooleans');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveArrayOfNumbers', 'Method', 'global.html#toHaveArrayOfNumbers');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveArrayOfObjects', 'Method', 'global.html#toHaveArrayOfObjects');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveArrayOfSize', 'Method', 'global.html#toHaveArrayOfSize');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveArrayOfStrings', 'Method', 'global.html#toHaveArrayOfStrings');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveBoolean', 'Method', 'global.html#toHaveBoolean');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveCalculable', 'Method', 'global.html#toHaveCalculable');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveDate', 'Method', 'global.html#toHaveDate');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveDateAfter', 'Method', 'global.html#toHaveDateAfter');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveDateBefore', 'Method', 'global.html#toHaveDateBefore');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveEmptyArray', 'Method', 'global.html#toHaveEmptyArray');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveEmptyObject', 'Method', 'global.html#toHaveEmptyObject');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveEmptyString', 'Method', 'global.html#toHaveEmptyString');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveEvenNumber', 'Method', 'global.html#toHaveEvenNumber');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveFalse', 'Method', 'global.html#toHaveFalse');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeFunction', 'Method', 'global.html#toBeFunction');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveHtmlNode', 'Method', 'global.html#toHaveHtmlNode');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveHtmlString', 'Method', 'global.html#toHaveHtmlString');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveIso8601', 'Method', 'global.html#toHaveIso8601');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveJsonString', 'Method', 'global.html#toHaveJsonString');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveMember', 'Method', 'global.html#toHaveMember');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveMethod', 'Method', 'global.html#toHaveMethod');
+INSERT INTO searchIndex (name, type, path) VALUES ('toHaveTrue', 'Method', 'global.html#toHaveTrue');
+
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeEmptyString', 'Method', 'global.html#toBeEmptyString');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeHtmlString', 'Method', 'global.html#toBeHtmlString');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeJsonString', 'Method', 'global.html#toBeJsonString');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeLongerThan', 'Method', 'global.html#toBeLongerThan');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeNonEmptyString', 'Method', 'global.html#toBeNonEmptyString');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeSameLengthAs', 'Method', 'global.html#toBeSameLengthAs');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeShorterThan', 'Method', 'global.html#toBeShorterThan');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeString', 'Method', 'global.html#toBeString');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeWhitespace', 'Method', 'global.html#toBeWhitespace');
+INSERT INTO searchIndex (name, type, path) VALUES ('toEndWith', 'Method', 'global.html#toEndWith');
+
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeCalculable', 'Method', 'global.html#toBeCalculable');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeEvenNumber', 'Method', 'global.html#toBeEvenNumber');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeNumber', 'Method', 'global.html#toBeNumber');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeOddNumber', 'Method', 'global.html#toBeOddNumber');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeWholeNumber', 'Method', 'global.html#toBeWholeNumber');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeWithinRange', 'Method', 'global.html#toBeWithinRange');
+
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeDocument', 'Method', 'global.html#toBeDocument');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeHtmlCommentNode', 'Method', 'global.html#toBeHtmlCommentNode');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeHtmlNode', 'Method', 'global.html#toBeHtmlNode');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeHtmlTextNode', 'Method', 'global.html#toBeHtmlTextNode');
+INSERT INTO searchIndex (name, type, path) VALUES ('toBeWindow', 'Method', 'global.html#toBeWindow');
+"

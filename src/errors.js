@@ -1,18 +1,6 @@
 /**
- * @file Errors
- *
- * @description
- * See {@link http://git.io/jasmine-error-testing|Unit testing Errors with Jasmine}.
- */
-
-/**
- * @alias
- * expect(function):toThrowError
- *
- * @summary
- * Asserts subject throws an Error of any type.
- *
- * @return {Boolean}
+ * @alias    toThrowAnyError
+ * @summary  <code>expect(function).toThrowAnyError();</code>
  */
 matchers.toThrowAnyError = function() {
   var threwError = false;
@@ -25,14 +13,8 @@ matchers.toThrowAnyError = function() {
 };
 
 /**
- * @alias
- * expect(function):toThrowErrorOfType
- *
- * @summary
- * Asserts subject throws an Error of a specific type, such as "TypeError".
- *
- * @param  {String} type
- * @return {Boolean}
+ * @alias    toThrowErrorOfType
+ * @summary  <code>expect(function).toThrowErrorOfType(type:String);</code>
  */
 matchers.toThrowErrorOfType = function(type) {
   var threwErrorOfType = false;

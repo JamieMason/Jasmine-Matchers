@@ -212,267 +212,159 @@
   };
 
   /**
-   * @file Arrays
-   *
-   * @description
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
-   */
-
-  /**
-   * @alias
-   * expect(array):toBeArray
-   *
-   * @summary
-   * Assert subject is a true Array, created in the parent document — those created and imported
-   * from within iframes or other windows will not match.
-   *
-   * @return {Boolean}
+   * @alias    toBeArray
+   * @summary  <code>expect(array).toBeArray();</code>
    */
   matchers.toBeArray = function() {
     return this.actual instanceof Array;
   };
 
   /**
-   * @alias
-   * expect(array):toBeArrayOfSize
-   *
-   * @summary
-   * Assert subject is not only a true Array, but one with a specific number of members.
-   *
-   * @param {Number} size
-   * @return {Boolean}
+   * @alias    toBeArrayOfSize
+   * @summary  <code>expect(array).toBeArrayOfSize(size:Number);</code>
    */
   matchers.toBeArrayOfSize = function(size) {
-    return priv.is(this.actual, 'Array') && this.actual.length === size;
+    return priv.is(this.actual, 'Array') &&
+      this.actual.length === size;
   };
 
   /**
-   * @alias
-   * expect(array):toBeEmptyArray
-   *
-   * @summary
-   * Assert subject is not only a true Array, but one without any members.
-   *
-   * @return {Boolean}
+   * @alias    toBeEmptyArray
+   * @summary  <code>expect(array).toBeEmptyArray();</code>
    */
   matchers.toBeEmptyArray = function() {
     return matchers.toBeArrayOfSize.call(this, 0);
   };
 
   /**
-   * @alias
-   * expect(array):toBeNonEmptyArray
-   *
-   * @summary
-   * Assert subject is not only a true Array, but one with at least one member.
-   *
-   * @return {Boolean}
+   * @alias    toBeNonEmptyArray
+   * @summary  <code>expect(array).toBeNonEmptyArray();</code>
    */
   matchers.toBeNonEmptyArray = function() {
-    return priv.is(this.actual, 'Array') && this.actual.length > 0;
+    return priv.is(this.actual, 'Array') &&
+      this.actual.length > 0;
   };
 
   /**
-   * @alias
-   * expect(array):toBeArrayOfObjects
-   *
-   * @summary
-   * Assert subject is an Array which is either empty or contains only Objects.
-   *
-   * @return {Boolean}
+   * @alias    toBeArrayOfObjects
+   * @summary  <code>expect(array).toBeArrayOfObjects();</code>
    */
   matchers.toBeArrayOfObjects = function() {
-    return priv.is(this.actual, 'Array') && priv.expectAllMembers.call(this, 'toBeObject');
+    return priv.is(this.actual, 'Array') &&
+      priv.expectAllMembers.call(this, 'toBeObject');
   };
 
   /**
-   * @alias
-   * expect(array):toBeArrayOfStrings
-   *
-   * @summary
-   * Assert subject is an Array which is either empty or contains only Strings.
-   *
-   * @return {Boolean}
+   * @alias    toBeArrayOfStrings
+   * @summary  <code>expect(array).toBeArrayOfStrings();</code>
    */
   matchers.toBeArrayOfStrings = function() {
-    return priv.is(this.actual, 'Array') && priv.expectAllMembers.call(this, 'toBeString');
+    return priv.is(this.actual, 'Array') &&
+      priv.expectAllMembers.call(this, 'toBeString');
   };
 
   /**
-   * @alias
-   * expect(array):toBeArrayOfNumbers
-   *
-   * @summary
-   * Assert subject is an Array which is either empty or contains only Numbers.
-   *
-   * @return {Boolean}
+   * @alias    toBeArrayOfNumbers
+   * @summary  <code>expect(array).toBeArrayOfNumbers();</code>
    */
   matchers.toBeArrayOfNumbers = function() {
-    return priv.is(this.actual, 'Array') && priv.expectAllMembers.call(this, 'toBeNumber');
+    return priv.is(this.actual, 'Array') &&
+      priv.expectAllMembers.call(this, 'toBeNumber');
   };
 
   /**
-   * @alias
-   * expect(array):toBeArrayOfBooleans
-   *
-   * @summary
-   * Assert subject is an Array which is either empty or contains only Booleans.
-   *
-   * @return {Boolean}
+   * @alias    toBeArrayOfBooleans
+   * @summary  <code>expect(array).toBeArrayOfBooleans();</code>
    */
   matchers.toBeArrayOfBooleans = function() {
-    return priv.is(this.actual, 'Array') && priv.expectAllMembers.call(this, 'toBeBoolean');
+    return priv.is(this.actual, 'Array') &&
+      priv.expectAllMembers.call(this, 'toBeBoolean');
   };
 
   /**
-   * @file Booleans
-   *
-   * @description
-   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
-   */
-
-  /**
-   * @alias
-   * expect(boolean):toBeBoolean
-   *
-   * @summary
-   * Assert subject is not only truthy or falsy, but an actual Boolean.
-   *
-   * @return {Boolean}
+   * @alias    toBeBoolean
+   * @summary  <code>expect(boolean).toBeBoolean();</code>
    */
   matchers.toBeBoolean = function() {
-    return matchers.toBeTrue.call(this) || matchers.toBeFalse.call(this);
+    return matchers.toBeTrue.call(this) ||
+      matchers.toBeFalse.call(this);
   };
 
   /**
-   * @alias
-   * expect(boolean):toBeTrue
-   *
-   * @summary
-   * Assert subject is not only truthy, but an actual Boolean true.
-   *
-   * @return {Boolean}
+   * @alias    toBeTrue
+   * @summary  <code>expect(boolean).toBeTrue();</code>
    */
   matchers.toBeTrue = function() {
-    return this.actual === true || this.actual instanceof Boolean && this.actual.valueOf() === true;
+    return this.actual === true ||
+      this.actual instanceof Boolean &&
+      this.actual.valueOf() === true;
   };
 
   /**
-   * @alias
-   * expect(boolean):toBeFalse
-   *
-   * @summary
-   * Assert subject is not only falsy, but an actual Boolean false.
-   *
-   * @return {Boolean}
+   * @alias    toBeFalse
+   * @summary  <code>expect(boolean).toBeFalse();</code>
    */
   matchers.toBeFalse = function() {
-    return this.actual === false || this.actual instanceof Boolean && this.actual.valueOf() === false;
+    return this.actual === false ||
+      this.actual instanceof Boolean &&
+      this.actual.valueOf() === false;
   };
 
   /**
-   * @file Browser
-   *
-   * @description
-   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
-   */
-
-  /**
-   * @alias
-   * expect(window):toBeWindow
-   *
-   * @summary
-   * Assert subject is a browser Window global, whether that be the parent window or those
-   * created within iframes or other windows.
-   *
-   * @return {Boolean}
+   * @alias    toBeWindow
+   * @summary  <code>expect(window).toBeWindow();</code>
    */
   matchers.toBeWindow = function() {
-    return this.actual && typeof this.actual === 'object' && this.actual.window === this.actual;
+    return this.actual &&
+      typeof this.actual === 'object' &&
+      this.actual.window === this.actual;
   };
 
   /**
-   * @alias
-   * expect(document):toBeDocument
-   *
-   * @summary
-   * Assert subject is a browser Window global, whether that be the parent window or those
-   * created within iframes or other windows.
-   *
-   * @return {Boolean}
+   * @alias    toBeDocument
+   * @summary  <code>expect(document).toBeDocument();</code>
    */
   matchers.toBeDocument = function() {
-    return this.actual && typeof this.actual === 'object' && this.actual instanceof window.HTMLDocument;
+    return this.actual &&
+      typeof this.actual === 'object' &&
+      this.actual instanceof window.HTMLDocument;
   };
 
   /**
-   * @alias
-   * expect(htmlElement):toBeHtmlNode
-   *
-   * @summary
-   * Assert subject is an HTML Element.
-   *
-   * @return {Boolean}
+   * @alias    toBeHtmlNode
+   * @summary  <code>expect(htmlElement).toBeHtmlNode();</code>
    */
   matchers.toBeHtmlNode = function() {
     return priv.isHtmlElementOfType(this.actual, 1);
   };
 
   /**
-   * @alias
-   * expect(htmlElement):toBeHtmlTextNode
-   *
-   * @summary
-   * Assert subject is an HTML Text Element.
-   *
-   * @return {Boolean}
+   * @alias    toBeHtmlTextNode
+   * @summary  <code>expect(htmlElement).toBeHtmlTextNode();</code>
    */
   matchers.toBeHtmlTextNode = function() {
     return priv.isHtmlElementOfType(this.actual, 3);
   };
 
   /**
-   * @alias
-   * expect(htmlElement):toBeHtmlCommentNode
-   *
-   * @summary
-   * Assert subject is an HTML Comment Element.
-   *
-   * @return {Boolean}
+   * @alias    toBeHtmlCommentNode
+   * @summary  <code>expect(htmlElement).toBeHtmlCommentNode();</code>
    */
   matchers.toBeHtmlCommentNode = function() {
     return priv.isHtmlElementOfType(this.actual, 8);
   };
 
   /**
-   * @file Dates
-   *
-   * @description
-   * See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
-   */
-
-  /**
-   * @alias
-   * expect(date):toBeDate
-   *
-   * @summary
-   * Assert subject is a true Date, created in the parent document — those created and imported
-   * from within iframes or other windows will not match.
-   *
-   * @return {Boolean}
+   * @alias    toBeDate
+   * @summary  <code>expect(date).toBeDate();</code>
    */
   matchers.toBeDate = function() {
     return this.actual instanceof Date;
   };
 
   /**
-   * @alias
-   * expect(string):toBeIso8601
-   *
-   * @summary
-   * Assert subject is a Date String conforming to the ISO 8601 standard.
-   *
-   * @return {Boolean}
+   * @alias    toBeIso8601
+   * @summary  <code>expect(string).toBeIso8601();</code>
    */
   matchers.toBeIso8601 = function() {
     return matchers.toBeString.call(this) &&
@@ -484,30 +376,20 @@
   };
 
   /**
-   * @alias
-   * expect(date):toBeBefore
-   *
-   * @summary
-   * Assert subject is a Date occurring before another Date.
-   *
-   * @param {Date} date
-   * @return {Boolean}
+   * @alias    toBeBefore
+   * @summary  <code>expect(date).toBeBefore(date);</code>
    */
   matchers.toBeBefore = function(date) {
-    return matchers.toBeDate.call(this) && matchers.toBeDate.call({
-      actual: date
-    }) && this.actual.getTime() < date.getTime();
+    return matchers.toBeDate.call(this) &&
+      matchers.toBeDate.call({
+        actual: date
+      }) &&
+      this.actual.getTime() < date.getTime();
   };
 
   /**
-   * @alias
-   * expect(date):toBeAfter
-   *
-   * @summary
-   * Assert subject is a Date occurring after another Date.
-   *
-   * @param {Date} date
-   * @return {Boolean}
+   * @alias    toBeAfter
+   * @summary  <code>expect(date).toBeAfter(date);</code>
    */
   matchers.toBeAfter = function(date) {
     return matchers.toBeBefore.call({
@@ -516,20 +398,8 @@
   };
 
   /**
-   * @file Errors
-   *
-   * @description
-   * See {@link http://git.io/jasmine-error-testing|Unit testing Errors with Jasmine}.
-   */
-
-  /**
-   * @alias
-   * expect(function):toThrowError
-   *
-   * @summary
-   * Asserts subject throws an Error of any type.
-   *
-   * @return {Boolean}
+   * @alias    toThrowAnyError
+   * @summary  <code>expect(function).toThrowAnyError();</code>
    */
   matchers.toThrowAnyError = function() {
     var threwError = false;
@@ -542,14 +412,8 @@
   };
 
   /**
-   * @alias
-   * expect(function):toThrowErrorOfType
-   *
-   * @summary
-   * Asserts subject throws an Error of a specific type, such as "TypeError".
-   *
-   * @param  {String} type
-   * @return {Boolean}
+   * @alias    toThrowErrorOfType
+   * @summary  <code>expect(function).toThrowErrorOfType(type:String);</code>
    */
   matchers.toThrowErrorOfType = function(type) {
     var threwErrorOfType = false;
@@ -562,157 +426,94 @@
   };
 
   /**
-   * @file Numbers
-   *
-   * @description
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
-   */
-
-  /**
-   * @alias
-   * expect(number):toBeNumber
-   *
-   * @summary
-   * Assert subject is not only calculable, but an actual Number
-   *
-   * @return {Boolean}
+   * @alias    toBeNumber
+   * @summary  <code>expect(number).toBeNumber();</code>
    */
   matchers.toBeNumber = function() {
-    return !isNaN(parseFloat(this.actual)) && !priv.is(this.actual, 'String');
+    return !isNaN(parseFloat(this.actual)) &&
+      !priv.is(this.actual, 'String');
   };
 
   /**
-   * @alias
-   * expect(number):toBeEvenNumber
-   *
-   * @summary
-   * Assert subject is an even Number.
-   *
-   * @return {Boolean}
+   * @alias    toBeEvenNumber
+   * @summary  <code>expect(number).toBeEvenNumber();</code>
    */
   matchers.toBeEvenNumber = function() {
-    return matchers.toBeNumber.call(this) && this.actual % 2 === 0;
+    return matchers.toBeNumber.call(this) &&
+      this.actual % 2 === 0;
   };
 
   /**
-   * @alias
-   * expect(number):toBeOddNumber
-   *
-   * @summary
-   * Assert subject is an odd Number.
-   *
-   * @return {Boolean}
+   * @alias    toBeOddNumber
+   * @summary  <code>expect(number).toBeOddNumber();</code>
    */
   matchers.toBeOddNumber = function() {
-    return matchers.toBeNumber.call(this) && this.actual % 2 !== 0;
+    return matchers.toBeNumber.call(this) &&
+      this.actual % 2 !== 0;
   };
 
   /**
-   * @alias
-   * expect(mixed):toBeCalculable
-   *
-   * @summary
-   * Assert subject can be used in Mathemetic calculations, despite not being an actual Number.
-   *
-   * @example
-   * // If all strings are numeric, JavaScript will cast them all as expect(number):
-   * "1" * "2" === 2 (pass)
-   *
-   * @example
-   * // If any string is not numeric, JavaScript will cast them all as Strings.
-   * "wut?" * 2 === NaN (fail)
-   *
-   * @return {Boolean}
+   * @alias    toBeCalculable
+   * @summary  <code>expect(mixed).toBeCalculable();</code>
+   *           <p>Assert subject can be used in Mathemetic calculations despite
+   *           not being a Number, for example <code>"1" * "2" === 2</code> but
+   *           <code>"wut?" * 2 === NaN</code>.</p>
    */
   matchers.toBeCalculable = function() {
     return !isNaN(this.actual * 2);
   };
 
   /**
-   * @alias
-   * expect(number):toBeWithinRange
-   *
-   * @summary
-   * Assert value falls on or between floor and ceiling.
-   *
-   * @param {Number} floor
-   * @param {Number} ceiling
-   * @return {Boolean}
+   * @alias    toBeWithinRange
+   * @summary  <code>expect(number).toBeWithinRange(floor:Number, ceiling:Number);</code>
    */
   matchers.toBeWithinRange = function(floor, ceiling) {
-    return matchers.toBeNumber.call(this) && this.actual >= floor && this.actual <= ceiling;
+    return matchers.toBeNumber.call(this) &&
+      this.actual >= floor &&
+      this.actual <= ceiling;
   };
 
   /**
-   * @alias
-   * expect(number):toBeWholeNumber
-   *
-   * @summary
-   * Assert value is a number with no decimal places.
-   *
-   * @return {Boolean}
+   * @alias    toBeWholeNumber
+   * @summary  <code>expect(number).toBeWholeNumber();</code>
    */
   matchers.toBeWholeNumber = function() {
-    return matchers.toBeNumber.call(this) && (this.actual === 0 || this.actual % 1 === 0);
+    return matchers.toBeNumber.call(this) &&
+      (this.actual === 0 || this.actual % 1 === 0);
   };
 
   /**
-   * @file Objects
-   *
-   * @description
-   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
-   */
-
-  /**
-   * @alias
-   * expect(object):toBeObject
-   *
-   * @summary
-   * Assert subject is a true Object, created in the parent document — those created and imported
-   * from within iframes or other windows will not match.
-   *
-   * @return {Boolean}
+   * @alias    toBeObject
+   * @summary  <code>expect(object).toBeObject();</code>
    */
   matchers.toBeObject = function() {
     return this.actual instanceof Object;
   };
 
   /**
-   * @alias
-   * expect(object):toBeEmptyObject
-   *
-   * @summary
-   * Assert subject is a true Object with no instance members.
-   *
-   * @return {Boolean}
+   * @alias    toBeEmptyObject
+   * @summary  <code>expect(object).toBeEmptyObject();</code>
    */
   matchers.toBeEmptyObject = function() {
-    return priv.is(this.actual, 'Object') && priv.countMembers(this.actual) === 0;
+    return priv.is(this.actual, 'Object') &&
+      priv.countMembers(this.actual) === 0;
   };
 
   /**
-   * @alias
-   * expect(object):toBeNonEmptyObject
-   *
-   * @summary
-   * Assert subject is a true Object with at least one instance member.
-   *
-   * @return {Boolean}
+   * @alias    toBeNonEmptyObject
+   * @summary  <code>expect(object).toBeNonEmptyObject();</code>
    */
   matchers.toBeNonEmptyObject = function() {
-    return priv.is(this.actual, 'Object') && priv.countMembers(this.actual) > 0;
+    return priv.is(this.actual, 'Object') &&
+      priv.countMembers(this.actual) > 0;
   };
 
   /**
-   * @alias
-   * expect(object):toImplement
-   *
-   * @summary
-   * Assert subject is a true Object which features at least the same keys as `other` (regardless of
-   * whether it also has other members).
-   *
-   * @param  {Object} other
-   * @return {Boolean}
+   * @alias    toImplement
+   * @summary  <code>expect(object).toImplement(interface:Object);</code>
+   *           <p>Assert subject is a true Object which features at least the same
+   *           keys as <code>other</code> regardless of whether it also has other
+   *           members.</p>
    */
   matchers.toImplement = function(other) {
     if (!priv.is(this.actual, 'Object') || !priv.is(other, 'Object')) {
@@ -730,73 +531,41 @@
   };
 
   /**
-   * @alias
-   * expect(function):toBeFunction
-   *
-   * @summary
-   * Assert subject is a true Function, created in the parent document — those created and imported
-   * from within iframes or other windows will not match.
-   *
-   * @return {Boolean}
+   * @alias    toBeFunction
+   * @summary  <code>expect(function).toBeFunction();</code>
    */
   matchers.toBeFunction = function() {
     return this.actual instanceof Function;
   };
 
   /**
-   * @file Strings
-   *
-   * @description
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
-   */
-
-  /**
-   * @alias
-   * expect(string):toBeString
-   *
-   * @summary
-   * Assert subject is a String.
-   *
-   * @return {Boolean}
+   * @alias    toBeString
+   * @summary  <code>expect(string).toBeString();</code>
    */
   matchers.toBeString = function() {
     return priv.is(this.actual, 'String');
   };
 
   /**
-   * @alias
-   * expect(string):toBeEmptyString
-   *
-   * @summary
-   * Assert subject is a String of length 0.
-   *
-   * @return {Boolean}
+   * @alias    toBeEmptyString
+   * @summary  <code>expect(string).toBeEmptyString();</code>
    */
   matchers.toBeEmptyString = function() {
     return this.actual === '';
   };
 
   /**
-   * @alias
-   * expect(string):toBeNonEmptyString
-   *
-   * @summary
-   * Assert subject is a String with at least 1 character.
-   *
-   * @return {Boolean}
+   * @alias    toBeNonEmptyString
+   * @summary  <code>expect(string).toBeNonEmptyString();</code>
    */
   matchers.toBeNonEmptyString = function() {
-    return matchers.toBeString.call(this) && this.actual.length > 0;
+    return matchers.toBeString.call(this) &&
+      this.actual.length > 0;
   };
 
   /**
-   * @alias
-   * expect(string):toBeHtmlString
-   *
-   * @summary
-   * Assert subject is string containing HTML Markup.
-   *
-   * @return {Boolean}
+   * @alias    toBeHtmlString
+   * @summary  <code>expect(string).toBeHtmlString();</code>
    */
   matchers.toBeHtmlString = function() {
     // <           start with opening tag "<"
@@ -809,17 +578,13 @@
     //  )          end group 1
     //  *          0 or more
     // >           end with closing tag ">"
-    return matchers.toBeString.call(this) && this.actual.search(/<("[^"]*"|'[^']*'|[^'">])*>/) !== -1;
+    return matchers.toBeString.call(this) &&
+      this.actual.search(/<("[^"]*"|'[^']*'|[^'">])*>/) !== -1;
   };
 
   /**
-   * @alias
-   * expect(string):toBeJsonString
-   *
-   * @summary
-   * Assert subject is string containing parseable JSON.
-   *
-   * @return {Boolean}
+   * @alias    toBeJsonString
+   * @summary  <code>expect(string).toBeJsonString();</code>
    */
   matchers.toBeJsonString = function() {
     var isParseable;
@@ -829,31 +594,22 @@
     } catch (e) {
       isParseable = false;
     }
-    return isParseable !== false && json !== null;
+    return isParseable !== false &&
+      json !== null;
   };
 
   /**
-   * @alias
-   * expect(string):toBeWhitespace
-   *
-   * @summary
-   * Assert subject is a String containing nothing but whitespace.
-   *
-   * @return {Boolean}
+   * @alias    toBeWhitespace
+   * @summary  <code>expect(string).toBeWhitespace();</code>
    */
   matchers.toBeWhitespace = function() {
-    return matchers.toBeString.call(this) && this.actual.search(/\S/) === -1;
+    return matchers.toBeString.call(this) &&
+      this.actual.search(/\S/) === -1;
   };
 
   /**
-   * @alias
-   * expect(string):toStartWith
-   *
-   * @summary
-   * Assert subject is a String whose first characters match our expected string.
-   *
-   * @param  {String} expected
-   * @return {Boolean}
+   * @alias    toStartWith
+   * @summary  <code>expect(string).toStartWith(expected:String);</code>
    */
   matchers.toStartWith = function(expected) {
     if (!matchers.toBeNonEmptyString.call(this) || !matchers.toBeNonEmptyString.call({
@@ -865,14 +621,8 @@
   };
 
   /**
-   * @alias
-   * expect(string):toEndWith
-   *
-   * @summary
-   * Assert subject is a String whose last characters match our expected string.
-   *
-   * @param  {String} expected
-   * @return {Boolean}
+   * @alias    toEndWith
+   * @summary  <code>expect(string).toEndWith(expected:String);</code>
    */
   matchers.toEndWith = function(expected) {
     if (!matchers.toBeNonEmptyString.call(this) || !matchers.toBeNonEmptyString.call({
@@ -884,702 +634,328 @@
   };
 
   /**
-   * @alias
-   * expect(string):toBeLongerThan
-   *
-   * @summary
-   * Assert subject is a String whose length is greater than our other string.
-   *
-   * @param  {String} other
-   * @return {Boolean}
+   * @alias    toBeLongerThan
+   * @summary  <code>expect(string).toBeLongerThan(other:String);</code>
    */
   matchers.toBeLongerThan = function(other) {
-    return matchers.toBeString.call(this) && matchers.toBeString.call({
-      actual: other
-    }) && this.actual.length > other.length;
+    return matchers.toBeString.call(this) &&
+      matchers.toBeString.call({
+        actual: other
+      }) &&
+      this.actual.length > other.length;
   };
 
   /**
-   * @alias
-   * expect(string):toBeShorterThan
-   *
-   * @summary
-   * Assert subject is a String whose length is greater than our other string.
-   *
-   * @param  {String} other
-   * @return {Boolean}
+   * @alias    toBeShorterThan
+   * @summary  <code>expect(string).toBeShorterThan(other:String);</code>
    */
   matchers.toBeShorterThan = function(other) {
-    return matchers.toBeString.call(this) && matchers.toBeString.call({
-      actual: other
-    }) && this.actual.length < other.length;
+    return matchers.toBeString.call(this) &&
+      matchers.toBeString.call({
+        actual: other
+      }) &&
+      this.actual.length < other.length;
   };
 
   /**
-   * @alias
-   * expect(string):toBeSameLengthAs
-   *
-   * @summary
-   * Assert subject is a String whose length is equal to our other string.
-   *
-   * @param  {String} other
-   * @return {Boolean}
+   * @alias    toBeSameLengthAs
+   * @summary  <code>expect(string).toBeSameLengthAs(other:String);</code>
    */
   matchers.toBeSameLengthAs = function(other) {
-    return matchers.toBeString.call(this) && matchers.toBeString.call({
-      actual: other
-    }) && this.actual.length === other.length;
+    return matchers.toBeString.call(this) &&
+      matchers.toBeString.call({
+        actual: other
+      }) &&
+      this.actual.length === other.length;
   };
 
   /**
-   * ArrayMembers
+   * @alias    toHaveArray
+   * @summary  <code>expect(object).toHaveArray(key:String);</code>
    */
-
-  /**
-   * @alias
-   * expect(object):toHaveArray
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveArray = function(memberName) {
-    return priv.assertMember.call(this, 'toBeArray', memberName);
+  matchers.toHaveArray = function(key) {
+    return priv.assertMember.call(this, 'toBeArray', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveArrayOfBooleans
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
+   * @alias    toHaveArrayOfBooleans
+   * @summary  <code>expect(object).toHaveArrayOfBooleans(key:String);</code>
    */
-  matchers.toHaveArrayOfBooleans = function(memberName) {
-    return priv.assertMember.call(this, 'toBeArrayOfBooleans', memberName);
+  matchers.toHaveArrayOfBooleans = function(key) {
+    return priv.assertMember.call(this, 'toBeArrayOfBooleans', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveArrayOfNumbers
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
+   * @alias    toHaveArrayOfNumbers
+   * @summary  <code>expect(object).toHaveArrayOfNumbers(key:String);</code>
    */
-  matchers.toHaveArrayOfNumbers = function(memberName) {
-    return priv.assertMember.call(this, 'toBeArrayOfNumbers', memberName);
+  matchers.toHaveArrayOfNumbers = function(key) {
+    return priv.assertMember.call(this, 'toBeArrayOfNumbers', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveArrayOfObjects
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
+   * @alias    toHaveArrayOfObjects
+   * @summary  <code>expect(object).toHaveArrayOfObjects(key:String);</code>
    */
-  matchers.toHaveArrayOfObjects = function(memberName) {
-    return priv.assertMember.call(this, 'toBeArrayOfObjects', memberName);
+  matchers.toHaveArrayOfObjects = function(key) {
+    return priv.assertMember.call(this, 'toBeArrayOfObjects', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveArrayOfSize
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @param  {Number} size
-   * @return {Boolean}
+   * @alias    toHaveArrayOfSize
+   * @summary  <code>expect(object).toHaveArrayOfSize(key:String, size:Number);</code>
    */
-  matchers.toHaveArrayOfSize = function(memberName, size) {
-    return priv.assertMember.call(this, 'toBeArrayOfSize', memberName, size);
+  matchers.toHaveArrayOfSize = function(key, size) {
+    return priv.assertMember.call(this, 'toBeArrayOfSize', key, size);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveNonEmptyArray
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
+   * @alias    toHaveNonEmptyArray
+   * @summary  <code>expect(object).toHaveNonEmptyArray(key:String);</code>
    */
-  matchers.toHaveNonEmptyArray = function(memberName) {
-    return priv.assertMember.call(this, 'toBeNonEmptyArray', memberName);
+  matchers.toHaveNonEmptyArray = function(key) {
+    return priv.assertMember.call(this, 'toBeNonEmptyArray', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveEmptyArray
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
+   * @alias    toHaveEmptyArray
+   * @summary  <code>expect(object).toHaveEmptyArray(key:String);</code>
    */
-  matchers.toHaveEmptyArray = function(memberName) {
-    return priv.assertMember.call(this, 'toBeEmptyArray', memberName);
+  matchers.toHaveEmptyArray = function(key) {
+    return priv.assertMember.call(this, 'toBeEmptyArray', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveArrayOfStrings
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
+   * @alias    toHaveArrayOfStrings
+   * @summary  <code>expect(object).toHaveArrayOfStrings(key:String);</code>
    */
-  matchers.toHaveArrayOfStrings = function(memberName) {
-    return priv.assertMember.call(this, 'toBeArrayOfStrings', memberName);
+  matchers.toHaveArrayOfStrings = function(key) {
+    return priv.assertMember.call(this, 'toBeArrayOfStrings', key);
   };
 
   /**
-   * BooleanMembers
+   * @alias    toHaveBoolean
+   * @summary  <code>expect(object).toHaveBoolean(key:String);</code>
    */
-
-  /**
-   * @alias
-   * expect(object):toHaveBoolean
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveBoolean = function(memberName) {
-    return priv.assertMember.call(this, 'toBeBoolean', memberName);
+  matchers.toHaveBoolean = function(key) {
+    return priv.assertMember.call(this, 'toBeBoolean', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveFalse
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
+   * @alias    toHaveFalse
+   * @summary  <code>expect(object).toHaveFalse(key:String);</code>
    */
-  matchers.toHaveFalse = function(memberName) {
-    return priv.assertMember.call(this, 'toBeFalse', memberName);
+  matchers.toHaveFalse = function(key) {
+    return priv.assertMember.call(this, 'toBeFalse', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveTrue
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-boolean-testing|Unit testing Booleans with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
+   * @alias    toHaveTrue
+   * @summary  <code>expect(object).toHaveTrue(key:String);</code>
    */
-  matchers.toHaveTrue = function(memberName) {
-    return priv.assertMember.call(this, 'toBeTrue', memberName);
+  matchers.toHaveTrue = function(key) {
+    return priv.assertMember.call(this, 'toBeTrue', key);
   };
 
   /**
-   * BrowserMembers
+   * @alias    toHaveHtmlNode
+   * @summary  <code>expect(object).toHaveHtmlNode(key:String);</code>
    */
-
-  /**
-   * @alias
-   * expect(object):toHaveHtmlNode
-   *
-   * @summary
-   * Assert subject is a true Object containing a property at memberName which is an HTML Element.
-   *
-   * @description
-   * See {@link http://git.io/jasmine-browser-testing|Unit testing Browsers with Jasmine}.
-   *
-   * @param {Boolean} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveHtmlNode = function(memberName) {
-    return priv.assertMember.call(this, 'toBeHtmlNode', memberName);
+  matchers.toHaveHtmlNode = function(key) {
+    return priv.assertMember.call(this, 'toBeHtmlNode', key);
   };
 
   /**
-   * DateMembers
+   * @alias    toHaveDate
+   * @summary  <code>expect(object):toHaveDate(key:String);</code>
    */
-
-  /**
-   * @alias
-   * expect(object):toHaveDate
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveDate = function(memberName) {
-    return priv.assertMember.call(this, 'toBeDate', memberName);
+  matchers.toHaveDate = function(key) {
+    return priv.assertMember.call(this, 'toBeDate', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveDateAfter
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-bdate-testing|Unit testing Dates with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @param  {Date} date
-   * @return {Boolean}
+   * @alias    toHaveDateAfter
+   * @summary  <code>expect(object):toHaveDateAfter(key:String, date:Date);</code>
    */
-  matchers.toHaveDateAfter = function(memberName, date) {
-    return priv.assertMember.call(this, 'toBeAfter', memberName, date);
+  matchers.toHaveDateAfter = function(key, date) {
+    return priv.assertMember.call(this, 'toBeAfter', key, date);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveDateBefore
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-browser-date|Unit testing Browsers with Dates}.
-   *
-   * @param  {String} memberName
-   * @param  {Date} date
-   * @return {Boolean}
+   * @alias    toHaveDateBefore
+   * @summary  <code>expect(object):toHaveDateBefore(key:String, date:Date);</code>
    */
-  matchers.toHaveDateBefore = function(memberName, date) {
-    return priv.assertMember.call(this, 'toBeBefore', memberName, date);
+  matchers.toHaveDateBefore = function(key, date) {
+    return priv.assertMember.call(this, 'toBeBefore', key, date);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveIso8601
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
+   * @alias    toHaveIso8601
+   * @summary  <code>expect(object):toHaveIso8601(key:String);</code>
    */
-  matchers.toHaveIso8601 = function(memberName) {
-    return priv.assertMember.call(this, 'toBeIso8601', memberName);
+  matchers.toHaveIso8601 = function(key) {
+    return priv.assertMember.call(this, 'toBeIso8601', key);
   };
 
   /**
-   * NumberMembers
+   * @alias    toHaveNumber
+   * @summary  <code>expect(object):toHaveNumber(key:String);</code>
    */
-
-  /**
-   * @alias
-   * expect(object):toHaveNumber
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveNumber = function(memberName) {
-    return priv.assertMember.call(this, 'toBeNumber', memberName);
+  matchers.toHaveNumber = function(key) {
+    return priv.assertMember.call(this, 'toBeNumber', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveNumberWithinRange
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @param  {Number} floor
-   * @param  {Number} ceiling
-   * @return {Boolean}
+   * @alias    toHaveNumberWithinRange
+   * @summary  <code>expect(object):toHaveNumberWithinRange(key:String, floor:Number, ceiling:Number);</code>
    */
-  matchers.toHaveNumberWithinRange = function(memberName, floor, ceiling) {
-    return priv.assertMember.call(this, 'toBeWithinRange', memberName, floor, ceiling);
+  matchers.toHaveNumberWithinRange = function(key, floor, ceiling) {
+    return priv.assertMember.call(this, 'toBeWithinRange', key, floor, ceiling);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveCalculable
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
+   * @alias    toHaveCalculable
+   * @summary  <code>expect(object):toHaveCalculable(key:String);</code>
    */
-  matchers.toHaveCalculable = function(memberName) {
-    return priv.assertMember.call(this, 'toBeCalculable', memberName);
+  matchers.toHaveCalculable = function(key) {
+    return priv.assertMember.call(this, 'toBeCalculable', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveEvenNumber
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
+   * @alias    toHaveEvenNumber
+   * @summary  <code>expect(object):toHaveEvenNumber(key:String);</code>
    */
-  matchers.toHaveEvenNumber = function(memberName) {
-    return priv.assertMember.call(this, 'toBeEvenNumber', memberName);
+  matchers.toHaveEvenNumber = function(key) {
+    return priv.assertMember.call(this, 'toBeEvenNumber', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveOddNumber
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
+   * @alias    toHaveOddNumber
+   * @summary  <code>expect(object):toHaveOddNumber(key:String);</code>
    */
-  matchers.toHaveOddNumber = function(memberName) {
-    return priv.assertMember.call(this, 'toBeOddNumber', memberName);
+  matchers.toHaveOddNumber = function(key) {
+    return priv.assertMember.call(this, 'toBeOddNumber', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveWholeNumber
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
+   * @alias    toHaveWholeNumber
+   * @summary  <code>expect(object):toHaveWholeNumber(key:String);</code>
    */
-  matchers.toHaveWholeNumber = function(memberName) {
-    return priv.assertMember.call(this, 'toBeWholeNumber', memberName);
+  matchers.toHaveWholeNumber = function(key) {
+    return priv.assertMember.call(this, 'toBeWholeNumber', key);
   };
 
   /**
-   * ObjectMembers
+   * @alias    toHaveMethod
+   * @summary  <code>expect(object).toHaveMethod(key:String);</code>
    */
-
-  /**
-   * @alias
-   * expect(object):toHaveMethod
-   *
-   * @summary
-   * Assert subject is a true Object containing a property at memberName which is a Function.
-   *
-   * @description
-   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
-   *
-   * @param {Boolean} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveMethod = function(memberName) {
-    return priv.assertMember.call(this, 'toBeFunction', memberName);
+  matchers.toHaveMethod = function(key) {
+    return priv.assertMember.call(this, 'toBeFunction', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveObject
-   *
-   * @summary
-   * Assert subject is a true Object containing a property at memberName which is a true Object.
-   *
-   * @description
-   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
-   *
-   * @param {Boolean} memberName
-   * @return {Boolean}
+   * @alias    toHaveObject
+   * @summary  <code>expect(object).toHaveObject(key:String);</code>
    */
-  matchers.toHaveObject = function(memberName) {
-    return priv.assertMember.call(this, 'toBeObject', memberName);
+  matchers.toHaveObject = function(key) {
+    return priv.assertMember.call(this, 'toBeObject', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveEmptyObject
-   *
-   * @summary
-   * Assert subject is a true Object containing a property at memberName which is a true Object with
-   * no instance members.
-   *
-   * @description
-   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
-   *
-   * @param {Boolean} memberName
-   * @return {Boolean}
+   * @alias    toHaveEmptyObject
+   * @summary  <code>expect(object).toHaveEmptyObject(key:String);</code>
    */
-  matchers.toHaveEmptyObject = function(memberName) {
-    return priv.assertMember.call(this, 'toBeEmptyObject', memberName);
+  matchers.toHaveEmptyObject = function(key) {
+    return priv.assertMember.call(this, 'toBeEmptyObject', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveNonEmptyObject
-   *
-   * @summary
-   * Assert subject is a true Object containing a property at memberName which is a true Object with
-   * at least one instance member.
-   *
-   * @description
-   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
-   *
-   * @param {Boolean} memberName
-   * @return {Boolean}
+   * @alias    toHaveNonEmptyObject
+   * @summary  <code>expect(object).toHaveNonEmptyObject(key:String);</code>
    */
-  matchers.toHaveNonEmptyObject = function(memberName) {
-    return priv.assertMember.call(this, 'toBeNonEmptyObject', memberName);
+  matchers.toHaveNonEmptyObject = function(key) {
+    return priv.assertMember.call(this, 'toBeNonEmptyObject', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveMember
-   *
-   * @summary
-   * Assert subject is a true Object containing a property at memberName which is of any value,
-   * including undefined.
-   *
-   * @description
-   * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
-   *
-   * @param {Boolean} memberName
-   * @return {Boolean}
+   * @alias    toHaveMember
+   * @summary  <code>expect(object).toHaveMember(key:String);</code>
    */
-  matchers.toHaveMember = function(memberName) {
-    return memberName && priv.is(this.actual, 'Object') && memberName in this.actual;
+  matchers.toHaveMember = function(key) {
+    return key && priv.is(this.actual, 'Object') &&
+      key in this.actual;
   };
 
   /**
-   * StringMembers
+   * @alias    toHaveEmptyString
+   * @summary  <code>expect(object):toHaveEmptyString(key:String);</code>
    */
-
-  /**
-   * @alias
-   * expect(object):toHaveEmptyString
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
-   */
-  matchers.toHaveEmptyString = function(memberName) {
-    return priv.assertMember.call(this, 'toBeEmptyString', memberName);
+  matchers.toHaveEmptyString = function(key) {
+    return priv.assertMember.call(this, 'toBeEmptyString', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveHtmlString
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
+   * @alias    toHaveHtmlString
+   * @summary  <code>expect(object):toHaveHtmlString(key:String);</code>
    */
-  matchers.toHaveHtmlString = function(memberName) {
-    return priv.assertMember.call(this, 'toBeHtmlString', memberName);
+  matchers.toHaveHtmlString = function(key) {
+    return priv.assertMember.call(this, 'toBeHtmlString', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveJsonString
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
+   * @alias    toHaveJsonString
+   * @summary  <code>expect(object):toHaveJsonString(key:String);</code>
    */
-  matchers.toHaveJsonString = function(memberName) {
-    return priv.assertMember.call(this, 'toBeJsonString', memberName);
+  matchers.toHaveJsonString = function(key) {
+    return priv.assertMember.call(this, 'toBeJsonString', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveNonEmptyString
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
+   * @alias    toHaveNonEmptyString
+   * @summary  <code>expect(object):toHaveNonEmptyString(key:String);</code>
    */
-  matchers.toHaveNonEmptyString = function(memberName) {
-    return priv.assertMember.call(this, 'toBeNonEmptyString', memberName);
+  matchers.toHaveNonEmptyString = function(key) {
+    return priv.assertMember.call(this, 'toBeNonEmptyString', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveString
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
+   * @alias    toHaveString
+   * @summary  <code>expect(object):toHaveString(key:String);</code>
    */
-  matchers.toHaveString = function(memberName) {
-    return priv.assertMember.call(this, 'toBeString', memberName);
+  matchers.toHaveString = function(key) {
+    return priv.assertMember.call(this, 'toBeString', key);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveStringLongerThan
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @param  {String} other
-   * @return {Boolean}
+   * @alias    toHaveStringLongerThan
+   * @summary  <code>expect(object):toHaveStringLongerThan(key:String, other:String);</code>
    */
-  matchers.toHaveStringLongerThan = function(memberName, other) {
-    return priv.assertMember.call(this, 'toBeLongerThan', memberName, other);
+  matchers.toHaveStringLongerThan = function(key, other) {
+    return priv.assertMember.call(this, 'toBeLongerThan', key, other);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveStringSameLengthAs
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @param  {String} other
-   * @return {Boolean}
+   * @alias    toHaveStringSameLengthAs
+   * @summary  <code>expect(object):toHaveStringSameLengthAs(key:String, other:String);</code>
    */
-  matchers.toHaveStringSameLengthAs = function(memberName, other) {
-    return priv.assertMember.call(this, 'toBeSameLengthAs', memberName, other);
+  matchers.toHaveStringSameLengthAs = function(key, other) {
+    return priv.assertMember.call(this, 'toBeSameLengthAs', key, other);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveStringShorterThan
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @param  {String} other
-   * @return {Boolean}
+   * @alias    toHaveStringShorterThan
+   * @summary  <code>expect(object):toHaveStringShorterThan(key:String, other:String);</code>
    */
-  matchers.toHaveStringShorterThan = function(memberName, other) {
-    return priv.assertMember.call(this, 'toBeShorterThan', memberName, other);
+  matchers.toHaveStringShorterThan = function(key, other) {
+    return priv.assertMember.call(this, 'toBeShorterThan', key, other);
   };
 
   /**
-   * @alias
-   * expect(object):toHaveWhitespaceString
-   *
-   * @summary
-   * .
-   *
-   * @description
-   * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
-   *
-   * @param  {String} memberName
-   * @return {Boolean}
+   * @alias    toHaveWhitespaceString
+   * @summary  <code>expect(object):toHaveWhitespaceString(key:String);</code>
    */
-  matchers.toHaveWhitespaceString = function(memberName) {
-    return priv.assertMember.call(this, 'toBeWhitespace', memberName);
+  matchers.toHaveWhitespaceString = function(key) {
+    return priv.assertMember.call(this, 'toBeWhitespace', key);
   };
 
   // Create adapters for the original matchers so they can be compatible with Jasmine 2.0.

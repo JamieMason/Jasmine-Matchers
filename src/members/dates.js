@@ -1,73 +1,31 @@
 /**
- * DateMembers
+ * @alias    toHaveDate
+ * @summary  <code>expect(object):toHaveDate(key:String);</code>
  */
-
-/**
- * @alias
- * expect(object):toHaveDate
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
- */
-matchers.toHaveDate = function(memberName) {
-  return priv.assertMember.call(this, 'toBeDate', memberName);
+matchers.toHaveDate = function(key) {
+  return priv.assertMember.call(this, 'toBeDate', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveDateAfter
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-bdate-testing|Unit testing Dates with Jasmine}.
- *
- * @param  {String} memberName
- * @param  {Date} date
- * @return {Boolean}
+ * @alias    toHaveDateAfter
+ * @summary  <code>expect(object):toHaveDateAfter(key:String, date:Date);</code>
  */
-matchers.toHaveDateAfter = function(memberName, date) {
-  return priv.assertMember.call(this, 'toBeAfter', memberName, date);
+matchers.toHaveDateAfter = function(key, date) {
+  return priv.assertMember.call(this, 'toBeAfter', key, date);
 };
 
 /**
- * @alias
- * expect(object):toHaveDateBefore
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-browser-date|Unit testing Browsers with Dates}.
- *
- * @param  {String} memberName
- * @param  {Date} date
- * @return {Boolean}
+ * @alias    toHaveDateBefore
+ * @summary  <code>expect(object):toHaveDateBefore(key:String, date:Date);</code>
  */
-matchers.toHaveDateBefore = function(memberName, date) {
-  return priv.assertMember.call(this, 'toBeBefore', memberName, date);
+matchers.toHaveDateBefore = function(key, date) {
+  return priv.assertMember.call(this, 'toBeBefore', key, date);
 };
 
 /**
- * @alias
- * expect(object):toHaveIso8601
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-date-testing|Unit testing Dates with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
+ * @alias    toHaveIso8601
+ * @summary  <code>expect(object):toHaveIso8601(key:String);</code>
  */
-matchers.toHaveIso8601 = function(memberName) {
-  return priv.assertMember.call(this, 'toBeIso8601', memberName);
+matchers.toHaveIso8601 = function(key) {
+  return priv.assertMember.call(this, 'toBeIso8601', key);
 };

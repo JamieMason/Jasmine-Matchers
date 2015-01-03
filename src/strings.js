@@ -1,57 +1,31 @@
 /**
- * @file Strings
- *
- * @description
- * See {@link http://git.io/jasmine-string-testing|Unit testing Strings with Jasmine}.
- */
-
-/**
- * @alias
- * expect(string):toBeString
- *
- * @summary
- * Assert subject is a String.
- *
- * @return {Boolean}
+ * @alias    toBeString
+ * @summary  <code>expect(string).toBeString();</code>
  */
 matchers.toBeString = function() {
   return priv.is(this.actual, 'String');
 };
 
 /**
- * @alias
- * expect(string):toBeEmptyString
- *
- * @summary
- * Assert subject is a String of length 0.
- *
- * @return {Boolean}
+ * @alias    toBeEmptyString
+ * @summary  <code>expect(string).toBeEmptyString();</code>
  */
 matchers.toBeEmptyString = function() {
   return this.actual === '';
 };
 
 /**
- * @alias
- * expect(string):toBeNonEmptyString
- *
- * @summary
- * Assert subject is a String with at least 1 character.
- *
- * @return {Boolean}
+ * @alias    toBeNonEmptyString
+ * @summary  <code>expect(string).toBeNonEmptyString();</code>
  */
 matchers.toBeNonEmptyString = function() {
-  return matchers.toBeString.call(this) && this.actual.length > 0;
+  return matchers.toBeString.call(this) &&
+    this.actual.length > 0;
 };
 
 /**
- * @alias
- * expect(string):toBeHtmlString
- *
- * @summary
- * Assert subject is string containing HTML Markup.
- *
- * @return {Boolean}
+ * @alias    toBeHtmlString
+ * @summary  <code>expect(string).toBeHtmlString();</code>
  */
 matchers.toBeHtmlString = function() {
   // <           start with opening tag "<"
@@ -64,17 +38,13 @@ matchers.toBeHtmlString = function() {
   //  )          end group 1
   //  *          0 or more
   // >           end with closing tag ">"
-  return matchers.toBeString.call(this) && this.actual.search(/<("[^"]*"|'[^']*'|[^'">])*>/) !== -1;
+  return matchers.toBeString.call(this) &&
+    this.actual.search(/<("[^"]*"|'[^']*'|[^'">])*>/) !== -1;
 };
 
 /**
- * @alias
- * expect(string):toBeJsonString
- *
- * @summary
- * Assert subject is string containing parseable JSON.
- *
- * @return {Boolean}
+ * @alias    toBeJsonString
+ * @summary  <code>expect(string).toBeJsonString();</code>
  */
 matchers.toBeJsonString = function() {
   var isParseable;
@@ -84,104 +54,77 @@ matchers.toBeJsonString = function() {
   } catch (e) {
     isParseable = false;
   }
-  return isParseable !== false && json !== null;
+  return isParseable !== false &&
+    json !== null;
 };
 
 /**
- * @alias
- * expect(string):toBeWhitespace
- *
- * @summary
- * Assert subject is a String containing nothing but whitespace.
- *
- * @return {Boolean}
+ * @alias    toBeWhitespace
+ * @summary  <code>expect(string).toBeWhitespace();</code>
  */
 matchers.toBeWhitespace = function() {
-  return matchers.toBeString.call(this) && this.actual.search(/\S/) === -1;
+  return matchers.toBeString.call(this) &&
+    this.actual.search(/\S/) === -1;
 };
 
 /**
- * @alias
- * expect(string):toStartWith
- *
- * @summary
- * Assert subject is a String whose first characters match our expected string.
- *
- * @param  {String} expected
- * @return {Boolean}
+ * @alias    toStartWith
+ * @summary  <code>expect(string).toStartWith(expected:String);</code>
  */
 matchers.toStartWith = function(expected) {
   if (!matchers.toBeNonEmptyString.call(this) || !matchers.toBeNonEmptyString.call({
-    actual: expected
-  })) {
+      actual: expected
+    })) {
     return false;
   }
   return this.actual.slice(0, expected.length) === expected;
 };
 
 /**
- * @alias
- * expect(string):toEndWith
- *
- * @summary
- * Assert subject is a String whose last characters match our expected string.
- *
- * @param  {String} expected
- * @return {Boolean}
+ * @alias    toEndWith
+ * @summary  <code>expect(string).toEndWith(expected:String);</code>
  */
 matchers.toEndWith = function(expected) {
   if (!matchers.toBeNonEmptyString.call(this) || !matchers.toBeNonEmptyString.call({
-    actual: expected
-  })) {
+      actual: expected
+    })) {
     return false;
   }
   return this.actual.slice(this.actual.length - expected.length, this.actual.length) === expected;
 };
 
 /**
- * @alias
- * expect(string):toBeLongerThan
- *
- * @summary
- * Assert subject is a String whose length is greater than our other string.
- *
- * @param  {String} other
- * @return {Boolean}
+ * @alias    toBeLongerThan
+ * @summary  <code>expect(string).toBeLongerThan(other:String);</code>
  */
 matchers.toBeLongerThan = function(other) {
-  return matchers.toBeString.call(this) && matchers.toBeString.call({
-    actual: other
-  }) && this.actual.length > other.length;
+  return matchers.toBeString.call(this) &&
+    matchers.toBeString.call({
+      actual: other
+    }) &&
+    this.actual.length > other.length;
 };
 
 /**
- * @alias
- * expect(string):toBeShorterThan
- *
- * @summary
- * Assert subject is a String whose length is greater than our other string.
- *
- * @param  {String} other
- * @return {Boolean}
+ * @alias    toBeShorterThan
+ * @summary  <code>expect(string).toBeShorterThan(other:String);</code>
  */
 matchers.toBeShorterThan = function(other) {
-  return matchers.toBeString.call(this) && matchers.toBeString.call({
-    actual: other
-  }) && this.actual.length < other.length;
+  return matchers.toBeString.call(this) &&
+    matchers.toBeString.call({
+      actual: other
+    }) &&
+    this.actual.length < other.length;
 };
 
 /**
- * @alias
- * expect(string):toBeSameLengthAs
- *
- * @summary
- * Assert subject is a String whose length is equal to our other string.
- *
- * @param  {String} other
- * @return {Boolean}
+ * @alias    toBeSameLengthAs
+ * @summary  <code>expect(string).toBeSameLengthAs(other:String);</code>
  */
 matchers.toBeSameLengthAs = function(other) {
-  return matchers.toBeString.call(this) && matchers.toBeString.call({
-    actual: other
-  }) && this.actual.length === other.length;
+  return matchers.toBeString.call(this) &&
+    matchers.toBeString.call({
+      actual: other
+    }) &&
+    this.actual.length === other.length;
 };

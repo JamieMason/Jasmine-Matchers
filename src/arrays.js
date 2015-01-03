@@ -1,112 +1,69 @@
 /**
- * @file Arrays
- *
- * @description
- * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
- */
-
-/**
- * @alias
- * expect(array):toBeArray
- *
- * @summary
- * Assert subject is a true Array, created in the parent document — those created and imported
- * from within iframes or other windows will not match.
- *
- * @return {Boolean}
+ * @alias    toBeArray
+ * @summary  <code>expect(array).toBeArray();</code>
  */
 matchers.toBeArray = function() {
   return this.actual instanceof Array;
 };
 
 /**
- * @alias
- * expect(array):toBeArrayOfSize
- *
- * @summary
- * Assert subject is not only a true Array, but one with a specific number of members.
- *
- * @param {Number} size
- * @return {Boolean}
+ * @alias    toBeArrayOfSize
+ * @summary  <code>expect(array).toBeArrayOfSize(size:Number);</code>
  */
 matchers.toBeArrayOfSize = function(size) {
-  return priv.is(this.actual, 'Array') && this.actual.length === size;
+  return priv.is(this.actual, 'Array') &&
+    this.actual.length === size;
 };
 
 /**
- * @alias
- * expect(array):toBeEmptyArray
- *
- * @summary
- * Assert subject is not only a true Array, but one without any members.
- *
- * @return {Boolean}
+ * @alias    toBeEmptyArray
+ * @summary  <code>expect(array).toBeEmptyArray();</code>
  */
 matchers.toBeEmptyArray = function() {
   return matchers.toBeArrayOfSize.call(this, 0);
 };
 
 /**
- * @alias
- * expect(array):toBeNonEmptyArray
- *
- * @summary
- * Assert subject is not only a true Array, but one with at least one member.
- *
- * @return {Boolean}
+ * @alias    toBeNonEmptyArray
+ * @summary  <code>expect(array).toBeNonEmptyArray();</code>
  */
 matchers.toBeNonEmptyArray = function() {
-  return priv.is(this.actual, 'Array') && this.actual.length > 0;
+  return priv.is(this.actual, 'Array') &&
+    this.actual.length > 0;
 };
 
 /**
- * @alias
- * expect(array):toBeArrayOfObjects
- *
- * @summary
- * Assert subject is an Array which is either empty or contains only Objects.
- *
- * @return {Boolean}
+ * @alias    toBeArrayOfObjects
+ * @summary  <code>expect(array).toBeArrayOfObjects();</code>
  */
 matchers.toBeArrayOfObjects = function() {
-  return priv.is(this.actual, 'Array') && priv.expectAllMembers.call(this, 'toBeObject');
+  return priv.is(this.actual, 'Array') &&
+    priv.expectAllMembers.call(this, 'toBeObject');
 };
 
 /**
- * @alias
- * expect(array):toBeArrayOfStrings
- *
- * @summary
- * Assert subject is an Array which is either empty or contains only Strings.
- *
- * @return {Boolean}
+ * @alias    toBeArrayOfStrings
+ * @summary  <code>expect(array).toBeArrayOfStrings();</code>
  */
 matchers.toBeArrayOfStrings = function() {
-  return priv.is(this.actual, 'Array') && priv.expectAllMembers.call(this, 'toBeString');
+  return priv.is(this.actual, 'Array') &&
+    priv.expectAllMembers.call(this, 'toBeString');
 };
 
 /**
- * @alias
- * expect(array):toBeArrayOfNumbers
- *
- * @summary
- * Assert subject is an Array which is either empty or contains only Numbers.
- *
- * @return {Boolean}
+ * @alias    toBeArrayOfNumbers
+ * @summary  <code>expect(array).toBeArrayOfNumbers();</code>
  */
 matchers.toBeArrayOfNumbers = function() {
-  return priv.is(this.actual, 'Array') && priv.expectAllMembers.call(this, 'toBeNumber');
+  return priv.is(this.actual, 'Array') &&
+    priv.expectAllMembers.call(this, 'toBeNumber');
 };
 
 /**
- * @alias
- * expect(array):toBeArrayOfBooleans
- *
- * @summary
- * Assert subject is an Array which is either empty or contains only Booleans.
- *
- * @return {Boolean}
+ * @alias    toBeArrayOfBooleans
+ * @summary  <code>expect(array).toBeArrayOfBooleans();</code>
  */
 matchers.toBeArrayOfBooleans = function() {
-  return priv.is(this.actual, 'Array') && priv.expectAllMembers.call(this, 'toBeBoolean');
+  return priv.is(this.actual, 'Array') &&
+    priv.expectAllMembers.call(this, 'toBeBoolean');
 };

@@ -1,91 +1,40 @@
 /**
- * ObjectMembers
+ * @alias    toHaveMethod
+ * @summary  <code>expect(object).toHaveMethod(key:String);</code>
  */
-
-/**
- * @alias
- * expect(object):toHaveMethod
- *
- * @summary
- * Assert subject is a true Object containing a property at memberName which is a Function.
- *
- * @description
- * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
- *
- * @param {Boolean} memberName
- * @return {Boolean}
- */
-matchers.toHaveMethod = function(memberName) {
-  return priv.assertMember.call(this, 'toBeFunction', memberName);
+matchers.toHaveMethod = function(key) {
+  return priv.assertMember.call(this, 'toBeFunction', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveObject
- *
- * @summary
- * Assert subject is a true Object containing a property at memberName which is a true Object.
- *
- * @description
- * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
- *
- * @param {Boolean} memberName
- * @return {Boolean}
+ * @alias    toHaveObject
+ * @summary  <code>expect(object).toHaveObject(key:String);</code>
  */
-matchers.toHaveObject = function(memberName) {
-  return priv.assertMember.call(this, 'toBeObject', memberName);
+matchers.toHaveObject = function(key) {
+  return priv.assertMember.call(this, 'toBeObject', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveEmptyObject
- *
- * @summary
- * Assert subject is a true Object containing a property at memberName which is a true Object with
- * no instance members.
- *
- * @description
- * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
- *
- * @param {Boolean} memberName
- * @return {Boolean}
+ * @alias    toHaveEmptyObject
+ * @summary  <code>expect(object).toHaveEmptyObject(key:String);</code>
  */
-matchers.toHaveEmptyObject = function(memberName) {
-  return priv.assertMember.call(this, 'toBeEmptyObject', memberName);
+matchers.toHaveEmptyObject = function(key) {
+  return priv.assertMember.call(this, 'toBeEmptyObject', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveNonEmptyObject
- *
- * @summary
- * Assert subject is a true Object containing a property at memberName which is a true Object with
- * at least one instance member.
- *
- * @description
- * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
- *
- * @param {Boolean} memberName
- * @return {Boolean}
+ * @alias    toHaveNonEmptyObject
+ * @summary  <code>expect(object).toHaveNonEmptyObject(key:String);</code>
  */
-matchers.toHaveNonEmptyObject = function(memberName) {
-  return priv.assertMember.call(this, 'toBeNonEmptyObject', memberName);
+matchers.toHaveNonEmptyObject = function(key) {
+  return priv.assertMember.call(this, 'toBeNonEmptyObject', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveMember
- *
- * @summary
- * Assert subject is a true Object containing a property at memberName which is of any value,
- * including undefined.
- *
- * @description
- * See {@link http://git.io/jasmine-object-testing|Unit testing Objects with Jasmine}.
- *
- * @param {Boolean} memberName
- * @return {Boolean}
+ * @alias    toHaveMember
+ * @summary  <code>expect(object).toHaveMember(key:String);</code>
  */
-matchers.toHaveMember = function(memberName) {
-  return memberName && priv.is(this.actual, 'Object') && memberName in this.actual;
+matchers.toHaveMember = function(key) {
+  return key && priv.is(this.actual, 'Object') &&
+    key in this.actual;
 };

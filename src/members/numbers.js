@@ -1,107 +1,47 @@
 /**
- * NumberMembers
+ * @alias    toHaveNumber
+ * @summary  <code>expect(object):toHaveNumber(key:String);</code>
  */
-
-/**
- * @alias
- * expect(object):toHaveNumber
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
- */
-matchers.toHaveNumber = function(memberName) {
-  return priv.assertMember.call(this, 'toBeNumber', memberName);
+matchers.toHaveNumber = function(key) {
+  return priv.assertMember.call(this, 'toBeNumber', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveNumberWithinRange
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
- *
- * @param  {String} memberName
- * @param  {Number} floor
- * @param  {Number} ceiling
- * @return {Boolean}
+ * @alias    toHaveNumberWithinRange
+ * @summary  <code>expect(object):toHaveNumberWithinRange(key:String, floor:Number, ceiling:Number);</code>
  */
-matchers.toHaveNumberWithinRange = function(memberName, floor, ceiling) {
-  return priv.assertMember.call(this, 'toBeWithinRange', memberName, floor, ceiling);
+matchers.toHaveNumberWithinRange = function(key, floor, ceiling) {
+  return priv.assertMember.call(this, 'toBeWithinRange', key, floor, ceiling);
 };
 
 /**
- * @alias
- * expect(object):toHaveCalculable
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
+ * @alias    toHaveCalculable
+ * @summary  <code>expect(object):toHaveCalculable(key:String);</code>
  */
-matchers.toHaveCalculable = function(memberName) {
-  return priv.assertMember.call(this, 'toBeCalculable', memberName);
+matchers.toHaveCalculable = function(key) {
+  return priv.assertMember.call(this, 'toBeCalculable', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveEvenNumber
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
+ * @alias    toHaveEvenNumber
+ * @summary  <code>expect(object):toHaveEvenNumber(key:String);</code>
  */
-matchers.toHaveEvenNumber = function(memberName) {
-  return priv.assertMember.call(this, 'toBeEvenNumber', memberName);
+matchers.toHaveEvenNumber = function(key) {
+  return priv.assertMember.call(this, 'toBeEvenNumber', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveOddNumber
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
+ * @alias    toHaveOddNumber
+ * @summary  <code>expect(object):toHaveOddNumber(key:String);</code>
  */
-matchers.toHaveOddNumber = function(memberName) {
-  return priv.assertMember.call(this, 'toBeOddNumber', memberName);
+matchers.toHaveOddNumber = function(key) {
+  return priv.assertMember.call(this, 'toBeOddNumber', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveWholeNumber
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-number-testing|Unit testing Numbers with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
+ * @alias    toHaveWholeNumber
+ * @summary  <code>expect(object):toHaveWholeNumber(key:String);</code>
  */
-matchers.toHaveWholeNumber = function(memberName) {
-  return priv.assertMember.call(this, 'toBeWholeNumber', memberName);
+matchers.toHaveWholeNumber = function(key) {
+  return priv.assertMember.call(this, 'toBeWholeNumber', key);
 };

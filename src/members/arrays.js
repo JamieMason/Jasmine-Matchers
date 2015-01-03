@@ -1,140 +1,63 @@
 /**
- * ArrayMembers
+ * @alias    toHaveArray
+ * @summary  <code>expect(object).toHaveArray(key:String);</code>
  */
-
-/**
- * @alias
- * expect(object):toHaveArray
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
- */
-matchers.toHaveArray = function(memberName) {
-  return priv.assertMember.call(this, 'toBeArray', memberName);
+matchers.toHaveArray = function(key) {
+  return priv.assertMember.call(this, 'toBeArray', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveArrayOfBooleans
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
+ * @alias    toHaveArrayOfBooleans
+ * @summary  <code>expect(object).toHaveArrayOfBooleans(key:String);</code>
  */
-matchers.toHaveArrayOfBooleans = function(memberName) {
-  return priv.assertMember.call(this, 'toBeArrayOfBooleans', memberName);
+matchers.toHaveArrayOfBooleans = function(key) {
+  return priv.assertMember.call(this, 'toBeArrayOfBooleans', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveArrayOfNumbers
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
+ * @alias    toHaveArrayOfNumbers
+ * @summary  <code>expect(object).toHaveArrayOfNumbers(key:String);</code>
  */
-matchers.toHaveArrayOfNumbers = function(memberName) {
-  return priv.assertMember.call(this, 'toBeArrayOfNumbers', memberName);
+matchers.toHaveArrayOfNumbers = function(key) {
+  return priv.assertMember.call(this, 'toBeArrayOfNumbers', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveArrayOfObjects
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
+ * @alias    toHaveArrayOfObjects
+ * @summary  <code>expect(object).toHaveArrayOfObjects(key:String);</code>
  */
-matchers.toHaveArrayOfObjects = function(memberName) {
-  return priv.assertMember.call(this, 'toBeArrayOfObjects', memberName);
+matchers.toHaveArrayOfObjects = function(key) {
+  return priv.assertMember.call(this, 'toBeArrayOfObjects', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveArrayOfSize
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
- *
- * @param  {String} memberName
- * @param  {Number} size
- * @return {Boolean}
+ * @alias    toHaveArrayOfSize
+ * @summary  <code>expect(object).toHaveArrayOfSize(key:String, size:Number);</code>
  */
-matchers.toHaveArrayOfSize = function(memberName, size) {
-  return priv.assertMember.call(this, 'toBeArrayOfSize', memberName, size);
+matchers.toHaveArrayOfSize = function(key, size) {
+  return priv.assertMember.call(this, 'toBeArrayOfSize', key, size);
 };
 
 /**
- * @alias
- * expect(object):toHaveNonEmptyArray
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
+ * @alias    toHaveNonEmptyArray
+ * @summary  <code>expect(object).toHaveNonEmptyArray(key:String);</code>
  */
-matchers.toHaveNonEmptyArray = function(memberName) {
-  return priv.assertMember.call(this, 'toBeNonEmptyArray', memberName);
+matchers.toHaveNonEmptyArray = function(key) {
+  return priv.assertMember.call(this, 'toBeNonEmptyArray', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveEmptyArray
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
+ * @alias    toHaveEmptyArray
+ * @summary  <code>expect(object).toHaveEmptyArray(key:String);</code>
  */
-matchers.toHaveEmptyArray = function(memberName) {
-  return priv.assertMember.call(this, 'toBeEmptyArray', memberName);
+matchers.toHaveEmptyArray = function(key) {
+  return priv.assertMember.call(this, 'toBeEmptyArray', key);
 };
 
 /**
- * @alias
- * expect(object):toHaveArrayOfStrings
- *
- * @summary
- * .
- *
- * @description
- * See {@link http://git.io/jasmine-array-testing|Unit testing Arrays with Jasmine}.
- *
- * @param  {String} memberName
- * @return {Boolean}
+ * @alias    toHaveArrayOfStrings
+ * @summary  <code>expect(object).toHaveArrayOfStrings(key:String);</code>
  */
-matchers.toHaveArrayOfStrings = function(memberName) {
-  return priv.assertMember.call(this, 'toBeArrayOfStrings', memberName);
+matchers.toHaveArrayOfStrings = function(key) {
+  return priv.assertMember.call(this, 'toBeArrayOfStrings', key);
 };
