@@ -74,7 +74,8 @@ priv.is = function(subject, type) {
  * @return {Boolean}
  */
 priv.isHtmlElementOfType = function(subject, type) {
-  return subject && subject.nodeType === type;
+  return subject &&
+    subject.nodeType === type;
 };
 
 /**
@@ -97,9 +98,10 @@ priv.assertMember = function( /* matcherName, memberName, ... */ ) {
   var args = priv.toArray(arguments);
   var matcherName = args.shift();
   var memberName = args.shift();
-  return priv.is(this.actual, 'Object') && matchers[matcherName].apply({
-    actual: this.actual[memberName]
-  }, args);
+  return priv.is(this.actual, 'Object') &&
+    matchers[matcherName].apply({
+      actual: this.actual[memberName]
+    }, args);
 };
 
 /**

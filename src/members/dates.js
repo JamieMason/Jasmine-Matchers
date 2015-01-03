@@ -34,7 +34,7 @@ matchers.toHaveDate = function(memberName) {
  * @return {Boolean}
  */
 matchers.toHaveDateAfter = function(memberName, date) {
-  return priv.assertMember.call(this, 'toBeDateAfter', memberName, date);
+  return priv.assertMember.call(this, 'toBeAfter', memberName, date);
 };
 
 /**
@@ -52,7 +52,7 @@ matchers.toHaveDateAfter = function(memberName, date) {
  * @return {Boolean}
  */
 matchers.toHaveDateBefore = function(memberName, date) {
-  return priv.assertMember.call(this, 'toBeDateBefore', memberName, date);
+  return priv.assertMember.call(this, 'toBeBefore', memberName, date);
 };
 
 /**
