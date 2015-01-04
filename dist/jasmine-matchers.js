@@ -455,9 +455,10 @@
   /**
    * @alias    toBeCalculable
    * @summary  <code>expect(mixed).toBeCalculable();</code>
-   *           <p>Assert subject can be used in Mathemetic calculations despite
-   *           not being a Number, for example <code>"1" * "2" === 2</code> but
-   *           <code>"wut?" * 2 === NaN</code>.</p>
+   * @description
+   * Assert subject can be used in Mathemetic calculations despite not being a
+   * Number, for example <code>"1" * "2" === 2</code> but
+   * <code>"wut?" * 2 === NaN</code>.
    */
   matchers.toBeCalculable = function() {
     return !isNaN(this.actual * 2);
@@ -511,9 +512,9 @@
   /**
    * @alias    toImplement
    * @summary  <code>expect(object).toImplement(interface:Object);</code>
-   *           <p>Assert subject is a true Object which features at least the same
-   *           keys as <code>other</code> regardless of whether it also has other
-   *           members.</p>
+   * @description
+   * Assert subject is a true Object which features at least the same keys as
+   * <code>other</code> regardless of whether it also has other members.
    */
   matchers.toImplement = function(other) {
     if (!priv.is(this.actual, 'Object') || !priv.is(other, 'Object')) {
