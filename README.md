@@ -46,7 +46,7 @@ it('should expose the expected API', function() {
 });
 ```
 
-> Expected member "save" of { save : Function } to be function.
+> Expected member "save" of { save : undefined } to be function.
 
 ```javascript
 it('should distribute evenly', function() {
@@ -72,7 +72,7 @@ bower install jasmine-expect --save-dev
 
 ### Manual
 
-Download [https://github.com/JamieMason/Jasmine-Matchers/archive/1.52.0.zip]()
+Downloads are available on the [releases](https://github.com/JamieMason/Jasmine-Matchers/releases) page.
 
 ## Integration
 
