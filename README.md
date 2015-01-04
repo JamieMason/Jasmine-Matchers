@@ -1,53 +1,100 @@
-# Jasmine-Matchers
+# Jasmine-Matchers [![](https://travis-ci.org/JamieMason/Jasmine-Matchers.svg?branch=develop)](https://travis-ci.org/JamieMason/Jasmine-Matchers)
 
-Write simple, clear, helpful, easy to follow specs using the [Jasmine testing framework](http://pivotal.github.com/jasmine/) from [Pivotal Labs](http://pivotallabs.com/).
+> Simple, clear, helpful, readable tests.
+
+The [Jasmine testing framework](http://pivotal.github.com/jasmine/) from [Pivotal Labs](http://pivotallabs.com/) comes with this [default set of matchers](https://github.com/pivotal/jasmine/wiki/Matchers);
 
 ```javascript
-expect(typeof record.save).toEqual('function');
-// ✘ Expected 'undefined' to equal 'function'.
-expect(record).toHaveMethod('save');
-// √ Expected member "save" of { sae : Function } to be function.
-
-expect(person.age % 2 === 0).toEqual(true);
-// ✘ Expected false to equal true.
-expect(person).toHaveEvenNumber('age');
-// √ Expected member "age" of { name : 'Guybrush', age : 25 } to be even number.
+expect(fn).toThrow(e);
+expect(instance).toBe(instance);
+expect(mixed).toBeDefined();
+expect(mixed).toBeFalsy();
+expect(number).toBeGreaterThan(number);
+expect(number).toBeLessThan(number);
+expect(mixed).toBeNull();
+expect(mixed).toBeTruthy();
+expect(mixed).toBeUndefined();
+expect(array).toContain(member);
+expect(string).toContain(substring);
+expect(mixed).toEqual(mixed);
+expect(mixed).toMatch(pattern);
 ```
 
-## Project Status
+Using the default Matchers your tests and failure output might look something like this;
 
-[![Build Status](https://travis-ci.org/JamieMason/Jasmine-Matchers.svg?branch=master)](https://travis-ci.org/JamieMason/Jasmine-Matchers)
+```javascript
+it('should expose the expected API', function() {
+  expect(typeof record.save).toEqual('function');
+});
+```
 
-The latest stable version in Bower and NPM is `1.22.0`.
+> Expected "undefined" to equal "function"
 
-This repository contains `1.52.0` which will be released once some of the newer matchers have better test coverage.
+```javascript
+it('should distribute evenly', function() {
+  expect(basket.items % 2 === 0).toEqual(true);
+});
+```
 
-    Statements: 89.17% (214 / 240)
-    Branches:   92.93% (92 / 99)
-    Functions:  75.25% (76 / 101)
-    Lines:      89.17% (214 / 240)
+> Expected false to equal true
+
+Using [Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) the same tests and failure output can be written like this;
+
+```javascript
+it('should expose the expected API', function() {
+  expect(record).toHaveMethod('save');
+});
+```
+
+> Expected member "save" of { save : Function } to be function.
+
+```javascript
+it('should distribute evenly', function() {
+  expect(person).toHaveEvenNumber('age');
+});
+```
+
+> Expected member "age" of { name : 'Guybrush', age : 25 } to be even number.
 
 ## Installation
 
-### NPM Install
+### npm
 
-    npm install jasmine-expect --save-dev
+```bash
+npm install jasmine-expect --save-dev
+```
 
-### Bower Install
+### Bower
 
-    bower install jasmine-expect --save-dev
+```bash
+bower install jasmine-expect --save-dev
+```
 
-## Usage
+### Manual
+
+Download [https://github.com/JamieMason/Jasmine-Matchers/archive/1.52.0.zip]()
+
+## Integration
+
+### Browser
+
+Include Jasmine Matchers after Jasmine but before your tests.
+
+```html
+<script src="/path/to/jasmine-matchers.js"></script>
+```
 
 ### Karma
 
 Integration is easy with the [karma-jasmine-matchers](https://github.com/JamieMason/karma-jasmine-matchers) plugin.
 
-### Browser
+### Sublime Text
 
-Include `<script src="jasmine-matchers.js"></script>` after Jasmine and before your specs.
+[Jasmine-Matchers-Snippets](https://github.com/JamieMason/Jasmine-Matchers-Snippets) can be installed with [Package Control](https://packagecontrol.io/packages/Jasmine%20Matchers%20Snippets) to ease development with Jasmine Matchers in Sublime Text.
 
-## Arrays
+## Available Matchers
+
+### Arrays
 
 ```javascript
 expect(array).toBeArray();
@@ -68,7 +115,7 @@ expect(object).toHaveEmptyArray(memberName);
 expect(object).toHaveNonEmptyArray(memberName);
 ```
 
-## Booleans
+### Booleans
 
 ```javascript
 expect(boolean).toBeBoolean();
@@ -79,7 +126,7 @@ expect(object).toHaveFalse(memberName);
 expect(object).toHaveTrue(memberName);
 ```
 
-## Browser
+### Browser
 
 ```javascript
 expect(document).toBeDocument();
@@ -90,7 +137,7 @@ expect(object).toHaveHtmlNode(memberName);
 expect(window).toBeWindow();
 ```
 
-## Dates
+### Dates
 
 ```javascript
 expect(date).toBeAfter(date);
@@ -103,7 +150,7 @@ expect(object).toHaveDateBefore(memberName, date);
 expect(object).toHaveIso8601(memberName);
 ```
 
-## Functions and Errors
+### Functions and Errors
 
 ```javascript
 expect(function).toBeFunction();
@@ -112,7 +159,7 @@ expect(function).toThrowErrorOfType(type);
 expect(object).toHaveMethod(memberName);
 ```
 
-## Numbers
+### Numbers
 
 ```javascript
 expect(mixed).toBeCalculable();
@@ -129,7 +176,7 @@ expect(object).toHaveOddNumber(memberName);
 expect(object).toHaveWholeNumber(memberName);
 ```
 
-## Objects
+### Objects
 
 ```javascript
 expect(object).toBeEmptyObject();
@@ -142,7 +189,7 @@ expect(object).toHaveObject(memberName);
 expect(object).toImplement(other);
 ```
 
-## Strings
+### Strings
 
 ```javascript
 expect(string).toBeEmptyString();
@@ -166,28 +213,3 @@ expect(object).toHaveStringSameLengthAs(memberName, other);
 expect(object).toHaveStringShorterThan(memberName, other);
 expect(object).toHaveWhitespaceString(memberName);
 ```
-
-## License
-
-> Copyright © Jamie Mason, @fold_left,
-> https://jamiemason.github.io
-
-> Permission is hereby granted, free of charge, to any person
-> obtaining a copy of this software and associated documentation files
-> (the "Software"), to deal in the Software without restriction,
-> including without limitation the rights to use, copy, modify, merge,
-> publish, distribute, sublicense, and/or sell copies of the Software,
-> and to permit persons to whom the Software is furnished to do so,
-> subject to the following conditions:
-
-> The above copyright notice and this permission notice shall be
-> included in all copies or substantial portions of the Software.
-
-> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-> EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-> MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-> NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
-> BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
-> ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-> CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-> SOFTWARE.
