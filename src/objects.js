@@ -51,5 +51,5 @@ matchers.toImplement = function(other) {
  * @summary  <code>expect(function).toBeFunction();</code>
  */
 matchers.toBeFunction = function() {
-  return this.actual instanceof Function;
+  return typeof this.actual === 'function';
 };
