@@ -9,10 +9,7 @@ module.exports = function(config) {
     autoWatch: true,
 
     browsers: [
-      'Firefox',
-      'Opera',
-      'PhantomJS',
-      'Safari'
+      'PhantomJS'
     ],
 
     frameworks: [
