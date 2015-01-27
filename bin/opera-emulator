@@ -1,0 +1,8 @@
+"$EMULATOR"!/bin/bash
+
+URL="$1"
+IP_ADDRESS="$(ipconfig getifaddr en0)"
+IP_URL="${URL/localhost/$IP_ADDRESS}"
+EMULATOR="/Applications/Opera Mobile Emulator.app/Contents/Resources/Opera Mobile.app/Contents/MacOS/Opera Mobile"
+
+"$EMULATOR" -profile-name "Amazon Kindle Fire HD 8.9" -url "$IP_URL"
