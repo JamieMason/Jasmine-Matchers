@@ -50,11 +50,11 @@ it('should expose the expected API', function() {
 
 ```javascript
 it('should distribute evenly', function() {
-  expect(person).toHaveEvenNumber('age');
+  expect(basket).toHaveEvenNumber('items');
 });
 ```
 
-> Expected member "age" of { name : 'Guybrush', age : 25 } to be even number.
+> Expected member "items" of { items : 25 } to be even number.
 
 ## Installation
 
