@@ -327,7 +327,7 @@
   matchers.toBeDocument = function() {
     return this.actual &&
       typeof this.actual === 'object' &&
-      this.actual instanceof window.HTMLDocument;
+      this.actual instanceof window.Document;
   };
 
   /**
