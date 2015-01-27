@@ -90,10 +90,13 @@ module.exports = function(grunt) {
     'grunt-karma'
   ].forEach(grunt.loadNpmTasks);
 
-  grunt.registerTask('build', [
+  grunt.registerTask('code-quality', [
     'jshint',
     'jscs',
-    'karma',
+    'karma'
+  ]);
+
+  grunt.registerTask('build', [
     'concat',
     'jsbeautifier'
   ]);
