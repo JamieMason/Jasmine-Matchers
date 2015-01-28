@@ -8,6 +8,7 @@ module.exports = function(config) {
 
       base.browsers = [
         'Firefox',
+        'Chrome',
         'Opera',
         'PhantomJS',
         'Safari'
