@@ -23,8 +23,8 @@ module.exports = function(config) {
 
     files: [
       'dist/jasmine-matchers.js',
-      'test/**/_utils.test.js',
-      'test/**/*.test.js'
+      'test/**/_utils.spec.js',
+      'test/**/*.spec.js'
     ],
 
     preprocessors: {
