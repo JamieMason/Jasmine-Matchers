@@ -1,6 +1,6 @@
 # Jasmine-Matchers [![](https://travis-ci.org/JamieMason/Jasmine-Matchers.svg?branch=develop)](https://travis-ci.org/JamieMason/Jasmine-Matchers)
 
-> Simple, clear, helpful, readable tests.
+> Readable tests.
 
 The [Jasmine testing framework](http://pivotal.github.com/jasmine/) from [Pivotal Labs](http://pivotallabs.com/) comes with this [default set of matchers](https://github.com/pivotal/jasmine/wiki/Matchers);
 
@@ -213,3 +213,15 @@ expect(object).toHaveStringSameLengthAs(memberName, other);
 expect(object).toHaveStringShorterThan(memberName, other);
 expect(object).toHaveWhitespaceString(memberName);
 ```
+
+## Supported Devices
+
+Jasmine-Matchers has been tested against the following environments.
+
++ Chrome 40.0.2214 (Mac OS X 10.10.1)
++ Firefox 33.0.0 (Mac OS X 10.10)
++ IE 10.0.0 (Windows 7)
++ IE 9.0.0 (Windows 7)
++ Opera 27.0.1689 (Mac OS X 10.10.1)
++ PhantomJS 1.9.8 (Mac OS X)
++ Safari 8.0.2 (Mac OS X 10.10.1)
