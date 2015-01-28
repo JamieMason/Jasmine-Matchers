@@ -88,6 +88,14 @@ Include Jasmine Matchers after Jasmine but before your tests.
 
 Integration is easy with the [karma-jasmine-matchers](https://github.com/JamieMason/karma-jasmine-matchers) plugin.
 
+### Node.js
+
+When using [jasmine-node](https://github.com/mhevery/jasmine-node), provide the path to where Jasmine Matchers is installed as the value for `--requireJsSetup`.
+
+```bash
+jasmine-node test --requireJsSetup node_modules/jasmine-expect/index.js
+```
+
 ### Sublime Text
 
 [Jasmine-Matchers-Snippets](https://github.com/JamieMason/Jasmine-Matchers-Snippets) can be installed with [Package Control](https://packagecontrol.io/packages/Jasmine%20Matchers%20Snippets) to ease development with Jasmine Matchers in Sublime Text.
