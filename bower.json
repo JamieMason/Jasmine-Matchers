@@ -1,7 +1,7 @@
 {
   "name": "jasmine-expect",
   "main": "dist/jasmine-matchers.js",
-  "version": "1.22.0",
+  "version": "1.22.3",
   "homepage": "https://github.com/JamieMason/Jasmine-Matchers",
   "authors": [
     "Jamie Mason <siunmaru@gmail.com>"
@@ -18,9 +18,13 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
+    "*.conf.js",
+    "bin",
+    "build",
+    "Gruntfile.js"
+    "index.js",
     "node_modules",
-    "bower_components",
+    "src",
     "test",
-    "tests"
   ]
 }
