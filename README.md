@@ -90,10 +90,16 @@ Integration is easy with the [karma-jasmine-matchers](https://github.com/JamieMa
 
 ### Node.js
 
-When using [jasmine-node](https://github.com/mhevery/jasmine-node), provide the path to where Jasmine Matchers is installed as the value for `--requireJsSetup`.
+When using [jasmine-node](https://github.com/mhevery/jasmine-node) 1.x, provide the path to where Jasmine Matchers is installed as the value for `--requireJsSetup`.
 
 ```bash
-jasmine-node test --requireJsSetup node_modules/jasmine-expect/index.js
+jasmine-node --requireJsSetup node_modules/jasmine-expect/index.js test
+```
+
+jasmine-node 2.x has no such hooks that I'm aware of for loading helpers, in this case the following call is needed before the first test in your suite.
+
+```javascript
+require('jasmine-expect');
 ```
 
 ### Sublime Text
