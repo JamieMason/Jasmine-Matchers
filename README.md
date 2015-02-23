@@ -134,17 +134,6 @@ expect(object).toHaveFalse(memberName);
 expect(object).toHaveTrue(memberName);
 ```
 
-### Browser
-
-```javascript
-expect(document).toBeDocument();
-expect(htmlElement).toBeHtmlCommentNode();
-expect(htmlElement).toBeHtmlNode();
-expect(htmlElement).toBeHtmlTextNode();
-expect(object).toHaveHtmlNode(memberName);
-expect(window).toBeWindow();
-```
-
 ### Dates
 
 ```javascript
