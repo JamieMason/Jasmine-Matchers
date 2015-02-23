@@ -1,7 +1,7 @@
 {
   "name": "jasmine-expect",
   "main": "dist/jasmine-matchers.js",
-  "version": "1.22.3",
+  "version": "2.0.0-beta1",
   "homepage": "https://github.com/JamieMason/Jasmine-Matchers",
   "authors": [
     "Jamie Mason <siunmaru@gmail.com>"
