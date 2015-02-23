@@ -3,7 +3,7 @@
  * @summary  <code>expect(object).toBeObject();</code>
  */
 matchers.toBeObject = function() {
-  return this.actual instanceof Object;
+  return priv.is(this.actual, 'Object');
 };
 
 /**

@@ -3,7 +3,7 @@
  * @summary  <code>expect(date).toBeDate();</code>
  */
 matchers.toBeDate = function() {
-  return this.actual instanceof Date;
+  return priv.is(this.actual, 'Date');
 };
 
 function isIso8601(string, pattern) {

@@ -1,3 +1,7 @@
+if (typeof process === 'object') {
+  require(process.env.PWD + '/dist/jasmine-matchers');
+}
+
 function getArgumentsObject() {
   return (function() {
     return arguments;

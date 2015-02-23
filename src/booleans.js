@@ -1,20 +1,11 @@
 /**
- * @alias    toBeBoolean
- * @summary  <code>expect(boolean).toBeBoolean();</code>
- */
-matchers.toBeBoolean = function() {
-  return matchers.toBeTrue.call(this) ||
-    matchers.toBeFalse.call(this);
-};
-
-/**
  * @alias    toBeTrue
  * @summary  <code>expect(boolean).toBeTrue();</code>
  */
 matchers.toBeTrue = function() {
   return this.actual === true ||
-    this.actual instanceof Boolean &&
-    this.actual.valueOf() === true;
+    priv.is(this.actual, 'Boolean') &&
+    this.actual.valueOf();
 };
 
 /**
@@ -23,6 +14,14 @@ matchers.toBeTrue = function() {
  */
 matchers.toBeFalse = function() {
   return this.actual === false ||
-    this.actual instanceof Boolean &&
-    this.actual.valueOf() === false;
+    priv.is(this.actual, 'Boolean') &&
+    !this.actual.valueOf();
+};
+
+/**
+ * @alias    toBeBoolean
+ * @summary  <code>expect(boolean).toBeBoolean();</code>
+ */
+matchers.toBeBoolean = function() {
+  return priv.is(this.actual, 'Boolean');
 };

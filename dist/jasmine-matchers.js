@@ -216,7 +216,7 @@
    * @summary  <code>expect(array).toBeArray();</code>
    */
   matchers.toBeArray = function() {
-    return this.actual instanceof Array;
+    return priv.is(this.actual, 'Array');
   };
 
   /**
@@ -282,22 +282,13 @@
   };
 
   /**
-   * @alias    toBeBoolean
-   * @summary  <code>expect(boolean).toBeBoolean();</code>
-   */
-  matchers.toBeBoolean = function() {
-    return matchers.toBeTrue.call(this) ||
-      matchers.toBeFalse.call(this);
-  };
-
-  /**
    * @alias    toBeTrue
    * @summary  <code>expect(boolean).toBeTrue();</code>
    */
   matchers.toBeTrue = function() {
     return this.actual === true ||
-      this.actual instanceof Boolean &&
-      this.actual.valueOf() === true;
+      priv.is(this.actual, 'Boolean') &&
+      this.actual.valueOf();
   };
 
   /**
@@ -306,8 +297,16 @@
    */
   matchers.toBeFalse = function() {
     return this.actual === false ||
-      this.actual instanceof Boolean &&
-      this.actual.valueOf() === false;
+      priv.is(this.actual, 'Boolean') &&
+      !this.actual.valueOf();
+  };
+
+  /**
+   * @alias    toBeBoolean
+   * @summary  <code>expect(boolean).toBeBoolean();</code>
+   */
+  matchers.toBeBoolean = function() {
+    return priv.is(this.actual, 'Boolean');
   };
 
   /**
@@ -359,7 +358,7 @@
    * @summary  <code>expect(date).toBeDate();</code>
    */
   matchers.toBeDate = function() {
-    return this.actual instanceof Date;
+    return priv.is(this.actual, 'Date');
   };
 
   function isIso8601(string, pattern) {
@@ -523,7 +522,7 @@
    * @summary  <code>expect(object).toBeObject();</code>
    */
   matchers.toBeObject = function() {
-    return this.actual instanceof Object;
+    return priv.is(this.actual, 'Object');
   };
 
   /**

@@ -3,7 +3,7 @@
  * @summary  <code>expect(array).toBeArray();</code>
  */
 matchers.toBeArray = function() {
-  return this.actual instanceof Array;
+  return priv.is(this.actual, 'Array');
 };
 
 /**
