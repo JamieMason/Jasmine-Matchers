@@ -27,7 +27,6 @@
     "grunt-jsbeautifier": "0.2.7",
     "grunt-jscs": "1.2.0",
     "grunt-karma": "0.10.1",
-    "jasmine-core": "2.1.3",
     "jsdoc-dash-template": "0.0.6",
     "karma": "0.12.31",
     "karma-chrome-launcher": "0.1.7",
