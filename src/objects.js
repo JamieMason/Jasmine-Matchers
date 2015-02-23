@@ -1,36 +1,55 @@
-  // Objects
-  // ---------------------------------------------------------------------------
+/**
+ * @alias    toBeObject
+ * @summary  <code>expect(object).toBeObject();</code>
+ */
+matchers.toBeObject = function() {
+  return priv.is(this.actual, 'Object');
+};
 
-  /**
-   * Assert subject is an Object, and not null
-   * @return {Boolean}
-   */
-  matchers.toBeObject = function() {
-    return this.actual instanceof Object;
-  };
+/**
+ * @alias    toBeEmptyObject
+ * @summary  <code>expect(object).toBeEmptyObject();</code>
+ */
+matchers.toBeEmptyObject = function() {
+  return priv.is(this.actual, 'Object') &&
+    priv.countMembers(this.actual) === 0;
+};
 
-  /**
-   * Assert subject features the same public members as api.
-   * @param  {Object|Array} api
-   * @return {Boolean}
-   */
-  matchers.toImplement = function(api) {
-    var required;
-    if (!this.actual || !api) {
+/**
+ * @alias    toBeNonEmptyObject
+ * @summary  <code>expect(object).toBeNonEmptyObject();</code>
+ */
+matchers.toBeNonEmptyObject = function() {
+  return priv.is(this.actual, 'Object') &&
+    priv.countMembers(this.actual) > 0;
+};
+
+/**
+ * @alias    toImplement
+ * @summary  <code>expect(object).toImplement(interface:Object);</code>
+ * @description
+ * Assert subject is a true Object which features at least the same keys as
+ * <code>other</code> regardless of whether it also has other members.
+ */
+matchers.toImplement = function(other) {
+  if (!priv.is(this.actual, 'Object') || !priv.is(other, 'Object')) {
+    return false;
+  }
+  for (var key in other) {
+    if (other.hasOwnProperty(key)) {
+      if (key in this.actual) {
+        continue;
+      }
       return false;
     }
-    for (required in api) {
-      if ((required in this.actual) === false) {
-        return false;
-      }
-    }
-    return true;
-  };
+  }
+  return true;
+};
 
-  /**
-   * Assert subject is a function
-   * @return {Boolean}
-   */
-  matchers.toBeFunction = function() {
-    return this.actual instanceof Function;
-  };
+/**
+ * @alias    toBeFunction
+ * @summary  <code>expect(function).toBeFunction();</code>
+ */
+matchers.toBeFunction = function() {
+  return typeof this.actual === 'function';
+};

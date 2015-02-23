@@ -1,5 +1,5 @@
 /*
- * Copyright © 2013 Jamie Mason, @fold_left,
+ * Copyright © Jamie Mason, @fold_left,
  * https://github.com/JamieMason
  *
  * Permission is hereby granted, free of charge, to any person
@@ -23,25 +23,44 @@
  * SOFTWARE.
  */
 
-beforeEach(function() {
+(function() {
 
   var matchers = {};
   var priv = {};
 
-  priv.each = function(array, fn) {
-    var i;
-    var len = array.length;
-    if ('length' in array) {
-      for (i = 0; i < len; i++) {
-        fn.call(this, array[i], i, array);
-      }
-    } else {
-      for (i in array) {
-        fn.call(this, array[i], i, array);
+  /**
+   * @inner
+   * @param  {Object} object
+   * @param  {Function} fn
+   */
+  priv.each = function(object, fn) {
+    for (var key in object) {
+      if (object.hasOwnProperty(key)) {
+        fn.call(this, object[key], key, object);
       }
     }
   };
 
+  /**
+   * @inner
+   * @param  {Object} object
+   * @param  {Function} fn
+   * @param  {*} memo
+   * @return {*} memo
+   */
+  priv.reduce = function(object, fn, memo) {
+    priv.each.call(this, object, function(el, ix, list) {
+      memo = fn(memo, el, ix, list);
+    });
+    return memo;
+  };
+
+  /**
+   * @inner
+   * @param  {Array} array
+   * @param  {Function} fn
+   * @return {Boolean}
+   */
   priv.all = function(array, fn) {
     var i;
     var len = array.length;
@@ -53,20 +72,14 @@ beforeEach(function() {
     return true;
   };
 
-  priv.some = function(array, fn) {
-    var i;
-    var len = array.length;
-    for (i = 0; i < len; i++) {
-      if (fn.call(this, array[i], i, array) === true) {
-        return true;
-      }
-    }
-    return false;
-  };
-
-  priv.expectAllMembers = function(assertion) {
+  /**
+   * @inner
+   * @param  {String} matcherName
+   * @return {Boolean}
+   */
+  priv.expectAllMembers = function(matcherName) {
     return priv.all.call(this, this.actual, function(item) {
-      return matchers[assertion].call({
+      return matchers[matcherName].call({
         actual: item
       });
     });
@@ -74,214 +87,309 @@ beforeEach(function() {
 
   /**
    * Assert subject is of type
-   * @param  {Mixed} subject
+   * @inner
+   * @param  {*} subject
    * @param  {String} type
    * @return {Boolean}
    */
-
   priv.is = function(subject, type) {
     return Object.prototype.toString.call(subject) === '[object ' + type + ']';
   };
 
   /**
    * Assert subject is an HTML Element with the given node type
+   * @inner
+   * @param  {*} subject
+   * @param  {String} type
    * @return {Boolean}
    */
-
   priv.isHtmlElementOfType = function(subject, type) {
-    return subject && subject.nodeType === type;
+    return subject &&
+      subject.nodeType === type;
   };
 
   /**
    * Convert Array-like Object to true Array
-   * @param  {Mixed[]} list
+   * @inner
+   * @param  {*} list
    * @return {Array}
    */
-
-  priv.toArray = function (list) {
+  priv.toArray = function(list) {
     return [].slice.call(list);
   };
 
-  // Arrays
-  // ---------------------------------------------------------------------------
+  /**
+   * @inner
+   * @param  {String} matcherName
+   * @param  {String} memberName
+   * @return {Boolean}
+   */
+  priv.assertMember = function( /* matcherName, memberName, ... */ ) {
+    var args = priv.toArray(arguments);
+    var matcherName = args.shift();
+    var memberName = args.shift();
+    return priv.is(this.actual, 'Object') &&
+      matchers[matcherName].apply({
+        actual: this.actual[memberName]
+      }, args);
+  };
 
-  priv.createToBeArrayOfXsMatcher = function (toBeX) {
-    return function () {
-      return matchers.toBeArray.call(this) && priv.expectAllMembers.call(this, toBeX);
+  /**
+   * @summary
+   * Format the failure message for member matchers such as toHaveString('surname').
+   *
+   * @inner
+   * @param  {Object}  util   Provided by Jasmine.
+   * @param  {String}  name   Name of the matcher, such as toBeString.
+   * @param  {Array}   args   converted arguments.
+   * @param  {Boolean} pass   Whether the test passed.
+   * @param  {*}       actual The expected value.
+   * @return {String}         The message to display on failure.
+   */
+  priv.formatFailMessage = function(util, name, args, pass, actual) {
+    if (name.search(/^toHave/) === -1) {
+      return util.buildFailureMessage.apply(null, [name, pass, actual].concat(args));
+    }
+    var memberName = args.shift();
+    return util.buildFailureMessage.apply(null, [name, pass, actual].concat(args))
+      .replace('Expected', 'Expected member "' + memberName + '" of')
+      .replace(' to have ', ' to be ');
+  };
+
+  /**
+   * @summary
+   * Convert Jasmine 1.0 matchers into the format introduced in Jasmine 2.0.
+   *
+   * @inner
+   * @param  {Object} v1Matchers
+   * @return {Object} v2Matchers
+   */
+  priv.adaptMatchers = function(v1Matchers) {
+    return priv.reduce(v1Matchers, function(v2Matchers, matcher, name) {
+      v2Matchers[name] = function(util) {
+        return {
+          compare: function(actual /*, expected, ...*/ ) {
+            var args = priv.toArray(arguments).slice(1);
+            var pass = matcher.apply({
+              actual: actual
+            }, args);
+            return {
+              pass: pass,
+              message: priv.formatFailMessage(util, name, args, pass, actual)
+            };
+          }
+        };
+      };
+      return v2Matchers;
+    }, {});
+  };
+
+  /**
+   * @inner
+   * @param {String} toBeX
+   * @return {Function}
+   */
+  priv.createToBeArrayOfXsMatcher = function(toBeX) {
+    return function() {
+      return priv.is(this.actual, 'Array') &&
+        priv.expectAllMembers.call(this, toBeX);
     };
   };
 
   /**
-   * Assert subject is an Array (from this document, eg Arrays from iframes
-   * or popups won't match)
-   * @return {Boolean}
+   * @inner
+   *
+   * @summary
+   * Report how many instance members the given Object has.
+   *
+   * @param  {Object} object
+   * @return {Number}
    */
-  matchers.toBeArray = function () {
-    return this.actual instanceof Array;
+  priv.countMembers = function(object) {
+    return priv.reduce(object, function(memo /*, el, ix*/ ) {
+      return memo + 1;
+    }, 0);
   };
 
   /**
-   * Assert subject is an Array with a defined number of members
-   * @param  {Number} size
-   * @return {Boolean}
+   * @alias    toBeArray
+   * @summary  <code>expect(array).toBeArray();</code>
    */
-  matchers.toBeArrayOfSize = function (size) {
-    return matchers.toBeArray.call(this) && this.actual.length === size;
+  matchers.toBeArray = function() {
+    return priv.is(this.actual, 'Array');
   };
 
   /**
-   * Assert subject is an Array, but with no members
-   * @return {Boolean}
+   * @alias    toBeArrayOfSize
+   * @summary  <code>expect(array).toBeArrayOfSize(size:Number);</code>
    */
-  matchers.toBeEmptyArray = function () {
+  matchers.toBeArrayOfSize = function(size) {
+    return priv.is(this.actual, 'Array') &&
+      this.actual.length === size;
+  };
+
+  /**
+   * @alias    toBeEmptyArray
+   * @summary  <code>expect(array).toBeEmptyArray();</code>
+   */
+  matchers.toBeEmptyArray = function() {
     return matchers.toBeArrayOfSize.call(this, 0);
   };
 
   /**
-   * Assert subject is an Array with at least one member
-   * @return {Boolean}
+   * @alias    toBeNonEmptyArray
+   * @summary  <code>expect(array).toBeNonEmptyArray();</code>
    */
-  matchers.toBeNonEmptyArray = function () {
-    return matchers.toBeArray.call(this) && this.actual.length > 0;
+  matchers.toBeNonEmptyArray = function() {
+    return priv.is(this.actual, 'Array') &&
+      this.actual.length > 0;
   };
 
   /**
-   * Assert subject is an Array which is either empty or contains only Objects
-   * @return {Boolean}
+   * @alias    toBeArrayOfObjects
+   * @summary  <code>expect(array).toBeArrayOfObjects();</code>
    */
-  matchers.toBeArrayOfObjects = priv.createToBeArrayOfXsMatcher('toBeObject');
-
-  /**
-   * Assert subject is an Array which is either empty or contains only Strings
-   * @return {Boolean}
-   */
-  matchers.toBeArrayOfStrings = priv.createToBeArrayOfXsMatcher('toBeString');
-
-  /**
-   * Assert subject is an Array which is either empty or contains only Numbers
-   * @return {Boolean}
-   */
-  matchers.toBeArrayOfNumbers = priv.createToBeArrayOfXsMatcher('toBeNumber');
-
-  /**
-   * Assert subject is an Array which is either empty or contains only Booleans
-   * @return {Boolean}
-   */
-  matchers.toBeArrayOfBooleans = priv.createToBeArrayOfXsMatcher('toBeBoolean');
-
-  // Booleans
-  // ---------------------------------------------------------------------------
-
-  /**
-   * Assert subject is not only truthy or falsy, but an actual Boolean
-   * @return {Boolean}
-   */
-  matchers.toBeBoolean = function() {
-    return matchers.toBeTrue.call(this) || matchers.toBeFalse.call(this);
+  matchers.toBeArrayOfObjects = function() {
+    return priv.is(this.actual, 'Array') &&
+      priv.expectAllMembers.call(this, 'toBeObject');
   };
 
   /**
-   * Assert subject is not only truthy, but an actual Boolean
-   * @return {Boolean}
+   * @alias    toBeArrayOfStrings
+   * @summary  <code>expect(array).toBeArrayOfStrings();</code>
+   */
+  matchers.toBeArrayOfStrings = function() {
+    return priv.is(this.actual, 'Array') &&
+      priv.expectAllMembers.call(this, 'toBeString');
+  };
+
+  /**
+   * @alias    toBeArrayOfNumbers
+   * @summary  <code>expect(array).toBeArrayOfNumbers();</code>
+   */
+  matchers.toBeArrayOfNumbers = function() {
+    return priv.is(this.actual, 'Array') &&
+      priv.expectAllMembers.call(this, 'toBeNumber');
+  };
+
+  /**
+   * @alias    toBeArrayOfBooleans
+   * @summary  <code>expect(array).toBeArrayOfBooleans();</code>
+   */
+  matchers.toBeArrayOfBooleans = function() {
+    return priv.is(this.actual, 'Array') &&
+      priv.expectAllMembers.call(this, 'toBeBoolean');
+  };
+
+  /**
+   * @alias    toBeTrue
+   * @summary  <code>expect(boolean).toBeTrue();</code>
    */
   matchers.toBeTrue = function() {
-    return this.actual === true || this.actual instanceof Boolean && this.actual.valueOf() === true;
+    return this.actual === true ||
+      priv.is(this.actual, 'Boolean') &&
+      this.actual.valueOf();
   };
 
   /**
-   * Assert subject is not only falsy, but an actual Boolean
-   * @return {Boolean}
+   * @alias    toBeFalse
+   * @summary  <code>expect(boolean).toBeFalse();</code>
    */
   matchers.toBeFalse = function() {
-    return this.actual === false || this.actual instanceof Boolean && this.actual.valueOf() === false;
+    return this.actual === false ||
+      priv.is(this.actual, 'Boolean') &&
+      !this.actual.valueOf();
   };
 
-  // Browser
-  // ---------------------------------------------------------------------------
-
   /**
-   * Assert subject is the window global
-   * @return {Boolean}
+   * @alias    toBeBoolean
+   * @summary  <code>expect(boolean).toBeBoolean();</code>
    */
-  matchers.toBeWindow = function() {
-    return typeof window !== 'undefined' && this.actual === window;
+  matchers.toBeBoolean = function() {
+    return priv.is(this.actual, 'Boolean');
   };
 
   /**
-   * Assert subject is the document global
-   * @return {Boolean}
-   */
-  matchers.toBeDocument = function() {
-    return typeof document !== 'undefined' && this.actual === document;
-  };
-
-  /**
-   * Assert subject is an HTML Element
-   * @return {Boolean}
-   */
-  matchers.toBeHtmlNode = function() {
-    return priv.isHtmlElementOfType(this.actual, 1);
-  };
-
-  /**
-   * Assert subject is an HTML Text Element
-   * @return {Boolean}
-   */
-  matchers.toBeHtmlTextNode = function() {
-    return priv.isHtmlElementOfType(this.actual, 3);
-  };
-
-  /**
-   * Assert subject is an HTML Text Element
-   * @return {Boolean}
-   */
-  matchers.toBeHtmlCommentNode = function() {
-    return priv.isHtmlElementOfType(this.actual, 8);
-  };
-
-  /**
-   * Assert subject is a Date
-   * @return {Boolean}
+   * @alias    toBeDate
+   * @summary  <code>expect(date).toBeDate();</code>
    */
   matchers.toBeDate = function() {
-    return this.actual instanceof Date;
+    return priv.is(this.actual, 'Date');
   };
 
+  function isIso8601(string, pattern) {
+    var returnValue = string.search(
+      new RegExp('^' + pattern.map(function(term) {
+        if (term === '-') {
+          return '\\-';
+        } else if (typeof term === 'string') {
+          return term;
+        } else {
+          return '([0-9]{' + term + '})';
+        }
+      }).join('') + '$')
+    ) !== -1;
+    return returnValue;
+  }
+
   /**
-   * Assert subject is a Date String conforming to the ISO 8601 standard
-   * @return {Boolean}
+   * @alias    toBeIso8601
+   * @summary  <code>expect(string).toBeIso8601();</code>
    */
   matchers.toBeIso8601 = function() {
-    return matchers.toBeString.call(this)
-      && this.actual.length >= 10
-      && new Date(this.actual).toString() !== 'Invalid Date'
-      && new Date(this.actual).toISOString().slice(0, this.actual.length) === this.actual;
+
+    if (!matchers.toBeString.call(this)) {
+      return false;
+    }
+
+    if (isIso8601(this.actual, [
+        // 2013-07-08
+        4, '-', 2, '-', 2
+      ]) || isIso8601(this.actual, [
+        // 2013-07-08T07:29
+        4, '-', 2, '-', 2, 'T', 2, ':', 2
+      ]) || isIso8601(this.actual, [
+        // 2013-07-08T07:29:15
+        4, '-', 2, '-', 2, 'T', 2, ':', 2, ':', 2
+      ]) || isIso8601(this.actual, [
+        // 2013-07-08T07:29:15.863
+        4, '-', 2, '-', 2, 'T', 2, ':', 2, ':', 2, '.', 3
+      ]) || isIso8601(this.actual, [
+        // 2013-07-08T07:29:15.863Z
+        4, '-', 2, '-', 2, 'T', 2, ':', 2, ':', 2, '.', 3, 'Z'
+      ])) {
+      return new Date(this.actual).toString() !== 'Invalid Date';
+    }
+
+    return false;
+
   };
 
   /**
-   * Assert subject is a Date occurring before another Date
-   * @param {Date} date
-   * @return {Boolean}
+   * @alias    toBeBefore
+   * @summary  <code>expect(date).toBeBefore(date);</code>
    */
   matchers.toBeBefore = function(date) {
-    return matchers.toBeDate.call(this) && matchers.toBeDate.call({ actual: date }) && this.actual.getTime() < date.getTime();
+    return matchers.toBeDate.call(this) &&
+      matchers.toBeDate.call({
+        actual: date
+      }) &&
+      this.actual.getTime() < date.getTime();
   };
 
   /**
-   * Assert subject is a Date occurring after another Date
-   * @param {Date} date
-   * @return {Boolean}
+   * @alias    toBeAfter
+   * @summary  <code>expect(date).toBeAfter(date);</code>
    */
   matchers.toBeAfter = function(date) {
-    return matchers.toBeBefore.call({ actual: date }, this.actual);
+    return matchers.toBeBefore.call({
+      actual: date
+    }, this.actual);
   };
 
-  // Errors
-  // ---------------------------------------------------------------------------
-
   /**
-   * Asserts subject throws an Error of any type
-   * @return {Boolean}
+   * @alias    toThrowAnyError
+   * @summary  <code>expect(function).toThrowAnyError();</code>
    */
   matchers.toThrowAnyError = function() {
     var threwError = false;
@@ -294,9 +402,8 @@ beforeEach(function() {
   };
 
   /**
-   * Asserts subject throws an Error of a specific type, such as 'TypeError'
-   * @param  {String} type
-   * @return {Boolean}
+   * @alias    toThrowErrorOfType
+   * @summary  <code>expect(function).toThrowErrorOfType(type:String);</code>
    */
   matchers.toThrowErrorOfType = function(type) {
     var threwErrorOfType = false;
@@ -308,172 +415,106 @@ beforeEach(function() {
     return threwErrorOfType;
   };
 
-  // Members
-  // ---------------------------------------------------------------------------
-
   /**
-   * Assert subject is an Object containing an Array at memberName
-   * @name toHaveArray
-   * @param {String} memberName
-   * @return {Boolean}
-   */
-
-  /**
-   * Assert subject is an Object containing an Array of size at memberName
-   * @name toHaveArrayOfSize
-   * @param {String} memberName
-   * @param {Number} size
-   * @return {Boolean}
-   */
-
-  /**
-   * Assert subject is an Object containing an Array at memberName with no members
-   * @name toHaveEmptyArray
-   * @param {String} memberName
-   * @return {Boolean}
-   */
-
-  /**
-   * Assert subject is an Object containing an Array at memberName with at least one member
-   * @name toHaveNonEmptyArray
-   * @param {String} memberName
-   * @return {Boolean}
-   */
-
-  /**
-   * Assert subject is an Object containing an Array at memberName where no member is not an Object
-   * @name toHaveArrayOfObjects
-   * @param {String} memberName
-   * @return {Boolean}
-   */
-
-  /**
-   * Assert subject is an Object containing an Array at memberName where no member is not a String
-   * @name toHaveArrayOfStrings
-   * @param {String} memberName
-   * @return {Boolean}
-   */
-
-  /**
-   * Assert subject is an Object containing an Array at memberName where no member is not a Number
-   * @name toHaveArrayOfNumbers
-   * @param {Number} memberName
-   * @return {Boolean}
-   */
-
-  /**
-   * Assert subject is an Object containing an Array at memberName where no member is not a Boolean
-   * @name toHaveArrayOfBooleans
-   * @param {Boolean} memberName
-   * @return {Boolean}
-   */
-
-  /**
-   * @param  {String} matcherName
-   * @return {Function}
-   */
-
-  function assertMember(matcherName) {
-    return function() {
-      var args = priv.toArray(arguments);
-      var memberName = args.shift();
-      return matchers.toBeObject.call(this) && matchers[matcherName].apply({
-        actual: this.actual[memberName]
-      }, args);
-    };
-  }
-
-  priv.each([
-    'Array',
-    'ArrayOfSize',
-    'EmptyArray',
-    'NonEmptyArray',
-    'ArrayOfObjects',
-    'ArrayOfStrings',
-    'ArrayOfNumbers',
-    'ArrayOfBooleans'
-  ], function(matcherName) {
-    matchers['toHave' + matcherName] = assertMember('toBe' + matcherName);
-  });
-
-  // Numbers
-  // ---------------------------------------------------------------------------
-
-  /**
-   * Assert subject is not only calculable, but an actual Number
-   * @return {Boolean}
+   * @alias    toBeNumber
+   * @summary  <code>expect(number).toBeNumber();</code>
    */
   matchers.toBeNumber = function() {
-    return !isNaN(parseFloat(this.actual)) && !priv.is(this.actual, 'String');
+    return !isNaN(parseFloat(this.actual)) &&
+      !priv.is(this.actual, 'String');
   };
 
   /**
-   * Assert subject is an even Number
-   * @return {Boolean}
+   * @alias    toBeEvenNumber
+   * @summary  <code>expect(number).toBeEvenNumber();</code>
    */
   matchers.toBeEvenNumber = function() {
-    return matchers.toBeNumber.call(this) && this.actual % 2 === 0;
+    return matchers.toBeNumber.call(this) &&
+      this.actual % 2 === 0;
   };
 
   /**
-   * Assert subject is an odd Number
-   * @return {Boolean}
+   * @alias    toBeOddNumber
+   * @summary  <code>expect(number).toBeOddNumber();</code>
    */
   matchers.toBeOddNumber = function() {
-    return matchers.toBeNumber.call(this) && this.actual % 2 !== 0;
+    return matchers.toBeNumber.call(this) &&
+      this.actual % 2 !== 0;
   };
 
   /**
-   * Assert subject can be used in Mathemetic calculations, despite not being an actual Number.
-   * @example "1" * "2" === 2 (pass)
-   * @example "wut?" * "2" === NaN (fail)
-   * @return {Boolean}
+   * @alias    toBeCalculable
+   * @summary  <code>expect(mixed).toBeCalculable();</code>
+   * @description
+   * Assert subject can be used in Mathemetic calculations despite not being a
+   * Number, for example <code>"1" * "2" === 2</code> but
+   * <code>"wut?" * 2 === NaN</code>.
    */
   matchers.toBeCalculable = function() {
     return !isNaN(this.actual * 2);
   };
 
   /**
-   * Assert value is >= floor or <= ceiling
-   * @param {Number} floor
-   * @param {Number} ceiling
-   * @return {Boolean}
+   * @alias    toBeWithinRange
+   * @summary  <code>expect(number).toBeWithinRange(floor:Number, ceiling:Number);</code>
    */
   matchers.toBeWithinRange = function(floor, ceiling) {
-    return matchers.toBeNumber.call(this) && this.actual >= floor && this.actual <= ceiling;
+    return matchers.toBeNumber.call(this) &&
+      this.actual >= floor &&
+      this.actual <= ceiling;
   };
 
   /**
-   * Assert value is a number with no decimal places
-   * @return {Boolean}
+   * @alias    toBeWholeNumber
+   * @summary  <code>expect(number).toBeWholeNumber();</code>
    */
   matchers.toBeWholeNumber = function() {
-    return matchers.toBeNumber.call(this) && (this.actual === 0 || this.actual % 1 === 0);
+    return matchers.toBeNumber.call(this) &&
+      (this.actual === 0 || this.actual % 1 === 0);
   };
 
-  // Objects
-  // ---------------------------------------------------------------------------
-
   /**
-   * Assert subject is an Object, and not null
-   * @return {Boolean}
+   * @alias    toBeObject
+   * @summary  <code>expect(object).toBeObject();</code>
    */
   matchers.toBeObject = function() {
-    return this.actual instanceof Object;
+    return priv.is(this.actual, 'Object');
   };
 
   /**
-   * Assert subject features the same public members as api.
-   * @param  {Object|Array} api
-   * @return {Boolean}
+   * @alias    toBeEmptyObject
+   * @summary  <code>expect(object).toBeEmptyObject();</code>
    */
-  matchers.toImplement = function(api) {
-    var required;
-    if (!this.actual || !api) {
+  matchers.toBeEmptyObject = function() {
+    return priv.is(this.actual, 'Object') &&
+      priv.countMembers(this.actual) === 0;
+  };
+
+  /**
+   * @alias    toBeNonEmptyObject
+   * @summary  <code>expect(object).toBeNonEmptyObject();</code>
+   */
+  matchers.toBeNonEmptyObject = function() {
+    return priv.is(this.actual, 'Object') &&
+      priv.countMembers(this.actual) > 0;
+  };
+
+  /**
+   * @alias    toImplement
+   * @summary  <code>expect(object).toImplement(interface:Object);</code>
+   * @description
+   * Assert subject is a true Object which features at least the same keys as
+   * <code>other</code> regardless of whether it also has other members.
+   */
+  matchers.toImplement = function(other) {
+    if (!priv.is(this.actual, 'Object') || !priv.is(other, 'Object')) {
       return false;
     }
-    for (required in api) {
-      if ((required in this.actual) === false) {
+    for (var key in other) {
+      if (other.hasOwnProperty(key)) {
+        if (key in this.actual) {
+          continue;
+        }
         return false;
       }
     }
@@ -481,49 +522,60 @@ beforeEach(function() {
   };
 
   /**
-   * Assert subject is a function
-   * @return {Boolean}
+   * @alias    toBeFunction
+   * @summary  <code>expect(function).toBeFunction();</code>
    */
   matchers.toBeFunction = function() {
-    return this.actual instanceof Function;
+    return typeof this.actual === 'function';
   };
 
-  // Strings
-  // ---------------------------------------------------------------------------
-
   /**
-   * Assert subject is a String
-   * @return {Boolean}
+   * @alias    toBeString
+   * @summary  <code>expect(string).toBeString();</code>
    */
   matchers.toBeString = function() {
     return priv.is(this.actual, 'String');
   };
 
   /**
-   * @return {Boolean}
+   * @alias    toBeEmptyString
+   * @summary  <code>expect(string).toBeEmptyString();</code>
    */
   matchers.toBeEmptyString = function() {
     return this.actual === '';
   };
 
   /**
-   * @return {Boolean}
+   * @alias    toBeNonEmptyString
+   * @summary  <code>expect(string).toBeNonEmptyString();</code>
    */
   matchers.toBeNonEmptyString = function() {
-    return matchers.toBeString.call(this) && this.actual.length > 0;
+    return matchers.toBeString.call(this) &&
+      this.actual.length > 0;
   };
 
   /**
-   * Assert subject is string containing HTML Markup
-   * @return {Boolean}
+   * @alias    toBeHtmlString
+   * @summary  <code>expect(string).toBeHtmlString();</code>
    */
   matchers.toBeHtmlString = function() {
-    return matchers.toBeString.call(this) && this.actual.search(/<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)/) !== -1;
+    // <           start with opening tag "<"
+    //  (          start group 1
+    //    "[^"]*"  allow string in "double quotes"
+    //    |        OR
+    //    '[^']*'  allow string in "single quotes"
+    //    |        OR
+    //    [^'">]   cant contains one single quotes, double quotes and ">"
+    //  )          end group 1
+    //  *          0 or more
+    // >           end with closing tag ">"
+    return matchers.toBeString.call(this) &&
+      this.actual.search(/<("[^"]*"|'[^']*'|[^'">])*>/) !== -1;
   };
 
   /**
-   * Assert subject is string containing parseable JSON
-   * @return {Boolean}
+   * @alias    toBeJsonString
+   * @summary  <code>expect(string).toBeJsonString();</code>
    */
   matchers.toBeJsonString = function() {
     var isParseable;
@@ -533,101 +585,378 @@ beforeEach(function() {
     } catch (e) {
       isParseable = false;
     }
-    return isParseable !== false && json !== null;
+    return isParseable !== false &&
+      json !== null;
   };
 
   /**
-   * Assert subject is a String containing nothing but whitespace
-   * @return {Boolean}
+   * @alias    toBeWhitespace
+   * @summary  <code>expect(string).toBeWhitespace();</code>
    */
   matchers.toBeWhitespace = function() {
-    return matchers.toBeString.call(this) && this.actual.search(/\S/) === -1;
+    return matchers.toBeString.call(this) &&
+      this.actual.search(/\S/) === -1;
   };
 
   /**
-   * Assert subject is a String whose first characters match our expected string
-   * @param  {String} expected
-   * @return {Boolean}
+   * @alias    toStartWith
+   * @summary  <code>expect(string).toStartWith(expected:String);</code>
    */
-  matchers.toStartWith = function (expected) {
-    if (!matchers.toBeNonEmptyString.call(this) || !matchers.toBeNonEmptyString.call({ actual: expected })) {
+  matchers.toStartWith = function(expected) {
+    if (!matchers.toBeNonEmptyString.call(this) || !matchers.toBeNonEmptyString.call({
+        actual: expected
+      })) {
       return false;
     }
     return this.actual.slice(0, expected.length) === expected;
   };
 
   /**
-   * Assert subject is a String whose last characters match our expected string
-   * @param  {String} expected
-   * @return {Boolean}
+   * @alias    toEndWith
+   * @summary  <code>expect(string).toEndWith(expected:String);</code>
    */
-  matchers.toEndWith = function (expected) {
-    if (!matchers.toBeNonEmptyString.call(this) || !matchers.toBeNonEmptyString.call({ actual: expected })) {
+  matchers.toEndWith = function(expected) {
+    if (!matchers.toBeNonEmptyString.call(this) || !matchers.toBeNonEmptyString.call({
+        actual: expected
+      })) {
       return false;
     }
     return this.actual.slice(this.actual.length - expected.length, this.actual.length) === expected;
   };
 
   /**
-   * Assert subject is a String whose length is greater than our other string
-   * @param  {String} other
-   * @return {Boolean}
+   * @alias    toBeLongerThan
+   * @summary  <code>expect(string).toBeLongerThan(other:String);</code>
    */
-  matchers.toBeLongerThan = function (other) {
-    return matchers.toBeString.call(this) && matchers.toBeString.call({
-      actual: other
-    }) && this.actual.length > other.length;
+  matchers.toBeLongerThan = function(other) {
+    return matchers.toBeString.call(this) &&
+      matchers.toBeString.call({
+        actual: other
+      }) &&
+      this.actual.length > other.length;
   };
 
   /**
-   * Assert subject is a String whose length is less than our other string
-   * @param  {String} other
-   * @return {Boolean}
+   * @alias    toBeShorterThan
+   * @summary  <code>expect(string).toBeShorterThan(other:String);</code>
    */
-  matchers.toBeShorterThan = function (other) {
-    return matchers.toBeString.call(this) && matchers.toBeString.call({
-      actual: other
-    }) && this.actual.length < other.length;
+  matchers.toBeShorterThan = function(other) {
+    return matchers.toBeString.call(this) &&
+      matchers.toBeString.call({
+        actual: other
+      }) &&
+      this.actual.length < other.length;
   };
 
   /**
-   * Assert subject is a String whose length is equal to our other string
-   * @param  {String} other
-   * @return {Boolean}
+   * @alias    toBeSameLengthAs
+   * @summary  <code>expect(string).toBeSameLengthAs(other:String);</code>
    */
-  matchers.toBeSameLengthAs = function (other) {
-    return matchers.toBeString.call(this) && matchers.toBeString.call({
-      actual: other
-    }) && this.actual.length === other.length;
+  matchers.toBeSameLengthAs = function(other) {
+    return matchers.toBeString.call(this) &&
+      matchers.toBeString.call({
+        actual: other
+      }) &&
+      this.actual.length === other.length;
   };
 
+  /**
+   * @alias    toHaveArray
+   * @summary  <code>expect(object).toHaveArray(key:String);</code>
+   */
+  matchers.toHaveArray = function(key) {
+    return priv.assertMember.call(this, 'toBeArray', key);
+  };
 
-  // Create adapters for the original matchers so they can be compatible with Jasmine 2.0.
+  /**
+   * @alias    toHaveArrayOfBooleans
+   * @summary  <code>expect(object).toHaveArrayOfBooleans(key:String);</code>
+   */
+  matchers.toHaveArrayOfBooleans = function(key) {
+    return priv.assertMember.call(this, 'toBeArrayOfBooleans', key);
+  };
 
-  var isJasmineV1 = typeof this.addMatchers === 'function';
-  var isJasmineV2 = typeof jasmine.addMatchers === 'function';
-  var v2Matchers = {};
+  /**
+   * @alias    toHaveArrayOfNumbers
+   * @summary  <code>expect(object).toHaveArrayOfNumbers(key:String);</code>
+   */
+  matchers.toHaveArrayOfNumbers = function(key) {
+    return priv.assertMember.call(this, 'toBeArrayOfNumbers', key);
+  };
 
-  if (isJasmineV1) {
-    this.addMatchers(matchers);
-  } else if (isJasmineV2) {
-    priv.each(matchers, function(fn, name) {
-      v2Matchers[name] = function() {
-        return {
-          compare: function(actual, expected) {
-            var args = priv.toArray(arguments);
-            var scope = {
-              actual: actual
-            };
-            args.shift();
-            return {
-              pass: matchers[name].apply(scope, args)
-            };
-          }
-        };
-      };
+  /**
+   * @alias    toHaveArrayOfObjects
+   * @summary  <code>expect(object).toHaveArrayOfObjects(key:String);</code>
+   */
+  matchers.toHaveArrayOfObjects = function(key) {
+    return priv.assertMember.call(this, 'toBeArrayOfObjects', key);
+  };
+
+  /**
+   * @alias    toHaveArrayOfSize
+   * @summary  <code>expect(object).toHaveArrayOfSize(key:String, size:Number);</code>
+   */
+  matchers.toHaveArrayOfSize = function(key, size) {
+    return priv.assertMember.call(this, 'toBeArrayOfSize', key, size);
+  };
+
+  /**
+   * @alias    toHaveNonEmptyArray
+   * @summary  <code>expect(object).toHaveNonEmptyArray(key:String);</code>
+   */
+  matchers.toHaveNonEmptyArray = function(key) {
+    return priv.assertMember.call(this, 'toBeNonEmptyArray', key);
+  };
+
+  /**
+   * @alias    toHaveEmptyArray
+   * @summary  <code>expect(object).toHaveEmptyArray(key:String);</code>
+   */
+  matchers.toHaveEmptyArray = function(key) {
+    return priv.assertMember.call(this, 'toBeEmptyArray', key);
+  };
+
+  /**
+   * @alias    toHaveArrayOfStrings
+   * @summary  <code>expect(object).toHaveArrayOfStrings(key:String);</code>
+   */
+  matchers.toHaveArrayOfStrings = function(key) {
+    return priv.assertMember.call(this, 'toBeArrayOfStrings', key);
+  };
+
+  /**
+   * @alias    toHaveBoolean
+   * @summary  <code>expect(object).toHaveBoolean(key:String);</code>
+   */
+  matchers.toHaveBoolean = function(key) {
+    return priv.assertMember.call(this, 'toBeBoolean', key);
+  };
+
+  /**
+   * @alias    toHaveFalse
+   * @summary  <code>expect(object).toHaveFalse(key:String);</code>
+   */
+  matchers.toHaveFalse = function(key) {
+    return priv.assertMember.call(this, 'toBeFalse', key);
+  };
+
+  /**
+   * @alias    toHaveTrue
+   * @summary  <code>expect(object).toHaveTrue(key:String);</code>
+   */
+  matchers.toHaveTrue = function(key) {
+    return priv.assertMember.call(this, 'toBeTrue', key);
+  };
+
+  /**
+   * @alias    toHaveDate
+   * @summary  <code>expect(object):toHaveDate(key:String);</code>
+   */
+  matchers.toHaveDate = function(key) {
+    return priv.assertMember.call(this, 'toBeDate', key);
+  };
+
+  /**
+   * @alias    toHaveDateAfter
+   * @summary  <code>expect(object):toHaveDateAfter(key:String, date:Date);</code>
+   */
+  matchers.toHaveDateAfter = function(key, date) {
+    return priv.assertMember.call(this, 'toBeAfter', key, date);
+  };
+
+  /**
+   * @alias    toHaveDateBefore
+   * @summary  <code>expect(object):toHaveDateBefore(key:String, date:Date);</code>
+   */
+  matchers.toHaveDateBefore = function(key, date) {
+    return priv.assertMember.call(this, 'toBeBefore', key, date);
+  };
+
+  /**
+   * @alias    toHaveIso8601
+   * @summary  <code>expect(object):toHaveIso8601(key:String);</code>
+   */
+  matchers.toHaveIso8601 = function(key) {
+    return priv.assertMember.call(this, 'toBeIso8601', key);
+  };
+
+  /**
+   * @alias    toHaveNumber
+   * @summary  <code>expect(object):toHaveNumber(key:String);</code>
+   */
+  matchers.toHaveNumber = function(key) {
+    return priv.assertMember.call(this, 'toBeNumber', key);
+  };
+
+  /**
+   * @alias    toHaveNumberWithinRange
+   * @summary  <code>expect(object):toHaveNumberWithinRange(key:String, floor:Number, ceiling:Number);</code>
+   */
+  matchers.toHaveNumberWithinRange = function(key, floor, ceiling) {
+    return priv.assertMember.call(this, 'toBeWithinRange', key, floor, ceiling);
+  };
+
+  /**
+   * @alias    toHaveCalculable
+   * @summary  <code>expect(object):toHaveCalculable(key:String);</code>
+   */
+  matchers.toHaveCalculable = function(key) {
+    return priv.assertMember.call(this, 'toBeCalculable', key);
+  };
+
+  /**
+   * @alias    toHaveEvenNumber
+   * @summary  <code>expect(object):toHaveEvenNumber(key:String);</code>
+   */
+  matchers.toHaveEvenNumber = function(key) {
+    return priv.assertMember.call(this, 'toBeEvenNumber', key);
+  };
+
+  /**
+   * @alias    toHaveOddNumber
+   * @summary  <code>expect(object):toHaveOddNumber(key:String);</code>
+   */
+  matchers.toHaveOddNumber = function(key) {
+    return priv.assertMember.call(this, 'toBeOddNumber', key);
+  };
+
+  /**
+   * @alias    toHaveWholeNumber
+   * @summary  <code>expect(object):toHaveWholeNumber(key:String);</code>
+   */
+  matchers.toHaveWholeNumber = function(key) {
+    return priv.assertMember.call(this, 'toBeWholeNumber', key);
+  };
+
+  /**
+   * @alias    toHaveMethod
+   * @summary  <code>expect(object).toHaveMethod(key:String);</code>
+   */
+  matchers.toHaveMethod = function(key) {
+    return priv.assertMember.call(this, 'toBeFunction', key);
+  };
+
+  /**
+   * @alias    toHaveObject
+   * @summary  <code>expect(object).toHaveObject(key:String);</code>
+   */
+  matchers.toHaveObject = function(key) {
+    return priv.assertMember.call(this, 'toBeObject', key);
+  };
+
+  /**
+   * @alias    toHaveEmptyObject
+   * @summary  <code>expect(object).toHaveEmptyObject(key:String);</code>
+   */
+  matchers.toHaveEmptyObject = function(key) {
+    return priv.assertMember.call(this, 'toBeEmptyObject', key);
+  };
+
+  /**
+   * @alias    toHaveNonEmptyObject
+   * @summary  <code>expect(object).toHaveNonEmptyObject(key:String);</code>
+   */
+  matchers.toHaveNonEmptyObject = function(key) {
+    return priv.assertMember.call(this, 'toBeNonEmptyObject', key);
+  };
+
+  /**
+   * @alias    toHaveMember
+   * @summary  <code>expect(object).toHaveMember(key:String);</code>
+   */
+  matchers.toHaveMember = function(key) {
+    return key && priv.is(this.actual, 'Object') &&
+      key in this.actual;
+  };
+
+  /**
+   * @alias    toHaveEmptyString
+   * @summary  <code>expect(object):toHaveEmptyString(key:String);</code>
+   */
+  matchers.toHaveEmptyString = function(key) {
+    return priv.assertMember.call(this, 'toBeEmptyString', key);
+  };
+
+  /**
+   * @alias    toHaveHtmlString
+   * @summary  <code>expect(object):toHaveHtmlString(key:String);</code>
+   */
+  matchers.toHaveHtmlString = function(key) {
+    return priv.assertMember.call(this, 'toBeHtmlString', key);
+  };
+
+  /**
+   * @alias    toHaveJsonString
+   * @summary  <code>expect(object):toHaveJsonString(key:String);</code>
+   */
+  matchers.toHaveJsonString = function(key) {
+    return priv.assertMember.call(this, 'toBeJsonString', key);
+  };
+
+  /**
+   * @alias    toHaveNonEmptyString
+   * @summary  <code>expect(object):toHaveNonEmptyString(key:String);</code>
+   */
+  matchers.toHaveNonEmptyString = function(key) {
+    return priv.assertMember.call(this, 'toBeNonEmptyString', key);
+  };
+
+  /**
+   * @alias    toHaveString
+   * @summary  <code>expect(object):toHaveString(key:String);</code>
+   */
+  matchers.toHaveString = function(key) {
+    return priv.assertMember.call(this, 'toBeString', key);
+  };
+
+  /**
+   * @alias    toHaveStringLongerThan
+   * @summary  <code>expect(object):toHaveStringLongerThan(key:String, other:String);</code>
+   */
+  matchers.toHaveStringLongerThan = function(key, other) {
+    return priv.assertMember.call(this, 'toBeLongerThan', key, other);
+  };
+
+  /**
+   * @alias    toHaveStringSameLengthAs
+   * @summary  <code>expect(object):toHaveStringSameLengthAs(key:String, other:String);</code>
+   */
+  matchers.toHaveStringSameLengthAs = function(key, other) {
+    return priv.assertMember.call(this, 'toBeSameLengthAs', key, other);
+  };
+
+  /**
+   * @alias    toHaveStringShorterThan
+   * @summary  <code>expect(object):toHaveStringShorterThan(key:String, other:String);</code>
+   */
+  matchers.toHaveStringShorterThan = function(key, other) {
+    return priv.assertMember.call(this, 'toBeShorterThan', key, other);
+  };
+
+  /**
+   * @alias    toHaveWhitespaceString
+   * @summary  <code>expect(object):toHaveWhitespaceString(key:String);</code>
+   */
+  matchers.toHaveWhitespaceString = function(key) {
+    return priv.assertMember.call(this, 'toBeWhitespace', key);
+  };
+
+  if (typeof jasmine.addMatchers === 'function') {
+
+    // Create adapters for the original matchers so
+    // they can be compatible with Jasmine 2.0.
+    var matchersV2 = priv.adaptMatchers(matchers);
+
+    beforeEach(function() {
+      jasmine.addMatchers(matchersV2);
     });
-    jasmine.addMatchers(v2Matchers);
+
+  } else {
+
+    beforeEach(function() {
+      this.addMatchers(matchers);
+    });
+
   }
 
-});
+}());

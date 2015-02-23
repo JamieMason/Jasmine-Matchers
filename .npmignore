@@ -1,0 +1,4 @@
+*
+!dist/*
+!index.js
+!README.md

@@ -1,66 +1,69 @@
-  // Arrays
-  // ---------------------------------------------------------------------------
+/**
+ * @alias    toBeArray
+ * @summary  <code>expect(array).toBeArray();</code>
+ */
+matchers.toBeArray = function() {
+  return priv.is(this.actual, 'Array');
+};
 
-  priv.createToBeArrayOfXsMatcher = function (toBeX) {
-    return function () {
-      return matchers.toBeArray.call(this) && priv.expectAllMembers.call(this, toBeX);
-    };
-  };
+/**
+ * @alias    toBeArrayOfSize
+ * @summary  <code>expect(array).toBeArrayOfSize(size:Number);</code>
+ */
+matchers.toBeArrayOfSize = function(size) {
+  return priv.is(this.actual, 'Array') &&
+    this.actual.length === size;
+};
 
-  /**
-   * Assert subject is an Array (from this document, eg Arrays from iframes
-   * or popups won't match)
-   * @return {Boolean}
-   */
-  matchers.toBeArray = function () {
-    return this.actual instanceof Array;
-  };
+/**
+ * @alias    toBeEmptyArray
+ * @summary  <code>expect(array).toBeEmptyArray();</code>
+ */
+matchers.toBeEmptyArray = function() {
+  return matchers.toBeArrayOfSize.call(this, 0);
+};
 
-  /**
-   * Assert subject is an Array with a defined number of members
-   * @param  {Number} size
-   * @return {Boolean}
-   */
-  matchers.toBeArrayOfSize = function (size) {
-    return matchers.toBeArray.call(this) && this.actual.length === size;
-  };
+/**
+ * @alias    toBeNonEmptyArray
+ * @summary  <code>expect(array).toBeNonEmptyArray();</code>
+ */
+matchers.toBeNonEmptyArray = function() {
+  return priv.is(this.actual, 'Array') &&
+    this.actual.length > 0;
+};
 
-  /**
-   * Assert subject is an Array, but with no members
-   * @return {Boolean}
-   */
-  matchers.toBeEmptyArray = function () {
-    return matchers.toBeArrayOfSize.call(this, 0);
-  };
+/**
+ * @alias    toBeArrayOfObjects
+ * @summary  <code>expect(array).toBeArrayOfObjects();</code>
+ */
+matchers.toBeArrayOfObjects = function() {
+  return priv.is(this.actual, 'Array') &&
+    priv.expectAllMembers.call(this, 'toBeObject');
+};
 
-  /**
-   * Assert subject is an Array with at least one member
-   * @return {Boolean}
-   */
-  matchers.toBeNonEmptyArray = function () {
-    return matchers.toBeArray.call(this) && this.actual.length > 0;
-  };
+/**
+ * @alias    toBeArrayOfStrings
+ * @summary  <code>expect(array).toBeArrayOfStrings();</code>
+ */
+matchers.toBeArrayOfStrings = function() {
+  return priv.is(this.actual, 'Array') &&
+    priv.expectAllMembers.call(this, 'toBeString');
+};
 
-  /**
-   * Assert subject is an Array which is either empty or contains only Objects
-   * @return {Boolean}
-   */
-  matchers.toBeArrayOfObjects = priv.createToBeArrayOfXsMatcher('toBeObject');
+/**
+ * @alias    toBeArrayOfNumbers
+ * @summary  <code>expect(array).toBeArrayOfNumbers();</code>
+ */
+matchers.toBeArrayOfNumbers = function() {
+  return priv.is(this.actual, 'Array') &&
+    priv.expectAllMembers.call(this, 'toBeNumber');
+};
 
-  /**
-   * Assert subject is an Array which is either empty or contains only Strings
-   * @return {Boolean}
-   */
-  matchers.toBeArrayOfStrings = priv.createToBeArrayOfXsMatcher('toBeString');
-
-  /**
-   * Assert subject is an Array which is either empty or contains only Numbers
-   * @return {Boolean}
-   */
-  matchers.toBeArrayOfNumbers = priv.createToBeArrayOfXsMatcher('toBeNumber');
-
-  /**
-   * Assert subject is an Array which is either empty or contains only Booleans
-   * @return {Boolean}
-   */
-  matchers.toBeArrayOfBooleans = priv.createToBeArrayOfXsMatcher('toBeBoolean');
+/**
+ * @alias    toBeArrayOfBooleans
+ * @summary  <code>expect(array).toBeArrayOfBooleans();</code>
+ */
+matchers.toBeArrayOfBooleans = function() {
+  return priv.is(this.actual, 'Array') &&
+    priv.expectAllMembers.call(this, 'toBeBoolean');
+};

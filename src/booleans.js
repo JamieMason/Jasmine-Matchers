@@ -1,26 +1,27 @@
-  // Booleans
-  // ---------------------------------------------------------------------------
+/**
+ * @alias    toBeTrue
+ * @summary  <code>expect(boolean).toBeTrue();</code>
+ */
+matchers.toBeTrue = function() {
+  return this.actual === true ||
+    priv.is(this.actual, 'Boolean') &&
+    this.actual.valueOf();
+};
 
-  /**
-   * Assert subject is not only truthy or falsy, but an actual Boolean
-   * @return {Boolean}
-   */
-  matchers.toBeBoolean = function() {
-    return matchers.toBeTrue.call(this) || matchers.toBeFalse.call(this);
-  };
+/**
+ * @alias    toBeFalse
+ * @summary  <code>expect(boolean).toBeFalse();</code>
+ */
+matchers.toBeFalse = function() {
+  return this.actual === false ||
+    priv.is(this.actual, 'Boolean') &&
+    !this.actual.valueOf();
+};
 
-  /**
-   * Assert subject is not only truthy, but an actual Boolean
-   * @return {Boolean}
-   */
-  matchers.toBeTrue = function() {
-    return this.actual === true || this.actual instanceof Boolean && this.actual.valueOf() === true;
-  };
-
-  /**
-   * Assert subject is not only falsy, but an actual Boolean
-   * @return {Boolean}
-   */
-  matchers.toBeFalse = function() {
-    return this.actual === false || this.actual instanceof Boolean && this.actual.valueOf() === false;
-  };
+/**
+ * @alias    toBeBoolean
+ * @summary  <code>expect(boolean).toBeBoolean();</code>
+ */
+matchers.toBeBoolean = function() {
+  return priv.is(this.actual, 'Boolean');
+};

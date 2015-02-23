@@ -1,0 +1,19 @@
+#!/bin/bash
+
+URL="$1"
+IP_ADDRESS="$(ipconfig getifaddr en0)"
+IP_URL="${URL/localhost/$IP_ADDRESS}"
+VM_NAME="IE9 - Win7"
+
+runIE() {
+  VBoxManage startvm "$VM_NAME"
+  VBoxManage guestcontrol "$VM_NAME" exec --username IEUser --image "C:\\Program Files\\Internet Explorer\\iexplore.exe" --password 'Passw0rd!' --wait-exit -- "$IP_URL"
+}
+
+killIE() {
+  VBoxManage guestcontrol "$VM_NAME" exec --username IEUser --image "C:\\Windows\\system32\\taskkill.exe" --password 'Passw0rd!' --wait-exit -- /IM iexplore.exe /F
+}
+
+trap "killIE; exit 0" EXIT
+
+runIE

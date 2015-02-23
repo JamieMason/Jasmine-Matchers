@@ -1,5 +1,5 @@
 /*
- * Copyright © 2013 Jamie Mason, @fold_left,
+ * Copyright © Jamie Mason, @fold_left,
  * https://github.com/JamieMason
  *
  * Permission is hereby granted, free of charge, to any person
@@ -23,7 +23,7 @@
  * SOFTWARE.
  */
 
-beforeEach(function() {
+(function() {
 
   var matchers = {};
   var priv = {};

@@ -2,18 +2,19 @@ module.exports = function(grunt) {
 
   'use strict';
 
-  var version = require('./package.json').version;
-  var output = 'dist/jasmine-matchers.js';
+  // var version = require('./package.json').version;
 
   grunt.initConfig({
 
-    watch: {
-      scripts: {
-        files: ['src/**/*.js', 'test/**/*.js'],
-        tasks: ['build'],
-        options: {
-          nospawn: true
-        }
+    config: {
+      output: 'dist/jasmine-matchers.js',
+      sources: {
+        src: 'src/**/*.js',
+        test: 'test/**/*.js',
+        all: [
+          '<%= config.sources.src %>',
+          '<%= config.sources.test %>'
+        ]
       }
     },
 
@@ -22,20 +23,82 @@ module.exports = function(grunt) {
         files: [{
           src: [
             'src/wrapper/head.txt',
-            'src/private.js',
+            'src/wrapper/private.js',
             'src/*.js',
+            'src/members/*.js',
             'src/wrapper/add-matchers-adapter.js',
             'src/wrapper/foot.txt'
           ],
-          dest: output
+          dest: '<%= config.output %>'
         }]
+      }
+    },
+
+    jsbeautifier: {
+      dist: {
+        options: {
+          js: {
+            indentSize: 2
+          }
+        },
+        src: '<%= config.output %>'
+      }
+    },
+
+    watch: {
+      scripts: {
+        files: '<%= config.sources.all %>',
+        tasks: [
+          'build'
+        ],
+        options: {
+          nospawn: true
+        }
+      }
+    },
+
+    jscs: {
+      dist: {
+        src: '<%= config.sources.src %>'
+      }
+    },
+
+    jshint: {
+      dist: {
+        src: '<%= config.sources.src %>'
+      }
+    },
+
+    karma: {
+      unit: {
+        configFile: 'karma.conf.js',
+        singleRun: true,
+        browsers: [
+          'PhantomJS'
+        ]
       }
     }
 
   });
 
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.registerTask('build', ['concat']);
+  [
+    'grunt-contrib-concat',
+    'grunt-contrib-jshint',
+    'grunt-contrib-watch',
+    'grunt-jsbeautifier',
+    'grunt-jscs',
+    'grunt-karma'
+  ].forEach(grunt.loadNpmTasks);
+
+  grunt.registerTask('code-quality', [
+    'jshint',
+    'jscs',
+    'karma'
+  ]);
+
+  grunt.registerTask('build', [
+    'concat',
+    'jsbeautifier'
+  ]);
 
 };
