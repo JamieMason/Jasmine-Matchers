@@ -2,7 +2,7 @@
 
 > Readable tests.
 
-The [Jasmine testing framework](http://pivotal.github.com/jasmine/) from [Pivotal Labs](http://pivotallabs.com/) comes with this [default set of matchers](https://github.com/pivotal/jasmine/wiki/Matchers);
+The [Jasmine testing framework](http://jasmine.github.io/) from [Pivotal Labs](http://pivotallabs.com/) comes with this [default set of matchers](http://jasmine.github.io/edge/introduction.html#section-Expectations);
 
 ```javascript
 expect(fn).toThrow(e);
