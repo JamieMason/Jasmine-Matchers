@@ -21,7 +21,7 @@
     "*.conf.js",
     "bin",
     "build",
-    "Gruntfile.js"
+    "Gruntfile.js",
     "index.js",
     "node_modules",
     "src",
