@@ -474,6 +474,17 @@
   };
 
   /**
+   * @alias    toBeNaN
+   * @summary  <code>expect(number).toBeNaN();</code>
+   */
+  matchers.toBeNaN = function() {
+    Number.isNaN = Number.isNaN || function(value) {
+      return "number" === typeof value && value !== value;
+    };
+    return Number.isNaN(this.actual);
+  };
+
+  /**
    * @alias    toBeObject
    * @summary  <code>expect(object).toBeObject();</code>
    */
