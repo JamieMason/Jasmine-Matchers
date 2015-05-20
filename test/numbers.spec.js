@@ -110,4 +110,28 @@ describe('Numbers', function() {
     });
   });
 
+  describe('toBeNaN', function() {
+    describe('when invoked', function() {
+      describe('when subject IS NaN', function() {
+        it('should confirm', function() {
+          expect(NaN).toBeNaN();
+          expect(Number.NaN).toBeNaN();
+          expect(0/0).toBeNaN();
+        });
+      });
+      describe('when subject is NOT NaN', function() {
+        it('should deny', function() {
+          expect(0).not.toBeNaN();
+          expect(1).not.toBeNaN();
+          expect('').not.toBeNaN();
+          expect('a').not.toBeNaN();
+          expect(function(){}).not.toBeNaN();
+          expect({}).not.toBeNaN();
+          expect([]).not.toBeNaN();
+          expect(false).not.toBeNaN();
+          expect(null).not.toBeNaN();
+        });
+      });
+    });
+  });
 });
