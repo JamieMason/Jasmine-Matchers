@@ -1,43 +1,80 @@
+'use strict';
+
 module.exports = function(config) {
 
-  'use strict';
+    config.set({
 
-  config.set({
+        autoWatch: true,
 
-    colors: true,
+        browsers: [
+            'PhantomJS'
+        ],
 
-    autoWatch: true,
+        colors: true,
 
-    browsers: [
-      'PhantomJS'
-    ],
+        coverageReporter: {
+            dir: 'coverage',
+            instrumenterOptions: {
+                istanbul: {
+                    noCompact: true
+                }
+            },
+            reporters: [{
+                type: 'html',
+                subdir: 'report-html'
+            }, {
+                type: 'lcov',
+                subdir: 'report-lcov'
+            }, {
+                type: 'cobertura',
+                subdir: '.',
+                file: 'cobertura.txt'
+            }, {
+                type: 'lcovonly',
+                subdir: '.',
+                file: 'report-lcovonly.txt'
+            }, {
+                type: 'teamcity',
+                subdir: '.',
+                file: 'teamcity.txt'
+            }, {
+                type: 'text',
+                subdir: '.',
+                file: 'text.txt'
+            }, {
+                type: 'text-summary',
+                subdir: '.',
+                file: 'text-summary.txt'
+            }]
+        },
 
-    frameworks: [
-      'jasmine'
-    ],
+        files: [
+            'dist/jasmine-matchers.js',
+            'dist/jasmine-matchers.spec.js'
+        ],
 
-    reporters: [
-      'nested',
-      'coverage'
-    ],
+        frameworks: [
+            'jasmine'
+        ],
 
-    files: [
-      'dist/jasmine-matchers.js',
-      'test/**/_utils.spec.js',
-      'test/**/*.spec.js'
-    ],
+        preprocessors: {
+            '**/dist/*.js': [
+                'coverage'
+            ]
+        },
 
-    preprocessors: {
-      '**/dist/*.js': [
-        'coverage'
-      ]
-    },
+        reporters: [
+            'nested',
+            'coverage'
+        ],
 
-    coverageReporter: {
-      type: 'html',
-      dir: 'build/coverage/'
-    }
+        thresholdReporter: {
+            statements: 95,
+            branches: 95,
+            functions: 95,
+            lines: 95
+        }
 
-  });
+    });
 
 };

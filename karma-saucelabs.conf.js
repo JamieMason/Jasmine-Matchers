@@ -1,26 +1,26 @@
+'use strict';
+
 module.exports = function(config) {
 
-  'use strict';
+    require('./karma.conf')({
 
-  require('./karma.conf')({
+        set: function(base) {
 
-    set: function(base) {
+            base.singleRun = true;
 
-      base.singleRun = true;
+            base.reporters = [
+                'dots',
+                'saucelabs'
+            ];
 
-      base.reporters = [
-        'dots',
-        'saucelabs'
-      ];
+            base.sauceLabs = {
+                testName: 'Jasmine Matchers ' + require('./package.json').version
+            };
 
-      base.sauceLabs = {
-        testName: 'Jasmine Matchers ' + require('./package.json').version
-      };
+            config.set(base);
 
-      config.set(base);
+        }
 
-    }
-
-  });
+    });
 
 };

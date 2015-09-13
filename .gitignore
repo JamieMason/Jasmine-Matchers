@@ -1,5 +1,7 @@
-/node_modules/
+npm-debug.log
+/coverage/
+/dist/jasmine-matchers.spec.js
+/doc/
 /Jasmine-Matchers.sublime-project
 /Jasmine-Matchers.sublime-workspace
-/build/
-/doc/
+/node_modules/
