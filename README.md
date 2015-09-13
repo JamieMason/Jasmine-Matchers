@@ -1,4 +1,4 @@
-# Jasmine-Matchers [![](https://travis-ci.org/JamieMason/Jasmine-Matchers.svg?branch=develop)](https://travis-ci.org/JamieMason/Jasmine-Matchers)
+# Jasmine-Matchers
 
 > Readable tests.
 
