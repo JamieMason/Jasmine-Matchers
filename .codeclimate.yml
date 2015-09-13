@@ -1,0 +1,10 @@
+languages:
+   JavaScript: true
+exclude_paths:
+- "bin/*"
+- "dist/*"
+- "tasks/*"
+- "test/*"
+engines:
+  eslint:
+    enabled: true
