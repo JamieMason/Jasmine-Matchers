@@ -1682,6 +1682,7 @@
     80: [function(require, module, exports) {
         'use strict';
 
+        var is = require('./lib/is');
         var toBeObject = require('./toBeObject');
 
         module.exports = toImplement;
@@ -1694,8 +1695,7 @@
 
         function featuresAll(api, actual) {
             for (var key in api) {
-                if (api.hasOwnProperty(key) &&
-                    key in actual === false) {
+                if (api.hasOwnProperty(key) && !is(actual[key], api[key].name)) {
                     return false;
                 }
             }
@@ -1703,6 +1703,7 @@
         }
 
     }, {
+        './lib/is': 8,
         './toBeObject': 35
     }],
     81: [function(require, module, exports) {
