@@ -37,15 +37,17 @@ function toBeIso8601(actual) {
 
 function isIso8601(string, pattern) {
     var returnValue = string.search(
-            new RegExp('^' + pattern.map(function(term) {
-                    if (term === '-') {
-                        return '\\-';
-                    } else if (typeof term === 'string') {
-                        return term;
-                    } else {
-                        return '([0-9]{' + term + '})';
-                    }
-                }).join('') + '$')
+            new RegExp('^' + pattern.map(escapeTerm).join('') + '$')
         ) !== -1;
     return returnValue;
+
+    function escapeTerm(term) {
+        if (term === '-') {
+            return '\\-';
+        } else if (typeof term === 'string') {
+            return term;
+        } else {
+            return '([0-9]{' + term + '})';
+        }
+    }
 }
