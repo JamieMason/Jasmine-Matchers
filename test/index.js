@@ -29,6 +29,7 @@ var specs = {
     toBeObject: require('./toBeObject.spec'),
     toBeOddNumber: require('./toBeOddNumber.spec'),
     toBeSameLengthAs: require('./toBeSameLengthAs.spec'),
+    toBeSet: require('./toBeSet.spec'),
     toBeShorterThan: require('./toBeShorterThan.spec'),
     toBeString: require('./toBeString.spec'),
     toBeTrue: require('./toBeTrue.spec'),
