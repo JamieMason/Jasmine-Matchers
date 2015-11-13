@@ -56,6 +56,7 @@ var matchers = {
     toBeObject: require('./toBeObject'),
     toBeOddNumber: require('./toBeOddNumber'),
     toBeSameLengthAs: require('./toBeSameLengthAs'),
+    toBeSet: require('./toBeSet'),
     toBeShorterThan: require('./toBeShorterThan'),
     toBeString: require('./toBeString'),
     toBeTrue: require('./toBeTrue'),
