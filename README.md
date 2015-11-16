@@ -16,6 +16,7 @@
     + [Karma](#karma)
     + [Node.js](#node-js)
     + [Sublime Text](#sublime-text)
+    + [Tern](#tern)
 + [Available Matchers](#available-matchers)
     + [toBeArray](#tobearray), [toHaveArray](#tohavearray), [toBeArrayOfBooleans](#tobearrayofbooleans), [toHaveArrayOfBooleans](#tohavearrayofbooleans), [toBeArrayOfNumbers](#tobearrayofnumbers), [toHaveArrayOfNumbers](#tohavearrayofnumbers), [toBeArrayOfObjects](#tobearrayofobjects), [toHaveArrayOfObjects](#tohavearrayofobjects), [toBeArrayOfSize](#tobearrayofsize), [toHaveArrayOfSize](#tohavearrayofsize), [toBeArrayOfStrings](#tobearrayofstrings), [toHaveArrayOfStrings](#tohavearrayofstrings), [toBeEmptyArray](#tobeemptyarray), [toHaveEmptyArray](#tohaveemptyarray), [toBeNonEmptyArray](#tobenonemptyarray), [toHaveNonEmptyArray](#tohavenonemptyarray), [toBeBoolean](#tobeboolean), [toHaveBoolean](#tohaveboolean), [toBeFalse](#tobefalse), [toHaveFalse](#tohavefalse), [toBeTrue](#tobetrue), [toHaveTrue](#tohavetrue), [toBeAfter](#tobeafter), [toHaveDateAfter](#tohavedateafter), [toBeBefore](#tobebefore), [toHaveDateBefore](#tohavedatebefore), [toBeDate](#tobedate), [toHaveDate](#tohavedate), [toBeIso8601](#tobeiso8601), [toHaveIso8601](#tohaveiso8601), [toBeFunction](#tobefunction), [toHaveMethod](#tohavemethod), [toThrowAnyError](#tothrowanyerror), [toThrowErrorOfType](#tothrowerroroftype), [toBeCalculable](#tobecalculable), [toHaveCalculable](#tohavecalculable), [toBeEvenNumber](#tobeevennumber), [toHaveEvenNumber](#tohaveevennumber), [toBeNumber](#tobenumber), [toHaveNumber](#tohavenumber), [toBeOddNumber](#tobeoddnumber), [toHaveOddNumber](#tohaveoddnumber), [toBeWholeNumber](#tobewholenumber), [toHaveWholeNumber](#tohavewholenumber), [toBeWithinRange](#tobewithinrange), [toHaveNumberWithinRange](#tohavenumberwithinrange), [toBeEmptyObject](#tobeemptyobject), [toHaveEmptyObject](#tohaveemptyobject), [toBeNonEmptyObject](#tobenonemptyobject), [toHaveNonEmptyObject](#tohavenonemptyobject), [toBeObject](#tobeobject), [toHaveObject](#tohaveobject), [toHaveMember](#tohavemember), [toImplement](#toimplement), [toBeEmptyString](#tobeemptystring), [toHaveEmptyString](#tohaveemptystring), [toBeHtmlString](#tobehtmlstring), [toHaveHtmlString](#tohavehtmlstring), [toBeJsonString](#tobejsonstring), [toHaveJsonString](#tohavejsonstring), [toBeLongerThan](#tobelongerthan), [toHaveStringLongerThan](#tohavestringlongerthan), [toBeNonEmptyString](#tobenonemptystring), [toHaveNonEmptyString](#tohavenonemptystring), [toBeSameLengthAs](#tobesamelengthas), [toHaveStringSameLengthAs](#tohavestringsamelengthas), [toBeShorterThan](#tobeshorterthan), [toHaveStringShorterThan](#tohavestringshorterthan), [toBeString](#tobestring), [toHaveString](#tohavestring), [toBeWhitespace](#tobewhitespace), [toEndWith](#toendwith), [toStartWith](#tostartwith), [toHaveWhitespaceString](#tohavewhitespacestring)
 + [Known Supported Devices](#known-supported-devices)
@@ -125,6 +126,10 @@ require('jasmine-expect');
 ### Sublime Text
 
 [Jasmine-Matchers-Snippets](https://github.com/JamieMason/Jasmine-Matchers-Snippets) can be installed with [Package Control](https://packagecontrol.io/packages/Jasmine%20Matchers%20Snippets) to ease development with Jasmine Matchers in Sublime Text.
+
+### Tern
+
+[Plugin](https://github.com/ik9999/tern-jasminematchers) for [Tern](https://github.com/ternjs/tern) to auto-complete matchers in supported editors.
 
 ## Available Matchers
 
