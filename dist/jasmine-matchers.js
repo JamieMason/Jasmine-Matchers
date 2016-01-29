@@ -143,80 +143,80 @@
 
     }, {
         './lib/factory': 3,
-        './toBeAfter': 10,
-        './toBeArray': 11,
-        './toBeArrayOfBooleans': 12,
-        './toBeArrayOfNumbers': 13,
-        './toBeArrayOfObjects': 14,
-        './toBeArrayOfSize': 15,
-        './toBeArrayOfStrings': 16,
-        './toBeBefore': 17,
-        './toBeBoolean': 18,
-        './toBeCalculable': 19,
-        './toBeDate': 20,
-        './toBeEmptyArray': 21,
-        './toBeEmptyObject': 22,
-        './toBeEmptyString': 23,
-        './toBeEvenNumber': 24,
-        './toBeFalse': 25,
-        './toBeFunction': 26,
-        './toBeHtmlString': 27,
-        './toBeIso8601': 28,
-        './toBeJsonString': 29,
-        './toBeLongerThan': 30,
-        './toBeNonEmptyArray': 31,
-        './toBeNonEmptyObject': 32,
-        './toBeNonEmptyString': 33,
-        './toBeNumber': 34,
-        './toBeObject': 35,
-        './toBeOddNumber': 36,
-        './toBeSameLengthAs': 37,
-        './toBeShorterThan': 38,
-        './toBeString': 39,
-        './toBeTrue': 40,
-        './toBeWhitespace': 41,
-        './toBeWholeNumber': 42,
-        './toBeWithinRange': 43,
-        './toEndWith': 44,
-        './toHaveArray': 45,
-        './toHaveArrayOfBooleans': 46,
-        './toHaveArrayOfNumbers': 47,
-        './toHaveArrayOfObjects': 48,
-        './toHaveArrayOfSize': 49,
-        './toHaveArrayOfStrings': 50,
-        './toHaveBoolean': 51,
-        './toHaveCalculable': 52,
-        './toHaveDate': 53,
-        './toHaveDateAfter': 54,
-        './toHaveDateBefore': 55,
-        './toHaveEmptyArray': 56,
-        './toHaveEmptyObject': 57,
-        './toHaveEmptyString': 58,
-        './toHaveEvenNumber': 59,
-        './toHaveFalse': 60,
-        './toHaveHtmlString': 61,
-        './toHaveIso8601': 62,
-        './toHaveJsonString': 63,
-        './toHaveMember': 64,
-        './toHaveMethod': 65,
-        './toHaveNonEmptyArray': 66,
-        './toHaveNonEmptyObject': 67,
-        './toHaveNonEmptyString': 68,
-        './toHaveNumber': 69,
-        './toHaveNumberWithinRange': 70,
-        './toHaveObject': 71,
-        './toHaveOddNumber': 72,
-        './toHaveString': 73,
-        './toHaveStringLongerThan': 74,
-        './toHaveStringSameLengthAs': 75,
-        './toHaveStringShorterThan': 76,
-        './toHaveTrue': 77,
-        './toHaveWhitespaceString': 78,
-        './toHaveWholeNumber': 79,
-        './toImplement': 80,
-        './toStartWith': 81,
-        './toThrowAnyError': 82,
-        './toThrowErrorOfType': 83
+        './toBeAfter': 11,
+        './toBeArray': 12,
+        './toBeArrayOfBooleans': 13,
+        './toBeArrayOfNumbers': 14,
+        './toBeArrayOfObjects': 15,
+        './toBeArrayOfSize': 16,
+        './toBeArrayOfStrings': 17,
+        './toBeBefore': 18,
+        './toBeBoolean': 19,
+        './toBeCalculable': 20,
+        './toBeDate': 21,
+        './toBeEmptyArray': 22,
+        './toBeEmptyObject': 23,
+        './toBeEmptyString': 24,
+        './toBeEvenNumber': 25,
+        './toBeFalse': 26,
+        './toBeFunction': 27,
+        './toBeHtmlString': 28,
+        './toBeIso8601': 29,
+        './toBeJsonString': 30,
+        './toBeLongerThan': 31,
+        './toBeNonEmptyArray': 32,
+        './toBeNonEmptyObject': 33,
+        './toBeNonEmptyString': 34,
+        './toBeNumber': 35,
+        './toBeObject': 36,
+        './toBeOddNumber': 37,
+        './toBeSameLengthAs': 38,
+        './toBeShorterThan': 39,
+        './toBeString': 40,
+        './toBeTrue': 41,
+        './toBeWhitespace': 42,
+        './toBeWholeNumber': 43,
+        './toBeWithinRange': 44,
+        './toEndWith': 45,
+        './toHaveArray': 46,
+        './toHaveArrayOfBooleans': 47,
+        './toHaveArrayOfNumbers': 48,
+        './toHaveArrayOfObjects': 49,
+        './toHaveArrayOfSize': 50,
+        './toHaveArrayOfStrings': 51,
+        './toHaveBoolean': 52,
+        './toHaveCalculable': 53,
+        './toHaveDate': 54,
+        './toHaveDateAfter': 55,
+        './toHaveDateBefore': 56,
+        './toHaveEmptyArray': 57,
+        './toHaveEmptyObject': 58,
+        './toHaveEmptyString': 59,
+        './toHaveEvenNumber': 60,
+        './toHaveFalse': 61,
+        './toHaveHtmlString': 62,
+        './toHaveIso8601': 63,
+        './toHaveJsonString': 64,
+        './toHaveMember': 65,
+        './toHaveMethod': 66,
+        './toHaveNonEmptyArray': 67,
+        './toHaveNonEmptyObject': 68,
+        './toHaveNonEmptyString': 69,
+        './toHaveNumber': 70,
+        './toHaveNumberWithinRange': 71,
+        './toHaveObject': 72,
+        './toHaveOddNumber': 73,
+        './toHaveString': 74,
+        './toHaveStringLongerThan': 75,
+        './toHaveStringSameLengthAs': 76,
+        './toHaveStringShorterThan': 77,
+        './toHaveTrue': 78,
+        './toHaveWhitespaceString': 79,
+        './toHaveWholeNumber': 80,
+        './toImplement': 81,
+        './toStartWith': 82,
+        './toThrowAnyError': 83,
+        './toThrowErrorOfType': 84
     }],
     2: [function(require, module, exports) {
         'use strict';
@@ -407,6 +407,8 @@
     7: [function(require, module, exports) {
         'use strict';
 
+        var matchersUtil = require('../../matchersUtil.js');
+
         module.exports = {
             2: forKeyAndActual,
             3: forKeyAndActualAndExpected,
@@ -418,6 +420,10 @@
                 return {
                     compare: function(actual, key, optionalMessage) {
                         var passes = matcher(key, actual);
+                        if (name.search(/^toHave/) !== -1) {
+                            optionalMessage = key;
+                        }
+
                         return {
                             pass: passes,
                             message: (
@@ -436,13 +442,14 @@
                 return {
                     compare: function(actual, key, expected, optionalMessage) {
                         var passes = matcher(key, expected, actual);
+                        var message = (optionalMessage ?
+                            util.buildFailureMessage(name, passes, actual, expected, optionalMessage) :
+                            util.buildFailureMessage(name, passes, actual, expected)
+                        );
+
                         return {
                             pass: passes,
-                            message: (
-                            optionalMessage ?
-                                util.buildFailureMessage(name, passes, actual, expected, optionalMessage) :
-                                util.buildFailureMessage(name, passes, actual, expected)
-                            )
+                            message: matchersUtil.formatErrorMessage(name, message, key)
                         };
                     }
                 };
@@ -454,20 +461,23 @@
                 return {
                     compare: function(actual, key, expected1, expected2, optionalMessage) {
                         var passes = matcher(key, expected1, expected2, actual);
+                        var message = (optionalMessage ?
+                            util.buildFailureMessage(name, passes, actual, expected1, expected2, optionalMessage) :
+                            util.buildFailureMessage(name, passes, actual, expected1, expected2)
+                        );
+
                         return {
                             pass: passes,
-                            message: (
-                            optionalMessage ?
-                                util.buildFailureMessage(name, passes, actual, expected1, expected2, optionalMessage) :
-                                util.buildFailureMessage(name, passes, actual, expected1, expected2)
-                            )
+                            message: matchersUtil.formatErrorMessage(name, message, key)
                         };
                     }
                 };
             };
         }
 
-    }, {}],
+    }, {
+        '../../matchersUtil.js': 10
+    }],
     8: [function(require, module, exports) {
         'use strict';
 
@@ -497,6 +507,21 @@
     10: [function(require, module, exports) {
         'use strict';
 
+        var matchersUtil = {
+            formatErrorMessage: function(name, message, key) {
+                if (name.search(/^toHave/) !== -1) {
+                    message = message.replace('Expected', 'Expected member "' + key + '" of').replace(' to have ', ' to be ');
+                }
+
+                return message;
+            }
+        };
+
+        module.exports = matchersUtil;
+    }, {}],
+    11: [function(require, module, exports) {
+        'use strict';
+
         var toBeBefore = require('./toBeBefore');
 
         module.exports = toBeAfter;
@@ -506,9 +531,9 @@
         }
 
     }, {
-        './toBeBefore': 17
+        './toBeBefore': 18
     }],
-    11: [function(require, module, exports) {
+    12: [function(require, module, exports) {
         'use strict';
 
         var is = require('./lib/is');
@@ -522,7 +547,7 @@
     }, {
         './lib/is': 8
     }],
-    12: [function(require, module, exports) {
+    13: [function(require, module, exports) {
         'use strict';
 
         var every = require('./lib/every');
@@ -538,10 +563,10 @@
 
     }, {
         './lib/every': 2,
-        './toBeArray': 11,
-        './toBeBoolean': 18
+        './toBeArray': 12,
+        './toBeBoolean': 19
     }],
-    13: [function(require, module, exports) {
+    14: [function(require, module, exports) {
         'use strict';
 
         var every = require('./lib/every');
@@ -557,10 +582,10 @@
 
     }, {
         './lib/every': 2,
-        './toBeArray': 11,
-        './toBeNumber': 34
+        './toBeArray': 12,
+        './toBeNumber': 35
     }],
-    14: [function(require, module, exports) {
+    15: [function(require, module, exports) {
         'use strict';
 
         var every = require('./lib/every');
@@ -576,10 +601,10 @@
 
     }, {
         './lib/every': 2,
-        './toBeArray': 11,
-        './toBeObject': 35
+        './toBeArray': 12,
+        './toBeObject': 36
     }],
-    15: [function(require, module, exports) {
+    16: [function(require, module, exports) {
         'use strict';
 
         var toBeArray = require('./toBeArray');
@@ -592,9 +617,9 @@
         }
 
     }, {
-        './toBeArray': 11
+        './toBeArray': 12
     }],
-    16: [function(require, module, exports) {
+    17: [function(require, module, exports) {
         'use strict';
 
         var every = require('./lib/every');
@@ -610,10 +635,10 @@
 
     }, {
         './lib/every': 2,
-        './toBeArray': 11,
-        './toBeString': 39
+        './toBeArray': 12,
+        './toBeString': 40
     }],
-    17: [function(require, module, exports) {
+    18: [function(require, module, exports) {
         'use strict';
 
         var toBeDate = require('./toBeDate');
@@ -627,9 +652,9 @@
         }
 
     }, {
-        './toBeDate': 20
+        './toBeDate': 21
     }],
-    18: [function(require, module, exports) {
+    19: [function(require, module, exports) {
         'use strict';
 
         var is = require('./lib/is');
@@ -643,7 +668,7 @@
     }, {
         './lib/is': 8
     }],
-    19: [function(require, module, exports) {
+    20: [function(require, module, exports) {
         'use strict';
 
         module.exports = toBeCalculable;
@@ -657,7 +682,7 @@
         }
 
     }, {}],
-    20: [function(require, module, exports) {
+    21: [function(require, module, exports) {
         'use strict';
 
         var is = require('./lib/is');
@@ -671,7 +696,7 @@
     }, {
         './lib/is': 8
     }],
-    21: [function(require, module, exports) {
+    22: [function(require, module, exports) {
         'use strict';
 
         var toBeArrayOfSize = require('./toBeArrayOfSize');
@@ -683,9 +708,9 @@
         }
 
     }, {
-        './toBeArrayOfSize': 15
+        './toBeArrayOfSize': 16
     }],
-    22: [function(require, module, exports) {
+    23: [function(require, module, exports) {
         'use strict';
 
         var keys = require('./lib/keys');
@@ -702,7 +727,7 @@
         './lib/is': 8,
         './lib/keys': 9
     }],
-    23: [function(require, module, exports) {
+    24: [function(require, module, exports) {
         'use strict';
 
         module.exports = toBeEmptyString;
@@ -712,7 +737,7 @@
         }
 
     }, {}],
-    24: [function(require, module, exports) {
+    25: [function(require, module, exports) {
         'use strict';
 
         var toBeNumber = require('./toBeNumber');
@@ -725,9 +750,9 @@
         }
 
     }, {
-        './toBeNumber': 34
+        './toBeNumber': 35
     }],
-    25: [function(require, module, exports) {
+    26: [function(require, module, exports) {
         'use strict';
 
         var is = require('./lib/is');
@@ -743,7 +768,7 @@
     }, {
         './lib/is': 8
     }],
-    26: [function(require, module, exports) {
+    27: [function(require, module, exports) {
         'use strict';
 
         module.exports = toBeFunction;
@@ -753,7 +778,7 @@
         }
 
     }, {}],
-    27: [function(require, module, exports) {
+    28: [function(require, module, exports) {
         'use strict';
 
         var toBeString = require('./toBeString');
@@ -776,9 +801,9 @@
         }
 
     }, {
-        './toBeString': 39
+        './toBeString': 40
     }],
-    28: [function(require, module, exports) {
+    29: [function(require, module, exports) {
         'use strict';
 
         var toBeString = require('./toBeString');
@@ -834,9 +859,9 @@
         }
 
     }, {
-        './toBeString': 39
+        './toBeString': 40
     }],
-    29: [function(require, module, exports) {
+    30: [function(require, module, exports) {
         'use strict';
 
         module.exports = toBeJsonString;
@@ -854,7 +879,7 @@
         }
 
     }, {}],
-    30: [function(require, module, exports) {
+    31: [function(require, module, exports) {
         'use strict';
 
         var toBeString = require('./toBeString');
@@ -868,9 +893,9 @@
         }
 
     }, {
-        './toBeString': 39
+        './toBeString': 40
     }],
-    31: [function(require, module, exports) {
+    32: [function(require, module, exports) {
         'use strict';
 
         var is = require('./lib/is');
@@ -885,7 +910,7 @@
     }, {
         './lib/is': 8
     }],
-    32: [function(require, module, exports) {
+    33: [function(require, module, exports) {
         'use strict';
 
         var keys = require('./lib/keys');
@@ -902,7 +927,7 @@
         './lib/is': 8,
         './lib/keys': 9
     }],
-    33: [function(require, module, exports) {
+    34: [function(require, module, exports) {
         'use strict';
 
         var toBeString = require('./toBeString');
@@ -915,9 +940,9 @@
         }
 
     }, {
-        './toBeString': 39
+        './toBeString': 40
     }],
-    34: [function(require, module, exports) {
+    35: [function(require, module, exports) {
         'use strict';
 
         var is = require('./lib/is');
@@ -932,7 +957,7 @@
     }, {
         './lib/is': 8
     }],
-    35: [function(require, module, exports) {
+    36: [function(require, module, exports) {
         'use strict';
 
         var is = require('./lib/is');
@@ -946,7 +971,7 @@
     }, {
         './lib/is': 8
     }],
-    36: [function(require, module, exports) {
+    37: [function(require, module, exports) {
         'use strict';
 
         var toBeNumber = require('./toBeNumber');
@@ -959,9 +984,9 @@
         }
 
     }, {
-        './toBeNumber': 34
+        './toBeNumber': 35
     }],
-    37: [function(require, module, exports) {
+    38: [function(require, module, exports) {
         'use strict';
 
         var toBeString = require('./toBeString');
@@ -975,9 +1000,9 @@
         }
 
     }, {
-        './toBeString': 39
+        './toBeString': 40
     }],
-    38: [function(require, module, exports) {
+    39: [function(require, module, exports) {
         'use strict';
 
         var toBeString = require('./toBeString');
@@ -991,9 +1016,9 @@
         }
 
     }, {
-        './toBeString': 39
+        './toBeString': 40
     }],
-    39: [function(require, module, exports) {
+    40: [function(require, module, exports) {
         'use strict';
 
         var is = require('./lib/is');
@@ -1007,7 +1032,7 @@
     }, {
         './lib/is': 8
     }],
-    40: [function(require, module, exports) {
+    41: [function(require, module, exports) {
         'use strict';
 
         var is = require('./lib/is');
@@ -1023,7 +1048,7 @@
     }, {
         './lib/is': 8
     }],
-    41: [function(require, module, exports) {
+    42: [function(require, module, exports) {
         'use strict';
 
         var toBeString = require('./toBeString');
@@ -1036,9 +1061,9 @@
         }
 
     }, {
-        './toBeString': 39
+        './toBeString': 40
     }],
-    42: [function(require, module, exports) {
+    43: [function(require, module, exports) {
         'use strict';
 
         var toBeNumber = require('./toBeNumber');
@@ -1052,9 +1077,9 @@
         }
 
     }, {
-        './toBeNumber': 34
+        './toBeNumber': 35
     }],
-    43: [function(require, module, exports) {
+    44: [function(require, module, exports) {
         'use strict';
 
         var toBeNumber = require('./toBeNumber');
@@ -1068,9 +1093,9 @@
         }
 
     }, {
-        './toBeNumber': 34
+        './toBeNumber': 35
     }],
-    44: [function(require, module, exports) {
+    45: [function(require, module, exports) {
         'use strict';
 
         var toBeNonEmptyString = require('./toBeNonEmptyString');
@@ -1085,9 +1110,9 @@
         }
 
     }, {
-        './toBeNonEmptyString': 33
+        './toBeNonEmptyString': 34
     }],
-    45: [function(require, module, exports) {
+    46: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1101,10 +1126,10 @@
         }
 
     }, {
-        './toBeArray': 11,
-        './toBeObject': 35
+        './toBeArray': 12,
+        './toBeObject': 36
     }],
-    46: [function(require, module, exports) {
+    47: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1118,10 +1143,10 @@
         }
 
     }, {
-        './toBeArrayOfBooleans': 12,
-        './toBeObject': 35
+        './toBeArrayOfBooleans': 13,
+        './toBeObject': 36
     }],
-    47: [function(require, module, exports) {
+    48: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1135,10 +1160,10 @@
         }
 
     }, {
-        './toBeArrayOfNumbers': 13,
-        './toBeObject': 35
+        './toBeArrayOfNumbers': 14,
+        './toBeObject': 36
     }],
-    48: [function(require, module, exports) {
+    49: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1152,10 +1177,10 @@
         }
 
     }, {
-        './toBeArrayOfObjects': 14,
-        './toBeObject': 35
+        './toBeArrayOfObjects': 15,
+        './toBeObject': 36
     }],
-    49: [function(require, module, exports) {
+    50: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1169,10 +1194,10 @@
         }
 
     }, {
-        './toBeArrayOfSize': 15,
-        './toBeObject': 35
+        './toBeArrayOfSize': 16,
+        './toBeObject': 36
     }],
-    50: [function(require, module, exports) {
+    51: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1186,10 +1211,10 @@
         }
 
     }, {
-        './toBeArrayOfStrings': 16,
-        './toBeObject': 35
+        './toBeArrayOfStrings': 17,
+        './toBeObject': 36
     }],
-    51: [function(require, module, exports) {
+    52: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1203,10 +1228,10 @@
         }
 
     }, {
-        './toBeBoolean': 18,
-        './toBeObject': 35
+        './toBeBoolean': 19,
+        './toBeObject': 36
     }],
-    52: [function(require, module, exports) {
+    53: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1220,10 +1245,10 @@
         }
 
     }, {
-        './toBeCalculable': 19,
-        './toBeObject': 35
+        './toBeCalculable': 20,
+        './toBeObject': 36
     }],
-    53: [function(require, module, exports) {
+    54: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1237,10 +1262,10 @@
         }
 
     }, {
-        './toBeDate': 20,
-        './toBeObject': 35
+        './toBeDate': 21,
+        './toBeObject': 36
     }],
-    54: [function(require, module, exports) {
+    55: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1254,10 +1279,10 @@
         }
 
     }, {
-        './toBeAfter': 10,
-        './toBeObject': 35
+        './toBeAfter': 11,
+        './toBeObject': 36
     }],
-    55: [function(require, module, exports) {
+    56: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1271,10 +1296,10 @@
         }
 
     }, {
-        './toBeBefore': 17,
-        './toBeObject': 35
+        './toBeBefore': 18,
+        './toBeObject': 36
     }],
-    56: [function(require, module, exports) {
+    57: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1288,10 +1313,10 @@
         }
 
     }, {
-        './toBeEmptyArray': 21,
-        './toBeObject': 35
+        './toBeEmptyArray': 22,
+        './toBeObject': 36
     }],
-    57: [function(require, module, exports) {
+    58: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1305,10 +1330,10 @@
         }
 
     }, {
-        './toBeEmptyObject': 22,
-        './toBeObject': 35
+        './toBeEmptyObject': 23,
+        './toBeObject': 36
     }],
-    58: [function(require, module, exports) {
+    59: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1322,10 +1347,10 @@
         }
 
     }, {
-        './toBeEmptyString': 23,
-        './toBeObject': 35
+        './toBeEmptyString': 24,
+        './toBeObject': 36
     }],
-    59: [function(require, module, exports) {
+    60: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1339,10 +1364,10 @@
         }
 
     }, {
-        './toBeEvenNumber': 24,
-        './toBeObject': 35
+        './toBeEvenNumber': 25,
+        './toBeObject': 36
     }],
-    60: [function(require, module, exports) {
+    61: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1356,10 +1381,10 @@
         }
 
     }, {
-        './toBeFalse': 25,
-        './toBeObject': 35
+        './toBeFalse': 26,
+        './toBeObject': 36
     }],
-    61: [function(require, module, exports) {
+    62: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1373,10 +1398,10 @@
         }
 
     }, {
-        './toBeHtmlString': 27,
-        './toBeObject': 35
+        './toBeHtmlString': 28,
+        './toBeObject': 36
     }],
-    62: [function(require, module, exports) {
+    63: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1390,10 +1415,10 @@
         }
 
     }, {
-        './toBeIso8601': 28,
-        './toBeObject': 35
+        './toBeIso8601': 29,
+        './toBeObject': 36
     }],
-    63: [function(require, module, exports) {
+    64: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1407,10 +1432,10 @@
         }
 
     }, {
-        './toBeJsonString': 29,
-        './toBeObject': 35
+        './toBeJsonString': 30,
+        './toBeObject': 36
     }],
-    64: [function(require, module, exports) {
+    65: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1425,10 +1450,10 @@
         }
 
     }, {
-        './toBeObject': 35,
-        './toBeString': 39
+        './toBeObject': 36,
+        './toBeString': 40
     }],
-    65: [function(require, module, exports) {
+    66: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1442,10 +1467,10 @@
         }
 
     }, {
-        './toBeFunction': 26,
-        './toBeObject': 35
+        './toBeFunction': 27,
+        './toBeObject': 36
     }],
-    66: [function(require, module, exports) {
+    67: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1459,10 +1484,10 @@
         }
 
     }, {
-        './toBeNonEmptyArray': 31,
-        './toBeObject': 35
+        './toBeNonEmptyArray': 32,
+        './toBeObject': 36
     }],
-    67: [function(require, module, exports) {
+    68: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1476,10 +1501,10 @@
         }
 
     }, {
-        './toBeNonEmptyObject': 32,
-        './toBeObject': 35
+        './toBeNonEmptyObject': 33,
+        './toBeObject': 36
     }],
-    68: [function(require, module, exports) {
+    69: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1493,10 +1518,10 @@
         }
 
     }, {
-        './toBeNonEmptyString': 33,
-        './toBeObject': 35
+        './toBeNonEmptyString': 34,
+        './toBeObject': 36
     }],
-    69: [function(require, module, exports) {
+    70: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1510,10 +1535,10 @@
         }
 
     }, {
-        './toBeNumber': 34,
-        './toBeObject': 35
+        './toBeNumber': 35,
+        './toBeObject': 36
     }],
-    70: [function(require, module, exports) {
+    71: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1527,10 +1552,10 @@
         }
 
     }, {
-        './toBeObject': 35,
-        './toBeWithinRange': 43
+        './toBeObject': 36,
+        './toBeWithinRange': 44
     }],
-    71: [function(require, module, exports) {
+    72: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1543,9 +1568,9 @@
         }
 
     }, {
-        './toBeObject': 35
+        './toBeObject': 36
     }],
-    72: [function(require, module, exports) {
+    73: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1559,10 +1584,10 @@
         }
 
     }, {
-        './toBeObject': 35,
-        './toBeOddNumber': 36
+        './toBeObject': 36,
+        './toBeOddNumber': 37
     }],
-    73: [function(require, module, exports) {
+    74: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1576,10 +1601,10 @@
         }
 
     }, {
-        './toBeObject': 35,
-        './toBeString': 39
+        './toBeObject': 36,
+        './toBeString': 40
     }],
-    74: [function(require, module, exports) {
+    75: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1593,10 +1618,10 @@
         }
 
     }, {
-        './toBeLongerThan': 30,
-        './toBeObject': 35
+        './toBeLongerThan': 31,
+        './toBeObject': 36
     }],
-    75: [function(require, module, exports) {
+    76: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1610,10 +1635,10 @@
         }
 
     }, {
-        './toBeObject': 35,
-        './toBeSameLengthAs': 37
+        './toBeObject': 36,
+        './toBeSameLengthAs': 38
     }],
-    76: [function(require, module, exports) {
+    77: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1627,10 +1652,10 @@
         }
 
     }, {
-        './toBeObject': 35,
-        './toBeShorterThan': 38
+        './toBeObject': 36,
+        './toBeShorterThan': 39
     }],
-    77: [function(require, module, exports) {
+    78: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1644,10 +1669,10 @@
         }
 
     }, {
-        './toBeObject': 35,
-        './toBeTrue': 40
+        './toBeObject': 36,
+        './toBeTrue': 41
     }],
-    78: [function(require, module, exports) {
+    79: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1661,10 +1686,10 @@
         }
 
     }, {
-        './toBeObject': 35,
-        './toBeWhitespace': 41
+        './toBeObject': 36,
+        './toBeWhitespace': 42
     }],
-    79: [function(require, module, exports) {
+    80: [function(require, module, exports) {
         'use strict';
 
         var toBeObject = require('./toBeObject');
@@ -1678,10 +1703,10 @@
         }
 
     }, {
-        './toBeObject': 35,
-        './toBeWholeNumber': 42
+        './toBeObject': 36,
+        './toBeWholeNumber': 43
     }],
-    80: [function(require, module, exports) {
+    81: [function(require, module, exports) {
         'use strict';
 
         var is = require('./lib/is');
@@ -1706,9 +1731,9 @@
 
     }, {
         './lib/is': 8,
-        './toBeObject': 35
+        './toBeObject': 36
     }],
-    81: [function(require, module, exports) {
+    82: [function(require, module, exports) {
         'use strict';
 
         var toBeNonEmptyString = require('./toBeNonEmptyString');
@@ -1723,9 +1748,9 @@
         }
 
     }, {
-        './toBeNonEmptyString': 33
+        './toBeNonEmptyString': 34
     }],
-    82: [function(require, module, exports) {
+    83: [function(require, module, exports) {
         'use strict';
 
         module.exports = toThrowAnyError;
@@ -1741,7 +1766,7 @@
         }
 
     }, {}],
-    83: [function(require, module, exports) {
+    84: [function(require, module, exports) {
         'use strict';
 
         module.exports = toThrowErrorOfType;
