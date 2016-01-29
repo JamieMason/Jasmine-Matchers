@@ -518,6 +518,7 @@
         };
 
         module.exports = matchersUtil;
+
     }, {}],
     11: [function(require, module, exports) {
         'use strict';
@@ -838,13 +839,12 @@
             }
 
             return false;
-
         }
 
         function isIso8601(string, pattern) {
             var returnValue = string.search(
-                    new RegExp('^' + pattern.map(escapeTerm).join('') + '$')
-                ) !== -1;
+                new RegExp('^' + pattern.map(escapeTerm).join('') + '$')
+            ) !== -1;
             return returnValue;
 
             function escapeTerm(term) {
