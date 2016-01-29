@@ -58,7 +58,7 @@ module.exports = function(config) {
         ],
 
         preprocessors: {
-            '**/dist/*.js': [
+            '**/dist/jasmine-matchers.js': [
                 'coverage'
             ]
         },
