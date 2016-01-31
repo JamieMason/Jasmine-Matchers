@@ -13,15 +13,12 @@ function forKeyAndActual(name, matcher) {
         return {
             compare: function(actual, key, optionalMessage) {
                 var passes = matcher(key, actual);
-                if (name.search(/^toHave/) !== -1) {
-                    optionalMessage = key;
-                }
-
+                var message = name.search(/^toHave/) !== -1 ? key : optionalMessage;
                 return {
                     pass: passes,
                     message: (
-                    optionalMessage ?
-                        util.buildFailureMessage(name, passes, actual, optionalMessage) :
+                    message ?
+                        util.buildFailureMessage(name, passes, actual, message) :
                         util.buildFailureMessage(name, passes, actual)
                     )
                 };
