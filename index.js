@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('./dist/jasmine-matchers');
+module.exports = require('./src/jasmine-matchers');
