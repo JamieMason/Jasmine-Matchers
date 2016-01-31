@@ -2,24 +2,22 @@
 
 > Readable tests.
 
-[![Build Status](https://img.shields.io/travis/JamieMason/Jasmine-Matchers/master.svg?style=flat-square)](https://travis-ci.org/JamieMason/Jasmine-Matchers) [![npm downloads](https://img.shields.io/npm/dm/jasmine-expect.svg?style=flat-square)](https://www.npmjs.com/package/jasmine-expect) [![Code Climate](https://img.shields.io/codeclimate/github/JamieMason/Jasmine-Matchers.svg?style=flat-square)](https://codeclimate.com/github/JamieMason/Jasmine-Matchers) [![Coverage](https://img.shields.io/codeclimate/coverage/github/JamieMason/Jasmine-Matchers.svg?style=flat-square)](https://codeclimate.com/github/JamieMason/Jasmine-Matchers) [![Twitter](https://img.shields.io/twitter/url/https/github.com/JamieMason/Jasmine-Matchers.svg?style=social)](https://twitter.com/intent/tweet?text=Additional%20matchers%20for%20the%20Jasmine%20BDD%20JavaScript%20testing%20library%20%23JavaScript%20%23NodeJS%20&url=https%3A%2F%2Fgithub.com%2FJamieMason%2FJasmine-Matchers) [![GitHub stars](https://img.shields.io/github/stars/JamieMason/Jasmine-Matchers.svg?style=social&label=Star)](https://github.com/JamieMason/Jasmine-Matchers) [![GitHub followers](https://img.shields.io/github/followers/JamieMason.svg?style=social&label=Follow)](https://github.com/JamieMason)
+[![Build Status](https://img.shields.io/travis/JamieMason/Jasmine-Matchers/master.svg?style=flat-square)](https://travis-ci.org/JamieMason/Jasmine-Matchers)
+[![npm downloads](https://img.shields.io/npm/dm/jasmine-expect.svg?style=flat-square)](https://www.npmjs.com/package/jasmine-expect)
+[![Code Climate](https://img.shields.io/codeclimate/github/JamieMason/Jasmine-Matchers.svg?style=flat-square)](https://codeclimate.com/github/JamieMason/Jasmine-Matchers)
+[![Coverage](https://img.shields.io/codeclimate/coverage/github/JamieMason/Jasmine-Matchers.svg?style=flat-square)](https://codeclimate.com/github/JamieMason/Jasmine-Matchers)
+[![Twitter](https://img.shields.io/twitter/url/https/github.com/JamieMason/Jasmine-Matchers.svg?style=social)](https://twitter.com/intent/tweet?text=Additional%20matchers%20for%20the%20Jasmine%20BDD%20JavaScript%20testing%20library%20%23JavaScript%20%23NodeJS%20&url=https%3A%2F%2Fgithub.com%2FJamieMason%2FJasmine-Matchers)
+[![Follow @fold_left on Twitter](https://img.shields.io/twitter/follow/fold_left.svg?style=social)](https://twitter.com/fold_left)
+[![GitHub stars](https://img.shields.io/github/stars/JamieMason/Jasmine-Matchers.svg?style=social&label=Star)](https://github.com/JamieMason/Jasmine-Matchers)
+[![GitHub followers](https://img.shields.io/github/followers/JamieMason.svg?style=social&label=Follow)](https://github.com/JamieMason)
 
 ## Contents
 
-+ [Purpose](#purpose)
-+ [Installation](#installation)
-    + [npm](#npm)
-    + [Bower](#bower)
-    + [Manual](#manual)
-+ [Integration](#integration)
-    + [Browser](#browser)
-    + [Karma](#karma)
-    + [Node.js](#node-js)
-    + [Sublime Text](#sublime-text)
-    + [Tern](#tern)
-+ [Available Matchers](#available-matchers)
-    + [toBeArray](#tobearray), [toHaveArray](#tohavearray), [toBeArrayOfBooleans](#tobearrayofbooleans), [toHaveArrayOfBooleans](#tohavearrayofbooleans), [toBeArrayOfNumbers](#tobearrayofnumbers), [toHaveArrayOfNumbers](#tohavearrayofnumbers), [toBeArrayOfObjects](#tobearrayofobjects), [toHaveArrayOfObjects](#tohavearrayofobjects), [toBeArrayOfSize](#tobearrayofsize), [toHaveArrayOfSize](#tohavearrayofsize), [toBeArrayOfStrings](#tobearrayofstrings), [toHaveArrayOfStrings](#tohavearrayofstrings), [toBeEmptyArray](#tobeemptyarray), [toHaveEmptyArray](#tohaveemptyarray), [toBeNonEmptyArray](#tobenonemptyarray), [toHaveNonEmptyArray](#tohavenonemptyarray), [toBeBoolean](#tobeboolean), [toHaveBoolean](#tohaveboolean), [toBeFalse](#tobefalse), [toHaveFalse](#tohavefalse), [toBeTrue](#tobetrue), [toHaveTrue](#tohavetrue), [toBeAfter](#tobeafter), [toHaveDateAfter](#tohavedateafter), [toBeBefore](#tobebefore), [toHaveDateBefore](#tohavedatebefore), [toBeDate](#tobedate), [toHaveDate](#tohavedate), [toBeIso8601](#tobeiso8601), [toHaveIso8601](#tohaveiso8601), [toBeFunction](#tobefunction), [toHaveMethod](#tohavemethod), [toThrowAnyError](#tothrowanyerror), [toThrowErrorOfType](#tothrowerroroftype), [toBeCalculable](#tobecalculable), [toHaveCalculable](#tohavecalculable), [toBeEvenNumber](#tobeevennumber), [toHaveEvenNumber](#tohaveevennumber), [toBeNumber](#tobenumber), [toHaveNumber](#tohavenumber), [toBeOddNumber](#tobeoddnumber), [toHaveOddNumber](#tohaveoddnumber), [toBeWholeNumber](#tobewholenumber), [toHaveWholeNumber](#tohavewholenumber), [toBeWithinRange](#tobewithinrange), [toHaveNumberWithinRange](#tohavenumberwithinrange), [toBeEmptyObject](#tobeemptyobject), [toHaveEmptyObject](#tohaveemptyobject), [toBeNonEmptyObject](#tobenonemptyobject), [toHaveNonEmptyObject](#tohavenonemptyobject), [toBeObject](#tobeobject), [toHaveObject](#tohaveobject), [toHaveMember](#tohavemember), [toImplement](#toimplement), [toBeEmptyString](#tobeemptystring), [toHaveEmptyString](#tohaveemptystring), [toBeHtmlString](#tobehtmlstring), [toHaveHtmlString](#tohavehtmlstring), [toBeJsonString](#tobejsonstring), [toHaveJsonString](#tohavejsonstring), [toBeLongerThan](#tobelongerthan), [toHaveStringLongerThan](#tohavestringlongerthan), [toBeNonEmptyString](#tobenonemptystring), [toHaveNonEmptyString](#tohavenonemptystring), [toBeSameLengthAs](#tobesamelengthas), [toHaveStringSameLengthAs](#tohavestringsamelengthas), [toBeShorterThan](#tobeshorterthan), [toHaveStringShorterThan](#tohavestringshorterthan), [toBeString](#tobestring), [toHaveString](#tohavestring), [toBeWhitespace](#tobewhitespace), [toEndWith](#toendwith), [toStartWith](#tostartwith), [toHaveWhitespaceString](#tohavewhitespacestring)
-+ [Known Supported Devices](#known-supported-devices)
++ **[Purpose](#purpose)**
++ **[Installation](#installation)**: [npm](#npm), [Bower](#bower), [Manual](#manual)
++ **[Integration](#integration)**: [Browser](#browser), [Karma](#karma), [Node.js](#node-js), [Sublime Text](#sublime-text), [Tern](#tern).
++ **[Available Matchers](#available-matchers)**: [Arrays](#arrays), [Booleans](#booleans), [Dates](#dates), [Functions and Errors](#functions-and-errors), [Numbers](#numbers), [Objects](#objects), [Strings](#strings).
++ **[Known Supported Devices](#known-supported-devices)**
 
 ## Purpose
 
@@ -133,533 +131,100 @@ require('jasmine-expect');
 
 ## Available Matchers
 
-### toBeArray
-
-```javascript
-expect([]).toBeArray();
-```
-
-### toHaveArray
-
-```javascript
-expect({
-    memberName: []
-}).toHaveArray('memberName');
-```
-
-### toBeArrayOfBooleans
-
-```javascript
-expect([true, false, true]).toBeArrayOfBooleans();
-```
-
-### toHaveArrayOfBooleans
-
-```javascript
-expect({
-    memberName: [true, false, true]
-}).toHaveArrayOfBooleans('memberName');
-```
-
-### toBeArrayOfNumbers
-
-```javascript
-expect([12, 82, 7]).toBeArrayOfNumbers();
-```
-
-### toHaveArrayOfNumbers
-
-```javascript
-expect({
-    memberName: [12, 82, 7]
-}).toHaveArrayOfNumbers('memberName');
-```
-
-### toBeArrayOfObjects
-
-```javascript
-expect([{}, {}]).toBeArrayOfObjects();
-```
-
-### toHaveArrayOfObjects
-
-```javascript
-expect({
-    memberName: [{}, {}]
-}).toHaveArrayOfObjects('memberName');
-```
-
-### toBeArrayOfSize
-
-```javascript
-expect([null, 31, 'hi']).toBeArrayOfSize(3);
-```
-
-### toHaveArrayOfSize
-
-```javascript
-expect({
-    memberName: [null, 31, 'hi']).toBeArrayOfSi
-}).toHaveArrayOfSize('memberName', size);
-```
-
-### toBeArrayOfStrings
-
-```javascript
-expect(['foo', 'bar']).toBeArrayOfStrings();
-```
-
-### toHaveArrayOfStrings
-
-```javascript
-expect({
-    memberName: ['foo', 'bar']
-}).toHaveArrayOfStrings('memberName');
-```
-
-### toBeEmptyArray
-
-```javascript
-expect([]).toBeEmptyArray();
-```
-
-### toHaveEmptyArray
-
-```javascript
-expect({
-    memberName: []
-}).toHaveEmptyArray('memberName');
-```
-
-### toBeNonEmptyArray
-
-```javascript
-expect([98, 'banana']).toBeNonEmptyArray();
-```
-
-### toHaveNonEmptyArray
-
-```javascript
-expect({
-    memberName: [98, 'banana']
-}).toHaveNonEmptyArray('memberName');
-```
-
-### toBeBoolean
-
-```javascript
-expect(false).toBeBoolean();
-```
-
-### toHaveBoolean
-
-```javascript
-expect({
-    memberName: false
-}).toHaveBoolean('memberName');
-```
-
-### toBeFalse
-
-```javascript
-expect(false).toBeFalse();
-```
-
-### toHaveFalse
-
-```javascript
-expect({
-    memberName: false
-}).toHaveFalse('memberName');
-```
-
-### toBeTrue
-
-```javascript
-expect(true).toBeTrue();
-```
-
-### toHaveTrue
-
-```javascript
-expect({
-    memberName: true
-}).toHaveTrue('memberName');
-```
-
-### toBeAfter
-
-```javascript
-expect(new Date('2014-01-01')).toBeAfter(new Date('1975-01-01'));
-```
-
-### toHaveDateAfter
-
-```javascript
-expect({
-    memberName: new Date('2014-01-01')
-}).toHaveDateAfter('memberName', new Date('1975-01-01'));
-```
-
-### toBeBefore
-
-```javascript
-expect(new Date('1975-01-01')).toBeBefore(new Date('2014-01-01'));
-```
-
-### toHaveDateBefore
-
-```javascript
-expect({
-    memberName: new Date('1975-01-01')
-}).toHaveDateBefore('memberName', new Date('2014-01-01'));
-```
-
-### toBeDate
-
-```javascript
-expect(new Date()).toBeDate();
-```
-
-### toHaveDate
-
-```javascript
-expect({
-    memberName: new Date()
-}).toHaveDate('memberName');
-```
-
-### toBeIso8601
-
-```javascript
-expect('2013-07-08T07:29:15').toBeIso8601();
-```
-
-### toHaveIso8601
-
-```javascript
-expect({
-    memberName: '2013-07-08T07:29:15'
-}).toHaveIso8601('memberName');
-```
-
-### toBeFunction
-
-```javascript
-expect(function() {}).toBeFunction();
-```
-
-### toHaveMethod
-
-```javascript
-expect({
-    memberName: function() {}
-}).toHaveMethod('memberName');
-```
-
-### toThrowAnyError
-
-```javascript
-expect(function() {
-    return badReference.unreachable;
-}).toThrowAnyError();
-```
-
-### toThrowErrorOfType
-
-```javascript
-expect(function() {
-    return badReference.unreachable;
-}).toThrowErrorOfType(ReferenceError);
-```
-
-### toBeCalculable
-
-```javascript
-expect('12').toBeCalculable();
-```
-
-### toHaveCalculable
-
-```javascript
-expect({
-    memberName: '14'
-}).toHaveCalculable('memberName');
-```
-
-### toBeEvenNumber
-
-```javascript
-expect(4).toBeEvenNumber();
-```
-
-### toHaveEvenNumber
-
-```javascript
-expect({
-    memberName: 4
-}).toHaveEvenNumber('memberName');
-```
-
-### toBeNumber
-
-```javascript
-expect(66).toBeNumber();
-```
-
-### toHaveNumber
-
-```javascript
-expect({
-    memberName: 66
-}).toHaveNumber('memberName');
-```
-
-### toBeOddNumber
-
-```javascript
-expect(3).toBeOddNumber();
-```
-
-### toHaveOddNumber
-
-```javascript
-expect({
-    memberName: 3
-}).toHaveOddNumber('memberName');
-```
-
-### toBeWholeNumber
-
-```javascript
-expect(10).toBeWholeNumber();
-```
-
-### toHaveWholeNumber
-
-```javascript
-expect({
-    memberName: 10
-}).toHaveWholeNumber('memberName');
-```
-
-### toBeWithinRange
-
-```javascript
-expect(6).toBeWithinRange(0, 10);
-```
-
-### toHaveNumberWithinRange
-
-```javascript
-expect({
-    memberName: 6
-}).toHaveNumberWithinRange('memberName', 0, 10);
-```
-
-### toBeEmptyObject
-
-```javascript
-expect({}).toBeEmptyObject();
-```
-
-### toHaveEmptyObject
-
-```javascript
-expect({
-    memberName: {}
-}).toHaveEmptyObject('memberName');
-```
-
-### toBeNonEmptyObject
-
-```javascript
-expect({
-    some: 'data'
-}).toBeNonEmptyObject();
-```
-
-### toHaveNonEmptyObject
-
-```javascript
-expect({
-    memberName: {
-        some: 'data'
-    }
-}).toHaveNonEmptyObject('memberName');
-```
-
-### toBeObject
-
-```javascript
-expect({}).toBeObject();
-```
-
-### toHaveObject
-
-```javascript
-expect({
-    memberName: {}
-}).toHaveObject('memberName');
-```
-
-### toHaveMember
-
-```javascript
-expect({
-    memberName: undefined
-}).toHaveMember('memberName');
-```
-
-### toImplement
-
-```javascript
-expect({
-    name: 'Clive',
-    age: 72
-}).toImplement({
-    name: String,
-    age: Number
-});
-```
-
-### toBeEmptyString
-
-```javascript
-expect('').toBeEmptyString();
-```
-
-### toHaveEmptyString
-
-```javascript
-expect({
-    memberName: ''
-}).toHaveEmptyString('memberName');
-```
-
-### toBeHtmlString
-
-```javascript
-expect('<div></div>').toBeHtmlString();
-```
-
-### toHaveHtmlString
-
-```javascript
-expect({
-    memberName: '<div></div>'
-}).toHaveHtmlString('memberName');
-```
-
-### toBeJsonString
-
-```javascript
-expect('{"name":"Winston"}').toBeJsonString();
-```
-
-### toHaveJsonString
-
-```javascript
-expect({
-    memberName: '{"name":"Winston"}'
-}).toHaveJsonString('memberName');
-```
-
-### toBeLongerThan
-
-```javascript
-expect('Antidisestablishmentarianism').toBeLongerThan('No');
-```
-
-### toHaveStringLongerThan
-
-```javascript
-expect({
-    memberName: 'Antidisestablishmentarianism'
-}).toHaveStringLongerThan('memberName', 'No');
-```
-
-### toBeNonEmptyString
-
-```javascript
-expect('filled up').toBeNonEmptyString();
-```
-
-### toHaveNonEmptyString
-
-```javascript
-expect({
-    memberName: 'filled up'
-}).toHaveNonEmptyString('memberName');
-```
-
-### toBeSameLengthAs
-
-```javascript
-expect('Paul').toBeSameLengthAs('Jean');
-```
-
-### toHaveStringSameLengthAs
-
-```javascript
-expect({
-    memberName: 'Paul'
-}).toHaveStringSameLengthAs('memberName', 'Jean');
-```
-
-### toBeShorterThan
-
-```javascript
-expect('No').toBeShorterThan('Antidisestablishmentarianism');
-```
-
-### toHaveStringShorterThan
-
-```javascript
-expect({
-    memberName: 'No'
-}).toHaveStringShorterThan('memberName', 'Antidisestablishmentarianism');
-```
-
-### toBeString
-
-```javascript
-expect('').toBeString();
-```
-
-### toHaveString
-
-```javascript
-expect({
-    memberName: ''
-}).toHaveString('memberName');
-```
-
-### toBeWhitespace
-
-```javascript
-expect(' ').toBeWhitespace();
-```
-
-### toEndWith
-
-```javascript
-expect('grandmother').toEndWith('mother');
-```
-
-### toStartWith
-
-```javascript
-expect('physiotherapy').toStartWith('physio');
-```
-
-### toHaveWhitespaceString
-
-```javascript
-expect({
-    memberName: ' '
-}).toHaveWhitespaceString('memberName');
-```
+### Arrays
+
++ [toBeArray](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeArray.spec.js)
++ [toBeArrayOfBooleans](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeArrayOfBooleans.spec.js)
++ [toBeArrayOfNumbers](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeArrayOfNumbers.spec.js)
++ [toBeArrayOfObjects](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeArrayOfObjects.spec.js)
++ [toBeArrayOfSize](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeArrayOfSize.spec.js)
++ [toBeArrayOfStrings](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeArrayOfStrings.spec.js)
++ [toBeEmptyArray](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeEmptyArray.spec.js)
++ [toBeNonEmptyArray](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeNonEmptyArray.spec.js)
+
+### Booleans
+
++ [toBeBoolean](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeBoolean.spec.js)
++ [toBeFalse](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeFalse.spec.js)
++ [toBeTrue](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeTrue.spec.js)
+
+### Dates
+
++ [toBeAfter](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeAfter.spec.js)
++ [toBeBefore](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeBefore.spec.js)
++ [toBeDate](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeDate.spec.js)
++ [toBeIso8601](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeIso8601.spec.js)
+
+### Functions and Errors
+
++ [toBeFunction](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeFunction.spec.js)
++ [toThrowAnyError](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toThrowAnyError.spec.js)
++ [toThrowErrorOfType](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toThrowErrorOfType.spec.js)
+
+### Numbers
+
++ [toBeCalculable](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeCalculable.spec.js)
++ [toBeEvenNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeEvenNumber.spec.js)
++ [toBeNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeNumber.spec.js)
++ [toBeOddNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeOddNumber.spec.js)
++ [toBeWholeNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeWholeNumber.spec.js)
++ [toBeWithinRange](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeWithinRange.spec.js)
+
+### Objects
+
++ [toBeEmptyObject](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeEmptyObject.spec.js)
++ [toBeNonEmptyObject](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeNonEmptyObject.spec.js)
++ [toBeObject](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeObject.spec.js)
++ [toHaveArray](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveArray.spec.js)
++ [toHaveArrayOfBooleans](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveArrayOfBooleans.spec.js)
++ [toHaveArrayOfNumbers](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveArrayOfNumbers.spec.js)
++ [toHaveArrayOfObjects](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveArrayOfObjects.spec.js)
++ [toHaveArrayOfSize](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveArrayOfSize.spec.js)
++ [toHaveArrayOfStrings](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveArrayOfStrings.spec.js)
++ [toHaveBoolean](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveBoolean.spec.js)
++ [toHaveCalculable](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveCalculable.spec.js)
++ [toHaveDate](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveDate.spec.js)
++ [toHaveDateAfter](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveDateAfter.spec.js)
++ [toHaveDateBefore](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveDateBefore.spec.js)
++ [toHaveEmptyArray](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveEmptyArray.spec.js)
++ [toHaveEmptyObject](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveEmptyObject.spec.js)
++ [toHaveEmptyString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveEmptyString.spec.js)
++ [toHaveEvenNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveEvenNumber.spec.js)
++ [toHaveFalse](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveFalse.spec.js)
++ [toHaveHtmlString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveHtmlString.spec.js)
++ [toHaveIso8601](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveIso8601.spec.js)
++ [toHaveJsonString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveJsonString.spec.js)
++ [toHaveMember](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveMember.spec.js)
++ [toHaveMethod](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveMethod.spec.js)
++ [toHaveNonEmptyArray](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveNonEmptyArray.spec.js)
++ [toHaveNonEmptyObject](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveNonEmptyObject.spec.js)
++ [toHaveNonEmptyString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveNonEmptyString.spec.js)
++ [toHaveNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveNumber.spec.js)
++ [toHaveNumberWithinRange](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveNumberWithinRange.spec.js)
++ [toHaveObject](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveObject.spec.js)
++ [toHaveOddNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveOddNumber.spec.js)
++ [toHaveString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveString.spec.js)
++ [toHaveStringLongerThan](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveStringLongerThan.spec.js)
++ [toHaveStringSameLengthAs](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveStringSameLengthAs.spec.js)
++ [toHaveStringShorterThan](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveStringShorterThan.spec.js)
++ [toHaveTrue](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveTrue.spec.js)
++ [toHaveWhitespaceString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveWhitespaceString.spec.js)
++ [toHaveWholeNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveWholeNumber.spec.js)
++ [toImplement](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toImplement.spec.js)
+
+### Strings
+
++ [toBeEmptyString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeEmptyString.spec.js)
++ [toBeHtmlString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeHtmlString.spec.js)
++ [toBeJsonString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeJsonString.spec.js)
++ [toBeLongerThan](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeLongerThan.spec.js)
++ [toBeNonEmptyString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeNonEmptyString.spec.js)
++ [toBeSameLengthAs](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeSameLengthAs.spec.js)
++ [toBeShorterThan](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeShorterThan.spec.js)
++ [toBeString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeString.spec.js)
++ [toBeWhitespace](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeWhitespace.spec.js)
++ [toEndWith](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toEndWith.spec.js)
++ [toStartWith](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toStartWith.spec.js)
 
 ## Known Supported Devices
 
