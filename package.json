@@ -34,6 +34,7 @@
     "karma-cli": "0.1.2",
     "karma-coverage": "0.5.3",
     "karma-firefox-launcher": "0.1.7",
+    "karma-ievms": "0.1.0",
     "karma-jasmine": "0.3.6",
     "karma-nested-reporter": "0.1.4",
     "karma-opera-launcher": "0.3.0",
@@ -64,14 +65,11 @@
     "development-watchers": "gulp development-watchers",
     "formatter": "esformatter -i --config .esformatter 'dist/**/*.js' 'src/**/*.js' 'test/**/*.js' 'tasks/**/*.js' '*.js'",
     "linter": "eslint .",
-    "test": "karma start karma.conf.js --single-run",
-    "test-ie10-ievms": "karma start karma-ievms-ie10.conf.js --single-run",
-    "test-ie11-saucelabs": "karma start karma-saucelabs-ie.conf.js --single-run",
-    "test-ie7-ievms": "karma start karma-ievms-ie7.conf.js --single-run",
-    "test-ie8-ievms": "karma start karma-ievms-ie8.conf.js --single-run",
-    "test-ie9-ievms": "karma start karma-ievms-ie9.conf.js --single-run",
-    "test-local": "karma start karma-local.conf.js --single-run",
-    "test-opera-emulator": "karma start karma-opera-emulator.conf.js --single-run",
+    "test": "npm run test-desktop && npm run test-ie && npm run test-mobile",
+    "test-all": "karma start karma-saucelabs.conf.js",
+    "test-desktop": "npm run test-all -- --browsers winChrome47 osxSafari9 osxSafari8 osxFirefox43 osxFirefox40",
+    "test-ie": "npm run test-all -- --browsers winIe11 winIe10 winIe9",
+    "test-mobile": "npm run test-all -- --browsers android-4.4 android-5.1 ios-9.2 ios-8.4 ios-8.0",
     "test-watcher": "karma start --no-single-run --auto-watch"
   }
 }

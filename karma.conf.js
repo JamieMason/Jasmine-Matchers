@@ -4,7 +4,7 @@ module.exports = function(config) {
 
     config.set({
 
-        autoWatch: true,
+        autoWatch: false,
 
         browsers: [
             'PhantomJS'
@@ -67,6 +67,8 @@ module.exports = function(config) {
             'nested',
             'coverage'
         ],
+
+        singleRun: true,
 
         thresholdReporter: {
             statements: 95,
