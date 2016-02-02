@@ -13,7 +13,7 @@ function toImplement(api, actual) {
 
 function featuresAll(api, actual) {
     for (var key in api) {
-        if (api.hasOwnProperty(key) && !is(actual[key], api[key].name)) {
+        if (!actual[key] || actual[key].constructor !== api[key]) {
             return false;
         }
     }
