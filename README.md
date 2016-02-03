@@ -15,9 +15,9 @@
 
 + **[Purpose](#purpose)**
 + **[Installation](#installation)**: [npm](#npm), [Bower](#bower), [Manual](#manual)
-+ **[Integration](#integration)**: [Browser](#browser), [Karma](#karma), [Node.js](#node-js), [Sublime Text](#sublime-text), [Tern](#tern).
++ **[Integration](#integration)**: [Browser](#browser), [Karma](#karma), [Node.js](#node-js), [Sublime Text](#sublime-text), [Tern](#tern), [Jest](#jest).
 + **[Available Matchers](#available-matchers)**: [Arrays](#arrays), [Booleans](#booleans), [Dates](#dates), [Functions and Errors](#functions-and-errors), [Numbers](#numbers), [Objects](#objects), [Strings](#strings).
-+ **[Known Supported Devices](#known-supported-devices)**
++ **[Browser Test Suite](#browser-test-suite)**
 
 ## Purpose
 
@@ -129,6 +129,24 @@ require('jasmine-expect');
 
 [Plugin](https://github.com/ik9999/tern-jasminematchers) for [Tern](https://github.com/ternjs/tern) to auto-complete matchers in supported editors.
 
+### Jest
+
+Jasmine Matchers can be used with Facebook's [Jest](https://facebook.github.io/jest/).
+
+```js
+// package.json
+"unmockedModulePathPatterns": [
+    "jasmine-expect"
+],
+```
+
+```js
+// some test
+import JasmineExpect from 'jasmine-expect';
+// ...
+expect(someValue).toBeArrayOfObjects();
+```
+
 ## Available Matchers
 
 ### Arrays
@@ -226,18 +244,20 @@ require('jasmine-expect');
 + [toEndWith](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toEndWith.spec.js)
 + [toStartWith](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toStartWith.spec.js)
 
-## Known Supported Devices
+## Browser Test Suite
 
-During development, Jasmine-Matchers is tested against the following environments.
+Jasmine-Matchers is tested on [Travis CI](https://travis-ci.org/JamieMason/Jasmine-Matchers) and [Sauce Labs](https://saucelabs.com) against the following environments.
 
-+ Chrome 40.0.2214 (Mac OS X 10.10.1)
-+ Firefox 33.0.0 (Mac OS X 10.10)
-+ IE 7 (Windows XP on VirtualBox)
-+ IE 8 (Windows XP on VirtualBox)
-+ IE 9 (Windows 7 on VirtualBox)
-+ IE 10 (Windows 7 on VirtualBox)
-+ IE 11 (Windows 8.1 on SauceLabs)
-+ Opera 27.0.1689 (Mac OS X 10.10.1)
-+ Opera Mobile (Amazon Kindle Fire HD 8.9 on Opera Mobile Emulator)
-+ PhantomJS 1.9.8 (Mac OS X)
-+ Safari 8.0.2 (Mac OS X 10.10.1)
++ Android 4.4 on Linux
++ Android 5.1 on Linux
++ Chrome 47 on Windows 10
++ Firefox 40.0 on OS X 10.10
++ Firefox 43.0 on OS X 10.10
++ IE 10 on Windows 7
++ IE 11 on Windows 8.1
++ IE 9 on Windows 7
++ iOS 8.0 on OS X 10.10
++ iOS 8.4 on OS X 10.10
++ iOS 9.2 on OS X 10.10
++ Safari 8.0 on OS X 10.10
++ Safari 9.0 on OS X 10.11
