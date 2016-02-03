@@ -57,6 +57,8 @@ module.exports = function(config) {
             'jasmine'
         ],
 
+        logLevel: 'error',
+
         preprocessors: {
             '**/dist/jasmine-matchers.js': [
                 'coverage'

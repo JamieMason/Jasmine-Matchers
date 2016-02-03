@@ -65,11 +65,11 @@
     "development-watchers": "gulp development-watchers",
     "formatter": "esformatter -i --config .esformatter 'dist/**/*.js' 'src/**/*.js' 'test/**/*.js' 'tasks/**/*.js' '*.js'",
     "linter": "eslint .",
-    "test": "npm run test-desktop && npm run test-ie && npm run test-mobile",
-    "test-all": "karma start karma-saucelabs.conf.js",
-    "test-desktop": "npm run test-all -- --browsers winChrome47 osxSafari9 osxSafari8 osxFirefox43 osxFirefox40",
-    "test-ie": "npm run test-all -- --browsers winIe11 winIe10 winIe9",
-    "test-mobile": "npm run test-all -- --browsers android-4.4 android-5.1 ios-9.2 ios-8.4 ios-8.0",
+    "test": "bin/test-runner.sh",
+    "test-saucelabs": "karma start karma-saucelabs.conf.js",
+    "test-desktop": "npm run test-saucelabs -- --browsers winChrome47 osxSafari9 osxSafari8 osxFirefox43 osxFirefox40",
+    "test-ie": "npm run test-saucelabs -- --browsers winIe11 winIe10 winIe9",
+    "test-mobile": "npm run test-saucelabs -- --browsers android-4.4 android-5.1 ios-9.2 ios-8.4 ios-8.0",
     "test-watcher": "karma start --no-single-run --auto-watch"
   }
 }
