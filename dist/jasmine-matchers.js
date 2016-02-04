@@ -1707,8 +1707,8 @@
     81: [function(require, module, exports) {
         'use strict';
 
-        var is = require('./lib/is');
         var toBeObject = require('./toBeObject');
+        var toHaveMember = require('./toHaveMember');
 
         module.exports = toImplement;
 
@@ -1720,7 +1720,7 @@
 
         function featuresAll(api, actual) {
             for (var key in api) {
-                if (!actual[key] || actual[key].constructor !== api[key]) {
+                if (!toHaveMember(key, actual) || actual[key].constructor !== api[key]) {
                     return false;
                 }
             }
@@ -1728,8 +1728,8 @@
         }
 
     }, {
-        './lib/is': 8,
-        './toBeObject': 36
+        './toBeObject': 36,
+        './toHaveMember': 65
     }],
     82: [function(require, module, exports) {
         'use strict';

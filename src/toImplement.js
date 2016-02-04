@@ -1,7 +1,7 @@
 'use strict';
 
-var is = require('./lib/is');
 var toBeObject = require('./toBeObject');
+var toHaveMember = require('./toHaveMember');
 
 module.exports = toImplement;
 
@@ -13,7 +13,7 @@ function toImplement(api, actual) {
 
 function featuresAll(api, actual) {
     for (var key in api) {
-        if (!actual[key] || actual[key].constructor !== api[key]) {
+        if (!toHaveMember(key, actual) || actual[key].constructor !== api[key]) {
             return false;
         }
     }

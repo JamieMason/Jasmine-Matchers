@@ -7,14 +7,17 @@ describe('toImplement', function() {
                 it('should confirm', function() {
                     expect({
                         a: 1,
-                        b: 2
+                        b: 0,
+                        c: false
                     }).toImplement({
                         a: Number,
-                        b: Number
+                        b: Number,
+                        c: Boolean
                     });
                     expect({
                         a: 1,
-                        b: 2
+                        b: 0,
+                        c: false
                     }).toImplement({
                         a: Number
                     });
