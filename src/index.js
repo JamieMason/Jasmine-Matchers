@@ -25,7 +25,7 @@
  * SOFTWARE.
  */
 
-var factory = require('./lib/factory');
+var jasmineMatchers = require('jasmine-matchers-loader');
 
 var matchers = {
     toBeAfter: require('./toBeAfter'),
@@ -104,8 +104,6 @@ var matchers = {
     toHaveWholeNumber: require('./toHaveWholeNumber')
 };
 
-for (var matcherName in matchers) {
-    factory(matcherName, matchers[matcherName]);
-}
+jasmineMatchers.add(matchers);
 
 module.exports = matchers;

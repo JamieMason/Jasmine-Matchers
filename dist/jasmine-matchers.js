@@ -31,6 +31,271 @@
     1: [function(require, module, exports) {
         'use strict';
 
+        module.exports = require('./src');
+
+    }, {
+        './src': 2
+    }],
+    2: [function(require, module, exports) {
+        'use strict';
+
+        var adapters = typeof jasmine.addMatchers === 'function' ?
+            require('./jasmine-v2') :
+            require('./jasmine-v1');
+
+        module.exports = {
+            add: addMatchers
+        };
+
+        function addMatchers(matchers) {
+            for (var matcherName in matchers) {
+                addMatcher(matcherName, matchers[matcherName]);
+            }
+        }
+
+        function addMatcher(name, matcher) {
+            var adapter = adapters[matcher.length];
+            return adapter(name, matcher);
+        }
+
+    }, {
+        './jasmine-v1': 3,
+        './jasmine-v2': 4
+    }],
+    3: [function(require, module, exports) {
+        'use strict';
+
+        module.exports = {
+            1: createFactory(forActual),
+            2: createFactory(forActualAndExpected),
+            3: createFactory(forActualAndTwoExpected),
+            4: createFactory(forKeyAndActualAndTwoExpected)
+        };
+
+        function createFactory(adapter) {
+            return function jasmineV1MatcherFactory(name, matcher) {
+                var matcherByName = new JasmineV1Matcher(name, adapter, matcher);
+                beforeEach(function() {
+                    this.addMatchers(matcherByName);
+                });
+                return matcherByName;
+            };
+        }
+
+        function JasmineV1Matcher(name, adapter, matcher) {
+            this[name] = adapter(name, matcher);
+        }
+
+        function forActual(name, matcher) {
+            return function(optionalMessage) {
+                return matcher(this.actual, optionalMessage);
+            };
+        }
+
+        function forActualAndExpected(name, matcher) {
+            return function(expected, optionalMessage) {
+                return matcher(expected, this.actual, optionalMessage);
+            };
+        }
+
+        function forActualAndTwoExpected(name, matcher) {
+            return function(expected1, expected2, optionalMessage) {
+                return matcher(expected1, expected2, this.actual, optionalMessage);
+            };
+        }
+
+        function forKeyAndActualAndTwoExpected(name, matcher) {
+            return function(key, expected1, expected2, optionalMessage) {
+                return matcher(key, expected1, expected2, this.actual, optionalMessage);
+            };
+        }
+
+    }, {}],
+    4: [function(require, module, exports) {
+        'use strict';
+
+        var matcherFactory = require('./matcherFactory');
+        var memberMatcherFactory = require('./memberMatcherFactory');
+
+        module.exports = {
+            1: createFactory(getAdapter(1)),
+            2: createFactory(getAdapter(2)),
+            3: createFactory(getAdapter(3)),
+            4: createFactory(getAdapter(4))
+        };
+
+        function createFactory(adapter) {
+            return function jasmineV2MatcherFactory(name, matcher) {
+                var matcherByName = new JasmineV2Matcher(name, adapter, matcher);
+                beforeEach(function() {
+                    jasmine.addMatchers(matcherByName);
+                });
+                return matcherByName;
+            };
+        }
+
+        function JasmineV2Matcher(name, adapter, matcher) {
+            this[name] = adapter(name, matcher);
+        }
+
+        function getAdapter(argsCount) {
+            return function adapter(name, matcher) {
+                var factory = isMemberMatcher(name) ? memberMatcherFactory : matcherFactory;
+                return factory[argsCount](name, matcher);
+            };
+        }
+
+        function isMemberMatcher(name) {
+            return name.search(/^toHave/) !== -1;
+        }
+
+    }, {
+        './matcherFactory': 5,
+        './memberMatcherFactory': 6
+    }],
+    5: [function(require, module, exports) {
+        'use strict';
+
+        module.exports = {
+            1: forActual,
+            2: forActualAndExpected,
+            3: forActualAndTwoExpected
+        };
+
+        function forActual(name, matcher) {
+            return function(util) {
+                return {
+                    compare: function(actual, optionalMessage) {
+                        var passes = matcher(actual);
+                        return {
+                            pass: passes,
+                            message: (
+                            optionalMessage ?
+                                util.buildFailureMessage(name, passes, actual, optionalMessage) :
+                                util.buildFailureMessage(name, passes, actual)
+                            )
+                        };
+                    }
+                };
+            };
+        }
+
+        function forActualAndExpected(name, matcher) {
+            return function(util) {
+                return {
+                    compare: function(actual, expected, optionalMessage) {
+                        var passes = matcher(expected, actual);
+                        return {
+                            pass: passes,
+                            message: (
+                            optionalMessage ?
+                                util.buildFailureMessage(name, passes, actual, expected, optionalMessage) :
+                                util.buildFailureMessage(name, passes, actual, expected)
+                            )
+                        };
+                    }
+                };
+            };
+        }
+
+        function forActualAndTwoExpected(name, matcher) {
+            return function(util) {
+                return {
+                    compare: function(actual, expected1, expected2, optionalMessage) {
+                        var passes = matcher(expected1, expected2, actual);
+                        return {
+                            pass: passes,
+                            message: (
+                            optionalMessage ?
+                                util.buildFailureMessage(name, passes, actual, expected1, expected2, optionalMessage) :
+                                util.buildFailureMessage(name, passes, actual, expected1, expected2)
+                            )
+                        };
+                    }
+                };
+            };
+        }
+
+    }, {}],
+    6: [function(require, module, exports) {
+        'use strict';
+
+        module.exports = {
+            2: forKeyAndActual,
+            3: forKeyAndActualAndExpected,
+            4: forKeyAndActualAndTwoExpected
+        };
+
+        function forKeyAndActual(name, matcher) {
+            return function(util) {
+                return {
+                    compare: function(actual, key, optionalMessage) {
+                        var passes = matcher(key, actual);
+                        var message = name.search(/^toHave/) !== -1 ? key : optionalMessage;
+                        return {
+                            pass: passes,
+                            message: (
+                            message ?
+                                util.buildFailureMessage(name, passes, actual, message) :
+                                util.buildFailureMessage(name, passes, actual)
+                            )
+                        };
+                    }
+                };
+            };
+        }
+
+        function forKeyAndActualAndExpected(name, matcher) {
+            return function(util) {
+                return {
+                    compare: function(actual, key, expected, optionalMessage) {
+                        var passes = matcher(key, expected, actual);
+                        var message = (optionalMessage ?
+                            util.buildFailureMessage(name, passes, actual, expected, optionalMessage) :
+                            util.buildFailureMessage(name, passes, actual, expected)
+                        );
+
+                        return {
+                            pass: passes,
+                            message: formatErrorMessage(name, message, key)
+                        };
+                    }
+                };
+            };
+        }
+
+        function forKeyAndActualAndTwoExpected(name, matcher) {
+            return function(util) {
+                return {
+                    compare: function(actual, key, expected1, expected2, optionalMessage) {
+                        var passes = matcher(key, expected1, expected2, actual);
+                        var message = (optionalMessage ?
+                            util.buildFailureMessage(name, passes, actual, expected1, expected2, optionalMessage) :
+                            util.buildFailureMessage(name, passes, actual, expected1, expected2)
+                        );
+
+                        return {
+                            pass: passes,
+                            message: formatErrorMessage(name, message, key)
+                        };
+                    }
+                };
+            };
+        }
+
+        function formatErrorMessage(name, message, key) {
+            if (name.search(/^toHave/) !== -1) {
+                return message
+                    .replace('Expected', 'Expected member "' + key + '" of')
+                    .replace(' to have ', ' to be ');
+            }
+            return message;
+        }
+
+    }, {}],
+    7: [function(require, module, exports) {
+        'use strict';
+
         /*
          * Copyright © Jamie Mason, @fold_left,
          * https://github.com/JamieMason
@@ -56,7 +321,7 @@
          * SOFTWARE.
          */
 
-        var factory = require('./lib/factory');
+        var jasmineMatchers = require('jasmine-matchers-loader');
 
         var matchers = {
             toBeAfter: require('./toBeAfter'),
@@ -135,14 +400,11 @@
             toHaveWholeNumber: require('./toHaveWholeNumber')
         };
 
-        for (var matcherName in matchers) {
-            factory(matcherName, matchers[matcherName]);
-        }
+        jasmineMatchers.add(matchers);
 
         module.exports = matchers;
 
     }, {
-        './lib/factory': 3,
         './toBeAfter': 11,
         './toBeArray': 12,
         './toBeArrayOfBooleans': 13,
@@ -216,9 +478,10 @@
         './toImplement': 81,
         './toStartWith': 82,
         './toThrowAnyError': 83,
-        './toThrowErrorOfType': 84
+        './toThrowErrorOfType': 84,
+        'jasmine-matchers-loader': 1
     }],
-    2: [function(require, module, exports) {
+    8: [function(require, module, exports) {
         'use strict';
 
         module.exports = every;
@@ -233,249 +496,7 @@
         }
 
     }, {}],
-    3: [function(require, module, exports) {
-        'use strict';
-
-        var adapters = typeof jasmine.addMatchers === 'function' ?
-            require('./jasmine-v2') :
-            require('./jasmine-v1');
-
-        module.exports = function(name, matcher) {
-            var adapter = adapters[matcher.length];
-            return adapter(name, matcher);
-        };
-
-    }, {
-        './jasmine-v1': 4,
-        './jasmine-v2': 5
-    }],
-    4: [function(require, module, exports) {
-        'use strict';
-
-        module.exports = {
-            1: createFactory(forActual),
-            2: createFactory(forActualAndExpected),
-            3: createFactory(forActualAndTwoExpected),
-            4: createFactory(forKeyAndActualAndTwoExpected)
-        };
-
-        function createFactory(adapter) {
-            return function jasmineV1MatcherFactory(name, matcher) {
-                var matcherByName = new JasmineV1Matcher(name, adapter, matcher);
-                beforeEach(function() {
-                    this.addMatchers(matcherByName);
-                });
-                return matcherByName;
-            };
-        }
-
-        function JasmineV1Matcher(name, adapter, matcher) {
-            this[name] = adapter(name, matcher);
-        }
-
-        function forActual(name, matcher) {
-            return function(optionalMessage) {
-                return matcher(this.actual, optionalMessage);
-            };
-        }
-
-        function forActualAndExpected(name, matcher) {
-            return function(expected, optionalMessage) {
-                return matcher(expected, this.actual, optionalMessage);
-            };
-        }
-
-        function forActualAndTwoExpected(name, matcher) {
-            return function(expected1, expected2, optionalMessage) {
-                return matcher(expected1, expected2, this.actual, optionalMessage);
-            };
-        }
-
-        function forKeyAndActualAndTwoExpected(name, matcher) {
-            return function(key, expected1, expected2, optionalMessage) {
-                return matcher(key, expected1, expected2, this.actual, optionalMessage);
-            };
-        }
-
-    }, {}],
-    5: [function(require, module, exports) {
-        'use strict';
-
-        var matcherFactory = require('./matcherFactory');
-        var memberMatcherFactory = require('./memberMatcherFactory');
-
-        module.exports = {
-            1: createFactory(getAdapter(1)),
-            2: createFactory(getAdapter(2)),
-            3: createFactory(getAdapter(3)),
-            4: createFactory(getAdapter(4))
-        };
-
-        function createFactory(adapter) {
-            return function jasmineV2MatcherFactory(name, matcher) {
-                var matcherByName = new JasmineV2Matcher(name, adapter, matcher);
-                beforeEach(function() {
-                    jasmine.addMatchers(matcherByName);
-                });
-                return matcherByName;
-            };
-        }
-
-        function JasmineV2Matcher(name, adapter, matcher) {
-            this[name] = adapter(name, matcher);
-        }
-
-        function getAdapter(argsCount) {
-            return function adapter(name, matcher) {
-                var factory = isMemberMatcher(name) ? memberMatcherFactory : matcherFactory;
-                return factory[argsCount](name, matcher);
-            };
-        }
-
-        function isMemberMatcher(name) {
-            return name.search(/^toHave/) !== -1;
-        }
-
-    }, {
-        './matcherFactory': 6,
-        './memberMatcherFactory': 7
-    }],
-    6: [function(require, module, exports) {
-        'use strict';
-
-        module.exports = {
-            1: forActual,
-            2: forActualAndExpected,
-            3: forActualAndTwoExpected
-        };
-
-        function forActual(name, matcher) {
-            return function(util) {
-                return {
-                    compare: function(actual, optionalMessage) {
-                        var passes = matcher(actual);
-                        return {
-                            pass: passes,
-                            message: (
-                            optionalMessage ?
-                                util.buildFailureMessage(name, passes, actual, optionalMessage) :
-                                util.buildFailureMessage(name, passes, actual)
-                            )
-                        };
-                    }
-                };
-            };
-        }
-
-        function forActualAndExpected(name, matcher) {
-            return function(util) {
-                return {
-                    compare: function(actual, expected, optionalMessage) {
-                        var passes = matcher(expected, actual);
-                        return {
-                            pass: passes,
-                            message: (
-                            optionalMessage ?
-                                util.buildFailureMessage(name, passes, actual, expected, optionalMessage) :
-                                util.buildFailureMessage(name, passes, actual, expected)
-                            )
-                        };
-                    }
-                };
-            };
-        }
-
-        function forActualAndTwoExpected(name, matcher) {
-            return function(util) {
-                return {
-                    compare: function(actual, expected1, expected2, optionalMessage) {
-                        var passes = matcher(expected1, expected2, actual);
-                        return {
-                            pass: passes,
-                            message: (
-                            optionalMessage ?
-                                util.buildFailureMessage(name, passes, actual, expected1, expected2, optionalMessage) :
-                                util.buildFailureMessage(name, passes, actual, expected1, expected2)
-                            )
-                        };
-                    }
-                };
-            };
-        }
-
-    }, {}],
-    7: [function(require, module, exports) {
-        'use strict';
-
-        var matchersUtil = require('../../matchersUtil.js');
-
-        module.exports = {
-            2: forKeyAndActual,
-            3: forKeyAndActualAndExpected,
-            4: forKeyAndActualAndTwoExpected
-        };
-
-        function forKeyAndActual(name, matcher) {
-            return function(util) {
-                return {
-                    compare: function(actual, key, optionalMessage) {
-                        var passes = matcher(key, actual);
-                        var message = name.search(/^toHave/) !== -1 ? key : optionalMessage;
-                        return {
-                            pass: passes,
-                            message: (
-                            message ?
-                                util.buildFailureMessage(name, passes, actual, message) :
-                                util.buildFailureMessage(name, passes, actual)
-                            )
-                        };
-                    }
-                };
-            };
-        }
-
-        function forKeyAndActualAndExpected(name, matcher) {
-            return function(util) {
-                return {
-                    compare: function(actual, key, expected, optionalMessage) {
-                        var passes = matcher(key, expected, actual);
-                        var message = (optionalMessage ?
-                            util.buildFailureMessage(name, passes, actual, expected, optionalMessage) :
-                            util.buildFailureMessage(name, passes, actual, expected)
-                        );
-
-                        return {
-                            pass: passes,
-                            message: matchersUtil.formatErrorMessage(name, message, key)
-                        };
-                    }
-                };
-            };
-        }
-
-        function forKeyAndActualAndTwoExpected(name, matcher) {
-            return function(util) {
-                return {
-                    compare: function(actual, key, expected1, expected2, optionalMessage) {
-                        var passes = matcher(key, expected1, expected2, actual);
-                        var message = (optionalMessage ?
-                            util.buildFailureMessage(name, passes, actual, expected1, expected2, optionalMessage) :
-                            util.buildFailureMessage(name, passes, actual, expected1, expected2)
-                        );
-
-                        return {
-                            pass: passes,
-                            message: matchersUtil.formatErrorMessage(name, message, key)
-                        };
-                    }
-                };
-            };
-        }
-
-    }, {
-        '../../matchersUtil.js': 10
-    }],
-    8: [function(require, module, exports) {
+    9: [function(require, module, exports) {
         'use strict';
 
         module.exports = is;
@@ -485,7 +506,7 @@
         }
 
     }, {}],
-    9: [function(require, module, exports) {
+    10: [function(require, module, exports) {
         'use strict';
 
         module.exports = keys;
@@ -499,23 +520,6 @@
             }
             return list;
         }
-
-    }, {}],
-    10: [function(require, module, exports) {
-        'use strict';
-
-        var matchersUtil = {
-            formatErrorMessage: function(name, message, key) {
-                if (name.search(/^toHave/) !== -1) {
-                    return message
-                        .replace('Expected', 'Expected member "' + key + '" of')
-                        .replace(' to have ', ' to be ');
-                }
-                return message;
-            }
-        };
-
-        module.exports = matchersUtil;
 
     }, {}],
     11: [function(require, module, exports) {
@@ -544,7 +548,7 @@
         }
 
     }, {
-        './lib/is': 8
+        './lib/is': 9
     }],
     13: [function(require, module, exports) {
         'use strict';
@@ -561,7 +565,7 @@
         }
 
     }, {
-        './lib/every': 2,
+        './lib/every': 8,
         './toBeArray': 12,
         './toBeBoolean': 19
     }],
@@ -580,7 +584,7 @@
         }
 
     }, {
-        './lib/every': 2,
+        './lib/every': 8,
         './toBeArray': 12,
         './toBeNumber': 35
     }],
@@ -599,7 +603,7 @@
         }
 
     }, {
-        './lib/every': 2,
+        './lib/every': 8,
         './toBeArray': 12,
         './toBeObject': 36
     }],
@@ -633,7 +637,7 @@
         }
 
     }, {
-        './lib/every': 2,
+        './lib/every': 8,
         './toBeArray': 12,
         './toBeString': 40
     }],
@@ -665,7 +669,7 @@
         }
 
     }, {
-        './lib/is': 8
+        './lib/is': 9
     }],
     20: [function(require, module, exports) {
         'use strict';
@@ -693,7 +697,7 @@
         }
 
     }, {
-        './lib/is': 8
+        './lib/is': 9
     }],
     22: [function(require, module, exports) {
         'use strict';
@@ -723,8 +727,8 @@
         }
 
     }, {
-        './lib/is': 8,
-        './lib/keys': 9
+        './lib/is': 9,
+        './lib/keys': 10
     }],
     24: [function(require, module, exports) {
         'use strict';
@@ -765,7 +769,7 @@
         }
 
     }, {
-        './lib/is': 8
+        './lib/is': 9
     }],
     27: [function(require, module, exports) {
         'use strict';
@@ -906,7 +910,7 @@
         }
 
     }, {
-        './lib/is': 8
+        './lib/is': 9
     }],
     33: [function(require, module, exports) {
         'use strict';
@@ -922,8 +926,8 @@
         }
 
     }, {
-        './lib/is': 8,
-        './lib/keys': 9
+        './lib/is': 9,
+        './lib/keys': 10
     }],
     34: [function(require, module, exports) {
         'use strict';
@@ -953,7 +957,7 @@
         }
 
     }, {
-        './lib/is': 8
+        './lib/is': 9
     }],
     36: [function(require, module, exports) {
         'use strict';
@@ -967,7 +971,7 @@
         }
 
     }, {
-        './lib/is': 8
+        './lib/is': 9
     }],
     37: [function(require, module, exports) {
         'use strict';
@@ -1028,7 +1032,7 @@
         }
 
     }, {
-        './lib/is': 8
+        './lib/is': 9
     }],
     41: [function(require, module, exports) {
         'use strict';
@@ -1044,7 +1048,7 @@
         }
 
     }, {
-        './lib/is': 8
+        './lib/is': 9
     }],
     42: [function(require, module, exports) {
         'use strict';
@@ -1780,4 +1784,4 @@
         }
 
     }, {}]
-}, {}, [1]);
+}, {}, [7]);

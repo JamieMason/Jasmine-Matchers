@@ -3,9 +3,6 @@
   "description": "Additional matchers for the Jasmine BDD JavaScript testing library",
   "version": "2.0.1",
   "author": "Jamie Mason (https://github.com/JamieMason)",
-  "authors": [
-    "Jamie Mason <siunmaru@gmail.com>"
-  ],
   "bugs": {
     "url": "https://github.com/JamieMason/Jasmine-Matchers/issues"
   },
@@ -24,6 +21,9 @@
     "Sam L'ecuyer (https://github.com/samlecuyer)",
     "Vilmos Ioo (https://github.com/vilmosioo)"
   ],
+  "dependencies": {
+    "jasmine-matchers-loader": "0.1.0"
+  },
   "devDependencies": {
     "browserify": "13.0.0",
     "codeclimate-test-reporter": "0.3.1",
