@@ -1,5 +1,7 @@
 # Jasmine-Matchers
 
+[![Join the chat at https://gitter.im/JamieMason/Jasmine-Matchers](https://badges.gitter.im/JamieMason/Jasmine-Matchers.svg)](https://gitter.im/JamieMason/Jasmine-Matchers?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 > Readable tests.
 
 [![Build Status](https://img.shields.io/travis/JamieMason/Jasmine-Matchers/master.svg?style=flat-square)](https://travis-ci.org/JamieMason/Jasmine-Matchers)
