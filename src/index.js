@@ -45,6 +45,7 @@ var matchers = {
   toBeEvenNumber: require('./toBeEvenNumber'),
   toBeFalse: require('./toBeFalse'),
   toBeFunction: require('./toBeFunction'),
+  toBeGreaterThanOrEqualTo: require('./toBeGreaterThanOrEqualTo'),
   toBeHtmlString: require('./toBeHtmlString'),
   toBeIso8601: require('./toBeIso8601'),
   toBeJsonString: require('./toBeJsonString'),
