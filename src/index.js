@@ -25,9 +25,16 @@
  * SOFTWARE.
  */
 
-var jasmineMatchers = require('jasmine-matchers-loader');
-var matchers = require('./matchers');
+// 3rd party modules
+var loader = require('jasmine-matchers-loader');
 
-jasmineMatchers.add(matchers);
+// modules
+var api = require('./api');
+var asymmetricMatchers = require('./asymmetricMatchers');
 
-module.exports = matchers;
+// public
+module.exports = api.matcher;
+
+// implementation
+loader.add(api.matcher);
+global.any = asymmetricMatchers;
