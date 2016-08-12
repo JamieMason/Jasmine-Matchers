@@ -27,18 +27,6 @@
   "devDependencies": {
     "browserify": "13.1.0",
     "codeclimate-test-reporter": "0.3.3",
-    "esformatter": "0.9.6",
-    "esformatter-braces": "1.2.1",
-    "esformatter-dot-notation": "1.3.1",
-    "esformatter-jsx": "7.0.1",
-    "esformatter-parseint": "1.0.3",
-    "esformatter-quotes": "1.1.0",
-    "esformatter-remove-trailing-commas": "1.0.1",
-    "esformatter-semicolons": "1.1.2",
-    "esformatter-use-strict": "3.0.0",
-    "esformatter-var-each": "2.1.0",
-    "eslint": "3.2.2",
-    "eslint-plugin-smells": "1.0.1",
     "gulp": "3.9.1",
     "karma": "1.2.0",
     "karma-chrome-launcher": "1.0.1",
@@ -55,7 +43,8 @@
     "karma-script-launcher": "1.0.0",
     "karma-threshold-reporter": "0.1.15",
     "phantomjs": "2.1.7",
-    "vinyl-source-stream": "1.1.0"
+    "vinyl-source-stream": "1.1.0",
+    "xo": "0.16.0"
   },
   "homepage": "https://github.com/JamieMason/Jasmine-Matchers",
   "keywords": [
@@ -71,16 +60,29 @@
     "url": "git://github.com/JamieMason/Jasmine-Matchers.git"
   },
   "scripts": {
-    "browserify": "gulp browserify",
-    "build": "npm run browserify && npm run formatter && npm run linter",
+    "build": "gulp browserify",
     "development-watchers": "gulp development-watchers",
-    "formatter": "esformatter -i --config .esformatter 'dist/**/*.js' 'src/**/*.js' 'test/**/*.js' 'tasks/**/*.js' '*.js'",
-    "linter": "eslint .",
+    "lint": "xo --fix",
     "test": "bin/test-runner.sh",
     "test-desktop": "npm run test-saucelabs -- --browsers winChrome47 osxSafari9 osxSafari8 osxFirefox43 osxFirefox40",
     "test-ie": "npm run test-saucelabs -- --browsers winIe11 winIe10 winIe9",
     "test-mobile": "npm run test-saucelabs -- --browsers android-4.4 android-5.1 ios-9.2 ios-8.4 ios-8.0",
     "test-saucelabs": "karma start karma-saucelabs.conf.js",
     "test-watcher": "karma start --no-single-run --auto-watch"
+  },
+  "xo": {
+    "envs": [
+      "jasmine",
+      "node"
+    ],
+    "esnext": false,
+    "globals": [
+      "any"
+    ],
+    "rules": {
+      "max-nested-callbacks": 0,
+      "xo/filename-case": 0
+    },
+    "space": 2
   }
 }
