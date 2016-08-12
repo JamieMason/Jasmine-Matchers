@@ -96,7 +96,6 @@ module.exports = {
   toHaveTrue: require('./toHaveTrue.spec'),
   toHaveWhitespaceString: require('./toHaveWhitespaceString.spec'),
   toHaveWholeNumber: require('./toHaveWholeNumber.spec'),
-  toImplement: require('./toImplement.spec'),
   toStartWith: require('./toStartWith.spec'),
   toThrowAnyError: require('./toThrowAnyError.spec'),
   toThrowErrorOfType: require('./toThrowErrorOfType.spec'),

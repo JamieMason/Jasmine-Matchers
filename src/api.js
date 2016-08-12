@@ -155,7 +155,6 @@ module.exports = {
     toHaveTrue: require('./toHaveTrue'),
     toHaveWhitespaceString: require('./toHaveWhitespaceString'),
     toHaveWholeNumber: require('./toHaveWholeNumber'),
-    toImplement: require('./toImplement'),
     toStartWith: require('./toStartWith'),
     toThrowAnyError: require('./toThrowAnyError'),
     toThrowErrorOfType: require('./toThrowErrorOfType')

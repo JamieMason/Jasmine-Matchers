@@ -407,14 +407,13 @@ module.exports = {
     toHaveTrue: require('./toHaveTrue'),
     toHaveWhitespaceString: require('./toHaveWhitespaceString'),
     toHaveWholeNumber: require('./toHaveWholeNumber'),
-    toImplement: require('./toImplement'),
     toStartWith: require('./toStartWith'),
     toThrowAnyError: require('./toThrowAnyError'),
     toThrowErrorOfType: require('./toThrowErrorOfType')
   }
 };
 
-},{"./toBeAfter":14,"./toBeArray":15,"./toBeArrayOfBooleans":16,"./toBeArrayOfNumbers":17,"./toBeArrayOfObjects":18,"./toBeArrayOfSize":19,"./toBeArrayOfStrings":20,"./toBeBefore":21,"./toBeBoolean":22,"./toBeCalculable":23,"./toBeDate":24,"./toBeEmptyArray":25,"./toBeEmptyObject":26,"./toBeEmptyString":27,"./toBeEvenNumber":28,"./toBeFalse":29,"./toBeFunction":30,"./toBeGreaterThanOrEqualTo":31,"./toBeHtmlString":32,"./toBeIso8601":33,"./toBeJsonString":34,"./toBeLessThanOrEqualTo":35,"./toBeLongerThan":36,"./toBeNonEmptyArray":37,"./toBeNonEmptyObject":38,"./toBeNonEmptyString":39,"./toBeNumber":40,"./toBeObject":41,"./toBeOddNumber":42,"./toBeSameLengthAs":43,"./toBeShorterThan":44,"./toBeString":45,"./toBeTrue":46,"./toBeWhitespace":47,"./toBeWholeNumber":48,"./toBeWithinRange":49,"./toEndWith":50,"./toHaveArray":51,"./toHaveArrayOfBooleans":52,"./toHaveArrayOfNumbers":53,"./toHaveArrayOfObjects":54,"./toHaveArrayOfSize":55,"./toHaveArrayOfStrings":56,"./toHaveBoolean":57,"./toHaveCalculable":58,"./toHaveDate":59,"./toHaveDateAfter":60,"./toHaveDateBefore":61,"./toHaveEmptyArray":62,"./toHaveEmptyObject":63,"./toHaveEmptyString":64,"./toHaveEvenNumber":65,"./toHaveFalse":66,"./toHaveHtmlString":67,"./toHaveIso8601":68,"./toHaveJsonString":69,"./toHaveMember":70,"./toHaveMethod":71,"./toHaveNonEmptyArray":72,"./toHaveNonEmptyObject":73,"./toHaveNonEmptyString":74,"./toHaveNumber":75,"./toHaveNumberWithinRange":76,"./toHaveObject":77,"./toHaveOddNumber":78,"./toHaveString":79,"./toHaveStringLongerThan":80,"./toHaveStringSameLengthAs":81,"./toHaveStringShorterThan":82,"./toHaveTrue":83,"./toHaveWhitespaceString":84,"./toHaveWholeNumber":85,"./toImplement":86,"./toStartWith":87,"./toThrowAnyError":88,"./toThrowErrorOfType":89}],8:[function(require,module,exports){
+},{"./toBeAfter":14,"./toBeArray":15,"./toBeArrayOfBooleans":16,"./toBeArrayOfNumbers":17,"./toBeArrayOfObjects":18,"./toBeArrayOfSize":19,"./toBeArrayOfStrings":20,"./toBeBefore":21,"./toBeBoolean":22,"./toBeCalculable":23,"./toBeDate":24,"./toBeEmptyArray":25,"./toBeEmptyObject":26,"./toBeEmptyString":27,"./toBeEvenNumber":28,"./toBeFalse":29,"./toBeFunction":30,"./toBeGreaterThanOrEqualTo":31,"./toBeHtmlString":32,"./toBeIso8601":33,"./toBeJsonString":34,"./toBeLessThanOrEqualTo":35,"./toBeLongerThan":36,"./toBeNonEmptyArray":37,"./toBeNonEmptyObject":38,"./toBeNonEmptyString":39,"./toBeNumber":40,"./toBeObject":41,"./toBeOddNumber":42,"./toBeSameLengthAs":43,"./toBeShorterThan":44,"./toBeString":45,"./toBeTrue":46,"./toBeWhitespace":47,"./toBeWholeNumber":48,"./toBeWithinRange":49,"./toEndWith":50,"./toHaveArray":51,"./toHaveArrayOfBooleans":52,"./toHaveArrayOfNumbers":53,"./toHaveArrayOfObjects":54,"./toHaveArrayOfSize":55,"./toHaveArrayOfStrings":56,"./toHaveBoolean":57,"./toHaveCalculable":58,"./toHaveDate":59,"./toHaveDateAfter":60,"./toHaveDateBefore":61,"./toHaveEmptyArray":62,"./toHaveEmptyObject":63,"./toHaveEmptyString":64,"./toHaveEvenNumber":65,"./toHaveFalse":66,"./toHaveHtmlString":67,"./toHaveIso8601":68,"./toHaveJsonString":69,"./toHaveMember":70,"./toHaveMethod":71,"./toHaveNonEmptyArray":72,"./toHaveNonEmptyObject":73,"./toHaveNonEmptyString":74,"./toHaveNumber":75,"./toHaveNumberWithinRange":76,"./toHaveObject":77,"./toHaveOddNumber":78,"./toHaveString":79,"./toHaveStringLongerThan":80,"./toHaveStringSameLengthAs":81,"./toHaveStringShorterThan":82,"./toHaveTrue":83,"./toHaveWhitespaceString":84,"./toHaveWholeNumber":85,"./toStartWith":86,"./toThrowAnyError":87,"./toThrowErrorOfType":88}],8:[function(require,module,exports){
 // modules
 var reduce = require('./lib/reduce');
 var api = require('./api');
@@ -1251,25 +1250,6 @@ module.exports = function toHaveWholeNumber(key, actual) {
 
 },{"./toBeObject":41,"./toBeWholeNumber":48}],86:[function(require,module,exports){
 // modules
-var toBeObject = require('./toBeObject');
-var toHaveMember = require('./toHaveMember');
-
-// public
-module.exports = function toImplement(api, actual) {
-  return toBeObject(api) && toBeObject(actual) && featuresAll(api, actual);
-};
-
-function featuresAll(api, actual) {
-  for (var key in api) {
-    if (!toHaveMember(key, actual) || actual[key].constructor !== api[key]) {
-      return false;
-    }
-  }
-  return true;
-}
-
-},{"./toBeObject":41,"./toHaveMember":70}],87:[function(require,module,exports){
-// modules
 var toBeNonEmptyString = require('./toBeNonEmptyString');
 
 // public
@@ -1280,7 +1260,7 @@ module.exports = function toStartWith(subString, actual) {
   return actual.slice(0, subString.length) === subString;
 };
 
-},{"./toBeNonEmptyString":39}],88:[function(require,module,exports){
+},{"./toBeNonEmptyString":39}],87:[function(require,module,exports){
 // public
 module.exports = function toThrowAnyError(actual) {
   try {
@@ -1291,7 +1271,7 @@ module.exports = function toThrowAnyError(actual) {
   }
 };
 
-},{}],89:[function(require,module,exports){
+},{}],88:[function(require,module,exports){
 // public
 module.exports = function toThrowErrorOfType(type, actual) {
   try {

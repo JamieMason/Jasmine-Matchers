@@ -228,7 +228,6 @@ expect(someValue).toBeArrayOfObjects();
 + [toHaveTrue](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveTrue.spec.js)
 + [toHaveWhitespaceString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveWhitespaceString.spec.js)
 + [toHaveWholeNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveWholeNumber.spec.js)
-+ [toImplement](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toImplement.spec.js)
 
 ### Strings
 
