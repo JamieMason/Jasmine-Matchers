@@ -1,9 +1,7 @@
-'use strict';
-
+// modules
 var toBeBefore = require('./toBeBefore');
 
-module.exports = toBeAfter;
-
-function toBeAfter(otherDate, actual) {
-    return toBeBefore(actual, otherDate);
-}
+// public
+module.exports = function toBeAfter(otherDate, actual) {
+  return toBeBefore(actual, otherDate);
+};

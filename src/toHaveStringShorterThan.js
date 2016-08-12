@@ -1,11 +1,8 @@
-'use strict';
-
+// modules
 var toBeObject = require('./toBeObject');
 var toBeShorterThan = require('./toBeShorterThan');
 
-module.exports = toHaveStringShorterThan;
-
-function toHaveStringShorterThan(key, other, actual) {
-    return toBeObject(actual) &&
-        toBeShorterThan(other, actual[key]);
-}
+// public
+module.exports = function toHaveStringShorterThan(key, other, actual) {
+  return toBeObject(actual) && toBeShorterThan(other, actual[key]);
+};

@@ -1,10 +1,7 @@
-'use strict';
-
+// modules
 var toBeNumber = require('./toBeNumber');
 
-module.exports = toBeEvenNumber;
-
-function toBeEvenNumber(actual) {
-    return toBeNumber(actual) &&
-        actual % 2 === 0;
-}
+// public
+module.exports = function toBeEvenNumber(actual) {
+  return toBeNumber(actual) && actual % 2 === 0;
+};

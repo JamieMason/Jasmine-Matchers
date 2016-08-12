@@ -1,13 +1,9 @@
-'use strict';
-
-module.exports = toThrowErrorOfType;
-
-function toThrowErrorOfType(type, actual) {
-    var threwErrorOfType = false;
-    try {
-        actual();
-    } catch (e) {
-        threwErrorOfType = (e.name === type);
-    }
-    return threwErrorOfType;
-}
+// public
+module.exports = function toThrowErrorOfType(type, actual) {
+  try {
+    actual();
+    return false;
+  } catch (err) {
+    return err.name === type;
+  }
+};

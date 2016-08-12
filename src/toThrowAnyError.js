@@ -1,13 +1,9 @@
-'use strict';
-
-module.exports = toThrowAnyError;
-
-function toThrowAnyError(actual) {
-    var threwError = false;
-    try {
-        actual();
-    } catch (e) {
-        threwError = true;
-    }
-    return threwError;
-}
+// public
+module.exports = function toThrowAnyError(actual) {
+  try {
+    actual();
+    return false;
+  } catch (err) {
+    return true;
+  }
+};

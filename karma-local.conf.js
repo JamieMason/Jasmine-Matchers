@@ -1,23 +1,18 @@
-'use strict';
+// modules
+var baseConfig = require('./karma.conf');
 
-module.exports = function(config) {
-
-    require('./karma.conf')({
-
-        set: function(base) {
-
-            base.browsers = [
-                'Firefox',
-                'Chrome',
-                'Opera',
-                'PhantomJS',
-                'Safari'
-            ];
-
-            config.set(base);
-
-        }
-
-    });
-
+// public
+module.exports = function (config) {
+  baseConfig({
+    set: function (base) {
+      base.browsers = [
+        'Firefox',
+        'Chrome',
+        'Opera',
+        'PhantomJS',
+        'Safari'
+      ];
+      config.set(base);
+    }
+  });
 };

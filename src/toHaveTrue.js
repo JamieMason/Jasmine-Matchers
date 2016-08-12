@@ -1,11 +1,8 @@
-'use strict';
-
+// modules
 var toBeObject = require('./toBeObject');
 var toBeTrue = require('./toBeTrue');
 
-module.exports = toHaveTrue;
-
-function toHaveTrue(key, actual) {
-    return toBeObject(actual) &&
-        toBeTrue(actual[key]);
-}
+// public
+module.exports = function toHaveTrue(key, actual) {
+  return toBeObject(actual) && toBeTrue(actual[key]);
+};

@@ -1,11 +1,8 @@
-'use strict';
-
+// modules
 var toBeObject = require('./toBeObject');
 var toBeJsonString = require('./toBeJsonString');
 
-module.exports = toHaveJsonString;
-
-function toHaveJsonString(key, actual) {
-    return toBeObject(actual) &&
-        toBeJsonString(actual[key]);
-}
+// public
+module.exports = function toHaveJsonString(key, actual) {
+  return toBeObject(actual) && toBeJsonString(actual[key]);
+};

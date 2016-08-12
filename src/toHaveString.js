@@ -1,11 +1,8 @@
-'use strict';
-
+// modules
 var toBeObject = require('./toBeObject');
 var toBeString = require('./toBeString');
 
-module.exports = toHaveString;
-
-function toHaveString(key, actual) {
-    return toBeObject(actual) &&
-        toBeString(actual[key]);
-}
+// public
+module.exports = function toHaveString(key, actual) {
+  return toBeObject(actual) && toBeString(actual[key]);
+};

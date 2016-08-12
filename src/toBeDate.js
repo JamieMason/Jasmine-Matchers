@@ -1,9 +1,7 @@
-'use strict';
-
+// modules
 var is = require('./lib/is');
 
-module.exports = toBeDate;
-
-function toBeDate(actual) {
-    return is(actual, 'Date');
-}
+// public
+module.exports = function toBeDate(actual) {
+  return is(actual, 'Date');
+};

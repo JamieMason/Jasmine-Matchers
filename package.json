@@ -28,6 +28,7 @@
     "browserify": "13.1.0",
     "codeclimate-test-reporter": "0.3.3",
     "gulp": "3.9.1",
+    "jasmine-core": "2.4.1",
     "karma": "1.2.0",
     "karma-chrome-launcher": "1.0.1",
     "karma-cli": "1.0.1",
@@ -81,6 +82,9 @@
     ],
     "rules": {
       "max-nested-callbacks": 0,
+      "no-array-constructor": 0,
+      "no-new-object": 0,
+      "no-new-wrappers": 0,
       "xo/filename-case": 0
     },
     "space": 2

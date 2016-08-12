@@ -1,7 +1,4 @@
-'use strict';
-
-module.exports = toBeEmptyString;
-
-function toBeEmptyString(actual) {
-    return actual === '';
-}
+// public
+module.exports = function toBeEmptyString(actual) {
+  return actual === '';
+};

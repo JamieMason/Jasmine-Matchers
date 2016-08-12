@@ -1,7 +1,4 @@
-'use strict';
-
-module.exports = toBeFunction;
-
-function toBeFunction(actual) {
-    return typeof actual === 'function';
-}
+// public
+module.exports = function toBeFunction(actual) {
+  return typeof actual === 'function';
+};

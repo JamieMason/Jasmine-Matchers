@@ -1,11 +1,7 @@
-'use strict';
-
+// modules
 var is = require('./lib/is');
 
-module.exports = toBeFalse;
-
-function toBeFalse(actual) {
-    return actual === false ||
-        is(actual, 'Boolean') &&
-        !actual.valueOf();
-}
+// public
+module.exports = function toBeFalse(actual) {
+  return actual === false || (is(actual, 'Boolean') && actual.valueOf() === false);
+};

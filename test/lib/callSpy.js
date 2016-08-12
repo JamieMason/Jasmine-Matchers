@@ -1,7 +1,6 @@
-'use strict';
-
+// public
 module.exports = function callSpy(arg) {
-    var spy = jasmine.createSpy();
-    spy(arg);
-    return spy;
+  var spy = jasmine.createSpy();
+  spy(arg);
+  return spy;
 };

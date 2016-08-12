@@ -1,19 +1,14 @@
-'use strict';
+// modules
+var baseConfig = require('./karma.conf');
 
-module.exports = function(config) {
-
-    require('./karma.conf')({
-
-        set: function(base) {
-
-            base.browsers = [
-                'bin/opera-emulator'
-            ];
-
-            config.set(base);
-
-        }
-
-    });
-
+// public
+module.exports = function (config) {
+  baseConfig({
+    set: function (base) {
+      base.browsers = [
+        'bin/opera-emulator'
+      ];
+      config.set(base);
+    }
+  });
 };

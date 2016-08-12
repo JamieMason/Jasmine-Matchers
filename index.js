@@ -1,3 +1,2 @@
-'use strict';
-
+// public
 module.exports = require('./src');

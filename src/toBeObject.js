@@ -1,9 +1,7 @@
-'use strict';
-
+// modules
 var is = require('./lib/is');
 
-module.exports = toBeObject;
-
-function toBeObject(actual) {
-    return is(actual, 'Object');
-}
+// public
+module.exports = function toBeObject(actual) {
+  return is(actual, 'Object');
+};

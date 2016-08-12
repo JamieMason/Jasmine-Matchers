@@ -1,11 +1,8 @@
-'use strict';
-
+// modules
 var toBeObject = require('./toBeObject');
 var toBeEmptyArray = require('./toBeEmptyArray');
 
-module.exports = toHaveEmptyArray;
-
-function toHaveEmptyArray(key, actual) {
-    return toBeObject(actual) &&
-        toBeEmptyArray(actual[key]);
-}
+// public
+module.exports = function toHaveEmptyArray(key, actual) {
+  return toBeObject(actual) && toBeEmptyArray(actual[key]);
+};

@@ -1,11 +1,8 @@
-'use strict';
-
+// modules
 var toBeObject = require('./toBeObject');
 var toBeHtmlString = require('./toBeHtmlString');
 
-module.exports = toHaveHtmlString;
-
-function toHaveHtmlString(key, actual) {
-    return toBeObject(actual) &&
-        toBeHtmlString(actual[key]);
-}
+// public
+module.exports = function toHaveHtmlString(key, actual) {
+  return toBeObject(actual) && toBeHtmlString(actual[key]);
+};

@@ -1,9 +1,7 @@
-'use strict';
-
+// modules
 var is = require('./lib/is');
 
-module.exports = toBeString;
-
-function toBeString(actual) {
-    return is(actual, 'String');
-}
+// public
+module.exports = function toBeString(actual) {
+  return is(actual, 'String');
+};

@@ -1,11 +1,8 @@
-'use strict';
-
+// modules
 var toBeObject = require('./toBeObject');
 var toBeFunction = require('./toBeFunction');
 
-module.exports = toHaveMethod;
-
-function toHaveMethod(key, actual) {
-    return toBeObject(actual) &&
-        toBeFunction(actual[key]);
-}
+// public
+module.exports = function toHaveMethod(key, actual) {
+  return toBeObject(actual) && toBeFunction(actual[key]);
+};

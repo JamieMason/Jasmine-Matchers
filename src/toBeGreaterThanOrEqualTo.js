@@ -1,9 +1,7 @@
-'use strict';
-
+// modules
 var toBeNumber = require('./toBeNumber');
 
-module.exports = toBeGreaterThanOrEqualTo;
-
-function toBeGreaterThanOrEqualTo(otherNumber, actual) {
-    return toBeNumber(actual) && actual >= otherNumber;
-}
+// public
+module.exports = function toBeGreaterThanOrEqualTo(otherNumber, actual) {
+  return toBeNumber(actual) && actual >= otherNumber;
+};

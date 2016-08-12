@@ -1,9 +1,7 @@
-'use strict';
-
+// modules
 var is = require('./lib/is');
 
-module.exports = toBeArray;
-
-function toBeArray(actual) {
-    return is(actual, 'Array');
-}
+// public
+module.exports = function toBeArray(actual) {
+  return is(actual, 'Array');
+};

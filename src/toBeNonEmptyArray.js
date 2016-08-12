@@ -1,10 +1,7 @@
-'use strict';
-
+// modules
 var is = require('./lib/is');
 
-module.exports = toBeNonEmptyArray;
-
-function toBeNonEmptyArray(actual) {
-    return is(actual, 'Array') &&
-        actual.length > 0;
-}
+// public
+module.exports = function toBeNonEmptyArray(actual) {
+  return is(actual, 'Array') && actual.length > 0;
+};

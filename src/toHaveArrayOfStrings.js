@@ -1,11 +1,8 @@
-'use strict';
-
+// modules
 var toBeObject = require('./toBeObject');
 var toBeArrayOfStrings = require('./toBeArrayOfStrings');
 
-module.exports = toHaveArrayOfStrings;
-
-function toHaveArrayOfStrings(key, actual) {
-    return toBeObject(actual) &&
-        toBeArrayOfStrings(actual[key]);
-}
+// public
+module.exports = function toHaveArrayOfStrings(key, actual) {
+  return toBeObject(actual) && toBeArrayOfStrings(actual[key]);
+};

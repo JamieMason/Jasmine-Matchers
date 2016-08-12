@@ -1,7 +1,7 @@
-'use strict';
-
+// modules
 var describeToHaveX = require('./lib/describeToHaveX');
 
-describe('toHaveMember', function() {
-    describeToHaveX('toHaveMember', function() {});
+// spec
+describe('toHaveMember', function () {
+  describeToHaveX('toHaveMember', function () {});
 });

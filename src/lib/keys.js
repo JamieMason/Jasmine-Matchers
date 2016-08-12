@@ -1,13 +1,9 @@
-'use strict';
+// modules
+var reduce = require('./reduce');
 
-module.exports = keys;
-
-function keys(object) {
-    var list = [];
-    for (var key in object) {
-        if (object.hasOwnProperty(key)) {
-            list.push(key);
-        }
-    }
-    return list;
-}
+// public
+module.exports = function keys(object) {
+  return reduce(object, function (keys, value, key) {
+    return keys.concat(key);
+  }, []);
+};

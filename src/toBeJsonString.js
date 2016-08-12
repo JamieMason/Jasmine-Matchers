@@ -1,15 +1,8 @@
-'use strict';
-
-module.exports = toBeJsonString;
-
-function toBeJsonString(actual) {
-    var isParseable;
-    var json;
-    try {
-        json = JSON.parse(actual);
-    } catch (e) {
-        isParseable = false;
-    }
-    return isParseable !== false &&
-        json !== null;
-}
+// public
+module.exports = function toBeJsonString(actual) {
+  try {
+    return JSON.parse(actual) !== null;
+  } catch (err) {
+    return false;
+  }
+};

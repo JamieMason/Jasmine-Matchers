@@ -1,11 +1,8 @@
-'use strict';
-
-var keys = require('./lib/keys');
+// modules
 var is = require('./lib/is');
+var keys = require('./lib/keys');
 
-module.exports = toBeEmptyObject;
-
-function toBeEmptyObject(actual) {
-    return is(actual, 'Object') &&
-        keys(actual).length === 0;
-}
+// public
+module.exports = function toBeEmptyObject(actual) {
+  return is(actual, 'Object') && keys(actual).length === 0;
+};

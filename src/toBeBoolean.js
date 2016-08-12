@@ -1,9 +1,7 @@
-'use strict';
-
+// modules
 var is = require('./lib/is');
 
-module.exports = toBeBoolean;
-
-function toBeBoolean(actual) {
-    return is(actual, 'Boolean');
-}
+// public
+module.exports = function toBeBoolean(actual) {
+  return is(actual, 'Boolean');
+};

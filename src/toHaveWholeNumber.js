@@ -1,11 +1,8 @@
-'use strict';
-
+// modules
 var toBeObject = require('./toBeObject');
 var toBeWholeNumber = require('./toBeWholeNumber');
 
-module.exports = toHaveWholeNumber;
-
-function toHaveWholeNumber(key, actual) {
-    return toBeObject(actual) &&
-        toBeWholeNumber(actual[key]);
-}
+// public
+module.exports = function toHaveWholeNumber(key, actual) {
+  return toBeObject(actual) && toBeWholeNumber(actual[key]);
+};

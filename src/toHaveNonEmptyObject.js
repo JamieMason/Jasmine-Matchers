@@ -1,11 +1,8 @@
-'use strict';
-
+// modules
 var toBeObject = require('./toBeObject');
 var toBeNonEmptyObject = require('./toBeNonEmptyObject');
 
-module.exports = toHaveNonEmptyObject;
-
-function toHaveNonEmptyObject(key, actual) {
-    return toBeObject(actual) &&
-        toBeNonEmptyObject(actual[key]);
-}
+// public
+module.exports = function toHaveNonEmptyObject(key, actual) {
+  return toBeObject(actual) && toBeNonEmptyObject(actual[key]);
+};

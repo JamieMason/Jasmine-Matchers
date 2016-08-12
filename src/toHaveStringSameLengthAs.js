@@ -1,11 +1,8 @@
-'use strict';
-
+// modules
 var toBeObject = require('./toBeObject');
 var toBeSameLengthAs = require('./toBeSameLengthAs');
 
-module.exports = toHaveStringSameLengthAs;
-
-function toHaveStringSameLengthAs(key, other, actual) {
-    return toBeObject(actual) &&
-        toBeSameLengthAs(other, actual[key]);
-}
+// public
+module.exports = function toHaveStringSameLengthAs(key, other, actual) {
+  return toBeObject(actual) && toBeSameLengthAs(other, actual[key]);
+};
