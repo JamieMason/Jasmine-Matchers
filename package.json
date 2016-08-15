@@ -69,7 +69,8 @@
     "test-ie": "npm run test-saucelabs -- --browsers winIe11 winIe10 winIe9",
     "test-mobile": "npm run test-saucelabs -- --browsers android-4.4 android-5.1 ios-9.2 ios-8.4 ios-8.0",
     "test-saucelabs": "karma start karma-saucelabs.conf.js",
-    "test-watcher": "karma start --no-single-run --auto-watch"
+    "test-watcher": "karma start --no-single-run --auto-watch",
+    "update-saucelabs": "node ./test/lib/updateSauceLabs.js"
   },
   "xo": {
     "envs": [
