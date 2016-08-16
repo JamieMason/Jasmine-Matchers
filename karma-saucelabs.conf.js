@@ -9,7 +9,8 @@ module.exports = function (config) {
     set: function (base) {
       base.customLaunchers = platforms;
       base.browsers = Object.keys(base.customLaunchers);
-      base.reporters = ['nested', 'saucelabs'];
+      base.reporters = ['nested', 'coverage', 'saucelabs'];
+      base.retryLimit = 5;
       base.singleRun = true;
       base.sauceLabs = {
         commandTimeout: 600,

@@ -4,6 +4,7 @@ module.exports = function (config) {
     autoWatch: false,
     browsers: ['PhantomJS'],
     colors: true,
+    concurrency: 2,
     coverageReporter: {
       dir: 'coverage',
       instrumenterOptions: {
