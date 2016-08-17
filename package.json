@@ -72,8 +72,8 @@
     "saucelabs-ie": "npm run saucelabs -- --browsers internet-explorer-11,internet-explorer-10,internet-explorer-9",
     "saucelabs-ios": "npm run saucelabs -- --browsers ipad-9.3,ipad-9.2,ipad-9.1,ipad-9.0,ipad-8.4,ipad-8.3,ipad-8.2,ipad-8.1",
     "saucelabs-opera": "npm run saucelabs -- --browsers opera-12,opera-11",
-    "saucelabs-safari": "npm run saucelabs -- --browsers safari-9,safari-8,safari-7,safari-6,safari-5",
-    "saucelabs-unsupported": "npm run saucelabs -- --browsers android-4.0,internet-explorer-8,ipad-7.1,ipad-7.0,microsoftedge-13",
+    "saucelabs-safari": "npm run saucelabs -- --browsers safari-9,safari-8,safari-7,safari-6",
+    "saucelabs-unsupported": "npm run saucelabs -- --browsers android-4.0,internet-explorer-8,ipad-7.1,ipad-7.0,microsoftedge-13,safari-5",
     "test": "karma start",
     "test-watcher": "karma start --no-single-run --auto-watch"
   },

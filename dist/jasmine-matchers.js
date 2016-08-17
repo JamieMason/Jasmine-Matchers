@@ -413,7 +413,7 @@ module.exports = {
   }
 };
 
-},{"./toBeAfter":14,"./toBeArray":15,"./toBeArrayOfBooleans":16,"./toBeArrayOfNumbers":17,"./toBeArrayOfObjects":18,"./toBeArrayOfSize":19,"./toBeArrayOfStrings":20,"./toBeBefore":21,"./toBeBoolean":22,"./toBeCalculable":23,"./toBeDate":24,"./toBeEmptyArray":25,"./toBeEmptyObject":26,"./toBeEmptyString":27,"./toBeEvenNumber":28,"./toBeFalse":29,"./toBeFunction":30,"./toBeGreaterThanOrEqualTo":31,"./toBeHtmlString":32,"./toBeIso8601":33,"./toBeJsonString":34,"./toBeLessThanOrEqualTo":35,"./toBeLongerThan":36,"./toBeNonEmptyArray":37,"./toBeNonEmptyObject":38,"./toBeNonEmptyString":39,"./toBeNumber":40,"./toBeObject":41,"./toBeOddNumber":42,"./toBeSameLengthAs":43,"./toBeShorterThan":44,"./toBeString":45,"./toBeTrue":46,"./toBeWhitespace":47,"./toBeWholeNumber":48,"./toBeWithinRange":49,"./toEndWith":50,"./toHaveArray":51,"./toHaveArrayOfBooleans":52,"./toHaveArrayOfNumbers":53,"./toHaveArrayOfObjects":54,"./toHaveArrayOfSize":55,"./toHaveArrayOfStrings":56,"./toHaveBoolean":57,"./toHaveCalculable":58,"./toHaveDate":59,"./toHaveDateAfter":60,"./toHaveDateBefore":61,"./toHaveEmptyArray":62,"./toHaveEmptyObject":63,"./toHaveEmptyString":64,"./toHaveEvenNumber":65,"./toHaveFalse":66,"./toHaveHtmlString":67,"./toHaveIso8601":68,"./toHaveJsonString":69,"./toHaveMember":70,"./toHaveMethod":71,"./toHaveNonEmptyArray":72,"./toHaveNonEmptyObject":73,"./toHaveNonEmptyString":74,"./toHaveNumber":75,"./toHaveNumberWithinRange":76,"./toHaveObject":77,"./toHaveOddNumber":78,"./toHaveString":79,"./toHaveStringLongerThan":80,"./toHaveStringSameLengthAs":81,"./toHaveStringShorterThan":82,"./toHaveTrue":83,"./toHaveWhitespaceString":84,"./toHaveWholeNumber":85,"./toStartWith":86,"./toThrowAnyError":87,"./toThrowErrorOfType":88}],8:[function(require,module,exports){
+},{"./toBeAfter":15,"./toBeArray":16,"./toBeArrayOfBooleans":17,"./toBeArrayOfNumbers":18,"./toBeArrayOfObjects":19,"./toBeArrayOfSize":20,"./toBeArrayOfStrings":21,"./toBeBefore":22,"./toBeBoolean":23,"./toBeCalculable":24,"./toBeDate":25,"./toBeEmptyArray":26,"./toBeEmptyObject":27,"./toBeEmptyString":28,"./toBeEvenNumber":29,"./toBeFalse":30,"./toBeFunction":31,"./toBeGreaterThanOrEqualTo":32,"./toBeHtmlString":33,"./toBeIso8601":34,"./toBeJsonString":35,"./toBeLessThanOrEqualTo":36,"./toBeLongerThan":37,"./toBeNonEmptyArray":38,"./toBeNonEmptyObject":39,"./toBeNonEmptyString":40,"./toBeNumber":41,"./toBeObject":42,"./toBeOddNumber":43,"./toBeSameLengthAs":44,"./toBeShorterThan":45,"./toBeString":46,"./toBeTrue":47,"./toBeWhitespace":48,"./toBeWholeNumber":49,"./toBeWithinRange":50,"./toEndWith":51,"./toHaveArray":52,"./toHaveArrayOfBooleans":53,"./toHaveArrayOfNumbers":54,"./toHaveArrayOfObjects":55,"./toHaveArrayOfSize":56,"./toHaveArrayOfStrings":57,"./toHaveBoolean":58,"./toHaveCalculable":59,"./toHaveDate":60,"./toHaveDateAfter":61,"./toHaveDateBefore":62,"./toHaveEmptyArray":63,"./toHaveEmptyObject":64,"./toHaveEmptyString":65,"./toHaveEvenNumber":66,"./toHaveFalse":67,"./toHaveHtmlString":68,"./toHaveIso8601":69,"./toHaveJsonString":70,"./toHaveMember":71,"./toHaveMethod":72,"./toHaveNonEmptyArray":73,"./toHaveNonEmptyObject":74,"./toHaveNonEmptyString":75,"./toHaveNumber":76,"./toHaveNumberWithinRange":77,"./toHaveObject":78,"./toHaveOddNumber":79,"./toHaveString":80,"./toHaveStringLongerThan":81,"./toHaveStringSameLengthAs":82,"./toHaveStringShorterThan":83,"./toHaveTrue":84,"./toHaveWhitespaceString":85,"./toHaveWholeNumber":86,"./toStartWith":87,"./toThrowAnyError":88,"./toThrowErrorOfType":89}],8:[function(require,module,exports){
 // modules
 var reduce = require('./lib/reduce');
 var api = require('./api');
@@ -441,7 +441,7 @@ function createFactory(matcher) {
   };
 }
 
-},{"./api":7,"./lib/reduce":13}],9:[function(require,module,exports){
+},{"./api":7,"./lib/reduce":14}],9:[function(require,module,exports){
 (function (global){
 // 3rd party modules
 var loader = require('jasmine-matchers-loader');
@@ -462,6 +462,17 @@ global.any = asymmetricMatchers;
 // public
 module.exports = function every(array, truthTest) {
   for (var i = 0, len = array.length; i < len; i++) {
+    if (truthTest(array[i])) {
+      return true;
+    }
+  }
+  return false;
+};
+
+},{}],11:[function(require,module,exports){
+// public
+module.exports = function every(array, truthTest) {
+  for (var i = 0, len = array.length; i < len; i++) {
     if (!truthTest(array[i])) {
       return false;
     }
@@ -469,13 +480,13 @@ module.exports = function every(array, truthTest) {
   return true;
 };
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 // public
 module.exports = function is(value, type) {
   return Object.prototype.toString.call(value) === '[object ' + type + ']';
 };
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 // modules
 var reduce = require('./reduce');
 
@@ -486,7 +497,7 @@ module.exports = function keys(object) {
   }, []);
 };
 
-},{"./reduce":13}],13:[function(require,module,exports){
+},{"./reduce":14}],14:[function(require,module,exports){
 // modules
 var is = require('./is');
 
@@ -506,7 +517,7 @@ module.exports = function reduce(collection, fn, memo) {
   return memo;
 };
 
-},{"./is":11}],14:[function(require,module,exports){
+},{"./is":12}],15:[function(require,module,exports){
 // modules
 var toBeBefore = require('./toBeBefore');
 
@@ -515,7 +526,7 @@ module.exports = function toBeAfter(otherDate, actual) {
   return toBeBefore(actual, otherDate);
 };
 
-},{"./toBeBefore":21}],15:[function(require,module,exports){
+},{"./toBeBefore":22}],16:[function(require,module,exports){
 // modules
 var is = require('./lib/is');
 
@@ -524,7 +535,7 @@ module.exports = function toBeArray(actual) {
   return is(actual, 'Array');
 };
 
-},{"./lib/is":11}],16:[function(require,module,exports){
+},{"./lib/is":12}],17:[function(require,module,exports){
 // modules
 var every = require('./lib/every');
 var toBeArray = require('./toBeArray');
@@ -535,7 +546,7 @@ module.exports = function toBeArrayOfBooleans(actual) {
   return toBeArray(actual) && every(actual, toBeBoolean);
 };
 
-},{"./lib/every":10,"./toBeArray":15,"./toBeBoolean":22}],17:[function(require,module,exports){
+},{"./lib/every":11,"./toBeArray":16,"./toBeBoolean":23}],18:[function(require,module,exports){
 // modules
 var every = require('./lib/every');
 var toBeArray = require('./toBeArray');
@@ -546,7 +557,7 @@ module.exports = function toBeArrayOfBooleans(actual) {
   return toBeArray(actual) && every(actual, toBeNumber);
 };
 
-},{"./lib/every":10,"./toBeArray":15,"./toBeNumber":40}],18:[function(require,module,exports){
+},{"./lib/every":11,"./toBeArray":16,"./toBeNumber":41}],19:[function(require,module,exports){
 // modules
 var every = require('./lib/every');
 var toBeArray = require('./toBeArray');
@@ -557,7 +568,7 @@ module.exports = function toBeArrayOfBooleans(actual) {
   return toBeArray(actual) && every(actual, toBeObject);
 };
 
-},{"./lib/every":10,"./toBeArray":15,"./toBeObject":41}],19:[function(require,module,exports){
+},{"./lib/every":11,"./toBeArray":16,"./toBeObject":42}],20:[function(require,module,exports){
 // modules
 var toBeArray = require('./toBeArray');
 
@@ -566,7 +577,7 @@ module.exports = function toBeArrayOfSize(size, actual) {
   return toBeArray(actual) && actual.length === size;
 };
 
-},{"./toBeArray":15}],20:[function(require,module,exports){
+},{"./toBeArray":16}],21:[function(require,module,exports){
 // modules
 var every = require('./lib/every');
 var toBeArray = require('./toBeArray');
@@ -577,7 +588,7 @@ module.exports = function toBeArrayOfStrings(actual) {
   return toBeArray(actual) && every(actual, toBeString);
 };
 
-},{"./lib/every":10,"./toBeArray":15,"./toBeString":45}],21:[function(require,module,exports){
+},{"./lib/every":11,"./toBeArray":16,"./toBeString":46}],22:[function(require,module,exports){
 // modules
 var toBeDate = require('./toBeDate');
 
@@ -586,7 +597,7 @@ module.exports = function toBeBefore(otherDate, actual) {
   return toBeDate(actual) && toBeDate(otherDate) && actual.getTime() < otherDate.getTime();
 };
 
-},{"./toBeDate":24}],22:[function(require,module,exports){
+},{"./toBeDate":25}],23:[function(require,module,exports){
 // modules
 var is = require('./lib/is');
 
@@ -595,7 +606,7 @@ module.exports = function toBeBoolean(actual) {
   return is(actual, 'Boolean');
 };
 
-},{"./lib/is":11}],23:[function(require,module,exports){
+},{"./lib/is":12}],24:[function(require,module,exports){
 // public
 module.exports = toBeCalculable;
 
@@ -605,7 +616,7 @@ function toBeCalculable(actual) {
   return !isNaN(actual * 2);
 }
 
-},{}],24:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 // modules
 var is = require('./lib/is');
 
@@ -614,7 +625,7 @@ module.exports = function toBeDate(actual) {
   return is(actual, 'Date');
 };
 
-},{"./lib/is":11}],25:[function(require,module,exports){
+},{"./lib/is":12}],26:[function(require,module,exports){
 // modules
 var toBeArrayOfSize = require('./toBeArrayOfSize');
 
@@ -623,7 +634,7 @@ module.exports = function toBeEmptyArray(actual) {
   return toBeArrayOfSize(0, actual);
 };
 
-},{"./toBeArrayOfSize":19}],26:[function(require,module,exports){
+},{"./toBeArrayOfSize":20}],27:[function(require,module,exports){
 // modules
 var is = require('./lib/is');
 var keys = require('./lib/keys');
@@ -633,13 +644,13 @@ module.exports = function toBeEmptyObject(actual) {
   return is(actual, 'Object') && keys(actual).length === 0;
 };
 
-},{"./lib/is":11,"./lib/keys":12}],27:[function(require,module,exports){
+},{"./lib/is":12,"./lib/keys":13}],28:[function(require,module,exports){
 // public
 module.exports = function toBeEmptyString(actual) {
   return actual === '';
 };
 
-},{}],28:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 // modules
 var toBeNumber = require('./toBeNumber');
 
@@ -648,7 +659,7 @@ module.exports = function toBeEvenNumber(actual) {
   return toBeNumber(actual) && actual % 2 === 0;
 };
 
-},{"./toBeNumber":40}],29:[function(require,module,exports){
+},{"./toBeNumber":41}],30:[function(require,module,exports){
 // modules
 var is = require('./lib/is');
 
@@ -657,13 +668,13 @@ module.exports = function toBeFalse(actual) {
   return actual === false || (is(actual, 'Boolean') && actual.valueOf() === false);
 };
 
-},{"./lib/is":11}],30:[function(require,module,exports){
+},{"./lib/is":12}],31:[function(require,module,exports){
 // public
 module.exports = function toBeFunction(actual) {
   return typeof actual === 'function';
 };
 
-},{}],31:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 // modules
 var toBeNumber = require('./toBeNumber');
 
@@ -672,7 +683,7 @@ module.exports = function toBeGreaterThanOrEqualTo(otherNumber, actual) {
   return toBeNumber(actual) && actual >= otherNumber;
 };
 
-},{"./toBeNumber":40}],32:[function(require,module,exports){
+},{"./toBeNumber":41}],33:[function(require,module,exports){
 // modules
 var toBeString = require('./toBeString');
 
@@ -691,54 +702,42 @@ module.exports = function toBeHtmlString(actual) {
   return toBeString(actual) && actual.search(/<("[^"]*"|'[^']*'|[^'">])*>/) !== -1;
 };
 
-},{"./toBeString":45}],33:[function(require,module,exports){
+},{"./toBeString":46}],34:[function(require,module,exports){
 // modules
+var any = require('./lib/any');
 var toBeString = require('./toBeString');
 
 // public
 module.exports = toBeIso8601;
 
 // implementation
-var format = {
-  '2013-07-08': [4, '-', 2, '-', 2],
-  '2013-07-08T07:29': [4, '-', 2, '-', 2, 'T', 2, ':', 2],
-  '2013-07-08T07:29:15': [4, '-', 2, '-', 2, 'T', 2, ':', 2, ':', 2],
-  '2013-07-08T07:29:15.863': [4, '-', 2, '-', 2, 'T', 2, ':', 2, ':', 2, '.', 3],
-  '2013-07-08T07:29:15.863Z': [4, '-', 2, '-', 2, 'T', 2, ':', 2, ':', 2, '.', 3, 'Z']
-};
+var patterns = [
+  'nnnn-nn-nn',
+  'nnnn-nn-nnTnn:nn',
+  'nnnn-nn-nnTnn:nn:nn',
+  'nnnn-nn-nnTnn:nn:nn.nnn',
+  'nnnn-nn-nnTnn:nn:nn.nnnZ'
+];
 
 function toBeIso8601(actual) {
-  if (!toBeString(actual)) {
-    return false;
+  return toBeString(actual) && any(patterns, matches) && new Date(actual).toString() !== 'Invalid Date';
+
+  function matches(pattern) {
+    var regex = '^' + expand(pattern) + '$';
+    return actual.search(new RegExp(regex)) !== -1;
   }
-  if (
-    matches(format['2013-07-08'], actual) ||
-    matches(format['2013-07-08T07:29'], actual) ||
-    matches(format['2013-07-08T07:29:15'], actual) ||
-    matches(format['2013-07-08T07:29:15.863'], actual) ||
-    matches(format['2013-07-08T07:29:15.863Z'], actual)
-  ) {
-    return new Date(actual).toString() !== 'Invalid Date';
-  }
-  return false;
 }
 
-function matches(pattern, string) {
-  var regex = new RegExp('^' + pattern.map(escapeTerm).join('') + '$');
-  return string.search(regex) !== -1;
+function expand(pattern) {
+  return pattern
+    .split('-').join('\\-')
+    .split('.').join('\\.')
+    .split('nnnn').join('([0-9]{4})')
+    .split('nnn').join('([0-9]{3})')
+    .split('nn').join('([0-9]{2})');
 }
 
-function escapeTerm(term) {
-  if (term === '-') {
-    return '\\-';
-  }
-  if (typeof term === 'string') {
-    return term;
-  }
-  return '([0-9]{' + term + '})';
-}
-
-},{"./toBeString":45}],34:[function(require,module,exports){
+},{"./lib/any":10,"./toBeString":46}],35:[function(require,module,exports){
 // public
 module.exports = function toBeJsonString(actual) {
   try {
@@ -748,7 +747,7 @@ module.exports = function toBeJsonString(actual) {
   }
 };
 
-},{}],35:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 // modules
 var toBeNumber = require('./toBeNumber');
 
@@ -757,7 +756,7 @@ module.exports = function toBeLessThanOrEqualTo(otherNumber, actual) {
   return toBeNumber(actual) && actual <= otherNumber;
 };
 
-},{"./toBeNumber":40}],36:[function(require,module,exports){
+},{"./toBeNumber":41}],37:[function(require,module,exports){
 // modules
 var toBeString = require('./toBeString');
 
@@ -766,7 +765,7 @@ module.exports = function toBeLongerThan(otherString, actual) {
   return toBeString(actual) && toBeString(otherString) && actual.length > otherString.length;
 };
 
-},{"./toBeString":45}],37:[function(require,module,exports){
+},{"./toBeString":46}],38:[function(require,module,exports){
 // modules
 var is = require('./lib/is');
 
@@ -775,7 +774,7 @@ module.exports = function toBeNonEmptyArray(actual) {
   return is(actual, 'Array') && actual.length > 0;
 };
 
-},{"./lib/is":11}],38:[function(require,module,exports){
+},{"./lib/is":12}],39:[function(require,module,exports){
 // modules
 var is = require('./lib/is');
 var keys = require('./lib/keys');
@@ -785,7 +784,7 @@ module.exports = function toBeNonEmptyObject(actual) {
   return is(actual, 'Object') && keys(actual).length > 0;
 };
 
-},{"./lib/is":11,"./lib/keys":12}],39:[function(require,module,exports){
+},{"./lib/is":12,"./lib/keys":13}],40:[function(require,module,exports){
 // modules
 var toBeString = require('./toBeString');
 
@@ -794,7 +793,7 @@ module.exports = function toBeNonEmptyString(actual) {
   return toBeString(actual) && actual.length > 0;
 };
 
-},{"./toBeString":45}],40:[function(require,module,exports){
+},{"./toBeString":46}],41:[function(require,module,exports){
 // modules
 var is = require('./lib/is');
 
@@ -803,7 +802,7 @@ module.exports = function toBeNumber(actual) {
   return !isNaN(parseFloat(actual)) && !is(actual, 'String');
 };
 
-},{"./lib/is":11}],41:[function(require,module,exports){
+},{"./lib/is":12}],42:[function(require,module,exports){
 // modules
 var is = require('./lib/is');
 
@@ -812,7 +811,7 @@ module.exports = function toBeObject(actual) {
   return is(actual, 'Object');
 };
 
-},{"./lib/is":11}],42:[function(require,module,exports){
+},{"./lib/is":12}],43:[function(require,module,exports){
 // modules
 var toBeNumber = require('./toBeNumber');
 
@@ -821,7 +820,7 @@ module.exports = function toBeOddNumber(actual) {
   return toBeNumber(actual) && actual % 2 !== 0;
 };
 
-},{"./toBeNumber":40}],43:[function(require,module,exports){
+},{"./toBeNumber":41}],44:[function(require,module,exports){
 // modules
 var toBeString = require('./toBeString');
 
@@ -830,7 +829,7 @@ module.exports = function toBeSameLengthAs(otherString, actual) {
   return toBeString(actual) && toBeString(otherString) && actual.length === otherString.length;
 };
 
-},{"./toBeString":45}],44:[function(require,module,exports){
+},{"./toBeString":46}],45:[function(require,module,exports){
 // modules
 var toBeString = require('./toBeString');
 
@@ -839,7 +838,7 @@ module.exports = function toBeShorterThan(otherString, actual) {
   return toBeString(actual) && toBeString(otherString) && actual.length < otherString.length;
 };
 
-},{"./toBeString":45}],45:[function(require,module,exports){
+},{"./toBeString":46}],46:[function(require,module,exports){
 // modules
 var is = require('./lib/is');
 
@@ -848,7 +847,7 @@ module.exports = function toBeString(actual) {
   return is(actual, 'String');
 };
 
-},{"./lib/is":11}],46:[function(require,module,exports){
+},{"./lib/is":12}],47:[function(require,module,exports){
 // modules
 var is = require('./lib/is');
 
@@ -857,7 +856,7 @@ module.exports = function toBeTrue(actual) {
   return actual === true || (is(actual, 'Boolean') && actual.valueOf() === true);
 };
 
-},{"./lib/is":11}],47:[function(require,module,exports){
+},{"./lib/is":12}],48:[function(require,module,exports){
 // modules
 var toBeString = require('./toBeString');
 
@@ -866,7 +865,7 @@ module.exports = function toBeWhitespace(actual) {
   return toBeString(actual) && actual.search(/\S/) === -1;
 };
 
-},{"./toBeString":45}],48:[function(require,module,exports){
+},{"./toBeString":46}],49:[function(require,module,exports){
 // modules
 var toBeNumber = require('./toBeNumber');
 
@@ -877,7 +876,7 @@ module.exports = function toBeWholeNumber(actual) {
     );
 };
 
-},{"./toBeNumber":40}],49:[function(require,module,exports){
+},{"./toBeNumber":41}],50:[function(require,module,exports){
 // modules
 var toBeNumber = require('./toBeNumber');
 
@@ -886,7 +885,7 @@ module.exports = function toBeWithinRange(floor, ceiling, actual) {
   return toBeNumber(actual) && actual >= floor && actual <= ceiling;
 };
 
-},{"./toBeNumber":40}],50:[function(require,module,exports){
+},{"./toBeNumber":41}],51:[function(require,module,exports){
 // modules
 var toBeNonEmptyString = require('./toBeNonEmptyString');
 
@@ -898,7 +897,7 @@ module.exports = function toEndWith(subString, actual) {
   return actual.slice(actual.length - subString.length, actual.length) === subString;
 };
 
-},{"./toBeNonEmptyString":39}],51:[function(require,module,exports){
+},{"./toBeNonEmptyString":40}],52:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeArray = require('./toBeArray');
@@ -908,7 +907,7 @@ module.exports = function toHaveArray(key, actual) {
   return toBeObject(actual) && toBeArray(actual[key]);
 };
 
-},{"./toBeArray":15,"./toBeObject":41}],52:[function(require,module,exports){
+},{"./toBeArray":16,"./toBeObject":42}],53:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeArrayOfBooleans = require('./toBeArrayOfBooleans');
@@ -918,7 +917,7 @@ module.exports = function toHaveArrayOfBooleans(key, actual) {
   return toBeObject(actual) && toBeArrayOfBooleans(actual[key]);
 };
 
-},{"./toBeArrayOfBooleans":16,"./toBeObject":41}],53:[function(require,module,exports){
+},{"./toBeArrayOfBooleans":17,"./toBeObject":42}],54:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeArrayOfNumbers = require('./toBeArrayOfNumbers');
@@ -928,7 +927,7 @@ module.exports = function toHaveArrayOfNumbers(key, actual) {
   return toBeObject(actual) && toBeArrayOfNumbers(actual[key]);
 };
 
-},{"./toBeArrayOfNumbers":17,"./toBeObject":41}],54:[function(require,module,exports){
+},{"./toBeArrayOfNumbers":18,"./toBeObject":42}],55:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeArrayOfObjects = require('./toBeArrayOfObjects');
@@ -938,7 +937,7 @@ module.exports = function toHaveArrayOfObjects(key, actual) {
   return toBeObject(actual) && toBeArrayOfObjects(actual[key]);
 };
 
-},{"./toBeArrayOfObjects":18,"./toBeObject":41}],55:[function(require,module,exports){
+},{"./toBeArrayOfObjects":19,"./toBeObject":42}],56:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeArrayOfSize = require('./toBeArrayOfSize');
@@ -948,7 +947,7 @@ module.exports = function toHaveArrayOfSize(key, size, actual) {
   return toBeObject(actual) && toBeArrayOfSize(size, actual[key]);
 };
 
-},{"./toBeArrayOfSize":19,"./toBeObject":41}],56:[function(require,module,exports){
+},{"./toBeArrayOfSize":20,"./toBeObject":42}],57:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeArrayOfStrings = require('./toBeArrayOfStrings');
@@ -958,7 +957,7 @@ module.exports = function toHaveArrayOfStrings(key, actual) {
   return toBeObject(actual) && toBeArrayOfStrings(actual[key]);
 };
 
-},{"./toBeArrayOfStrings":20,"./toBeObject":41}],57:[function(require,module,exports){
+},{"./toBeArrayOfStrings":21,"./toBeObject":42}],58:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeBoolean = require('./toBeBoolean');
@@ -968,7 +967,7 @@ module.exports = function toHaveBoolean(key, actual) {
   return toBeObject(actual) && toBeBoolean(actual[key]);
 };
 
-},{"./toBeBoolean":22,"./toBeObject":41}],58:[function(require,module,exports){
+},{"./toBeBoolean":23,"./toBeObject":42}],59:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeCalculable = require('./toBeCalculable');
@@ -978,7 +977,7 @@ module.exports = function toHaveCalculable(key, actual) {
   return toBeObject(actual) && toBeCalculable(actual[key]);
 };
 
-},{"./toBeCalculable":23,"./toBeObject":41}],59:[function(require,module,exports){
+},{"./toBeCalculable":24,"./toBeObject":42}],60:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeDate = require('./toBeDate');
@@ -988,7 +987,7 @@ module.exports = function toHaveDate(key, actual) {
   return toBeObject(actual) && toBeDate(actual[key]);
 };
 
-},{"./toBeDate":24,"./toBeObject":41}],60:[function(require,module,exports){
+},{"./toBeDate":25,"./toBeObject":42}],61:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeAfter = require('./toBeAfter');
@@ -998,7 +997,7 @@ module.exports = function toHaveDateAfter(key, date, actual) {
   return toBeObject(actual) && toBeAfter(date, actual[key]);
 };
 
-},{"./toBeAfter":14,"./toBeObject":41}],61:[function(require,module,exports){
+},{"./toBeAfter":15,"./toBeObject":42}],62:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeBefore = require('./toBeBefore');
@@ -1008,7 +1007,7 @@ module.exports = function toHaveDateBefore(key, date, actual) {
   return toBeObject(actual) && toBeBefore(date, actual[key]);
 };
 
-},{"./toBeBefore":21,"./toBeObject":41}],62:[function(require,module,exports){
+},{"./toBeBefore":22,"./toBeObject":42}],63:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeEmptyArray = require('./toBeEmptyArray');
@@ -1018,7 +1017,7 @@ module.exports = function toHaveEmptyArray(key, actual) {
   return toBeObject(actual) && toBeEmptyArray(actual[key]);
 };
 
-},{"./toBeEmptyArray":25,"./toBeObject":41}],63:[function(require,module,exports){
+},{"./toBeEmptyArray":26,"./toBeObject":42}],64:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeEmptyObject = require('./toBeEmptyObject');
@@ -1028,7 +1027,7 @@ module.exports = function toHaveEmptyObject(key, actual) {
   return toBeObject(actual) && toBeEmptyObject(actual[key]);
 };
 
-},{"./toBeEmptyObject":26,"./toBeObject":41}],64:[function(require,module,exports){
+},{"./toBeEmptyObject":27,"./toBeObject":42}],65:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeEmptyString = require('./toBeEmptyString');
@@ -1038,7 +1037,7 @@ module.exports = function toHaveEmptyString(key, actual) {
   return toBeObject(actual) && toBeEmptyString(actual[key]);
 };
 
-},{"./toBeEmptyString":27,"./toBeObject":41}],65:[function(require,module,exports){
+},{"./toBeEmptyString":28,"./toBeObject":42}],66:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeEvenNumber = require('./toBeEvenNumber');
@@ -1048,7 +1047,7 @@ module.exports = function toHaveEvenNumber(key, actual) {
   return toBeObject(actual) && toBeEvenNumber(actual[key]);
 };
 
-},{"./toBeEvenNumber":28,"./toBeObject":41}],66:[function(require,module,exports){
+},{"./toBeEvenNumber":29,"./toBeObject":42}],67:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeFalse = require('./toBeFalse');
@@ -1058,7 +1057,7 @@ module.exports = function toHaveFalse(key, actual) {
   return toBeObject(actual) && toBeFalse(actual[key]);
 };
 
-},{"./toBeFalse":29,"./toBeObject":41}],67:[function(require,module,exports){
+},{"./toBeFalse":30,"./toBeObject":42}],68:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeHtmlString = require('./toBeHtmlString');
@@ -1068,7 +1067,7 @@ module.exports = function toHaveHtmlString(key, actual) {
   return toBeObject(actual) && toBeHtmlString(actual[key]);
 };
 
-},{"./toBeHtmlString":32,"./toBeObject":41}],68:[function(require,module,exports){
+},{"./toBeHtmlString":33,"./toBeObject":42}],69:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeIso8601 = require('./toBeIso8601');
@@ -1080,7 +1079,7 @@ function toHaveIso8601(key, actual) {
   return toBeObject(actual) && toBeIso8601(actual[key]);
 }
 
-},{"./toBeIso8601":33,"./toBeObject":41}],69:[function(require,module,exports){
+},{"./toBeIso8601":34,"./toBeObject":42}],70:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeJsonString = require('./toBeJsonString');
@@ -1090,7 +1089,7 @@ module.exports = function toHaveJsonString(key, actual) {
   return toBeObject(actual) && toBeJsonString(actual[key]);
 };
 
-},{"./toBeJsonString":34,"./toBeObject":41}],70:[function(require,module,exports){
+},{"./toBeJsonString":35,"./toBeObject":42}],71:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeString = require('./toBeString');
@@ -1100,7 +1099,7 @@ module.exports = function toHaveMember(key, actual) {
   return toBeString(key) && toBeObject(actual) && key in actual;
 };
 
-},{"./toBeObject":41,"./toBeString":45}],71:[function(require,module,exports){
+},{"./toBeObject":42,"./toBeString":46}],72:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeFunction = require('./toBeFunction');
@@ -1110,7 +1109,7 @@ module.exports = function toHaveMethod(key, actual) {
   return toBeObject(actual) && toBeFunction(actual[key]);
 };
 
-},{"./toBeFunction":30,"./toBeObject":41}],72:[function(require,module,exports){
+},{"./toBeFunction":31,"./toBeObject":42}],73:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeNonEmptyArray = require('./toBeNonEmptyArray');
@@ -1120,7 +1119,7 @@ module.exports = function toHaveNonEmptyArray(key, actual) {
   return toBeObject(actual) && toBeNonEmptyArray(actual[key]);
 };
 
-},{"./toBeNonEmptyArray":37,"./toBeObject":41}],73:[function(require,module,exports){
+},{"./toBeNonEmptyArray":38,"./toBeObject":42}],74:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeNonEmptyObject = require('./toBeNonEmptyObject');
@@ -1130,7 +1129,7 @@ module.exports = function toHaveNonEmptyObject(key, actual) {
   return toBeObject(actual) && toBeNonEmptyObject(actual[key]);
 };
 
-},{"./toBeNonEmptyObject":38,"./toBeObject":41}],74:[function(require,module,exports){
+},{"./toBeNonEmptyObject":39,"./toBeObject":42}],75:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeNonEmptyString = require('./toBeNonEmptyString');
@@ -1140,7 +1139,7 @@ module.exports = function toHaveNonEmptyString(key, actual) {
   return toBeObject(actual) && toBeNonEmptyString(actual[key]);
 };
 
-},{"./toBeNonEmptyString":39,"./toBeObject":41}],75:[function(require,module,exports){
+},{"./toBeNonEmptyString":40,"./toBeObject":42}],76:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeNumber = require('./toBeNumber');
@@ -1150,7 +1149,7 @@ module.exports = function toHaveNumber(key, actual) {
   return toBeObject(actual) && toBeNumber(actual[key]);
 };
 
-},{"./toBeNumber":40,"./toBeObject":41}],76:[function(require,module,exports){
+},{"./toBeNumber":41,"./toBeObject":42}],77:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeWithinRange = require('./toBeWithinRange');
@@ -1160,7 +1159,7 @@ module.exports = function toHaveNumberWithinRange(key, floor, ceiling, actual) {
   return toBeObject(actual) && toBeWithinRange(floor, ceiling, actual[key]);
 };
 
-},{"./toBeObject":41,"./toBeWithinRange":49}],77:[function(require,module,exports){
+},{"./toBeObject":42,"./toBeWithinRange":50}],78:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 
@@ -1169,7 +1168,7 @@ module.exports = function toHaveObject(key, actual) {
   return toBeObject(actual) && toBeObject(actual[key]);
 };
 
-},{"./toBeObject":41}],78:[function(require,module,exports){
+},{"./toBeObject":42}],79:[function(require,module,exports){
 var toBeObject = require('./toBeObject');
 var toBeOddNumber = require('./toBeOddNumber');
 
@@ -1178,7 +1177,7 @@ module.exports = function toHaveOddNumber(key, actual) {
   return toBeObject(actual) && toBeOddNumber(actual[key]);
 };
 
-},{"./toBeObject":41,"./toBeOddNumber":42}],79:[function(require,module,exports){
+},{"./toBeObject":42,"./toBeOddNumber":43}],80:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeString = require('./toBeString');
@@ -1188,7 +1187,7 @@ module.exports = function toHaveString(key, actual) {
   return toBeObject(actual) && toBeString(actual[key]);
 };
 
-},{"./toBeObject":41,"./toBeString":45}],80:[function(require,module,exports){
+},{"./toBeObject":42,"./toBeString":46}],81:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeLongerThan = require('./toBeLongerThan');
@@ -1198,7 +1197,7 @@ module.exports = function toHaveStringLongerThan(key, other, actual) {
   return toBeObject(actual) && toBeLongerThan(other, actual[key]);
 };
 
-},{"./toBeLongerThan":36,"./toBeObject":41}],81:[function(require,module,exports){
+},{"./toBeLongerThan":37,"./toBeObject":42}],82:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeSameLengthAs = require('./toBeSameLengthAs');
@@ -1208,7 +1207,7 @@ module.exports = function toHaveStringSameLengthAs(key, other, actual) {
   return toBeObject(actual) && toBeSameLengthAs(other, actual[key]);
 };
 
-},{"./toBeObject":41,"./toBeSameLengthAs":43}],82:[function(require,module,exports){
+},{"./toBeObject":42,"./toBeSameLengthAs":44}],83:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeShorterThan = require('./toBeShorterThan');
@@ -1218,7 +1217,7 @@ module.exports = function toHaveStringShorterThan(key, other, actual) {
   return toBeObject(actual) && toBeShorterThan(other, actual[key]);
 };
 
-},{"./toBeObject":41,"./toBeShorterThan":44}],83:[function(require,module,exports){
+},{"./toBeObject":42,"./toBeShorterThan":45}],84:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeTrue = require('./toBeTrue');
@@ -1228,7 +1227,7 @@ module.exports = function toHaveTrue(key, actual) {
   return toBeObject(actual) && toBeTrue(actual[key]);
 };
 
-},{"./toBeObject":41,"./toBeTrue":46}],84:[function(require,module,exports){
+},{"./toBeObject":42,"./toBeTrue":47}],85:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeWhitespace = require('./toBeWhitespace');
@@ -1238,7 +1237,7 @@ module.exports = function toHaveWhitespaceString(key, actual) {
   return toBeObject(actual) && toBeWhitespace(actual[key]);
 };
 
-},{"./toBeObject":41,"./toBeWhitespace":47}],85:[function(require,module,exports){
+},{"./toBeObject":42,"./toBeWhitespace":48}],86:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeWholeNumber = require('./toBeWholeNumber');
@@ -1248,7 +1247,7 @@ module.exports = function toHaveWholeNumber(key, actual) {
   return toBeObject(actual) && toBeWholeNumber(actual[key]);
 };
 
-},{"./toBeObject":41,"./toBeWholeNumber":48}],86:[function(require,module,exports){
+},{"./toBeObject":42,"./toBeWholeNumber":49}],87:[function(require,module,exports){
 // modules
 var toBeNonEmptyString = require('./toBeNonEmptyString');
 
@@ -1260,7 +1259,7 @@ module.exports = function toStartWith(subString, actual) {
   return actual.slice(0, subString.length) === subString;
 };
 
-},{"./toBeNonEmptyString":39}],87:[function(require,module,exports){
+},{"./toBeNonEmptyString":40}],88:[function(require,module,exports){
 // public
 module.exports = function toThrowAnyError(actual) {
   try {
@@ -1271,7 +1270,7 @@ module.exports = function toThrowAnyError(actual) {
   }
 };
 
-},{}],88:[function(require,module,exports){
+},{}],89:[function(require,module,exports){
 // public
 module.exports = function toThrowErrorOfType(type, actual) {
   try {
