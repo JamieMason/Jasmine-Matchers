@@ -9,7 +9,7 @@ module.exports = function (config) {
         'internet-explorer-11',
         'internet-explorer-10',
         'internet-explorer-9'
-        // microsoftedge-13 // keeps timing out
+        // microsoftedge-13 // saucelabs keeps timing out
         // internet-explorer-8 // unsupported
       ];
       config.set(base);

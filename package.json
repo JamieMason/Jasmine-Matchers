@@ -30,6 +30,7 @@
     "gulp": "3.9.1",
     "jasmine-core": "2.4.1",
     "karma": "1.2.0",
+    "karma-browserstack-launcher": "1.0.1",
     "karma-chrome-launcher": "1.0.1",
     "karma-cli": "1.0.1",
     "karma-coverage": "1.1.1",
@@ -62,6 +63,13 @@
     "url": "git://github.com/JamieMason/Jasmine-Matchers.git"
   },
   "scripts": {
+    "browserstack-android": "karma start karma/browserstack-android.conf.js",
+    "browserstack-chrome": "karma start karma/browserstack-chrome.conf.js",
+    "browserstack-firefox": "karma start karma/browserstack-firefox.conf.js",
+    "browserstack-ie": "karma start karma/browserstack-ie.conf.js",
+    "browserstack-ios": "karma start karma/browserstack-ios.conf.js",
+    "browserstack-opera": "karma start karma/browserstack-opera.conf.js",
+    "browserstack-safari": "karma start karma/browserstack-safari.conf.js",
     "build": "gulp browserify",
     "development-watchers": "gulp development-watchers",
     "lint": "xo --fix",
