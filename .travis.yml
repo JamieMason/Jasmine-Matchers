@@ -12,12 +12,12 @@ before_script:
 script:
 - npm run lint
 - npm run saucelabs-android
-- npm run saucelabs-chrome
-- npm run saucelabs-firefox
-- npm run saucelabs-ie
 - npm run saucelabs-ios
-- npm run saucelabs-opera
+- npm run saucelabs-ie
 - npm run saucelabs-safari
+- npm run saucelabs-opera
+- npm run saucelabs-firefox
+- npm run saucelabs-chrome
 
 after_script:
 - codeclimate < coverage/report-lcov/lcov.info

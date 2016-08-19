@@ -14,7 +14,7 @@ myAccount.getAllBrowsers(function (err, res) {
   if (err) {
     throw new Error('failed to contact saucelabs ' + err.message);
   }
-  var location = path.resolve('./saucelabs.json');
+  var location = path.join(__dirname, 'saucelabs.json');
   var config = res.sort(sortBy('api_name')).reduce(addBrowser, {});
   var json = JSON.stringify(config, null, 2);
   fs.writeFileSync(location, json, 'utf8');

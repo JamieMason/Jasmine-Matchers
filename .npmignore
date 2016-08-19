@@ -1,15 +1,5 @@
-bin/
 coverage/
 gulpfile.js
-karma-ievms-ie10.conf.js
-karma-ievms-ie7.conf.js
-karma-ievms-ie8.conf.js
-karma-ievms-ie9.conf.js
-karma-local.conf.js
-karma-opera-emulator.conf.js
-karma-saucelabs-ie.conf.js
-karma-saucelabs.conf.js
-karma.conf.js
+karma/
 node_modules/
-tasks/
 test/

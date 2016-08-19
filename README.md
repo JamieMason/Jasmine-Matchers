@@ -334,7 +334,7 @@ Internet Explorer | 11-9 | Pass
 Internet Explorer | 8 | Fail (Failing Tests*)
 iOS | 7.1-7.0 | Fail (Saucelabs Times out)
 iOS | 9.3-8.1 | Pass
-Microsoft Edge | 13 | Pass
+Microsoft Edge | 13 | Fail (Saucelabs Times out)
 Opera | 12-11 | Pass
 Safari | 9-6 | Pass
 Safari | 5 | Fail (Does not support ISO 8601)

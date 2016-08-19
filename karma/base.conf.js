@@ -2,9 +2,9 @@
 module.exports = function (config) {
   config.set({
     autoWatch: false,
+    basePath: '..',
     browsers: ['PhantomJS'],
     colors: true,
-    concurrency: 2,
     coverageReporter: {
       dir: 'coverage',
       instrumenterOptions: {
