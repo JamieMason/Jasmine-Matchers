@@ -301,12 +301,8 @@ Use the [Jasmine CLI](https://www.npmjs.com/package/jasmine) and include the pat
 ```json
 {
   "spec_dir": "spec",
-  "spec_files": [
-    "../src/**/*.spec.js"
-  ],
-  "helpers": [
-    "../../node_modules/jasmine-expect/dist/jasmine-matchers.js"
-  ],
+  "spec_files": ["../src/**/*.spec.js"],
+  "helpers": ["../node_modules/jasmine-expect/index.js"],
   "stopSpecOnExpectationFailure": false,
   "random": false
 }
