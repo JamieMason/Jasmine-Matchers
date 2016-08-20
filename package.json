@@ -31,7 +31,7 @@
     "jasmine-core": "2.4.1",
     "karma": "1.2.0",
     "karma-browserstack-launcher": "1.0.1",
-    "karma-chrome-launcher": "1.0.1",
+    "karma-chrome-launcher": "2.0.0",
     "karma-cli": "1.0.1",
     "karma-coverage": "1.1.1",
     "karma-firefox-launcher": "1.0.0",
@@ -45,7 +45,7 @@
     "karma-script-launcher": "1.0.0",
     "karma-threshold-reporter": "0.1.15",
     "phantomjs": "2.1.7",
-    "saucelabs": "1.2.0",
+    "saucelabs": "1.3.0",
     "vinyl-source-stream": "1.1.0",
     "xo": "0.16.0"
   },
