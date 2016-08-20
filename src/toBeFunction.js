@@ -1,4 +1,7 @@
+// modules
+var is = require('./lib/is');
+
 // public
 module.exports = function toBeFunction(actual) {
-  return typeof actual === 'function';
+  return is(actual, 'Function');
 };

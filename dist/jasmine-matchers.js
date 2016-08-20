@@ -669,12 +669,15 @@ module.exports = function toBeFalse(actual) {
 };
 
 },{"./lib/is":12}],31:[function(require,module,exports){
+// modules
+var is = require('./lib/is');
+
 // public
 module.exports = function toBeFunction(actual) {
-  return typeof actual === 'function';
+  return is(actual, 'Function');
 };
 
-},{}],32:[function(require,module,exports){
+},{"./lib/is":12}],32:[function(require,module,exports){
 // modules
 var toBeNumber = require('./toBeNumber');
 
