@@ -3,7 +3,7 @@ module.exports = function (config) {
   config.set({
     autoWatch: false,
     basePath: '..',
-    browsers: ['PhantomJS'],
+    browsers: [],
     colors: true,
     coverageReporter: {
       dir: 'coverage',

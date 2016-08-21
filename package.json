@@ -81,7 +81,7 @@
     "saucelabs-opera": "karma start karma/saucelabs-opera.conf.js",
     "saucelabs-safari": "karma start karma/saucelabs-safari.conf.js",
     "test": "karma start",
-    "test-watcher": "karma start --no-single-run --auto-watch"
+    "test-watcher": "karma start karma/watch.conf"
   },
   "xo": {
     "envs": [
