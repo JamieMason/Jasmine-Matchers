@@ -13,7 +13,7 @@ script:
 - npm test
 
 after_script:
-- codeclimate < coverage/report-lcov/lcov.info
+- codeclimate-test-reporter < coverage/report-lcov/lcov.info
 
 addons:
   code_climate:
