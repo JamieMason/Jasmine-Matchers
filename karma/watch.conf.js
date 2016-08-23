@@ -5,7 +5,7 @@ var baseConfig = require('./base.conf');
 module.exports = function (config) {
   baseConfig({
     set: function (base) {
-      base.browsers = ['PhantomJS'];
+      base.browsers = ['Chrome'];
       base.autoWatch = true;
       base.singleRun = false;
       config.set(base);

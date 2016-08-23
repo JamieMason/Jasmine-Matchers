@@ -4,6 +4,14 @@ module.exports = function (config) {
     autoWatch: false,
     basePath: '..',
     browsers: [],
+    check: {
+      global: {
+        statements: 95,
+        branches: 95,
+        functions: 95,
+        lines: 95
+      }
+    },
     colors: true,
     coverageReporter: {
       dir: 'coverage',
@@ -47,12 +55,6 @@ module.exports = function (config) {
       '**/dist/jasmine-matchers.js': ['coverage']
     },
     reporters: ['nested', 'coverage'],
-    singleRun: true,
-    thresholdReporter: {
-      statements: 95,
-      branches: 95,
-      functions: 95,
-      lines: 95
-    }
+    singleRun: true
   });
 };

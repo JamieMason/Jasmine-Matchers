@@ -10,14 +10,7 @@ before_script:
 - npm run build
 
 script:
-- npm run lint
-- npm run browserstack-android
-- npm run browserstack-ios
-- npm run browserstack-ie
-- npm run browserstack-safari
-- npm run browserstack-opera
-- npm run browserstack-firefox
-- npm run browserstack-chrome
+- npm test
 
 after_script:
 - codeclimate < coverage/report-lcov/lcov.info
