@@ -13,6 +13,10 @@ A huge library of test assertion matchers for a range of common use-cases, to im
 1. **Make failing tests easier to debug** by avoiding vague messages such as _"expected false to be true"_ in favour of useful cues such as _"expected 3 to be even number"_.
 2. **Make tests easier to read** by avoiding implementation noise such as `expect(cycleWheels % 2 === 0).toEqual(true)` in favour of simply stating that you `expect(cycleWheels).toBeEvenNumber()`.
 
+## Sponsors
+
+<a href="https://browserstack.com"><img alt="Sponsored by BrowserStack" src="https://cdn.rawgit.com/JamieMason/Jasmine-Matchers/develop/browserstack.svg" height="40" /></a>
+
 ## Contents
 
 * [Installation](#installation)
