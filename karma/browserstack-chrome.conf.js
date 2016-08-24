@@ -42,9 +42,9 @@ module.exports = function (config) {
         'chrome-19.0',
         'chrome-18.0',
         'chrome-17.0',
-        'chrome-16.0',
-        'chrome-15.0',
-        'chrome-14.0'
+        'chrome-16.0'
+        // 'chrome-15.0' // browserstack runner is showing choose search engine screen
+        // 'chrome-14.0' // browserstack reporting version is invalid
       ];
       config.set(base);
     }
