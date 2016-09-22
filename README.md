@@ -311,6 +311,8 @@ Use the [Jasmine CLI](https://www.npmjs.com/package/jasmine) and include the pat
 }
 ```
 
+Then add `require("jasmine-expect")` to your spec helper file. 
+
 ### Sublime Text
 
 [Jasmine-Matchers-Snippets](https://github.com/JamieMason/Jasmine-Matchers-Snippets) or [Jasmine-Matchers-ES6-Snippets](https://github.com/JamieMason/Jasmine-Matchers-ES6-Snippets) can be installed with [Package Control](https://packagecontrol.io/packages/Jasmine%20Matchers%20Snippets) to ease development with Jasmine Matchers in Sublime Text.
