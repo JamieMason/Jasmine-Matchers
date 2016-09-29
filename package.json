@@ -92,6 +92,7 @@
     "test:local": "karma start karma/base.conf.js --browsers Chrome",
     "watch": "gulp watch"
   },
+  "types": "./jasmine-matchers.d.ts",
   "xo": {
     "envs": [
       "jasmine",
