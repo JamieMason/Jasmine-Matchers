@@ -68,6 +68,7 @@
     "test": "npm run lint && npm run browserstack-android && npm run browserstack-ios && npm run browserstack-ie && npm run browserstack-safari && npm run browserstack-opera && npm run browserstack-firefox && npm run browserstack-chrome",
     "test-watcher": "karma start karma/watch.conf"
   },
+  "types": "./jasmine-matchers.d.ts",
   "xo": {
     "envs": [
       "jasmine",
