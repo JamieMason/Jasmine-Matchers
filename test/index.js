@@ -101,5 +101,13 @@ module.exports = {
   toThrowErrorOfType: require('./toThrowErrorOfType.spec'),
   whitespace: require('./whitespace.spec'),
   wholeNumber: require('./wholeNumber.spec'),
-  withinRange: require('./withinRange.spec')
+  withinRange: require('./withinRange.spec'),
+  toBeJsendSuccessObject : require('./toBeJsendSuccessObject.spec'),
+  toBeJsendErrorObject : require('./toBeJsendErrorObject.spec'),
+  toBeJsendFailObject : require('./toBeJsendFailObject.spec'),
+  toBeJsendObject : require('./toBeJsendObject.spec'),
+  toBeJsendSuccessString : require('./toBeJsendSuccessString.spec'),
+  toBeJsendErrorString : require('./toBeJsendErrorString.spec'),
+  toBeJsendFailString : require('./toBeJsendFailString.spec'),
+  toBeJsendString : require('./toBeJsendString.spec'),
 };
