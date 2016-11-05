@@ -2,147 +2,147 @@
 // JSend spec: https://labs.omniti.com/labs/jsend
 
 module.exports = {
-  valid : {
-    success : [
+  valid: {
+    success: [
       {
-        status : 'success',
-        data : { hello : 'world' }
+        status: 'success',
+        data: {hello: 'world'}
       },
       {
-        status : 'success',
-        data : ['Hello world']
+        status: 'success',
+        data: ['Hello world']
       },
       {
-        status : 'success',
-        data : 'Hello world'
+        status: 'success',
+        data: 'Hello world'
       },
       {
-        status : 'success',
-        data : 1234
+        status: 'success',
+        data: 1234
       },
       {
-        status : 'success',
-        data : true
+        status: 'success',
+        data: true
       },
       {
-        status : 'success',
-        data : null
+        status: 'success',
+        data: null
       }
     ],
-    fail : [
+    fail: [
       {
-        status : 'fail',
-        data : { hello : 'world' }
+        status: 'fail',
+        data: {hello: 'world'}
       }
     ],
-    error : [
+    error: [
       {
-        status : 'error',
-        message : 'Hello world'
+        status: 'error',
+        message: 'Hello world'
       },
       {
-        status : 'error',
-        message : 'Hello world',
-        code : 1234
+        status: 'error',
+        message: 'Hello world',
+        code: 1234
       },
       {
-        status : 'error',
-        message : 'Hello world',
-        data : { hello : 'world' }
+        status: 'error',
+        message: 'Hello world',
+        data: {hello: 'world'}
       }
     ]
   },
-  invalid : {
-    success : [
+  invalid: {
+    success: [
       null,
       123,
       {},
       '[object Object]',
       {
-        status : 'success'
+        status: 'success'
       },
       {
-        status : 'success',
-        message : 'Hello world'
+        status: 'success',
+        message: 'Hello world'
       },
       {
-        status : 'success',
-        message : function(){}
+        status: 'success',
+        message: function () {}
       },
       {
-        status : 'success',
-        data : function(){}
+        status: 'success',
+        data: function () {}
       }
     ],
-    fail : [
+    fail: [
       null,
       123,
       {},
       '[object Object]',
       {
-        status : 'fail'
+        status: 'fail'
       },
       {
-        status : 'fail',
-        data : null
+        status: 'fail',
+        data: null
       },
       {
-        status : 'fail',
-        message : 'Hello world'
+        status: 'fail',
+        message: 'Hello world'
       },
       {
-        status : 'fail',
-        message : function(){}
+        status: 'fail',
+        message: function () {}
       },
       {
-        status : 'fail',
-        data : ['Hello world']
+        status: 'fail',
+        data: ['Hello world']
       },
       {
-        status : 'fail',
-        data : 'Hello world'
+        status: 'fail',
+        data: 'Hello world'
       },
       {
-        status : 'fail',
-        data : 1234
+        status: 'fail',
+        data: 1234
       },
       {
-        status : 'fail',
-        data : true
+        status: 'fail',
+        data: true
       },
       {
-        status : 'fail',
-        data : function(){}
+        status: 'fail',
+        data: function () {}
       }
     ],
-    error : [
+    error: [
       null,
       123,
       {},
       '[object Object]',
       {
-        status : 'error'
+        status: 'error'
       },
       {
-        status : 'error',
-        message : null,
+        status: 'error',
+        message: null
       },
       {
-        status : 'error',
-        message : '',
+        status: 'error',
+        message: ''
       },
       {
-        status : 'error',
-        message : function(){}
+        status: 'error',
+        message: function () {}
       },
       {
-        status : 'error',
-        data : { hello : 'world' }
+        status: 'error',
+        data: {hello: 'world'}
       },
       {
-        status : 'error',
-        data : function(){}
+        status: 'error',
+        data: function () {}
       }
     ]
   }
-}
+};

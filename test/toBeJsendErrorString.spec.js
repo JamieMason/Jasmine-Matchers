@@ -2,7 +2,7 @@ var jsendSamples = require('./lib/jsendSampleData');
 var validJsend = jsendSamples.valid;
 var invalidJsend = jsendSamples.invalid;
 
-function stringifyIfJson (obj) {
+function stringifyIfJson(obj) {
   try {
     return JSON.stringify(obj);
   } catch (err) {
