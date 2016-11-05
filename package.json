@@ -19,7 +19,8 @@
     "Marcin Wosinek (https://github.com/marcin-wosinek)",
     "Mathieu Robin (https://github.com/MathRobin)",
     "Sam L'ecuyer (https://github.com/samlecuyer)",
-    "Vilmos Ioo (https://github.com/vilmosioo)"
+    "Vilmos Ioo (https://github.com/vilmosioo)",
+    "George Adamson (https://github.com/georgeadamson)"
   ],
   "dependencies": {
     "jasmine-matchers-loader": "0.1.0"
