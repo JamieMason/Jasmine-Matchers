@@ -6,7 +6,8 @@ module.exports = function toBeJsendErrorObject(actual) {
     return is(actual, 'Object') &&
       // Expect status & message props:
       actual.status === 'error' &&
-      is(actual.message, 'String') && actual.message.length > 0;
+      is(actual.message, 'String') &&
+      actual.message.length > 0;
   } catch (err) {
     return false;
   }
