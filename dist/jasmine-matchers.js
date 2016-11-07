@@ -754,10 +754,10 @@ const is = require('./lib/is');
 // public
 module.exports = function toBeJsendErrorObject(actual) {
   try {
-    return is(actual, 'Object')
+    return is(actual, 'Object') &&
       // Expect status & message props:
-      && actual.status === 'error'
-      && is(actual.message, 'String') && actual.message.length > 0;
+      actual.status === 'error' &&
+      is(actual.message, 'String') && actual.message.length > 0;
   } catch (err) {
     return false;
   }
@@ -782,14 +782,14 @@ var keys = require('./lib/keys');
 // public
 module.exports = function toBeJsendFailObject(actual) {
   try {
-    return is(actual, 'Object')
+    return is(actual, 'Object') &&
       // Expect status & data props:
       // According to the spec, the data for a fail is "an object explaining what went wrong, typically a hash of validation errors".
       // In the spirit of that wording, this expects data to be a non-empty object.
       // More info: https://labs.omniti.com/labs/jsend
-      && actual.status === 'fail'
-      && is(actual.data, 'Object')
-      && keys(actual).length > 0;
+      actual.status === 'fail' &&
+      is(actual.data, 'Object') &&
+      keys(actual).length > 0;
   } catch (err) {
     return false;
   }
@@ -815,7 +815,7 @@ const toBeJsendSuccessObject = require('./toBeJsendSuccessObject');
 // public
 module.exports = function toBeJsendObject(actual) {
   try {
-    return !!actual && !!actual.status && (toBeJsendSuccessObject(actual) || toBeJsendErrorObject(actual) || toBeJsendFailObject(actual));
+    return Boolean(actual) && Boolean(actual.status) && (toBeJsendSuccessObject(actual) || toBeJsendErrorObject(actual) || toBeJsendFailObject(actual));
   } catch (err) {
     return false;
   }
@@ -839,15 +839,15 @@ const is = require('./lib/is');
 // public
 module.exports = function toBeJsendSuccessObject(actual) {
   try {
-    return is(actual, 'Object')
+    return is(actual, 'Object') &&
       // Expect status & data props:
-      && actual.status === 'success'
-      && (actual.data === null
-        || is(actual.data, 'Object')
-        || is(actual.data, 'Array')
-        || is(actual.data, 'String')
-        || is(actual.data, 'Number')
-        || is(actual.data, 'Boolean')
+      actual.status === 'success' &&
+      (actual.data === null ||
+        is(actual.data, 'Object') ||
+        is(actual.data, 'Array') ||
+        is(actual.data, 'String') ||
+        is(actual.data, 'Number') ||
+        is(actual.data, 'Boolean')
       );
   } catch (err) {
     return false;
