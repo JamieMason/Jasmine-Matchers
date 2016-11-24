@@ -6,6 +6,7 @@
 [![Dependency Status](http://img.shields.io/david/JamieMason/Jasmine-Matchers.svg?style=flat-square)](https://david-dm.org/JamieMason/Jasmine-Matchers)
 [![Join the chat at https://gitter.im/JamieMason/Jasmine-Matchers](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JamieMason/Jasmine-Matchers)
 [![Code Climate](https://img.shields.io/codeclimate/github/JamieMason/Jasmine-Matchers.svg?style=flat-square)](https://codeclimate.com/github/JamieMason/Jasmine-Matchers)
+[![Analytics](https://ga-beacon.appspot.com/UA-45466560-5/jasmine-matchers?flat&useReferer)](https://github.com/igrigorik/ga-beacon)
 
 A huge library of test assertion matchers for a range of common use-cases, to improve the readability of tests written using the [Jasmine testing framework](http://jasmine.github.io/) from [Pivotal Labs](http://pivotallabs.com/).
 
