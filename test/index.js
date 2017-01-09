@@ -53,6 +53,7 @@ module.exports = {
   toBeNumber: require('./toBeNumber.spec'),
   toBeObject: require('./toBeObject.spec'),
   toBeOddNumber: require('./toBeOddNumber.spec'),
+  toBeRegExp: require('./toBeRegExp.spec'),
   toBeSameLengthAs: require('./toBeSameLengthAs.spec'),
   toBeShorterThan: require('./toBeShorterThan.spec'),
   toBeString: require('./toBeString.spec'),
