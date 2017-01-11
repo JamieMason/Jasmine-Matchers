@@ -1,3 +1,4 @@
-/**
- * Created by jacobward on 09/01/2017.
- */
+// public
+module.exports = function toBeRegExp(actual) {
+  return actual instanceof RegExp;
+};

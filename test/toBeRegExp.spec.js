@@ -7,7 +7,9 @@ describe('toBeRegExp', function () {
       });
     });
     describe('when value is not an instance of RegExp', function () {
-      expect(null).not.toBeRegExp();
+      it('should deny', function () {
+        expect(null).not.toBeRegExp();
+      });
     });
   });
 });
