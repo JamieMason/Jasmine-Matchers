@@ -26,21 +26,21 @@
     "jasmine-matchers-loader": "0.1.0"
   },
   "devDependencies": {
-    "browserify": "13.1.0",
-    "codeclimate-test-reporter": "0.3.3",
+    "browserify": "13.3.0",
+    "codeclimate-test-reporter": "0.4.0",
     "gulp": "3.9.1",
-    "jasmine-core": "2.4.1",
-    "karma": "1.2.0",
-    "karma-browserstack-launcher": "1.0.1",
+    "jasmine-core": "2.5.2",
+    "karma": "1.3.0",
+    "karma-browserstack-launcher": "1.1.1",
     "karma-chrome-launcher": "2.0.0",
     "karma-cli": "1.0.1",
     "karma-coverage": "1.1.1",
     "karma-firefox-launcher": "1.0.0",
-    "karma-jasmine": "1.0.2",
+    "karma-jasmine": "1.1.0",
     "karma-nested-reporter": "0.1.4",
     "saucelabs": "1.3.0",
     "vinyl-source-stream": "1.1.0",
-    "xo": "0.16.0"
+    "xo": "0.17.1"
   },
   "homepage": "https://github.com/JamieMason/Jasmine-Matchers",
   "keywords": [
@@ -79,11 +79,12 @@
       "any"
     ],
     "rules": {
+      "func-names": 0,
       "max-nested-callbacks": 0,
       "no-array-constructor": 0,
       "no-new-object": 0,
       "no-new-wrappers": 0,
-      "xo/filename-case": 0
+      "unicorn/filename-case": 0
     },
     "space": 2
   }
