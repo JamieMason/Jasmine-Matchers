@@ -112,6 +112,7 @@ module.exports = {
     toBeNumber: require('./toBeNumber'),
     toBeObject: require('./toBeObject'),
     toBeOddNumber: require('./toBeOddNumber'),
+    toBeRegExp: require('./toBeRegExp'),
     toBeSameLengthAs: require('./toBeSameLengthAs'),
     toBeShorterThan: require('./toBeShorterThan'),
     toBeString: require('./toBeString'),
