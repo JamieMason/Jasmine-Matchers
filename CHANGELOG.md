@@ -1,5 +1,16 @@
+<a name="3.2.0"></a>
+# [3.2.0](https://github.com/JamieMason/Jasmine-Matchers/compare/3.0.1...v3.2.0) (2017-01-14)
+
+
+### Features
+
+* **regexps:** add any.regExp() ([a5079f8](https://github.com/JamieMason/Jasmine-Matchers/commit/a5079f8)), closes [#65](https://github.com/JamieMason/Jasmine-Matchers/issues/65)
+* **regexps:** add toBeRegExp matcher ([c983e3c](https://github.com/JamieMason/Jasmine-Matchers/commit/c983e3c)), closes [#25](https://github.com/JamieMason/Jasmine-Matchers/issues/25) [#64](https://github.com/JamieMason/Jasmine-Matchers/issues/64)
+
+
+
 <a name="3.0.1"></a>
-## [3.0.1](https://github.com/JamieMason/Jasmine-Matchers/compare/2.0.2...v3.0.1) (2016-08-23)
+## [3.0.1](https://github.com/JamieMason/Jasmine-Matchers/compare/2.0.2...3.0.1) (2016-08-23)
 
 
 * feat(objects) deprecate .toImplement ([0f44ce5](https://github.com/JamieMason/Jasmine-Matchers/commit/0f44ce5))
