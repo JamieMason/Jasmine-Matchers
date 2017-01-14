@@ -29,6 +29,7 @@ A huge library of test assertion matchers for a range of common use-cases, to im
   * [Numbers](#numbers)
   * [Strings](#strings)
   * [Objects](#objects)
+  * [Regular Expressions](#regular-expressions)
   * [Members, Properties, Methods](#members-properties-methods)
 * [Asymmetric Matchers](#asymmetric-matchers)
   * [Jasmine's Default Asymmetric Matchers](#jasmines-default-asymmetric-matchers)
@@ -168,6 +169,13 @@ Matcher | Example
 [toBeNonEmptyObject](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeNonEmptyObject.spec.js) | `expect(object).toBeNonEmptyObject();`
 [toBeObject](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeObject.spec.js) | `expect(object).toBeObject();`
 
+### Regular Expressions
+
+Matcher | Example
+:-------|:-------
+[toBeRegExp](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeRegExp.spec.js) | `expect(regexp).toBeRegExp();`
+
+
 ### Members, Properties, Methods
 
 Matcher | Example
@@ -273,6 +281,12 @@ Matcher | Example
 :-------|:-------
 [any.emptyObject](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/emptyObject.spec.js) | `expect(spy).toHaveBeenCalledWith(any.emptyObject());`
 [any.nonEmptyObject](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/nonEmptyObject.spec.js) | `expect(spy).toHaveBeenCalledWith(any.nonEmptyObject());`
+
+### Regular Expressions
+
+Matcher | Example
+:-------|:-------
+[any.regExp](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/regExp.spec.js) | `expect(spy).toHaveBeenCalledWith(any.regExp());`
 
 ## Integration
 
