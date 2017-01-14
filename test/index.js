@@ -21,6 +21,7 @@ module.exports = {
   nonEmptyObject: require('./nonEmptyObject.spec'),
   nonEmptyString: require('./nonEmptyString.spec'),
   oddNumber: require('./oddNumber.spec'),
+  regExp: require('./regExp.spec'),
   sameLengthAs: require('./sameLengthAs.spec'),
   shorterThan: require('./shorterThan.spec'),
   startingWith: require('./startingWith.spec'),

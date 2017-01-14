@@ -61,6 +61,10 @@ module.exports = {
     name: 'oddNumber',
     matcher: 'toBeOddNumber'
   }, {
+    name: 'regExp',
+    matcher: 'toBeRegExp'
+  },
+    {
     name: 'sameLengthAs',
     matcher: 'toBeSameLengthAs'
   }, {
