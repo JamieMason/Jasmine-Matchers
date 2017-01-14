@@ -63,8 +63,7 @@ module.exports = {
   }, {
     name: 'regExp',
     matcher: 'toBeRegExp'
-  },
-    {
+  }, {
     name: 'sameLengthAs',
     matcher: 'toBeSameLengthAs'
   }, {
