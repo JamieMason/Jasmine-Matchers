@@ -120,6 +120,7 @@ module.exports = {
     toBeShorterThan: require('./toBeShorterThan'),
     toBeString: require('./toBeString'),
     toBeTrue: require('./toBeTrue'),
+    toBeValidDate: require('./toBeValidDate'),
     toBeWhitespace: require('./toBeWhitespace'),
     toBeWholeNumber: require('./toBeWholeNumber'),
     toBeWithinRange: require('./toBeWithinRange'),
