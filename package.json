@@ -64,10 +64,10 @@
     "browserstack-opera": "karma start karma/browserstack-opera.conf.js",
     "browserstack-safari": "karma start karma/browserstack-safari.conf.js",
     "build": "gulp browserify",
-    "development-watchers": "gulp development-watchers",
     "lint": "xo --fix",
     "test": "npm run lint && npm run browserstack-android && npm run browserstack-ios && npm run browserstack-ie && npm run browserstack-safari && npm run browserstack-opera && npm run browserstack-firefox && npm run browserstack-chrome",
-    "test-watcher": "karma start karma/watch.conf"
+    "test:local": "karma start karma/base.conf.js --browsers Chrome",
+    "watch": "gulp watch"
   },
   "xo": {
     "envs": [
