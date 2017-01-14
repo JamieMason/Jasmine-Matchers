@@ -150,6 +150,10 @@ Matcher | Example
 [toBeEmptyString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeEmptyString.spec.js) | `expect(string).toBeEmptyString();`
 [toBeHtmlString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeHtmlString.spec.js) | `expect(string).toBeHtmlString();`
 [toBeIso8601](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeIso8601.spec.js) | `expect(string).toBeIso8601();`
+[toBeJsendString](./test/toBeJsendString.spec.js) | `expect(string).toBeJsendString();`
+[toBeJsendFailString](./test/toBeJsendFailString.spec.js) | `expect(string).toBeJsendFailString();`
+[toBeJsendErrorString](./test/toBeJsendErrorString.spec.js) | `expect(string).toBeJsendErrorString();`
+[toBeJsendSuccessString](./test/toBeJsendSuccessString.spec.js) | `expect(string).toBeJsendSuccessString();`
 [toBeJsonString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeJsonString.spec.js) | `expect(string).toBeJsonString();`
 [toBeLongerThan](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeLongerThan.spec.js) | `expect(string).toBeLongerThan();`
 [toBeNonEmptyString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeNonEmptyString.spec.js) | `expect(string).toBeNonEmptyString();`
@@ -167,6 +171,10 @@ Matcher | Example
 [toBeEmptyObject](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeEmptyObject.spec.js) | `expect(object).toBeEmptyObject();`
 [toBeNonEmptyObject](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeNonEmptyObject.spec.js) | `expect(object).toBeNonEmptyObject();`
 [toBeObject](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeObject.spec.js) | `expect(object).toBeObject();`
+[toBeJsendObject](./test/toBeJsendObject.spec.js) | `expect(object).toBeJsendObject();`
+[toBeJsendFailObject](./test/toBeJsendFailObject.spec.js) | `expect(object).toBeJsendFailObject();`
+[toBeJsendErrorObject](./test/toBeJsendErrorObject.spec.js) | `expect(object).toBeJsendErrorObject();`
+[toBeJsendSuccessObject](./test/toBeJsendSuccessObject.spec.js) | `expect(object).toBeJsendSuccessObject();`
 
 ### Members, Properties, Methods
 

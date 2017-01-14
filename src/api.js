@@ -157,6 +157,14 @@ module.exports = {
     toHaveWholeNumber: require('./toHaveWholeNumber'),
     toStartWith: require('./toStartWith'),
     toThrowAnyError: require('./toThrowAnyError'),
-    toThrowErrorOfType: require('./toThrowErrorOfType')
+    toThrowErrorOfType: require('./toThrowErrorOfType'),
+    toBeJsendSuccessObject: require('./toBeJsendSuccessObject'),
+    toBeJsendErrorObject: require('./toBeJsendErrorObject'),
+    toBeJsendFailObject: require('./toBeJsendFailObject'),
+    toBeJsendObject: require('./toBeJsendObject'),
+    toBeJsendSuccessString: require('./toBeJsendSuccessString'),
+    toBeJsendErrorString: require('./toBeJsendErrorString'),
+    toBeJsendFailString: require('./toBeJsendFailString'),
+    toBeJsendString: require('./toBeJsendString')
   }
 };
