@@ -109,6 +109,7 @@ module.exports = {
     toBeJsonString: require('./toBeJsonString'),
     toBeLessThanOrEqualTo: require('./toBeLessThanOrEqualTo'),
     toBeLongerThan: require('./toBeLongerThan'),
+    toBeNear: require('./toBeNear'),
     toBeNonEmptyArray: require('./toBeNonEmptyArray'),
     toBeNonEmptyObject: require('./toBeNonEmptyObject'),
     toBeNonEmptyString: require('./toBeNonEmptyString'),

@@ -140,6 +140,7 @@ Matcher | Example
 [toBeEvenNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeEvenNumber.spec.js) | `expect(number).toBeEvenNumber();`
 [toBeGreaterThanOrEqualTo](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeGreaterThanOrEqualTo.spec.js) | `expect(number).toBeGreaterThanOrEqualTo(number);`
 [toBeLessThanOrEqualTo](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeLessThanOrEqualTo.spec.js) | `expect(number).toBeLessThanOrEqualTo(number);`
+[toBeNear](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeNear.spec.js) | `expect(number).toBeNear(value, epsilon)`
 [toBeNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeNumber.spec.js) | `expect(number).toBeNumber();`
 [toBeOddNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeOddNumber.spec.js) | `expect(number).toBeOddNumber();`
 [toBeWholeNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeWholeNumber.spec.js) | `expect(number).toBeWholeNumber();`
