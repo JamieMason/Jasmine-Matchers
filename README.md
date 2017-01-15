@@ -122,6 +122,7 @@ Matcher | Example
 [toBeAfter](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeAfter.spec.js) | `expect(date).toBeAfter(date);`
 [toBeBefore](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeBefore.spec.js) | `expect(date).toBeBefore(date);`
 [toBeDate](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeDate.spec.js) | `expect(date).toBeDate();`
+[toBeValidDate](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeValidDate.spec.js) | `expect(date).toBeValidDate()`
 
 ### Functions and Errors
 
