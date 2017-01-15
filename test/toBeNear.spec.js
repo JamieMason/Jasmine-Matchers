@@ -8,7 +8,7 @@ describe('toBeNear', function () {
         expect(-42).toBeNear(-40, 2);
       });
     });
-    describe('when subject is NOT a number >= subject-epsilon and <= subject+epsilon', function () {
+    describe('when subject is NOT a number >= value-epsilon and <= value+epsilon', function () {
       it('should deny', function () {
         expect(NaN).not.toBeNear(42, 2);
         expect(4.23223432434).not.toBeNear(4, 0.2);
