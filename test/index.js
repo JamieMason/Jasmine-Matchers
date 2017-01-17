@@ -98,6 +98,7 @@ module.exports = {
   toHaveStringSameLengthAs: require('./toHaveStringSameLengthAs.spec'),
   toHaveStringShorterThan: require('./toHaveStringShorterThan.spec'),
   toHaveTrue: require('./toHaveTrue.spec'),
+  toHaveUndefined: require('./toHaveUndefined.spec'),
   toHaveWhitespaceString: require('./toHaveWhitespaceString.spec'),
   toHaveWholeNumber: require('./toHaveWholeNumber.spec'),
   toStartWith: require('./toStartWith.spec'),
