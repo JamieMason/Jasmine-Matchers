@@ -215,6 +215,7 @@ Matcher | Example
 [toHaveStringSameLengthAs](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveStringSameLengthAs.spec.js) | `expect(object).toHaveStringSameLengthAs(memberName, string);`
 [toHaveStringShorterThan](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveStringShorterThan.spec.js) | `expect(object).toHaveStringShorterThan(memberName, string);`
 [toHaveTrue](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveTrue.spec.js) | `expect(object).toHaveTrue(memberName);`
+[toHaveUndefined](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveUndefined.spec.js) | `expect(object).toHaveUndefined(memberName);`
 [toHaveWhitespaceString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveWhitespaceString.spec.js) | `expect(object).toHaveWhitespaceString(memberName);`
 [toHaveWholeNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveWholeNumber.spec.js) | `expect(object).toHaveWholeNumber(memberName);`
 
