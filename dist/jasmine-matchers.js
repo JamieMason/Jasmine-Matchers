@@ -556,6 +556,7 @@ module.exports = {
     toHaveStringSameLengthAs: require('./toHaveStringSameLengthAs'),
     toHaveStringShorterThan: require('./toHaveStringShorterThan'),
     toHaveTrue: require('./toHaveTrue'),
+    toHaveUndefined: require('./toHaveUndefined'),
     toHaveWhitespaceString: require('./toHaveWhitespaceString'),
     toHaveWholeNumber: require('./toHaveWholeNumber'),
     toStartWith: require('./toStartWith'),
@@ -564,7 +565,7 @@ module.exports = {
   }
 };
 
-},{"./toBeAfter":18,"./toBeArray":19,"./toBeArrayOfBooleans":20,"./toBeArrayOfNumbers":21,"./toBeArrayOfObjects":22,"./toBeArrayOfSize":23,"./toBeArrayOfStrings":24,"./toBeBefore":25,"./toBeBoolean":26,"./toBeCalculable":27,"./toBeDate":28,"./toBeEmptyArray":29,"./toBeEmptyObject":30,"./toBeEmptyString":31,"./toBeEvenNumber":32,"./toBeFalse":33,"./toBeFunction":34,"./toBeGreaterThanOrEqualTo":35,"./toBeHtmlString":36,"./toBeIso8601":37,"./toBeJsonString":38,"./toBeLessThanOrEqualTo":39,"./toBeLongerThan":40,"./toBeNear":41,"./toBeNonEmptyArray":42,"./toBeNonEmptyObject":43,"./toBeNonEmptyString":44,"./toBeNumber":45,"./toBeObject":46,"./toBeOddNumber":47,"./toBeRegExp":48,"./toBeSameLengthAs":49,"./toBeShorterThan":50,"./toBeString":51,"./toBeTrue":52,"./toBeValidDate":53,"./toBeWhitespace":54,"./toBeWholeNumber":55,"./toBeWithinRange":56,"./toEndWith":57,"./toHaveArray":58,"./toHaveArrayOfBooleans":59,"./toHaveArrayOfNumbers":60,"./toHaveArrayOfObjects":61,"./toHaveArrayOfSize":62,"./toHaveArrayOfStrings":63,"./toHaveBoolean":64,"./toHaveCalculable":65,"./toHaveDate":66,"./toHaveDateAfter":67,"./toHaveDateBefore":68,"./toHaveEmptyArray":69,"./toHaveEmptyObject":70,"./toHaveEmptyString":71,"./toHaveEvenNumber":72,"./toHaveFalse":73,"./toHaveHtmlString":74,"./toHaveIso8601":75,"./toHaveJsonString":76,"./toHaveMember":77,"./toHaveMethod":78,"./toHaveNonEmptyArray":79,"./toHaveNonEmptyObject":80,"./toHaveNonEmptyString":81,"./toHaveNumber":82,"./toHaveNumberWithinRange":83,"./toHaveObject":84,"./toHaveOddNumber":85,"./toHaveString":86,"./toHaveStringLongerThan":87,"./toHaveStringSameLengthAs":88,"./toHaveStringShorterThan":89,"./toHaveTrue":90,"./toHaveWhitespaceString":91,"./toHaveWholeNumber":92,"./toStartWith":93,"./toThrowAnyError":94,"./toThrowErrorOfType":95}],11:[function(require,module,exports){
+},{"./toBeAfter":18,"./toBeArray":19,"./toBeArrayOfBooleans":20,"./toBeArrayOfNumbers":21,"./toBeArrayOfObjects":22,"./toBeArrayOfSize":23,"./toBeArrayOfStrings":24,"./toBeBefore":25,"./toBeBoolean":26,"./toBeCalculable":27,"./toBeDate":28,"./toBeEmptyArray":29,"./toBeEmptyObject":30,"./toBeEmptyString":31,"./toBeEvenNumber":32,"./toBeFalse":33,"./toBeFunction":34,"./toBeGreaterThanOrEqualTo":35,"./toBeHtmlString":36,"./toBeIso8601":37,"./toBeJsonString":38,"./toBeLessThanOrEqualTo":39,"./toBeLongerThan":40,"./toBeNear":41,"./toBeNonEmptyArray":42,"./toBeNonEmptyObject":43,"./toBeNonEmptyString":44,"./toBeNumber":45,"./toBeObject":46,"./toBeOddNumber":47,"./toBeRegExp":48,"./toBeSameLengthAs":49,"./toBeShorterThan":50,"./toBeString":51,"./toBeTrue":52,"./toBeValidDate":53,"./toBeWhitespace":54,"./toBeWholeNumber":55,"./toBeWithinRange":56,"./toEndWith":57,"./toHaveArray":58,"./toHaveArrayOfBooleans":59,"./toHaveArrayOfNumbers":60,"./toHaveArrayOfObjects":61,"./toHaveArrayOfSize":62,"./toHaveArrayOfStrings":63,"./toHaveBoolean":64,"./toHaveCalculable":65,"./toHaveDate":66,"./toHaveDateAfter":67,"./toHaveDateBefore":68,"./toHaveEmptyArray":69,"./toHaveEmptyObject":70,"./toHaveEmptyString":71,"./toHaveEvenNumber":72,"./toHaveFalse":73,"./toHaveHtmlString":74,"./toHaveIso8601":75,"./toHaveJsonString":76,"./toHaveMember":77,"./toHaveMethod":78,"./toHaveNonEmptyArray":79,"./toHaveNonEmptyObject":80,"./toHaveNonEmptyString":81,"./toHaveNumber":82,"./toHaveNumberWithinRange":83,"./toHaveObject":84,"./toHaveOddNumber":85,"./toHaveString":86,"./toHaveStringLongerThan":87,"./toHaveStringSameLengthAs":88,"./toHaveStringShorterThan":89,"./toHaveTrue":90,"./toHaveUndefined":91,"./toHaveWhitespaceString":92,"./toHaveWholeNumber":93,"./toStartWith":94,"./toThrowAnyError":95,"./toThrowErrorOfType":96}],11:[function(require,module,exports){
 // modules
 var reduce = require('./lib/reduce');
 var api = require('./api');
@@ -1405,6 +1406,16 @@ module.exports = function toHaveTrue(key, actual) {
 },{"./toBeObject":46,"./toBeTrue":52}],91:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
+var toHaveMember = require('./toHaveMember');
+
+// public
+module.exports = function toHaveUndefined(key, actual) {
+  return toBeObject(actual) && toHaveMember(key, actual) && typeof actual[key] === 'undefined';
+};
+
+},{"./toBeObject":46,"./toHaveMember":77}],92:[function(require,module,exports){
+// modules
+var toBeObject = require('./toBeObject');
 var toBeWhitespace = require('./toBeWhitespace');
 
 // public
@@ -1412,7 +1423,7 @@ module.exports = function toHaveWhitespaceString(key, actual) {
   return toBeObject(actual) && toBeWhitespace(actual[key]);
 };
 
-},{"./toBeObject":46,"./toBeWhitespace":54}],92:[function(require,module,exports){
+},{"./toBeObject":46,"./toBeWhitespace":54}],93:[function(require,module,exports){
 // modules
 var toBeObject = require('./toBeObject');
 var toBeWholeNumber = require('./toBeWholeNumber');
@@ -1422,7 +1433,7 @@ module.exports = function toHaveWholeNumber(key, actual) {
   return toBeObject(actual) && toBeWholeNumber(actual[key]);
 };
 
-},{"./toBeObject":46,"./toBeWholeNumber":55}],93:[function(require,module,exports){
+},{"./toBeObject":46,"./toBeWholeNumber":55}],94:[function(require,module,exports){
 // modules
 var toBeNonEmptyString = require('./toBeNonEmptyString');
 
@@ -1434,7 +1445,7 @@ module.exports = function toStartWith(subString, actual) {
   return actual.slice(0, subString.length) === subString;
 };
 
-},{"./toBeNonEmptyString":44}],94:[function(require,module,exports){
+},{"./toBeNonEmptyString":44}],95:[function(require,module,exports){
 // public
 module.exports = function toThrowAnyError(actual) {
   try {
@@ -1445,7 +1456,7 @@ module.exports = function toThrowAnyError(actual) {
   }
 };
 
-},{}],95:[function(require,module,exports){
+},{}],96:[function(require,module,exports){
 // public
 module.exports = function toThrowErrorOfType(type, actual) {
   try {
