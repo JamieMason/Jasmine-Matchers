@@ -20,7 +20,7 @@ npm test
 
 ## Dependencies
 
-- [jasmine-matchers-loader](https://github.com/JamieMason/jasmine-matchers-loader): An API to register Jasmine Matchers compatible with Jasmine v1 and v2
+- [add-matchers](https://github.com/JamieMason/add-matchers): Write useful test matchers compatible with Jest and Jasmine.
 
 ## Dev Dependencies
 
@@ -28,6 +28,7 @@ npm test
 - [codeclimate-test-reporter](https://github.com/codeclimate/javascript-test-reporter): Code Climate test reporter client for javascript projects
 - [gulp](https://github.com/gulpjs/gulp): The streaming build system
 - [jasmine-core](https://github.com/jasmine/jasmine): Official packaging of Jasmine&#39;s core files for use by Node.js projects.
+- [jest](https://github.com/facebook/jest): Painless JavaScript Testing.
 - [karma](https://github.com/karma-runner/karma): Spectacular Test Runner for JavaScript.
 - [karma-browserstack-launcher](https://github.com/karma-runner/karma-browserstack-launcher): A Karma plugin. Launch any browser on BrowserStack!
 - [karma-chrome-launcher](https://github.com/karma-runner/karma-chrome-launcher): A Karma plugin. Launcher for Chrome and Chrome Canary.

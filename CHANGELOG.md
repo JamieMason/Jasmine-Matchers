@@ -1,5 +1,17 @@
+<a name="3.5.0"></a>
+# [3.5.0](https://github.com/JamieMason/Jasmine-Matchers/compare/3.2.0...v3.5.0) (2017-01-18)
+
+
+### Features
+
+* **dates:** add toBeValidDate matcher ([47691cf](https://github.com/JamieMason/Jasmine-Matchers/commit/47691cf)), closes [#49](https://github.com/JamieMason/Jasmine-Matchers/issues/49)
+* **jest:** add compatibility with jest ([0654bcc](https://github.com/JamieMason/Jasmine-Matchers/commit/0654bcc))
+* **numbers:** add toBeNear matcher ([ffac1f5](https://github.com/JamieMason/Jasmine-Matchers/commit/ffac1f5)), closes [#58](https://github.com/JamieMason/Jasmine-Matchers/issues/58)
+
+
+
 <a name="3.2.0"></a>
-# [3.2.0](https://github.com/JamieMason/Jasmine-Matchers/compare/3.0.1...v3.2.0) (2017-01-14)
+# [3.2.0](https://github.com/JamieMason/Jasmine-Matchers/compare/3.0.1...3.2.0) (2017-01-14)
 
 
 ### Features
