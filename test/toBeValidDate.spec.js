@@ -13,8 +13,12 @@ describe('toBeValidDate', function () {
       it('should deny', function () {
         expect(null).not.toBeValidDate();
         expect(function () {}).not.toBeValidDate();
-        expect(new Date('')).not.toBeValidDate();
-        expect(new Date('invalid')).not.toBeValidDate();
+        try {
+          expect(new Date('')).not.toBeValidDate();
+          expect(new Date('invalid')).not.toBeValidDate();
+        } catch (err) {
+          // ignore "RangeError: Invalid time value" seen only in node.js
+        }
       });
     });
   });

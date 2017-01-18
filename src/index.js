@@ -1,5 +1,5 @@
 // 3rd party modules
-var loader = require('jasmine-matchers-loader');
+var addMatchers = require('add-matchers');
 
 // modules
 var api = require('./api');
@@ -9,5 +9,5 @@ var asymmetricMatchers = require('./asymmetricMatchers');
 module.exports = api.matcher;
 
 // implementation
-loader.add(api.matcher);
+addMatchers(api.matcher);
 global.any = asymmetricMatchers;

@@ -23,13 +23,14 @@
     "Vilmos Ioo (https://github.com/vilmosioo)"
   ],
   "dependencies": {
-    "jasmine-matchers-loader": "0.1.0"
+    "add-matchers": "0.4.0"
   },
   "devDependencies": {
     "browserify": "13.3.0",
     "codeclimate-test-reporter": "0.4.0",
     "gulp": "3.9.1",
     "jasmine-core": "2.5.2",
+    "jest": "18.1.0",
     "karma": "1.4.0",
     "karma-browserstack-launcher": "1.1.1",
     "karma-chrome-launcher": "2.0.0",
@@ -43,6 +44,12 @@
     "xo": "0.17.1"
   },
   "homepage": "https://github.com/JamieMason/Jasmine-Matchers",
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/index.js",
+    "testPathDirs": [
+      "<rootDir>/test"
+    ]
+  },
   "keywords": [
     "BDD",
     "TDD",
@@ -66,6 +73,7 @@
     "build": "gulp browserify",
     "lint": "xo --fix",
     "test": "npm run lint && npm run browserstack-android && npm run browserstack-ios && npm run browserstack-ie && npm run browserstack-safari && npm run browserstack-opera && npm run browserstack-firefox && npm run browserstack-chrome",
+    "test:jest": "jest",
     "test:local": "karma start karma/base.conf.js --browsers Chrome",
     "watch": "gulp watch"
   },
