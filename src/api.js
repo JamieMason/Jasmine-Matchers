@@ -113,6 +113,7 @@ module.exports = {
     toBeNonEmptyObject: require('./toBeNonEmptyObject'),
     toBeNonEmptyString: require('./toBeNonEmptyString'),
     toBeNumber: require('./toBeNumber'),
+    toBeNumericString: require('./toBeNumericString'),
     toBeObject: require('./toBeObject'),
     toBeOddNumber: require('./toBeOddNumber'),
     toBeRegExp: require('./toBeRegExp'),
