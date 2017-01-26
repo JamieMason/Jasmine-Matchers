@@ -612,7 +612,7 @@ global.any = asymmetricMatchers;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./api":10,"./asymmetricMatchers":11,"add-matchers":1}],13:[function(require,module,exports){
 // public
-module.exports = function every(array, truthTest) {
+module.exports = function any(array, truthTest) {
   for (var i = 0, len = array.length; i < len; i++) {
     if (truthTest(array[i])) {
       return true;
