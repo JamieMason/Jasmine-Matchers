@@ -1,4 +1,4 @@
-//spec
+// spec
 describe('toBeValidDate', function () {
   describe('when invoked', function () {
     describe('when value is a valid instance of Date', function () {
