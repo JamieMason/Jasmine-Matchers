@@ -16,5 +16,5 @@ describe('toBeNear', function () {
         expect(-42).not.toBeNear(-18, 11);
       });
     });
-  });
+  })
 });
