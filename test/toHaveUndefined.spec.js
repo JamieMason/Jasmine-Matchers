@@ -4,13 +4,13 @@ var describeToHaveX = require('./lib/describeToHaveX');
 // spec
 describe('toHaveUndefined', function () {
   describeToHaveX('toHaveUndefined', function () {
-    describe('when subject does NOT have a member at the given key', () => {
+    describe('when subject does NOT have a member at the given key', function () {
       it('should deny', function () {
         expect({}).not.toHaveUndefined('memberName');
         expect(null).not.toHaveUndefined('memberName');
       });
     });
-    describe('when subject DOES have a member at the given key', () => {
+    describe('when subject DOES have a member at the given key', function () {
       describe('when subject IS undefined', function () {
         it('should confirm', function () {
           expect({
