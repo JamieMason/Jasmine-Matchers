@@ -1,5 +1,15 @@
+<a name="3.6.0"></a>
+# [3.6.0](https://github.com/JamieMason/Jasmine-Matchers/compare/3.5.0...v3.6.0) (2017-01-31)
+
+
+### Features
+
+* **objects:** add toHaveUndefined matcher ([443dc76](https://github.com/JamieMason/Jasmine-Matchers/commit/443dc76)), closes [#37](https://github.com/JamieMason/Jasmine-Matchers/issues/37)
+
+
+
 <a name="3.5.0"></a>
-# [3.5.0](https://github.com/JamieMason/Jasmine-Matchers/compare/3.2.0...v3.5.0) (2017-01-18)
+# [3.5.0](https://github.com/JamieMason/Jasmine-Matchers/compare/3.2.0...3.5.0) (2017-01-18)
 
 
 ### Features
