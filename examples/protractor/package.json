@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "jasmine-expect": "*",
+    "protractor": "5.1.0"
+  },
+  "private": true,
+  "scripts": {
+    "postinstall": "webdriver-manager update",
+    "start": "webdriver-manager start",
+    "test": "protractor conf.js"
+  }
+}

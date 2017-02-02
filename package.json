@@ -102,6 +102,13 @@
           "browser",
           "jasmine"
         ]
+      },
+      {
+        "files": "examples/protractor/**/*.js",
+        "envs": [
+          "protractor",
+          "jasmine"
+        ]
       }
     ],
     "rules": {
