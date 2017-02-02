@@ -95,6 +95,15 @@
     "globals": [
       "any"
     ],
+    "overrides": [
+      {
+        "files": "examples/karma/**/*.js",
+        "envs": [
+          "browser",
+          "jasmine"
+        ]
+      }
+    ],
     "rules": {
       "func-names": 0,
       "max-nested-callbacks": 0,
