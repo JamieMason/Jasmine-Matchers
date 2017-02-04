@@ -1,13 +1,13 @@
 // spec
-describe('toBeFunction', function () {
-  describe('when invoked', function () {
-    describe('when subject IS a function', function () {
-      it('should confirm', function () {
-        expect(function () {}).toBeFunction();
+describe('toBeFunction', () => {
+  describe('when invoked', () => {
+    describe('when subject IS a function', () => {
+      it('should confirm', () => {
+        expect(() => {}).toBeFunction();
       });
     });
-    describe('when subject is NOT a function', function () {
-      it('should deny', function () {
+    describe('when subject is NOT a function', () => {
+      it('should deny', () => {
         expect(/regexp/).not.toBeFunction();
       });
     });

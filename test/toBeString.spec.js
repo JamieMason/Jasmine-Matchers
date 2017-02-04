@@ -1,14 +1,14 @@
 // spec
-describe('toBeString', function () {
-  describe('when invoked', function () {
-    describe('when subject IS a string of any length', function () {
-      it('should confirm', function () {
+describe('toBeString', () => {
+  describe('when invoked', () => {
+    describe('when subject IS a string of any length', () => {
+      it('should confirm', () => {
         expect('').toBeString();
         expect(' ').toBeString();
       });
     });
-    describe('when subject is NOT a string of any length', function () {
-      it('should deny', function () {
+    describe('when subject is NOT a string of any length', () => {
+      it('should deny', () => {
         expect(null).not.toBeString();
       });
     });

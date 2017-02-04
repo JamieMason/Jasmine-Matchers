@@ -1,9 +1,9 @@
 // 3rd party modules
-var addMatchers = require('add-matchers');
+const addMatchers = require('add-matchers');
 
 // modules
-var api = require('./api');
-var asymmetricMatchers = require('./asymmetricMatchers');
+const api = require('./api');
+const asymmetricMatchers = require('./asymmetricMatchers');
 
 // public
 module.exports = api.matcher;

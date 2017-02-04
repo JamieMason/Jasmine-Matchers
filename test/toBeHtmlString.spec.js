@@ -1,7 +1,7 @@
 // spec
-describe('toBeHtmlString', function () {
-  describe('when invoked', function () {
-    describe('when subject IS a string of HTML markup', function () {
+describe('toBeHtmlString', () => {
+  describe('when invoked', () => {
+    describe('when subject IS a string of HTML markup', () => {
       beforeEach(function () {
         this.ngMultiLine = '';
         this.ngMultiLine += '<a data-ng-href="//www.google.com" data-ng-click="launchApp($event)" target="_blank" class="ng-binding" href="//www.google.com">';
@@ -19,8 +19,8 @@ describe('toBeHtmlString', function () {
         expect(this.ngMultiLine).toBeHtmlString();
       });
     });
-    describe('when subject is NOT a string of HTML markup', function () {
-      it('should deny', function () {
+    describe('when subject is NOT a string of HTML markup', () => {
+      it('should deny', () => {
         expect('div').not.toBeHtmlString();
         expect(null).not.toBeHtmlString();
       });

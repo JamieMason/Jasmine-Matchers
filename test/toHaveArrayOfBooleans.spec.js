@@ -1,19 +1,19 @@
 // modules
-var describeToHaveArrayX = require('./lib/describeToHaveArrayX');
+const describeToHaveArrayX = require('./lib/describeToHaveArrayX');
 
 // spec
-describe('toHaveArrayOfBooleans', function () {
-  describeToHaveArrayX('toHaveArrayOfBooleans', function () {
-    describe('when named Array is empty', function () {
-      it('should confirm', function () {
+describe('toHaveArrayOfBooleans', () => {
+  describeToHaveArrayX('toHaveArrayOfBooleans', () => {
+    describe('when named Array is empty', () => {
+      it('should confirm', () => {
         expect({
           memberName: []
         }).toHaveArrayOfBooleans('memberName');
       });
     });
-    describe('when named Array has items', function () {
-      describe('when all items are booleans', function () {
-        it('should confirm', function () {
+    describe('when named Array has items', () => {
+      describe('when all items are booleans', () => {
+        it('should confirm', () => {
           expect({
             memberName: [true]
           }).toHaveArrayOfBooleans('memberName');
@@ -28,8 +28,8 @@ describe('toHaveArrayOfBooleans', function () {
           }).toHaveArrayOfBooleans('memberName');
         });
       });
-      describe('when any item is not a boolean', function () {
-        it('should deny', function () {
+      describe('when any item is not a boolean', () => {
+        it('should deny', () => {
           expect({
             memberName: [null]
           }).not.toHaveArrayOfBooleans('memberName');

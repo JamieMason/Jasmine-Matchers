@@ -1,12 +1,12 @@
 // modules
-var describeToHaveX = require('./lib/describeToHaveX');
+const describeToHaveX = require('./lib/describeToHaveX');
 
 // spec
-describe('toHaveStringLongerThan', function () {
-  describeToHaveX('toHaveStringLongerThan', function () {
-    describe('when the subject and comparison ARE both strings', function () {
-      describe('when the subject IS longer than the comparision string', function () {
-        it('should confirm', function () {
+describe('toHaveStringLongerThan', () => {
+  describeToHaveX('toHaveStringLongerThan', () => {
+    describe('when the subject and comparison ARE both strings', () => {
+      describe('when the subject IS longer than the comparision string', () => {
+        it('should confirm', () => {
           expect({
             memberName: 'abc'
           }).toHaveStringLongerThan('memberName', 'ab');
@@ -15,8 +15,8 @@ describe('toHaveStringLongerThan', function () {
           }).toHaveStringLongerThan('memberName', '');
         });
       });
-      describe('when the subject is NOT longer than the comparision string', function () {
-        it('should deny', function () {
+      describe('when the subject is NOT longer than the comparision string', () => {
+        it('should deny', () => {
           expect({
             memberName: 'ab'
           }).not.toHaveStringLongerThan('memberName', 'abc');
@@ -26,9 +26,9 @@ describe('toHaveStringLongerThan', function () {
         });
       });
     });
-    describe('when the subject and comparison are NOT both strings', function () {
-      it('should deny (we are asserting the relative lengths of two strings)', function () {
-        var _undefined;
+    describe('when the subject and comparison are NOT both strings', () => {
+      it('should deny (we are asserting the relative lengths of two strings)', () => {
+        let _undefined;
         expect({
           memberName: 'truthy'
         }).not.toHaveStringLongerThan('memberName', _undefined);

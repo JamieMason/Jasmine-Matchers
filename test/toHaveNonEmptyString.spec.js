@@ -1,18 +1,18 @@
 // modules
-var describeToHaveX = require('./lib/describeToHaveX');
+const describeToHaveX = require('./lib/describeToHaveX');
 
 // spec
-describe('toHaveNonEmptyString', function () {
-  describeToHaveX('toHaveNonEmptyString', function () {
-    describe('when subject IS a string with at least one character', function () {
-      it('should confirm', function () {
+describe('toHaveNonEmptyString', () => {
+  describeToHaveX('toHaveNonEmptyString', () => {
+    describe('when subject IS a string with at least one character', () => {
+      it('should confirm', () => {
         expect({
           memberName: ' '
         }).toHaveNonEmptyString('memberName');
       });
     });
-    describe('when subject is NOT a string with at least one character', function () {
-      it('should deny', function () {
+    describe('when subject is NOT a string with at least one character', () => {
+      it('should deny', () => {
         expect({
           memberName: ''
         }).not.toHaveNonEmptyString('memberName');

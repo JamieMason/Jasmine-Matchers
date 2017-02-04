@@ -1,13 +1,13 @@
 // modules
-var callSpy = require('./lib/callSpy');
+const callSpy = require('./lib/callSpy');
 
 // spec
-describe('any.regExp', function () {
-  var shared = {};
-  beforeEach(function () {
+describe('any.regExp', () => {
+  const shared = {};
+  beforeEach(() => {
     shared.spy = callSpy(/abc/);
   });
-  it('should confirm', function () {
+  it('should confirm', () => {
     expect(shared.spy).toHaveBeenCalledWith(any.regExp());
   });
 });

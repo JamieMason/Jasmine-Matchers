@@ -1,18 +1,18 @@
 // modules
-var describeToHaveX = require('./lib/describeToHaveX');
+const describeToHaveX = require('./lib/describeToHaveX');
 
 // spec
-describe('toHaveEvenNumber', function () {
-  describeToHaveX('toHaveEvenNumber', function () {
-    describe('when subject IS an even number', function () {
-      it('should confirm', function () {
+describe('toHaveEvenNumber', () => {
+  describeToHaveX('toHaveEvenNumber', () => {
+    describe('when subject IS an even number', () => {
+      it('should confirm', () => {
         expect({
           memberName: 2
         }).toHaveEvenNumber('memberName');
       });
     });
-    describe('when subject is NOT an even number', function () {
-      it('should deny', function () {
+    describe('when subject is NOT an even number', () => {
+      it('should deny', () => {
         expect({
           memberName: 1
         }).not.toHaveEvenNumber('memberName');

@@ -1,9 +1,7 @@
 // modules
-var every = require('./lib/every');
-var toBeArray = require('./toBeArray');
-var toBeObject = require('./toBeObject');
+const every = require('./lib/every');
+const toBeArray = require('./toBeArray');
+const toBeObject = require('./toBeObject');
 
 // public
-module.exports = function toBeArrayOfBooleans(actual) {
-  return toBeArray(actual) && every(actual, toBeObject);
-};
+module.exports = actual => toBeArray(actual) && every(actual, toBeObject);

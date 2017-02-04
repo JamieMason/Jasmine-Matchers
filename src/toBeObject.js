@@ -1,7 +1,5 @@
 // modules
-var is = require('./lib/is');
+const is = require('./lib/is');
 
 // public
-module.exports = function toBeObject(actual) {
-  return is(actual, 'Object');
-};
+module.exports = actual => is.Object(actual);

@@ -1,18 +1,18 @@
 // modules
-var describeToHaveX = require('./lib/describeToHaveX');
+const describeToHaveX = require('./lib/describeToHaveX');
 
 // spec
-describe('toHaveMethod', function () {
-  describeToHaveX('toHaveMethod', function () {
-    describe('when subject IS a function', function () {
-      it('should confirm', function () {
+describe('toHaveMethod', () => {
+  describeToHaveX('toHaveMethod', () => {
+    describe('when subject IS a function', () => {
+      it('should confirm', () => {
         expect({
-          memberName: function () {}
+          memberName() {}
         }).toHaveMethod('memberName');
       });
     });
-    describe('when subject is NOT a function', function () {
-      it('should deny', function () {
+    describe('when subject is NOT a function', () => {
+      it('should deny', () => {
         expect({
           memberName: /regexp/
         }).not.toHaveMethod('memberName');

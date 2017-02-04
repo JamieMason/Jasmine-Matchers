@@ -1,8 +1,6 @@
 // modules
-var is = require('./lib/is');
-var keys = require('./lib/keys');
+const is = require('./lib/is');
+const keys = require('./lib/keys');
 
 // public
-module.exports = function toBeEmptyObject(actual) {
-  return is(actual, 'Object') && keys(actual).length === 0;
-};
+module.exports = actual => is.Object(actual) && keys(actual).length === 0;

@@ -1,7 +1,5 @@
 // modules
-var is = require('./lib/is');
+const is = require('./lib/is');
 
 // public
-module.exports = function toBeArray(actual) {
-  return is(actual, 'Array');
-};
+module.exports = actual => is.Array(actual);

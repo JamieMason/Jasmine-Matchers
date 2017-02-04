@@ -1,8 +1,6 @@
 // modules
-var toBeObject = require('./toBeObject');
-var toBeWholeNumber = require('./toBeWholeNumber');
+const toBeObject = require('./toBeObject');
+const toBeWholeNumber = require('./toBeWholeNumber');
 
 // public
-module.exports = function toHaveWholeNumber(key, actual) {
-  return toBeObject(actual) && toBeWholeNumber(actual[key]);
-};
+module.exports = (key, actual) => toBeObject(actual) && toBeWholeNumber(actual[key]);

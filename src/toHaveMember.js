@@ -1,8 +1,6 @@
 // modules
-var toBeObject = require('./toBeObject');
-var toBeString = require('./toBeString');
+const toBeObject = require('./toBeObject');
+const toBeString = require('./toBeString');
 
 // public
-module.exports = function toHaveMember(key, actual) {
-  return toBeString(key) && toBeObject(actual) && key in actual;
-};
+module.exports = (key, actual) => toBeString(key) && toBeObject(actual) && key in actual;

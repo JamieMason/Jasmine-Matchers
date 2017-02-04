@@ -1,7 +1,5 @@
 // modules
-var toBeBefore = require('./toBeBefore');
+const toBeBefore = require('./toBeBefore');
 
 // public
-module.exports = function toBeAfter(otherDate, actual) {
-  return toBeBefore(actual, otherDate);
-};
+module.exports = (otherDate, actual) => toBeBefore(actual, otherDate);

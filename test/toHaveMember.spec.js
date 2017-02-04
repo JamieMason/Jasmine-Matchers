@@ -1,7 +1,7 @@
 // modules
-var describeToHaveX = require('./lib/describeToHaveX');
+const describeToHaveX = require('./lib/describeToHaveX');
 
 // spec
-describe('toHaveMember', function () {
-  describeToHaveX('toHaveMember', function () {});
+describe('toHaveMember', () => {
+  describeToHaveX('toHaveMember', () => {});
 });

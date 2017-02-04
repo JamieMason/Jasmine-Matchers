@@ -1,0 +1,19 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        node: 4,
+        "browsers": [
+          "android >= 4",
+          "chrome >= 40",
+          "edge >= 12",
+          "firefox >= 40",
+          "ie >= 9",
+          "ios >= 6",
+          "opera >= 12",
+          "safari >= 6"
+        ]
+      }
+    }]
+  ]
+}

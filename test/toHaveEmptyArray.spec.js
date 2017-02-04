@@ -1,11 +1,11 @@
 // modules
-var describeToHaveArrayX = require('./lib/describeToHaveArrayX');
+const describeToHaveArrayX = require('./lib/describeToHaveArrayX');
 
 // spec
-describe('toHaveEmptyArray', function () {
-  describeToHaveArrayX('toHaveEmptyArray', function () {
-    describe('when named array has members', function () {
-      it('should deny', function () {
+describe('toHaveEmptyArray', () => {
+  describeToHaveArrayX('toHaveEmptyArray', () => {
+    describe('when named array has members', () => {
+      it('should deny', () => {
         expect({
           memberName: [1, 2, 3]
         }).not.toHaveEmptyArray('memberName');
@@ -14,8 +14,8 @@ describe('toHaveEmptyArray', function () {
         }).not.toHaveEmptyArray('memberName');
       });
     });
-    describe('when named array has no members', function () {
-      it('should confirm', function () {
+    describe('when named array has no members', () => {
+      it('should confirm', () => {
         expect({
           memberName: []
         }).toHaveEmptyArray('memberName');

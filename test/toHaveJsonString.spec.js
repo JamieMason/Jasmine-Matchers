@@ -1,11 +1,11 @@
 // modules
-var describeToHaveX = require('./lib/describeToHaveX');
+const describeToHaveX = require('./lib/describeToHaveX');
 
 // spec
-describe('toHaveJsonString', function () {
-  describeToHaveX('toHaveJsonString', function () {
-    describe('when subject IS a string of parseable JSON', function () {
-      it('should confirm', function () {
+describe('toHaveJsonString', () => {
+  describeToHaveX('toHaveJsonString', () => {
+    describe('when subject IS a string of parseable JSON', () => {
+      it('should confirm', () => {
         expect({
           memberName: '{}'
         }).toHaveJsonString('memberName');
@@ -17,9 +17,9 @@ describe('toHaveJsonString', function () {
         }).toHaveJsonString('memberName');
       });
     });
-    describe('when subject is NOT a string of parseable JSON', function () {
-      it('should deny', function () {
-        var _undefined;
+    describe('when subject is NOT a string of parseable JSON', () => {
+      it('should deny', () => {
+        let _undefined;
         expect({
           memberName: '[1,]'
         }).not.toHaveJsonString('memberName');

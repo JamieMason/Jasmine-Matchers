@@ -1,7 +1,5 @@
 // modules
-var is = require('./lib/is');
+const is = require('./lib/is');
 
 // public
-module.exports = function toBeNonEmptyArray(actual) {
-  return is(actual, 'Array') && actual.length > 0;
-};
+module.exports = actual => is.Array(actual) && actual.length > 0;

@@ -1,13 +1,13 @@
 // modules
-var describeToHaveX = require('./lib/describeToHaveX');
+const describeToHaveX = require('./lib/describeToHaveX');
 
 // spec
-describe('toHaveObject', function () {
-  describeToHaveX('toHaveObject', function () {
+describe('toHaveObject', () => {
+  describeToHaveX('toHaveObject', () => {
     beforeEach(function () {
       this.Foo = function () {};
     });
-    describe('when subject IS an Object', function () {
+    describe('when subject IS an Object', () => {
       it('should confirm', function () {
         expect({
           memberName: new Object()
@@ -20,8 +20,8 @@ describe('toHaveObject', function () {
         }).toHaveObject('memberName');
       });
     });
-    describe('when subject is NOT an Object', function () {
-      it('should deny', function () {
+    describe('when subject is NOT an Object', () => {
+      it('should deny', () => {
         expect({
           memberName: null
         }).not.toHaveObject('memberName');

@@ -1,11 +1,11 @@
 // modules
-var baseConfig = require('./cloud.conf');
-var platforms = require('./browserstack.json');
+const baseConfig = require('./cloud.conf');
+const platforms = require('./browserstack.json');
 
 // public
 module.exports = function (config) {
   baseConfig({
-    set: function (base) {
+    set(base) {
       base.browsers = Object.keys(platforms);
       base.concurrency = 5;
       base.customLaunchers = platforms;

@@ -1,14 +1,14 @@
 // modules
-var describeToHaveX = require('./lib/describeToHaveX');
+const describeToHaveX = require('./lib/describeToHaveX');
 
 // spec
-describe('toHaveNonEmptyObject', function () {
-  describeToHaveX('toHaveNonEmptyObject', function () {
+describe('toHaveNonEmptyObject', () => {
+  describeToHaveX('toHaveNonEmptyObject', () => {
     beforeEach(function () {
       this.Foo = function () {};
     });
-    describe('when subject IS an Object with at least one instance member', function () {
-      it('should confirm', function () {
+    describe('when subject IS an Object with at least one instance member', () => {
+      it('should confirm', () => {
         expect({
           memberName: {
             a: 1
@@ -16,7 +16,7 @@ describe('toHaveNonEmptyObject', function () {
         }).toHaveNonEmptyObject('memberName');
       });
     });
-    describe('when subject is NOT an Object with at least one instance member', function () {
+    describe('when subject is NOT an Object with at least one instance member', () => {
       beforeEach(function () {
         this.Foo.prototype = {
           b: 2

@@ -1,19 +1,19 @@
 // modules
-var describeToBeArrayOfX = require('./lib/describeToBeArrayOfX');
+const describeToBeArrayOfX = require('./lib/describeToBeArrayOfX');
 
 // spec
-describe('toBeArrayOfObjects', function () {
+describe('toBeArrayOfObjects', () => {
   describeToBeArrayOfX('toBeArrayOfObjects', {
     type: 'Object',
-    whenValid: function () {
+    whenValid() {
       expect([{}, {}]).toBeArrayOfObjects();
     },
-    whenInvalid: function () {
+    whenInvalid() {
       expect([null]).not.toBeArrayOfObjects();
       expect(['Object']).not.toBeArrayOfObjects();
       expect(['[object Object]']).not.toBeArrayOfObjects();
     },
-    whenMixed: function () {
+    whenMixed() {
       expect([null, {}]).not.toBeArrayOfObjects();
     }
   });

@@ -1,17 +1,17 @@
 // spec
-describe('toBeNonEmptyObject', function () {
+describe('toBeNonEmptyObject', () => {
   beforeEach(function () {
     this.Foo = function () {};
   });
-  describe('when invoked', function () {
-    describe('when subject IS an Object with at least one instance member', function () {
-      it('should confirm', function () {
+  describe('when invoked', () => {
+    describe('when subject IS an Object with at least one instance member', () => {
+      it('should confirm', () => {
         expect({
           a: 1
         }).toBeNonEmptyObject();
       });
     });
-    describe('when subject is NOT an Object with at least one instance member', function () {
+    describe('when subject is NOT an Object with at least one instance member', () => {
       beforeEach(function () {
         this.Foo.prototype = {
           b: 2

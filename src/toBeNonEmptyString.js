@@ -1,7 +1,5 @@
 // modules
-var toBeString = require('./toBeString');
+const toBeString = require('./toBeString');
 
 // public
-module.exports = function toBeNonEmptyString(actual) {
-  return toBeString(actual) && actual.length > 0;
-};
+module.exports = actual => toBeString(actual) && actual.length > 0;

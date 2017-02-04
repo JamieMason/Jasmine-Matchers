@@ -1,8 +1,6 @@
 // modules
-var toBeObject = require('./toBeObject');
-var toBeCalculable = require('./toBeCalculable');
+const toBeObject = require('./toBeObject');
+const toBeCalculable = require('./toBeCalculable');
 
 // public
-module.exports = function toHaveCalculable(key, actual) {
-  return toBeObject(actual) && toBeCalculable(actual[key]);
-};
+module.exports = (key, actual) => toBeObject(actual) && toBeCalculable(actual[key]);

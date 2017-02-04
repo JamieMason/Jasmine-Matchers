@@ -1,7 +1,5 @@
 // modules
-var toBeArrayOfSize = require('./toBeArrayOfSize');
+const toBeArrayOfSize = require('./toBeArrayOfSize');
 
 // public
-module.exports = function toBeEmptyArray(actual) {
-  return toBeArrayOfSize(0, actual);
-};
+module.exports = actual => toBeArrayOfSize(0, actual);

@@ -1,8 +1,6 @@
 // modules
-var toBeObject = require('./toBeObject');
-var toBeFalse = require('./toBeFalse');
+const toBeObject = require('./toBeObject');
+const toBeFalse = require('./toBeFalse');
 
 // public
-module.exports = function toHaveFalse(key, actual) {
-  return toBeObject(actual) && toBeFalse(actual[key]);
-};
+module.exports = (key, actual) => toBeObject(actual) && toBeFalse(actual[key]);

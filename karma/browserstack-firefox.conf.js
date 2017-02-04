@@ -1,10 +1,10 @@
 // modules
-var baseConfig = require('./browserstack.conf');
+const baseConfig = require('./browserstack.conf');
 
 // public
 module.exports = function (config) {
   baseConfig({
-    set: function (base) {
+    set(base) {
       base.browsers = [
         'firefox-47.0',
         'firefox-46.0',

@@ -1,7 +1,7 @@
 // spec
-describe('toThrowAnyError', function () {
-  describe('when supplied a function', function () {
-    describe('when function errors when invoked', function () {
+describe('toThrowAnyError', () => {
+  describe('when supplied a function', () => {
+    describe('when function errors when invoked', () => {
       beforeEach(function () {
         this.throwError = function () {
           throw new Error('wut?');
@@ -15,7 +15,7 @@ describe('toThrowAnyError', function () {
         expect(this.badReference).toThrowAnyError();
       });
     });
-    describe('when function does NOT error when invoked', function () {
+    describe('when function does NOT error when invoked', () => {
       beforeEach(function () {
         this.noErrors = function () {};
       });

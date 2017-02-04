@@ -1,7 +1,5 @@
 // modules
-var is = require('./lib/is');
+const is = require('./lib/is');
 
 // public
-module.exports = function toBeDate(actual) {
-  return is(actual, 'Date');
-};
+module.exports = actual => is.Date(actual);

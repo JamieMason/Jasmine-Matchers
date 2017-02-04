@@ -1,8 +1,6 @@
 // modules
-var toBeObject = require('./toBeObject');
-var toBeNonEmptyObject = require('./toBeNonEmptyObject');
+const toBeObject = require('./toBeObject');
+const toBeNonEmptyObject = require('./toBeNonEmptyObject');
 
 // public
-module.exports = function toHaveNonEmptyObject(key, actual) {
-  return toBeObject(actual) && toBeNonEmptyObject(actual[key]);
-};
+module.exports = (key, actual) => toBeObject(actual) && toBeNonEmptyObject(actual[key]);

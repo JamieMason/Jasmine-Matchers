@@ -1,11 +1,11 @@
 // modules
-var describeToHaveBooleanX = require('./lib/describeToHaveBooleanX');
+const describeToHaveBooleanX = require('./lib/describeToHaveBooleanX');
 
 // spec
-describe('toHaveBoolean', function () {
-  describeToHaveBooleanX('toHaveBoolean', function () {
-    describe('when primitive', function () {
-      it('should confirm', function () {
+describe('toHaveBoolean', () => {
+  describeToHaveBooleanX('toHaveBoolean', () => {
+    describe('when primitive', () => {
+      it('should confirm', () => {
         expect({
           memberName: true
         }).toHaveBoolean('memberName');
@@ -14,8 +14,8 @@ describe('toHaveBoolean', function () {
         }).toHaveBoolean('memberName');
       });
     });
-    describe('when Boolean object', function () {
-      it('should confirm', function () {
+    describe('when Boolean object', () => {
+      it('should confirm', () => {
         expect({
           memberName: new Boolean(true)
         }).toHaveBoolean('memberName');

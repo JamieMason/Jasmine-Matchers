@@ -1,13 +1,13 @@
 // modules
-var callSpy = require('./lib/callSpy');
+const callSpy = require('./lib/callSpy');
 
 // spec
-describe('any.shorterThan', function () {
-  var shared = {};
-  beforeEach(function () {
+describe('any.shorterThan', () => {
+  const shared = {};
+  beforeEach(() => {
     shared.spy = callSpy('skeletor');
   });
-  it('should confirm', function () {
+  it('should confirm', () => {
     expect(shared.spy).toHaveBeenCalledWith(any.shorterThan('trogdor the burninator'));
   });
 });

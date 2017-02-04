@@ -1,7 +1,5 @@
 // modules
-var is = require('./lib/is');
+const is = require('./lib/is');
 
 // public
-module.exports = function toBeBoolean(actual) {
-  return is(actual, 'Boolean');
-};
+module.exports = actual => is.Boolean(actual);

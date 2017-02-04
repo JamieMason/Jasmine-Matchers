@@ -1,8 +1,6 @@
 // modules
-var toBeObject = require('./toBeObject');
-var toBeWithinRange = require('./toBeWithinRange');
+const toBeObject = require('./toBeObject');
+const toBeWithinRange = require('./toBeWithinRange');
 
 // public
-module.exports = function toHaveNumberWithinRange(key, floor, ceiling, actual) {
-  return toBeObject(actual) && toBeWithinRange(floor, ceiling, actual[key]);
-};
+module.exports = (key, floor, ceiling, actual) => toBeObject(actual) && toBeWithinRange(floor, ceiling, actual[key]);

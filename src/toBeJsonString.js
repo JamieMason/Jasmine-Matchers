@@ -1,5 +1,5 @@
 // public
-module.exports = function toBeJsonString(actual) {
+module.exports = actual => {
   try {
     return JSON.parse(actual) !== null;
   } catch (err) {

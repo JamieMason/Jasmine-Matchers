@@ -1,13 +1,13 @@
 // spec
-describe('toBeEmptyString', function () {
-  describe('when invoked', function () {
-    describe('when subject IS a string with no characters', function () {
-      it('should confirm', function () {
+describe('toBeEmptyString', () => {
+  describe('when invoked', () => {
+    describe('when subject IS a string with no characters', () => {
+      it('should confirm', () => {
         expect('').toBeEmptyString();
       });
     });
-    describe('when subject is NOT a string with no characters', function () {
-      it('should deny', function () {
+    describe('when subject is NOT a string with no characters', () => {
+      it('should deny', () => {
         expect(' ').not.toBeEmptyString();
       });
     });

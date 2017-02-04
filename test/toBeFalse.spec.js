@@ -1,14 +1,14 @@
 // spec
-describe('toBeFalse', function () {
-  describe('when invoked', function () {
-    describe('when subject is not only falsy, but a boolean false', function () {
-      it('should confirm', function () {
+describe('toBeFalse', () => {
+  describe('when invoked', () => {
+    describe('when subject is not only falsy, but a boolean false', () => {
+      it('should confirm', () => {
         expect(false).toBeFalse();
         expect(new Boolean(false)).toBeFalse();
       });
     });
-    describe('when subject is falsy', function () {
-      it('should deny', function () {
+    describe('when subject is falsy', () => {
+      it('should deny', () => {
         expect(1).not.toBeFalse();
       });
     });

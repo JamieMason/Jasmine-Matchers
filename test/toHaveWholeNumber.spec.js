@@ -1,11 +1,11 @@
 // modules
-var describeToHaveX = require('./lib/describeToHaveX');
+const describeToHaveX = require('./lib/describeToHaveX');
 
 // spec
-describe('toHaveWholeNumber', function () {
-  describeToHaveX('toHaveWholeNumber', function () {
-    describe('when subject IS a number with no positive decimal places', function () {
-      it('should confirm', function () {
+describe('toHaveWholeNumber', () => {
+  describeToHaveX('toHaveWholeNumber', () => {
+    describe('when subject IS a number with no positive decimal places', () => {
+      it('should confirm', () => {
         expect({
           memberName: 1
         }).toHaveWholeNumber('memberName');
@@ -17,8 +17,8 @@ describe('toHaveWholeNumber', function () {
         }).toHaveWholeNumber('memberName');
       });
     });
-    describe('when subject is NOT a number with no positive decimal places', function () {
-      it('should deny', function () {
+    describe('when subject is NOT a number with no positive decimal places', () => {
+      it('should deny', () => {
         expect({
           memberName: NaN
         }).not.toHaveWholeNumber('memberName');

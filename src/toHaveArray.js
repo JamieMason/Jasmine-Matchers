@@ -1,8 +1,6 @@
 // modules
-var toBeObject = require('./toBeObject');
-var toBeArray = require('./toBeArray');
+const toBeObject = require('./toBeObject');
+const toBeArray = require('./toBeArray');
 
 // public
-module.exports = function toHaveArray(key, actual) {
-  return toBeObject(actual) && toBeArray(actual[key]);
-};
+module.exports = (key, actual) => toBeObject(actual) && toBeArray(actual[key]);

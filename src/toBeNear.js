@@ -1,7 +1,5 @@
 // modules
-var toBeNumber = require('./toBeNumber');
+const toBeNumber = require('./toBeNumber');
 
 // public
-module.exports = function toBeNear(number, epsilon, actual) {
-  return toBeNumber(actual) && actual >= number - epsilon && actual <= number + epsilon;
-};
+module.exports = (number, epsilon, actual) => toBeNumber(actual) && actual >= number - epsilon && actual <= number + epsilon;

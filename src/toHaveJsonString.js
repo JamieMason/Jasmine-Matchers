@@ -1,8 +1,6 @@
 // modules
-var toBeObject = require('./toBeObject');
-var toBeJsonString = require('./toBeJsonString');
+const toBeObject = require('./toBeObject');
+const toBeJsonString = require('./toBeJsonString');
 
 // public
-module.exports = function toHaveJsonString(key, actual) {
-  return toBeObject(actual) && toBeJsonString(actual[key]);
-};
+module.exports = (key, actual) => toBeObject(actual) && toBeJsonString(actual[key]);

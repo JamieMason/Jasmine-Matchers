@@ -1,8 +1,6 @@
 // modules
-var toBeObject = require('./toBeObject');
-var toBeFunction = require('./toBeFunction');
+const toBeObject = require('./toBeObject');
+const toBeFunction = require('./toBeFunction');
 
 // public
-module.exports = function toHaveMethod(key, actual) {
-  return toBeObject(actual) && toBeFunction(actual[key]);
-};
+module.exports = (key, actual) => toBeObject(actual) && toBeFunction(actual[key]);

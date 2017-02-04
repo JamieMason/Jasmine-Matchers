@@ -1,11 +1,11 @@
 // modules
-var describeToHaveX = require('./lib/describeToHaveX');
+const describeToHaveX = require('./lib/describeToHaveX');
 
 // spec
-describe('toHaveNumber', function () {
-  describeToHaveX('toHaveNumber', function () {
-    describe('when subject IS a number', function () {
-      it('should confirm', function () {
+describe('toHaveNumber', () => {
+  describeToHaveX('toHaveNumber', () => {
+    describe('when subject IS a number', () => {
+      it('should confirm', () => {
         expect({
           memberName: 1
         }).toHaveNumber('memberName');
@@ -23,8 +23,8 @@ describe('toHaveNumber', function () {
         }).toHaveNumber('memberName');
       });
     });
-    describe('when subject is NOT a number', function () {
-      it('should deny', function () {
+    describe('when subject is NOT a number', () => {
+      it('should deny', () => {
         expect({
           memberName: '1'
         }).not.toHaveNumber('memberName');

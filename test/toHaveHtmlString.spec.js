@@ -1,10 +1,10 @@
 // modules
-var describeToHaveX = require('./lib/describeToHaveX');
+const describeToHaveX = require('./lib/describeToHaveX');
 
 // spec
-describe('toHaveHtmlString', function () {
-  describeToHaveX('toHaveHtmlString', function () {
-    describe('when subject IS a string of HTML markup', function () {
+describe('toHaveHtmlString', () => {
+  describeToHaveX('toHaveHtmlString', () => {
+    describe('when subject IS a string of HTML markup', () => {
       beforeEach(function () {
         this.ngMultiLine = '';
         this.ngMultiLine += '<a data-ng-href="//www.google.com" data-ng-click="launchApp($event)" target="_blank" class="ng-binding" href="//www.google.com">';
@@ -32,8 +32,8 @@ describe('toHaveHtmlString', function () {
         }).toHaveHtmlString('memberName');
       });
     });
-    describe('when subject is NOT a string of HTML markup', function () {
-      it('should deny', function () {
+    describe('when subject is NOT a string of HTML markup', () => {
+      it('should deny', () => {
         expect({
           memberName: 'div'
         }).not.toHaveHtmlString('memberName');

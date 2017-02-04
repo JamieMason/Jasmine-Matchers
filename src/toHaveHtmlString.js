@@ -1,8 +1,6 @@
 // modules
-var toBeObject = require('./toBeObject');
-var toBeHtmlString = require('./toBeHtmlString');
+const toBeObject = require('./toBeObject');
+const toBeHtmlString = require('./toBeHtmlString');
 
 // public
-module.exports = function toHaveHtmlString(key, actual) {
-  return toBeObject(actual) && toBeHtmlString(actual[key]);
-};
+module.exports = (key, actual) => toBeObject(actual) && toBeHtmlString(actual[key]);

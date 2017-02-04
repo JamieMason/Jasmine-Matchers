@@ -1,8 +1,8 @@
 // spec
-describe('toBeNumber', function () {
-  describe('when invoked', function () {
-    describe('when subject IS a number', function () {
-      it('should confirm', function () {
+describe('toBeNumber', () => {
+  describe('when invoked', () => {
+    describe('when subject IS a number', () => {
+      it('should confirm', () => {
         expect(1).toBeNumber();
         expect(1.11).toBeNumber();
         expect(1e3).toBeNumber();
@@ -10,8 +10,8 @@ describe('toBeNumber', function () {
         expect(-11).toBeNumber();
       });
     });
-    describe('when subject is NOT a number', function () {
-      it('should deny', function () {
+    describe('when subject is NOT a number', () => {
+      it('should deny', () => {
         expect('1').not.toBeNumber();
         expect(NaN).not.toBeNumber();
       });

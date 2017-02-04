@@ -1,7 +1,5 @@
 // modules
-var toBeArray = require('./toBeArray');
+const toBeArray = require('./toBeArray');
 
 // public
-module.exports = function toBeArrayOfSize(size, actual) {
-  return toBeArray(actual) && actual.length === size;
-};
+module.exports = (size, actual) => toBeArray(actual) && actual.length === size;

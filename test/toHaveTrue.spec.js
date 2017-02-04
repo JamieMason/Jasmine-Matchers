@@ -1,35 +1,35 @@
 // modules
-var describeToHaveBooleanX = require('./lib/describeToHaveBooleanX');
+const describeToHaveBooleanX = require('./lib/describeToHaveBooleanX');
 
 // spec
-describe('toHaveTrue', function () {
-  describeToHaveBooleanX('toHaveTrue', function () {
-    describe('when primitive', function () {
-      describe('when true', function () {
-        it('should confirm', function () {
+describe('toHaveTrue', () => {
+  describeToHaveBooleanX('toHaveTrue', () => {
+    describe('when primitive', () => {
+      describe('when true', () => {
+        it('should confirm', () => {
           expect({
             memberName: true
           }).toHaveTrue('memberName');
         });
       });
-      describe('when false', function () {
-        it('should deny', function () {
+      describe('when false', () => {
+        it('should deny', () => {
           expect({
             memberName: false
           }).not.toHaveTrue('memberName');
         });
       });
     });
-    describe('when Boolean object', function () {
-      describe('when true', function () {
-        it('should confirm', function () {
+    describe('when Boolean object', () => {
+      describe('when true', () => {
+        it('should confirm', () => {
           expect({
             memberName: new Boolean(true)
           }).toHaveTrue('memberName');
         });
       });
-      describe('when false', function () {
-        it('should deny', function () {
+      describe('when false', () => {
+        it('should deny', () => {
           expect({
             memberName: new Boolean(false)
           }).not.toHaveTrue('memberName');

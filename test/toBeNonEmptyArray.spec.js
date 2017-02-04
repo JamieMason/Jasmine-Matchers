@@ -1,20 +1,20 @@
 // modules
-var describeWhenNotArray = require('./lib/describeWhenNotArray');
+const describeWhenNotArray = require('./lib/describeWhenNotArray');
 
 // spec
-describe('toBeNonEmptyArray', function () {
-  describe('when invoked', function () {
-    describe('when subject is a true Array', function () {
-      describe('when subject has members', function () {
-        it('should confirm', function () {
-          var _undefined;
+describe('toBeNonEmptyArray', () => {
+  describe('when invoked', () => {
+    describe('when subject is a true Array', () => {
+      describe('when subject has members', () => {
+        it('should confirm', () => {
+          let _undefined;
           expect([null]).toBeNonEmptyArray();
           expect([_undefined]).toBeNonEmptyArray();
           expect(['']).toBeNonEmptyArray();
         });
       });
-      describe('when subject has no members', function () {
-        it('should deny', function () {
+      describe('when subject has no members', () => {
+        it('should deny', () => {
           expect([]).not.toBeNonEmptyArray();
         });
       });

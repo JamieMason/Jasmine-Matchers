@@ -1,8 +1,8 @@
 // modules
-var toBeNonEmptyString = require('./toBeNonEmptyString');
+const toBeNonEmptyString = require('./toBeNonEmptyString');
 
 // public
-module.exports = function toStartWith(subString, actual) {
+module.exports = (subString, actual) => {
   if (!toBeNonEmptyString(actual) || !toBeNonEmptyString(subString)) {
     return false;
   }

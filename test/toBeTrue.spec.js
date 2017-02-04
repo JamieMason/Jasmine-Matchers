@@ -1,14 +1,14 @@
 // spec
-describe('toBeTrue', function () {
-  describe('when invoked', function () {
-    describe('when subject is not only truthy, but a boolean true', function () {
-      it('should confirm', function () {
+describe('toBeTrue', () => {
+  describe('when invoked', () => {
+    describe('when subject is not only truthy, but a boolean true', () => {
+      it('should confirm', () => {
         expect(true).toBeTrue();
         expect(new Boolean(true)).toBeTrue();
       });
     });
-    describe('when subject is truthy', function () {
-      it('should deny', function () {
+    describe('when subject is truthy', () => {
+      it('should deny', () => {
         expect(1).not.toBeTrue();
       });
     });

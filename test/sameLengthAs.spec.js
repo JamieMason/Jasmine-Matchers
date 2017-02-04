@@ -1,13 +1,13 @@
 // modules
-var callSpy = require('./lib/callSpy');
+const callSpy = require('./lib/callSpy');
 
 // spec
-describe('any.sameLengthAs', function () {
-  var shared = {};
-  beforeEach(function () {
+describe('any.sameLengthAs', () => {
+  const shared = {};
+  beforeEach(() => {
     shared.spy = callSpy('Cat');
   });
-  it('should confirm', function () {
+  it('should confirm', () => {
     expect(shared.spy).toHaveBeenCalledWith(any.sameLengthAs('Dog'));
   });
 });

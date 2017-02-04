@@ -1,7 +1,5 @@
 // modules
-var toBeNumber = require('./toBeNumber');
+const toBeNumber = require('./toBeNumber');
 
 // public
-module.exports = function toBeGreaterThanOrEqualTo(otherNumber, actual) {
-  return toBeNumber(actual) && actual >= otherNumber;
-};
+module.exports = (otherNumber, actual) => toBeNumber(actual) && actual >= otherNumber;

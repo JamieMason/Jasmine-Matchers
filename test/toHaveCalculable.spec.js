@@ -1,11 +1,11 @@
 // modules
-var describeToHaveX = require('./lib/describeToHaveX');
+const describeToHaveX = require('./lib/describeToHaveX');
 
 // spec
-describe('toHaveCalculable', function () {
-  describeToHaveX('toHaveCalculable', function () {
-    describe('when subject CAN be coerced to be used in mathematical operations', function () {
-      it('should confirm', function () {
+describe('toHaveCalculable', () => {
+  describeToHaveX('toHaveCalculable', () => {
+    describe('when subject CAN be coerced to be used in mathematical operations', () => {
+      it('should confirm', () => {
         expect({
           memberName: '1'
         }).toHaveCalculable('memberName');
@@ -17,8 +17,8 @@ describe('toHaveCalculable', function () {
         }).toHaveCalculable('memberName');
       });
     });
-    describe('when subject can NOT be coerced by JavaScript to be used in mathematical operations', function () {
-      it('should deny', function () {
+    describe('when subject can NOT be coerced by JavaScript to be used in mathematical operations', () => {
+      it('should deny', () => {
         expect({
           memberName: {}
         }).not.toHaveCalculable('memberName');

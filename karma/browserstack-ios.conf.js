@@ -1,10 +1,10 @@
 // modules
-var baseConfig = require('./browserstack.conf');
+const baseConfig = require('./browserstack.conf');
 
 // public
 module.exports = function (config) {
   baseConfig({
-    set: function (base) {
+    set(base) {
       base.browsers = [
         'ipad-9.1',
         'ipad-8.3',

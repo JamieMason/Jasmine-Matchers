@@ -1,7 +1,5 @@
-var toBeObject = require('./toBeObject');
-var toBeOddNumber = require('./toBeOddNumber');
+const toBeObject = require('./toBeObject');
+const toBeOddNumber = require('./toBeOddNumber');
 
 // public
-module.exports = function toHaveOddNumber(key, actual) {
-  return toBeObject(actual) && toBeOddNumber(actual[key]);
-};
+module.exports = (key, actual) => toBeObject(actual) && toBeOddNumber(actual[key]);

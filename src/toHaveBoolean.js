@@ -1,8 +1,6 @@
 // modules
-var toBeObject = require('./toBeObject');
-var toBeBoolean = require('./toBeBoolean');
+const toBeObject = require('./toBeObject');
+const toBeBoolean = require('./toBeBoolean');
 
 // public
-module.exports = function toHaveBoolean(key, actual) {
-  return toBeObject(actual) && toBeBoolean(actual[key]);
-};
+module.exports = (key, actual) => toBeObject(actual) && toBeBoolean(actual[key]);

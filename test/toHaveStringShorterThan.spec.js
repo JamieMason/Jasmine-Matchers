@@ -1,12 +1,12 @@
 // modules
-var describeToHaveX = require('./lib/describeToHaveX');
+const describeToHaveX = require('./lib/describeToHaveX');
 
 // spec
-describe('toHaveStringShorterThan', function () {
-  describeToHaveX('toHaveStringShorterThan', function () {
-    describe('when the subject and comparison ARE both strings', function () {
-      describe('when the subject IS shorter than the comparision string', function () {
-        it('should confirm', function () {
+describe('toHaveStringShorterThan', () => {
+  describeToHaveX('toHaveStringShorterThan', () => {
+    describe('when the subject and comparison ARE both strings', () => {
+      describe('when the subject IS shorter than the comparision string', () => {
+        it('should confirm', () => {
           expect({
             memberName: 'ab'
           }).toHaveStringShorterThan('memberName', 'abc');
@@ -15,8 +15,8 @@ describe('toHaveStringShorterThan', function () {
           }).toHaveStringShorterThan('memberName', 'a');
         });
       });
-      describe('when the subject is NOT shorter than the comparision string', function () {
-        it('should deny', function () {
+      describe('when the subject is NOT shorter than the comparision string', () => {
+        it('should deny', () => {
           expect({
             memberName: 'abc'
           }).not.toHaveStringShorterThan('memberName', 'ab');
@@ -26,9 +26,9 @@ describe('toHaveStringShorterThan', function () {
         });
       });
     });
-    describe('when the subject and comparison are NOT both strings', function () {
-      it('should deny (we are asserting the relative lengths of two strings)', function () {
-        var _undefined;
+    describe('when the subject and comparison are NOT both strings', () => {
+      it('should deny (we are asserting the relative lengths of two strings)', () => {
+        let _undefined;
         expect({
           memberName: 'truthy'
         }).not.toHaveStringShorterThan('memberName', _undefined);

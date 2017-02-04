@@ -1,10 +1,10 @@
 // modules
-var baseConfig = require('./base.conf');
+const baseConfig = require('./base.conf');
 
 // public
 module.exports = function (config) {
   baseConfig({
-    set: function (base) {
+    set(base) {
       base.browserDisconnectTimeout = 10000; // default 2000
       base.browserDisconnectTolerance = 10; // default 0
       base.browserNoActivityTimeout = 4 * 60 * 1000; // default 10000

@@ -1,8 +1,6 @@
 // modules
-var toBeObject = require('./toBeObject');
-var toHaveMember = require('./toHaveMember');
+const toBeObject = require('./toBeObject');
+const toHaveMember = require('./toHaveMember');
 
 // public
-module.exports = function toHaveUndefined(key, actual) {
-  return toBeObject(actual) && toHaveMember(key, actual) && typeof actual[key] === 'undefined';
-};
+module.exports = (key, actual) => toBeObject(actual) && toHaveMember(key, actual) && typeof actual[key] === 'undefined';

@@ -1,19 +1,19 @@
 // modules
-var describeToHaveArrayX = require('./lib/describeToHaveArrayX');
+const describeToHaveArrayX = require('./lib/describeToHaveArrayX');
 
 // spec
-describe('toHaveArrayOfObjects', function () {
-  describeToHaveArrayX('toHaveArrayOfObjects', function () {
-    describe('when named Array is empty', function () {
-      it('should confirm', function () {
+describe('toHaveArrayOfObjects', () => {
+  describeToHaveArrayX('toHaveArrayOfObjects', () => {
+    describe('when named Array is empty', () => {
+      it('should confirm', () => {
         expect({
           memberName: []
         }).toHaveArrayOfObjects('memberName');
       });
     });
-    describe('when named Array has items', function () {
-      describe('when all items are objects', function () {
-        it('should confirm', function () {
+    describe('when named Array has items', () => {
+      describe('when all items are objects', () => {
+        it('should confirm', () => {
           expect({
             memberName: [{}]
           }).toHaveArrayOfObjects('memberName');
@@ -22,8 +22,8 @@ describe('toHaveArrayOfObjects', function () {
           }).toHaveArrayOfObjects('memberName');
         });
       });
-      describe('when any item is not an object', function () {
-        it('should deny', function () {
+      describe('when any item is not an object', () => {
+        it('should deny', () => {
           expect({
             memberName: [null]
           }).not.toHaveArrayOfObjects('memberName');

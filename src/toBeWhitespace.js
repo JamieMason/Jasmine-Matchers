@@ -1,7 +1,5 @@
 // modules
-var toBeString = require('./toBeString');
+const toBeString = require('./toBeString');
 
 // public
-module.exports = function toBeWhitespace(actual) {
-  return toBeString(actual) && actual.search(/\S/) === -1;
-};
+module.exports = actual => toBeString(actual) && actual.search(/\S/) === -1;

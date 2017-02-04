@@ -1,12 +1,12 @@
 // modules
-var any = require('./lib/any');
-var toBeString = require('./toBeString');
+const any = require('./lib/any');
+const toBeString = require('./toBeString');
 
 // public
 module.exports = toBeIso8601;
 
 // implementation
-var patterns = [
+const patterns = [
   'nnnn-nn-nn',
   'nnnn-nn-nnTnn:nn',
   'nnnn-nn-nnTnn:nn:nn',
@@ -18,7 +18,7 @@ function toBeIso8601(actual) {
   return toBeString(actual) && any(patterns, matches) && new Date(actual).toString() !== 'Invalid Date';
 
   function matches(pattern) {
-    var regex = '^' + expand(pattern) + '$';
+    const regex = `^${expand(pattern)}$`;
     return actual.search(new RegExp(regex)) !== -1;
   }
 }

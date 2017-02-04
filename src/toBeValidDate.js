@@ -1,4 +1,5 @@
+// modules
+const is = require('./lib/is');
+
 // public
-module.exports = function toBeValidDate(actual) {
-  return Object.prototype.toString.call(actual) === '[object Date]' && !isNaN(actual.getTime());
-};
+module.exports = actual => is.Date(actual) && !isNaN(actual.getTime());

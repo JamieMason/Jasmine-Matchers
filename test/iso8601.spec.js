@@ -1,13 +1,13 @@
 // modules
-var callSpy = require('./lib/callSpy');
+const callSpy = require('./lib/callSpy');
 
 // spec
-describe('any.iso8601', function () {
-  var shared = {};
-  beforeEach(function () {
+describe('any.iso8601', () => {
+  const shared = {};
+  beforeEach(() => {
     shared.spy = callSpy('2013-07-08T07:29:15.863Z');
   });
-  it('should confirm', function () {
+  it('should confirm', () => {
     expect(shared.spy).toHaveBeenCalledWith(any.iso8601());
   });
 });

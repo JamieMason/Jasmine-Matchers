@@ -1,10 +1,10 @@
 // modules
-var describeToHaveArrayX = require('./lib/describeToHaveArrayX');
+const describeToHaveArrayX = require('./lib/describeToHaveArrayX');
 
 // spec
-describe('toHaveArray', function () {
-  describeToHaveArrayX('toHaveArray', function () {
-    it('should confirm', function () {
+describe('toHaveArray', () => {
+  describeToHaveArrayX('toHaveArray', () => {
+    it('should confirm', () => {
       expect({
         memberName: []
       }).toHaveArray('memberName');

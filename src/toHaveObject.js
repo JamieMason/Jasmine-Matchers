@@ -1,7 +1,5 @@
 // modules
-var toBeObject = require('./toBeObject');
+const toBeObject = require('./toBeObject');
 
 // public
-module.exports = function toHaveObject(key, actual) {
-  return toBeObject(actual) && toBeObject(actual[key]);
-};
+module.exports = (key, actual) => toBeObject(actual) && toBeObject(actual[key]);

@@ -1,13 +1,13 @@
 // modules
-var describeToHaveX = require('./lib/describeToHaveX');
+const describeToHaveX = require('./lib/describeToHaveX');
 
 // spec
-describe('toHaveIso8601', function () {
-  describeToHaveX('toHaveIso8601', function () {
+describe('toHaveIso8601', () => {
+  describeToHaveX('toHaveIso8601', () => {
     describe('when member is a Date String conforming to the ISO 8601 standard',
-            function () {
-              describe('when specified date is valid', function () {
-                it('should confirm', function () {
+            () => {
+              describe('when specified date is valid', () => {
+                it('should confirm', () => {
                   expect({
                     memberName: '2013-07-08T07:29:15.863Z'
                   }).toHaveIso8601('memberName');
@@ -25,8 +25,8 @@ describe('toHaveIso8601', function () {
                   }).toHaveIso8601('memberName');
                 });
               });
-              describe('when specified date is NOT valid', function () {
-                it('should deny', function () {
+              describe('when specified date is NOT valid', () => {
+                it('should deny', () => {
                   expect({
                     memberName: '2013-99-12T00:00:00.000Z'
                   }).not.toHaveIso8601('memberName');
@@ -46,8 +46,8 @@ describe('toHaveIso8601', function () {
               });
             });
     describe('when member is a String NOT conforming to the ISO 8601 standard',
-            function () {
-              it('should deny', function () {
+            () => {
+              it('should deny', () => {
                 expect({
                   memberName: '2013-07-08T07:29:15.'
                 }).not.toHaveIso8601('memberName');

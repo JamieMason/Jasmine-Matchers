@@ -1,6 +1,6 @@
 // spec
-describe('toBeGreaterThanOrEqualTo', function () {
-  it('asserts value is greater or equal than a given number', function () {
+describe('toBeGreaterThanOrEqualTo', () => {
+  it('asserts value is greater or equal than a given number', () => {
     expect(2).toBeGreaterThanOrEqualTo(1);
     expect(1).toBeGreaterThanOrEqualTo(-1);
     expect(-1).toBeGreaterThanOrEqualTo(-2);

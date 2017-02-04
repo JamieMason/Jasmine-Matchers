@@ -1,7 +1,5 @@
 // modules
-var is = require('./lib/is');
+const is = require('./lib/is');
 
 // public
-module.exports = function toBeNumber(actual) {
-  return !isNaN(parseFloat(actual)) && !is(actual, 'String');
-};
+module.exports = actual => !isNaN(parseFloat(actual)) && !is.String(actual);

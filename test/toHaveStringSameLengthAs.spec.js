@@ -1,19 +1,19 @@
 // modules
-var describeToHaveX = require('./lib/describeToHaveX');
+const describeToHaveX = require('./lib/describeToHaveX');
 
 // spec
-describe('toHaveStringSameLengthAs', function () {
-  describeToHaveX('toHaveStringSameLengthAs', function () {
-    describe('when the subject and comparison ARE both strings', function () {
-      describe('when the subject IS the same length as the comparision string', function () {
-        it('should confirm', function () {
+describe('toHaveStringSameLengthAs', () => {
+  describeToHaveX('toHaveStringSameLengthAs', () => {
+    describe('when the subject and comparison ARE both strings', () => {
+      describe('when the subject IS the same length as the comparision string', () => {
+        it('should confirm', () => {
           expect({
             memberName: 'ab'
           }).toHaveStringSameLengthAs('memberName', 'ab');
         });
       });
-      describe('when the subject is NOT the same length as the comparision string', function () {
-        it('should deny', function () {
+      describe('when the subject is NOT the same length as the comparision string', () => {
+        it('should deny', () => {
           expect({
             memberName: 'abc'
           }).not.toHaveStringSameLengthAs('memberName', 'ab');
@@ -26,9 +26,9 @@ describe('toHaveStringSameLengthAs', function () {
         });
       });
     });
-    describe('when the subject and comparison are NOT both strings', function () {
-      it('should deny (we are asserting the relative lengths of two strings)', function () {
-        var _undefined;
+    describe('when the subject and comparison are NOT both strings', () => {
+      it('should deny (we are asserting the relative lengths of two strings)', () => {
+        let _undefined;
         expect({
           memberName: 'truthy'
         }).not.toHaveStringSameLengthAs('memberName', _undefined);

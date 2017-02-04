@@ -1,11 +1,11 @@
 // modules
-var describeToHaveX = require('./lib/describeToHaveX');
+const describeToHaveX = require('./lib/describeToHaveX');
 
 // spec
-describe('toHaveNumberWithinRange', function () {
-  describeToHaveX('toHaveNumberWithinRange', function () {
-    describe('when subject IS a number >= floor and <= ceiling', function () {
-      it('should confirm', function () {
+describe('toHaveNumberWithinRange', () => {
+  describeToHaveX('toHaveNumberWithinRange', () => {
+    describe('when subject IS a number >= floor and <= ceiling', () => {
+      it('should confirm', () => {
         expect({
           memberName: 0
         }).toHaveNumberWithinRange('memberName', 0, 2);
@@ -17,8 +17,8 @@ describe('toHaveNumberWithinRange', function () {
         }).toHaveNumberWithinRange('memberName', 0, 2);
       });
     });
-    describe('when subject is NOT a number >= floor and <= ceiling', function () {
-      it('should deny', function () {
+    describe('when subject is NOT a number >= floor and <= ceiling', () => {
+      it('should deny', () => {
         expect({
           memberName: -3
         }).not.toHaveNumberWithinRange('memberName', 0, 2);

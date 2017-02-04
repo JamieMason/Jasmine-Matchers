@@ -1,25 +1,25 @@
 // modules
-var describeToHaveX = require('./lib/describeToHaveX');
+const describeToHaveX = require('./lib/describeToHaveX');
 
 // spec
-describe('toHaveUndefined', function () {
-  describeToHaveX('toHaveUndefined', function () {
-    describe('when subject does NOT have a member at the given key', function () {
-      it('should deny', function () {
+describe('toHaveUndefined', () => {
+  describeToHaveX('toHaveUndefined', () => {
+    describe('when subject does NOT have a member at the given key', () => {
+      it('should deny', () => {
         expect({}).not.toHaveUndefined('memberName');
         expect(null).not.toHaveUndefined('memberName');
       });
     });
-    describe('when subject DOES have a member at the given key', function () {
-      describe('when subject IS undefined', function () {
-        it('should confirm', function () {
+    describe('when subject DOES have a member at the given key', () => {
+      describe('when subject IS undefined', () => {
+        it('should confirm', () => {
           expect({
             memberName: undefined
           }).toHaveUndefined('memberName');
         });
       });
-      describe('when subject is NOT undefined', function () {
-        it('should deny', function () {
+      describe('when subject is NOT undefined', () => {
+        it('should deny', () => {
           expect({
             memberName: null
           }).not.toHaveUndefined('memberName');

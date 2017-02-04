@@ -1,24 +1,24 @@
 // modules
-var describeWhenNotArray = require('./describeWhenNotArray');
+const describeWhenNotArray = require('./describeWhenNotArray');
 
 // public
 module.exports = function describeToBeArrayOfX(name, options) {
-  describe(name, function () {
-    describe('when invoked', function () {
-      describe('when subject is a true Array', function () {
-        describe('when subject has no members', function () {
-          it('should confirm (an empty array of ' + options.type + 's is valid)', function () {
+  describe(name, () => {
+    describe('when invoked', () => {
+      describe('when subject is a true Array', () => {
+        describe('when subject has no members', () => {
+          it('should confirm (an empty array of ' + options.type + 's is valid)', () => {
             expect([])[name]();
           });
         });
-        describe('when subject has members', function () {
-          describe('when subject has a mix of ' + options.type + 's and other items', function () {
+        describe('when subject has members', () => {
+          describe('when subject has a mix of ' + options.type + 's and other items', () => {
             it('should deny', options.whenMixed);
           });
-          describe('when subject has only ' + options.type + 's', function () {
+          describe('when subject has only ' + options.type + 's', () => {
             it('should confirm', options.whenValid);
           });
-          describe('when subject has other items', function () {
+          describe('when subject has other items', () => {
             it('should deny', options.whenInvalid);
           });
         });

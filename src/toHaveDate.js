@@ -1,8 +1,6 @@
 // modules
-var toBeObject = require('./toBeObject');
-var toBeDate = require('./toBeDate');
+const toBeObject = require('./toBeObject');
+const toBeDate = require('./toBeDate');
 
 // public
-module.exports = function toHaveDate(key, actual) {
-  return toBeObject(actual) && toBeDate(actual[key]);
-};
+module.exports = (key, actual) => toBeObject(actual) && toBeDate(actual[key]);

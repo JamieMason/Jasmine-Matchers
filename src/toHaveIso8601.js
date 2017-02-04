@@ -1,6 +1,6 @@
 // modules
-var toBeObject = require('./toBeObject');
-var toBeIso8601 = require('./toBeIso8601');
+const toBeObject = require('./toBeObject');
+const toBeIso8601 = require('./toBeIso8601');
 
 // public
 module.exports = toHaveIso8601;

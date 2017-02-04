@@ -1,11 +1,11 @@
 // modules
-var describeToHaveArrayX = require('./lib/describeToHaveArrayX');
+const describeToHaveArrayX = require('./lib/describeToHaveArrayX');
 
 // spec
-describe('toHaveArrayOfSize', function () {
-  describeToHaveArrayX('toHaveArrayOfSize', function () {
-    describe('when number of expected items does not match', function () {
-      it('should deny', function () {
+describe('toHaveArrayOfSize', () => {
+  describeToHaveArrayX('toHaveArrayOfSize', () => {
+    describe('when number of expected items does not match', () => {
+      it('should deny', () => {
         expect({
           memberName: ''
         }).not.toHaveArrayOfSize('memberName');
@@ -14,8 +14,8 @@ describe('toHaveArrayOfSize', function () {
         }).not.toHaveArrayOfSize('memberName', 0);
       });
     });
-    describe('when number of expected items does match', function () {
-      it('should confirm', function () {
+    describe('when number of expected items does match', () => {
+      it('should confirm', () => {
         expect({
           memberName: []
         }).toHaveArrayOfSize('memberName', 0);

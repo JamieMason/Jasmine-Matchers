@@ -1,8 +1,6 @@
 // modules
-var toBeObject = require('./toBeObject');
-var toBeWhitespace = require('./toBeWhitespace');
+const toBeObject = require('./toBeObject');
+const toBeWhitespace = require('./toBeWhitespace');
 
 // public
-module.exports = function toHaveWhitespaceString(key, actual) {
-  return toBeObject(actual) && toBeWhitespace(actual[key]);
-};
+module.exports = (key, actual) => toBeObject(actual) && toBeWhitespace(actual[key]);

@@ -1,7 +1,5 @@
 // modules
-var toBeString = require('./toBeString');
+const toBeString = require('./toBeString');
 
 // public
-module.exports = function toBeShorterThan(otherString, actual) {
-  return toBeString(actual) && toBeString(otherString) && actual.length < otherString.length;
-};
+module.exports = (otherString, actual) => toBeString(actual) && toBeString(otherString) && actual.length < otherString.length;

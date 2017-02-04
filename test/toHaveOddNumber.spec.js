@@ -1,18 +1,18 @@
 // modules
-var describeToHaveX = require('./lib/describeToHaveX');
+const describeToHaveX = require('./lib/describeToHaveX');
 
 // spec
-describe('toHaveOddNumber', function () {
-  describeToHaveX('toHaveOddNumber', function () {
-    describe('when subject IS an odd number', function () {
-      it('should confirm', function () {
+describe('toHaveOddNumber', () => {
+  describeToHaveX('toHaveOddNumber', () => {
+    describe('when subject IS an odd number', () => {
+      it('should confirm', () => {
         expect({
           memberName: 1
         }).toHaveOddNumber('memberName');
       });
     });
-    describe('when subject is NOT an odd number', function () {
-      it('should deny', function () {
+    describe('when subject is NOT an odd number', () => {
+      it('should deny', () => {
         expect({
           memberName: 2
         }).not.toHaveOddNumber('memberName');

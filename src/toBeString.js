@@ -1,7 +1,5 @@
 // modules
-var is = require('./lib/is');
+const is = require('./lib/is');
 
 // public
-module.exports = function toBeString(actual) {
-  return is(actual, 'String');
-};
+module.exports = actual => is.String(actual);

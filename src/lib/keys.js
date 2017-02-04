@@ -1,9 +1,5 @@
 // modules
-var reduce = require('./reduce');
+const reduce = require('./reduce');
 
 // public
-module.exports = function keys(object) {
-  return reduce(object, function (keys, value, key) {
-    return keys.concat(key);
-  }, []);
-};
+module.exports = object => reduce(object, (keys, value, key) => keys.concat(key), []);
