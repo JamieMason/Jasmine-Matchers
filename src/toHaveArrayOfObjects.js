@@ -1,6 +1,6 @@
 // modules
-const toBeObject = require('./toBeObject');
+const memberMatcherFor = require('./lib/memberMatcherFor');
 const toBeArrayOfObjects = require('./toBeArrayOfObjects');
 
 // public
-module.exports = (key, actual) => toBeObject(actual) && toBeArrayOfObjects(actual[key]);
+module.exports = memberMatcherFor(toBeArrayOfObjects);

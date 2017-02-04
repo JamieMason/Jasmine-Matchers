@@ -1,6 +1,6 @@
 // modules
-const toBeObject = require('./toBeObject');
+const memberMatcherFor = require('./lib/memberMatcherFor');
 const toBeWhitespace = require('./toBeWhitespace');
 
 // public
-module.exports = (key, actual) => toBeObject(actual) && toBeWhitespace(actual[key]);
+module.exports = memberMatcherFor(toBeWhitespace);

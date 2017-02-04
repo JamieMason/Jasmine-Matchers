@@ -1,6 +1,6 @@
 // modules
-const toBeObject = require('./toBeObject');
+const memberMatcherFor = require('./lib/memberMatcherFor');
 const toBeWholeNumber = require('./toBeWholeNumber');
 
 // public
-module.exports = (key, actual) => toBeObject(actual) && toBeWholeNumber(actual[key]);
+module.exports = memberMatcherFor(toBeWholeNumber);

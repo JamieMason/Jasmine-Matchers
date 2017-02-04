@@ -1,6 +1,6 @@
 // modules
-const toBeObject = require('./toBeObject');
+const memberMatcherFor = require('./lib/memberMatcherFor');
 const toBeHtmlString = require('./toBeHtmlString');
 
 // public
-module.exports = (key, actual) => toBeObject(actual) && toBeHtmlString(actual[key]);
+module.exports = memberMatcherFor(toBeHtmlString);

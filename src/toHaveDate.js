@@ -1,6 +1,6 @@
 // modules
-const toBeObject = require('./toBeObject');
+const memberMatcherFor = require('./lib/memberMatcherFor');
 const toBeDate = require('./toBeDate');
 
 // public
-module.exports = (key, actual) => toBeObject(actual) && toBeDate(actual[key]);
+module.exports = memberMatcherFor(toBeDate);

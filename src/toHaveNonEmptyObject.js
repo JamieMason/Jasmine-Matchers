@@ -1,6 +1,6 @@
 // modules
-const toBeObject = require('./toBeObject');
+const memberMatcherFor = require('./lib/memberMatcherFor');
 const toBeNonEmptyObject = require('./toBeNonEmptyObject');
 
 // public
-module.exports = (key, actual) => toBeObject(actual) && toBeNonEmptyObject(actual[key]);
+module.exports = memberMatcherFor(toBeNonEmptyObject);

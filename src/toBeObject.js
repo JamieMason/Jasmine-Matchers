@@ -2,4 +2,4 @@
 const is = require('./lib/is');
 
 // public
-module.exports = actual => is.Object(actual);
+module.exports = is.Object;

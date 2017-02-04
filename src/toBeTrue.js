@@ -2,4 +2,4 @@
 const is = require('./lib/is');
 
 // public
-module.exports = actual => actual === true || (is.Boolean(actual) && actual.valueOf() === true);
+module.exports = actual => actual === true || is.True(actual); // eslint-disable-line new-cap
