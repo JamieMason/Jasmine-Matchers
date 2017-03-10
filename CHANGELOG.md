@@ -1,5 +1,10 @@
+<a name="3.7.0"></a>
+# [3.7.0](https://github.com/JamieMason/Jasmine-Matchers/compare/3.6.0...v3.7.0) (2017-03-10)
+
+
+
 <a name="3.6.0"></a>
-# [3.6.0](https://github.com/JamieMason/Jasmine-Matchers/compare/3.5.0...v3.6.0) (2017-01-31)
+# [3.6.0](https://github.com/JamieMason/Jasmine-Matchers/compare/3.5.0...3.6.0) (2017-01-31)
 
 
 ### Features

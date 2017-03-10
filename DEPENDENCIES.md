@@ -24,10 +24,13 @@ npm test
 
 ## Dev Dependencies
 
+- [babel-preset-env](https://github.com/babel/babel-preset-env): A Babel preset for each environment.
+- [babelify](https://github.com/babel/babelify): Babel browserify transform
 - [browserify](https://github.com/substack/node-browserify): browser-side require() the node way
 - [codeclimate-test-reporter](https://github.com/codeclimate/javascript-test-reporter): Code Climate test reporter client for javascript projects
 - [cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog): Commitizen adapter following the conventional-changelog format.
 - [gulp](https://github.com/gulpjs/gulp): The streaming build system
+- [husky](https://github.com/typicode/husky): Prevents bad commit or push (git hooks, pre-commit/precommit, pre-push/prepush, post-merge/postmerge and all that stuff...)
 - [jasmine-core](https://github.com/jasmine/jasmine): Official packaging of Jasmine&#39;s core files for use by Node.js projects.
 - [jest](https://github.com/facebook/jest): Painless JavaScript Testing.
 - [karma](https://github.com/karma-runner/karma): Spectacular Test Runner for JavaScript.
