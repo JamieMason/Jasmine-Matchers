@@ -83,6 +83,7 @@
     "browserstack-safari": "karma start karma/browserstack-safari.conf.js",
     "build": "gulp browserify",
     "commitmsg": "validate-commit-msg",
+    "generate-readme": "node ./scripts/generate-readme.js",
     "lint": "xo --fix",
     "test": "npm run lint && npm run browserstack-android && npm run browserstack-ios && npm run browserstack-ie && npm run browserstack-safari && npm run browserstack-opera && npm run browserstack-firefox && npm run browserstack-chrome",
     "test:jest": "jest",

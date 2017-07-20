@@ -8,226 +8,83 @@
 [![Code Climate](https://img.shields.io/codeclimate/github/JamieMason/Jasmine-Matchers.svg?style=flat-square)](https://codeclimate.com/github/JamieMason/Jasmine-Matchers)
 [![Analytics](https://ga-beacon.appspot.com/UA-45466560-5/jasmine-matchers?flat&useReferer)](https://github.com/igrigorik/ga-beacon)
 
-|**What**|A huge library of test matchers for a range of common use-cases, compatible with all versions of [Jasmine](http://jasmine.github.io/) and [Jest](http://facebook.github.io/jest/).|
-|---|:---|
-|**Why**|Custom Matchers make tests easier to read and produce relevant and useful messages when they fail.|
-|**How**|By avoiding vague messages such as _"expected false to be true"_ in favour of useful cues such as _"expected 3 to be even number"_ and avoiding implementation noise such as `expect(cycleWheels % 2 === 0).toEqual(true)` in favour of simply stating that you `expect(cycleWheels).toBeEvenNumber()`.|
+[Overview](#overview) | [Installation](#installation) | [Matchers](#matchers) | [Asymmetric Matchers](#asymmetric-matchers) | [Integration](#integration) | [Browser Support](#browser-support)
 
-> Jasmine Matchers is written using the [add-matchers](https://github.com/JamieMason/add-matchers) library. If you have some useful matchers of your own that you could share with other Jest and Jasmine users, please give it a try.
+## Overview
 
-## Sponsors
+##### What
 
-<a href="https://browserstack.com"><img alt="Sponsored by BrowserStack" src="https://cdn.rawgit.com/JamieMason/Jasmine-Matchers/develop/browserstack.svg" height="40" /></a>
+A huge library of test matchers for a range of common use-cases, compatible with
+all versions of [Jasmine](http://jasmine.github.io/) and [Jest](http://facebook.github.io/jest/).
 
-## Contents
+##### Why
 
-* [Installation](#installation)
-* [Matchers](#matchers)
-  * [Jasmine's Default Matchers](#jasmines-default-matchers)
-  * [Arrays](#arrays)
-  * [Booleans](#booleans)
-  * [Dates](#dates)
-  * [Functions and Errors](#functions-and-errors)
-  * [Numbers](#numbers)
-  * [Strings](#strings)
-  * [Objects](#objects)
-  * [Regular Expressions](#regular-expressions)
-  * [Members, Properties, Methods](#members-properties-methods)
-* [Asymmetric Matchers](#asymmetric-matchers)
-  * [Jasmine's Default Asymmetric Matchers](#jasmines-default-asymmetric-matchers)
-  * [Arrays](#arrays-1)
-  * [Dates](#dates-1)
-  * [Numbers](#numbers-1)
-  * [Strings](#strings-1)
-  * [Objects](#objects-1)
-* [Integration](#integration)
-  * [Browser](#browser)
-  * [Jest](#jest)
-  * [Karma](#karma)
-  * [Node.js](#nodejs)
-  * [Sublime Text](#sublime-text)
-  * [Tern](#tern)
-* [Browser Support](#browser-support)
+Custom Matchers make tests easier to read and produce relevant and useful
+messages when they fail.
+
+##### How
+
+By avoiding vague messages such as _"expected false to be true"_ in favour of
+useful cues such as _"expected 3 to be even number"_ and avoiding implementation
+noise such as `expect(cycleWheels % 2 === 0).toEqual(true)` in favour of simply
+stating that you `expect(cycleWheels).toBeEvenNumber()`.
+
+##### Sponsors
+
+<a href="https://browserstack.com">
+  <img alt="Sponsored by BrowserStack" src="https://cdn.rawgit.com/JamieMason/Jasmine-Matchers/develop/browserstack.svg" height="40" />
+</a>
+
 
 ## Installation
 
-| Platform | Instructions |
-|:---------|:-------------|
-| npm      | `npm install jasmine-expect --save-dev` |
-| Bower    | `bower install jasmine-expect --save-dev` |
-| Manual   | Downloads are available on the [releases](https://github.com/JamieMason/Jasmine-Matchers/releases) page. |
+##### npm
 
-<!-- ## Integration
+```
+npm install jasmine-expect --save-dev
+```
 
-| Platform | Instructions |
-|:---------|:-------------|
-| Browser | Embed [jasmine-matchers.js](https://github.com/JamieMason/Jasmine-Matchers/blob/master/dist/jasmine-matchers.js) after Jasmine but before your tests. |
-| Jest | See [Jest Integration](#jest-integration) |
-| Karma | Integration is easy with the [karma-jasmine-matchers](https://github.com/JamieMason/karma-jasmine-matchers) plugin. |
-| Node.js | See [Node.js Integration](#node-js-integration) |
-Sublime Text | [Jasmine-Matchers-Snippets](https://github.com/JamieMason/Jasmine-Matchers-Snippets) or [Jasmine-Matchers-ES6-Snippets](https://github.com/JamieMason/Jasmine-Matchers-ES6-Snippets) can be installed with [Package Control](https://packagecontrol.io/packages/Jasmine%20Matchers%20Snippets) to ease development with Jasmine Matchers in Sublime Text.
-| Tern | There is a [Plugin](https://github.com/ik9999/tern-jasminematchers) for [Tern](https://github.com/ternjs/tern) to auto-complete matchers in your Text Editor. |
- -->
+##### Bower
 
-## Matchers
+```
+bower install jasmine-expect --save-dev
+```
 
-### Jasmine's Default Matchers
+##### Manual
 
-The [Jasmine testing framework](http://jasmine.github.io/) from [Pivotal Labs](http://pivotallabs.com/) comes with this [default set of matchers](http://jasmine.github.io/edge/introduction.html#section-Expectations);
+Downloads are available on the [releases](https://github.com/JamieMason/Jasmine-Matchers/releases) page.
 
-```javascript
-expect(array).toContain(member);
-expect(fn).toThrow(string);
-expect(fn).toThrowError(string);
+
+## API
+
+The [Jasmine testing framework](http://jasmine.github.io/) from
+[Pivotal Labs](http://pivotallabs.com/) comes with this
+[default set of matchers](http://jasmine.github.io/edge/introduction.html#section-Expectations);
+
+```js
 expect(instance).toBe(instance);
+expect(number).toBeCloseTo(number, decimalPlaces);
 expect(mixed).toBeDefined();
 expect(mixed).toBeFalsy();
-expect(mixed).toBeNull();
-expect(mixed).toBeTruthy();
-expect(mixed).toBeUndefined();
-expect(mixed).toEqual(mixed);
-expect(mixed).toMatch(pattern);
-expect(number).toBeCloseTo(number, decimalPlaces);
 expect(number).toBeGreaterThan(number);
 expect(number).toBeLessThan(number);
 expect(number).toBeNaN();
+expect(mixed).toBeNull();
+expect(mixed).toBeTruthy();
+expect(mixed).toBeUndefined();
+expect(array).toContain(member);
+expect(mixed).toEqual(mixed);
 expect(spy).toHaveBeenCalled();
 expect(spy).toHaveBeenCalledTimes(number);
 expect(spy).toHaveBeenCalledWith(...arguments);
+expect(mixed).toMatch(pattern);
+expect(fn).toThrow(string);
+expect(fn).toThrowError(string);
 ```
 
-### Arrays
+and this [default set of asymmetric matchers](http://jasmine.github.io/2.4/introduction.html#section-Matching_Anything_with_%3Ccode%3Ejasmine.any%3C/code%3E);
 
-Matcher | Example
-:-------|:-------
-[toBeArray](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeArray.spec.js) | `expect(array).toBeArray();`
-[toBeArrayOfBooleans](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeArrayOfBooleans.spec.js) | `expect(array).toBeArrayOfBooleans();`
-[toBeArrayOfNumbers](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeArrayOfNumbers.spec.js) | `expect(array).toBeArrayOfNumbers();`
-[toBeArrayOfObjects](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeArrayOfObjects.spec.js) | `expect(array).toBeArrayOfObjects();`
-[toBeArrayOfSize](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeArrayOfSize.spec.js) | `expect(array).toBeArrayOfSize(number);`
-[toBeArrayOfStrings](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeArrayOfStrings.spec.js) | `expect(array).toBeArrayOfStrings();`
-[toBeEmptyArray](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeEmptyArray.spec.js) | `expect(array).toBeEmptyArray();`
-[toBeNonEmptyArray](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeNonEmptyArray.spec.js) | `expect(array).toBeNonEmptyArray();`
-
-### Booleans
-
-Matcher | Example
-:-------|:-------
-[toBeBoolean](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeBoolean.spec.js) | `expect(boolean).toBeBoolean();`
-[toBeFalse](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeFalse.spec.js) | `expect(boolean).toBeFalse();`
-[toBeTrue](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeTrue.spec.js) | `expect(boolean).toBeTrue();`
-
-### Dates
-
-Matcher | Example
-:-------|:-------
-[toBeAfter](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeAfter.spec.js) | `expect(date).toBeAfter(date);`
-[toBeBefore](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeBefore.spec.js) | `expect(date).toBeBefore(date);`
-[toBeDate](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeDate.spec.js) | `expect(date).toBeDate();`
-[toBeValidDate](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeValidDate.spec.js) | `expect(date).toBeValidDate()`
-
-### Functions and Errors
-
-Matcher | Example
-:-------|:-------
-[toBeFunction](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeFunction.spec.js) | `expect(fn).toBeFunction();`
-[toThrowAnyError](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toThrowAnyError.spec.js) | `expect(fn).toThrowAnyError();`
-[toThrowErrorOfType](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toThrowErrorOfType.spec.js) | `expect(fn).toThrowErrorOfType(constructorName);`
-
-### Numbers
-
-Matcher | Example
-:-------|:-------
-[toBeCalculable](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeCalculable.spec.js) | `expect(mixed).toBeCalculable();`
-[toBeEvenNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeEvenNumber.spec.js) | `expect(number).toBeEvenNumber();`
-[toBeGreaterThanOrEqualTo](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeGreaterThanOrEqualTo.spec.js) | `expect(number).toBeGreaterThanOrEqualTo(number);`
-[toBeLessThanOrEqualTo](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeLessThanOrEqualTo.spec.js) | `expect(number).toBeLessThanOrEqualTo(number);`
-[toBeNear](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeNear.spec.js) | `expect(number).toBeNear(value, epsilon)`
-[toBeNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeNumber.spec.js) | `expect(number).toBeNumber();`
-[toBeOddNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeOddNumber.spec.js) | `expect(number).toBeOddNumber();`
-[toBeWholeNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeWholeNumber.spec.js) | `expect(number).toBeWholeNumber();`
-[toBeWithinRange](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeWithinRange.spec.js) | `expect(number).toBeWithinRange(floor, ceiling);`
-
-### Strings
-
-Matcher | Example
-:-------|:-------
-[toBeEmptyString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeEmptyString.spec.js) | `expect(string).toBeEmptyString();`
-[toBeHtmlString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeHtmlString.spec.js) | `expect(string).toBeHtmlString();`
-[toBeIso8601](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeIso8601.spec.js) | `expect(string).toBeIso8601();`
-[toBeJsonString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeJsonString.spec.js) | `expect(string).toBeJsonString();`
-[toBeLongerThan](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeLongerThan.spec.js) | `expect(string).toBeLongerThan();`
-[toBeNonEmptyString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeNonEmptyString.spec.js) | `expect(string).toBeNonEmptyString();`
-[toBeSameLengthAs](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeSameLengthAs.spec.js) | `expect(string).toBeSameLengthAs();`
-[toBeShorterThan](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeShorterThan.spec.js) | `expect(string).toBeShorterThan();`
-[toBeString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeString.spec.js) | `expect(string).toBeString();`
-[toBeWhitespace](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeWhitespace.spec.js) | `expect(string).toBeWhitespace();`
-[toEndWith](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toEndWith.spec.js) | `expect(string).toEndWith(string);`
-[toStartWith](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toStartWith.spec.js) | `expect(string).toStartWith(string);`
-
-### Objects
-
-Matcher | Example
-:-------|:-------
-[toBeEmptyObject](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeEmptyObject.spec.js) | `expect(object).toBeEmptyObject();`
-[toBeNonEmptyObject](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeNonEmptyObject.spec.js) | `expect(object).toBeNonEmptyObject();`
-[toBeObject](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeObject.spec.js) | `expect(object).toBeObject();`
-
-### Regular Expressions
-
-Matcher | Example
-:-------|:-------
-[toBeRegExp](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toBeRegExp.spec.js) | `expect(regexp).toBeRegExp();`
-
-
-### Members, Properties, Methods
-
-Matcher | Example
-:-------|:-------
-[toHaveArray](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveArray.spec.js) | `expect(object).toHaveArray(memberName);`
-[toHaveArrayOfBooleans](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveArrayOfBooleans.spec.js) | `expect(object).toHaveArrayOfBooleans(memberName);`
-[toHaveArrayOfNumbers](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveArrayOfNumbers.spec.js) | `expect(object).toHaveArrayOfNumbers(memberName);`
-[toHaveArrayOfObjects](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveArrayOfObjects.spec.js) | `expect(object).toHaveArrayOfObjects(memberName);`
-[toHaveArrayOfSize](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveArrayOfSize.spec.js) | `expect(object).toHaveArrayOfSize(memberName, size);`
-[toHaveArrayOfStrings](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveArrayOfStrings.spec.js) | `expect(object).toHaveArrayOfStrings(memberName);`
-[toHaveBoolean](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveBoolean.spec.js) | `expect(object).toHaveBoolean(memberName);`
-[toHaveCalculable](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveCalculable.spec.js) | `expect(object).toHaveCalculable(memberName);`
-[toHaveDate](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveDate.spec.js) | `expect(object).toHaveDate(memberName);`
-[toHaveDateAfter](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveDateAfter.spec.js) | `expect(object).toHaveDateAfter(memberName, date);`
-[toHaveDateBefore](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveDateBefore.spec.js) | `expect(object).toHaveDateBefore(memberName, date);`
-[toHaveEmptyArray](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveEmptyArray.spec.js) | `expect(object).toHaveEmptyArray(memberName);`
-[toHaveEmptyObject](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveEmptyObject.spec.js) | `expect(object).toHaveEmptyObject(memberName);`
-[toHaveEmptyString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveEmptyString.spec.js) | `expect(object).toHaveEmptyString(memberName);`
-[toHaveEvenNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveEvenNumber.spec.js) | `expect(object).toHaveEvenNumber(memberName);`
-[toHaveFalse](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveFalse.spec.js) | `expect(object).toHaveFalse(memberName);`
-[toHaveHtmlString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveHtmlString.spec.js) | `expect(object).toHaveHtmlString(memberName);`
-[toHaveIso8601](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveIso8601.spec.js) | `expect(object).toHaveIso8601(memberName);`
-[toHaveJsonString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveJsonString.spec.js) | `expect(object).toHaveJsonString(memberName);`
-[toHaveMember](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveMember.spec.js) | `expect(object).toHaveMember(memberName);`
-[toHaveMethod](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveMethod.spec.js) | `expect(object).toHaveMethod(memberName);`
-[toHaveNonEmptyArray](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveNonEmptyArray.spec.js) | `expect(object).toHaveNonEmptyArray(memberName);`
-[toHaveNonEmptyObject](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveNonEmptyObject.spec.js) | `expect(object).toHaveNonEmptyObject(memberName);`
-[toHaveNonEmptyString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveNonEmptyString.spec.js) | `expect(object).toHaveNonEmptyString(memberName);`
-[toHaveNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveNumber.spec.js) | `expect(object).toHaveNumber(memberName);`
-[toHaveNumberWithinRange](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveNumberWithinRange.spec.js) | `expect(object).toHaveNumberWithinRange(memberName, floor, ceiling);`
-[toHaveObject](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveObject.spec.js) | `expect(object).toHaveObject(memberName);`
-[toHaveOddNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveOddNumber.spec.js) | `expect(object).toHaveOddNumber(memberName);`
-[toHaveString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveString.spec.js) | `expect(object).toHaveString(memberName);`
-[toHaveStringLongerThan](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveStringLongerThan.spec.js) | `expect(object).toHaveStringLongerThan(memberName, string);`
-[toHaveStringSameLengthAs](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveStringSameLengthAs.spec.js) | `expect(object).toHaveStringSameLengthAs(memberName, string);`
-[toHaveStringShorterThan](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveStringShorterThan.spec.js) | `expect(object).toHaveStringShorterThan(memberName, string);`
-[toHaveTrue](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveTrue.spec.js) | `expect(object).toHaveTrue(memberName);`
-[toHaveUndefined](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveUndefined.spec.js) | `expect(object).toHaveUndefined(memberName);`
-[toHaveWhitespaceString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveWhitespaceString.spec.js) | `expect(object).toHaveWhitespaceString(memberName);`
-[toHaveWholeNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/toHaveWholeNumber.spec.js) | `expect(object).toHaveWholeNumber(memberName);`
-
-## Asymmetric Matchers
-
-### Jasmine's Default Asymmetric Matchers
-
-The [Jasmine testing framework](http://jasmine.github.io/) from [Pivotal Labs](http://pivotallabs.com/) comes with this [default set of asymmetric matchers](http://jasmine.github.io/2.4/introduction.html#section-Matching_Anything_with_<code>jasmine.any</code>);
-
-```javascript
+```js
 jasmine.any(Constructor);
 jasmine.anything(mixed);
 jasmine.arrayContaining(mixed);
@@ -235,63 +92,125 @@ jasmine.objectContaining(mixed);
 jasmine.stringMatching(pattern);
 ```
 
-### Arrays
+## Matchers
 
-Matcher | Example
-:-------|:-------
-[any.arrayOfBooleans](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/arrayOfBooleans.spec.js) | `expect(spy).toHaveBeenCalledWith(any.arrayOfBooleans());`
-[any.arrayOfNumbers](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/arrayOfNumbers.spec.js) | `expect(spy).toHaveBeenCalledWith(any.arrayOfNumbers());`
-[any.arrayOfObjects](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/arrayOfObjects.spec.js) | `expect(spy).toHaveBeenCalledWith(any.arrayOfObjects());`
-[any.arrayOfSize](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/arrayOfSize.spec.js) | `expect(spy).toHaveBeenCalledWith(any.arrayOfSize(number));`
-[any.arrayOfStrings](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/arrayOfStrings.spec.js) | `expect(spy).toHaveBeenCalledWith(any.arrayOfStrings());`
-[any.emptyArray](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/emptyArray.spec.js) | `expect(spy).toHaveBeenCalledWith(any.emptyArray());`
-[any.nonEmptyArray](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/nonEmptyArray.spec.js) | `expect(spy).toHaveBeenCalledWith(any.nonEmptyArray());`
+[Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) adds the following matchers;
 
-### Dates
+```js
+expect(array).toBeArray();
+expect(array).toBeArrayOfBooleans();
+expect(array).toBeArrayOfNumbers();
+expect(array).toBeArrayOfObjects();
+expect(array).toBeArrayOfSize(number);
+expect(array).toBeArrayOfStrings();
+expect(array).toBeEmptyArray();
+expect(array).toBeNonEmptyArray();
+expect(boolean).toBeBoolean();
+expect(boolean).toBeFalse();
+expect(boolean).toBeTrue();
+expect(date).toBeDate(otherDate);
+expect(date).toBeDate(otherDate);
+expect(date).toBeDate();
+expect(date).toBeValidDate();
+expect(fn).toBeFunction();
+expect(fn).toThrowAnyError();
+expect(fn).toThrowErrorOfType(constructorName);
+expect(mixed).toBeCalculable();
+expect(number).toBeEvenNumber();
+expect(number).toBeGreaterThanOrEqualTo(otherNumber);
+expect(number).toBeLessThanOrEqualTo(otherNumber);
+expect(number).toBeNear(otherNumber, epsilon);
+expect(number).toBeNumber();
+expect(number).toBeOddNumber();
+expect(number).toBeWholeNumber();
+expect(number).toBeWithinRange(floor, ceiling);
+expect(object).toBeEmptyObject();
+expect(object).toBeNonEmptyObject();
+expect(object).toBeObject();
+expect(object).toHaveArray(memberName);
+expect(object).toHaveArrayOfBooleans(memberName);
+expect(object).toHaveArrayOfNumbers(memberName);
+expect(object).toHaveArrayOfObjects(memberName);
+expect(object).toHaveArrayOfSize(memberName, size);
+expect(object).toHaveArrayOfStrings(memberName);
+expect(object).toHaveBoolean(memberName);
+expect(object).toHaveCalculable(memberName);
+expect(object).toHaveDate(memberName);
+expect(object).toHaveDateAfter(memberName, date);
+expect(object).toHaveDateBefore(memberName, date);
+expect(object).toHaveEmptyArray(memberName);
+expect(object).toHaveEmptyObject(memberName);
+expect(object).toHaveEmptyString(memberName);
+expect(object).toHaveEvenNumber(memberName);
+expect(object).toHaveFalse(memberName);
+expect(object).toHaveHtmlString(memberName);
+expect(object).toHaveIso8601(memberName);
+expect(object).toHaveJsonString(memberName);
+expect(object).toHaveMember(memberName);
+expect(object).toHaveMethod(memberName);
+expect(object).toHaveNonEmptyArray(memberName);
+expect(object).toHaveNonEmptyObject(memberName);
+expect(object).toHaveNonEmptyString(memberName);
+expect(object).toHaveNumber(memberName);
+expect(object).toHaveNumberWithinRange(memberName, floor, ceiling);
+expect(object).toHaveObject(memberName);
+expect(object).toHaveOddNumber(memberName);
+expect(object).toHaveString(memberName);
+expect(object).toHaveStringLongerThan(memberName, string);
+expect(object).toHaveStringSameLengthAs(memberName, string);
+expect(object).toHaveStringShorterThan(memberName, string);
+expect(object).toHaveTrue(memberName);
+expect(object).toHaveUndefined(memberName);
+expect(object).toHaveWhitespaceString(memberName);
+expect(object).toHaveWholeNumber(memberName);
+expect(regexp).toBeRegExp();
+expect(string).toBeEmptyString();
+expect(string).toBeHtmlString();
+expect(string).toBeIso8601();
+expect(string).toBeJsonString();
+expect(string).toBeLongerThan();
+expect(string).toBeNonEmptyString();
+expect(string).toBeSameLengthAs();
+expect(string).toBeShorterThan();
+expect(string).toBeString();
+expect(string).toBeWhitespace();
+expect(string).toEndWith(substring);
+expect(string).toStartWith(substring);
+```
 
-Matcher | Example
-:-------|:-------
-[any.after](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/after.spec.js) | `expect(spy).toHaveBeenCalledWith(any.after(date));`
-[any.before](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/before.spec.js) | `expect(spy).toHaveBeenCalledWith(any.before(date));`
+## Asymmetric Matchers
 
-### Numbers
+```js
+any.after(date);
+any.arrayOfBooleans();
+any.arrayOfNumbers();
+any.arrayOfObjects();
+any.arrayOfSize(number);
+any.arrayOfStrings();
+any.before(date);
+any.calculable();
+any.emptyArray();
+any.emptyObject();
+any.endingWith(string);
+any.evenNumber();
+any.greaterThanOrEqualTo(number);
+any.iso8601();
+any.jsonString();
+any.lessThanOrEqualTo(number);
+any.longerThan(string);
+any.nonEmptyArray();
+any.nonEmptyObject();
+any.nonEmptyString();
+any.oddNumber();
+any.regExp();
+any.sameLengthAs(string);
+any.shorterThan(string);
+any.startingWith(string);
+any.whitespace();
+any.wholeNumber();
+any.withinRange(floor, ceiling);
+```
 
-Matcher | Example
-:-------|:-------
-[any.calculable](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/calculable.spec.js) | `expect(spy).toHaveBeenCalledWith(any.calculable());`
-[any.evenNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/evenNumber.spec.js) | `expect(spy).toHaveBeenCalledWith(any.evenNumber());`
-[any.greaterThanOrEqualTo](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/greaterThanOrEqualTo.spec.js) | `expect(spy).toHaveBeenCalledWith(any.greaterThanOrEqualTo(number));`
-[any.lessThanOrEqualTo](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/lessThanOrEqualTo.spec.js) | `expect(spy).toHaveBeenCalledWith(any.lessThanOrEqualTo(number));`
-[any.oddNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/oddNumber.spec.js) | `expect(spy).toHaveBeenCalledWith(any.oddNumber());`
-[any.wholeNumber](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/wholeNumber.spec.js) | `expect(spy).toHaveBeenCalledWith(any.wholeNumber());`
-[any.withinRange](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/withinRange.spec.js) | `expect(spy).toHaveBeenCalledWith(any.withinRange(floor, ceiling));`
-
-### Strings
-
-Matcher | Example
-:-------|:-------
-[any.endingWith](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/endingWith.spec.js) | `expect(spy).toHaveBeenCalledWith(any.endingWith(string));`
-[any.iso8601](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/iso8601.spec.js) | `expect(spy).toHaveBeenCalledWith(any.iso8601());`
-[any.jsonString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/jsonString.spec.js) | `expect(spy).toHaveBeenCalledWith(any.jsonString());`
-[any.longerThan](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/longerThan.spec.js) | `expect(spy).toHaveBeenCalledWith(any.longerThan(string));`
-[any.nonEmptyString](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/nonEmptyString.spec.js) | `expect(spy).toHaveBeenCalledWith(any.nonEmptyString());`
-[any.sameLengthAs](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/sameLengthAs.spec.js) | `expect(spy).toHaveBeenCalledWith(any.sameLengthAs(string));`
-[any.shorterThan](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/shorterThan.spec.js) | `expect(spy).toHaveBeenCalledWith(any.shorterThan(string));`
-[any.startingWith](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/startingWith.spec.js) | `expect(spy).toHaveBeenCalledWith(any.startingWith(string));`
-[any.whitespace](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/whitespace.spec.js) | `expect(spy).toHaveBeenCalledWith(any.whitespace());`
-
-### Objects
-
-Matcher | Example
-:-------|:-------
-[any.emptyObject](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/emptyObject.spec.js) | `expect(spy).toHaveBeenCalledWith(any.emptyObject());`
-[any.nonEmptyObject](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/nonEmptyObject.spec.js) | `expect(spy).toHaveBeenCalledWith(any.nonEmptyObject());`
-
-### Regular Expressions
-
-Matcher | Example
-:-------|:-------
-[any.regExp](https://github.com/JamieMason/Jasmine-Matchers/blob/master/test/regExp.spec.js) | `expect(spy).toHaveBeenCalledWith(any.regExp());`
 
 ## Integration
 
@@ -339,9 +258,12 @@ Use the [Jasmine CLI](https://www.npmjs.com/package/jasmine) and include the pat
 
 There is a [Plugin](https://github.com/ik9999/tern-jasminematchers) for [Tern](https://github.com/ternjs/tern) to auto-complete matchers in your Text Editor.
 
+
 ## Browser Support
 
-Jasmine-Matchers is tested on [Travis CI](https://travis-ci.org/JamieMason/Jasmine-Matchers) and [BrowserStack](https://browserstack.com) against the following environments.
+Jasmine-Matchers is tested on
+[Travis CI](https://travis-ci.org/JamieMason/Jasmine-Matchers) and
+[BrowserStack](https://browserstack.com) against the following environments.
 
 Browser | Version Range
 :-------|-------------:
