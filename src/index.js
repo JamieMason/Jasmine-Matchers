@@ -1,7 +1,5 @@
-// 3rd party modules
 const addMatchers = require('add-matchers');
 
-// implementation
 const matchersByName = {
   toBeAfter: require('./toBeAfter'),
   toBeArray: require('./toBeArray'),
@@ -118,5 +116,4 @@ const asymmetricMatchersByName = {
 addMatchers(matchersByName);
 addMatchers.asymmetric(asymmetricMatchersByName);
 
-// public
 module.exports = matchersByName;

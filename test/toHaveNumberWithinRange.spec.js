@@ -1,7 +1,5 @@
-// modules
 const describeToHaveX = require('./lib/describeToHaveX');
 
-// spec
 describe('toHaveNumberWithinRange', () => {
   describeToHaveX('toHaveNumberWithinRange', () => {
     describe('when subject IS a number >= floor and <= ceiling', () => {

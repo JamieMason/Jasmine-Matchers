@@ -1,7 +1,5 @@
-// modules
 const describeToHaveX = require('./describeToHaveX');
 
-// public
 module.exports = function describeToHaveBooleanX(name, whenBoolean) {
   describeToHaveX(name, () => {
     describe('when member is truthy', () => {

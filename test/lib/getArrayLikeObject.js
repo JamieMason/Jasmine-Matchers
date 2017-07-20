@@ -1,4 +1,3 @@
-// public
 module.exports = function getArrayLikeObject() {
   return {
     0: 1,

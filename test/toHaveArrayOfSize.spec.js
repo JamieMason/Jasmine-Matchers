@@ -1,7 +1,5 @@
-// modules
 const describeToHaveArrayX = require('./lib/describeToHaveArrayX');
 
-// spec
 describe('toHaveArrayOfSize', () => {
   describeToHaveArrayX('toHaveArrayOfSize', () => {
     describe('when number of expected items does not match', () => {

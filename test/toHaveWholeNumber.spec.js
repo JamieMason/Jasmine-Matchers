@@ -1,7 +1,5 @@
-// modules
 const describeToHaveX = require('./lib/describeToHaveX');
 
-// spec
 describe('toHaveWholeNumber', () => {
   describeToHaveX('toHaveWholeNumber', () => {
     describe('when subject IS a number with no positive decimal places', () => {

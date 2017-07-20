@@ -1,7 +1,5 @@
-// modules
 const describeToHaveX = require('./lib/describeToHaveX');
 
-// spec
 describe('toHaveOddNumber', () => {
   describeToHaveX('toHaveOddNumber', () => {
     describe('when subject IS an odd number', () => {

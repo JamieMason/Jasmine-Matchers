@@ -1,4 +1,3 @@
-// public
 module.exports = toBeCalculable;
 
 // Assert subject can be used in Mathemetic calculations despite not being a

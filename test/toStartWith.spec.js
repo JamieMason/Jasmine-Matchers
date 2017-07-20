@@ -1,4 +1,3 @@
-// spec
 describe('toStartWith', () => {
   describe('when invoked', () => {
     describe('when subject is NOT an undefined or empty string', () => {

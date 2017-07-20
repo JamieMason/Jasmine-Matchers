@@ -1,4 +1,3 @@
-// spec
 describe('toBeString', () => {
   describe('when invoked', () => {
     describe('when subject IS a string of any length', () => {

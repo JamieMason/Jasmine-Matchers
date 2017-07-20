@@ -1,7 +1,5 @@
-// modules
 const describeToBeArrayOfX = require('./lib/describeToBeArrayOfX');
 
-// spec
 describe('toBeArrayOfStrings', () => {
   describeToBeArrayOfX('toBeArrayOfStrings', {
     type: 'String',

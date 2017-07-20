@@ -1,4 +1,3 @@
-// spec
 describe('toBeObject', () => {
   beforeEach(function () {
     this.Foo = function () {};

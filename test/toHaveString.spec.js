@@ -1,7 +1,5 @@
-// modules
 const describeToHaveX = require('./lib/describeToHaveX');
 
-// spec
 describe('toHaveString', () => {
   describeToHaveX('toHaveString', () => {
     describe('when subject IS a string of any length', () => {

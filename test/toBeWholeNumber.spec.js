@@ -1,4 +1,3 @@
-// spec
 describe('toBeWholeNumber', () => {
   describe('when invoked', () => {
     describe('when subject IS a number with no positive decimal places', () => {

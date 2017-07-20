@@ -1,4 +1,3 @@
-// spec
 describe('toBeNonEmptyObject', () => {
   beforeEach(function () {
     this.Foo = function () {};

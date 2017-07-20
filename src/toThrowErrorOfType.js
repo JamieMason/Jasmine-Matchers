@@ -1,4 +1,3 @@
-// public
 module.exports = (type, actual) => {
   try {
     actual();

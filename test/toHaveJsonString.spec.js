@@ -1,7 +1,5 @@
-// modules
 const describeToHaveX = require('./lib/describeToHaveX');
 
-// spec
 describe('toHaveJsonString', () => {
   describeToHaveX('toHaveJsonString', () => {
     describe('when subject IS a string of parseable JSON', () => {

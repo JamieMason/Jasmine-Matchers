@@ -1,7 +1,5 @@
-// modules
 const describeToHaveX = require('./lib/describeToHaveX');
 
-// spec
 describe('toHaveStringShorterThan', () => {
   describeToHaveX('toHaveStringShorterThan', () => {
     describe('when the subject and comparison ARE both strings', () => {

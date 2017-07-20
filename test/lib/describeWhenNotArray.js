@@ -1,8 +1,6 @@
-// modules
 const getArgumentsObject = require('./getArgumentsObject');
 const getArrayLikeObject = require('./getArrayLikeObject');
 
-// public
 module.exports = function describeWhenNotArray(toBeArrayMemberName) {
   describe('when subject is not a true Array', () => {
     describe('when subject is Array-like', () => {

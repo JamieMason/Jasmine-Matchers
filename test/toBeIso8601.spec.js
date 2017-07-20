@@ -1,4 +1,3 @@
-// spec
 describe('toBeIso8601', () => {
   describe('when invoked', () => {
     describe('when value is a Date String conforming to the ISO 8601 standard', () => {

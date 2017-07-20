@@ -1,4 +1,3 @@
-// spec
 describe('toBeOddNumber', () => {
   describe('when invoked', () => {
     describe('when subject IS an odd number', () => {

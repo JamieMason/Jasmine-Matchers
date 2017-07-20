@@ -1,4 +1,3 @@
-// spec
 describe('toBeFalse', () => {
   describe('when invoked', () => {
     describe('when subject is not only falsy, but a boolean false', () => {

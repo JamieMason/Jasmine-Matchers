@@ -1,7 +1,5 @@
-// modules
 const describeWhenNotArray = require('./lib/describeWhenNotArray');
 
-// spec
 describe('toBeArrayOfSize', () => {
   describe('when invoked', () => {
     describe('when subject is a true Array', () => {

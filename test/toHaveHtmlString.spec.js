@@ -1,7 +1,5 @@
-// modules
 const describeToHaveX = require('./lib/describeToHaveX');
 
-// spec
 describe('toHaveHtmlString', () => {
   describeToHaveX('toHaveHtmlString', () => {
     describe('when subject IS a string of HTML markup', () => {

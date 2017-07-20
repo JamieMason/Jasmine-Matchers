@@ -1,7 +1,5 @@
-// modules
 const baseConfig = require('./browserstack.conf');
 
-// public
 module.exports = function (config) {
   baseConfig({
     set(base) {

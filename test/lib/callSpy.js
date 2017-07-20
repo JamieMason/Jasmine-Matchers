@@ -1,4 +1,3 @@
-// public
 module.exports = function callSpy(arg) {
   const spy = jasmine.createSpy();
   spy(arg);

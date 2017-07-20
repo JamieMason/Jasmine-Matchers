@@ -1,7 +1,5 @@
-// modules
 const describeToHaveArrayX = require('./lib/describeToHaveArrayX');
 
-// spec
 describe('toHaveArray', () => {
   describeToHaveArrayX('toHaveArray', () => {
     it('should confirm', () => {

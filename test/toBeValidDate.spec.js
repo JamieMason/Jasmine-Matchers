@@ -1,4 +1,3 @@
-// spec
 describe('toBeValidDate', () => {
   describe('when invoked', () => {
     describe('when value is a valid instance of Date', () => {

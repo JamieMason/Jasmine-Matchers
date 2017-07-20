@@ -1,7 +1,5 @@
-// modules
 const describeToHaveX = require('./lib/describeToHaveX');
 
-// spec
 describe('toHaveStringSameLengthAs', () => {
   describeToHaveX('toHaveStringSameLengthAs', () => {
     describe('when the subject and comparison ARE both strings', () => {

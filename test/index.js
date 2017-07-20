@@ -1,4 +1,3 @@
-// public
 module.exports = {
   after: require('./after.spec'),
   arrayOfBooleans: require('./arrayOfBooleans.spec'),

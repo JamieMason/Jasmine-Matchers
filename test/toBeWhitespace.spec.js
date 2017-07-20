@@ -1,4 +1,3 @@
-// spec
 describe('toBeWhitespace', () => {
   describe('when invoked', () => {
     describe('when subject IS a string containing only tabs, spaces, returns etc', () => {

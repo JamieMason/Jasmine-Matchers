@@ -1,7 +1,5 @@
-// modules
 const describeToHaveX = require('./lib/describeToHaveX');
 
-// spec
 describe('toHaveWhitespaceString', () => {
   describeToHaveX('toHaveWhitespaceString', () => {
     describe('when subject IS a string containing only tabs, spaces, returns etc', () => {

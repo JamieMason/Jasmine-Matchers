@@ -1,4 +1,3 @@
-// spec
 describe('toBeWithinRange', () => {
   describe('when invoked', () => {
     describe('when subject IS a number >= floor and <= ceiling', () => {

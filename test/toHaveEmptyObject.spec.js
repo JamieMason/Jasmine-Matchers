@@ -1,7 +1,5 @@
-// modules
 const describeToHaveX = require('./lib/describeToHaveX');
 
-// spec
 describe('toHaveEmptyObject', () => {
   beforeEach(function () {
     this.Foo = function () {};

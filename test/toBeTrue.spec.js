@@ -1,4 +1,3 @@
-// spec
 describe('toBeTrue', () => {
   describe('when invoked', () => {
     describe('when subject is not only truthy, but a boolean true', () => {

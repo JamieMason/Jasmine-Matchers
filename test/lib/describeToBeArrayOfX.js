@@ -1,7 +1,5 @@
-// modules
 const describeWhenNotArray = require('./describeWhenNotArray');
 
-// public
 module.exports = function describeToBeArrayOfX(name, options) {
   describe(name, () => {
     describe('when invoked', () => {

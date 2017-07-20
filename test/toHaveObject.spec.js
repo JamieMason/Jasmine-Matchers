@@ -1,7 +1,5 @@
-// modules
 const describeToHaveX = require('./lib/describeToHaveX');
 
-// spec
 describe('toHaveObject', () => {
   describeToHaveX('toHaveObject', () => {
     beforeEach(function () {

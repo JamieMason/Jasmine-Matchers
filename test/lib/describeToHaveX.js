@@ -1,4 +1,3 @@
-// public
 module.exports = function describeToHaveX(name, whenPresent) {
   describe('when invoked', () => {
     describe('when subject is not an object', () => {

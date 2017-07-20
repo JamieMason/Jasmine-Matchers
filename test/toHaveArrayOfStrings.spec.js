@@ -1,7 +1,5 @@
-// modules
 const describeToHaveArrayX = require('./lib/describeToHaveArrayX');
 
-// spec
 describe('toHaveArrayOfStrings', () => {
   describeToHaveArrayX('toHaveArrayOfStrings', () => {
     describe('when named Array is empty', () => {

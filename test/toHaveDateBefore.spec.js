@@ -1,7 +1,5 @@
-// modules
 const describeToHaveX = require('./lib/describeToHaveX');
 
-// spec
 describeToHaveX('toHaveDateBefore', () => {
   let mockDate;
   beforeEach(() => {

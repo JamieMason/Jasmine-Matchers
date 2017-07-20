@@ -1,4 +1,3 @@
-// spec
 describe('toBeNumber', () => {
   describe('when invoked', () => {
     describe('when subject IS a number', () => {

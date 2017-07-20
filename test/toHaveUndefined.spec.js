@@ -1,7 +1,5 @@
-// modules
 const describeToHaveX = require('./lib/describeToHaveX');
 
-// spec
 describe('toHaveUndefined', () => {
   describeToHaveX('toHaveUndefined', () => {
     describe('when subject does NOT have a member at the given key', () => {

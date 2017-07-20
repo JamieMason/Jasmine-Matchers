@@ -1,7 +1,5 @@
-// modules
 const callSpy = require('./lib/callSpy');
 
-// spec
 describe('any.nonEmptyArray', () => {
   const shared = {};
   beforeEach(() => {

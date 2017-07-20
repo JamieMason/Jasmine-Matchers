@@ -1,4 +1,3 @@
-// spec
 describe('toBeRegExp', () => {
   describe('when invoked', () => {
     describe('when value is an instance of RegExp', () => {

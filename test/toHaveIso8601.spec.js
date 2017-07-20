@@ -1,7 +1,5 @@
-// modules
 const describeToHaveX = require('./lib/describeToHaveX');
 
-// spec
 describe('toHaveIso8601', () => {
   describeToHaveX('toHaveIso8601', () => {
     describe('when member is a Date String conforming to the ISO 8601 standard',

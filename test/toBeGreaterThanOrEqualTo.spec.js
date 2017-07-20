@@ -1,4 +1,3 @@
-// spec
 describe('toBeGreaterThanOrEqualTo', () => {
   it('asserts value is greater or equal than a given number', () => {
     expect(2).toBeGreaterThanOrEqualTo(1);

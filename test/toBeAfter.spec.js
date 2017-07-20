@@ -1,4 +1,3 @@
-// spec
 describe('toBeAfter', () => {
   describe('when invoked', () => {
     describe('when value is a Date', () => {

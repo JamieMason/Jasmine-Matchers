@@ -1,7 +1,5 @@
-// modules
 const describeToHaveX = require('./lib/describeToHaveX');
 
-// spec
 describe('toHaveNumber', () => {
   describeToHaveX('toHaveNumber', () => {
     describe('when subject IS a number', () => {

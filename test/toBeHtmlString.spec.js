@@ -1,4 +1,3 @@
-// spec
 describe('toBeHtmlString', () => {
   describe('when invoked', () => {
     describe('when subject IS a string of HTML markup', () => {

@@ -1,4 +1,3 @@
-// spec
 describe('toBeNear', () => {
   describe('when invoked', () => {
     describe('when subject IS a number >= number-epsilon and <= number+epsilon', () => {

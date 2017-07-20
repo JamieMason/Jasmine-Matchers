@@ -1,4 +1,3 @@
-// spec
 describe('toThrowAnyError', () => {
   describe('when supplied a function', () => {
     describe('when function errors when invoked', () => {

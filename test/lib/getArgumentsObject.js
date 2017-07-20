@@ -1,4 +1,3 @@
-// public
 module.exports = function getArgumentsObject() {
   return (function () {
     return arguments;

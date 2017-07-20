@@ -1,4 +1,3 @@
-// spec
 describe('toBeEvenNumber', () => {
   describe('when invoked', () => {
     describe('when subject IS an even number', () => {

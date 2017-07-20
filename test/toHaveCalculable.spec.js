@@ -1,7 +1,5 @@
-// modules
 const describeToHaveX = require('./lib/describeToHaveX');
 
-// spec
 describe('toHaveCalculable', () => {
   describeToHaveX('toHaveCalculable', () => {
     describe('when subject CAN be coerced to be used in mathematical operations', () => {

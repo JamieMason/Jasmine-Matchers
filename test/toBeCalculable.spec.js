@@ -1,4 +1,3 @@
-// spec
 describe('toBeCalculable', () => {
   describe('when invoked', () => {
     describe('when subject CAN be coerced to be used in mathematical operations', () => {

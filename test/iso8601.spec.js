@@ -1,7 +1,5 @@
-// modules
 const callSpy = require('./lib/callSpy');
 
-// spec
 describe('any.iso8601', () => {
   const shared = {};
   beforeEach(() => {

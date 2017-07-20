@@ -1,4 +1,3 @@
-// spec
 describe('toBeFunction', () => {
   describe('when invoked', () => {
     describe('when subject IS a function', () => {

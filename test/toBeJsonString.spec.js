@@ -1,4 +1,3 @@
-// spec
 describe('toBeJsonString', () => {
   describe('when invoked', () => {
     describe('when subject IS a string of parseable JSON', () => {

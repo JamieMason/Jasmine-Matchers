@@ -1,7 +1,5 @@
-// modules
 const describeToHaveBooleanX = require('./lib/describeToHaveBooleanX');
 
-// spec
 describe('toHaveBoolean', () => {
   describeToHaveBooleanX('toHaveBoolean', () => {
     describe('when primitive', () => {

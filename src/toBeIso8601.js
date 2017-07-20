@@ -1,8 +1,6 @@
-// modules
 const toBeString = require('./toBeString');
 const toBeValidDate = require('./toBeValidDate');
 
-// public
 module.exports = actual =>
   toBeString(actual) && (
     isMatch('1999-12-31', actual) ||
@@ -13,7 +11,6 @@ module.exports = actual =>
   ) &&
   toBeValidDate(new Date(actual));
 
-// implementation
 function isMatch(pattern, actual) {
   const patterns = {
     '1999-12-31': /^([0-9]{4})-([0-9]{2})-([0-9]{2})$/,

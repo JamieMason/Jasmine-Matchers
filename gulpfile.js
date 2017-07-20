@@ -1,13 +1,10 @@
-// node modules
 const exec = require('child_process').exec;
 
-// 3rd party modules
 const babelify = require('babelify');
 const browserify = require('browserify');
 const gulp = require('gulp');
 const source = require('vinyl-source-stream');
 
-// public
 gulp.task('browserify', () => {
   const toEs5 = (src, dest) => {
     browserify(src)

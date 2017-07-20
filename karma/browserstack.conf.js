@@ -1,8 +1,6 @@
-// modules
 const baseConfig = require('./cloud.conf');
 const platforms = require('./browserstack.json');
 
-// public
 module.exports = function (config) {
   baseConfig({
     set(base) {

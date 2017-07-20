@@ -1,7 +1,5 @@
-// modules
 const describeToHaveX = require('./lib/describeToHaveX');
 
-// spec
 describe('toHaveNonEmptyString', () => {
   describeToHaveX('toHaveNonEmptyString', () => {
     describe('when subject IS a string with at least one character', () => {

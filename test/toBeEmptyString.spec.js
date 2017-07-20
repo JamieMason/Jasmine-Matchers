@@ -1,4 +1,3 @@
-// spec
 describe('toBeEmptyString', () => {
   describe('when invoked', () => {
     describe('when subject IS a string with no characters', () => {

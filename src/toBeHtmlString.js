@@ -1,7 +1,5 @@
-// modules
 const toBeString = require('./toBeString');
 
-// public
 // <           start with opening tag "<"
 //  (          start group 1
 //    "[^"]*"  allow string in "double quotes"

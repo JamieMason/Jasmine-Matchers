@@ -1,7 +1,5 @@
-// modules
 const is = require('./is');
 
-// public
 module.exports = (collection, fn, memo) => {
   if (is.Array(collection)) {
     for (let i = 0, len = collection.length; i < len; i++) {

@@ -1,7 +1,5 @@
-// modules
 const callSpy = require('./lib/callSpy');
 
-// spec
 describe('any.oddNumber', () => {
   const shared = {};
   beforeEach(() => {

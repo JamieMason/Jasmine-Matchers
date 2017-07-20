@@ -1,4 +1,3 @@
-// public
 module.exports = {
   Array: is('Array'),
   Boolean: is('Boolean'),
@@ -10,7 +9,6 @@ module.exports = {
   True: isBooleanObject(true)
 };
 
-// implementation
 function is(type) {
   return value => Object.prototype.toString.call(value) === `[object ${type}]`;
 }
