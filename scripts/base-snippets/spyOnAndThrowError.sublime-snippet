@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+spyOn(${1:object}, '${2:methodName}').and.throwError('${3:message}');
+]]></content>
+  <tabTrigger>ate</tabTrigger>
+  <scope>source.js</scope>
+</snippet>

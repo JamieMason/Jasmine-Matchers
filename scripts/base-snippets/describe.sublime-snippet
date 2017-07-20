@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+describe('${1:when }', FUNCTION_STYLE);
+]]></content>
+  <tabTrigger>des</tabTrigger>
+  <scope>source.js</scope>
+</snippet>

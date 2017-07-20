@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+spyOn(${1:object}, '${2:methodName}').and.callFake(${3});
+]]></content>
+  <tabTrigger>acf</tabTrigger>
+  <scope>source.js</scope>
+</snippet>

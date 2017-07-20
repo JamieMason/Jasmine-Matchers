@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+it('${1:should }', FUNCTION_STYLE);
+]]></content>
+  <tabTrigger>it</tabTrigger>
+  <scope>source.js</scope>
+</snippet>

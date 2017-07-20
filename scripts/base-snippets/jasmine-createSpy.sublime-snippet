@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+jasmine.createSpy('${1:name}');
+]]></content>
+  <tabTrigger>ja</tabTrigger>
+  <scope>source.js</scope>
+</snippet>

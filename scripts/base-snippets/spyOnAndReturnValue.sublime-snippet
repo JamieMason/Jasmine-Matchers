@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+spyOn(${1:object}, '${2:methodName}').and.returnValue(${3:value});
+]]></content>
+  <tabTrigger>arv</tabTrigger>
+  <scope>source.js</scope>
+</snippet>

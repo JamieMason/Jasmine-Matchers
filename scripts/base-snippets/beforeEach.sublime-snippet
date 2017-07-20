@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+beforeEach(FUNCTION_STYLE);
+]]></content>
+  <tabTrigger>be</tabTrigger>
+  <scope>source.js</scope>
+</snippet>

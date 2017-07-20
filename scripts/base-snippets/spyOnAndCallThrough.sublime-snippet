@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+spyOn(${1:object}, '${2:methodName}').and.callThrough();
+]]></content>
+  <tabTrigger>act</tabTrigger>
+  <scope>source.js</scope>
+</snippet>
