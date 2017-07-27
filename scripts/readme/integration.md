@@ -36,6 +36,42 @@ Use the [Jasmine CLI](https://www.npmjs.com/package/jasmine) and include the pat
 }
 ```
 
+### TypeScript and Angular CLI Projects
+
+If you are using TypeScript, you might want to
+`npm install @types/jasmine-expect --save-dev` in order to prevent your IDE from
+complaining about the new Matchers.
+
+Also, if you run into TypeScript compilation errors when running your tests,
+add `"jasmine-expect"` to the `"types"` array in your tests' `tsconfig` file.
+
+As an example, for an Angular CLI based project, this would be your
+`tsconfig.spec.json` file:
+
+```json
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/spec",
+    "baseUrl": "./",
+    "module": "commonjs",
+    "target": "es5",
+    "types": [
+      "jasmine",
+      "node",
+      "jasmine-expect"
+    ]
+  },
+  "files": [
+    "test.ts"
+  ],
+  "include": [
+    "**/*.spec.ts",
+    "**/*.d.ts"
+  ]
+}
+```
+
 ### Sublime Text
 
 [Jasmine-Matchers-Snippets](https://github.com/JamieMason/Jasmine-Matchers-Snippets) or [Jasmine-Matchers-ES6-Snippets](https://github.com/JamieMason/Jasmine-Matchers-ES6-Snippets) can be installed with [Package Control](https://packagecontrol.io/packages/Jasmine%20Matchers%20Snippets) to ease development with Jasmine Matchers in Sublime Text.
