@@ -32,7 +32,7 @@ npm test
 - [gulp](https://github.com/gulpjs/gulp): The streaming build system
 - [husky](https://github.com/typicode/husky): Prevents bad commit or push (git hooks, pre-commit/precommit, pre-push/prepush, post-merge/postmerge and all that stuff...)
 - [jasmine-core](https://github.com/jasmine/jasmine): Official packaging of Jasmine&#39;s core files for use by Node.js projects.
-- [jest](https://github.com/facebook/jest): Painless JavaScript Testing.
+- [jest](https://github.com/facebook/jest): Delightful JavaScript Testing.
 - [karma](https://github.com/karma-runner/karma): Spectacular Test Runner for JavaScript.
 - [karma-browserstack-launcher](https://github.com/karma-runner/karma-browserstack-launcher): A Karma plugin. Launch any browser on BrowserStack!
 - [karma-chrome-launcher](https://github.com/karma-runner/karma-chrome-launcher): A Karma plugin. Launcher for Chrome and Chrome Canary.

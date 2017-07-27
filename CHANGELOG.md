@@ -1,5 +1,15 @@
+<a name="3.7.1"></a>
+## [3.7.1](https://github.com/JamieMason/Jasmine-Matchers/compare/3.7.0...v3.7.1) (2017-07-27)
+
+
+### Bug Fixes
+
+* **npm:** update dependencies ([1b02c06](https://github.com/JamieMason/Jasmine-Matchers/commit/1b02c06))
+
+
+
 <a name="3.7.0"></a>
-# [3.7.0](https://github.com/JamieMason/Jasmine-Matchers/compare/3.6.0...v3.7.0) (2017-03-10)
+# [3.7.0](https://github.com/JamieMason/Jasmine-Matchers/compare/3.6.0...3.7.0) (2017-03-10)
 
 
 
