@@ -10,12 +10,12 @@
 
 [Overview](#overview) | [Installation](#installation) | [Matchers](#matchers) | [Asymmetric Matchers](#asymmetric-matchers) | [Integration](#integration) | [Browser Support](#browser-support)
 
-${OVERVIEW}
+{{OVERVIEW}}
 
-${INSTALLATION}
+{{INSTALLATION}}
 
-${MATCHERS}
+{{MATCHERS}}
 
-${INTEGRATION}
+{{INTEGRATION}}
 
-${BROWSER_SUPPORT}
+{{BROWSER_SUPPORT}}

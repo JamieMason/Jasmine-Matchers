@@ -82,8 +82,8 @@ const getAnySnippet = (template, method) =>
     .replace('TAB_TRIGGER', getTabTrigger(method));
 
 [
-  { functionStyle: es5FunctionStyle, outputDirectory: 'es5-snippets' },
-  { functionStyle: es6FunctionStyle, outputDirectory: 'es6-snippets' }
+  {functionStyle: es5FunctionStyle, outputDirectory: 'es5-snippets'},
+  {functionStyle: es6FunctionStyle, outputDirectory: 'es6-snippets'}
 ].forEach(snippetBundle => {
   const functionStyle = snippetBundle.functionStyle;
   const outputDirectory = snippetBundle.outputDirectory;
