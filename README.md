@@ -36,7 +36,7 @@ stating that you `expect(cycleWheels).toBeEvenNumber()`.
 ##### Sponsors
 
 <a href="https://browserstack.com">
-  <img alt="Sponsored by BrowserStack" src="https://cdn.rawgit.com/JamieMason/Jasmine-Matchers/develop/browserstack.svg" height="40" />
+  <img alt="Sponsored by BrowserStack" src="https://cdn.rawgit.com/JamieMason/Jasmine-Matchers/ad1ea0e6/browserstack.svg" height="40" />
 </a>
 
 
