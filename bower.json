@@ -1,21 +1,22 @@
 {
   "name": "jasmine-expect",
-  "main": "dist/jasmine-matchers.js",
-  "version": "2.0.0-beta1",
+  "description": "Write Beautiful Specs with Custom Matchers",
+  "version": "3.7.1",
+  "author": "Jamie Mason <jamie@foldleft.io> (https://github.com/JamieMason)",
   "homepage": "https://github.com/JamieMason/Jasmine-Matchers",
-  "authors": [
-    "Jamie Mason <siunmaru@gmail.com>"
-  ],
-  "description": "Write Beautiful Specs with Jasmine Custom Matchers",
   "keywords": [
+    "assertions",
+    "BDD",
+    "expectations",
+    "expects",
     "jasmine",
-    "testing",
-    "unit",
-    "karma",
-    "tdd",
-    "bdd"
+    "jest",
+    "TDD",
+    "test-matchers",
+    "testing"
   ],
   "license": "MIT",
+  "main": "dist/jasmine-matchers.js",
   "ignore": [
     "**/.*",
     "*.conf.js",

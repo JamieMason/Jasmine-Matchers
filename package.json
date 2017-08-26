@@ -1,11 +1,9 @@
 {
   "name": "jasmine-expect",
-  "description": "Additional matchers for the Jasmine BDD JavaScript testing library",
+  "description": "Write Beautiful Specs with Custom Matchers",
   "version": "3.7.1",
-  "author": "Jamie Mason (https://github.com/JamieMason)",
-  "bugs": {
-    "url": "https://github.com/JamieMason/Jasmine-Matchers/issues"
-  },
+  "author": "Jamie Mason <jamie@foldleft.io> (https://github.com/JamieMason)",
+  "bugs": "https://github.com/JamieMason/Jasmine-Matchers/issues",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
@@ -64,15 +62,17 @@
   "keywords": [
     "BDD",
     "TDD",
+    "assertions",
+    "expectations",
+    "expects",
     "jasmine",
+    "jest",
+    "test-matchers",
     "testing"
   ],
   "license": "MIT",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/JamieMason/Jasmine-Matchers.git"
-  },
+  "main": "dist/jasmine-matchers.js",
+  "repository": "JamieMason/Jasmine-Matchers",
   "scripts": {
     "browserstack-android": "karma start karma/browserstack-android.conf.js",
     "browserstack-chrome": "karma start karma/browserstack-chrome.conf.js",
