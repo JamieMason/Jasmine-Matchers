@@ -40,6 +40,7 @@ const matchersByName = {
   toBeWhitespace: require('./toBeWhitespace'),
   toBeWholeNumber: require('./toBeWholeNumber'),
   toBeWithinRange: require('./toBeWithinRange'),
+  toContainSubstring: require('./toContainSubstring'),
   toEndWith: require('./toEndWith'),
   toHaveArray: require('./toHaveArray'),
   toHaveArrayOfBooleans: require('./toHaveArrayOfBooleans'),
