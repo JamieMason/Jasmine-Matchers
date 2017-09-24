@@ -24,7 +24,7 @@ Once agreed, the steps at the time of writing are as follows;
 + Run `npm run watch` to build and test on each file change
 + Create `test/<matcherName>.spec.js`
 + Create `src/<matcherName>.js`
-+ Add `<matcherName>: require('./<matcherName>'),` to the `matcher` object in `src/api.js`
++ Add `<matcherName>: require('./<matcherName>'),` to the `matchersByName` object in `src/index.js`
 + Add the new matcher to `README.md`
 + Run `npm run build` to generate `dist/*.js`
 

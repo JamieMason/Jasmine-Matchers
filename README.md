@@ -178,6 +178,7 @@ expect(string).toBeSameLengthAs();
 expect(string).toBeShorterThan();
 expect(string).toBeString();
 expect(string).toBeWhitespace();
+expect(string).toContainSubstring(substring);
 expect(string).toEndWith(substring);
 expect(string).toStartWith(substring);
 ```
