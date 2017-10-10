@@ -63,7 +63,7 @@ Downloads are available on the [releases](https://github.com/JamieMason/Jasmine-
 
 The [Jasmine testing framework](http://jasmine.github.io/) from
 [Pivotal Labs](http://pivotallabs.com/) comes with this
-[default set of matchers](http://jasmine.github.io/edge/introduction.html#section-Expectations);
+[default set of matchers](http://jasmine.github.io/edge/introduction.html#section-Expectations):
 
 ```js
 expect(instance).toBe(instance);
@@ -98,7 +98,7 @@ jasmine.stringMatching(pattern);
 
 ## Matchers
 
-[Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) adds the following matchers;
+[Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) adds the following matchers:
 
 ```js
 expect(array).toBeArray();
@@ -224,13 +224,13 @@ Embed [jasmine-matchers.js](https://github.com/JamieMason/Jasmine-Matchers/blob/
 
 ### Jest
 
-Include the following in your `package.json`;
+Include the following in your `package.json`:
 
 ```json
 "unmockedModulePathPatterns": ["jasmine-expect"]
 ```
 
-And the following at the top of your test suite;
+And the following at the top of your test suite:
 
 ```javascript
 import JasmineExpect from 'jasmine-expect';
