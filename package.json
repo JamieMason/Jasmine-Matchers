@@ -74,7 +74,7 @@
   "main": "dist/jasmine-matchers.js",
   "repository": "JamieMason/Jasmine-Matchers",
   "scripts": {
-    "browserstack-android": "karma start karma/browserstack-android.conf.js",
+    "browserstack-android": "echo 'TEMPORARILY DISABLED: karma start karma/browserstack-android.conf.js'",
     "browserstack-chrome": "karma start karma/browserstack-chrome.conf.js",
     "browserstack-firefox": "karma start karma/browserstack-firefox.conf.js",
     "browserstack-ie": "karma start karma/browserstack-ie.conf.js",
