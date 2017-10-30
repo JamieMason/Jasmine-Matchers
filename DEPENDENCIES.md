@@ -1,10 +1,8 @@
 # jasmine-expect 
 
-Additional matchers for the Jasmine BDD JavaScript testing library
+Write Beautiful Specs with Custom Matchers
 
 ## Installation
-
-Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't already.
 
 ```sh
 npm install jasmine-expect --save
@@ -50,4 +48,3 @@ npm test
 ## License
 
 MIT
-

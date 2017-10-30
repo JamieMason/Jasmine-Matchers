@@ -1,5 +1,15 @@
+<a name="3.8.1"></a>
+## [3.8.1](https://github.com/JamieMason/Jasmine-Matchers/compare/3.7.1...3.8.1) (2017-10-30)
+
+
+### Features
+
+* **core:** add typescript declarations for typing ([105bcc3](https://github.com/JamieMason/Jasmine-Matchers/commit/105bcc3))
+
+
+
 <a name="3.7.1"></a>
-## [3.7.1](https://github.com/JamieMason/Jasmine-Matchers/compare/3.7.0...v3.7.1) (2017-07-27)
+## [3.7.1](https://github.com/JamieMason/Jasmine-Matchers/compare/3.7.0...3.7.1) (2017-07-27)
 
 
 ### Bug Fixes
