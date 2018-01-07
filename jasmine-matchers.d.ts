@@ -1,5 +1,5 @@
 declare namespace jasmine {
-  interface Matchers {
+  interface Matchers<T> {
     toBeAfter(otherDate: Date, expectationFailOutput?: any): boolean;
     toBeArray(expectationFailOutput?: any): boolean;
     toBeArrayOfBooleans(expectationFailOutput?: any): boolean;
