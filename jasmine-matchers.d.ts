@@ -17,20 +17,25 @@ declare namespace jasmine {
     toBeEvenNumber(expectationFailOutput?: any): boolean;
     toBeFalse(expectationFailOutput?: any): boolean;
     toBeFunction(expectationFailOutput?: any): boolean;
+    toBeGreaterThanOrEqualTo(otherNumber: number, expectationFailOutput?: any): boolean;
     toBeHtmlString(expectationFailOutput?: any): boolean;
     toBeIso8601(expectationFailOutput?: any): boolean;
     toBeJsonString(expectationFailOutput?: any): boolean;
+    toBeLessThanOrEqualTo(otherNumber: number, expectationFailOutput?: any): boolean;
     toBeLongerThan(other: string, expectationFailOutput?: any): boolean;
+    toBeNear(number: number, epsilon: number, expectationFailOutput?: any): boolean;
     toBeNonEmptyArray(expectationFailOutput?: any): boolean;
     toBeNonEmptyObject(expectationFailOutput?: any): boolean;
     toBeNonEmptyString(expectationFailOutput?: any): boolean;
     toBeNumber(expectationFailOutput?: any): boolean;
     toBeObject(expectationFailOutput?: any): boolean;
     toBeOddNumber(expectationFailOutput?: any): boolean;
+    toBeRegExp(expectationFailOutput?: any): boolean;
     toBeSameLengthAs(other: string, expectationFailOutput?: any): boolean;
     toBeShorterThan(other: string, expectationFailOutput?: any): boolean;
     toBeString(expectationFailOutput?: any): boolean;
     toBeTrue(expectationFailOutput?: any): boolean;
+    toBeValidDate(expectationFailOutput?: any): boolean;
     toBeWhitespace(expectationFailOutput?: any): boolean;
     toBeWholeNumber(expectationFailOutput?: any): boolean;
     toBeWithinRange(floor: number, ceiling: number, expectationFailOutput?: any): boolean;
@@ -70,10 +75,9 @@ declare namespace jasmine {
     toHaveStringSameLengthAs(key: string, other: string, expectationFailOutput?: any): boolean;
     toHaveStringShorterThan(key: string, other: string, expectationFailOutput?: any): boolean;
     toHaveTrue(key: string, expectationFailOutput?: any): boolean;
+    toHaveUndefined(key: string, expectationFailOutput?: any): boolean;
     toHaveWhitespaceString(key: string, expectationFailOutput?: any): boolean;
     toHaveWholeNumber(key: string, expectationFailOutput?: any): boolean;
-
-    toImplement(api: {}, expectationFailOutput?: any): boolean;
 
     toStartWith(subString: string, expectationFailOutput?: any): boolean;
 
