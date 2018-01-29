@@ -1,6 +1,7 @@
 describe('toBeNonEmptyObject', () => {
-  beforeEach(function () {
-    this.Foo = function () {};
+  let Foo;
+  beforeEach(() => {
+    Foo = function () {};
   });
   describe('when invoked', () => {
     describe('when subject IS an Object with at least one instance member', () => {
@@ -11,13 +12,13 @@ describe('toBeNonEmptyObject', () => {
       });
     });
     describe('when subject is NOT an Object with at least one instance member', () => {
-      beforeEach(function () {
-        this.Foo.prototype = {
+      beforeEach(() => {
+        Foo.prototype = {
           b: 2
         };
       });
-      it('should deny', function () {
-        expect(new this.Foo()).not.toBeNonEmptyObject();
+      it('should deny', () => {
+        expect(new Foo()).not.toBeNonEmptyObject();
         expect({}).not.toBeNonEmptyObject();
         expect(null).not.toBeNonEmptyObject();
       });

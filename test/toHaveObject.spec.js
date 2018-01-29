@@ -2,16 +2,17 @@ const describeToHaveX = require('./lib/describeToHaveX');
 
 describe('toHaveObject', () => {
   describeToHaveX('toHaveObject', () => {
-    beforeEach(function () {
-      this.Foo = function () {};
+    let Foo;
+    beforeEach(() => {
+      Foo = function () {};
     });
     describe('when subject IS an Object', () => {
-      it('should confirm', function () {
+      it('should confirm', () => {
         expect({
           memberName: new Object()
         }).toHaveObject('memberName');
         expect({
-          memberName: new this.Foo()
+          memberName: new Foo()
         }).toHaveObject('memberName');
         expect({
           memberName: {}

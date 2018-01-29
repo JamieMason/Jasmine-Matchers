@@ -1,12 +1,13 @@
 describe('toBeObject', () => {
-  beforeEach(function () {
-    this.Foo = function () {};
+  let Foo;
+  beforeEach(() => {
+    Foo = function () {};
   });
   describe('when invoked', () => {
     describe('when subject IS an Object', () => {
-      it('should confirm', function () {
+      it('should confirm', () => {
         expect(new Object()).toBeObject();
-        expect(new this.Foo()).toBeObject();
+        expect(new Foo()).toBeObject();
         expect({}).toBeObject();
       });
     });
