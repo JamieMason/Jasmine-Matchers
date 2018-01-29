@@ -6,7 +6,7 @@ module.exports = function (config) {
       base.browsers = [
         'firefox-55.0',
         'firefox-56.0',
-        'firefox-57.0 beta'
+        'firefox-57.0'
       ];
       config.set(base);
     }

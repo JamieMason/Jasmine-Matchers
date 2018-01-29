@@ -4,9 +4,9 @@ module.exports = function (config) {
   baseConfig({
     set(base) {
       base.browsers = [
-        'chrome-58.0',
-        'chrome-59.0',
-        'chrome-60.0'
+        'chrome-61.0',
+        'chrome-62.0',
+        'chrome-63.0'
       ];
       config.set(base);
     }

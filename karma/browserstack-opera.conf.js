@@ -4,7 +4,6 @@ module.exports = function (config) {
   baseConfig({
     set(base) {
       base.browsers = [
-        'opera-12.15',
         'opera-12.16'
       ];
       config.set(base);
