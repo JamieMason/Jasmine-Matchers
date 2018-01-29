@@ -1,3 +1,14 @@
+<a name="3.8.3"></a>
+## [3.8.3](https://github.com/JamieMason/Jasmine-Matchers/compare/3.8.1...3.8.3) (2018-01-29)
+
+
+### Bug Fixes
+
+* **types:** update typescript definitions ([23ee7d8](https://github.com/JamieMason/Jasmine-Matchers/commit/23ee7d8))
+* **typescript:** fix jest typings mismatch ([3cb9571](https://github.com/JamieMason/Jasmine-Matchers/commit/3cb9571)), closes [#62](https://github.com/JamieMason/Jasmine-Matchers/issues/62)
+
+
+
 <a name="3.8.1"></a>
 ## [3.8.1](https://github.com/JamieMason/Jasmine-Matchers/compare/3.7.1...3.8.1) (2017-10-30)
 
