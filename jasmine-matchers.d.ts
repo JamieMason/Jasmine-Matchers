@@ -85,3 +85,8 @@ declare namespace jasmine {
     toThrowErrorOfType(type: string, expectationFailOutput?: any): boolean;
   }
 }
+
+declare namespace jest {
+  interface Matchers<R> extends jasmine.Matchers<R> {
+  }
+}
