@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "lib": ["es6"],
+    "outDir": "./dist",
+    "strict": true,
+    "target": "es3",
+    "types": ["jasmine", "jasmine-expect"]
+  }
+}
