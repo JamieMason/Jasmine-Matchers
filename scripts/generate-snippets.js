@@ -85,8 +85,8 @@ const getAnySnippet = (template, method) =>
   {functionStyle: es5FunctionStyle, outputDirectory: 'es5-snippets'},
   {functionStyle: es6FunctionStyle, outputDirectory: 'es6-snippets'}
 ].forEach(snippetBundle => {
-  const functionStyle = snippetBundle.functionStyle;
-  const outputDirectory = snippetBundle.outputDirectory;
+  const {functionStyle} = snippetBundle;
+  const {outputDirectory} = snippetBundle;
 
   api.filter(ownerIs('expect')).forEach(method => {
     const location = getPath(`./${outputDirectory}/${method.name}.sublime-snippet`);

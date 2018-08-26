@@ -1,4 +1,4 @@
-const exec = require('child_process').exec;
+const {exec} = require('child_process');
 
 const babelify = require('babelify');
 const browserify = require('browserify');
@@ -19,9 +19,7 @@ gulp.task('browserify', () => {
   toEs5('./test/index.js', 'jasmine-matchers.spec.js');
 });
 
-gulp.task('build', [
-  'browserify'
-]);
+gulp.task('build', ['browserify']);
 
 gulp.task('test', done => {
   exec('npm run test:local', (err, stdout, stderr) => {
@@ -32,12 +30,5 @@ gulp.task('test', done => {
 });
 
 gulp.task('watch', [], () => {
-  return gulp.watch([
-    '*.js',
-    'src/**/*.js',
-    'test/**/*.js'
-  ], [
-    'build',
-    'test'
-  ]);
+  return gulp.watch(['*.js', 'src/**/*.js', 'test/**/*.js'], ['build', 'test']);
 });

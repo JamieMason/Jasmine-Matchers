@@ -89,7 +89,7 @@
     "commitmsg": "validate-commit-msg",
     "generate-readme": "node ./scripts/generate-readme.js",
     "generate-snippets": "node scripts/generate-snippets.js",
-    "lint": "xo --fix",
+    "lint": "xo '**/*.js' --fix",
     "pregenerate-snippets": "rm -rf ./scripts/es5-snippets && rm -rf ./scripts/es6-snippets && mkdir -p ./scripts/es5-snippets && mkdir -p ./scripts/es6-snippets",
     "test": "npm run lint && npm run browserstack-android && npm run browserstack-ios && npm run browserstack-ie && npm run browserstack-safari && npm run browserstack-opera && npm run browserstack-firefox && npm run browserstack-chrome",
     "test:jest": "jest",
@@ -132,7 +132,9 @@
       "no-array-constructor": 0,
       "no-new-object": 0,
       "no-new-wrappers": 0,
-      "unicorn/filename-case": 0
+      "prefer-rest-params": 0,
+      "unicorn/filename-case": 0,
+      "unicorn/new-for-builtins": 0
     },
     "space": 2
   }
