@@ -1,3 +1,13 @@
+<a name="3.8.4"></a>
+## [3.8.4](https://github.com/JamieMason/Jasmine-Matchers/compare/3.8.3...3.8.4) (2018-08-26)
+
+
+### Bug Fixes
+
+* **npm:** update dependencies ([7cc7ff1](https://github.com/JamieMason/Jasmine-Matchers/commit/7cc7ff1))
+
+
+
 <a name="3.8.3"></a>
 ## [3.8.3](https://github.com/JamieMason/Jasmine-Matchers/compare/3.8.1...3.8.3) (2018-01-29)
 
