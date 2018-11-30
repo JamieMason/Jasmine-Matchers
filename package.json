@@ -75,7 +75,7 @@
     "testing"
   ],
   "license": "MIT",
-  "main": "dist/jasmine-matchers.js",
+  "main": "src/index.js",
   "repository": "JamieMason/Jasmine-Matchers",
   "scripts": {
     "browserstack-android": "echo 'TEMPORARILY DISABLED: karma start karma/browserstack-android.conf.js'",
