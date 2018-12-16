@@ -1,4 +1,4 @@
-module.exports = actual => {
+module.exports = (actual) => {
   try {
     actual();
     return false;

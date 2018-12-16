@@ -1,4 +1,4 @@
-const is = require('./is');
+const is = require("./is");
 
 module.exports = (collection, fn, memo) => {
   if (is.Array(collection)) {

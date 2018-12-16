@@ -1,3 +1,3 @@
-const toBeString = require('./toBeString');
+const toBeString = require("./toBeString");
 
-module.exports = actual => toBeString(actual) && actual.search(/\S/) === -1;
+module.exports = (actual) => toBeString(actual) && actual.search(/\S/) === -1;

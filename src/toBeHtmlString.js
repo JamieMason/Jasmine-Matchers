@@ -1,4 +1,4 @@
-const toBeString = require('./toBeString');
+const toBeString = require("./toBeString");
 
 // <           start with opening tag "<"
 //  (          start group 1
@@ -10,4 +10,5 @@ const toBeString = require('./toBeString');
 //  )          end group 1
 //  *          0 or more
 // >           end with closing tag ">"
-module.exports = actual => toBeString(actual) && actual.search(/<("[^"]*"|'[^']*'|[^'">])*>/) !== -1;
+module.exports = (actual) =>
+  toBeString(actual) && actual.search(/<("[^"]*"|'[^']*'|[^'">])*>/) !== -1;

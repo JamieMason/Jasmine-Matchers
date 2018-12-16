@@ -1,1 +1,1 @@
-module.exports = actual => actual instanceof RegExp;
+module.exports = (actual) => actual instanceof RegExp;

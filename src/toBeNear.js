@@ -1,3 +1,4 @@
-const toBeNumber = require('./toBeNumber');
+const toBeNumber = require("./toBeNumber");
 
-module.exports = (number, epsilon, actual) => toBeNumber(actual) && actual >= number - epsilon && actual <= number + epsilon;
+module.exports = (value, epsilon, actual) =>
+  toBeNumber(actual) && actual >= value - epsilon && actual <= value + epsilon;

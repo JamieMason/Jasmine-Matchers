@@ -1,6 +1,6 @@
 const baseConfig = require('./base.conf');
 
-module.exports = function (config) {
+module.exports = function(config) {
   baseConfig({
     set(base) {
       base.browserDisconnectTimeout = 10000; // Default 2000

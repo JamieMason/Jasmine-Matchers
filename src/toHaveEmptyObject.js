@@ -1,4 +1,4 @@
-const memberMatcherFor = require('./lib/memberMatcherFor');
-const toBeEmptyObject = require('./toBeEmptyObject');
+const memberMatcherFor = require("./lib/memberMatcherFor");
+const toBeEmptyObject = require("./toBeEmptyObject");
 
 module.exports = memberMatcherFor(toBeEmptyObject);

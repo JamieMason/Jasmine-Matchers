@@ -1,7 +1,7 @@
 const baseConfig = require('./cloud.conf');
 const platforms = require('./browserstack.json');
 
-module.exports = function (config) {
+module.exports = function(config) {
   baseConfig({
     set(base) {
       base.browsers = Object.keys(platforms);

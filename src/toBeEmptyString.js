@@ -1,1 +1,1 @@
-module.exports = actual => actual === '';
+module.exports = (actual) => actual === "";

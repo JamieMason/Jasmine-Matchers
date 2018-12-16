@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "outDir": "./dist",
     "target": "es5"
   },
-  "include": ["./package.json", "./src/**/*"]
+  "include": ["./src/**/*.js"]
 }

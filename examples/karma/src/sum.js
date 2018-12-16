@@ -1,3 +1,3 @@
-window.sum = function (a, b) {
+window.sum = function(a, b) {
   return a + b;
 };

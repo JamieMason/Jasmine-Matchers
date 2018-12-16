@@ -80,7 +80,7 @@
     "build:readme": "node ./scripts/generate-readme.js",
     "build:snippets": "node scripts/generate-snippets.js",
     "clean": "rimraf dist ./test/dist ./scripts/es5-snippets ./scripts/es6-snippets",
-    "format": "prettier --write '**/*.md' './src/**/*.ts' './test/**/*.ts'",
+    "format": "prettier --write './+(examples|karma|scripts|src)/**/*.+(js|ts)'",
     "lint": "tslint --fix --project ./tsconfig.json",
     "prebuild": "npm run clean",
     "prebuild:snippets": "mkdir -p ./scripts/es5-snippets && mkdir -p ./scripts/es6-snippets",

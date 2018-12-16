@@ -1,3 +1,3 @@
-const is = require('./lib/is');
+const is = require("./lib/is");
 
 module.exports = is.String;

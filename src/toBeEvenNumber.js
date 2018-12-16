@@ -1,3 +1,3 @@
-const toBeNumber = require('./toBeNumber');
+const toBeNumber = require("./toBeNumber");
 
-module.exports = actual => toBeNumber(actual) && actual % 2 === 0;
+module.exports = (actual) => toBeNumber(actual) && actual % 2 === 0;

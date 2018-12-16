@@ -1,3 +1,4 @@
-const toBeNumber = require('./toBeNumber');
+const toBeNumber = require("./toBeNumber");
 
-module.exports = (otherNumber, actual) => toBeNumber(actual) && actual >= otherNumber;
+module.exports = (otherNumber, actual) =>
+  toBeNumber(actual) && actual >= otherNumber;

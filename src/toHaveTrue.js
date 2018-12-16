@@ -1,4 +1,4 @@
-const memberMatcherFor = require('./lib/memberMatcherFor');
-const toBeTrue = require('./toBeTrue');
+const memberMatcherFor = require("./lib/memberMatcherFor");
+const toBeTrue = require("./toBeTrue");
 
 module.exports = memberMatcherFor(toBeTrue);

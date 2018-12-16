@@ -1,3 +1,3 @@
-const toBeArrayOfSize = require('./toBeArrayOfSize');
+const toBeArrayOfSize = require("./toBeArrayOfSize");
 
-module.exports = actual => toBeArrayOfSize(0, actual);
+module.exports = (actual) => toBeArrayOfSize(0, actual);

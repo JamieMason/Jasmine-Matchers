@@ -1,3 +1,4 @@
-const reduce = require('./reduce');
+const reduce = require("./reduce");
 
-module.exports = object => reduce(object, (keys, value, key) => keys.concat(key), []);
+module.exports = (object) =>
+  reduce(object, (keys, value, key) => keys.concat(key), []);

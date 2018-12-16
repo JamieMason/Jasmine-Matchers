@@ -1,21 +1,13 @@
-module.exports = function (config) {
+module.exports = function(config) {
   config.set({
     autoWatch: false,
     basePath: '',
-    browsers: [
-      'Chrome'
-    ],
+    browsers: ['Chrome'],
     colors: true,
     concurrency: Infinity,
     exclude: [],
-    files: [
-      'src/**/*.js',
-      'src/**/*.spec.js'
-    ],
-    frameworks: [
-      'jasmine',
-      'jasmine-matchers'
-    ],
+    files: ['src/**/*.js', 'src/**/*.spec.js'],
+    frameworks: ['jasmine', 'jasmine-matchers'],
     logLevel: config.LOG_INFO,
     plugins: [
       'karma-chrome-launcher',
@@ -24,9 +16,7 @@ module.exports = function (config) {
     ],
     port: 9876,
     preprocessors: {},
-    reporters: [
-      'progress'
-    ],
+    reporters: ['progress'],
     singleRun: true
   });
 };

@@ -1,3 +1,6 @@
-const toBeString = require('./toBeString');
+const toBeString = require("./toBeString");
 
-module.exports = (otherString, actual) => toBeString(actual) && toBeString(otherString) && actual.length < otherString.length;
+module.exports = (otherString, actual) =>
+  toBeString(actual) &&
+  toBeString(otherString) &&
+  actual.length < otherString.length;

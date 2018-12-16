@@ -1,3 +1,3 @@
-const toBeString = require('./toBeString');
+const toBeString = require("./toBeString");
 
-module.exports = actual => toBeString(actual) && actual.length > 0;
+module.exports = (actual) => toBeString(actual) && actual.length > 0;
