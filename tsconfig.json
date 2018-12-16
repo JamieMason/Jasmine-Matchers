@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
-    "allowJs": true,
     "outDir": "./dist",
-    "target": "es5"
+    "target": "es3"
   },
-  "include": ["./src/**/*.js"]
+  "include": ["./src/**/*.ts"]
 }

@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
   devtool: false,
   entry: {
-    'jasmine-matchers': './src/index.js',
+    'jasmine-matchers': './src/index.ts',
     'jasmine-matchers.spec': globby.sync(['./test/*.spec.js'])
   },
   mode: 'development',
@@ -18,7 +18,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js']
+    extensions: ['.ts', '.js']
   },
   output: {
     path: path.resolve(__dirname, 'dist')
