@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "target": "es5"
+  },
+  "include": ["./package.json", "./src/**/*"]
+}
