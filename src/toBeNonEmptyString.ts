@@ -1,2 +1,3 @@
-import toBeString from './toBeString';
-export default (actual) => toBeString(actual) && actual.length > 0;
+import { toBeString } from './toBeString';
+export const toBeNonEmptyString = (actual) =>
+  toBeString(actual) && actual.length > 0;

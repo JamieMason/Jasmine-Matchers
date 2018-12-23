@@ -1,4 +1,4 @@
-export default (actual) => {
+export const toThrowAnyError = (actual) => {
   try {
     actual();
     return false;

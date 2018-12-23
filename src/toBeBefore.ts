@@ -1,6 +1,6 @@
-import toBeDate from './toBeDate';
+import { toBeDate } from './toBeDate';
 
-export default (otherDate, actual) =>
+export const toBeBefore = (otherDate, actual) =>
   toBeDate(actual) &&
   toBeDate(otherDate) &&
   actual.getTime() < otherDate.getTime();

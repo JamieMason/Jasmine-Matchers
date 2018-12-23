@@ -1,3 +1,3 @@
-import memberMatcherFor from './lib/memberMatcherFor';
-import toBeObject from './toBeObject';
-export default memberMatcherFor(toBeObject);
+import { memberMatcherFor } from './lib/memberMatcherFor';
+import { toBeObject } from './toBeObject';
+export const toHaveObject = memberMatcherFor(toBeObject);

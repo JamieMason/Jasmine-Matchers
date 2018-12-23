@@ -1,3 +1,3 @@
-import memberMatcherFor from './lib/memberMatcherFor';
-import toBeArrayOfBooleans from './toBeArrayOfBooleans';
-export default memberMatcherFor(toBeArrayOfBooleans);
+import { memberMatcherFor } from './lib/memberMatcherFor';
+import { toBeArrayOfBooleans } from './toBeArrayOfBooleans';
+export const toHaveArrayOfBooleans = memberMatcherFor(toBeArrayOfBooleans);

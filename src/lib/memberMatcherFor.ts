@@ -1,4 +1,4 @@
-import is from './is';
+import { is } from './is';
 
-export default (toBeX) => (key, actual) =>
+export const memberMatcherFor = (toBeX) => (key, actual) =>
   is.Object(actual) && toBeX(actual[key]);

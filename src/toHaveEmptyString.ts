@@ -1,3 +1,3 @@
-import memberMatcherFor from './lib/memberMatcherFor';
-import toBeEmptyString from './toBeEmptyString';
-export default memberMatcherFor(toBeEmptyString);
+import { memberMatcherFor } from './lib/memberMatcherFor';
+import { toBeEmptyString } from './toBeEmptyString';
+export const toHaveEmptyString = memberMatcherFor(toBeEmptyString);

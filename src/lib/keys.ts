@@ -1,4 +1,4 @@
-import reduce from './reduce';
+import { reduce } from './reduce';
 
-export default (object) =>
-  reduce(object, (keys, value, key) => keys.concat(key), []);
+export const keys = (object) =>
+  reduce(object, (array, value, key) => array.concat(key), []);

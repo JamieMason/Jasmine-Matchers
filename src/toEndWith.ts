@@ -1,6 +1,6 @@
-import toBeNonEmptyString from './toBeNonEmptyString';
+import { toBeNonEmptyString } from './toBeNonEmptyString';
 
-export default (subString, actual) =>
+export const toEndWith = (subString, actual) =>
   toBeNonEmptyString(actual) &&
   toBeNonEmptyString(subString) &&
   actual.slice(actual.length - subString.length, actual.length) === subString;

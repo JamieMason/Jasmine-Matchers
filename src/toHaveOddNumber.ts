@@ -1,3 +1,3 @@
-import memberMatcherFor from './lib/memberMatcherFor';
-import toBeOddNumber from './toBeOddNumber';
-export default memberMatcherFor(toBeOddNumber);
+import { memberMatcherFor } from './lib/memberMatcherFor';
+import { toBeOddNumber } from './toBeOddNumber';
+export const toHaveOddNumber = memberMatcherFor(toBeOddNumber);

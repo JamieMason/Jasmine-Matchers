@@ -1,2 +1,2 @@
-import is from './lib/is';
-export default is.Object;
+import { is } from './lib/is';
+export const toBeObject = is.Object;

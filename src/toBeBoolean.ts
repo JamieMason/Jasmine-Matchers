@@ -1,2 +1,2 @@
-import is from './lib/is';
-export default is.Boolean;
+import { is } from './lib/is';
+export const toBeBoolean = is.Boolean;

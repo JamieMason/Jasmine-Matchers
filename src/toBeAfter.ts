@@ -1,2 +1,2 @@
-import toBeBefore from './toBeBefore';
-export default (otherDate, actual) => toBeBefore(actual, otherDate);
+import { toBeBefore } from './toBeBefore';
+export const toBeAfter = (otherDate, actual) => toBeBefore(actual, otherDate);

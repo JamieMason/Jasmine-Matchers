@@ -1,4 +1,4 @@
-import toBeNumber from './toBeNumber';
+import { toBeNumber } from './toBeNumber';
 
-export default (floor, ceiling, actual) =>
+export const toBeWithinRange = (floor, ceiling, actual) =>
   toBeNumber(actual) && actual >= floor && actual <= ceiling;

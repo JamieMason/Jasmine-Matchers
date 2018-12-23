@@ -1,2 +1,3 @@
-import toBeString from './toBeString';
-export default (actual) => toBeString(actual) && actual.search(/\S/) === -1;
+import { toBeString } from './toBeString';
+export const toBeWhitespace = (actual) =>
+  toBeString(actual) && actual.search(/\S/) === -1;

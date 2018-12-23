@@ -1,7 +1,7 @@
-import toBeObject from './toBeObject';
-import toHaveMember from './toHaveMember';
+import { toBeObject } from './toBeObject';
+import { toHaveMember } from './toHaveMember';
 
-export default (key, actual) =>
+export const toHaveUndefined = (key, actual) =>
   toBeObject(actual) &&
   toHaveMember(key, actual) &&
   typeof actual[key] === 'undefined';

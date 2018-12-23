@@ -1,2 +1,2 @@
-import is from './lib/is';
-export default is.Array;
+import { is } from './lib/is';
+export const toBeArray = is.Array;

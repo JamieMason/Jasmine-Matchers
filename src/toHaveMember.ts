@@ -1,5 +1,5 @@
-import toBeObject from './toBeObject';
-import toBeString from './toBeString';
+import { toBeObject } from './toBeObject';
+import { toBeString } from './toBeString';
 
-export default (key, actual) =>
+export const toHaveMember = (key, actual) =>
   toBeString(key) && toBeObject(actual) && key in actual;

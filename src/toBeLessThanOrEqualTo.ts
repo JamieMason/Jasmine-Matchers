@@ -1,4 +1,4 @@
-import toBeNumber from './toBeNumber';
+import { toBeNumber } from './toBeNumber';
 
-export default (otherNumber, actual) =>
+export const toBeLessThanOrEqualTo = (otherNumber, actual) =>
   toBeNumber(actual) && actual <= otherNumber;

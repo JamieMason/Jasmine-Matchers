@@ -1,2 +1,2 @@
-import is from './lib/is';
-export default is.String;
+import { is } from './lib/is';
+export const toBeString = is.String;

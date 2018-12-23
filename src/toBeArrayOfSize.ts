@@ -1,2 +1,3 @@
-import toBeArray from './toBeArray';
-export default (size, actual) => toBeArray(actual) && actual.length === size;
+import { toBeArray } from './toBeArray';
+export const toBeArrayOfSize = (size, actual) =>
+  toBeArray(actual) && actual.length === size;

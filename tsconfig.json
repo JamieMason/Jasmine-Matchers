@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "declaration": true,
     "outDir": "./dist",
     "target": "es3"
   },

@@ -1,7 +1,7 @@
-import toBeString from './toBeString';
-import toBeValidDate from './toBeValidDate';
+import { toBeString } from './toBeString';
+import { toBeValidDate } from './toBeValidDate';
 
-export default (actual) =>
+export const toBeIso8601 = (actual) =>
   toBeString(actual) &&
   (isMatch('1999-12-31', actual) ||
     isMatch('1999-12-31T23:59', actual) ||

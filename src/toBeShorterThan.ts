@@ -1,6 +1,6 @@
-import toBeString from './toBeString';
+import { toBeString } from './toBeString';
 
-export default (otherString, actual) =>
+export const toBeShorterThan = (otherString, actual) =>
   toBeString(actual) &&
   toBeString(otherString) &&
   actual.length < otherString.length;

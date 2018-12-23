@@ -1,4 +1,4 @@
-import toBeNumber from './toBeNumber';
+import { toBeNumber } from './toBeNumber';
 
-export default (value, epsilon, actual) =>
+export const toBeNear = (value, epsilon, actual) =>
   toBeNumber(actual) && actual >= value - epsilon && actual <= value + epsilon;

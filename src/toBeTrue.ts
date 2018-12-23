@@ -1,2 +1,2 @@
-import is from './lib/is';
-export default (actual) => actual === true || is.True(actual); // eslint-disable-line new-cap
+import { is } from './lib/is';
+export const toBeTrue = (actual) => actual === true || is.True(actual);

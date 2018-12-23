@@ -1,3 +1,3 @@
-import memberMatcherFor from './lib/memberMatcherFor';
-import toBeFalse from './toBeFalse';
-export default memberMatcherFor(toBeFalse);
+import { memberMatcherFor } from './lib/memberMatcherFor';
+import { toBeFalse } from './toBeFalse';
+export const toHaveFalse = memberMatcherFor(toBeFalse);

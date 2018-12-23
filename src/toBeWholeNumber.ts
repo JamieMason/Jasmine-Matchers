@@ -1,4 +1,4 @@
-import toBeNumber from './toBeNumber';
+import { toBeNumber } from './toBeNumber';
 
-export default (actual) =>
+export const toBeWholeNumber = (actual) =>
   toBeNumber(actual) && (actual === 0 || actual % 1 === 0);

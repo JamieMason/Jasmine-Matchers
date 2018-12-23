@@ -1,2 +1,3 @@
-import is from './lib/is';
-export default (actual) => !isNaN(parseFloat(actual)) && !is.String(actual);
+import { is } from './lib/is';
+export const toBeNumber = (actual) =>
+  !isNaN(parseFloat(actual)) && !is.String(actual);

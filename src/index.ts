@@ -1,4 +1,4 @@
-import addMatchers from 'add-matchers';
+import { addMatchers } from 'add-matchers';
 import * as asymmetricMatchersByName from './asymmetricMatchersByName';
 import * as matchersByName from './matchersByName';
 

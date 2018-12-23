@@ -1,1 +1,1 @@
-export default (actual) => actual === '';
+export const toBeEmptyString = (actual) => actual === '';

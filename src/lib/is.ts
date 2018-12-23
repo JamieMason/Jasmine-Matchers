@@ -4,7 +4,7 @@ const createIs = (type) => (value) =>
 const createIsBooleanObject = (trueOrFalse) => (value) =>
   is.Boolean(value) && value.valueOf() === trueOrFalse;
 
-const is = {
+export const is = {
   Array: createIs('Array'),
   Boolean: createIs('Boolean'),
   Date: createIs('Date'),
@@ -14,5 +14,3 @@ const is = {
   String: createIs('String'),
   True: createIsBooleanObject(true)
 };
-
-export default is;

@@ -1,2 +1,2 @@
-import toBeNumber from './toBeNumber';
-export default (actual) => toBeNumber(actual) && actual % 2 !== 0;
+import { toBeNumber } from './toBeNumber';
+export const toBeOddNumber = (actual) => toBeNumber(actual) && actual % 2 !== 0;

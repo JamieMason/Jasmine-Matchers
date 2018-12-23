@@ -1,1 +1,1 @@
-export default (actual) => actual instanceof RegExp;
+export const toBeRegExp = (actual) => actual instanceof RegExp;

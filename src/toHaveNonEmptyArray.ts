@@ -1,3 +1,3 @@
-import memberMatcherFor from './lib/memberMatcherFor';
-import toBeNonEmptyArray from './toBeNonEmptyArray';
-export default memberMatcherFor(toBeNonEmptyArray);
+import { memberMatcherFor } from './lib/memberMatcherFor';
+import { toBeNonEmptyArray } from './toBeNonEmptyArray';
+export const toHaveNonEmptyArray = memberMatcherFor(toBeNonEmptyArray);

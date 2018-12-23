@@ -1,5 +1,5 @@
-import toBeBefore from './toBeBefore';
-import toBeObject from './toBeObject';
+import { toBeBefore } from './toBeBefore';
+import { toBeObject } from './toBeObject';
 
-export default (key, date, actual) =>
+export const toHaveDateBefore = (key, date, actual) =>
   toBeObject(actual) && toBeBefore(date, actual[key]);
