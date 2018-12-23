@@ -90,5 +90,5 @@
     "test:jest": "jest",
     "test:local": "karma start karma/base.conf.js --browsers Chrome"
   },
-  "types": "./jasmine-matchers.d.ts"
+  "types": "dist/index.d.ts"
 }

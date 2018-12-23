@@ -1,7 +1,17 @@
 import { toBeString } from './toBeString';
 import { toBeValidDate } from './toBeValidDate';
 
-export const toBeIso8601 = (actual) =>
+export type ToBeIso8601 = (expectationFailOutput?: any) => boolean;
+
+declare global {
+  namespace jasmine {
+    interface Matchers<T> {
+      toBeIso8601: ToBeIso8601;
+    }
+  }
+}
+
+export const toBeIso8601: ToBeIso8601 = (actual) =>
   toBeString(actual) &&
   (isMatch('1999-12-31', actual) ||
     isMatch('1999-12-31T23:59', actual) ||

@@ -1,6 +1,7 @@
 {
   "extends": "tslint:recommended",
   "rules": {
+    "interface-name": [false],
     "no-console": [false],
     "no-var-requires": [false],
     "quotemark": [true, "single"],

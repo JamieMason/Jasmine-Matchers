@@ -1,2 +1,13 @@
 import { is } from './lib/is';
-export const toBeString = is.String;
+
+export type ToBeString = (expectationFailOutput?: any) => boolean;
+
+declare global {
+  namespace jasmine {
+    interface Matchers<T> {
+      toBeString: ToBeString;
+    }
+  }
+}
+
+export const toBeString: ToBeString = is.String;

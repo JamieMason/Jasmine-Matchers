@@ -1,5 +1,24 @@
 import { toBeObject } from './toBeObject';
 import { toBeWithinRange } from './toBeWithinRange';
 
-export const toHaveNumberWithinRange = (key, floor, ceiling, actual) =>
-  toBeObject(actual) && toBeWithinRange(floor, ceiling, actual[key]);
+export type ToHaveNumberWithinRange = (
+  key: string,
+  floor: number,
+  ceiling: number,
+  expectationFailOutput?: any
+) => boolean;
+
+declare global {
+  namespace jasmine {
+    interface Matchers<T> {
+      toHaveNumberWithinRange: ToHaveNumberWithinRange;
+    }
+  }
+}
+
+export const toHaveNumberWithinRange: ToHaveNumberWithinRange = (
+  key,
+  floor,
+  ceiling,
+  actual
+) => toBeObject(actual) && toBeWithinRange(floor, ceiling, actual[key]);
