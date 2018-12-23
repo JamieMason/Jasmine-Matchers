@@ -1,7 +1,7 @@
 {
   "name": "jasmine-expect",
   "description": "Write Beautiful Specs with Custom Matchers",
-  "version": "3.7.1",
+  "version": "4.0.0",
   "author": "Jamie Mason <jamie@foldleft.io> (https://github.com/JamieMason)",
   "homepage": "https://github.com/JamieMason/Jasmine-Matchers",
   "keywords": [
