@@ -1,7 +1,7 @@
 describe('toBeNonEmptyObject', () => {
   let Foo;
   beforeEach(() => {
-    Foo = function () {};
+    Foo = function() {};
   });
   describe('when invoked', () => {
     describe('when subject IS an Object with at least one instance member', () => {

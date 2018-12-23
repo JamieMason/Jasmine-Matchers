@@ -4,7 +4,7 @@ describe('toHaveObject', () => {
   describeToHaveX('toHaveObject', () => {
     let Foo;
     beforeEach(() => {
-      Foo = function () {};
+      Foo = function() {};
     });
     describe('when subject IS an Object', () => {
       it('should confirm', () => {

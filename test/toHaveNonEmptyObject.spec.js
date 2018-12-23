@@ -4,7 +4,7 @@ describe('toHaveNonEmptyObject', () => {
   describeToHaveX('toHaveNonEmptyObject', () => {
     let Foo;
     beforeEach(() => {
-      Foo = function () {};
+      Foo = function() {};
     });
     describe('when subject IS an Object with at least one instance member', () => {
       it('should confirm', () => {

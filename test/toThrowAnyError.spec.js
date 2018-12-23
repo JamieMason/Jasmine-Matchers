@@ -4,10 +4,10 @@ describe('toThrowAnyError', () => {
       let throwError;
       let badReference;
       beforeEach(() => {
-        throwError = function () {
+        throwError = function() {
           throw new Error('wut?');
         };
-        badReference = function () {
+        badReference = function() {
           return doesNotExist.someValue; // eslint-disable-line no-undef
         };
       });
@@ -19,7 +19,7 @@ describe('toThrowAnyError', () => {
     describe('when function does NOT error when invoked', () => {
       let noErrors;
       beforeEach(() => {
-        noErrors = function () {};
+        noErrors = function() {};
       });
       it('should deny', () => {
         expect(noErrors).not.toThrowAnyError();

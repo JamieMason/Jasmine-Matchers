@@ -6,6 +6,8 @@ describe('any.shorterThan', () => {
     shared.spy = callSpy('skeletor');
   });
   it('should confirm', () => {
-    expect(shared.spy).toHaveBeenCalledWith(any.shorterThan('trogdor the burninator'));
+    expect(shared.spy).toHaveBeenCalledWith(
+      any.shorterThan('trogdor the burninator')
+    );
   });
 });

@@ -4,7 +4,8 @@ describe('toBeHtmlString', () => {
       let ngMultiLine;
       beforeEach(() => {
         ngMultiLine = '';
-        ngMultiLine += '<a data-ng-href="//www.google.com" data-ng-click="launchApp($event)" target="_blank" class="ng-binding" href="//www.google.com">';
+        ngMultiLine +=
+          '<a data-ng-href="//www.google.com" data-ng-click="launchApp($event)" target="_blank" class="ng-binding" href="//www.google.com">';
         ngMultiLine += '\n';
         ngMultiLine += '  Watch with Google TV';
         ngMultiLine += '\n';
@@ -13,9 +14,15 @@ describe('toBeHtmlString', () => {
       });
       it('should confirm', () => {
         expect('<element>text</element>').toBeHtmlString();
-        expect('<a data-ng-href="//foo.com" data-ng-click="bar($event)">baz</a>').toBeHtmlString();
-        expect('<div ng-if="foo > bar || bar < foo && baz == bar"></div>').toBeHtmlString();
-        expect('<li ng-if="foo > bar || bar < foo && baz == bar">').toBeHtmlString();
+        expect(
+          '<a data-ng-href="//foo.com" data-ng-click="bar($event)">baz</a>'
+        ).toBeHtmlString();
+        expect(
+          '<div ng-if="foo > bar || bar < foo && baz == bar"></div>'
+        ).toBeHtmlString();
+        expect(
+          '<li ng-if="foo > bar || bar < foo && baz == bar">'
+        ).toBeHtmlString();
         expect(ngMultiLine).toBeHtmlString();
       });
     });

@@ -3,7 +3,8 @@
 ##### What
 
 A huge library of test matchers for a range of common use-cases, compatible with
-all versions of [Jasmine](http://jasmine.github.io/) and [Jest](http://facebook.github.io/jest/).
+all versions of [Jasmine](http://jasmine.github.io/) and
+[Jest](http://facebook.github.io/jest/).
 
 ##### Why
 

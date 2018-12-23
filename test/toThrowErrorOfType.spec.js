@@ -4,10 +4,10 @@ describe('toThrowErrorOfType', () => {
       let throwError;
       let badReference;
       beforeEach(() => {
-        throwError = function () {
+        throwError = function() {
           throw new Error('wut?');
         };
-        badReference = function () {
+        badReference = function() {
           return doesNotExist.someValue; // eslint-disable-line no-undef
         };
       });

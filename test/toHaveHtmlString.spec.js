@@ -6,7 +6,8 @@ describe('toHaveHtmlString', () => {
       let ngMultiLine;
       beforeEach(() => {
         ngMultiLine = '';
-        ngMultiLine += '<a data-ng-href="//www.google.com" data-ng-click="launchApp($event)" target="_blank" class="ng-binding" href="//www.google.com">';
+        ngMultiLine +=
+          '<a data-ng-href="//www.google.com" data-ng-click="launchApp($event)" target="_blank" class="ng-binding" href="//www.google.com">';
         ngMultiLine += '\n';
         ngMultiLine += '  Watch with Google TV';
         ngMultiLine += '\n';
@@ -18,7 +19,8 @@ describe('toHaveHtmlString', () => {
           memberName: '<element>text</element>'
         }).toHaveHtmlString('memberName');
         expect({
-          memberName: '<a data-ng-href="//foo.com" data-ng-click="bar($event)">baz</a>'
+          memberName:
+            '<a data-ng-href="//foo.com" data-ng-click="bar($event)">baz</a>'
         }).toHaveHtmlString('memberName');
         expect({
           memberName: '<div ng-if="foo > bar || bar < foo && baz == bar"></div>'

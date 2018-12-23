@@ -8,7 +8,9 @@
 [![Code Climate](https://img.shields.io/codeclimate/github/JamieMason/Jasmine-Matchers.svg?style=flat-square)](https://codeclimate.com/github/JamieMason/Jasmine-Matchers)
 [![Analytics](https://ga-beacon.appspot.com/UA-45466560-5/jasmine-matchers?flat&useReferer)](https://github.com/igrigorik/ga-beacon)
 
-[Overview](#overview) | [Installation](#installation) | [Matchers](#matchers) | [Asymmetric Matchers](#asymmetric-matchers) | [Integration](#integration) | [Browser Support](#browser-support)
+[Overview](#overview) | [Installation](#installation) | [Matchers](#matchers) |
+[Asymmetric Matchers](#asymmetric-matchers) | [Integration](#integration) |
+[Browser Support](#browser-support)
 
 {{OVERVIEW}}
 

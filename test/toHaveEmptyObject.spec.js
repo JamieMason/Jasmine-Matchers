@@ -3,7 +3,7 @@ const describeToHaveX = require('./lib/describeToHaveX');
 describe('toHaveEmptyObject', () => {
   let Foo;
   beforeEach(() => {
-    Foo = function () {};
+    Foo = function() {};
   });
   describeToHaveX('toHaveEmptyObject', () => {
     describe('when subject IS an Object with no instance members', () => {
