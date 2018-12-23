@@ -1,21 +1,19 @@
+/*
+ * USERNAME=$BROWSERSTACK_USERNAME ACCESS_KEY=$BROWSERSTACK_ACCESS_KEY node scripts/update-browserstack.js
+ */
 const childProcess = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const res = childProcess.execSync(
-  'curl -u "' +
-    process.env.BROWSERSTACK_USERNAME +
-    ':' +
-    process.env.BROWSERSTACK_ACCESS_KEY +
-    '" https://www.browserstack.com/automate/browsers.json',
-  {
-    encoding: 'utf8'
-  }
-);
+const { USERNAME, ACCESS_KEY } = process.env;
+const url = 'https://www.browserstack.com/automate/browsers.json';
+const command = `curl -u "${USERNAME}:${ACCESS_KEY}" ${url}`;
+const res = childProcess.execSync(command, { encoding: 'utf8' });
+
 const browsers = JSON.parse(res);
-const location = path.join(__dirname, 'browserstack.json');
+const location = path.resolve(__dirname, '../karma/browserstack.json');
 const config = browsers
-  .sort(sortBy('browser_version'))
+  .sort(sortBy('browser_version', true))
   .sort(sortBy('browser'))
   .reduce(addBrowser, {});
 const json = JSON.stringify(config, null, 2);
