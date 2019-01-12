@@ -1,14 +1,13 @@
-describe('sum(a, b)', function() {
-  beforeEach(function() {
-    this.sum = require('./sum');
+const sum = require('./sum');
+
+describe('sum(a, b)', () => {
+  it('is a function', () => {
+    expect(sum).toBeFunction();
   });
-  it('is a function', function() {
-    expect(this.sum).toBeFunction();
+  it('returns a number', () => {
+    expect(sum(1, 2)).toBeNumber();
   });
-  it('returns a number', function() {
-    expect(this.sum(1, 2)).toBeNumber();
-  });
-  it('add numbers correctly', function() {
-    expect(this.sum(1, 2)).toEqual(3);
+  it('add numbers correctly', () => {
+    expect(sum(1, 2)).toEqual(3);
   });
 });
