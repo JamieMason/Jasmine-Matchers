@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@types/jest": "23.3.12",
-    "@types/node": "10.12.18",
+    "@types/node": "12.0.8",
     "codeclimate-test-reporter": "0.5.1",
     "globby": "9.0.0",
     "jasmine-core": "3.3.0",
