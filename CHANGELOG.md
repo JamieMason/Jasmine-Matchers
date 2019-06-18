@@ -1,3 +1,19 @@
+## [4.0.2](https://github.com/JamieMason/Jasmine-Matchers/compare/4.0.1...4.0.2) (2019-06-18)
+
+### Bug Fixes
+
+- **npm:** update dependencies
+  ([00f71c4](https://github.com/JamieMason/Jasmine-Matchers/commit/00f71c4)),
+  closes [#108](https://github.com/JamieMason/Jasmine-Matchers/issues/108)
+  [#109](https://github.com/JamieMason/Jasmine-Matchers/issues/109)
+  [#110](https://github.com/JamieMason/Jasmine-Matchers/issues/110)
+  [#111](https://github.com/JamieMason/Jasmine-Matchers/issues/111)
+  [#112](https://github.com/JamieMason/Jasmine-Matchers/issues/112)
+  [#113](https://github.com/JamieMason/Jasmine-Matchers/issues/113)
+  [#114](https://github.com/JamieMason/Jasmine-Matchers/issues/114)
+  [#115](https://github.com/JamieMason/Jasmine-Matchers/issues/115)
+  [#116](https://github.com/JamieMason/Jasmine-Matchers/issues/116)
+
 ## [4.0.1](https://github.com/JamieMason/Jasmine-Matchers/compare/4.0.0...4.0.1) (2019-01-12)
 
 ### Bug Fixes
