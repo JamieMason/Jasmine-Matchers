@@ -6,11 +6,6 @@
 [![NPM downloads](http://img.shields.io/npm/dm/jasmine-expect.svg?style=flat-square)](https://www.npmjs.com/package/jasmine-expect)
 [![Build Status](http://img.shields.io/travis/JamieMason/Jasmine-Matchers/master.svg?style=flat-square)](https://travis-ci.org/JamieMason/Jasmine-Matchers)
 [![Maintainability](https://api.codeclimate.com/v1/badges/8b2cd248837df1409c4d/maintainability)](https://codeclimate.com/github/JamieMason/Jasmine-Matchers/maintainability)
-[![Gitter Chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JamieMason/Jasmine-Matchers)
-[![Donate via PayPal](https://img.shields.io/badge/donate-paypal-blue.svg)](https://www.paypal.me/foldleft)
-[![Backers](https://opencollective.com/fold_left/backers/badge.svg)](https://opencollective.com/fold_left#backer)
-[![Sponsors](https://opencollective.com/fold_left/sponsors/badge.svg)](https://opencollective.com/fold_left#sponsors)
-[![Analytics](https://ga-beacon.appspot.com/UA-45466560-5/jasmine-matchers?flat&useReferer)](https://github.com/igrigorik/ga-beacon)
 [![Follow JamieMason on GitHub](https://img.shields.io/github/followers/JamieMason.svg?style=social&label=Follow)](https://github.com/JamieMason)
 [![Follow fold_left on Twitter](https://img.shields.io/twitter/follow/fold_left.svg?style=social&label=Follow)](https://twitter.com/fold_left)
 
@@ -44,7 +39,7 @@ stating that you `expect(cycleWheels).toBeEvenNumber()`.
   <img alt="Sponsored by BrowserStack" src="https://cdn.rawgit.com/JamieMason/Jasmine-Matchers/ad1ea0e6/browserstack.svg" height="40" />
 </a>
 
-## Installation
+## 🌩 Installation
 
 ##### npm
 
@@ -63,7 +58,7 @@ bower install jasmine-expect --save-dev
 Downloads are available on the
 [releases](https://github.com/JamieMason/Jasmine-Matchers/releases) page.
 
-## API
+## 📝 API
 
 The [Jasmine testing framework](http://jasmine.github.io/) from
 [Pivotal Labs](http://pivotallabs.com/) comes with this
@@ -101,7 +96,7 @@ jasmine.objectContaining(mixed);
 jasmine.stringMatching(pattern);
 ```
 
-## Matchers
+### Matchers
 
 [Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) adds the
 following matchers:
@@ -188,7 +183,7 @@ expect(string).toEndWith(substring);
 expect(string).toStartWith(substring);
 ```
 
-## Asymmetric Matchers
+### Asymmetric Matchers
 
 ```js
 any.after(date);
@@ -221,7 +216,7 @@ any.wholeNumber();
 any.withinRange(floor, ceiling);
 ```
 
-## Integration
+## 🕹 Usage
 
 ### Browser
 
@@ -239,7 +234,7 @@ Include the following in your `package.json`:
 
 And the following at the top of your test suite:
 
-```javascript
+```js
 import JasmineExpect from 'jasmine-expect';
 ```
 
@@ -307,7 +302,7 @@ There is a [Plugin](https://github.com/ik9999/tern-jasminematchers) for
 [Tern](https://github.com/ternjs/tern) to auto-complete matchers in your Text
 Editor.
 
-## Browser Support
+## 🌍 Browser Support
 
 Jasmine-Matchers is tested on
 [Travis CI](https://travis-ci.org/JamieMason/Jasmine-Matchers) and
@@ -324,3 +319,10 @@ Jasmine-Matchers is tested on
 | Safari            |       6 - 9\* |
 
 \* Safari 5.1 and iOS 5.1 are actually fully supported except for `toBeIso8601`.
+
+## 🙋🏾‍♀️ Getting Help
+
+- Get help with issues by creating a
+  [Bug Report](https://github.com/JamieMason/Jasmine-Matchers/issues/new?template=bug_report.md).
+- Discuss ideas by opening a
+  [Feature Request](https://github.com/JamieMason/Jasmine-Matchers/issues/new?template=feature_request.md).
