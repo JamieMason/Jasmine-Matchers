@@ -1,37 +1,33 @@
 # Jasmine-Matchers
 
-> Write Beautiful Specs with Custom Matchers for Jest and Jasmine
+> Write Beautiful Specs with Custom Matchers
 
-[![NPM version](http://img.shields.io/npm/v/jasmine-expect.svg?style=flat-square)](https://www.npmjs.com/package/jasmine-expect)
-[![NPM downloads](http://img.shields.io/npm/dm/jasmine-expect.svg?style=flat-square)](https://www.npmjs.com/package/jasmine-expect)
-[![Build Status](http://img.shields.io/travis/JamieMason/Jasmine-Matchers/master.svg?style=flat-square)](https://travis-ci.org/JamieMason/Jasmine-Matchers)
-[![Maintainability](https://api.codeclimate.com/v1/badges/8b2cd248837df1409c4d/maintainability)](https://codeclimate.com/github/JamieMason/Jasmine-Matchers/maintainability)
-[![Follow JamieMason on GitHub](https://img.shields.io/github/followers/JamieMason.svg?style=social&label=Follow)](https://github.com/JamieMason)
-[![Follow fold_left on Twitter](https://img.shields.io/twitter/follow/fold_left.svg?style=social&label=Follow)](https://twitter.com/fold_left)
+[![NPM version](http://img.shields.io/npm/v/jasmine-expect.svg?style=flat-square)](https://www.npmjs.com/package/jasmine-expect) [![NPM downloads](http://img.shields.io/npm/dm/jasmine-expect.svg?style=flat-square)](https://www.npmjs.com/package/jasmine-expect) [![Build Status](http://img.shields.io/travis/JamieMason/Jasmine-Matchers/master.svg?style=flat-square)](https://travis-ci.org/JamieMason/Jasmine-Matchers) [![Maintainability](https://api.codeclimate.com/v1/badges/8b2cd248837df1409c4d/maintainability)](https://codeclimate.com/github/JamieMason/Jasmine-Matchers/maintainability)
 
-[Overview](#overview) | [Installation](#installation) | [Matchers](#matchers) |
-[Asymmetric Matchers](#asymmetric-matchers) | [Integration](#integration) |
-[Browser Support](#browser-support)
+## Table of Contents
+
+-   [Overview](#overview)
+-   [🌩 Installation](#-installation)
+-   [📝 API](#-api)
+-   [🕹 Usage](#-usage)
+-   [🌍 Browser Support](#-browser-support)
+-   [🙋🏾‍♂️ Getting Help](#♂️-getting-help)
+-   [👀 Other Projects](#-other-projects)
+-   [🤓 Author](#-author)
 
 ## Overview
 
 ##### What
 
-A huge library of test matchers for a range of common use-cases, compatible with
-all versions of [Jasmine](http://jasmine.github.io/) and
-[Jest](http://facebook.github.io/jest/).
+A huge library of test matchers for a range of common use-cases, compatible with all versions of [Jasmine](http://jasmine.github.io/) and [Jest](http://facebook.github.io/jest/).
 
 ##### Why
 
-Custom Matchers make tests easier to read and produce relevant and useful
-messages when they fail.
+Custom Matchers make tests easier to read and produce relevant and useful messages when they fail.
 
 ##### How
 
-By avoiding vague messages such as _"expected false to be true"_ in favour of
-useful cues such as _"expected 3 to be even number"_ and avoiding implementation
-noise such as `expect(cycleWheels % 2 === 0).toEqual(true)` in favour of simply
-stating that you `expect(cycleWheels).toBeEvenNumber()`.
+By avoiding vague messages such as _"expected false to be true"_ in favour of useful cues such as _"expected 3 to be even number"_ and avoiding implementation noise such as `expect(cycleWheels % 2 === 0).toEqual(true)` in favour of simply stating that you `expect(cycleWheels).toBeEvenNumber()`.
 
 ##### Sponsors
 
@@ -43,26 +39,19 @@ stating that you `expect(cycleWheels).toBeEvenNumber()`.
 
 ##### npm
 
-```
-npm install jasmine-expect --save-dev
-```
+    npm install jasmine-expect --save-dev
 
 ##### Bower
 
-```
-bower install jasmine-expect --save-dev
-```
+    bower install jasmine-expect --save-dev
 
 ##### Manual
 
-Downloads are available on the
-[releases](https://github.com/JamieMason/Jasmine-Matchers/releases) page.
+Downloads are available on the [releases](https://github.com/JamieMason/Jasmine-Matchers/releases) page.
 
 ## 📝 API
 
-The [Jasmine testing framework](http://jasmine.github.io/) from
-[Pivotal Labs](http://pivotallabs.com/) comes with this
-[default set of matchers](http://jasmine.github.io/edge/introduction.html#section-Expectations):
+The [Jasmine testing framework](http://jasmine.github.io/) from [Pivotal Labs](http://pivotallabs.com/) comes with this [default set of matchers](http://jasmine.github.io/edge/introduction.html#section-Expectations):
 
 ```js
 expect(instance).toBe(instance);
@@ -85,8 +74,7 @@ expect(fn).toThrow(string);
 expect(fn).toThrowError(string);
 ```
 
-and this
-[default set of asymmetric matchers](http://jasmine.github.io/2.4/introduction.html#section-Matching_Anything_with_%3Ccode%3Ejasmine.any%3C/code%3E);
+and this [default set of asymmetric matchers](http://jasmine.github.io/2.4/introduction.html#section-Matching_Anything_with_%3Ccode%3Ejasmine.any%3C/code%3E);
 
 ```js
 jasmine.any(Constructor);
@@ -98,8 +86,7 @@ jasmine.stringMatching(pattern);
 
 ### Matchers
 
-[Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) adds the
-following matchers:
+[Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers) adds the following matchers:
 
 ```js
 expect(array).toBeArray();
@@ -220,9 +207,7 @@ any.withinRange(floor, ceiling);
 
 ### Browser
 
-Embed
-[jasmine-matchers.js](https://github.com/JamieMason/Jasmine-Matchers/blob/master/dist/jasmine-matchers.js)
-after Jasmine but before your tests.
+Embed [jasmine-matchers.js](https://github.com/JamieMason/Jasmine-Matchers/blob/master/dist/jasmine-matchers.js) after Jasmine but before your tests.
 
 ### Jest
 
@@ -235,20 +220,16 @@ Include the following in your `package.json`:
 And the following at the top of your test suite:
 
 ```js
-import JasmineExpect from 'jasmine-expect';
+import JasmineExpect from "jasmine-expect";
 ```
 
 ### Karma
 
-Integration is easy with the
-[karma-jasmine-matchers](https://github.com/JamieMason/karma-jasmine-matchers)
-plugin.
+Integration is easy with the [karma-jasmine-matchers](https://github.com/JamieMason/karma-jasmine-matchers) plugin.
 
 ### Node.js
 
-Use the [Jasmine CLI](https://www.npmjs.com/package/jasmine) and include the
-path to where Jasmine Matchers is installed in the `helpers` array of your
-`spec/support/jasmine.json`.
+Use the [Jasmine CLI](https://www.npmjs.com/package/jasmine) and include the path to where Jasmine Matchers is installed in the `helpers` array of your `spec/support/jasmine.json`.
 
 ```json
 {
@@ -262,15 +243,11 @@ path to where Jasmine Matchers is installed in the `helpers` array of your
 
 ### TypeScript and Angular CLI Projects
 
-If you are using TypeScript, you might want to
-`npm install @types/jasmine-expect --save-dev` in order to prevent your IDE from
-complaining about the new Matchers.
+If you are using TypeScript, you might want to `npm install @types/jasmine-expect --save-dev` in order to prevent your IDE from complaining about the new Matchers.
 
-Also, if you run into TypeScript compilation errors when running your tests, add
-`"jasmine-expect"` to the `"types"` array in your tests' `tsconfig` file.
+Also, if you run into TypeScript compilation errors when running your tests, add `"jasmine-expect"` to the `"types"` array in your tests' `tsconfig` file.
 
-As an example, for an Angular CLI based project, this would be your
-`tsconfig.spec.json` file:
+As an example, for an Angular CLI based project, this would be your `tsconfig.spec.json` file:
 
 ```json
 {
@@ -289,24 +266,15 @@ As an example, for an Angular CLI based project, this would be your
 
 ### Sublime Text
 
-[Jasmine-Matchers-Snippets](https://github.com/JamieMason/Jasmine-Matchers-Snippets)
-or
-[Jasmine-Matchers-ES6-Snippets](https://github.com/JamieMason/Jasmine-Matchers-ES6-Snippets)
-can be installed with
-[Package Control](https://packagecontrol.io/packages/Jasmine%20Matchers%20Snippets)
-to ease development with Jasmine Matchers in Sublime Text.
+[Jasmine-Matchers-Snippets](https://github.com/JamieMason/Jasmine-Matchers-Snippets) or [Jasmine-Matchers-ES6-Snippets](https://github.com/JamieMason/Jasmine-Matchers-ES6-Snippets) can be installed with [Package Control](https://packagecontrol.io/packages/Jasmine%20Matchers%20Snippets) to ease development with Jasmine Matchers in Sublime Text.
 
 ### Tern
 
-There is a [Plugin](https://github.com/ik9999/tern-jasminematchers) for
-[Tern](https://github.com/ternjs/tern) to auto-complete matchers in your Text
-Editor.
+There is a [Plugin](https://github.com/ik9999/tern-jasminematchers) for [Tern](https://github.com/ternjs/tern) to auto-complete matchers in your Text Editor.
 
 ## 🌍 Browser Support
 
-Jasmine-Matchers is tested on
-[Travis CI](https://travis-ci.org/JamieMason/Jasmine-Matchers) and
-[BrowserStack](https://browserstack.com) against the following environments.
+Jasmine-Matchers is tested on [Travis CI](https://travis-ci.org/JamieMason/Jasmine-Matchers) and [BrowserStack](https://browserstack.com) against the following environments.
 
 | Browser           | Version Range |
 | :---------------- | ------------: |
@@ -320,9 +288,79 @@ Jasmine-Matchers is tested on
 
 \* Safari 5.1 and iOS 5.1 are actually fully supported except for `toBeIso8601`.
 
-## 🙋🏾‍♀️ Getting Help
+## 🙋🏾‍♂️ Getting Help
 
-- Get help with issues by creating a
-  [Bug Report](https://github.com/JamieMason/Jasmine-Matchers/issues/new?template=bug_report.md).
-- Discuss ideas by opening a
-  [Feature Request](https://github.com/JamieMason/Jasmine-Matchers/issues/new?template=feature_request.md).
+Get help with issues by creating a [Bug Report] or discuss ideas by opening a [Feature Request].
+
+[bug report]: https://github.com/JamieMason/Jasmine-Matchers/issues/new?template=bug_report.md
+
+[feature request]: https://github.com/JamieMason/Jasmine-Matchers/issues/new?template=feature_request.md
+
+## 👀 Other Projects
+
+If you find my Open Source projects useful, please share them ❤️
+
+-   [**add-matchers**](https://github.com/JamieMason/add-matchers)<br>Write useful test matchers compatible with Jest and Jasmine.
+-   [**eslint-formatter-git-log**](https://github.com/JamieMason/eslint-formatter-git-log)<br>ESLint Formatter featuring Git Author, Date, and Hash
+-   [**eslint-plugin-move-files**](https://github.com/JamieMason/eslint-plugin-move-files)<br>Move and rename files while keeping imports up to date
+-   [**eslint-plugin-prefer-arrow-functions**](https://github.com/JamieMason/eslint-plugin-prefer-arrow-functions)<br>Convert functions to arrow functions
+-   [**get-time-between**](https://github.com/JamieMason/get-time-between#readme)<br>Measure the amount of time during work hours between two dates
+-   [**image-optimisation-tools-comparison**](https://github.com/JamieMason/image-optimisation-tools-comparison)<br>A benchmarking suite for popular image optimisation tools.
+-   [**ImageOptim-CLI**](https://github.com/JamieMason/ImageOptim-CLI)<br>Automates ImageOptim, ImageAlpha, and JPEGmini for Mac to make batch optimisation of images part of your automated build process.
+-   [**is-office-hours**](https://github.com/JamieMason/is-office-hours#readme)<br>Determine whether a given date is within office hours
+-   [**jest-fail-on-console-reporter**](https://github.com/JamieMason/jest-fail-on-console-reporter#readme)<br>Disallow untested console output produced during tests
+-   [**karma-benchmark**](https://github.com/JamieMason/karma-benchmark)<br>Run Benchmark.js over multiple Browsers, with CI compatible output
+-   [**karma-jasmine-matchers**](https://github.com/JamieMason/karma-jasmine-matchers)<br>A Karma plugin - Additional matchers for the Jasmine BDD JavaScript testing library.
+-   [**logservable**](https://github.com/JamieMason/logservable)<br>git log as an observable stream of JSON objects
+-   [**self-help**](https://github.com/JamieMason/self-help#readme)<br>Interactive Q&A Guides for Web and the Command Line
+-   [**syncpack**](https://github.com/JamieMason/syncpack#readme)<br>Manage multiple package.json files, such as in Lerna Monorepos and Yarn Workspaces
+
+## 🤓 Author
+
+<img src="https://www.gravatar.com/avatar/acdf106ce071806278438d8c354adec8?s=100" align="left">
+
+I'm [Jamie Mason] from [Leeds] in England, I began Web Design and Development in 1999 and have been Contracting and offering Consultancy as Fold Left Ltd since 2012. Who I've worked with includes [Sky Sports], [Sky Bet], [Sky Poker], The [Premier League], [William Hill], [Shell], [Betfair], and Football Clubs including [Leeds United], [Spurs], [West Ham], [Arsenal], and more.
+
+<div align="center">
+
+[![Follow JamieMason on GitHub][github badge]][github]      [![Follow fold_left on Twitter][twitter badge]][twitter]
+
+</div>
+
+<!-- images -->
+
+[github badge]: https://img.shields.io/github/followers/JamieMason.svg?style=social&label=Follow
+
+[twitter badge]: https://img.shields.io/twitter/follow/fold_left.svg?style=social&label=Follow
+
+<!-- links -->
+
+[arsenal]: https://www.arsenal.com
+
+[betfair]: https://www.betfair.com
+
+[github]: https://github.com/JamieMason
+
+[jamie mason]: https://www.linkedin.com/in/jamiemasonleeds
+
+[leeds united]: https://www.leedsunited.com/
+
+[leeds]: https://www.instagram.com/visitleeds
+
+[premier league]: https://www.premierleague.com
+
+[shell]: https://www.shell.com
+
+[sky bet]: https://www.skybet.com
+
+[sky poker]: https://www.skypoker.com
+
+[sky sports]: https://www.skysports.com
+
+[spurs]: https://www.tottenhamhotspur.com
+
+[twitter]: https://twitter.com/fold_left
+
+[west ham]: https://www.whufc.com
+
+[william hill]: https://www.williamhill.com
