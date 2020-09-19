@@ -68,9 +68,6 @@
   "license": "MIT",
   "main": "dist/jasmine-matchers.js",
   "repository": "JamieMason/Jasmine-Matchers",
-  "resolutions": {
-    "lodash": ">=4.17.15"
-  },
   "scripts": {
     "browserstack:android": "karma start karma/browserstack-android.conf.js",
     "browserstack:chrome": "karma start karma/browserstack-chrome.conf.js",
