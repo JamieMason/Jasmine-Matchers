@@ -1,4 +1,4 @@
-require('jasmine-expect')
+require('jasmine-expect');
 
 describe('sum(a, b)', function () {
   beforeEach(function () {

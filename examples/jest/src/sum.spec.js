@@ -1,4 +1,4 @@
-require('jasmine-expect')
+require('jasmine-expect');
 const sum = require('./sum');
 
 describe('sum(a, b)', () => {

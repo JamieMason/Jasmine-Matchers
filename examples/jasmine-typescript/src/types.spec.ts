@@ -1,4 +1,4 @@
-import 'jasmine-expect'
+import 'jasmine-expect';
 
 it('defines types correctly', () => {
   expect(new Date(2)).toBeAfter(new Date(1));
