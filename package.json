@@ -80,7 +80,6 @@
     "browserstack:opera": "# karma start karma/browserstack-opera.conf.js",
     "browserstack:safari": "karma start karma/browserstack-safari.conf.js",
     "build": "webpack",
-    "build:readme": "node ./scripts/generate-readme.js",
     "build:snippets": "node scripts/generate-snippets.js",
     "clean": "rimraf dist ./test/dist ./scripts/es5-snippets ./scripts/es6-snippets",
     "format": "prettier --write './+(examples|karma|scripts|src)/**/*.+(js|ts)'",
