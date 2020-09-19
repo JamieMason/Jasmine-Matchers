@@ -54,24 +54,38 @@ Downloads are available on the [releases](https://github.com/JamieMason/Jasmine-
 The [Jasmine testing framework](http://jasmine.github.io/) from [Pivotal Labs](http://pivotallabs.com/) comes with this [default set of matchers](http://jasmine.github.io/edge/introduction.html#section-Expectations):
 
 ```js
-expect(instance).toBe(instance);
-expect(number).toBeCloseTo(number, decimalPlaces);
-expect(mixed).toBeDefined();
-expect(mixed).toBeFalsy();
-expect(number).toBeGreaterThan(number);
-expect(number).toBeLessThan(number);
-expect(number).toBeNaN();
-expect(mixed).toBeNull();
-expect(mixed).toBeTruthy();
-expect(mixed).toBeUndefined();
-expect(array).toContain(member);
-expect(mixed).toEqual(mixed);
-expect(spy).toHaveBeenCalled();
-expect(spy).toHaveBeenCalledTimes(number);
-expect(spy).toHaveBeenCalledWith(...arguments);
-expect(mixed).toMatch(pattern);
-expect(fn).toThrow(string);
-expect(fn).toThrowError(string);
+expect().nothing()
+expect().toBe(expected)
+expect().toBeCloseTo(expected, precisionopt)
+expect().toBeDefined()
+expect().toBeFalse()
+expect().toBeFalsy()
+expect().toBeGreaterThan(expected)
+expect().toBeGreaterThanOrEqual(expected)
+expect().toBeInstanceOf(expected)
+expect().toBeLessThan(expected)
+expect().toBeLessThanOrEqual(expected)
+expect().toBeNaN()
+expect().toBeNegativeInfinity()
+expect().toBeNull()
+expect().toBePositiveInfinity()
+expect().toBeTrue()
+expect().toBeTruthy()
+expect().toBeUndefined()
+expect().toContain(expected)
+expect().toEqual(expected)
+expect().toHaveBeenCalled()
+expect().toHaveBeenCalledBefore(expected)
+expect().toHaveBeenCalledOnceWith()
+expect().toHaveBeenCalledTimes(expected)
+expect().toHaveBeenCalledWith()
+expect().toHaveClass(expected)
+expect().toHaveSize(expected)
+expect().toMatch(expected)
+expect().toThrow(expectedopt)
+expect().toThrowError(expectedopt, messageopt)
+expect().toThrowMatching(predicate)
+expect().withContext(message)
 ```
 
 and this [default set of asymmetric matchers](http://jasmine.github.io/2.4/introduction.html#section-Matching_Anything_with_%3Ccode%3Ejasmine.any%3C/code%3E);
@@ -98,8 +112,6 @@ expect(array).toBeArrayOfStrings();
 expect(array).toBeEmptyArray();
 expect(array).toBeNonEmptyArray();
 expect(boolean).toBeBoolean();
-expect(boolean).toBeFalse();
-expect(boolean).toBeTrue();
 expect(date).toBeAfter(otherDate);
 expect(date).toBeBefore(otherDate);
 expect(date).toBeDate();

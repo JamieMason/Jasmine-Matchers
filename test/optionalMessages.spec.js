@@ -18,7 +18,6 @@ it('should handle optional messages', () => {
   expect({}).toBeEmptyObject(MSG);
   expect('').toBeEmptyString(MSG);
   expect(2).toBeEvenNumber(MSG);
-  expect(false).toBeFalse(MSG);
   expect(() => {}).toBeFunction(MSG);
   expect('<element>text</element>').toBeHtmlString(MSG);
   expect('2013-07-08T07:29:15.863Z').toBeIso8601(MSG);
@@ -35,7 +34,6 @@ it('should handle optional messages', () => {
   expect('ab').toBeSameLengthAs('ab', MSG);
   expect('ab').toBeShorterThan('abc', MSG);
   expect('').toBeString(MSG);
-  expect(true).toBeTrue(MSG);
   expect(new Date()).toBeValidDate(MSG);
   expect(' ').toBeWhitespace(MSG);
   expect(1).toBeWholeNumber(MSG);
