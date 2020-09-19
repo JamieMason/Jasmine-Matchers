@@ -29,10 +29,7 @@ const expectExamples = api
   .filter(ownerIs('expect'))
   .map(getExpectExample)
   .join('\n');
-const anyExamples = api
-  .filter(ownerIs('any'))
-  .map(getAnyExample)
-  .join('\n');
+const anyExamples = api.filter(ownerIs('any')).map(getAnyExample).join('\n');
 const jasmineExpectExamples = jasmineApi
   .filter(ownerIs('expect'))
   .map(getExpectExample)

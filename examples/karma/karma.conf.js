@@ -1,4 +1,4 @@
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
     autoWatch: false,
     basePath: '',
@@ -12,11 +12,11 @@ module.exports = function(config) {
     plugins: [
       'karma-chrome-launcher',
       'karma-jasmine',
-      'karma-jasmine-matchers'
+      'karma-jasmine-matchers',
     ],
     port: 9876,
     preprocessors: {},
     reporters: ['progress'],
-    singleRun: true
+    singleRun: true,
   });
 };

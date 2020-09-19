@@ -1,7 +1,7 @@
 const baseConfig = require('./cloud.conf');
 const platforms = require('./browserstack.json');
 
-module.exports = function(config) {
+module.exports = function (config) {
   baseConfig({
     set(base) {
       base.browsers = Object.keys(platforms);
@@ -9,9 +9,9 @@ module.exports = function(config) {
       base.customLaunchers = platforms;
       base.browserStack = {
         accessKey: process.env.BROWSERSTACK_ACCESS_KEY,
-        username: process.env.BROWSERSTACK_USERNAME
+        username: process.env.BROWSERSTACK_USERNAME,
       };
       config.set(base);
-    }
+    },
   });
 };

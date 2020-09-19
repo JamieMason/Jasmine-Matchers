@@ -1,6 +1,6 @@
 const baseConfig = require('./base.conf');
 
-module.exports = function(config) {
+module.exports = function (config) {
   baseConfig({
     set(base) {
       base.browsers = [];
@@ -9,6 +9,6 @@ module.exports = function(config) {
       base.logLevel = config.LOG_DEBUG;
       base.transports = ['polling'];
       config.set(base);
-    }
+    },
   });
 };

@@ -88,7 +88,7 @@ const getAnySnippet = (template, method) =>
 
 [
   { functionStyle: es5FunctionStyle, outputDirectory: 'es5-snippets' },
-  { functionStyle: es6FunctionStyle, outputDirectory: 'es6-snippets' }
+  { functionStyle: es6FunctionStyle, outputDirectory: 'es6-snippets' },
 ].forEach((snippetBundle) => {
   const { functionStyle } = snippetBundle;
   const { outputDirectory } = snippetBundle;

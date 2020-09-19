@@ -1,6 +1,6 @@
 const baseConfig = require('./browserstack.conf');
 
-module.exports = function(config) {
+module.exports = function (config) {
   baseConfig({
     set(base) {
       base.browsers = [
@@ -9,9 +9,9 @@ module.exports = function(config) {
         'iphone-11.2',
         'iphone-11.4',
         'iphone-12.0',
-        'iphone-12.1'
+        'iphone-12.1',
       ];
       config.set(base);
-    }
+    },
   });
 };

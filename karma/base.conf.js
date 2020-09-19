@@ -1,4 +1,4 @@
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
     autoWatch: false,
     basePath: '..',
@@ -8,52 +8,52 @@ module.exports = function(config) {
       dir: 'coverage',
       instrumenterOptions: {
         istanbul: {
-          noCompact: true
-        }
+          noCompact: true,
+        },
       },
       reporters: [
         {
           type: 'html',
-          subdir: 'report-html'
+          subdir: 'report-html',
         },
         {
           type: 'lcov',
-          subdir: 'report-lcov'
+          subdir: 'report-lcov',
         },
         {
           type: 'cobertura',
           subdir: '.',
-          file: 'cobertura.txt'
+          file: 'cobertura.txt',
         },
         {
           type: 'lcovonly',
           subdir: '.',
-          file: 'report-lcovonly.txt'
+          file: 'report-lcovonly.txt',
         },
         {
           type: 'teamcity',
           subdir: '.',
-          file: 'teamcity.txt'
+          file: 'teamcity.txt',
         },
         {
           type: 'text',
           subdir: '.',
-          file: 'text.txt'
+          file: 'text.txt',
         },
         {
           type: 'text-summary',
           subdir: '.',
-          file: 'text-summary.txt'
-        }
-      ]
+          file: 'text-summary.txt',
+        },
+      ],
     },
     files: ['dist/jasmine-matchers.js', 'dist/jasmine-matchers.spec.js'],
     frameworks: ['jasmine'],
     logLevel: 'error',
     preprocessors: {
-      '**/dist/jasmine-matchers.js': ['coverage']
+      '**/dist/jasmine-matchers.js': ['coverage'],
     },
     reporters: ['nested', 'coverage'],
-    singleRun: true
+    singleRun: true,
   });
 };

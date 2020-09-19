@@ -12,5 +12,5 @@ export const is = {
   Function: createIs('Function'),
   Object: createIs('Object'),
   String: createIs('String'),
-  True: createIsBooleanObject(true)
+  True: createIsBooleanObject(true),
 };

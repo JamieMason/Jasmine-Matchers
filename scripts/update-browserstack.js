@@ -26,7 +26,7 @@ function addBrowser(memo, browser) {
     browser_version: browser.browser_version, // eslint-disable-line camelcase
     device: browser.device,
     os: browser.os,
-    os_version: browser.os_version // eslint-disable-line camelcase
+    os_version: browser.os_version, // eslint-disable-line camelcase
   };
   return memo;
 }
@@ -41,7 +41,7 @@ function sortBy(key, reverse) {
   const moveSmaller = reverse ? 1 : -1;
   const moveLarger = reverse ? -1 : 1;
 
-  return function(a, b) {
+  return function (a, b) {
     if (a[key] < b[key]) {
       return moveSmaller;
     }
