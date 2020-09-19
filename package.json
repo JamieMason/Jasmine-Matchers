@@ -72,12 +72,11 @@
     "lodash": ">=4.17.15"
   },
   "scripts": {
-    "browserstack:android": "# karma start karma/browserstack-android.conf.js",
+    "browserstack:android": "karma start karma/browserstack-android.conf.js",
     "browserstack:chrome": "karma start karma/browserstack-chrome.conf.js",
     "browserstack:firefox": "karma start karma/browserstack-firefox.conf.js",
     "browserstack:ie": "karma start karma/browserstack-ie.conf.js",
     "browserstack:ios": "# karma start karma/browserstack-ios.conf.js",
-    "browserstack:opera": "# karma start karma/browserstack-opera.conf.js",
     "browserstack:safari": "karma start karma/browserstack-safari.conf.js",
     "build": "webpack",
     "build:snippets": "node scripts/generate-snippets.js",

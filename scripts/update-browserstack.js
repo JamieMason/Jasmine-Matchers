@@ -1,13 +1,13 @@
 /*
- * USERNAME=$BROWSERSTACK_USERNAME ACCESS_KEY=$BROWSERSTACK_ACCESS_KEY node scripts/update-browserstack.js
+ * node scripts/update-browserstack.js
  */
 const childProcess = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const { USERNAME, ACCESS_KEY } = process.env;
+const { BROWSER_STACK_USERNAME, BROWSER_STACK_ACCESS_KEY } = process.env;
 const url = 'https://www.browserstack.com/automate/browsers.json';
-const command = `curl -u "${USERNAME}:${ACCESS_KEY}" ${url}`;
+const command = `curl -u "${BROWSER_STACK_USERNAME}:${BROWSER_STACK_ACCESS_KEY}" ${url}`;
 const res = childProcess.execSync(command, { encoding: 'utf8' });
 
 const browsers = JSON.parse(res);
