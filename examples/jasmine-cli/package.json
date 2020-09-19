@@ -1,10 +1,10 @@
 {
   "devDependencies": {
-    "jasmine": "2.5.3",
+    "jasmine": "3.6.1",
     "jasmine-expect": "*"
   },
   "private": true,
   "scripts": {
-    "test": "jasmine JASMINE_CONFIG_PATH=jasmine.json"
+    "test": "jasmine"
   }
 }

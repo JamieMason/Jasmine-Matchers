@@ -1,3 +1,5 @@
+require('jasmine-expect')
+
 describe('sum(a, b)', function () {
   beforeEach(function () {
     this.sum = require('./sum');

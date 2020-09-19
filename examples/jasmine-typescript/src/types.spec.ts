@@ -1,3 +1,5 @@
+import 'jasmine-expect'
+
 it('defines types correctly', () => {
   expect(new Date(2)).toBeAfter(new Date(1));
   expect([]).toBeArray();
@@ -14,7 +16,6 @@ it('defines types correctly', () => {
   expect({}).toBeEmptyObject();
   expect('').toBeEmptyString();
   expect(2).toBeEvenNumber();
-  expect(false).toBeFalse();
   expect(() => ({})).toBeFunction();
   expect(2).toBeGreaterThanOrEqualTo(1);
   expect('<div></div>').toBeHtmlString();
@@ -33,7 +34,6 @@ it('defines types correctly', () => {
   expect('a').toBeSameLengthAs('a');
   expect('a').toBeShorterThan('ab');
   expect('').toBeString();
-  expect(true).toBeTrue();
   expect(new Date()).toBeValidDate();
   expect(' ').toBeWhitespace();
   expect(1).toBeWholeNumber();
@@ -54,7 +54,6 @@ it('defines types correctly', () => {
   expect({ prop: {} }).toHaveEmptyObject('prop');
   expect({ prop: '' }).toHaveEmptyString('prop');
   expect({ prop: 2 }).toHaveEvenNumber('prop');
-  expect({ prop: false }).toHaveFalse('prop');
   expect({ prop: '<div></div>' }).toHaveHtmlString('prop');
   expect({ prop: new Date().toISOString() }).toHaveIso8601('prop');
   expect({ prop: '{}' }).toHaveJsonString('prop');
@@ -71,7 +70,6 @@ it('defines types correctly', () => {
   expect({ prop: 'ab' }).toHaveStringLongerThan('prop', 'a');
   expect({ prop: 'a' }).toHaveStringSameLengthAs('prop', 'a');
   expect({ prop: 'a' }).toHaveStringShorterThan('prop', 'ab');
-  expect({ prop: true }).toHaveTrue('prop');
   expect({ prop: undefined }).toHaveUndefined('prop');
   expect({ prop: ' ' }).toHaveWhitespaceString('prop');
   expect({ prop: 1 }).toHaveWholeNumber('prop');

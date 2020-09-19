@@ -1,10 +1,10 @@
 {
   "devDependencies": {
-    "jasmine-core": "3.3.0",
-    "jasmine-expect": "*",
-    "karma": "3.1.4",
-    "karma-chrome-launcher": "2.2.0",
-    "karma-jasmine": "2.0.1",
+    "jasmine-core": "3.6.0",
+    "jasmine-expect": "file:../..",
+    "karma": "5.2.2",
+    "karma-chrome-launcher": "3.1.0",
+    "karma-jasmine": "4.0.1",
     "karma-jasmine-matchers": "*"
   },
   "private": true,

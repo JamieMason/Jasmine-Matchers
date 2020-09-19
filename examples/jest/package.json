@@ -1,10 +1,9 @@
 {
   "devDependencies": {
-    "jasmine-expect": "*",
-    "jest": "23.6.0"
+    "jasmine-expect": "file:../..",
+    "jest": "26.4.2"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>/node_modules/jasmine-expect/index.js",
     "verbose": true
   },
   "private": true,

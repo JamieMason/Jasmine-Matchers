@@ -1,7 +1,7 @@
 {
   "devDependencies": {
-    "jasmine-expect": "*",
-    "protractor": "5.4.2"
+    "jasmine-expect": "file:../..",
+    "protractor": "7.0.0"
   },
   "private": true,
   "scripts": {
