@@ -4,6 +4,9 @@ describe('toBeFunction', () => {
       it('should confirm', () => {
         expect(() => {}).toBeFunction();
       });
+      it('should confirm for async functions', () => {
+        expect(async () => {}).toBeFunction();
+      });
     });
     describe('when subject is NOT a function', () => {
       it('should deny', () => {
