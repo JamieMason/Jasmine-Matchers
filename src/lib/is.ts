@@ -5,9 +5,10 @@ const createIsBooleanObject = (trueOrFalse) => (value) =>
   is.Boolean(value) && value.valueOf() === trueOrFalse;
 
 const createIsFunction = () => {
-  const syncFn = createIs('Function'), asyncFn = createIs('AsyncFunction');
+  const syncFn = createIs('Function');
+  const asyncFn = createIs('AsyncFunction');
   return (value) => syncFn(value) || asyncFn(value);
-}
+};
 
 export const is = {
   Array: createIs('Array'),
